@@ -6,10 +6,10 @@ class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform => android;
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '__API_KEY__',
-    appId: '__APP_ID__',
-    messagingSenderId: '__SENDER_ID__',
-    projectId: '__PROJECT_ID__',
-    storageBucket: '__PROJECT_ID__.firebasestorage.app',
+    apiKey: 'AIzaSyCbal9_LtoEZt0jm8KedzzwYb58KmxNE50',
+    appId: '1:931795301492:android:280ff832a0665a41a5cd21',
+    messagingSenderId: '931795301492',
+    projectId: 'jang-ea5f3',
+    storageBucket: 'jang-ea5f3.firebasestorage.app',
   );
 }
