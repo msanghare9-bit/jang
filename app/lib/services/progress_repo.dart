@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
+import 'stats_service.dart';
 
 /// Progression de l'élève, enregistrée sur son compte (users/{uid}/progress/{leçon}).
 class ProgressRepo {
@@ -78,6 +79,8 @@ class ProgressRepo {
     unawaited(_markStudied());
     final p = _byLesson[lesson.id];
     if (p != null && p.seen) return;
+    StatsService.instance.recordLessonView(lesson);
+    _bumpUser(uid, {'lessonsSeen': 1});
     _byLesson[lesson.id] = LessonProgress(
       lessonId: lesson.id,
       subjectId: lesson.subjectId,
@@ -96,11 +99,33 @@ class ProgressRepo {
     revision.value++;
   }
 
-  void recordQuiz(Lesson lesson, int score, int total) {
+  void _bumpUser(String uid, Map<String, int> fields) {
+    unawaited(_db.collection('users').doc(uid).set({
+      for (final e in fields.entries) e.key: FieldValue.increment(e.value),
+    }, SetOptions(merge: true)).catchError((e) => debugPrint('$e')));
+  }
+
+  void recordQuiz(Lesson lesson, List<bool> correct) {
     final uid = _uid;
     if (uid == null) return;
     unawaited(_markStudied());
+    final score = correct.where((c) => c).length;
+    final total = correct.length;
     final p = _byLesson[lesson.id];
+    if (p == null || !p.seen) {
+      StatsService.instance.recordLessonView(lesson);
+      _bumpUser(uid, {'lessonsSeen': 1});
+    }
+    StatsService.instance.recordQuiz(lesson, correct, firstTime: p?.quizDone != true);
+    // Résumé sur la fiche de l'élève : nombre de QCM faits et somme des meilleures notes (en %).
+    final newPct = total == 0 ? 0 : (score * 100 / total).round();
+    final oldPct = (p?.quizDone == true && p!.total > 0) ? (p.bestScore! * 100 / p.total).round() : null;
+    final bestPct = oldPct == null || newPct > oldPct ? newPct : oldPct;
+    _bumpUser(uid, {
+      'quizzesTaken': 1,
+      if (oldPct == null) 'quizLessons': 1,
+      'sumBestPct': bestPct - (oldPct ?? 0),
+    });
     final best = (p?.bestScore == null || score > p!.bestScore!) ? score : p.bestScore!;
     final attempts = (p?.attempts ?? 0) + 1;
     _byLesson[lesson.id] = LessonProgress(

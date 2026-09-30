@@ -4,6 +4,8 @@ import '../models.dart';
 import '../services/auth_service.dart';
 import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
+import '../services/stats_service.dart';
+import '../services/github_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import 'admin/admin_home.dart';
@@ -25,6 +27,15 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _autoSync();
+    final p = AuthService.instance.profile.value;
+    if (p != null) StatsService.instance.recordActive(p);
+    _checkUpdate();
+  }
+
+  Future<void> _checkUpdate() async {
+    final r = await GithubService.instance.newerVersion();
+    if (r == null || !mounted) return;
+    await showUpdateDialog(context, r);
   }
 
   Future<void> _autoSync() async {
@@ -295,4 +306,27 @@ class _SubjectCard extends StatelessWidget {
       },
     );
   }
+}
+
+Future<void> showUpdateDialog(BuildContext context, ReleaseInfo r) {
+  return showDialog<void>(
+    context: context,
+    builder: (c) => AlertDialog(
+      title: Text('Nouvelle version', style: titleStyle(20)),
+      content: Text(
+          '${r.name.isEmpty ? 'Une nouvelle version' : r.name} est disponible. '
+          'Appuie sur « Installer » : le fichier se télécharge, puis ouvre-le pour mettre à jour. '
+          'Ta progression est conservée.'),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(c), child: const Text('Plus tard')),
+        FilledButton(
+          onPressed: () {
+            Navigator.pop(c);
+            openLink(GithubService.apkUrl);
+          },
+          child: const Text('Installer'),
+        ),
+      ],
+    ),
+  );
 }

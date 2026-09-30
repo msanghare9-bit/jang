@@ -48,7 +48,8 @@ class _QuizScreenState extends State<QuizScreen> {
           'Il reste $missing question${missing > 1 ? 's' : ''} sans réponse. Réponds à tout avant de soumettre.');
       return;
     }
-    ProgressRepo.instance.recordQuiz(widget.lesson, _score, _quiz.length);
+    ProgressRepo.instance.recordQuiz(
+        widget.lesson, [for (var i = 0; i < _quiz.length; i++) _answers[i] == _quiz[i].answer]);
     setState(() => _submitted = true);
     _scroll.animateTo(0, duration: const Duration(milliseconds: 350), curve: Curves.easeOut);
   }

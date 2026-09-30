@@ -6,6 +6,7 @@ import '../../theme.dart';
 import '../../widgets/common.dart';
 import 'admin_widgets.dart';
 import 'lesson_editor.dart';
+import 'stats_screen.dart';
 
 /// Onglet « Gestion » du responsable : examens > matières > chapitres > leçons.
 class AdminHome extends StatefulWidget {
@@ -47,6 +48,13 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                     'Ce que tu enregistres ici est publié pour les élèves. Sans connexion, '
                     'l\'envoi se fait automatiquement dès le retour d\'internet.',
                     style: Theme.of(context).textTheme.bodySmall),
+                const SizedBox(height: 16),
+                FilledButton.icon(
+                  onPressed: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => const StatsScreen())),
+                  icon: const Icon(Icons.bar_chart),
+                  label: const Text('Statistiques d\'utilisation'),
+                ),
                 const SectionTitle('Examens'),
                 if (exams.isEmpty)
                   EmptyState(

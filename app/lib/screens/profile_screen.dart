@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import '../models.dart';
 import '../services/auth_service.dart';
 import '../services/content_repo.dart';
+import '../services/github_service.dart';
 import '../theme.dart';
 import '../version.dart';
 import '../widgets/common.dart';
-import 'home_screen.dart' show formatDate;
+import 'home_screen.dart' show formatDate, showUpdateDialog;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -121,6 +122,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   label: Text(syncing ? 'Mise à jour…' : 'Mettre à jour le contenu'),
                 ),
               ),
+              const SectionTitle('Application'),
+              Text('Version installée : $appVersion ($appBuild)', style: t.bodyMedium),
+              const SizedBox(height: 12),
+              OutlinedButton.icon(
+                onPressed: () async {
+                  final r = await GithubService.instance.newerVersion(force: true);
+                  if (!context.mounted) return;
+                  if (r == null) {
+                    showMessage(context, 'Tu as déjà la dernière version (ou pas de connexion).');
+                  } else {
+                    await showUpdateDialog(context, r);
+                  }
+                },
+                icon: const Icon(Icons.system_update_outlined),
+                label: const Text('Rechercher une mise à jour'),
+              ),
               const SizedBox(height: 28),
               FilledButton.tonal(
                 style: FilledButton.styleFrom(minimumSize: const Size(64, 48)),
@@ -134,7 +151,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: const Text('Se déconnecter'),
               ),
               const SizedBox(height: 20),
-              Center(child: Text('Jàng version $appVersion', style: t.bodySmall)),
+              Center(child: Text('Jàng $appVersion ($appBuild)', style: t.bodySmall)),
             ],
           );
         },

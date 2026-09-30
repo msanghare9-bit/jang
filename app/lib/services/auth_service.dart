@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 import '../models.dart';
+import 'stats_service.dart';
 
 /// Les élèves se connectent avec un identifiant (sans e-mail).
 /// En interne, l'identifiant devient une adresse fictive « identifiant@jang.app ».
@@ -74,6 +75,7 @@ class AuthService {
       'examId': examId,
       'createdAt': FieldValue.serverTimestamp(),
     });
+    StatsService.instance.recordNewUser();
     await loadProfile();
   }
 
