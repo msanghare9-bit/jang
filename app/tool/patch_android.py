@@ -1,0 +1,65 @@
+"""Adapte le projet Android généré par `flutter create` aux besoins de Jàng.
+
+Lancé à chaque construction dans GitHub Actions (le dossier android/ est régénéré).
+"""
+import pathlib
+import re
+import shutil
+import sys
+
+root = pathlib.Path(__file__).resolve().parent.parent
+app = root / "android" / "app"
+
+# 1. build.gradle(.kts) : version minimale d'Android et signature de publication.
+kts = app / "build.gradle.kts"
+groovy = app / "build.gradle"
+if kts.exists():
+    s = kts.read_text()
+    s = re.sub(r"minSdk\s*=\s*[^\n]+", "minSdk = maxOf(flutter.minSdkVersion, 23)", s, count=1)
+    if 'create("release")' not in s:
+        signing = '''
+    signingConfigs {
+        create("release") {
+            val ks = System.getenv("JANG_KEYSTORE_PATH")
+            if (ks != null && ks.isNotEmpty()) {
+                storeFile = file(ks)
+                storePassword = System.getenv("JANG_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("JANG_KEY_ALIAS")
+                keyPassword = System.getenv("JANG_KEYSTORE_PASSWORD")
+            }
+        }
+    }
+
+    buildTypes {'''
+        s = s.replace("\n    buildTypes {", signing, 1)
+        s = s.replace('signingConfig = signingConfigs.getByName("debug")',
+                      'signingConfig = if (System.getenv("JANG_KEYSTORE_PATH").isNullOrEmpty()) '
+                      'signingConfigs.getByName("debug") else signingConfigs.getByName("release")', 1)
+    kts.write_text(s)
+elif groovy.exists():
+    s = groovy.read_text()
+    s = re.sub(r"minSdk(Version)?\s*=?\s*flutter\.minSdkVersion", "minSdkVersion 23", s, count=1)
+    groovy.write_text(s)
+else:
+    sys.exit("build.gradle introuvable")
+
+# 2. AndroidManifest : accès internet, nom affiché.
+manifest = root / "android" / "app" / "src" / "main" / "AndroidManifest.xml"
+m = manifest.read_text()
+if "android.permission.INTERNET" not in m:
+    m = m.replace("<application", '<uses-permission android:name="android.permission.INTERNET"/>\n    <application', 1)
+m = re.sub(r'android:label="[^"]*"', 'android:label="Jàng"', m, count=1)
+manifest.write_text(m)
+
+# 3. Icône de l'application.
+icons = root / "tool" / "icons"
+res = app / "src" / "main" / "res"
+if icons.exists():
+    for d in icons.iterdir():
+        target = res / d.name
+        target.mkdir(parents=True, exist_ok=True)
+        for f in d.iterdir():
+            shutil.copy(f, target / f.name)
+
+print("Projet Android adapté.")
+print(kts.read_text() if kts.exists() else groovy.read_text())
