@@ -195,15 +195,42 @@ class UserProfile {
   final String username;
   final String role; // student | teacher | admin
   final String examId;
+  final bool parentConsent;
+  final bool blocked;
+  final List<String> badges;
   UserProfile({
     required this.uid,
     required this.name,
     required this.username,
     required this.role,
     required this.examId,
+    this.parentConsent = false,
+    this.blocked = false,
+    this.badges = const [],
   });
 
   bool get isAdmin => role == 'admin';
+
+  /// Nom affiché publiquement : prénom + initiale du nom (« Awa D. »).
+  String get publicName => publicNameOf(name);
+
+  static String publicNameOf(String full) {
+    final parts = full.trim().split(RegExp(r'\s+')).where((p) => p.isNotEmpty).toList();
+    if (parts.isEmpty) return 'Élève';
+    if (parts.length == 1) return parts.first;
+    return '${parts.first} ${parts.last[0].toUpperCase()}.';
+  }
+
+  UserProfile copyWith({String? examId, bool? parentConsent}) => UserProfile(
+        uid: uid,
+        name: name,
+        username: username,
+        role: role,
+        examId: examId ?? this.examId,
+        parentConsent: parentConsent ?? this.parentConsent,
+        blocked: blocked,
+        badges: badges,
+      );
 
   factory UserProfile.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
@@ -213,6 +240,9 @@ class UserProfile {
       username: _str(m['username']),
       role: _str(m['role'], 'student'),
       examId: _str(m['examId']),
+      parentConsent: _bool(m['parentConsent']),
+      blocked: _bool(m['blocked']),
+      badges: (m['badges'] is List ? m['badges'] as List : const []).whereType<String>().toList(),
     );
   }
 }
@@ -225,6 +255,12 @@ class LessonProgress {
   final int? bestScore;
   final int total;
   final int attempts;
+
+  /// Questions ratées à revoir : clé de la question -> nombre de réussites d'affilée depuis l'erreur.
+  final Map<String, int> mistakes;
+
+  /// Avis de l'élève sur la leçon : 1 (j'aime), -1 (je n'aime pas), 0 (aucun).
+  final int vote;
   LessonProgress({
     required this.lessonId,
     required this.subjectId,
@@ -233,12 +269,36 @@ class LessonProgress {
     this.bestScore,
     this.total = 0,
     this.attempts = 0,
+    this.mistakes = const {},
+    this.vote = 0,
   });
 
   bool get quizDone => bestScore != null && total > 0;
 
+  LessonProgress copyWith({
+    bool? seen,
+    int? lastScore,
+    int? bestScore,
+    int? total,
+    int? attempts,
+    Map<String, int>? mistakes,
+    int? vote,
+  }) =>
+      LessonProgress(
+        lessonId: lessonId,
+        subjectId: subjectId,
+        seen: seen ?? this.seen,
+        lastScore: lastScore ?? this.lastScore,
+        bestScore: bestScore ?? this.bestScore,
+        total: total ?? this.total,
+        attempts: attempts ?? this.attempts,
+        mistakes: mistakes ?? this.mistakes,
+        vote: vote ?? this.vote,
+      );
+
   factory LessonProgress.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
+    final mk = m['mistakes'] is Map ? m['mistakes'] as Map : const {};
     return LessonProgress(
       lessonId: d.id,
       subjectId: _str(m['subjectId']),
@@ -247,6 +307,86 @@ class LessonProgress {
       bestScore: m['bestScore'] is num ? (m['bestScore'] as num).toInt() : null,
       total: _int(m['total']),
       attempts: _int(m['attempts']),
+      mistakes: {for (final e in mk.entries) '${e.key}': _int(e.value)},
+      vote: _int(m['vote']),
+    );
+  }
+}
+
+/// Une carte de révision (recto / verso).
+class Flashcard {
+  final String front;
+  final String back;
+  Flashcard({required this.front, required this.back});
+  factory Flashcard.fromMap(Map m) => Flashcard(front: _str(m['front']), back: _str(m['back']));
+  Map<String, dynamic> toMap() => {'front': front, 'back': back};
+}
+
+/// Paquet de cartes d'un chapitre (flashcards/{chapterId}).
+class FlashcardDeck {
+  final String chapterId;
+  final String subjectId;
+  final String examId;
+  final List<Flashcard> cards;
+  final bool deleted;
+  FlashcardDeck({
+    required this.chapterId,
+    required this.subjectId,
+    required this.examId,
+    required this.cards,
+    this.deleted = false,
+  });
+  factory FlashcardDeck.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
+    final m = d.data() ?? {};
+    final c = m['cards'] is List ? m['cards'] as List : const [];
+    return FlashcardDeck(
+      chapterId: d.id,
+      subjectId: _str(m['subjectId']),
+      examId: _str(m['examId']),
+      cards: c.whereType<Map>().map(Flashcard.fromMap).toList(),
+      deleted: _bool(m['deleted']),
+    );
+  }
+}
+
+/// Message de la discussion d'une leçon (question, commentaire ou réponse).
+class Comment {
+  final String id;
+  final String lessonId;
+  final String uid;
+  final String name;
+  final String text;
+  final String parentId;
+  final bool isStaff;
+  final int reports;
+  final bool answered;
+  final DateTime? createdAt;
+  Comment({
+    required this.id,
+    required this.lessonId,
+    required this.uid,
+    required this.name,
+    required this.text,
+    required this.parentId,
+    required this.isStaff,
+    required this.reports,
+    required this.answered,
+    this.createdAt,
+  });
+  factory Comment.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
+    final m = d.data() ?? {};
+    final ts = m['createdAt'];
+    return Comment(
+      id: d.id,
+      lessonId: _str(m['lessonId']),
+      uid: _str(m['uid']),
+      name: _str(m['name']),
+      text: _str(m['text']),
+      parentId: _str(m['parentId']),
+      isStaff: _bool(m['isStaff']),
+      reports: _int(m['reports']),
+      answered: _bool(m['answered']),
+      createdAt: ts is Timestamp ? ts.toDate() : null,
     );
   }
 }

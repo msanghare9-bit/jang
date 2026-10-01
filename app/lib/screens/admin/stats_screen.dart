@@ -46,18 +46,25 @@ class _StatsScreenState extends State<StatsScreen> {
     List<QueryDocumentSnapshot<Map<String, dynamic>>> days = const [];
     List<QueryDocumentSnapshot<Map<String, dynamic>>> lessonStats = const [];
     var ok = true;
+    String? error;
     try {
+      // Tri croissant sur l'identifiant (date) : aucun index spécial n'est nécessaire.
       days = (await _db
               .collection('statsDays')
-              .orderBy(FieldPath.documentId, descending: true)
-              .limit(30)
+              .where(FieldPath.documentId, isGreaterThanOrEqualTo: day(29))
               .get(const GetOptions(source: Source.server)))
           .docs;
+    } catch (e) {
+      error = '$e';
+    }
+    try {
       lessonStats =
           (await _db.collection('statsLessons').get(const GetOptions(source: Source.server))).docs;
-    } catch (_) {
-      ok = false;
+    } catch (e) {
+      error ??= '$e';
     }
+    if (error != null && days.isEmpty && lessonStats.isEmpty) ok = false;
+    if (error != null) debugPrint('Statistiques : $error');
 
     final repo = ContentRepo.instance;
     final exams = await repo.exams();
@@ -70,6 +77,7 @@ class _StatsScreenState extends State<StatsScreen> {
 
     return _Stats(
       online: ok,
+      error: error,
       releases: await releasesF,
       students: await studentsF,
       newWeek: await newWeekF,
@@ -103,11 +111,18 @@ class _StatsScreenState extends State<StatsScreen> {
           final s = snap.data!;
           final t = Theme.of(context).textTheme;
           if (!s.online) {
-            return const Center(
+            final offline = (s.error ?? '').contains('unavailable');
+            return Center(
               child: EmptyState(
-                icon: Icons.cloud_off,
-                title: 'Pas de connexion',
-                message: 'Les statistiques ont besoin d\'internet. Réessaie une fois connecté.',
+                icon: offline ? Icons.cloud_off : Icons.error_outline,
+                title: offline ? 'Pas de connexion' : 'Statistiques indisponibles',
+                message: offline
+                    ? 'Les statistiques ont besoin d\'internet. Réessaie une fois connecté.'
+                    : 'Détail technique : ${s.error}',
+                action: OutlinedButton(
+                  onPressed: () => setState(() => _future = _load()),
+                  child: const Text('Réessayer'),
+                ),
               ),
             );
           }
@@ -205,6 +220,7 @@ class _StatsScreenState extends State<StatsScreen> {
 
 class _Stats {
   final bool online;
+  final String? error;
   final List<ReleaseInfo>? releases;
   final int students, newWeek, activeToday, activeWeek, activeMonth;
   final Map<String, Map<String, dynamic>> days;
@@ -213,6 +229,7 @@ class _Stats {
   final List<Lesson> lessons;
   _Stats({
     required this.online,
+    this.error,
     required this.releases,
     required this.students,
     required this.newWeek,
@@ -337,7 +354,8 @@ class _SubjectStats extends StatelessWidget {
           title: Text(subject.name, style: titleStyle(18, color: color)),
           subtitle: Text(
             '$views ouverture${views > 1 ? 's' : ''} de leçon · $attempts QCM'
-            '${avg == null ? '' : ' · moyenne $avg %'}',
+            '${avg == null ? '' : ' · moyenne $avg %'}'
+        '${_i(d['likes']) + _i(d['dislikes']) == 0 ? '' : ' · ${_i(d['likes'])} j\'aime, ${_i(d['dislikes'])} je n\'aime pas'}',
             style: t.bodySmall,
           ),
           children: [
@@ -361,7 +379,8 @@ class _SubjectStats extends StatelessWidget {
       title: Text(l.title, style: t.titleSmall),
       subtitle: Text(
         '${_i(d['views'])} élève(s) l\'ont ouverte · ${_i(d['quizUsers'])} ont fait le QCM'
-        '${avg == null ? '' : ' · moyenne $avg %'}',
+        '${avg == null ? '' : ' · moyenne $avg %'}'
+        '${_i(d['likes']) + _i(d['dislikes']) == 0 ? '' : ' · ${_i(d['likes'])} j\'aime, ${_i(d['dislikes'])} je n\'aime pas'}',
         style: t.bodySmall,
       ),
       trailing: avg == null

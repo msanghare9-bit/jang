@@ -17,7 +17,7 @@ class ContentRepo {
   static final instance = ContentRepo._();
 
   final _db = FirebaseFirestore.instance;
-  static const collections = ['exams', 'subjects', 'chapters', 'lessons'];
+  static const collections = ['exams', 'subjects', 'chapters', 'lessons', 'flashcards'];
 
   /// Augmente à chaque changement de contenu : les écrans l'écoutent pour se rafraîchir.
   final ValueNotifier<int> revision = ValueNotifier(0);
@@ -147,6 +147,26 @@ class ContentRepo {
     } catch (_) {
       return null;
     }
+  }
+
+  Future<FlashcardDeck?> deck(String chapterId) async {
+    try {
+      final d = await _db.collection('flashcards').doc(chapterId).get(_cache);
+      if (!d.exists) return null;
+      final deck = FlashcardDeck.fromDoc(d);
+      return deck.deleted ? null : deck;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<Map<String, FlashcardDeck>> decksOfSubject(String subjectId) async {
+    final docs =
+        await _cached(_db.collection('flashcards').where('subjectId', isEqualTo: subjectId));
+    return {
+      for (final d in docs.map(FlashcardDeck.fromDoc).where((d) => !d.deleted && d.cards.isNotEmpty))
+        d.chapterId: d
+    };
   }
 
   // ---------- Écriture (responsable) ----------

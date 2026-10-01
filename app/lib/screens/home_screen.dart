@@ -8,6 +8,8 @@ import '../services/stats_service.dart';
 import '../services/github_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/engagement.dart';
+import '../services/engagement_service.dart';
 import 'admin/admin_home.dart';
 import 'profile_screen.dart';
 import 'progress_screen.dart';
@@ -30,6 +32,20 @@ class _HomeScreenState extends State<HomeScreen> {
     final p = AuthService.instance.profile.value;
     if (p != null) StatsService.instance.recordActive(p);
     _checkUpdate();
+    EngagementService.instance.newBadge.addListener(_onBadge);
+  }
+
+  @override
+  void dispose() {
+    EngagementService.instance.newBadge.removeListener(_onBadge);
+    super.dispose();
+  }
+
+  void _onBadge() {
+    final b = EngagementService.instance.newBadge.value;
+    if (b == null || !mounted) return;
+    EngagementService.instance.newBadge.value = null;
+    showBadgeDialog(context, b);
   }
 
   Future<void> _checkUpdate() async {
@@ -167,6 +183,11 @@ class _SubjectsTabState extends State<SubjectsTab> {
                 const SizedBox(height: 8),
                 const _SyncStatus(),
                 const SizedBox(height: 12),
+                if (data.exam != null) ...[
+                  const ReviewCard(),
+                  const WeekGoalCard(),
+                  const SizedBox(height: 8),
+                ],
                 if (data.exams.isEmpty)
                   EmptyState(
                     icon: Icons.cloud_download_outlined,
@@ -196,6 +217,12 @@ class _SubjectsTabState extends State<SubjectsTab> {
                           lessons: data.lessons.where((l) => l.subjectId == s.id).toList(),
                         ),
                       )),
+                const SizedBox(height: 8),
+                OutlinedButton.icon(
+                  onPressed: () => shareApp(context),
+                  icon: const Icon(Icons.share_outlined),
+                  label: const Text('Partager Jàng avec un ami'),
+                ),
               ],
             ),
           );

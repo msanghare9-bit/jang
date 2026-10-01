@@ -5,6 +5,7 @@ import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import 'flashcards_screen.dart';
 import 'lesson_screen.dart';
 
 class SubjectScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class SubjectScreen extends StatefulWidget {
 }
 
 class _SubjectScreenState extends State<SubjectScreen> {
-  late Future<(List<Chapter>, List<Lesson>)> _future;
+  late Future<(List<Chapter>, List<Lesson>, Map<String, FlashcardDeck>)> _future;
 
   @override
   void initState() {
@@ -35,9 +36,13 @@ class _SubjectScreenState extends State<SubjectScreen> {
     if (mounted) setState(() => _future = _load());
   }
 
-  Future<(List<Chapter>, List<Lesson>)> _load() async {
+  Future<(List<Chapter>, List<Lesson>, Map<String, FlashcardDeck>)> _load() async {
     final repo = ContentRepo.instance;
-    return (await repo.chapters(widget.subject.id), await repo.lessonsOfSubject(widget.subject.id));
+    return (
+      await repo.chapters(widget.subject.id),
+      await repo.lessonsOfSubject(widget.subject.id),
+      await repo.decksOfSubject(widget.subject.id),
+    );
   }
 
   @override
@@ -49,11 +54,11 @@ class _SubjectScreenState extends State<SubjectScreen> {
         backgroundColor: color,
         foregroundColor: Colors.white,
       ),
-      body: FutureBuilder<(List<Chapter>, List<Lesson>)>(
+      body: FutureBuilder<(List<Chapter>, List<Lesson>, Map<String, FlashcardDeck>)>(
         future: _future,
         builder: (context, snap) {
           if (!snap.hasData) return const Center(child: CircularProgressIndicator());
-          final (chapters, lessons) = snap.data!;
+          final (chapters, lessons, decks) = snap.data!;
           if (chapters.isEmpty) {
             return const Center(
               child: EmptyState(
@@ -71,6 +76,8 @@ class _SubjectScreenState extends State<SubjectScreen> {
                 for (var i = 0; i < chapters.length; i++) ...[
                   SectionTitle('${i + 1}. ${chapters[i].title}', color: color),
                   ..._lessonTiles(context, chapters[i], lessons, color),
+                  if (decks[chapters[i].id] != null && decks[chapters[i].id]!.cards.isNotEmpty)
+                    _deckTile(context, chapters[i], decks[chapters[i].id]!, color),
                 ],
               ],
             ),
@@ -128,5 +135,29 @@ class _SubjectScreenState extends State<SubjectScreen> {
     if (l.body.trim().isNotEmpty) parts.add('leçon écrite');
     if (l.quiz.isNotEmpty) parts.add('QCM de ${l.quiz.length} question${l.quiz.length > 1 ? 's' : ''}');
     return parts.isEmpty ? 'En préparation' : parts.join(' · ');
+  }
+
+  Widget _deckTile(BuildContext context, Chapter chapter, FlashcardDeck deck, Color color) {
+    final n = deck.cards.length;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Card(
+        color: color.withValues(alpha: 0.06),
+        child: ListTile(
+          minVerticalPadding: 12,
+          leading: Icon(Icons.style_outlined, color: color),
+          title: Text('Flashcards du chapitre', style: Theme.of(context).textTheme.titleSmall),
+          subtitle: Text('$n carte${n > 1 ? 's' : ''} pour mémoriser l\'essentiel',
+              style: Theme.of(context).textTheme.bodySmall),
+          trailing: const Icon(Icons.chevron_right),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (_) =>
+                    FlashcardsScreen(deck: deck, title: chapter.title, color: color)),
+          ),
+        ),
+      ),
+    );
   }
 }

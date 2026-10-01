@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
+import 'engagement_service.dart';
 import 'stats_service.dart';
 
 /// Progression de l'élève, enregistrée sur son compte (users/{uid}/progress/{leçon}).
@@ -77,19 +78,13 @@ class ProgressRepo {
     final uid = _uid;
     if (uid == null) return;
     unawaited(_markStudied());
+    unawaited(EngagementService.instance.logStudy('lesson', lesson.id));
     final p = _byLesson[lesson.id];
     if (p != null && p.seen) return;
     StatsService.instance.recordLessonView(lesson);
     _bumpUser(uid, {'lessonsSeen': 1});
-    _byLesson[lesson.id] = LessonProgress(
-      lessonId: lesson.id,
-      subjectId: lesson.subjectId,
-      seen: true,
-      lastScore: p?.lastScore,
-      bestScore: p?.bestScore,
-      total: p?.total ?? 0,
-      attempts: p?.attempts ?? 0,
-    );
+    _byLesson[lesson.id] = (p ?? LessonProgress(lessonId: lesson.id, subjectId: lesson.subjectId))
+        .copyWith(seen: true);
     unawaited(_col(uid).doc(lesson.id).set({
       'subjectId': lesson.subjectId,
       'examId': lesson.examId,
@@ -128,6 +123,26 @@ class ProgressRepo {
     });
     final best = (p?.bestScore == null || score > p!.bestScore!) ? score : p.bestScore!;
     final attempts = (p?.attempts ?? 0) + 1;
+    // Questions à revoir : une erreur entre dans la liste ; une bonne réponse la fait avancer.
+    final mistakes = Map<String, int>.from(p?.mistakes ?? const {});
+    final mistakeChanges = <String, Object>{};
+    for (var i = 0; i < lesson.quiz.length && i < correct.length; i++) {
+      final k = StatsService.questionKey(lesson.quiz[i].question);
+      if (!correct[i]) {
+        mistakes[k] = 0;
+        mistakeChanges[k] = 0;
+      } else if (mistakes.containsKey(k)) {
+        final n = mistakes[k]! + 1;
+        if (n >= 2) {
+          mistakes.remove(k);
+          mistakeChanges[k] = FieldValue.delete();
+          unawaited(EngagementService.instance.addTo('mistakes_fixed'));
+        } else {
+          mistakes[k] = n;
+          mistakeChanges[k] = n;
+        }
+      }
+    }
     _byLesson[lesson.id] = LessonProgress(
       lessonId: lesson.id,
       subjectId: lesson.subjectId,
@@ -136,6 +151,8 @@ class ProgressRepo {
       bestScore: best,
       total: total,
       attempts: attempts,
+      mistakes: mistakes,
+      vote: p?.vote ?? 0,
     );
     unawaited(_col(uid).doc(lesson.id).set({
       'subjectId': lesson.subjectId,
@@ -145,7 +162,61 @@ class ProgressRepo {
       'bestScore': best,
       'total': total,
       'attempts': attempts,
+      if (mistakeChanges.isNotEmpty) 'mistakes': mistakeChanges,
       'lastQuizAt': FieldValue.serverTimestamp(),
+      'updatedAt': FieldValue.serverTimestamp(),
+    }, SetOptions(merge: true)).catchError((e) => debugPrint('$e')));
+    unawaited(EngagementService.instance.logStudy('quiz', lesson.id));
+    revision.value++;
+  }
+
+  /// Résultat d'une question en « Révision des erreurs ».
+  void recordReview(Lesson lesson, String questionKey, bool ok) {
+    final uid = _uid;
+    final p = _byLesson[lesson.id];
+    if (uid == null || p == null || !p.mistakes.containsKey(questionKey)) return;
+    final mistakes = Map<String, int>.from(p.mistakes);
+    Object change;
+    if (!ok) {
+      mistakes[questionKey] = 0;
+      change = 0;
+    } else {
+      final n = mistakes[questionKey]! + 1;
+      if (n >= 2) {
+        mistakes.remove(questionKey);
+        change = FieldValue.delete();
+        unawaited(EngagementService.instance.addTo('mistakes_fixed'));
+      } else {
+        mistakes[questionKey] = n;
+        change = n;
+      }
+    }
+    _byLesson[lesson.id] = p.copyWith(mistakes: mistakes);
+    unawaited(_col(uid).doc(lesson.id).set({
+      'mistakes': {questionKey: change},
+      'updatedAt': FieldValue.serverTimestamp(),
+    }, SetOptions(merge: true)).catchError((e) => debugPrint('$e')));
+    unawaited(_markStudied());
+    revision.value++;
+  }
+
+  /// Nombre total de questions à revoir.
+  int get mistakesCount => _byLesson.values.fold(0, (a, p) => a + p.mistakes.length);
+
+  /// Avis sur une leçon : 1, -1 ou 0 pour annuler.
+  void vote(Lesson lesson, int value) {
+    final uid = _uid;
+    if (uid == null) return;
+    final p = _byLesson[lesson.id] ??
+        LessonProgress(lessonId: lesson.id, subjectId: lesson.subjectId, seen: true);
+    final old = p.vote;
+    if (old == value) return;
+    _byLesson[lesson.id] = p.copyWith(vote: value);
+    StatsService.instance.recordVote(lesson, old, value);
+    unawaited(_col(uid).doc(lesson.id).set({
+      'subjectId': lesson.subjectId,
+      'examId': lesson.examId,
+      'vote': value,
       'updatedAt': FieldValue.serverTimestamp(),
     }, SetOptions(merge: true)).catchError((e) => debugPrint('$e')));
     revision.value++;

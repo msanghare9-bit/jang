@@ -5,7 +5,9 @@ import '../../services/content_repo.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import 'admin_widgets.dart';
+import 'flashcard_editor.dart';
 import 'lesson_editor.dart';
+import 'moderation_screen.dart';
 import 'stats_screen.dart';
 
 /// Onglet « Gestion » du responsable : examens > matières > chapitres > leçons.
@@ -54,6 +56,20 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                       context, MaterialPageRoute(builder: (_) => const StatsScreen())),
                   icon: const Icon(Icons.bar_chart),
                   label: const Text('Statistiques d\'utilisation'),
+                ),
+                const SizedBox(height: 10),
+                OutlinedButton.icon(
+                  onPressed: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => const ModerationScreen())),
+                  icon: const Icon(Icons.forum_outlined),
+                  label: const Text('Questions des élèves'),
+                ),
+                const SizedBox(height: 10),
+                OutlinedButton.icon(
+                  onPressed: () => Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => const TutorLogsScreen())),
+                  icon: const Icon(Icons.psychology_alt_outlined),
+                  label: const Text('Journal du tuteur IA'),
                 ),
                 const SectionTitle('Examens'),
                 if (exams.isEmpty)
@@ -295,6 +311,16 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
                     ],
                   ),
                   ..._lessonRows(chapters[i]),
+                  TextButton.icon(
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) =>
+                              FlashcardEditor(subject: widget.subject, chapter: chapters[i])),
+                    ),
+                    icon: const Icon(Icons.style_outlined),
+                    label: const Text('Flashcards du chapitre'),
+                  ),
                   TextButton.icon(
                     onPressed: () => _openLesson(chapters[i], null,
                         _lessons.where((l) => l.chapterId == chapters[i].id).length),

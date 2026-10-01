@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _pass2 = TextEditingController();
   bool _busy = false;
   bool _hide = true;
+  bool _consent = false;
   String? _error;
 
   @override
@@ -32,6 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Future<void> _submit() async {
     if (!_form.currentState!.validate()) return;
+    if (_register && !_consent) {
+      setState(() => _error = 'Coche la case : tes parents doivent être d\'accord.');
+      return;
+    }
     setState(() {
       _busy = true;
       _error = null;
@@ -43,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
           username: _user.text,
           password: _pass.text,
           examId: '',
+          parentConsent: _consent,
         );
       } else {
         await AuthService.instance.signIn(_user.text, _pass.text);
@@ -122,6 +128,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: const InputDecoration(labelText: 'Confirme le mot de passe'),
                         validator: (v) =>
                             v != _pass.text ? 'Les deux mots de passe sont différents.' : null,
+                      ),
+                    ],
+                    if (_register) ...[
+                      const SizedBox(height: 10),
+                      CheckboxListTile(
+                        contentPadding: EdgeInsets.zero,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        value: _consent,
+                        onChanged: (v) => setState(() => _consent = v ?? false),
+                        title: const Text(
+                            'Mes parents sont d\'accord pour que j\'utilise Jàng, '
+                            'y compris la discussion et le tuteur IA.'),
                       ),
                     ],
                     if (_error != null) ...[

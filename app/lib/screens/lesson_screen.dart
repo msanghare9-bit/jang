@@ -6,7 +6,9 @@ import '../models.dart';
 import '../services/progress_repo.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/discussion.dart';
 import 'quiz_screen.dart';
+import 'tutor_screen.dart';
 
 class LessonScreen extends StatefulWidget {
   final Lesson lesson;
@@ -123,6 +125,29 @@ class _LessonScreenState extends State<LessonScreen> {
               title: 'Leçon en préparation',
               message: 'Son contenu sera bientôt disponible.',
             ),
+          SectionTitle('Ton avis', color: color),
+          _VoteRow(lesson: lesson, color: color),
+          SectionTitle('Besoin d\'aide ?', color: color),
+          Card(
+            child: ListTile(
+              minVerticalPadding: 12,
+              leading: CircleAvatar(
+                backgroundColor: color,
+                foregroundColor: Colors.white,
+                child: const Icon(Icons.psychology_alt_outlined),
+              ),
+              title: Text('Demander au tuteur IA', style: t.titleSmall),
+              subtitle: Text('Il explique la leçon en français simple.', style: t.bodySmall),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => TutorScreen(lesson: lesson, subject: widget.subject)),
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          DiscussionSection(lesson: lesson, color: color),
         ],
       ),
     );
@@ -169,6 +194,43 @@ class _QuizCard extends StatelessWidget {
             ),
           ),
         );
+      },
+    );
+  }
+}
+
+class _VoteRow extends StatelessWidget {
+  final Lesson lesson;
+  final Color color;
+  const _VoteRow({required this.lesson, required this.color});
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder(
+      valueListenable: ProgressRepo.instance.revision,
+      builder: (context, _, __) {
+        final v = ProgressRepo.instance.of(lesson.id)?.vote ?? 0;
+        Widget button(int value, IconData on, IconData off, String label) {
+          final active = v == value;
+          return Expanded(
+            child: OutlinedButton.icon(
+              style: OutlinedButton.styleFrom(
+                foregroundColor: active ? Colors.white : color,
+                backgroundColor: active ? color : null,
+                side: BorderSide(color: color),
+              ),
+              onPressed: () => ProgressRepo.instance.vote(lesson, active ? 0 : value),
+              icon: Icon(active ? on : off),
+              label: Text(label),
+            ),
+          );
+        }
+
+        return Row(children: [
+          button(1, Icons.thumb_up, Icons.thumb_up_outlined, 'J\'aime'),
+          const SizedBox(width: 10),
+          button(-1, Icons.thumb_down, Icons.thumb_down_outlined, 'Je n\'aime pas'),
+        ]);
       },
     );
   }

@@ -59,6 +59,7 @@ class AuthService {
     required String username,
     required String password,
     required String examId,
+    bool parentConsent = false,
   }) async {
     UserCredential cred;
     try {
@@ -73,6 +74,7 @@ class AuthService {
       'username': normalizeUsername(username),
       'role': 'student',
       'examId': examId,
+      'parentConsent': parentConsent,
       'createdAt': FieldValue.serverTimestamp(),
     });
     StatsService.instance.recordNewUser();
@@ -109,9 +111,18 @@ class AuthService {
     final p = profile.value;
     if (p == null) return;
     _db.collection('users').doc(p.uid).update({'examId': examId});
-    profile.value = UserProfile(
-        uid: p.uid, name: p.name, username: p.username, role: p.role, examId: examId);
+    profile.value = p.copyWith(examId: examId);
   }
+
+  /// Accord des parents (requis pour le tuteur IA et la discussion).
+  Future<void> setParentConsent() async {
+    final p = profile.value;
+    if (p == null) return;
+    _db.collection('users').doc(p.uid).update({'parentConsent': true});
+    profile.value = p.copyWith(parentConsent: true);
+  }
+
+  Future<String?> idToken() async => _auth.currentUser?.getIdToken();
 
   Future<void> signOut() async {
     profile.value = null;

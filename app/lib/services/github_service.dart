@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi' show Abi;
 import 'dart:io';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,7 +12,18 @@ class GithubService {
   static final instance = GithubService._();
 
   static const repo = 'msanghare9-bit/jang';
-  static const apkUrl = 'https://github.com/$repo/releases/latest/download/jang.apk';
+  static const _download = 'https://github.com/$repo/releases/latest/download';
+
+  /// Fichier universel (tous les téléphones) : utilisé pour le partage.
+  static const shareUrl = '$_download/jang.apk';
+
+  /// Fichier adapté au processeur de ce téléphone (plus léger) : utilisé pour les mises à jour.
+  static String get apkUrl {
+    final abi = Abi.current();
+    if (abi == Abi.androidArm64) return '$_download/jang-64.apk';
+    if (abi == Abi.androidArm) return '$_download/jang-32.apk';
+    return shareUrl;
+  }
 
   Future<dynamic> _get(String path) async {
     final client = HttpClient()..connectionTimeout = const Duration(seconds: 15);

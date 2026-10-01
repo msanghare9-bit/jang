@@ -98,4 +98,17 @@ class StatsService {
       'updatedAt': FieldValue.serverTimestamp(),
     }, SetOptions(merge: true)).catchError((e) => debugPrint('Statistiques : $e'));
   }
+
+  /// Changement d'avis sur une leçon (ancien -> nouveau : 1, -1 ou 0).
+  void recordVote(Lesson lesson, int oldVote, int newVote) {
+    final likes = (newVote == 1 ? 1 : 0) - (oldVote == 1 ? 1 : 0);
+    final dislikes = (newVote == -1 ? 1 : 0) - (oldVote == -1 ? 1 : 0);
+    _db.collection('statsLessons').doc(lesson.id).set({
+      'examId': lesson.examId,
+      'subjectId': lesson.subjectId,
+      if (likes != 0) 'likes': FieldValue.increment(likes),
+      if (dislikes != 0) 'dislikes': FieldValue.increment(dislikes),
+      'updatedAt': FieldValue.serverTimestamp(),
+    }, SetOptions(merge: true)).catchError((e) => debugPrint('Statistiques : $e'));
+  }
 }

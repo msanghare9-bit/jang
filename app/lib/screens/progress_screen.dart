@@ -6,6 +6,7 @@ import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/engagement.dart';
 
 class ProgressScreen extends StatefulWidget {
   const ProgressScreen({super.key});
@@ -74,6 +75,11 @@ class _ProgressScreenState extends State<ProgressScreen> {
                           child: _Stat(value: avg == null ? '–' : '$avg %', label: 'moyenne QCM')),
                     ],
                   ),
+                  const SizedBox(height: 12),
+                  const ReviewCard(),
+                  const WeekGoalCard(),
+                  const SectionTitle('Mes badges'),
+                  const BadgeGrid(),
                   const SectionTitle('Par matière'),
                   if (subjects.isEmpty)
                     const EmptyState(

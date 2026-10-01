@@ -7,6 +7,7 @@ import '../services/github_service.dart';
 import '../theme.dart';
 import '../version.dart';
 import '../widgets/common.dart';
+import '../widgets/engagement.dart';
 import 'home_screen.dart' show formatDate, showUpdateDialog;
 
 class ProfileScreen extends StatefulWidget {
@@ -137,6 +138,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 },
                 icon: const Icon(Icons.system_update_outlined),
                 label: const Text('Rechercher une mise à jour'),
+              ),
+              const SizedBox(height: 10),
+              OutlinedButton.icon(
+                onPressed: () => shareApp(context),
+                icon: const Icon(Icons.share_outlined),
+                label: const Text('Partager l\'application'),
               ),
               const SizedBox(height: 28),
               FilledButton.tonal(

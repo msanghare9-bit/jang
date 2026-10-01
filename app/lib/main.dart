@@ -10,6 +10,7 @@ import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 import 'services/auth_service.dart';
 import 'services/content_repo.dart';
+import 'services/engagement_service.dart';
 import 'services/progress_repo.dart';
 import 'theme.dart';
 
@@ -64,6 +65,7 @@ class _AuthGateState extends State<AuthGate> {
     _loading = true;
     await AuthService.instance.loadProfile();
     await ProgressRepo.instance.load(user.uid);
+    await EngagementService.instance.init(user.uid);
     _loadedFor = user.uid;
     _loading = false;
     if (mounted) setState(() {});

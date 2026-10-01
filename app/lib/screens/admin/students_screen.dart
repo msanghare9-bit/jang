@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../../services/discussion_service.dart';
+
 import '../../models.dart';
 import '../../services/content_repo.dart';
 import '../../theme.dart';
@@ -150,6 +152,29 @@ class StudentDetailScreen extends StatefulWidget {
 
 class _StudentDetailScreenState extends State<StudentDetailScreen> {
   late final Future<(List<LessonProgress>, List<Subject>, List<Lesson>)> _future = _load();
+  late bool _blocked = widget.data['blocked'] == true;
+
+  Future<void> _toggleBlock() async {
+    final name = '${widget.data['name'] ?? 'cet élève'}';
+    final block = !_blocked;
+    if (!await confirm(
+        context,
+        block ? 'Bloquer $name ?' : 'Débloquer $name ?',
+        block
+            ? 'Il ne pourra plus écrire dans les discussions.'
+            : 'Il pourra de nouveau écrire dans les discussions.',
+        ok: block ? 'Bloquer' : 'Débloquer')) {
+      return;
+    }
+    try {
+      await DiscussionService.instance.setBlocked(widget.uid, block);
+      if (!mounted) return;
+      setState(() => _blocked = block);
+      showMessage(context, block ? '$name est bloqué.' : '$name est débloqué.');
+    } catch (e) {
+      if (mounted) showMessage(context, 'Échec : $e');
+    }
+  }
 
   Future<(List<LessonProgress>, List<Subject>, List<Lesson>)> _load() async {
     final s = await FirebaseFirestore.instance
@@ -193,6 +218,12 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
               Text('Dernière activité : ${_dayLabel(m['lastActiveDay'] as String?)}',
                   style: t.bodyMedium),
               Text('QCM faits (toutes tentatives) : ${_i(m['quizzesTaken'])}', style: t.bodyMedium),
+              const SizedBox(height: 10),
+              OutlinedButton.icon(
+                onPressed: _toggleBlock,
+                icon: Icon(_blocked ? Icons.lock_open : Icons.block),
+                label: Text(_blocked ? 'Débloquer (discussions)' : 'Bloquer dans les discussions'),
+              ),
               if (progress.isEmpty)
                 const EmptyState(
                     icon: Icons.hourglass_empty,
