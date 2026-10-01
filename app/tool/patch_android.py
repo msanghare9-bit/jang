@@ -61,5 +61,14 @@ if icons.exists():
         for f in d.iterdir():
             shutil.copy(f, target / f.name)
 
+# 4. Kotlin récent : les bibliothèques Firebase actuelles l'exigent (Flutter 3.32 fournit une version plus ancienne).
+for name in ("settings.gradle.kts", "settings.gradle"):
+    f = root / "android" / name
+    if f.exists():
+        t = f.read_text()
+        t = re.sub(r'(id\(?\s*"org\.jetbrains\.kotlin\.android"\s*\)?\s*version\s*)"[^"]+"', r'\g<1>"2.3.0"', t)
+        f.write_text(t)
+        print(t)
+
 print("Projet Android adapté.")
 print(kts.read_text() if kts.exists() else groovy.read_text())
