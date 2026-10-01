@@ -15,7 +15,7 @@ kts = app / "build.gradle.kts"
 groovy = app / "build.gradle"
 if kts.exists():
     s = kts.read_text()
-    s = re.sub(r"minSdk\s*=\s*[^\n]+", "minSdk = maxOf(flutter.minSdkVersion, 23)", s, count=1)
+    s = re.sub(r"minSdk\s*=\s*[^\n]+", "minSdk = 23", s, count=1)
     if 'create("release")' not in s:
         signing = '''
     signingConfigs {
