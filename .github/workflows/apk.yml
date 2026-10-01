@@ -39,6 +39,8 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+          # 3.32 : dernière version qui accepte Android 6 (les suivantes exigent Android 7)
+          flutter-version: '3.32.8'
           cache: true
 
       - name: Préparer le projet
