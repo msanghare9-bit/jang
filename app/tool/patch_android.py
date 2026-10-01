@@ -35,6 +35,10 @@ if kts.exists():
         s = s.replace('signingConfig = signingConfigs.getByName("debug")',
                       'signingConfig = if (System.getenv("JANG_KEYSTORE_PATH").isNullOrEmpty()) '
                       'signingConfigs.getByName("debug") else signingConfigs.getByName("release")', 1)
+    # Syntaxe exigée par Kotlin 2.3 pour la version Java cible.
+    if re.search(r"kotlinOptions\s*\{", s):
+        s = re.sub(r"\n\s*kotlinOptions\s*\{[^}]*\}", "", s, count=1)
+        s += "\nkotlin {\n    compilerOptions {\n        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)\n    }\n}\n"
     kts.write_text(s)
 elif groovy.exists():
     s = groovy.read_text()
