@@ -13,7 +13,7 @@ class JangColors {
   static const errorBg = Color(0xFFF8E3E4);
   static const noteBg = Color(0xFFE6EFEA);
 
-  /// Couleurs proposées pour les matières (la première série est celle du BFEM).
+  /// Couleurs proposées pour les matières (la première série : français, maths, anglais, SVT).
   static const subjectPalette = <String>[
     '#8C2F39', // Français
     '#1F4E8C', // Maths

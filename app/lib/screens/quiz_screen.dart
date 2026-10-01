@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models.dart';
 import '../services/progress_repo.dart';
 import '../theme.dart';
+import '../widgets/cheer.dart';
 import '../widgets/common.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -20,6 +21,10 @@ class _QuizScreenState extends State<QuizScreen> {
   final _scroll = ScrollController();
 
   List<QuizQuestion> get _quiz => widget.lesson.quiz;
+
+  // Messages choisis une seule fois à la correction (ils ne changent pas en faisant défiler).
+  String _endMessage = '';
+  List<String> _feedback = const [];
 
   @override
   void initState() {
@@ -48,6 +53,23 @@ class _QuizScreenState extends State<QuizScreen> {
           'Il reste $missing question${missing > 1 ? 's' : ''} sans réponse. Réponds à tout avant de soumettre.');
       return;
     }
+    final before = ProgressRepo.instance.of(widget.lesson.id);
+    final previousBest = before?.quizDone == true ? (before!.bestScore ?? 0) : -1;
+    final score = _score;
+    _endMessage = Cheer.quizEnd(score, _quiz.length,
+        improved: previousBest >= 0 && score > previousBest);
+    var wrongRow = 0;
+    final feedback = <String>[];
+    for (var i = 0; i < _quiz.length; i++) {
+      if (_answers[i] == _quiz[i].answer) {
+        wrongRow = 0;
+        feedback.add(Cheer.right());
+      } else {
+        wrongRow++;
+        feedback.add(wrongRow >= 3 ? Cheer.streakWrong() : Cheer.wrong());
+      }
+    }
+    _feedback = feedback;
     ProgressRepo.instance.recordQuiz(
         widget.lesson, [for (var i = 0; i < _quiz.length; i++) _answers[i] == _quiz[i].answer]);
     setState(() => _submitted = true);
@@ -78,7 +100,7 @@ class _QuizScreenState extends State<QuizScreen> {
         children: [
           Text(widget.lesson.title, style: titleStyle(22)),
           const SizedBox(height: 12),
-          if (_submitted) _ScoreBanner(score: _score, total: _quiz.length, color: color),
+          if (_submitted) _ScoreBanner(score: _score, total: _quiz.length, color: color, message: _endMessage),
           for (var i = 0; i < _quiz.length; i++) _question(context, i, color),
           const SizedBox(height: 8),
           if (!_submitted) ...[
@@ -133,6 +155,14 @@ class _QuizScreenState extends State<QuizScreen> {
               const SizedBox(height: 10),
               for (var o = 0; o < q.options.length; o++)
                 if (q.options[o].trim().isNotEmpty) _option(context, i, o, color),
+              if (_submitted && i < _feedback.length)
+                Padding(
+                  padding: const EdgeInsets.only(top: 2, bottom: 4),
+                  child: Text(_feedback[i],
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          color: correct ? JangColors.success : JangColors.textSecondary)),
+                ),
               if (_submitted && !correct && q.explanation.trim().isNotEmpty)
                 Container(
                   margin: const EdgeInsets.only(top: 6, bottom: 4),
@@ -235,21 +265,12 @@ class _ScoreBanner extends StatelessWidget {
   final int score;
   final int total;
   final Color color;
-  const _ScoreBanner({required this.score, required this.total, required this.color});
+  final String message;
+  const _ScoreBanner(
+      {required this.score, required this.total, required this.color, required this.message});
 
   @override
   Widget build(BuildContext context) {
-    final ratio = total == 0 ? 0.0 : score / total;
-    final String message;
-    if (ratio >= 0.9) {
-      message = 'Excellent travail.';
-    } else if (ratio >= 0.7) {
-      message = 'Bien joué. Relis les explications de tes erreurs.';
-    } else if (ratio >= 0.5) {
-      message = 'C\'est un début. Revois la leçon puis recommence.';
-    } else {
-      message = 'Reprends la leçon et les vidéos, puis refais le QCM.';
-    }
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(18),

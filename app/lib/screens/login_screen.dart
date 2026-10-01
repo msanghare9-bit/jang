@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text('Jàng', style: titleStyle(46, color: JangColors.primary, weight: 800)),
                     const SizedBox(height: 6),
-                    Text('Réviser le BFEM, leçon après leçon.',
+                    Text('Apprendre, leçon après leçon.',
                         style: t.bodyLarge!.copyWith(color: JangColors.textSecondary)),
                     const SizedBox(height: 32),
                     Text(_register ? 'Créer mon compte' : 'Se connecter', style: titleStyle(24)),

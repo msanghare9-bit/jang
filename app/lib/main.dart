@@ -16,15 +16,100 @@ import 'theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // Copie locale illimitée : tout le contenu téléchargé reste disponible hors connexion.
-  FirebaseFirestore.instance.settings = const Settings(
-    persistenceEnabled: true,
-    cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
-  );
-  await ContentRepo.instance.init();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  runApp(const JangApp());
+  // Une erreur d'affichage montre un message lisible au lieu d'un écran vide.
+  ErrorWidget.builder = (details) => Material(
+        color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Text('Erreur d\'affichage : ${details.exceptionAsString()}',
+              style: const TextStyle(color: Colors.black, fontSize: 14)),
+        ),
+      );
+  // L'application s'affiche tout de suite ; le démarrage se fait derrière l'écran d'accueil.
+  runApp(const _Bootstrap());
+}
+
+/// Démarre Firebase puis affiche l'application. En cas de problème, affiche la cause.
+class _Bootstrap extends StatefulWidget {
+  const _Bootstrap();
+
+  @override
+  State<_Bootstrap> createState() => _BootstrapState();
+}
+
+class _BootstrapState extends State<_Bootstrap> {
+  bool _ready = false;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _start();
+  }
+
+  Future<void> _start() async {
+    setState(() => _error = null);
+    try {
+      if (Firebase.apps.isEmpty) {
+        await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
+            .timeout(const Duration(seconds: 30));
+        // Copie locale illimitée : tout le contenu téléchargé reste disponible hors connexion.
+        FirebaseFirestore.instance.settings = const Settings(
+          persistenceEnabled: true,
+          cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
+        );
+      }
+      await ContentRepo.instance.init().timeout(const Duration(seconds: 15));
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+      if (mounted) setState(() => _ready = true);
+    } catch (e) {
+      if (mounted) setState(() => _error = '$e');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_ready) return const JangApp();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: JangColors.primary,
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Text('Jàng',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, fontSize: 48, fontWeight: FontWeight.w800)),
+                const SizedBox(height: 24),
+                if (_error == null)
+                  const Center(child: CircularProgressIndicator(color: Colors.white))
+                else ...[
+                  const Text('Le démarrage a échoué. Vérifie ta connexion internet, puis réessaie.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 16)),
+                  const SizedBox(height: 12),
+                  Text('Détail : $_error',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                  const SizedBox(height: 20),
+                  FilledButton(
+                    style: FilledButton.styleFrom(
+                        backgroundColor: Colors.white, foregroundColor: JangColors.primary),
+                    onPressed: _start,
+                    child: const Text('Réessayer'),
+                  ),
+                ],
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class JangApp extends StatelessWidget {

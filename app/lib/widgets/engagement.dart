@@ -9,7 +9,7 @@ import 'common.dart';
 
 /// Message de partage de l'application.
 String get shareText =>
-    'Je révise le BFEM avec l\'application Jàng : leçons, vidéos et QCM corrigés, même sans internet. '
+    'J\'apprends avec l\'application Jàng : leçons, vidéos et QCM corrigés, même sans internet. '
     'Télécharge-la ici : ${GithubService.shareUrl}';
 
 /// Ouvre WhatsApp ou les SMS avec le message de partage.
@@ -270,8 +270,8 @@ void showBadgeDialog(BuildContext context, BadgeDef b) {
     context: context,
     builder: (c) => AlertDialog(
       icon: Icon(b.icon, size: 48, color: JangColors.primary),
-      title: Text('Nouveau badge', style: titleStyle(20)),
-      content: Text('${b.title}\n${b.description}.', textAlign: TextAlign.center),
+      title: Text('Félicitations, nouveau badge !', style: titleStyle(20), textAlign: TextAlign.center),
+      content: Text('${b.title}\n${b.description}.\nTu peux être fier de toi, continue !', textAlign: TextAlign.center),
       actions: [
         FilledButton(onPressed: () => Navigator.pop(c), child: const Text('Super')),
       ],

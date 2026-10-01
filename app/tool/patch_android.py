@@ -53,6 +53,10 @@ m = manifest.read_text()
 if "android.permission.INTERNET" not in m:
     m = m.replace("<application", '<uses-permission android:name="android.permission.INTERNET"/>\n    <application', 1)
 m = re.sub(r'android:label="[^"]*"', 'android:label="Jàng"', m, count=1)
+# Moteur graphique classique (Skia) : évite l'écran blanc sur certains téléphones.
+if "EnableImpeller" not in m:
+    m = m.replace("</application>",
+                  '    <meta-data android:name="io.flutter.embedding.android.EnableImpeller" android:value="false" />\n    </application>', 1)
 manifest.write_text(m)
 
 # 3. Icône de l'application.

@@ -76,13 +76,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
-              const SectionTitle('Mon examen'),
+              const SectionTitle('Mon niveau'),
               FutureBuilder<List<Exam>>(
                 future: _exams,
                 builder: (context, snap) {
                   final exams = snap.data ?? const <Exam>[];
                   if (exams.isEmpty) {
-                    return Text('Aucun examen téléchargé pour le moment.', style: t.bodySmall);
+                    return Text('Aucun niveau téléchargé pour le moment.', style: t.bodySmall);
                   }
                   return Column(
                     children: exams

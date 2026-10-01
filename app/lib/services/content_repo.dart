@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
 
-/// Accès au contenu (examens, matières, chapitres, leçons).
+/// Accès au contenu (niveaux, matières, chapitres, leçons).
 ///
 /// Pour rester dans le quota gratuit et fonctionner hors connexion :
 /// - l'affichage lit toujours la copie enregistrée sur le téléphone (cache Firestore) ;
@@ -199,10 +199,10 @@ class ContentRepo {
     notifyChanged();
   }
 
-  /// Crée le BFEM et ses quatre matières (utile au premier lancement).
-  Future<void> seedBfem() async {
+  /// Crée un premier niveau avec quatre matières (utile au premier lancement).
+  Future<void> seedFirstLevel(String name) async {
     final examId = newId('exams');
-    save('exams', examId, Exam(id: examId, name: 'BFEM', order: 0).toMap());
+    save('exams', examId, Exam(id: examId, name: name, order: 0).toMap());
     const subjects = [
       ['Français', '#8C2F39'],
       ['Mathématiques', '#1F4E8C'],

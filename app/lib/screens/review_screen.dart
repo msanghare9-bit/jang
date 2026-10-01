@@ -5,6 +5,7 @@ import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
 import '../services/stats_service.dart';
 import '../theme.dart';
+import '../widgets/cheer.dart';
 import '../widgets/common.dart';
 
 class _ReviewItem {
@@ -27,6 +28,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
   late Future<List<_ReviewItem>> _future = _load();
   int _index = 0;
   int? _chosen;
+  String _cheer = '';
+  int _wrongRow = 0;
   int _ok = 0;
 
   Future<List<_ReviewItem>> _load() async {
@@ -75,6 +78,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
         padding: const EdgeInsets.all(24),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           Text('$_ok / $n', style: titleStyle(44, color: JangColors.primary, weight: 800)),
+          const SizedBox(height: 8),
+          Text(Cheer.quizEnd(_ok, n), textAlign: TextAlign.center, style: titleStyle(18)),
           const SizedBox(height: 8),
           const Text(
               'Une question disparaît de la liste quand tu la réussis deux fois de suite.',
@@ -139,7 +144,14 @@ class _ReviewScreenState extends State<ReviewScreen> {
                           ProgressRepo.instance.recordReview(item.lesson, item.key, ok);
                           setState(() {
                             _chosen = i;
-                            if (ok) _ok++;
+                            if (ok) {
+                              _ok++;
+                              _wrongRow = 0;
+                              _cheer = Cheer.right();
+                            } else {
+                              _wrongRow++;
+                              _cheer = _wrongRow >= 3 ? Cheer.streakWrong() : Cheer.wrong();
+                            }
                           });
                         },
                   child: ConstrainedBox(
@@ -157,9 +169,9 @@ class _ReviewScreenState extends State<ReviewScreen> {
             ),
         if (answered) ...[
           const SizedBox(height: 6),
-          Text(_chosen == q.answer ? 'Bonne réponse !' : 'Ce n\'est pas ça.',
+          Text(_cheer,
               style: titleStyle(18,
-                  color: _chosen == q.answer ? JangColors.success : JangColors.error)),
+                  color: _chosen == q.answer ? JangColors.success : JangColors.primary)),
           if (q.explanation.trim().isNotEmpty) ...[
             const SizedBox(height: 8),
             Container(

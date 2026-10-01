@@ -10,7 +10,7 @@ import 'lesson_editor.dart';
 import 'moderation_screen.dart';
 import 'stats_screen.dart';
 
-/// Onglet « Gestion » du responsable : examens > matières > chapitres > leçons.
+/// Onglet « Gestion » du responsable : niveaux > matières > chapitres > leçons.
 class AdminHome extends StatefulWidget {
   const AdminHome({super.key});
 
@@ -28,7 +28,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
   }
 
   Future<void> _addExam() async {
-    final name = await askText(context, 'Nouvel examen', 'Nom (ex. : Bac L)');
+    final name = await askText(context, 'Nouveau niveau', 'Nom (ex. : 3e, Terminale, Anglais débutant)');
     if (name == null) return;
     final repo = ContentRepo.instance;
     final id = repo.newId('exams');
@@ -71,15 +71,18 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                   icon: const Icon(Icons.psychology_alt_outlined),
                   label: const Text('Journal du tuteur IA'),
                 ),
-                const SectionTitle('Examens'),
+                const SectionTitle('Niveaux'),
                 if (exams.isEmpty)
                   EmptyState(
                     icon: Icons.school_outlined,
-                    title: 'Aucun examen',
-                    message: 'Commence par créer le BFEM avec ses quatre matières.',
+                    title: 'Aucun niveau',
+                    message: 'Commence par créer un niveau avec quatre matières (français, maths, anglais, SVT).',
                     action: FilledButton(
-                      onPressed: () => ContentRepo.instance.seedBfem(),
-                      child: const Text('Créer le BFEM'),
+                      onPressed: () async {
+                        final n = await askText(context, 'Premier niveau', 'Nom (ex. : 3e)');
+                        if (n != null) ContentRepo.instance.seedFirstLevel(n);
+                      },
+                      child: const Text('Créer un niveau'),
                     ),
                   ),
                 for (var i = 0; i < exams.length; i++)
@@ -92,13 +95,13 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                         ? () => swapIn(context, 'exams', exams, i, i + 1)
                         : null,
                     onEdit: () async {
-                      final n = await askText(context, 'Renommer l\'examen', 'Nom',
+                      final n = await askText(context, 'Renommer le niveau', 'Nom',
                           initial: exams[i].name);
                       if (n != null) ContentRepo.instance.save('exams', exams[i].id, {'name': n});
                     },
                     onDelete: () async {
                       if (await confirm(context, 'Supprimer ${exams[i].name} ?',
-                          'L\'examen et tout son contenu ne seront plus visibles par les élèves.',
+                          'Le niveau et tout son contenu ne seront plus visibles par les élèves.',
                           ok: 'Supprimer')) {
                         ContentRepo.instance.remove('exams', exams[i].id);
                       }
@@ -106,7 +109,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                   ),
                 const SizedBox(height: 8),
                 OutlinedButton.icon(
-                    onPressed: _addExam, icon: const Icon(Icons.add), label: const Text('Ajouter un examen')),
+                    onPressed: _addExam, icon: const Icon(Icons.add), label: const Text('Ajouter un niveau')),
               ],
             ),
     );
@@ -159,7 +162,7 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
               children: [
                 const SectionTitle('Matières'),
                 if (subjects.isEmpty)
-                  Text('Aucune matière pour cet examen.', style: Theme.of(context).textTheme.bodySmall),
+                  Text('Aucune matière pour ce niveau.', style: Theme.of(context).textTheme.bodySmall),
                 for (var i = 0; i < subjects.length; i++)
                   AdminRow(
                     title: subjects[i].name,
@@ -192,7 +195,7 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
   }
 }
 
-/// Échange l'ordre de deux éléments d'une liste triée (examens, matières, chapitres, leçons).
+/// Échange l'ordre de deux éléments d'une liste triée (niveaux, matières, chapitres, leçons).
 void swapIn(BuildContext context, String collection, List<dynamic> items, int a, int b) {
   final ia = items[a];
   final ib = items[b];

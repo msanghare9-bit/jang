@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../models.dart';
 import '../services/flashcard_service.dart';
 import '../theme.dart';
+import '../widgets/cheer.dart';
 import '../widgets/common.dart';
 
 /// Révision d'un paquet de flashcards.
@@ -21,6 +22,7 @@ class FlashcardsScreen extends StatefulWidget {
 class _FlashcardsScreenState extends State<FlashcardsScreen> {
   List<Flashcard>? _queue;
   int _done = 0;
+  int _cards = 0;
   int _knew = 0;
   bool _flipped = false;
 
@@ -36,6 +38,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         : await FlashcardService.instance.dueCards(widget.deck);
     setState(() {
       _queue = cards;
+      _cards = cards.length;
       _done = 0;
       _knew = 0;
       _flipped = false;
@@ -74,10 +77,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               ? Center(
                   child: EmptyState(
                     icon: Icons.check_circle_outline,
-                    title: _done == 0 ? 'Rien à réviser aujourd\'hui' : 'Séance terminée',
+                    title: _done == 0 ? 'Rien à réviser aujourd\'hui' : 'Séance terminée, bravo !',
                     message: _done == 0
                         ? 'Tu connais bien ces cartes. Elles reviendront plus tard.'
-                        : 'Tu savais $_knew carte${_knew > 1 ? 's' : ''} du premier coup.',
+                        : Cheer.flashcardsEnd(_knew, _cards),
                     action: OutlinedButton(
                         onPressed: () => _start(all: true),
                         child: const Text('Revoir toutes les cartes')),

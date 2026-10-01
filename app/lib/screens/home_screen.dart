@@ -7,6 +7,7 @@ import '../services/progress_repo.dart';
 import '../services/stats_service.dart';
 import '../services/github_service.dart';
 import '../theme.dart';
+import '../widgets/cheer.dart';
 import '../widgets/common.dart';
 import '../widgets/engagement.dart';
 import '../services/engagement_service.dart';
@@ -95,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// Onglet « Matières » : les matières de l'examen choisi par l'élève.
+/// Onglet « Matières » : les matières du niveau choisi par l'élève.
 class SubjectsTab extends StatefulWidget {
   const SubjectsTab({super.key});
 
@@ -105,6 +106,7 @@ class SubjectsTab extends StatefulWidget {
 
 class _SubjectsTabState extends State<SubjectsTab> {
   late Future<_SubjectsData> _future;
+  late final String _welcome = Cheer.welcome(_firstName(), EngagementService.instance.streak);
 
   @override
   void initState() {
@@ -173,8 +175,10 @@ class _SubjectsTabState extends State<SubjectsTab> {
               children: [
                 Text('Bonjour ${_firstName()}', style: titleStyle(26)),
                 const SizedBox(height: 4),
+                Text(_welcome, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: JangColors.primary)),
+                const SizedBox(height: 2),
                 Text(
-                  data.exam == null ? 'Choisis ton examen pour commencer.' : 'Préparation au ${data.exam!.name}',
+                  data.exam == null ? 'Choisis ton niveau pour commencer.' : 'Niveau : ${data.exam!.name}',
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
