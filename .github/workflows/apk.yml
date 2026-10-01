@@ -80,8 +80,8 @@ jobs:
           flutter build apk $OPTS --split-per-abi --target-platform android-arm,android-arm64
           cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk "$RUNNER_TEMP/jang-64.apk"
           cp build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk "$RUNNER_TEMP/jang-32.apk"
-          # Un fichier universel (partage et première installation)
-          flutter build apk $OPTS --target-platform android-arm,android-arm64
+          # Un fichier universel (partage, première installation, émulateurs comme BlueStacks)
+          flutter build apk $OPTS --target-platform android-arm,android-arm64,android-x64
           cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/jang.apk"
           ls -la "$RUNNER_TEMP"/*.apk
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
