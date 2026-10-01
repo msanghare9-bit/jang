@@ -335,10 +335,12 @@ class _SubjectStats extends StatelessWidget {
     final color = JangColors.fromHex(subject.color);
     final lessons = stats.lessons.where((l) => l.subjectId == subject.id).toList()
       ..sort((a, b) => a.order.compareTo(b.order));
-    var views = 0, attempts = 0, sumPct = 0;
+    var views = 0, attempts = 0, sumPct = 0, likes = 0, dislikes = 0;
     for (final l in lessons) {
       final d = stats.lessonStats[l.id];
       if (d == null) continue;
+      likes += _i(d['likes']);
+      dislikes += _i(d['dislikes']);
       views += _i(d['views']);
       attempts += _i(d['attempts']);
       sumPct += _i(d['sumPct']);
@@ -355,7 +357,7 @@ class _SubjectStats extends StatelessWidget {
           subtitle: Text(
             '$views ouverture${views > 1 ? 's' : ''} de leçon · $attempts QCM'
             '${avg == null ? '' : ' · moyenne $avg %'}'
-        '${_i(d['likes']) + _i(d['dislikes']) == 0 ? '' : ' · ${_i(d['likes'])} j\'aime, ${_i(d['dislikes'])} je n\'aime pas'}',
+            '${likes + dislikes == 0 ? '' : ' · $likes j\'aime, $dislikes je n\'aime pas'}',
             style: t.bodySmall,
           ),
           children: [
