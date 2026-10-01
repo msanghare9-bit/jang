@@ -15,7 +15,7 @@ class _ReviewItem {
   _ReviewItem(this.lesson, this.question, this.key);
 }
 
-/// Révision des erreurs : les questions ratées, une par une.
+/// Corriger mes erreurs : les questions ratées, une par une.
 /// Une question sort de la liste après deux bonnes réponses de suite.
 class ReviewScreen extends StatefulWidget {
   const ReviewScreen({super.key});
@@ -50,7 +50,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Révision des erreurs')),
+      appBar: AppBar(title: const Text('Corriger mes erreurs')),
       body: FutureBuilder<List<_ReviewItem>>(
         future: _future,
         builder: (context, snap) {

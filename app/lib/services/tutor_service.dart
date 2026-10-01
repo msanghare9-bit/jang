@@ -15,7 +15,7 @@ class TutorService {
 
   /// Adresse du relais Cloudflare (Worker).
   static const endpoint = 'https://jang-tuteur.msanghare9.workers.dev/ask';
-  static const perDay = 3;
+  static const perDay = 20;
 
   Future<TutorAnswer> ask(Lesson lesson, String question, {String? previousAnswer}) async {
     final token = await AuthService.instance.idToken();

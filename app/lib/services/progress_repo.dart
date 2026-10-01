@@ -170,7 +170,7 @@ class ProgressRepo {
     revision.value++;
   }
 
-  /// Résultat d'une question en « Révision des erreurs ».
+  /// Résultat d'une question en « Corriger mes erreurs ».
   void recordReview(Lesson lesson, String questionKey, bool ok) {
     final uid = _uid;
     final p = _byLesson[lesson.id];

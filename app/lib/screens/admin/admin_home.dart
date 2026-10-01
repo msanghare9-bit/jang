@@ -5,12 +5,11 @@ import '../../services/content_repo.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import 'admin_widgets.dart';
-import 'flashcard_editor.dart';
 import 'lesson_editor.dart';
 import 'moderation_screen.dart';
 import 'stats_screen.dart';
 
-/// Onglet « Gestion » du responsable : niveaux > matières > chapitres > leçons.
+/// Onglet « Gestion » du responsable : niveaux > matières > leçons.
 class AdminHome extends StatefulWidget {
   const AdminHome({super.key});
 
@@ -69,7 +68,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                   onPressed: () => Navigator.push(
                       context, MaterialPageRoute(builder: (_) => const TutorLogsScreen())),
                   icon: const Icon(Icons.psychology_alt_outlined),
-                  label: const Text('Journal du tuteur IA'),
+                  label: const Text('Questions posées au Prof'),
                 ),
                 const SectionTitle('Niveaux'),
                 if (exams.isEmpty)
@@ -215,55 +214,42 @@ class AdminSubjectScreen extends StatefulWidget {
 
 class _AdminSubjectScreenState extends State<AdminSubjectScreen>
     with RepoListener<AdminSubjectScreen> {
-  List<Chapter>? _chapters;
-  List<Lesson> _lessons = const [];
+  List<Lesson>? _lessons;
+  Map<String, FlashcardDeck> _decks = const {};
+  bool _migrated = false;
 
   @override
   Future<void> load() async {
     final repo = ContentRepo.instance;
-    final c = await repo.chapters(widget.subject.id);
+    if (!_migrated) {
+      _migrated = true;
+      // Les anciennes leçons rangées par chapitres deviennent une simple liste.
+      if (await repo.migrateSubject(widget.subject)) return; // load() sera rappelé
+    }
     final l = await repo.lessonsOfSubject(widget.subject.id);
+    final d = await repo.decksOfSubject(widget.subject.id);
     if (mounted) {
       setState(() {
-        _chapters = c;
         _lessons = l;
+        _decks = d;
       });
     }
   }
 
-  Future<void> _editChapter([Chapter? c]) async {
-    final title = await askText(context, c == null ? 'Nouveau chapitre' : 'Renommer le chapitre',
-        'Titre du chapitre',
-        initial: c?.title);
-    if (title == null) return;
-    final repo = ContentRepo.instance;
-    final id = c?.id ?? repo.newId('chapters');
-    repo.save('chapters', id, {
-      'examId': widget.subject.examId,
-      'subjectId': widget.subject.id,
-      'title': title,
-      if (c == null) 'order': _chapters?.length ?? 0,
-      if (c == null) 'deleted': false,
-    });
-  }
-
-  void _openLesson(Chapter chapter, Lesson? lesson, int nextOrder) {
+  void _openLesson(Lesson? lesson) {
+    final lessons = _lessons ?? const <Lesson>[];
+    final next = lessons.isEmpty ? 0 : lessons.map((l) => l.order).reduce((a, b) => a > b ? a : b) + 1;
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => LessonEditor(
-          subject: widget.subject,
-          chapter: chapter,
-          lesson: lesson,
-          nextOrder: nextOrder,
-        ),
+        builder: (_) => LessonEditor(subject: widget.subject, lesson: lesson, nextOrder: next),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final chapters = _chapters;
+    final lessons = _lessons;
     final color = JangColors.fromHex(widget.subject.color);
     return Scaffold(
       appBar: AppBar(
@@ -271,96 +257,125 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
         backgroundColor: color,
         foregroundColor: Colors.white,
       ),
-      body: chapters == null
+      body: lessons == null
           ? const Center(child: CircularProgressIndicator())
           : ListView(
-              padding: const EdgeInsets.fromLTRB(16, 8, 16, 28),
+              padding: const EdgeInsets.fromLTRB(16, 14, 16, 28),
               children: [
-                if (chapters.isEmpty)
+                Text('${lessons.length} leçon${lessons.length > 1 ? 's' : ''}',
+                    style: Theme.of(context).textTheme.bodySmall),
+                const SizedBox(height: 8),
+                if (lessons.isEmpty)
                   const EmptyState(
-                      icon: Icons.list_alt,
-                      title: 'Aucun chapitre',
-                      message: 'Crée un premier chapitre, puis ajoute-lui des leçons.'),
-                for (var i = 0; i < chapters.length; i++) ...[
-                  const SizedBox(height: 14),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: Text('${i + 1}. ${chapters[i].title}',
-                              style: titleStyle(19, color: color))),
-                      PopupMenuButton<String>(
-                        tooltip: 'Options du chapitre',
-                        onSelected: (v) async {
-                          if (v == 'edit') _editChapter(chapters[i]);
-                          if (v == 'up' && i > 0) swapIn(context, 'chapters', chapters, i, i - 1);
-                          if (v == 'down' && i < chapters.length - 1) {
-                            swapIn(context, 'chapters', chapters, i, i + 1);
-                          }
-                          if (v == 'delete' &&
-                              await confirm(context, 'Supprimer ce chapitre ?',
-                                  'Ses leçons ne seront plus visibles par les élèves.',
-                                  ok: 'Supprimer')) {
-                            ContentRepo.instance.remove('chapters', chapters[i].id);
-                          }
-                        },
-                        itemBuilder: (_) => [
-                          const PopupMenuItem(value: 'edit', child: Text('Renommer')),
-                          if (i > 0) const PopupMenuItem(value: 'up', child: Text('Monter')),
-                          if (i < chapters.length - 1)
-                            const PopupMenuItem(value: 'down', child: Text('Descendre')),
-                          const PopupMenuItem(value: 'delete', child: Text('Supprimer')),
-                        ],
-                      ),
-                    ],
+                      icon: Icons.menu_book_outlined,
+                      title: 'Aucune leçon',
+                      message: 'Ajoute une première leçon avec le bouton ci-dessous.'),
+                for (var i = 0; i < lessons.length; i++) _row(lessons, i, color),
+                const SizedBox(height: 8),
+                OutlinedButton.icon(
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: color,
+                    side: BorderSide(color: color, width: 1.5),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
                   ),
-                  ..._lessonRows(chapters[i]),
-                  TextButton.icon(
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) =>
-                              FlashcardEditor(subject: widget.subject, chapter: chapters[i])),
-                    ),
-                    icon: const Icon(Icons.style_outlined),
-                    label: const Text('Flashcards du chapitre'),
-                  ),
-                  TextButton.icon(
-                    onPressed: () => _openLesson(chapters[i], null,
-                        _lessons.where((l) => l.chapterId == chapters[i].id).length),
-                    icon: const Icon(Icons.add),
-                    label: const Text('Ajouter une leçon'),
-                  ),
-                ],
-                const SizedBox(height: 18),
-                FilledButton.icon(
-                  onPressed: () => _editChapter(),
+                  onPressed: () => _openLesson(null),
                   icon: const Icon(Icons.add),
-                  label: const Text('Ajouter un chapitre'),
+                  label: const Text('Ajouter une leçon'),
                 ),
+                const SizedBox(height: 10),
+                Text('Le menu ⋮ de chaque leçon : Modifier, Monter, Descendre, Supprimer.',
+                    style: Theme.of(context).textTheme.bodySmall),
               ],
             ),
     );
   }
 
-  List<Widget> _lessonRows(Chapter chapter) {
-    final lessons = _lessons.where((l) => l.chapterId == chapter.id).toList();
-    return [
-      for (var j = 0; j < lessons.length; j++)
-        AdminRow(
-          title: lessons[j].title,
-          subtitle:
-              '${lessons[j].videos.length} vidéo(s) · ${lessons[j].quiz.length} question(s) de QCM',
-          onTap: () => _openLesson(chapter, lessons[j], j),
-          onUp: j > 0 ? () => swapIn(context, 'lessons', lessons, j, j - 1) : null,
-          onDown: j < lessons.length - 1 ? () => swapIn(context, 'lessons', lessons, j, j + 1) : null,
-          onDelete: () async {
-            if (await confirm(context, 'Supprimer « ${lessons[j].title} » ?',
-                'Les élèves ne verront plus cette leçon.',
-                ok: 'Supprimer')) {
-              ContentRepo.instance.remove('lessons', lessons[j].id);
-            }
-          },
-        ),
+  Widget _row(List<Lesson> lessons, int i, Color color) {
+    final l = lessons[i];
+    final deck = _decks[l.id];
+    final tags = <(String, bool)>[
+      l.videos.isEmpty
+          ? ('Pas de vidéo', false)
+          : ('${l.videos.length} vidéo${l.videos.length > 1 ? 's' : ''}', true),
+      l.body.trim().isEmpty ? ('Pas de texte', false) : ('Leçon', true),
+      l.quiz.isEmpty ? ('Pas de QCM', false) : ('QCM ${l.quiz.length}', true),
+      deck == null ? ('Pas de révision', false) : ('Révision ${deck.cards.length}', true),
     ];
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: () => _openLesson(l),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(12, 12, 4, 12),
+          child: Row(
+            children: [
+              Container(
+                width: 30,
+                height: 30,
+                alignment: Alignment.center,
+                decoration:
+                    BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
+                child: Text('${i + 1}',
+                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(l.title.isEmpty ? 'Sans titre' : l.title,
+                        style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
+                    const SizedBox(height: 5),
+                    Wrap(
+                      spacing: 4,
+                      runSpacing: 4,
+                      children: [
+                        for (final t in tags)
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                            decoration: BoxDecoration(
+                              color: t.$2 ? JangColors.noteBg : const Color(0xFFEEF1EE),
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            child: Text(t.$1,
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: t.$2 ? JangColors.primary : JangColors.textSecondary)),
+                          ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuButton<String>(
+                tooltip: 'Options de la leçon',
+                onSelected: (v) async {
+                  if (v == 'edit') _openLesson(l);
+                  if (v == 'up' && i > 0) swapIn(context, 'lessons', lessons, i, i - 1);
+                  if (v == 'down' && i < lessons.length - 1) {
+                    swapIn(context, 'lessons', lessons, i, i + 1);
+                  }
+                  if (v == 'delete' &&
+                      await confirm(context, 'Supprimer « ${l.title} » ?',
+                          'Les élèves ne verront plus cette leçon.',
+                          ok: 'Supprimer')) {
+                    ContentRepo.instance.remove('lessons', l.id);
+                    if (deck != null) ContentRepo.instance.remove('flashcards', l.id);
+                  }
+                },
+                itemBuilder: (_) => [
+                  const PopupMenuItem(value: 'edit', child: Text('Modifier')),
+                  if (i > 0) const PopupMenuItem(value: 'up', child: Text('Monter')),
+                  if (i < lessons.length - 1)
+                    const PopupMenuItem(value: 'down', child: Text('Descendre')),
+                  const PopupMenuItem(value: 'delete', child: Text('Supprimer')),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -125,11 +125,25 @@ class ContentRepo {
     return list;
   }
 
+  /// Leçons d'une matière, dans l'ordre. Les anciennes leçons rangées par chapitre
+  /// gardent l'ordre des chapitres, puis leur ordre dans le chapitre.
   Future<List<Lesson>> lessonsOfSubject(String subjectId) async {
     final docs =
         await _cached(_db.collection('lessons').where('subjectId', isEqualTo: subjectId));
     final list = docs.map(Lesson.fromDoc).where((e) => !e.deleted).toList();
-    list.sort((a, b) => a.order.compareTo(b.order));
+    final chapterOrder = <String, int>{};
+    if (list.any((l) => l.chapterId.isNotEmpty)) {
+      for (final c in await chapters(subjectId)) {
+        chapterOrder[c.id] = c.order;
+      }
+      // Leçons d'un ancien chapitre supprimé : elles restent cachées.
+      list.removeWhere((l) => l.chapterId.isNotEmpty && !chapterOrder.containsKey(l.chapterId));
+    }
+    int key(Lesson l) => l.chapterId.isEmpty ? 1 << 20 : (chapterOrder[l.chapterId] ?? 1 << 19);
+    list.sort((a, b) {
+      final c = key(a).compareTo(key(b));
+      return c != 0 ? c : a.order.compareTo(b.order);
+    });
     return list;
   }
 
@@ -149,9 +163,10 @@ class ContentRepo {
     }
   }
 
-  Future<FlashcardDeck?> deck(String chapterId) async {
+  /// Cartes de révision d'une leçon (flashcards/{lessonId}).
+  Future<FlashcardDeck?> deck(String lessonId) async {
     try {
-      final d = await _db.collection('flashcards').doc(chapterId).get(_cache);
+      final d = await _db.collection('flashcards').doc(lessonId).get(_cache);
       if (!d.exists) return null;
       final deck = FlashcardDeck.fromDoc(d);
       return deck.deleted ? null : deck;
@@ -160,13 +175,54 @@ class ContentRepo {
     }
   }
 
-  Future<Map<String, FlashcardDeck>> decksOfSubject(String subjectId) async {
+  /// Paquets de cartes d'une matière, par identifiant de document (leçon, ou ancien chapitre).
+  Future<Map<String, FlashcardDeck>> decksOfSubject(String subjectId,
+      {bool includeEmpty = false}) async {
     final docs =
         await _cached(_db.collection('flashcards').where('subjectId', isEqualTo: subjectId));
     return {
-      for (final d in docs.map(FlashcardDeck.fromDoc).where((d) => !d.deleted && d.cards.isNotEmpty))
+      for (final d in docs
+          .map(FlashcardDeck.fromDoc)
+          .where((d) => !d.deleted && (includeEmpty || d.cards.isNotEmpty)))
         d.chapterId: d
     };
+  }
+
+  /// Passe une matière à « leçons sans chapitres » : renumérote les leçons dans l'ordre
+  /// actuel et donne les cartes d'un ancien chapitre à sa première leçon.
+  Future<bool> migrateSubject(Subject subject) async {
+    final lessons = await lessonsOfSubject(subject.id);
+    final needs = lessons.any((l) => l.chapterId.isNotEmpty) ||
+        [for (var i = 0; i < lessons.length; i++) lessons[i].order == i].contains(false);
+    if (!needs) return false;
+    final decks = await decksOfSubject(subject.id);
+    final now = FieldValue.serverTimestamp();
+    final batch = _db.batch();
+    final firstOfChapter = <String, String>{};
+    for (var i = 0; i < lessons.length; i++) {
+      final l = lessons[i];
+      if (l.chapterId.isNotEmpty) firstOfChapter.putIfAbsent(l.chapterId, () => l.id);
+      batch.set(_db.collection('lessons').doc(l.id),
+          {'order': i, 'chapterId': '', 'updatedAt': now}, SetOptions(merge: true));
+    }
+    firstOfChapter.forEach((chapterId, lessonId) {
+      final old = decks[chapterId];
+      if (old == null || decks.containsKey(lessonId)) return;
+      batch.set(_db.collection('flashcards').doc(lessonId), {
+        'chapterId': lessonId,
+        'lessonId': lessonId,
+        'subjectId': subject.id,
+        'examId': subject.examId,
+        'cards': old.cards.map((c) => c.toMap()).toList(),
+        'deleted': false,
+        'updatedAt': now,
+      });
+      batch.set(_db.collection('flashcards').doc(chapterId), {'deleted': true, 'updatedAt': now},
+          SetOptions(merge: true));
+    });
+    unawaited(batch.commit().catchError((e) => debugPrint('Écriture refusée : $e')));
+    notifyChanged();
+    return true;
   }
 
   // ---------- Écriture (responsable) ----------

@@ -173,7 +173,7 @@ Future<void> showGoalDialog(BuildContext context) async {
   if (ok == true) await e.setGoal(type, target);
 }
 
-/// Carte « Révision des erreurs », visible s'il y a des erreurs à revoir.
+/// Carte « Corriger mes erreurs », visible s'il y a des erreurs à revoir.
 class ReviewCard extends StatelessWidget {
   const ReviewCard({super.key});
 
@@ -189,7 +189,7 @@ class ReviewCard extends StatelessWidget {
           child: ListTile(
             minVerticalPadding: 14,
             leading: const Icon(Icons.replay, color: JangColors.error),
-            title: Text('Révision des erreurs', style: Theme.of(context).textTheme.titleMedium),
+            title: Text('Corriger mes erreurs', style: Theme.of(context).textTheme.titleMedium),
             subtitle: Text('$n question${n > 1 ? 's' : ''} à revoir'),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => Navigator.push(

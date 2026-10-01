@@ -110,31 +110,26 @@ Future<bool> confirm(BuildContext context, String title, String message,
 class LessonText extends StatelessWidget {
   final String text;
   final Color accent;
-  const LessonText(this.text, {super.key, this.accent = JangColors.primary});
+
+  /// Taille du texte (1 = normal). Le bouton « A A » de la leçon la change.
+  final double scale;
+  const LessonText(this.text, {super.key, this.accent = JangColors.primary, this.scale = 1});
+
+  static final _boxRe = RegExp(r'^(À retenir|A retenir|Exemple|Attention|Astuce)\s*:\s*(.*)$',
+      caseSensitive: false);
 
   @override
   Widget build(BuildContext context) {
-    final base = Theme.of(context).textTheme.bodyLarge!;
+    final theme = Theme.of(context).textTheme.bodyLarge!;
+    final base = theme.copyWith(fontSize: 17 * scale, height: 1.6);
     final lines = text.replaceAll('\r\n', '\n').split('\n');
     final children = <Widget>[];
     final quote = <String>[];
+    var partNumber = 0;
 
     void flushQuote() {
       if (quote.isEmpty) return;
-      children.add(Container(
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(vertical: 8),
-        padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
-        decoration: BoxDecoration(
-          color: accent.withValues(alpha: 0.08),
-          border: Border(left: BorderSide(color: accent, width: 4)),
-          borderRadius: BorderRadius.circular(6),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: quote.map((l) => _rich(context, l, base)).toList(),
-        ),
-      ));
+      children.add(_box(context, 'À retenir', quote.join('\n'), base));
       quote.clear();
     }
 
@@ -145,30 +140,54 @@ class LessonText extends StatelessWidget {
         continue;
       }
       flushQuote();
+      final box = _boxRe.firstMatch(line.trim());
       if (line.trim().isEmpty) {
-        children.add(const SizedBox(height: 10));
-      } else if (line.startsWith('## ')) {
+        children.add(SizedBox(height: 8 * scale));
+      } else if (box != null) {
+        children.add(_box(context, box.group(1)!, box.group(2)!, base));
+      } else if (line.startsWith('## ') || line.startsWith('# ')) {
+        var title = line.replaceFirst(RegExp(r'^#+\s+'), '');
+        final numMatch = RegExp(r'^(\d+)[.)]\s*').firstMatch(title);
+        String label;
+        if (numMatch != null) {
+          label = numMatch.group(1)!;
+          title = title.substring(numMatch.end);
+        } else {
+          partNumber++;
+          label = '$partNumber';
+        }
         children.add(Padding(
-          padding: const EdgeInsets.only(top: 10, bottom: 4),
-          child: Text(line.substring(3), style: titleStyle(18, color: accent)),
-        ));
-      } else if (line.startsWith('# ')) {
-        children.add(Padding(
-          padding: const EdgeInsets.only(top: 14, bottom: 6),
-          child: Text(line.substring(2), style: titleStyle(22)),
+          padding: EdgeInsets.only(top: 22 * scale, bottom: 6 * scale),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsets.only(right: 10, top: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 1),
+                decoration:
+                    BoxDecoration(color: accent, borderRadius: BorderRadius.circular(8)),
+                child: Text(label,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 15 * scale)),
+              ),
+              Expanded(child: Text(title, style: titleStyle(20 * scale, color: accent))),
+            ],
+          ),
         ));
       } else if (RegExp(r'^\s*[-*•]\s+').hasMatch(line)) {
         final content = line.replaceFirst(RegExp(r'^\s*[-*•]\s+'), '');
         children.add(Padding(
-          padding: const EdgeInsets.only(left: 4, bottom: 4),
+          padding: const EdgeInsets.only(left: 4, bottom: 6),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 10, right: 10),
+                padding: EdgeInsets.only(top: 11 * scale, right: 12),
                 child: Container(
-                    width: 6,
-                    height: 6,
+                    width: 7,
+                    height: 7,
                     decoration: BoxDecoration(color: accent, shape: BoxShape.circle)),
               ),
               Expanded(child: _rich(context, content, base)),
@@ -177,13 +196,70 @@ class LessonText extends StatelessWidget {
         ));
       } else {
         children.add(Padding(
-          padding: const EdgeInsets.only(bottom: 2),
+          padding: const EdgeInsets.only(bottom: 4),
           child: _rich(context, line, base),
         ));
       }
     }
     flushQuote();
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: children);
+  }
+
+  Widget _box(BuildContext context, String kind, String content, TextStyle base) {
+    final k = kind.toLowerCase();
+    late final Color fg;
+    late final Color bg;
+    late final IconData icon;
+    late final String label;
+    var dashed = false;
+    if (k.contains('retenir')) {
+      fg = JangColors.primary;
+      bg = JangColors.noteBg;
+      icon = Icons.star;
+      label = 'À RETENIR';
+    } else if (k == 'attention') {
+      fg = JangColors.error;
+      bg = JangColors.errorBg;
+      icon = Icons.warning_amber;
+      label = 'ATTENTION';
+    } else if (k == 'astuce') {
+      fg = JangColors.warning;
+      bg = JangColors.warningBg;
+      icon = Icons.lightbulb_outline;
+      label = 'ASTUCE';
+    } else {
+      fg = JangColors.textSecondary;
+      bg = Colors.white;
+      icon = Icons.chat_bubble_outline;
+      label = 'EXEMPLE';
+      dashed = true;
+    }
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(vertical: 8 * scale),
+      padding: const EdgeInsets.fromLTRB(14, 10, 14, 12),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(12),
+        border: dashed
+            ? Border.all(color: JangColors.border, width: 1.5)
+            : Border(left: BorderSide(color: fg, width: 5)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(children: [
+            Icon(icon, size: 16 * scale, color: fg),
+            const SizedBox(width: 6),
+            Text(label,
+                style: TextStyle(
+                    color: fg, fontWeight: FontWeight.w700, fontSize: 13 * scale, letterSpacing: 0.5)),
+          ]),
+          const SizedBox(height: 4),
+          for (final l in content.split('\n')) _rich(context, l, base),
+        ],
+      ),
+    );
   }
 
   Widget _rich(BuildContext context, String s, TextStyle base) {
@@ -197,8 +273,10 @@ class LessonText extends StatelessWidget {
         spans.add(TextSpan(
             text: t.substring(2, t.length - 2), style: const TextStyle(fontWeight: FontWeight.w700)));
       } else if (t.startsWith('*')) {
+        // L'italique sert aux traductions : en gris pour les distinguer.
         spans.add(TextSpan(
-            text: t.substring(1, t.length - 1), style: const TextStyle(fontStyle: FontStyle.italic)));
+            text: t.substring(1, t.length - 1),
+            style: const TextStyle(fontStyle: FontStyle.italic, color: JangColors.textSecondary)));
       } else {
         spans.add(WidgetSpan(
           alignment: PlaceholderAlignment.baseline,

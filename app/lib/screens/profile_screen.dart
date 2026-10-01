@@ -7,6 +7,7 @@ import '../services/github_service.dart';
 import '../theme.dart';
 import '../version.dart';
 import '../widgets/common.dart';
+import '../widgets/contact.dart';
 import '../widgets/engagement.dart';
 import 'home_screen.dart' show formatDate, showUpdateDialog;
 
@@ -145,6 +146,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 icon: const Icon(Icons.share_outlined),
                 label: const Text('Partager l\'application'),
               ),
+              const SectionTitle('À propos'),
+              Text('Jàng aide les élèves à apprendre leurs leçons, à leur rythme, même sans internet.',
+                  style: t.bodyMedium),
+              const SizedBox(height: 10),
+              Text('Nous contacter', style: t.titleMedium),
+              const SizedBox(height: 6),
+              ContactCard(canEdit: p.isAdmin),
               const SizedBox(height: 28),
               FilledButton.tonal(
                 style: FilledButton.styleFrom(minimumSize: const Size(64, 48)),

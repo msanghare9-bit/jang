@@ -57,6 +57,12 @@ class FlashcardService {
     return (known, deck.cards.length);
   }
 
+  /// Vrai si l'élève a déjà révisé au moins une carte du paquet.
+  Future<bool> started(FlashcardDeck deck) async {
+    final state = await _load();
+    return deck.cards.any((c) => state.containsKey(cardKey(deck.chapterId, c)));
+  }
+
   Future<void> answer(FlashcardDeck deck, Flashcard c, bool knew) async {
     final state = await _load();
     final k = cardKey(deck.chapterId, c);

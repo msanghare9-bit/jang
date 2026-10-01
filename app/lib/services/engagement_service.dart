@@ -25,13 +25,13 @@ const badgeDefs = <BadgeDef>[
   BadgeDef('premier_qcm', 'Premier QCM', 'Terminer ton premier QCM', Icons.quiz_outlined),
   BadgeDef('sans_faute', 'Sans faute', 'Avoir 100 % à un QCM', Icons.verified_outlined),
   BadgeDef('perfection', 'Perfection', 'Avoir 100 % à 5 QCM', Icons.workspace_premium_outlined),
-  BadgeDef('chapitre', 'Chapitre terminé', 'Faire tous les QCM d\'un chapitre', Icons.flag_outlined),
+  BadgeDef('chapitre', 'Dix QCM', 'Terminer 10 QCM différents', Icons.flag_outlined),
   BadgeDef('matiere', 'Matière bouclée', 'Faire tous les QCM d\'une matière', Icons.emoji_events_outlined),
   BadgeDef('serie3', 'Régulier', 'Réviser 3 jours de suite', Icons.local_fire_department_outlined),
   BadgeDef('serie7', 'Infatigable', 'Réviser 7 jours de suite', Icons.whatshot_outlined),
   BadgeDef('correcteur', 'Correcteur', 'Corriger 10 erreurs en révision', Icons.build_circle_outlined),
   BadgeDef('objectif', 'Objectif atteint', 'Atteindre ton objectif de la semaine', Icons.track_changes),
-  BadgeDef('memoire', 'Bonne mémoire', 'Réviser 50 flashcards', Icons.style_outlined),
+  BadgeDef('memoire', 'Bonne mémoire', 'Réviser 50 cartes', Icons.style_outlined),
   BadgeDef('curieux', 'Curieux', 'Poser ta première question', Icons.forum_outlined),
 ];
 
@@ -152,6 +152,7 @@ class EngagementService {
       if (seen >= 1) earned.add('premier_pas');
       if (seen >= 10) earned.add('lecteur');
       if (quizzes.isNotEmpty) earned.add('premier_qcm');
+      if (quizzes.length >= 10) earned.add('chapitre');
       if (perfect >= 1) earned.add('sans_faute');
       if (perfect >= 5) earned.add('perfection');
       final s = streak;
@@ -162,20 +163,17 @@ class EngagementService {
       if (counter('questions') >= 1) earned.add('curieux');
       if (goalTarget > 0 && weekCount(goalType) >= goalTarget) earned.add('objectif');
 
-      // Chapitres et matières terminés (toutes les leçons avec QCM faites).
+      // Matières terminées (toutes les leçons avec QCM faites).
       final examId = AuthService.instance.profile.value?.examId ?? '';
       if (examId.isNotEmpty && quizzes.isNotEmpty) {
         final lessons = (await ContentRepo.instance.lessonsOfExam(examId))
             .where((l) => l.quiz.isNotEmpty)
             .toList();
         bool done(Lesson l) => ProgressRepo.instance.of(l.id)?.quizDone == true;
-        final byChapter = <String, List<Lesson>>{};
         final bySubject = <String, List<Lesson>>{};
         for (final l in lessons) {
-          byChapter.putIfAbsent(l.chapterId, () => []).add(l);
           bySubject.putIfAbsent(l.subjectId, () => []).add(l);
         }
-        if (byChapter.values.any((ls) => ls.isNotEmpty && ls.every(done))) earned.add('chapitre');
         if (bySubject.values.any((ls) => ls.length >= 3 && ls.every(done))) earned.add('matiere');
       }
 

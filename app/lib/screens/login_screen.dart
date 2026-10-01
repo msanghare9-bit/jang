@@ -139,7 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         onChanged: (v) => setState(() => _consent = v ?? false),
                         title: const Text(
                             'Mes parents sont d\'accord pour que j\'utilise Jàng, '
-                            'y compris la discussion et le tuteur IA.'),
+                            'y compris la discussion et le Prof (une intelligence artificielle).'),
                       ),
                     ],
                     if (_error != null) ...[

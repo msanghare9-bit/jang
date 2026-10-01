@@ -67,7 +67,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     final q = _queue;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flashcards', style: titleStyle(20, color: Colors.white)),
+        title: Text('Révision', style: titleStyle(20, color: Colors.white)),
         backgroundColor: widget.color,
         foregroundColor: Colors.white,
       ),

@@ -12,6 +12,8 @@ class JangColors {
   static const error = Color(0xFFA1262E);
   static const errorBg = Color(0xFFF8E3E4);
   static const noteBg = Color(0xFFE6EFEA);
+  static const warning = Color(0xFF8A5A00);
+  static const warningBg = Color(0xFFFDF1DC);
 
   /// Couleurs proposées pour les matières (la première série : français, maths, anglais, SVT).
   static const subjectPalette = <String>[
