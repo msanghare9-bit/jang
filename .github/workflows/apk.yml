@@ -73,9 +73,15 @@ jobs:
           VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: *//; s/+.*//')
           BUILD=${{ github.run_number }}
           sed -i "s/^const String appVersion = .*/const String appVersion = '$VERSION';/; s/^const int appBuild = .*/const int appBuild = $BUILD;/" lib/version.dart
-          flutter build apk --release --build-name="$VERSION" --build-number="$BUILD"
+          OPTS="--release --build-name=$VERSION --build-number=$BUILD --obfuscate --split-debug-info=$RUNNER_TEMP/symbols"
+          # Un fichier léger par type de processeur (mises à jour depuis l'application)
+          flutter build apk $OPTS --split-per-abi --target-platform android-arm,android-arm64
+          cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk "$RUNNER_TEMP/jang-64.apk"
+          cp build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk "$RUNNER_TEMP/jang-32.apk"
+          # Un fichier universel (partage et première installation)
+          flutter build apk $OPTS --target-platform android-arm,android-arm64
           cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/jang.apk"
-          ls -la "$RUNNER_TEMP/jang.apk"
+          ls -la "$RUNNER_TEMP"/*.apk
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "BUILD=$BUILD" >> "$GITHUB_ENV"
 
@@ -86,5 +92,8 @@ jobs:
           tag_name: v${{ env.VERSION }}-${{ env.BUILD }}
           name: Jàng ${{ env.VERSION }} (${{ env.BUILD }})
           body: Version ${{ env.VERSION }}, construction ${{ env.BUILD }}.
-          files: ${{ runner.temp }}/jang.apk
+          files: |
+            ${{ runner.temp }}/jang.apk
+            ${{ runner.temp }}/jang-64.apk
+            ${{ runner.temp }}/jang-32.apk
           make_latest: true
