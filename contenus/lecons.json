@@ -1348,6 +1348,157 @@
      "verso": "Moi aussi !"
     }
    ]
+  },
+  {
+   "id": "ang6-11",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Colours – Les couleurs",
+   "texte": "## Objectif\nDire les couleurs en anglais.\n\n## Étape 1 : Les couleurs principales\n- **red** *rouge* (Wolof : xonq)\n- **blue** *bleu*\n- **yellow** *jaune*\n- **green** *vert*\n- **white** *blanc* (Wolof : weex)\n- **black** *noir* (Wolof : ñuul)\n\nExemple : **The mango is yellow.** *La mangue est jaune.*\nExemple : **The sky is blue.** *Le ciel est bleu.*\nExemple : **The leaf is green.** *La feuille est verte.*\nExemple : **The blackboard is black.** *Le tableau est noir.*\nExemple : **The chalk is white.** *La craie est blanche.*\nExemple : **Bissap is red.** *Le bissap est rouge.*\n\n## Étape 2 : D'autres couleurs\n- **orange** *orange*\n- **brown** *marron*\n- **pink** *rose*\n- **grey** *gris*\n- **purple** *violet*\n\nExemple : **The orange is orange.** *L'orange est orange.*\nExemple : **The table is brown.** *La table est marron.*\nExemple : **The goat is brown and white.** *La chèvre est marron et blanche.*\nExemple : **Her dress is pink.** *Sa robe est rose.*\n\n## Étape 3 : Demander la couleur\n- **What colour is it?** *De quelle couleur est-ce ?*\n- **It is ...** *C'est ...*\n\nExemple : **What colour is the pen?** **It is blue.** *Il est bleu.*\nExemple : **What colour is the bag?** **It is black.** *Il est noir.*\nExemple : **What colour is the banana?** **It is yellow.** *Elle est jaune.*\nExemple : **What colour is the car rapide?** **It is yellow and blue.** *Il est jaune et bleu.*\n\nAstuce : On écrit **colour** en anglais britannique et **color** en anglais américain. Les deux sont justes.\n\n## Étape 4 : La couleur avant le mot\nEn anglais, la couleur se met **avant** le mot.\n\nExemple : **a red pen** *un stylo rouge*\nExemple : **a green bag** *un sac vert*\nExemple : **a white shirt** *une chemise blanche*\nExemple : **a black goat** *une chèvre noire*\nExemple : **I have a blue exercise book.** *J'ai un cahier bleu.*\n\nAttention : En français on dit « un stylo **rouge** ». En anglais on dit « a **red** pen ».\n\n## Étape 5 : Ma couleur préférée\n- **What is your favourite colour?** *Quelle est ta couleur préférée ?*\n- **My favourite colour is ...** *Ma couleur préférée est ...*\n\nExemple : **My favourite colour is green.** *Ma couleur préférée est le vert.*\nExemple : **My favourite colour is red.** *Ma couleur préférée est le rouge.*\nExemple : **I like blue.** *J'aime le bleu.*\n\n## Étape 6 : Le drapeau du Sénégal\nExemple : **The flag of Senegal is green, yellow and red.** *Le drapeau du Sénégal est vert, jaune et rouge.*\nExemple : **There is a green star.** *Il y a une étoile verte.*\n\n## Petit dialogue\nTeacher : **Awa, what colour is your bag?**\nAwa : **It is red.**\nTeacher : **And your pen?**\nAwa : **It is blue.**\nTeacher : **Modou, what is your favourite colour?**\nModou : **My favourite colour is green, like the flag of Senegal!**\nTeacher : **Very good!**\n\nÀ retenir : red, blue, yellow, green, white, black. What colour is it? = De quelle couleur est-ce ? La couleur se met avant le mot : **a red pen**.",
+   "qcm": [
+    {
+     "question": "« Red » veut dire :",
+     "options": [
+      "bleu",
+      "rouge",
+      "vert",
+      "jaune"
+     ],
+     "reponse": 1,
+     "explication": "Red = rouge = xonq."
+    },
+    {
+     "question": "Comment dit-on « vert » ?",
+     "options": [
+      "green",
+      "grey",
+      "brown",
+      "white"
+     ],
+     "reponse": 0,
+     "explication": "Green = vert."
+    },
+    {
+     "question": "« Black » veut dire :",
+     "options": [
+      "blanc",
+      "bleu",
+      "noir",
+      "marron"
+     ],
+     "reponse": 2,
+     "explication": "Black = noir = ñuul."
+    },
+    {
+     "question": "La mangue est :",
+     "options": [
+      "blue",
+      "yellow",
+      "black",
+      "purple"
+     ],
+     "reponse": 1,
+     "explication": "The mango is yellow."
+    },
+    {
+     "question": "« Un stylo rouge » se dit :",
+     "options": [
+      "a pen red",
+      "a red pen",
+      "a pen is red",
+      "red a pen"
+     ],
+     "reponse": 1,
+     "explication": "La couleur se met avant le mot : a red pen."
+    },
+    {
+     "question": "Pour demander la couleur, on dit :",
+     "options": [
+      "What colour is it?",
+      "What time is it?",
+      "What is your name?",
+      "How old are you?"
+     ],
+     "reponse": 0,
+     "explication": "What colour is it? = De quelle couleur est-ce ?"
+    },
+    {
+     "question": "Le drapeau du Sénégal est :",
+     "options": [
+      "blue, white and red",
+      "green, yellow and red",
+      "black, red and green",
+      "red and white"
+     ],
+     "reponse": 1,
+     "explication": "The flag of Senegal is green, yellow and red."
+    },
+    {
+     "question": "« My favourite colour is blue » veut dire :",
+     "options": [
+      "J'ai un stylo bleu.",
+      "Ma couleur préférée est le bleu.",
+      "Le ciel est bleu.",
+      "Je n'aime pas le bleu."
+     ],
+     "reponse": 1,
+     "explication": "favourite colour = couleur préférée."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "red",
+     "verso": "rouge (xonq)"
+    },
+    {
+     "recto": "blue",
+     "verso": "bleu"
+    },
+    {
+     "recto": "yellow",
+     "verso": "jaune"
+    },
+    {
+     "recto": "green",
+     "verso": "vert"
+    },
+    {
+     "recto": "white",
+     "verso": "blanc (weex)"
+    },
+    {
+     "recto": "black",
+     "verso": "noir (ñuul)"
+    },
+    {
+     "recto": "orange",
+     "verso": "orange"
+    },
+    {
+     "recto": "brown",
+     "verso": "marron"
+    },
+    {
+     "recto": "pink",
+     "verso": "rose"
+    },
+    {
+     "recto": "grey",
+     "verso": "gris"
+    },
+    {
+     "recto": "What colour is it?",
+     "verso": "De quelle couleur est-ce ?"
+    },
+    {
+     "recto": "a red pen",
+     "verso": "un stylo rouge"
+    },
+    {
+     "recto": "My favourite colour is ...",
+     "verso": "Ma couleur préférée est ..."
+    }
+   ]
   }
  ]
 }
