@@ -261,6 +261,169 @@
      "verso": "C'est mon / ma ..."
     }
    ]
+  },
+  {
+   "id": "ang6-03",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Numbers – Les nombres",
+   "texte": "## Objectif\nCompter, dire son âge et donner un prix en anglais.\n\n## Étape 1 : De 0 à 10\n- **zero** *0*\n- **one** *1* (Wolof : benn)\n- **two** *2* (Wolof : ñaar)\n- **three** *3* (Wolof : ñett)\n- **four** *4* (Wolof : ñeent)\n- **five** *5* (Wolof : juróom)\n- **six** *6* (Wolof : juróom benn)\n- **seven** *7* (Wolof : juróom ñaar)\n- **eight** *8* (Wolof : juróom ñett)\n- **nine** *9* (Wolof : juróom ñeent)\n- **ten** *10* (Wolof : fukk)\n\nExemple : **I have one bag.** *J'ai un sac.*\nExemple : **I have two pens.** *J'ai deux stylos.*\nExemple : **Awa has three books.** *Awa a trois livres.*\nExemple : **There are four chairs.** *Il y a quatre chaises.*\nExemple : **I have five fingers.** *J'ai cinq doigts.*\nExemple : **Modou has ten mangoes.** *Modou a dix mangues.*\n\nAstuce : Après deux, trois, quatre… on ajoute **s** au mot : **one pen**, mais **two pens**.\n\n## Étape 2 : De 11 à 20\n- **eleven** *11*\n- **twelve** *12*\n- **thirteen** *13*\n- **fourteen** *14*\n- **fifteen** *15*\n- **sixteen** *16*\n- **seventeen** *17*\n- **eighteen** *18*\n- **nineteen** *19*\n- **twenty** *20*\n\nAstuce : De 13 à 19, les nombres finissent par **-teen** : **thirteen**, **fourteen**, **fifteen**…\n\nExemple : **There are twelve students.** *Il y a douze élèves.*\nExemple : **I have fifteen exercise books.** *J'ai quinze cahiers.*\nExemple : **There are twenty tables.** *Il y a vingt tables.*\nExemple : **My brother is eighteen.** *Mon frère a dix-huit ans.*\n\n## Étape 3 : Les dizaines\n- **thirty** *30*\n- **forty** *40*\n- **fifty** *50*\n- **sixty** *60*\n- **seventy** *70*\n- **eighty** *80*\n- **ninety** *90*\n- **one hundred** *100*\n\nAstuce : Les dizaines finissent par **-ty** : **thirty**, **forty**, **fifty**…\nAttention : **thirteen** (13) et **thirty** (30) se ressemblent. Écoute bien la fin !\n\nExemple : **21 = twenty-one** *vingt et un*\nExemple : **35 = thirty-five** *trente-cinq*\nExemple : **48 = forty-eight** *quarante-huit*\nExemple : **There are forty students in my class.** *Il y a quarante élèves dans ma classe.*\n\n## Étape 4 : Dire son âge\n- **How old are you?** *Quel âge as-tu ?*\n- **I am ... years old.** *J'ai ... ans.*\n\nExemple : **How old are you?** **I am eleven years old.** *J'ai onze ans.*\nExemple : **I am twelve years old.** *J'ai douze ans.*\nExemple : **Fatou is thirteen.** *Fatou a treize ans.*\nExemple : **My grandfather is seventy.** *Mon grand-père a soixante-dix ans.*\n\n## Étape 5 : Demander un prix\n- **How much is it?** *C'est combien ?*\n- **It is ... francs.** *C'est ... francs.*\n\nExemple : Au marché de Kébémer. **How much is the bread?** **It is one hundred francs.** *Le pain, c'est cent francs.*\nExemple : **How much is the pen?** **It is fifty francs.** *Le stylo, c'est cinquante francs.*\nExemple : **How much is the mango?** **It is twenty-five francs.** *La mangue, c'est vingt-cinq francs.*\n\n## Étape 6 : Donner un numéro de téléphone\n- **What is your phone number?** *Quel est ton numéro de téléphone ?*\n\nExemple : **My phone number is seven seven, one two three, four five, six seven.** *77 123 45 67*\nAstuce : Pour un numéro, on dit les chiffres un par un. Pour 0, on peut dire **zero** ou **oh**.\n\n## Petit dialogue\nAwa : **Hello! What is your name?**\nIbou : **My name is Ibou.**\nAwa : **How old are you, Ibou?**\nIbou : **I am twelve years old. And you?**\nAwa : **I am eleven.**\nIbou : **How many books do you have?**\nAwa : **I have three books.**\n\nÀ retenir : How old are you? = Quel âge as-tu ? How much is it? = C'est combien ? -teen = 13 à 19, -ty = les dizaines.",
+   "qcm": [
+    {
+     "question": "« Five » veut dire :",
+     "options": [
+      "4",
+      "5",
+      "6",
+      "9"
+     ],
+     "reponse": 1,
+     "explication": "Five = 5 = juróom."
+    },
+    {
+     "question": "Comment dit-on 12 ?",
+     "options": [
+      "twenty",
+      "two",
+      "twelve",
+      "eleven"
+     ],
+     "reponse": 2,
+     "explication": "Twelve = 12."
+    },
+    {
+     "question": "« Thirty » veut dire :",
+     "options": [
+      "13",
+      "3",
+      "30",
+      "33"
+     ],
+     "reponse": 2,
+     "explication": "-ty = dizaine : thirty = 30. Thirteen = 13."
+    },
+    {
+     "question": "Pour demander l'âge, on dit :",
+     "options": [
+      "How much is it?",
+      "How old are you?",
+      "What is this?",
+      "How are you?"
+     ],
+     "reponse": 1,
+     "explication": "How old are you? = Quel âge as-tu ?"
+    },
+    {
+     "question": "« J'ai onze ans » se dit :",
+     "options": [
+      "I am eleven years old.",
+      "I have eleven.",
+      "I am one years old.",
+      "I am seven years old."
+     ],
+     "reponse": 0,
+     "explication": "I am ... years old = J'ai ... ans."
+    },
+    {
+     "question": "Au marché, pour demander le prix, on dit :",
+     "options": [
+      "How old are you?",
+      "What is your name?",
+      "How much is it?",
+      "Good morning!"
+     ],
+     "reponse": 2,
+     "explication": "How much is it? = C'est combien ?"
+    },
+    {
+     "question": "Comment dit-on 45 ?",
+     "options": [
+      "fourteen-five",
+      "forty-five",
+      "four-five",
+      "fifty-four"
+     ],
+     "reponse": 1,
+     "explication": "40 = forty, 5 = five : forty-five."
+    },
+    {
+     "question": "Quel nombre finit par -teen ?",
+     "options": [
+      "twenty",
+      "sixteen",
+      "sixty",
+      "ten"
+     ],
+     "reponse": 1,
+     "explication": "De 13 à 19 : -teen. Sixteen = 16."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "one",
+     "verso": "1 (benn)"
+    },
+    {
+     "recto": "two",
+     "verso": "2 (ñaar)"
+    },
+    {
+     "recto": "three",
+     "verso": "3 (ñett)"
+    },
+    {
+     "recto": "four",
+     "verso": "4 (ñeent)"
+    },
+    {
+     "recto": "five",
+     "verso": "5 (juróom)"
+    },
+    {
+     "recto": "ten",
+     "verso": "10 (fukk)"
+    },
+    {
+     "recto": "eleven",
+     "verso": "11"
+    },
+    {
+     "recto": "twelve",
+     "verso": "12"
+    },
+    {
+     "recto": "thirteen",
+     "verso": "13"
+    },
+    {
+     "recto": "twenty",
+     "verso": "20"
+    },
+    {
+     "recto": "thirty",
+     "verso": "30"
+    },
+    {
+     "recto": "fifty",
+     "verso": "50"
+    },
+    {
+     "recto": "one hundred",
+     "verso": "100"
+    },
+    {
+     "recto": "How old are you?",
+     "verso": "Quel âge as-tu ?"
+    },
+    {
+     "recto": "I am twelve years old.",
+     "verso": "J'ai douze ans."
+    },
+    {
+     "recto": "How much is it?",
+     "verso": "C'est combien ?"
+    }
+   ]
   }
  ]
 }
