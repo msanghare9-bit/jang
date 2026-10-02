@@ -1960,6 +1960,161 @@
      "verso": "Je me lave les mains."
     }
    ]
+  },
+  {
+   "id": "ang6-15",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Clothes – Les habits",
+   "texte": "## Objectif\nNommer les vêtements en anglais et dire ce que je porte.\n\n## Étape 1 : Les vêtements de tous les jours\n- **a shirt** *une chemise*\n- **a T-shirt** *un tee-shirt*\n- **trousers** *un pantalon*\n- **a skirt** *une jupe*\n- **a dress** *une robe*\n- **shoes** *des chaussures* (Wolof : dàll)\n- **sandals** *des sandales*\n- **a cap** *une casquette*\n\nExemple : **This is a shirt.** *C'est une chemise.*\nExemple : **This is a dress.** *C'est une robe.*\nExemple : **These are shoes.** *Ce sont des chaussures.*\nExemple : **These are trousers.** *C'est un pantalon.*\n\nAttention : **trousers** est toujours au pluriel en anglais : **my trousers are blue** = mon pantalon est bleu.\n\n## Étape 2 : Les habits de chez nous\n- **a boubou** *un boubou* (Wolof : mbubb)\n- **a wrapper** *un pagne* (Wolof : sër)\n- **a headscarf** *un foulard*\n- **a tunic** *une tunique*\n\nExemple : **My father wears a boubou on Friday.** *Mon père porte un boubou le vendredi.*\nExemple : **My mother wears a wrapper.** *Ma mère porte un pagne.*\nExemple : **My sister wears a headscarf.** *Ma sœur porte un foulard.*\nExemple : **For Tabaski, I have a new boubou.** *Pour la Tabaski, j'ai un nouveau boubou.*\n\n## Étape 3 : Dire ce que je porte\n- **I wear ...** *Je porte ...*\n\nExemple : **I wear a T-shirt.** *Je porte un tee-shirt.*\nExemple : **I wear sandals.** *Je porte des sandales.*\nExemple : **I wear a cap.** *Je porte une casquette.*\nExemple : **Awa wears a dress.** *Awa porte une robe.*\nExemple : **Modou wears trousers.** *Modou porte un pantalon.*\n\nAttention : Avec **he**, **she** ou un nom, on ajoute **s** : **Awa wears**.\n\n## Étape 4 : Vêtements et couleurs\nRappel : la couleur se met **avant** le mot.\n\nExemple : **a white shirt** *une chemise blanche*\nExemple : **a blue dress** *une robe bleue*\nExemple : **black shoes** *des chaussures noires*\nExemple : **a green boubou** *un boubou vert*\nExemple : **I wear a red T-shirt.** *Je porte un tee-shirt rouge.*\n\n## Étape 5 : L'uniforme de l'école\n- **a uniform** *un uniforme*\n\nExemple : **At school, I wear a uniform.** *À l'école, je porte un uniforme.*\nExemple : **My uniform is a white shirt and blue trousers.** *Mon uniforme, c'est une chemise blanche et un pantalon bleu.*\nExemple : **The girls wear a blue skirt.** *Les filles portent une jupe bleue.*\n\n## Petit dialogue\nAwa : **Modou, you have a new boubou!**\nModou : **Yes! It is for Korité. Do you like it?**\nAwa : **Yes, I do. It is very nice. I like the colour.**\nModou : **Thank you! And you? What do you wear for Korité?**\nAwa : **I wear a green dress and a headscarf.**\nModou : **Very nice!**\n\nÀ retenir : shirt, T-shirt, trousers, skirt, dress, shoes, boubou. I wear ... = Je porte ... Awa **wears** ... (avec s). a **white** shirt (couleur avant).",
+   "qcm": [
+    {
+     "question": "« A dress » veut dire :",
+     "options": [
+      "une chemise",
+      "une robe",
+      "une jupe",
+      "un pantalon"
+     ],
+     "reponse": 1,
+     "explication": "dress = robe."
+    },
+    {
+     "question": "Comment dit-on « des chaussures » ?",
+     "options": [
+      "shirts",
+      "shoes",
+      "sandals",
+      "socks"
+     ],
+     "reponse": 1,
+     "explication": "shoes = chaussures = dàll."
+    },
+    {
+     "question": "« Trousers » veut dire :",
+     "options": [
+      "une jupe",
+      "un pantalon",
+      "un tee-shirt",
+      "une casquette"
+     ],
+     "reponse": 1,
+     "explication": "trousers = pantalon (toujours au pluriel)."
+    },
+    {
+     "question": "« Je porte une casquette » se dit :",
+     "options": [
+      "I wear a cap.",
+      "I have cap.",
+      "I am a cap.",
+      "I wear cap a."
+     ],
+     "reponse": 0,
+     "explication": "I wear ... = Je porte ..."
+    },
+    {
+     "question": "Complète : Awa ___ a dress.",
+     "options": [
+      "wear",
+      "wears",
+      "wearing",
+      "is wear"
+     ],
+     "reponse": 1,
+     "explication": "Avec Awa (elle), on ajoute s : wears."
+    },
+    {
+     "question": "« Une chemise blanche » se dit :",
+     "options": [
+      "a shirt white",
+      "a white shirt",
+      "white a shirt",
+      "a shirt is white"
+     ],
+     "reponse": 1,
+     "explication": "La couleur se met avant le mot."
+    },
+    {
+     "question": "« A boubou » en wolof, c'est :",
+     "options": [
+      "sër",
+      "mbubb",
+      "dàll",
+      "bopp"
+     ],
+     "reponse": 1,
+     "explication": "boubou = mbubb."
+    },
+    {
+     "question": "« At school, I wear a uniform » veut dire :",
+     "options": [
+      "À l'école, je porte un uniforme.",
+      "À l'école, j'aime l'uniforme.",
+      "Mon école a un uniforme.",
+      "Je vais à l'école."
+     ],
+     "reponse": 0,
+     "explication": "wear = porter, uniform = uniforme."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a shirt",
+     "verso": "une chemise"
+    },
+    {
+     "recto": "a T-shirt",
+     "verso": "un tee-shirt"
+    },
+    {
+     "recto": "trousers",
+     "verso": "un pantalon"
+    },
+    {
+     "recto": "a skirt",
+     "verso": "une jupe"
+    },
+    {
+     "recto": "a dress",
+     "verso": "une robe"
+    },
+    {
+     "recto": "shoes",
+     "verso": "des chaussures (dàll)"
+    },
+    {
+     "recto": "sandals",
+     "verso": "des sandales"
+    },
+    {
+     "recto": "a cap",
+     "verso": "une casquette"
+    },
+    {
+     "recto": "a boubou",
+     "verso": "un boubou (mbubb)"
+    },
+    {
+     "recto": "a wrapper",
+     "verso": "un pagne (sër)"
+    },
+    {
+     "recto": "a headscarf",
+     "verso": "un foulard"
+    },
+    {
+     "recto": "a uniform",
+     "verso": "un uniforme"
+    },
+    {
+     "recto": "I wear ...",
+     "verso": "Je porte ..."
+    },
+    {
+     "recto": "a white shirt",
+     "verso": "une chemise blanche"
+    }
+   ]
   }
  ]
 }
