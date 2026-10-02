@@ -1654,6 +1654,157 @@
      "verso": "Mon fruit préféré est ..."
     }
    ]
+  },
+  {
+   "id": "ang6-13",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Vegetables – Les légumes",
+   "texte": "## Objectif\nNommer les légumes en anglais.\n\n## Étape 1 : Les légumes de tous les jours\n- **a tomato** *une tomate*\n- **an onion** *un oignon*\n- **a potato** *une pomme de terre*\n- **a carrot** *une carotte*\n- **a cabbage** *un chou*\n- **a pepper** *un piment / un poivron*\n\nExemple : **This is a tomato.** *C'est une tomate.*\nExemple : **This is an onion.** *C'est un oignon.*\nExemple : **This is a carrot.** *C'est une carotte.*\nExemple : **This is a cabbage.** *C'est un chou.*\n\nAstuce : **an onion** avec **an**, car onion commence par **o**.\n\n## Étape 2 : Les légumes de chez nous\n- **okra** *le gombo* (Wolof : kànja)\n- **cassava** *le manioc* (Wolof : ñambi)\n- **a sweet potato** *une patate douce*\n- **a bitter tomato** *un jaxatu* (aubergine amère)\n- **an eggplant** *une aubergine*\n- **lettuce** *la salade (laitue)*\n\nExemple : **Mum cooks okra sauce.** *Maman prépare la sauce gombo.*\nExemple : **I like cassava.** *J'aime le manioc.*\nExemple : **We grow lettuce in the school garden.** *Nous cultivons de la salade dans le jardin de l'école.*\n\n## Étape 3 : Un légume, des légumes\nOn ajoute **s** quand il y en a plusieurs.\n\nExemple : **one carrot → two carrots** *deux carottes*\nExemple : **one onion → three onions** *trois oignons*\nExemple : **one cabbage → four cabbages** *quatre choux*\n\nAttention : **tomato → tomatoes** et **potato → potatoes** (avec **es**).\n\n## Étape 4 : Les légumes du thiéboudiène\nExemple : **In thieboudienne, there is cabbage.** *Dans le thiéboudiène, il y a du chou.*\nExemple : **There are carrots and cassava.** *Il y a des carottes et du manioc.*\nExemple : **There is eggplant and a bitter tomato.** *Il y a de l'aubergine et un jaxatu.*\nExemple : **There are onions and tomatoes.** *Il y a des oignons et des tomates.*\n\n## Étape 5 : La couleur des légumes\nExemple : **The tomato is red.** *La tomate est rouge.*\nExemple : **The carrot is orange.** *La carotte est orange.*\nExemple : **The cabbage is green.** *Le chou est vert.*\nExemple : **The onion is white.** *L'oignon est blanc.*\n\n## Étape 6 : Dans notre jardin\nExemple : **We grow tomatoes.** *Nous cultivons des tomates.*\nExemple : **We grow onions and carrots.** *Nous cultivons des oignons et des carottes.*\nExemple : **I water the vegetables.** *J'arrose les légumes.*\nExemple : **Vegetables are good for health.** *Les légumes sont bons pour la santé.*\n\n## Petit dialogue\nAu marché.\nFatou : **Good morning! I want tomatoes, please.**\nSeller : **Good morning! How many tomatoes?**\nFatou : **Five tomatoes and two onions, please.**\nSeller : **Here you are.**\nFatou : **Do you have carrots?**\nSeller : **Yes, I do.**\nFatou : **Three carrots, please. Thank you!**\n\nÀ retenir : tomato, onion, potato, carrot, cabbage, okra, cassava. **an** onion. **tomatoes**, **potatoes** (avec es).",
+   "qcm": [
+    {
+     "question": "« A tomato » veut dire :",
+     "options": [
+      "une pomme de terre",
+      "une tomate",
+      "un oignon",
+      "une carotte"
+     ],
+     "reponse": 1,
+     "explication": "tomato = tomate."
+    },
+    {
+     "question": "Comment dit-on « un oignon » ?",
+     "options": [
+      "a onion",
+      "an onion",
+      "an onions",
+      "onion a"
+     ],
+     "reponse": 1,
+     "explication": "onion commence par o : an onion."
+    },
+    {
+     "question": "« Cassava » veut dire :",
+     "options": [
+      "le gombo",
+      "le manioc",
+      "le chou",
+      "la salade"
+     ],
+     "reponse": 1,
+     "explication": "cassava = manioc = ñambi."
+    },
+    {
+     "question": "« Okra » veut dire :",
+     "options": [
+      "le gombo",
+      "l'aubergine",
+      "le piment",
+      "la patate douce"
+     ],
+     "reponse": 0,
+     "explication": "okra = gombo = kànja."
+    },
+    {
+     "question": "Le pluriel de « tomato » est :",
+     "options": [
+      "tomatos",
+      "tomatoes",
+      "tomaties",
+      "tomato"
+     ],
+     "reponse": 1,
+     "explication": "tomato → tomatoes (avec es)."
+    },
+    {
+     "question": "« Deux carottes » se dit :",
+     "options": [
+      "two carrot",
+      "two carrots",
+      "two carrotes",
+      "a two carrot"
+     ],
+     "reponse": 1,
+     "explication": "Plusieurs : carrots."
+    },
+    {
+     "question": "Le chou est :",
+     "options": [
+      "red",
+      "green",
+      "black",
+      "blue"
+     ],
+     "reponse": 1,
+     "explication": "The cabbage is green."
+    },
+    {
+     "question": "« We grow tomatoes » veut dire :",
+     "options": [
+      "Nous mangeons des tomates.",
+      "Nous cultivons des tomates.",
+      "Nous achetons des tomates.",
+      "Nous aimons les tomates."
+     ],
+     "reponse": 1,
+     "explication": "grow = cultiver."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a tomato",
+     "verso": "une tomate"
+    },
+    {
+     "recto": "an onion",
+     "verso": "un oignon"
+    },
+    {
+     "recto": "a potato",
+     "verso": "une pomme de terre"
+    },
+    {
+     "recto": "a carrot",
+     "verso": "une carotte"
+    },
+    {
+     "recto": "a cabbage",
+     "verso": "un chou"
+    },
+    {
+     "recto": "a pepper",
+     "verso": "un piment / un poivron"
+    },
+    {
+     "recto": "okra",
+     "verso": "le gombo (kànja)"
+    },
+    {
+     "recto": "cassava",
+     "verso": "le manioc (ñambi)"
+    },
+    {
+     "recto": "a sweet potato",
+     "verso": "une patate douce"
+    },
+    {
+     "recto": "an eggplant",
+     "verso": "une aubergine"
+    },
+    {
+     "recto": "lettuce",
+     "verso": "la salade"
+    },
+    {
+     "recto": "tomatoes",
+     "verso": "des tomates"
+    },
+    {
+     "recto": "We grow ...",
+     "verso": "Nous cultivons ..."
+    }
+   ]
   }
  ]
 }
