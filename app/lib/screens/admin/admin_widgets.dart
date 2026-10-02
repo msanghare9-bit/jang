@@ -139,7 +139,11 @@ Future<String?> askText(BuildContext context, String title, String label, {Strin
 /// Création ou modification d'une matière (nom + couleur).
 class SubjectDialog extends StatefulWidget {
   final Subject? subject;
-  const SubjectDialog({super.key, this.subject});
+
+  /// Toutes les classes, et la classe depuis laquelle on ouvre la fenêtre.
+  final List<Exam> exams;
+  final String examId;
+  const SubjectDialog({super.key, this.subject, this.exams = const [], this.examId = ''});
 
   @override
   State<SubjectDialog> createState() => _SubjectDialogState();
@@ -149,6 +153,13 @@ class _SubjectDialogState extends State<SubjectDialog> {
   late final TextEditingController _name =
       TextEditingController(text: widget.subject?.name ?? '');
   late String _color = widget.subject?.color ?? JangColors.subjectPalette.first;
+  late final Set<String> _classes = {
+    ...?widget.subject?.examIds,
+    if (widget.subject == null && widget.examId.isNotEmpty) widget.examId,
+  };
+
+  /// Classe principale : elle reste toujours cochée.
+  String get _main => widget.subject?.examId ?? widget.examId;
 
   @override
   void dispose() {
@@ -196,6 +207,28 @@ class _SubjectDialogState extends State<SubjectDialog> {
                 );
               }).toList(),
             ),
+            if (widget.exams.length > 1) ...[
+              const SizedBox(height: 18),
+              const Text('Classes qui voient cette matière'),
+              const SizedBox(height: 4),
+              Text('Coche plusieurs classes pour partager les mêmes leçons (ex. 6e et 5e).',
+                  style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: 8),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  for (final e in widget.exams)
+                    FilterChip(
+                      label: Text(e.name),
+                      selected: _classes.contains(e.id),
+                      onSelected: e.id == _main
+                          ? null
+                          : (v) => setState(() => v ? _classes.add(e.id) : _classes.remove(e.id)),
+                    ),
+                ],
+              ),
+            ],
           ],
         ),
       ),
@@ -204,7 +237,9 @@ class _SubjectDialogState extends State<SubjectDialog> {
         FilledButton(
           onPressed: () {
             final n = _name.text.trim();
-            if (n.isNotEmpty) Navigator.pop(context, (n, _color));
+            if (n.isNotEmpty) {
+              Navigator.pop(context, (n, _color, {if (_main.isNotEmpty) _main, ..._classes}.toList()));
+            }
           },
           child: const Text('Enregistrer'),
         ),

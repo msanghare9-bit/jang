@@ -136,15 +136,18 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
   }
 
   Future<void> _edit([Subject? s]) async {
-    final result = await showDialog<(String, String)>(
+    final exams = await ContentRepo.instance.exams();
+    if (!mounted) return;
+    final result = await showDialog<(String, String, List<String>)>(
       context: context,
-      builder: (_) => SubjectDialog(subject: s),
+      builder: (_) => SubjectDialog(subject: s, exams: exams, examId: widget.exam.id),
     );
     if (result == null) return;
     final repo = ContentRepo.instance;
     final id = s?.id ?? repo.newId('subjects');
     repo.save('subjects', id, {
-      'examId': widget.exam.id,
+      'examId': s?.examId ?? widget.exam.id,
+      'examIds': result.$3,
       'name': result.$1,
       'color': result.$2,
       if (s == null) 'order': _subjects?.length ?? 0,
@@ -228,10 +231,10 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
     _packsLoaded = true;
     if (mounted) setState(() => _packStatus = 'loading');
     final all = await PackService.instance.fetch();
-    final exam = await ContentRepo.instance.exam(widget.subject.examId);
-    final fit = (all ?? const <LessonPack>[])
-        .where((p) => p.fits(widget.subject, exam?.name ?? ''))
-        .toList();
+    final names = <String>[
+      for (final id in widget.subject.examIds) (await ContentRepo.instance.exam(id))?.name ?? '',
+    ];
+    final fit = (all ?? const <LessonPack>[]).where((p) => p.fits(widget.subject, names)).toList();
     if (mounted) {
       setState(() {
         _packs = fit;

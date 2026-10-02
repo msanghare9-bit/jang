@@ -82,15 +82,15 @@ class LessonPack {
   }
 
   /// Vrai si ce paquet est destiné à cette matière de ce niveau.
-  bool fits(Subject s, String examName) {
+  bool fits(Subject s, List<String> examNames) {
     final name = _norm(s.name);
     final want0 = _norm(subject);
     final okSubject = want0.isEmpty ||
         name.contains(want0) ||
         (want0.startsWith('angl') && (name.contains('angl') || name.contains('english')));
     final want = levelOf(level);
-    final have = levelOf(examName);
-    final okLevel = want.isEmpty || have.isEmpty || want == have;
+    final haves = examNames.map(levelOf).where((l) => l.isNotEmpty).toSet();
+    final okLevel = want.isEmpty || haves.isEmpty || haves.contains(want);
     return okSubject && okLevel;
   }
 }

@@ -110,9 +110,16 @@ class ContentRepo {
     return null;
   }
 
+  /// Matières d'une classe : celles de la classe, et celles partagées avec elle.
   Future<List<Subject>> subjects(String examId) async {
-    final docs = await _cached(_db.collection('subjects').where('examId', isEqualTo: examId));
-    final list = docs.map(Subject.fromDoc).where((e) => !e.deleted).toList();
+    final own = await _cached(_db.collection('subjects').where('examId', isEqualTo: examId));
+    final shared =
+        await _cached(_db.collection('subjects').where('examIds', arrayContains: examId));
+    final byId = <String, Subject>{};
+    for (final d in [...own, ...shared]) {
+      byId[d.id] = Subject.fromDoc(d);
+    }
+    final list = byId.values.where((e) => !e.deleted).toList();
     list.sort((a, b) => a.order.compareTo(b.order));
     return list;
   }
@@ -147,9 +154,13 @@ class ContentRepo {
     return list;
   }
 
+  /// Toutes les leçons que voit une classe (y compris celles des matières partagées).
   Future<List<Lesson>> lessonsOfExam(String examId) async {
-    final docs = await _cached(_db.collection('lessons').where('examId', isEqualTo: examId));
-    return docs.map(Lesson.fromDoc).where((e) => !e.deleted).toList();
+    final out = <Lesson>[];
+    for (final s in await subjects(examId)) {
+      out.addAll(await lessonsOfSubject(s.id));
+    }
+    return out;
   }
 
   Future<Lesson?> lesson(String id) async {

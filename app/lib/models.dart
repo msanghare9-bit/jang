@@ -22,6 +22,9 @@ class Exam {
 class Subject {
   final String id;
   final String examId;
+
+  /// Toutes les classes qui voient cette matière (la classe principale comprise).
+  final List<String> examIds;
   final String name;
   final String color;
   final int order;
@@ -29,17 +32,19 @@ class Subject {
   Subject({
     required this.id,
     required this.examId,
+    List<String>? examIds,
     required this.name,
     required this.color,
     this.order = 0,
     this.deleted = false,
-  });
+  }) : examIds = {if (examId.isNotEmpty) examId, ...?examIds}.toList();
 
   factory Subject.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
     return Subject(
       id: d.id,
       examId: _str(m['examId']),
+      examIds: (m['examIds'] is List ? m['examIds'] as List : const []).whereType<String>().toList(),
       name: _str(m['name']),
       color: _str(m['color'], '#0F5C4A'),
       order: _int(m['order']),
@@ -47,8 +52,14 @@ class Subject {
     );
   }
 
-  Map<String, dynamic> toMap() =>
-      {'examId': examId, 'name': name, 'color': color, 'order': order, 'deleted': deleted};
+  Map<String, dynamic> toMap() => {
+        'examId': examId,
+        'examIds': examIds,
+        'name': name,
+        'color': color,
+        'order': order,
+        'deleted': deleted,
+      };
 }
 
 class Chapter {
