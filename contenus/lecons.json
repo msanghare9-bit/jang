@@ -398,6 +398,134 @@
      "verso": "Quel est ton numéro de téléphone ?"
     }
    ]
+  },
+  {
+   "id": "ang6-04",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "My name and my age – Mon nom et mon âge",
+   "texte": "## Objectif\nDire son nom et son âge en anglais, et les demander à quelqu'un.\n\n## Étape 1 : Demander le nom\n- **What is your name?** *Comment t'appelles-tu ?* (Wolof : Naka nga tudd ?)\n\nExemple : Le professeur demande à un nouvel élève : **What is your name?**\nExemple : Awa rencontre une fille au marché : **Hello! What is your name?**\nExemple : Au terrain de foot, Modou demande : **Hi! What is your name?**\n\nAstuce : On dit aussi **What's your name?** C'est la même chose, en plus court.\n\n## Étape 2 : Dire son nom\n- **My name is ...** *Je m'appelle ...* (Wolof : Maa ngi tudd ...)\n- **I am ...** *Je suis ...*\n\nExemple : **My name is Awa.** *Je m'appelle Awa.*\nExemple : **My name is Modou Diop.** *Je m'appelle Modou Diop.*\nExemple : **My name is Fatou Ndiaye.** *Je m'appelle Fatou Ndiaye.*\nExemple : **I am Ibrahima.** *Je suis Ibrahima.*\nExemple : **I am Khady Sarr.** *Je suis Khady Sarr.*\n\n## Étape 3 : Répondre poliment\n- **Nice to meet you.** *Enchanté(e).*\n- **Nice to meet you too.** *Enchanté(e) aussi.*\n\nExemple : **My name is Awa. Nice to meet you.** **Nice to meet you too.**\nExemple : **I am Moussa. Nice to meet you, Moussa!**\n\n## Étape 4 : Demander l'âge\n- **How old are you?** *Quel âge as-tu ?*\n\nExemple : Le professeur demande : **Awa, how old are you?**\nExemple : Modou demande à son nouvel ami : **How old are you?**\nExemple : **And you? How old are you?** *Et toi ? Quel âge as-tu ?*\n\n## Étape 5 : Dire son âge\n- **I am ... years old.** *J'ai ... ans.*\n- **I am ...** *J'ai ... (ans).*\n\nExemple : **I am eleven years old.** *J'ai onze ans.*\nExemple : **I am twelve years old.** *J'ai douze ans.*\nExemple : **I am thirteen years old.** *J'ai treize ans.*\nExemple : **I am ten.** *J'ai dix ans.*\nExemple : **I am fourteen.** *J'ai quatorze ans.*\n\nAttention : En français on dit « J'ai 12 ans ». En anglais on dit **I am twelve**, pas « I have twelve ».\n\n## Étape 6 : Tout dire ensemble\nExemple : **Hello! My name is Awa. I am eleven years old.**\nExemple : **Hi! I am Modou. I am twelve years old.**\nExemple : **Good morning! My name is Fatou Ndiaye. I am thirteen.**\nExemple : **Hello! My name is Ibrahima. I am from Kébémer. I am twelve years old.**\n\n## Petit dialogue\nAwa : **Hello! What is your name?**\nIbou : **My name is Ibou. And you?**\nAwa : **My name is Awa. Nice to meet you.**\nIbou : **Nice to meet you too. How old are you?**\nAwa : **I am eleven years old. And you?**\nIbou : **I am twelve.**\nAwa : **Bye, Ibou!**\nIbou : **Goodbye, Awa!**\n\nÀ retenir : What is your name? = Comment t'appelles-tu ? My name is ... = Je m'appelle ... How old are you? = Quel âge as-tu ? I am ... years old = J'ai ... ans.",
+   "qcm": [
+    {
+     "question": "Pour demander le nom, on dit :",
+     "options": [
+      "How old are you?",
+      "What is your name?",
+      "How are you?",
+      "What is this?"
+     ],
+     "reponse": 1,
+     "explication": "What is your name? = Comment t'appelles-tu ?"
+    },
+    {
+     "question": "« Je m'appelle Awa » se dit :",
+     "options": [
+      "My name is Awa.",
+      "I have Awa.",
+      "Awa is old.",
+      "What is Awa?"
+     ],
+     "reponse": 0,
+     "explication": "My name is ... = Je m'appelle ..."
+    },
+    {
+     "question": "Pour demander l'âge, on dit :",
+     "options": [
+      "What is your name?",
+      "How are you?",
+      "How old are you?",
+      "Nice to meet you."
+     ],
+     "reponse": 2,
+     "explication": "How old are you? = Quel âge as-tu ?"
+    },
+    {
+     "question": "« J'ai douze ans » se dit :",
+     "options": [
+      "I have twelve years.",
+      "I am twelve years old.",
+      "My name is twelve.",
+      "I am two years old."
+     ],
+     "reponse": 1,
+     "explication": "En anglais : I am ... years old."
+    },
+    {
+     "question": "« Nice to meet you » veut dire :",
+     "options": [
+      "Au revoir",
+      "Merci",
+      "Enchanté(e)",
+      "Bonne nuit"
+     ],
+     "reponse": 2,
+     "explication": "Nice to meet you = Enchanté(e)."
+    },
+    {
+     "question": "On te dit « Nice to meet you ». Tu réponds :",
+     "options": [
+      "Nice to meet you too.",
+      "How old are you?",
+      "My name is.",
+      "I am fine."
+     ],
+     "reponse": 0,
+     "explication": "Nice to meet you too = Enchanté(e) aussi."
+    },
+    {
+     "question": "« I am eleven » veut dire :",
+     "options": [
+      "J'ai onze ans.",
+      "Je m'appelle Eleven.",
+      "J'ai un an.",
+      "Il est onze heures."
+     ],
+     "reponse": 0,
+     "explication": "I am eleven = J'ai onze ans."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "What is your name?",
+     "verso": "Comment t'appelles-tu ?"
+    },
+    {
+     "recto": "My name is ...",
+     "verso": "Je m'appelle ..."
+    },
+    {
+     "recto": "I am Awa.",
+     "verso": "Je suis Awa."
+    },
+    {
+     "recto": "Nice to meet you.",
+     "verso": "Enchanté(e)."
+    },
+    {
+     "recto": "Nice to meet you too.",
+     "verso": "Enchanté(e) aussi."
+    },
+    {
+     "recto": "How old are you?",
+     "verso": "Quel âge as-tu ?"
+    },
+    {
+     "recto": "I am eleven years old.",
+     "verso": "J'ai onze ans."
+    },
+    {
+     "recto": "I am twelve years old.",
+     "verso": "J'ai douze ans."
+    },
+    {
+     "recto": "I am thirteen.",
+     "verso": "J'ai treize ans."
+    },
+    {
+     "recto": "And you?",
+     "verso": "Et toi ?"
+    }
+   ]
   }
  ]
 }
