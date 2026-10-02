@@ -1805,6 +1805,161 @@
      "verso": "Nous cultivons ..."
     }
    ]
+  },
+  {
+   "id": "ang6-14",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The body – Le corps",
+   "texte": "## Objectif\nNommer les parties du corps en anglais.\n\n## Étape 1 : La tête et le visage\n- **head** *la tête* (Wolof : bopp)\n- **hair** *les cheveux*\n- **face** *le visage*\n- **eye** *l'œil* (Wolof : bët)\n- **ear** *l'oreille* (Wolof : nopp)\n- **nose** *le nez* (Wolof : bakkan)\n- **mouth** *la bouche* (Wolof : gémmiñ)\n- **tooth** *la dent* (Wolof : bëñ)\n\nExemple : **This is my head.** *Voici ma tête.*\nExemple : **This is my nose.** *Voici mon nez.*\nExemple : **I have two eyes.** *J'ai deux yeux.*\nExemple : **I have two ears.** *J'ai deux oreilles.*\nExemple : **I have one mouth.** *J'ai une bouche.*\n\n## Étape 2 : Le corps\n- **neck** *le cou*\n- **arm** *le bras*\n- **hand** *la main* (Wolof : loxo)\n- **finger** *le doigt*\n- **stomach** *le ventre*\n- **leg** *la jambe*\n- **foot** *le pied* (Wolof : tànk)\n\nExemple : **I have two arms.** *J'ai deux bras.*\nExemple : **I have two hands.** *J'ai deux mains.*\nExemple : **I have ten fingers.** *J'ai dix doigts.*\nExemple : **I have two legs.** *J'ai deux jambes.*\n\n## Étape 3 : Des pluriels spéciaux\nD'habitude, on ajoute **s** : **eyes**, **ears**, **hands**, **arms**, **legs**.\n\nAttention : Certains mots changent complètement :\n- **one foot → two feet** *un pied → deux pieds*\n- **one tooth → many teeth** *une dent → beaucoup de dents*\n\nExemple : **I have two feet.** *J'ai deux pieds.*\nExemple : **I brush my teeth.** *Je me brosse les dents.*\n\n## Étape 4 : Ce que je fais avec mon corps\nExemple : **I see with my eyes.** *Je vois avec mes yeux.*\nExemple : **I hear with my ears.** *J'entends avec mes oreilles.*\nExemple : **I eat with my mouth.** *Je mange avec ma bouche.*\nExemple : **I write with my hand.** *J'écris avec ma main.*\nExemple : **I play football with my feet.** *Je joue au football avec mes pieds.*\n\n## Étape 5 : Prendre soin de son corps\nExemple : **I wash my hands before eating.** *Je me lave les mains avant de manger.*\nExemple : **I brush my teeth every morning.** *Je me brosse les dents chaque matin.*\nExemple : **I wash my face.** *Je me lave le visage.*\n\n## Étape 6 : Le jeu « Touch your… »\nLe professeur dit une partie du corps. Les élèves la touchent !\n- **Touch your ...** *Touche ton / ta ...*\n\nExemple : **Touch your head!** *Touche ta tête !*\nExemple : **Touch your nose!** *Touche ton nez !*\nExemple : **Touch your ears!** *Touche tes oreilles !*\nExemple : **Touch your feet!** *Touche tes pieds !*\n\n## Petit dialogue\nTeacher : **Class, touch your head!**\nStudents : *(ils touchent leur tête)*\nTeacher : **Very good! Now touch your nose!**\nAwa : **This is my nose!**\nTeacher : **Good! Modou, how many fingers do you have?**\nModou : **I have ten fingers.**\nTeacher : **Excellent!**\n\nÀ retenir : head, eye, ear, nose, mouth, hand, arm, leg, foot. **foot → feet**, **tooth → teeth**.",
+   "qcm": [
+    {
+     "question": "« Head » veut dire :",
+     "options": [
+      "la main",
+      "la tête",
+      "le pied",
+      "le nez"
+     ],
+     "reponse": 1,
+     "explication": "head = tête = bopp."
+    },
+    {
+     "question": "Comment dit-on « l'oreille » ?",
+     "options": [
+      "eye",
+      "ear",
+      "arm",
+      "leg"
+     ],
+     "reponse": 1,
+     "explication": "ear = oreille = nopp."
+    },
+    {
+     "question": "« Nose » veut dire :",
+     "options": [
+      "la bouche",
+      "le cou",
+      "le nez",
+      "la dent"
+     ],
+     "reponse": 2,
+     "explication": "nose = nez = bakkan."
+    },
+    {
+     "question": "« Hand » veut dire :",
+     "options": [
+      "la main",
+      "la jambe",
+      "le bras",
+      "le doigt"
+     ],
+     "reponse": 0,
+     "explication": "hand = main = loxo."
+    },
+    {
+     "question": "Le pluriel de « foot » est :",
+     "options": [
+      "foots",
+      "feet",
+      "feets",
+      "foot"
+     ],
+     "reponse": 1,
+     "explication": "foot → feet."
+    },
+    {
+     "question": "Le pluriel de « tooth » est :",
+     "options": [
+      "tooths",
+      "teeth",
+      "toothes",
+      "teeths"
+     ],
+     "reponse": 1,
+     "explication": "tooth → teeth."
+    },
+    {
+     "question": "« J'ai dix doigts » se dit :",
+     "options": [
+      "I have ten fingers.",
+      "I have ten finger.",
+      "I am ten fingers.",
+      "I have ten feet."
+     ],
+     "reponse": 0,
+     "explication": "I have + ten fingers (avec s)."
+    },
+    {
+     "question": "« Touch your nose! » veut dire :",
+     "options": [
+      "Lave ton nez !",
+      "Touche ton nez !",
+      "Montre ta tête !",
+      "Ferme la bouche !"
+     ],
+     "reponse": 1,
+     "explication": "Touch your … = Touche ton / ta …"
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "head",
+     "verso": "la tête (bopp)"
+    },
+    {
+     "recto": "eye",
+     "verso": "l'œil (bët)"
+    },
+    {
+     "recto": "ear",
+     "verso": "l'oreille (nopp)"
+    },
+    {
+     "recto": "nose",
+     "verso": "le nez (bakkan)"
+    },
+    {
+     "recto": "mouth",
+     "verso": "la bouche (gémmiñ)"
+    },
+    {
+     "recto": "tooth / teeth",
+     "verso": "dent / dents (bëñ)"
+    },
+    {
+     "recto": "hair",
+     "verso": "les cheveux"
+    },
+    {
+     "recto": "arm",
+     "verso": "le bras"
+    },
+    {
+     "recto": "hand",
+     "verso": "la main (loxo)"
+    },
+    {
+     "recto": "finger",
+     "verso": "le doigt"
+    },
+    {
+     "recto": "leg",
+     "verso": "la jambe"
+    },
+    {
+     "recto": "foot / feet",
+     "verso": "pied / pieds (tànk)"
+    },
+    {
+     "recto": "Touch your head!",
+     "verso": "Touche ta tête !"
+    },
+    {
+     "recto": "I wash my hands.",
+     "verso": "Je me lave les mains."
+    }
+   ]
   }
  ]
 }
