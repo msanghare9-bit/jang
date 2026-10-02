@@ -2115,6 +2115,157 @@
      "verso": "une chemise blanche"
     }
    ]
+  },
+  {
+   "id": "ang6-16",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Jobs – Les métiers",
+   "texte": "## Objectif\nNommer les métiers en anglais et dire ce que font les gens.\n\n## Étape 1 : Les métiers autour de moi\n- **a farmer** *un cultivateur* (Wolof : beykat)\n- **a fisherman** *un pêcheur*\n- **a teacher** *un professeur* (Wolof : jàngalekat)\n- **a trader** *un commerçant* (Wolof : jaaykat)\n- **a driver** *un chauffeur* (Wolof : sofeer)\n- **a tailor** *un tailleur*\n\nExemple : **My father is a farmer.** *Mon père est cultivateur.*\nExemple : **My uncle is a fisherman in Kayar.** *Mon oncle est pêcheur à Kayar.*\nExemple : **Mr Diop is a teacher.** *M. Diop est professeur.*\nExemple : **My mother is a trader.** *Ma mère est commerçante.*\nExemple : **The tailor makes boubous.** *Le tailleur fait des boubous.*\n\n## Étape 2 : D'autres métiers\n- **a doctor** *un médecin*\n- **a nurse** *un infirmier / une infirmière*\n- **a mechanic** *un mécanicien*\n- **a police officer** *un policier*\n- **a carpenter** *un menuisier*\n- **an engineer** *un ingénieur*\n\nExemple : **The doctor works at the hospital.** *Le médecin travaille à l'hôpital.*\nExemple : **My aunt is a nurse.** *Ma tante est infirmière.*\nExemple : **The mechanic repairs cars.** *Le mécanicien répare les voitures.*\n\nAstuce : Rappel : **an** devant a, e, i, o, u → **an engineer**.\n\n## Étape 3 : Demander le métier\n- **What does your father do?** *Que fait ton père ?*\n- **He is a ...** *Il est ...*\n- **She is a ...** *Elle est ...*\n\nExemple : **What does your father do?** **He is a farmer.** *Il est cultivateur.*\nExemple : **What does your mother do?** **She is a trader.** *Elle est commerçante.*\nExemple : **What does your brother do?** **He is a driver.** *Il est chauffeur.*\nExemple : **What does your sister do?** **She is a nurse.** *Elle est infirmière.*\n\nAttention : En anglais, on met **a** devant le métier : **He is a farmer**. En français on dit « il est cultivateur » (sans « un »).\n\n## Étape 4 : Où travaillent-ils ?\nExemple : **A farmer works in the field.** *Un cultivateur travaille dans le champ.*\nExemple : **A teacher works at school.** *Un professeur travaille à l'école.*\nExemple : **A doctor works at the hospital.** *Un médecin travaille à l'hôpital.*\nExemple : **A trader works at the market.** *Un commerçant travaille au marché.*\nExemple : **A fisherman works at sea.** *Un pêcheur travaille en mer.*\n\n## Étape 5 : Ce que je veux faire plus tard\n- **I want to be a ...** *Je veux être ...*\n\nExemple : **I want to be a doctor.** *Je veux être médecin.*\nExemple : **I want to be a teacher.** *Je veux être professeur.*\nExemple : **I want to be an engineer.** *Je veux être ingénieur.*\nExemple : **Awa wants to be a nurse.** *Awa veut être infirmière.*\n\n## Petit dialogue\nTeacher : **Modou, what does your father do?**\nModou : **He is a farmer. He grows groundnuts.** *Il cultive de l'arachide.*\nTeacher : **Very good. And your mother?**\nModou : **She is a trader. She works at the market.**\nTeacher : **What do you want to be?**\nModou : **I want to be a doctor!**\nTeacher : **Excellent!**\n\nÀ retenir : farmer, teacher, trader, driver, doctor, nurse. What does your father do? = Que fait ton père ? He is **a** farmer. I want to be **a** doctor.",
+   "qcm": [
+    {
+     "question": "« A farmer » veut dire :",
+     "options": [
+      "un pêcheur",
+      "un cultivateur",
+      "un chauffeur",
+      "un commerçant"
+     ],
+     "reponse": 1,
+     "explication": "farmer = cultivateur = beykat."
+    },
+    {
+     "question": "Comment dit-on « un médecin » ?",
+     "options": [
+      "a nurse",
+      "a driver",
+      "a doctor",
+      "a tailor"
+     ],
+     "reponse": 2,
+     "explication": "doctor = médecin."
+    },
+    {
+     "question": "« A fisherman » travaille :",
+     "options": [
+      "at the market",
+      "at sea",
+      "at school",
+      "in the field"
+     ],
+     "reponse": 1,
+     "explication": "Un pêcheur travaille en mer : at sea."
+    },
+    {
+     "question": "« Mon père est commerçant » se dit :",
+     "options": [
+      "My father is trader.",
+      "My father is a trader.",
+      "My father a trader.",
+      "My father trader is."
+     ],
+     "reponse": 1,
+     "explication": "On met a devant le métier."
+    },
+    {
+     "question": "Pour demander le métier du père, on dit :",
+     "options": [
+      "What is your father?",
+      "What does your father do?",
+      "How old is your father?",
+      "Where is your father?"
+     ],
+     "reponse": 1,
+     "explication": "What does your father do? = Que fait ton père ?"
+    },
+    {
+     "question": "« I want to be a teacher » veut dire :",
+     "options": [
+      "Je suis professeur.",
+      "Je veux être professeur.",
+      "J'aime le professeur.",
+      "Mon professeur est là."
+     ],
+     "reponse": 1,
+     "explication": "I want to be ... = Je veux être ..."
+    },
+    {
+     "question": "Quel mot est correct ?",
+     "options": [
+      "a engineer",
+      "an engineer",
+      "an doctor",
+      "an farmer"
+     ],
+     "reponse": 1,
+     "explication": "engineer commence par e : an engineer."
+    },
+    {
+     "question": "Où travaille un médecin ?",
+     "options": [
+      "at the hospital",
+      "at sea",
+      "in the field",
+      "at the market"
+     ],
+     "reponse": 0,
+     "explication": "A doctor works at the hospital."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a farmer",
+     "verso": "un cultivateur (beykat)"
+    },
+    {
+     "recto": "a fisherman",
+     "verso": "un pêcheur"
+    },
+    {
+     "recto": "a teacher",
+     "verso": "un professeur (jàngalekat)"
+    },
+    {
+     "recto": "a trader",
+     "verso": "un commerçant (jaaykat)"
+    },
+    {
+     "recto": "a driver",
+     "verso": "un chauffeur (sofeer)"
+    },
+    {
+     "recto": "a tailor",
+     "verso": "un tailleur"
+    },
+    {
+     "recto": "a doctor",
+     "verso": "un médecin"
+    },
+    {
+     "recto": "a nurse",
+     "verso": "un(e) infirmier(ère)"
+    },
+    {
+     "recto": "a mechanic",
+     "verso": "un mécanicien"
+    },
+    {
+     "recto": "an engineer",
+     "verso": "un ingénieur"
+    },
+    {
+     "recto": "What does your father do?",
+     "verso": "Que fait ton père ?"
+    },
+    {
+     "recto": "He is a farmer.",
+     "verso": "Il est cultivateur."
+    },
+    {
+     "recto": "I want to be a doctor.",
+     "verso": "Je veux être médecin."
+    }
+   ]
   }
  ]
 }
