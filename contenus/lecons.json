@@ -1096,6 +1096,134 @@
      "verso": "douze mois dans une année"
     }
    ]
+  },
+  {
+   "id": "ang6-09",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The time – L'heure",
+   "texte": "## Objectif\nDemander et dire l'heure en anglais.\n\n## Étape 1 : Demander l'heure\n- **What time is it?** *Quelle heure est-il ?* (Wolof : Ban waxtu moo jot ?)\n- **It is ...** *Il est ...*\n\nExemple : Awa demande à son père : **What time is it?**\nExemple : Au marché, Modou demande : **Excuse me, what time is it?** *Excusez-moi, quelle heure est-il ?*\n\n## Étape 2 : L'heure pile\n- **o'clock** *heure(s) pile*\n\nExemple : **It is one o'clock.** *Il est une heure.*\nExemple : **It is three o'clock.** *Il est trois heures.*\nExemple : **It is seven o'clock.** *Il est sept heures.*\nExemple : **It is eight o'clock.** *Il est huit heures.*\nExemple : **It is twelve o'clock.** *Il est midi / minuit.*\n\nAstuce : On utilise **o'clock** seulement pour l'heure pile : 1 h, 2 h, 3 h…\n\n## Étape 3 : Et demie\n- **half past ...** *... heure(s) et demie*\n\nExemple : **It is half past two.** *Il est deux heures et demie.* (2 h 30)\nExemple : **It is half past six.** *Il est six heures et demie.* (6 h 30)\nExemple : **It is half past ten.** *Il est dix heures et demie.* (10 h 30)\n\nAstuce : **half** = demi. **past** = après. **Half past two** = 30 minutes après 2 h.\n\n## Étape 4 : Et quart, moins le quart\n- **quarter past ...** *... heure(s) et quart*\n- **quarter to ...** *... heure(s) moins le quart*\n\nExemple : **It is quarter past nine.** *Il est neuf heures et quart.* (9 h 15)\nExemple : **It is quarter past four.** *Il est quatre heures et quart.* (4 h 15)\nExemple : **It is quarter to eight.** *Il est huit heures moins le quart.* (7 h 45)\nExemple : **It is quarter to five.** *Il est cinq heures moins le quart.* (4 h 45)\n\nAttention : **past** = après l'heure. **to** = avant l'heure.\n\n## Étape 5 : À quelle heure ?\n- **at ...** *à ...*\n\nExemple : **I wake up at six o'clock.** *Je me réveille à six heures.*\nExemple : **School starts at eight o'clock.** *L'école commence à huit heures.*\nExemple : **I have English at ten o'clock.** *J'ai anglais à dix heures.*\nExemple : **I have lunch at two o'clock.** *Je déjeune à deux heures.*\nExemple : **I go to bed at nine o'clock.** *Je me couche à neuf heures.*\n\nAstuce : Devant une heure, on met **at** : **at seven o'clock**.\n\n## Étape 6 : Matin, après-midi, soir\n- **in the morning** *le matin*\n- **in the afternoon** *l'après-midi*\n- **in the evening** *le soir*\n\nExemple : **It is seven o'clock in the morning.** *Il est sept heures du matin.*\nExemple : **It is four o'clock in the afternoon.** *Il est quatre heures de l'après-midi.*\nExemple : **It is eight o'clock in the evening.** *Il est huit heures du soir.*\n\n## Petit dialogue\nAwa : **Excuse me, Modou. What time is it?**\nModou : **It is half past seven.**\nAwa : **Oh! School starts at eight o'clock.**\nModou : **Yes. Let's go!**\nAwa : **OK. Thank you!**\n\nÀ retenir : What time is it? = Quelle heure est-il ? It is ... o'clock = Il est ... heures. half past = et demie. quarter past = et quart. quarter to = moins le quart. at = à.",
+   "qcm": [
+    {
+     "question": "Pour demander l'heure, on dit :",
+     "options": [
+      "What day is it?",
+      "What time is it?",
+      "How old are you?",
+      "What month is it?"
+     ],
+     "reponse": 1,
+     "explication": "What time is it? = Quelle heure est-il ?"
+    },
+    {
+     "question": "« It is three o'clock » veut dire :",
+     "options": [
+      "Il est trois heures.",
+      "Il est treize heures.",
+      "J'ai trois ans.",
+      "Il est trois heures et demie."
+     ],
+     "reponse": 0,
+     "explication": "three o'clock = trois heures pile."
+    },
+    {
+     "question": "Comment dit-on 6 h 30 ?",
+     "options": [
+      "It is six o'clock.",
+      "It is half past six.",
+      "It is quarter past six.",
+      "It is quarter to six."
+     ],
+     "reponse": 1,
+     "explication": "half past six = six heures et demie."
+    },
+    {
+     "question": "« Quarter past nine », c'est :",
+     "options": [
+      "8 h 45",
+      "9 h 30",
+      "9 h 15",
+      "9 h 00"
+     ],
+     "reponse": 2,
+     "explication": "quarter past = et quart : 9 h 15."
+    },
+    {
+     "question": "« Quarter to eight », c'est :",
+     "options": [
+      "8 h 15",
+      "7 h 45",
+      "8 h 30",
+      "7 h 15"
+     ],
+     "reponse": 1,
+     "explication": "quarter to = moins le quart : 7 h 45."
+    },
+    {
+     "question": "« L'école commence à huit heures » se dit :",
+     "options": [
+      "School starts at eight o'clock.",
+      "School starts in eight o'clock.",
+      "School starts on eight.",
+      "It is eight school."
+     ],
+     "reponse": 0,
+     "explication": "Devant une heure, on met at."
+    },
+    {
+     "question": "« In the evening » veut dire :",
+     "options": [
+      "le matin",
+      "l'après-midi",
+      "le soir",
+      "la nuit"
+     ],
+     "reponse": 2,
+     "explication": "in the evening = le soir."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "What time is it?",
+     "verso": "Quelle heure est-il ?"
+    },
+    {
+     "recto": "It is one o'clock.",
+     "verso": "Il est une heure."
+    },
+    {
+     "recto": "It is seven o'clock.",
+     "verso": "Il est sept heures."
+    },
+    {
+     "recto": "half past two",
+     "verso": "deux heures et demie"
+    },
+    {
+     "recto": "quarter past nine",
+     "verso": "neuf heures et quart"
+    },
+    {
+     "recto": "quarter to eight",
+     "verso": "huit heures moins le quart"
+    },
+    {
+     "recto": "at eight o'clock",
+     "verso": "à huit heures"
+    },
+    {
+     "recto": "in the morning",
+     "verso": "le matin"
+    },
+    {
+     "recto": "in the afternoon",
+     "verso": "l'après-midi"
+    },
+    {
+     "recto": "in the evening",
+     "verso": "le soir"
+    }
+   ]
   }
  ]
 }
