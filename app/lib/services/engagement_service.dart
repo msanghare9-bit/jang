@@ -85,6 +85,9 @@ class EngagementService {
     unawaited(evaluate());
   }
 
+  /// Jours où l'élève a appris (clés « AAAA-MM-JJ »).
+  Set<String> get daySet => _days.toSet();
+
   int get streak {
     final set = _days.toSet();
     var d = DateTime.now();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../services/media_service.dart';
 import '../theme.dart';
 
 /// Message affiché quand une liste est vide.
@@ -115,6 +116,7 @@ class LessonText extends StatelessWidget {
   final double scale;
   const LessonText(this.text, {super.key, this.accent = JangColors.primary, this.scale = 1});
 
+  static final _photoRe = RegExp(r'^\[photo ([A-Za-z0-9_-]+)\]\s*(.*)$');
   static final _boxRe = RegExp(r'^(À retenir|A retenir|Exemple|Attention|Astuce)\s*:\s*(.*)$',
       caseSensitive: false);
 
@@ -140,6 +142,11 @@ class LessonText extends StatelessWidget {
         continue;
       }
       flushQuote();
+      final photo = _photoRe.firstMatch(line.trim());
+      if (photo != null) {
+        children.add(_photo(context, photo.group(1)!, photo.group(2)!.trim()));
+        continue;
+      }
       final box = _boxRe.firstMatch(line.trim());
       if (line.trim().isEmpty) {
         children.add(SizedBox(height: 8 * scale));
@@ -213,7 +220,7 @@ class LessonText extends StatelessWidget {
     late final String label;
     var dashed = false;
     if (k.contains('retenir')) {
-      fg = JangColors.primary;
+      fg = JangColors.success;
       bg = JangColors.noteBg;
       icon = Icons.star;
       label = 'À RETENIR';
@@ -257,6 +264,48 @@ class LessonText extends StatelessWidget {
           ]),
           const SizedBox(height: 4),
           for (final l in content.split('\n')) _rich(context, l, base),
+        ],
+      ),
+    );
+  }
+
+  Widget _photo(BuildContext context, String id, String caption) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.symmetric(vertical: 10 * scale),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: JangColors.border, width: 2),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          GestureDetector(
+            onTap: () => showDialog<void>(
+              context: context,
+              builder: (c) => Dialog(
+                insetPadding: const EdgeInsets.all(12),
+                child: InteractiveViewer(child: MediaImage(id, fit: BoxFit.contain)),
+              ),
+            ),
+            child: MediaImage(id, height: 220 * scale, fit: BoxFit.cover, radius: 16),
+          ),
+          if (caption.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
+              child: Row(children: [
+                const Icon(Icons.photo_camera_outlined, size: 18, color: JangColors.textSecondary),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(caption,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 15 * scale,
+                          color: JangColors.text)),
+                ),
+              ]),
+            ),
         ],
       ),
     );

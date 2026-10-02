@@ -18,7 +18,7 @@ class FlashcardService {
   String get _key => 'flash_${AuthService.instance.profile.value?.uid ?? ''}';
 
   static String cardKey(String chapterId, Flashcard c) =>
-      '$chapterId:${StatsService.questionKey(c.front)}';
+      '$chapterId:${StatsService.questionKey(c.front + c.image)}';
 
   Future<Map<String, List<dynamic>>> _load() async {
     final prefs = await SharedPreferences.getInstance();

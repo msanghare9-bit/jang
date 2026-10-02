@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../services/engagement_service.dart';
 import '../services/github_service.dart';
 import '../services/progress_repo.dart';
+import '../services/stats_service.dart';
 import '../screens/review_screen.dart';
 import '../theme.dart';
 import 'common.dart';
@@ -171,6 +172,61 @@ Future<void> showGoalDialog(BuildContext context) async {
     ),
   );
   if (ok == true) await e.setGoal(type, target);
+}
+
+/// « Ta plante » : elle grandit quand l'élève apprend chaque jour.
+class PlantCard extends StatelessWidget {
+  const PlantCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final e = EngagementService.instance;
+    final t = Theme.of(context).textTheme;
+    return ValueListenableBuilder(
+      valueListenable: e.revision,
+      builder: (context, _, __) {
+        final s = e.streak;
+        final days = e.daySet;
+        final plant = s == 0 ? '🌰' : (s < 3 ? '🌱' : (s < 7 ? '🌿' : '🌳'));
+        final title = s == 0
+            ? 'Plante ta graine'
+            : (s == 1 ? 'Ta plante a 1 jour' : 'Ta plante a $s jours');
+        final now = DateTime.now();
+        return Card(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+            child: Row(children: [
+              Text(plant, style: const TextStyle(fontSize: 40)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(title, style: titleStyle(19, weight: 800)),
+                  Text(s == 0 ? 'Apprends une leçon aujourd\'hui pour la faire pousser.'
+                      : 'Apprends chaque jour pour l\'arroser.', style: t.bodySmall),
+                  const SizedBox(height: 6),
+                  Row(children: [
+                    for (var i = 6; i >= 0; i--)
+                      Expanded(
+                        child: Container(
+                          height: 9,
+                          margin: const EdgeInsets.only(right: 4),
+                          decoration: BoxDecoration(
+                            color: days.contains(StatsService.dayKey(now.subtract(Duration(days: i))))
+                                ? JangColors.success
+                                : JangColors.border,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                      ),
+                  ]),
+                ]),
+              ),
+            ]),
+          ),
+        );
+      },
+    );
+  }
 }
 
 /// Carte « Corriger mes erreurs », visible s'il y a des erreurs à revoir.

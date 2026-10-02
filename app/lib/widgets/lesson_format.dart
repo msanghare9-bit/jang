@@ -83,6 +83,7 @@ String autoFormatLesson(String input) {
 /// Petite page d'aide « Comment mettre en forme ? ».
 void showFormatHelp(BuildContext context) {
   const rows = [
+    ['[photo …] Une carotte', 'une photo avec sa légende (bouton « Photo »)'],
     ['## Giving advice', 'un titre de partie numéroté'],
     ['- You should study.', 'une puce'],
     ['**SHOULD**', 'un mot en gras'],
@@ -104,6 +105,7 @@ void showFormatHelp(BuildContext context) {
             const SizedBox(height: 6),
             const Text('1. Colle ta leçon dans l\'onglet « Leçon ».\n'
                 '2. Touche « Mise en forme automatique ».\n'
+                '   Pour une photo : place le curseur, touche « Photo », puis écris la légende.\n'
                 '3. Ajoute deux ou trois encadrés « À retenir » avec les boutons.\n'
                 '4. Vérifie avec « Voir comme un élève », puis enregistre.'),
             const SizedBox(height: 18),

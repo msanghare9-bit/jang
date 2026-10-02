@@ -1,7 +1,7 @@
 name: jang
 description: "Jàng – apprendre, leçon après leçon."
 publish_to: 'none'
-version: 1.4.1+1
+version: 1.5.0+1
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
@@ -17,6 +17,7 @@ dependencies:
   youtube_player_iframe: '>=5.1.0 <100.0.0'
   shared_preferences: '>=2.2.0 <100.0.0'
   url_launcher: '>=6.2.0 <100.0.0'
+  image_picker: '>=1.0.7 <100.0.0'
 
 dev_dependencies:
   flutter_lints: '>=4.0.0 <100.0.0'
@@ -24,13 +25,23 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   fonts:
-    - family: Bricolage
+    - family: Baloo
       fonts:
-        - asset: assets/fonts/BricolageGrotesque.ttf
-    - family: Atkinson
-      fonts:
-        - asset: assets/fonts/AtkinsonHyperlegible-Regular.ttf
-        - asset: assets/fonts/AtkinsonHyperlegible-Bold.ttf
+        - asset: assets/fonts/Baloo2-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Baloo2-Bold.ttf
           weight: 700
-        - asset: assets/fonts/AtkinsonHyperlegible-Italic.ttf
+        - asset: assets/fonts/Baloo2-ExtraBold.ttf
+          weight: 800
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Nunito-SemiBoldItalic.ttf
+          weight: 600
           style: italic

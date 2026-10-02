@@ -7,6 +7,8 @@ import '../services/flashcard_service.dart';
 import '../theme.dart';
 import '../widgets/cheer.dart';
 import '../widgets/common.dart';
+import '../widgets/jang_ui.dart';
+import '../services/media_service.dart';
 
 /// Révision d'un paquet de flashcards.
 class FlashcardsScreen extends StatefulWidget {
@@ -65,11 +67,31 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   Widget build(BuildContext context) {
     final t = Theme.of(context).textTheme;
     final q = _queue;
+    final total = _done + (q?.length ?? 0);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Révision', style: titleStyle(20, color: Colors.white)),
-        backgroundColor: widget.color,
-        foregroundColor: Colors.white,
+        leading: IconButton(
+          tooltip: 'Fermer',
+          icon: const Icon(Icons.close_rounded, color: JangColors.textSecondary, size: 28),
+          onPressed: () => Navigator.pop(context),
+        ),
+        titleSpacing: 0,
+        title: Row(children: [
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: LinearProgressIndicator(
+                value: total == 0 ? 0 : _done / total,
+                minHeight: 14,
+                color: JangColors.success,
+                backgroundColor: JangColors.border,
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Text('Révision', style: titleStyle(17, color: widget.color, weight: 800)),
+          const SizedBox(width: 16),
+        ]),
       ),
       body: q == null
           ? const Center(child: CircularProgressIndicator())
@@ -81,19 +103,20 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                     message: _done == 0
                         ? 'Tu connais bien ces cartes. Elles reviendront plus tard.'
                         : Cheer.flashcardsEnd(_knew, _cards),
-                    action: OutlinedButton(
-                        onPressed: () => _start(all: true),
-                        child: const Text('Revoir toutes les cartes')),
+                    action: ChunkyButton(
+                        label: 'Revoir toutes les cartes',
+                        color: JangColors.primary,
+                        onPressed: () => _start(all: true)),
                   ),
                 )
               : Padding(
-                  padding: const EdgeInsets.all(18),
+                  padding: const EdgeInsets.fromLTRB(18, 8, 18, 18),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text('${widget.title} · ${q.length} carte${q.length > 1 ? 's' : ''} à voir',
                           style: t.bodySmall),
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 12),
                       Expanded(
                         child: GestureDetector(
                           onTap: () => setState(() => _flipped = !_flipped),
@@ -102,6 +125,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                             duration: const Duration(milliseconds: 300),
                             builder: (context, v, _) {
                               final showBack = v > 0.5;
+                              final card = q.first;
                               return Transform(
                                 alignment: Alignment.center,
                                 transform: Matrix4.identity()
@@ -111,22 +135,33 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                                   alignment: Alignment.center,
                                   transform: Matrix4.identity()..rotateY(showBack ? pi : 0),
                                   child: Container(
-                                    padding: const EdgeInsets.all(22),
+                                    margin: const EdgeInsets.only(right: 6, bottom: 6),
+                                    padding: const EdgeInsets.all(16),
                                     alignment: Alignment.center,
                                     decoration: BoxDecoration(
-                                      color: showBack ? widget.color.withValues(alpha: 0.08) : Colors.white,
-                                      borderRadius: BorderRadius.circular(16),
-                                      border: Border.all(color: widget.color, width: 2),
+                                      color: showBack ? JangColors.successBg : Colors.white,
+                                      borderRadius: BorderRadius.circular(24),
+                                      border: Border.all(
+                                          color: showBack ? JangColors.success : JangColors.border,
+                                          width: 2),
+                                      boxShadow: const [
+                                        BoxShadow(color: JangColors.ocre, offset: Offset(6, 6)),
+                                      ],
                                     ),
                                     child: SingleChildScrollView(
                                       child: Column(children: [
-                                        Text(showBack ? 'Réponse' : 'Question',
-                                            style: t.bodySmall),
-                                        const SizedBox(height: 12),
+                                        Text(showBack ? 'RÉPONSE' : 'QUESTION',
+                                            style: titleStyle(14,
+                                                color: JangColors.textSecondary, weight: 800)),
+                                        const SizedBox(height: 10),
+                                        if (!showBack && card.image.isNotEmpty) ...[
+                                          MediaImage(card.image, height: 200, fit: BoxFit.contain),
+                                          const SizedBox(height: 12),
+                                        ],
                                         Text(
-                                          showBack ? q.first.back : q.first.front,
+                                          showBack ? card.back : card.question,
                                           textAlign: TextAlign.center,
-                                          style: titleStyle(22, weight: showBack ? 600 : 700),
+                                          style: titleStyle(24, weight: 800),
                                         ),
                                       ]),
                                     ),
@@ -137,27 +172,28 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 16),
                       if (!_flipped)
-                        FilledButton(
-                          style: FilledButton.styleFrom(backgroundColor: widget.color),
+                        ChunkyButton(
+                          label: 'Voir la réponse',
+                          color: JangColors.primary,
                           onPressed: () => setState(() => _flipped = true),
-                          child: const Text('Voir la réponse'),
                         )
                       else
                         Row(children: [
                           Expanded(
-                            child: OutlinedButton(
+                            child: ChunkyButton(
+                              label: 'À revoir',
+                              color: JangColors.accent,
                               onPressed: () => _answer(false),
-                              child: const Text('À revoir'),
                             ),
                           ),
                           const SizedBox(width: 10),
                           Expanded(
-                            child: FilledButton(
-                              style: FilledButton.styleFrom(backgroundColor: JangColors.success),
+                            child: ChunkyButton(
+                              label: 'Je savais',
+                              color: JangColors.success,
                               onPressed: () => _answer(true),
-                              child: const Text('Je savais'),
                             ),
                           ),
                         ]),

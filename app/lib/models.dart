@@ -102,11 +102,15 @@ class QuizQuestion {
   List<String> options;
   int answer;
   String explanation;
+
+  /// Photo de la question (identifiant dans media/), vide s'il n'y en a pas.
+  String image;
   QuizQuestion({
     required this.question,
     required this.options,
     required this.answer,
     this.explanation = '',
+    this.image = '',
   });
 
   factory QuizQuestion.empty() =>
@@ -124,14 +128,24 @@ class QuizQuestion {
       options: opts.take(4).toList(),
       answer: _int(m['answer']).clamp(0, 3).toInt(),
       explanation: _str(m['explanation']),
+      image: _str(m['image']),
     );
   }
 
-  Map<String, dynamic> toMap() =>
-      {'question': question, 'options': options, 'answer': answer, 'explanation': explanation};
+  Map<String, dynamic> toMap() => {
+        'question': question,
+        'options': options,
+        'answer': answer,
+        'explanation': explanation,
+        if (image.isNotEmpty) 'image': image,
+      };
 
   QuizQuestion copy() => QuizQuestion(
-      question: question, options: List.of(options), answer: answer, explanation: explanation);
+      question: question,
+      options: List.of(options),
+      answer: answer,
+      explanation: explanation,
+      image: image);
 }
 
 class Lesson {
@@ -317,9 +331,17 @@ class LessonProgress {
 class Flashcard {
   final String front;
   final String back;
-  Flashcard({required this.front, required this.back});
-  factory Flashcard.fromMap(Map m) => Flashcard(front: _str(m['front']), back: _str(m['back']));
-  Map<String, dynamic> toMap() => {'front': front, 'back': back};
+
+  /// Photo du recto (identifiant dans media/), vide s'il n'y en a pas.
+  final String image;
+  Flashcard({required this.front, required this.back, this.image = ''});
+  factory Flashcard.fromMap(Map m) =>
+      Flashcard(front: _str(m['front']), back: _str(m['back']), image: _str(m['image']));
+  Map<String, dynamic> toMap() =>
+      {'front': front, 'back': back, if (image.isNotEmpty) 'image': image};
+
+  /// Question affichée (par défaut pour une carte qui n'a qu'une photo).
+  String get question => front.trim().isEmpty && image.isNotEmpty ? 'Qu\'est-ce que c\'est ?' : front;
 }
 
 /// Paquet de cartes d'un chapitre (flashcards/{chapterId}).

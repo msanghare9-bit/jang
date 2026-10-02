@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models.dart';
 import '../../services/content_repo.dart';
+import '../../services/media_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../../widgets/lesson_format.dart';
@@ -26,7 +27,8 @@ class LessonEditor extends StatefulWidget {
 class _CardFields {
   final TextEditingController front;
   final TextEditingController back;
-  _CardFields(String f, String b)
+  String image;
+  _CardFields(String f, String b, [this.image = ''])
       : front = TextEditingController(text: f),
         back = TextEditingController(text: b);
   void dispose() {
@@ -65,7 +67,7 @@ class _LessonEditorState extends State<LessonEditor> {
     setState(() {
       _hadDeck = true;
       for (final c in deck.cards) {
-        _cards.add(_CardFields(c.front, c.back));
+        _cards.add(_CardFields(c.front, c.back, c.image));
       }
     });
   }
@@ -119,6 +121,56 @@ class _LessonEditorState extends State<LessonEditor> {
   }
 
   // ---------------- Mise en forme du texte ----------------
+
+  bool _uploading = false;
+
+  /// Photo dans le texte : choisie, envoyée, puis insérée avec sa légende sur sa propre ligne.
+  Future<void> _insertPhoto() async {
+    final pos0 = _body.selection.baseOffset;
+    setState(() => _uploading = true);
+    String? id;
+    try {
+      id = await MediaService.instance.pickAndUpload(context);
+    } catch (_) {
+      if (mounted) showMessage(context, 'Envoi de la photo impossible. Vérifie ta connexion.');
+    } finally {
+      if (mounted) setState(() => _uploading = false);
+    }
+    if (id == null || !mounted) return;
+    final ctrl = TextEditingController();
+    final caption = await showDialog<String>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text('Légende de la photo', style: titleStyle(20)),
+        content: Column(mainAxisSize: MainAxisSize.min, children: [
+          MediaImage(id!, height: 150, fit: BoxFit.contain, radius: 12),
+          const SizedBox(height: 12),
+          TextField(
+            controller: ctrl,
+            autofocus: true,
+            textCapitalization: TextCapitalization.sentences,
+            decoration: const InputDecoration(labelText: 'Exemple : Une carotte'),
+          ),
+        ]),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c, ''), child: const Text('Sans légende')),
+          FilledButton(onPressed: () => Navigator.pop(c, ctrl.text.trim()), child: const Text('OK')),
+        ],
+      ),
+    );
+    ctrl.dispose();
+    final text = _body.text;
+    var pos = pos0;
+    if (pos < 0 || pos > text.length) pos = text.length;
+    final before = pos == 0 || text[pos - 1] == '\n' ? '' : '\n';
+    final after = pos < text.length && text[pos] == '\n' ? '' : '\n';
+    final line = '[photo $id] ${caption ?? ''}'.trimRight();
+    final insert = '$before$line$after';
+    _body.value = TextEditingValue(
+      text: text.replaceRange(pos, pos, insert),
+      selection: TextSelection.collapsed(offset: pos + insert.length),
+    );
+  }
 
   /// Ajoute [prefix] au début de la ligne où se trouve le curseur.
   void _linePrefix(String prefix) {
@@ -240,6 +292,7 @@ class _LessonEditorState extends State<LessonEditor> {
                   options: q.options.map((o) => o.trim()).toList(),
                   answer: q.answer,
                   explanation: q.explanation.trim(),
+                  image: q.image,
                 ))
             .toList(),
       );
@@ -255,8 +308,8 @@ class _LessonEditorState extends State<LessonEditor> {
     repo.save('lessons', id, {..._current(id).toMap(), 'status': 'published'});
     final cards = [
       for (final c in _cards)
-        if (c.front.text.trim().isNotEmpty && c.back.text.trim().isNotEmpty)
-          Flashcard(front: c.front.text.trim(), back: c.back.text.trim()).toMap()
+        if ((c.front.text.trim().isNotEmpty || c.image.isNotEmpty) && c.back.text.trim().isNotEmpty)
+          Flashcard(front: c.front.text.trim(), back: c.back.text.trim(), image: c.image).toMap()
     ];
     if (cards.isNotEmpty || _hadDeck) {
       repo.save('flashcards', id, {
@@ -448,6 +501,10 @@ class _LessonEditorState extends State<LessonEditor> {
           spacing: 6,
           runSpacing: 6,
           children: [
+            _tool(_uploading ? 'Envoi…' : 'Photo', () {
+              if (!_uploading) _insertPhoto();
+            },
+                color: JangColors.accent, icon: Icons.add_photo_alternate_outlined),
             _tool('Partie', () => _linePrefix('## '), icon: Icons.title),
             _tool('Puce', () => _linePrefix('- '), icon: Icons.format_list_bulleted),
             _tool('Gras', () => _wrap('**', 'mot important'), icon: Icons.format_bold),
@@ -569,11 +626,22 @@ class _LessonEditorState extends State<LessonEditor> {
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: Column(children: [
+                    PhotoField(
+                      image: _cards[i].image,
+                      onChanged: (id) => setState(() {
+                        _cards[i].image = id;
+                        _dirty = true;
+                      }),
+                    ),
+                    const SizedBox(height: 6),
                     TextField(
                       controller: _cards[i].front,
                       maxLines: null,
                       onChanged: (_) => _touch(),
-                      decoration: const InputDecoration(labelText: 'Question'),
+                      decoration: InputDecoration(
+                          labelText: _cards[i].image.isEmpty
+                              ? 'Question'
+                              : 'Question (vide = « Qu\'est-ce que c\'est ? »)'),
                     ),
                     const SizedBox(height: 8),
                     TextField(
@@ -708,6 +776,14 @@ class _QuestionEditorState extends State<_QuestionEditor> {
                   decoration: const InputDecoration(labelText: 'Énoncé'),
                 ),
               ),
+              const SizedBox(height: 8),
+              PhotoField(
+                image: q.image,
+                onChanged: (id) {
+                  setState(() => q.image = id);
+                  widget.onChanged();
+                },
+              ),
               const SizedBox(height: 10),
               Text('Propositions — touche le rond de la bonne réponse',
                   style: Theme.of(context).textTheme.bodySmall),
@@ -751,7 +827,7 @@ class _QuestionEditorState extends State<_QuestionEditor> {
                   minLines: 2,
                   textCapitalization: TextCapitalization.sentences,
                   decoration: const InputDecoration(
-                    labelText: 'Explication (affichée si l\'élève se trompe)',
+                    labelText: 'Explication (affichée après la réponse)',
                     alignLabelWithHint: true,
                   ),
                 ),
@@ -761,5 +837,71 @@ class _QuestionEditorState extends State<_QuestionEditor> {
         ),
       ),
     );
+  }
+}
+
+
+/// Ajouter, voir ou retirer une photo (QCM, cartes de révision).
+class PhotoField extends StatefulWidget {
+  final String image;
+  final ValueChanged<String> onChanged;
+  const PhotoField({super.key, required this.image, required this.onChanged});
+
+  @override
+  State<PhotoField> createState() => _PhotoFieldState();
+}
+
+class _PhotoFieldState extends State<PhotoField> {
+  bool _busy = false;
+
+  Future<void> _pick() async {
+    setState(() => _busy = true);
+    try {
+      final id = await MediaService.instance.pickAndUpload(context);
+      if (id != null) widget.onChanged(id);
+    } catch (e) {
+      if (mounted) showMessage(context, 'Envoi de la photo impossible. Vérifie ta connexion.');
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_busy) {
+      return const Padding(
+        padding: EdgeInsets.all(8),
+        child: Row(children: [
+          SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)),
+          SizedBox(width: 10),
+          Text('Envoi de la photo…'),
+        ]),
+      );
+    }
+    if (widget.image.isEmpty) {
+      return Align(
+        alignment: Alignment.centerLeft,
+        child: TextButton.icon(
+          onPressed: _pick,
+          icon: const Icon(Icons.add_photo_alternate_outlined),
+          label: const Text('Ajouter une photo'),
+        ),
+      );
+    }
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      MediaImage(widget.image, height: 140, fit: BoxFit.contain, radius: 12),
+      Row(children: [
+        TextButton.icon(
+          onPressed: _pick,
+          icon: const Icon(Icons.swap_horiz),
+          label: const Text('Changer'),
+        ),
+        TextButton.icon(
+          onPressed: () => widget.onChanged(''),
+          icon: const Icon(Icons.delete_outline),
+          label: const Text('Retirer'),
+        ),
+      ]),
+    ]);
   }
 }

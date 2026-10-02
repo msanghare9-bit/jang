@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models.dart';
 import '../services/content_repo.dart';
+import '../services/media_service.dart';
 import '../services/progress_repo.dart';
 import '../services/stats_service.dart';
 import '../theme.dart';
@@ -114,6 +115,10 @@ class _ReviewScreenState extends State<ReviewScreen> {
         ProgressBar(value: _index / n, color: JangColors.primary),
         const SizedBox(height: 16),
         Text(q.question, style: t.titleMedium),
+        if (q.image.isNotEmpty) ...[
+          const SizedBox(height: 10),
+          MediaImage(q.image, height: 160, fit: BoxFit.contain),
+        ],
         const SizedBox(height: 14),
         for (var i = 0; i < q.options.length; i++)
           if (q.options[i].trim().isNotEmpty)

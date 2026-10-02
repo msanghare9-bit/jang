@@ -10,6 +10,7 @@ import '../services/progress_repo.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/discussion.dart';
+import '../widgets/jang_ui.dart';
 import 'flashcards_screen.dart';
 import 'quiz_screen.dart';
 import 'tutor_screen.dart';
@@ -133,6 +134,7 @@ class _LessonScreenState extends State<LessonScreen> {
   Widget _page(BuildContext context, Widget? player) {
     final lesson = widget.lesson;
     final color = JangColors.fromHex(widget.subject.color);
+    final fg = JangColors.on(color);
     final t = Theme.of(context).textTheme;
     final hasBody = lesson.body.trim().isNotEmpty;
     final empty = lesson.videos.isEmpty && !hasBody && lesson.quiz.isEmpty;
@@ -147,18 +149,18 @@ class _LessonScreenState extends State<LessonScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.preview ? 'Aperçu élève' : widget.subject.name,
-            style: titleStyle(19, color: Colors.white)),
+            style: titleStyle(19, color: fg)),
         backgroundColor: color,
-        foregroundColor: Colors.white,
+        foregroundColor: fg,
         elevation: 0,
         actions: [
           TextButton(
             onPressed: _toggleScale,
-            style: TextButton.styleFrom(foregroundColor: Colors.white),
+            style: TextButton.styleFrom(foregroundColor: fg),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.white70, width: 1.5),
+                border: Border.all(color: fg.withValues(alpha: 0.7), width: 1.5),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text.rich(TextSpan(children: [
@@ -178,22 +180,20 @@ class _LessonScreenState extends State<LessonScreen> {
         padding: const EdgeInsets.only(bottom: 36),
         children: [
           // ---------- Bandeau ----------
-          Container(
+          WaxHeader(
             color: color,
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 22),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (_position > 0)
-                  Text('Leçon $_position sur $_count',
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.85), fontSize: 14)),
-                const SizedBox(height: 4),
+                if (_position > 0) Chip2('Leçon $_position sur $_count'),
+                const SizedBox(height: 8),
                 Text(lesson.title.isEmpty ? 'Sans titre' : lesson.title,
-                    style: titleStyle(27, color: Colors.white, weight: 800)),
+                    style: titleStyle(30, color: fg, weight: 800)),
                 if (meta.isNotEmpty) ...[
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 4),
                   Text(meta.join(' · '),
-                      style: TextStyle(color: Colors.white.withValues(alpha: 0.9), fontSize: 14)),
+                      style: TextStyle(color: fg, fontWeight: FontWeight.w700, fontSize: 14)),
                 ],
               ],
             ),
@@ -263,16 +263,11 @@ class _LessonScreenState extends State<LessonScreen> {
                 if (lesson.quiz.isNotEmpty) _QuizButton(lesson: lesson, subject: widget.subject, color: color, preview: widget.preview),
                 if (_deck != null) ...[
                   const SizedBox(height: 10),
-                  OutlinedButton.icon(
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: color,
-                      side: BorderSide(color: color, width: 1.5),
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      textStyle: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
-                    ),
-                    icon: const Icon(Icons.style_outlined),
-                    label: Text(
-                        'Révision : ${_deck!.cards.length} carte${_deck!.cards.length > 1 ? 's' : ''}'),
+                  ChunkyButton(
+                    color: JangColors.primary,
+                    icon: Icons.style_rounded,
+                    label:
+                        'Révision : ${_deck!.cards.length} carte${_deck!.cards.length > 1 ? 's' : ''}',
                     onPressed: () async {
                       await Navigator.push(
                         context,
@@ -401,20 +396,14 @@ class _QuizButton extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            FilledButton.icon(
-              style: FilledButton.styleFrom(
-                backgroundColor: color,
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                textStyle: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
-              ),
-              icon: const Icon(Icons.quiz_outlined),
+            ChunkyButton(
+              color: JangColors.accent,
+              icon: Icons.quiz_rounded,
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (_) => QuizScreen(lesson: lesson, subject: subject)),
               ),
-              label: Text(done
-                  ? 'Refaire le QCM'
-                  : 'Faire le QCM ($n question${n > 1 ? 's' : ''})'),
+              label: done ? 'Refaire le QCM' : 'Faire le QCM ($n question${n > 1 ? 's' : ''})',
             ),
             if (done) ...[
               const SizedBox(height: 6),

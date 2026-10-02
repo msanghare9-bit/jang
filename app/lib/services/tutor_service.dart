@@ -28,7 +28,7 @@ class TutorService {
       final body = jsonEncode({
         'lessonId': lesson.id,
         'lessonTitle': lesson.title,
-        'lessonText': lesson.body.length > 6000 ? lesson.body.substring(0, 6000) : lesson.body,
+        'lessonText': _text(lesson.body),
         'question': question,
         if (previousAnswer != null) 'previousAnswer': previousAnswer,
         'simpler': previousAnswer != null,
@@ -80,4 +80,11 @@ class TutorAnswer {
   final int? remaining;
   TutorAnswer({this.answer, this.remaining}) : error = null;
   TutorAnswer.error(this.error, {this.remaining}) : answer = null;
+}
+
+/// Texte de la leçon pour Jàngalekat : les photos deviennent « (Photo : légende) ».
+String _text(String body) {
+  final t = body.replaceAllMapped(RegExp(r'\[photo [A-Za-z0-9_-]+\]\s*(.*)'),
+      (m) => (m.group(1) ?? '').trim().isEmpty ? '(Photo)' : '(Photo : ${m.group(1)!.trim()})');
+  return t.length > 6000 ? t.substring(0, 6000) : t;
 }

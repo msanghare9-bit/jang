@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../models.dart';
@@ -5,6 +7,7 @@ import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/jang_ui.dart';
 import 'flashcards_screen.dart';
 import 'lesson_screen.dart';
 
@@ -47,120 +50,204 @@ class _SubjectScreenState extends State<SubjectScreen> {
   @override
   Widget build(BuildContext context) {
     final color = JangColors.fromHex(widget.subject.color);
+    final fg = JangColors.on(color);
+    final top = MediaQuery.of(context).padding.top;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.subject.name, style: titleStyle(21, color: Colors.white)),
-        backgroundColor: color,
-        foregroundColor: Colors.white,
-      ),
       body: FutureBuilder<(List<Lesson>, Map<String, FlashcardDeck>)>(
         future: _future,
         builder: (context, snap) {
-          if (!snap.hasData) return const Center(child: CircularProgressIndicator());
-          final (lessons, decks) = snap.data!;
-          if (lessons.isEmpty) {
-            return const Center(
-              child: EmptyState(
-                icon: Icons.hourglass_empty,
-                title: 'Pas encore de leçon',
-                message: 'Les leçons de cette matière apparaîtront ici.',
-              ),
-            );
-          }
+          final data = snap.data;
           return ValueListenableBuilder(
             valueListenable: ProgressRepo.instance.revision,
-            builder: (context, _, __) => ListView(
-              padding: const EdgeInsets.fromLTRB(16, 14, 16, 28),
-              children: [
-                Text('${lessons.length} leçon${lessons.length > 1 ? 's' : ''}',
-                    style: Theme.of(context).textTheme.bodySmall),
-                const SizedBox(height: 8),
-                for (var i = 0; i < lessons.length; i++)
-                  _lessonTile(context, i, lessons[i], decks[lessons[i].id], color),
-              ],
-            ),
+            builder: (context, _, __) {
+              final lessons = data?.$1 ?? const <Lesson>[];
+              final decks = data?.$2 ?? const <String, FlashcardDeck>{};
+              final seen = lessons.where((l) => ProgressRepo.instance.of(l.id)?.seen == true).length;
+              final current = lessons.indexWhere((l) => ProgressRepo.instance.of(l.id)?.seen != true);
+              return ListView(
+                padding: const EdgeInsets.only(bottom: 28),
+                children: [
+                  WaxHeader(
+                    color: color,
+                    padding: EdgeInsets.fromLTRB(8, top + 4, 20, 22),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(children: [
+                          IconButton(
+                            onPressed: () => Navigator.pop(context),
+                            icon: Icon(Icons.arrow_back_rounded, color: fg),
+                          ),
+                          const Spacer(),
+                          if (lessons.isNotEmpty) Chip2('$seen / ${lessons.length} vues'),
+                        ]),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12, top: 4),
+                          child: Row(children: [
+                            Text(subjectEmoji(widget.subject.name), style: const TextStyle(fontSize: 30)),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Text(widget.subject.name,
+                                  style: titleStyle(32, color: fg, weight: 800)),
+                            ),
+                          ]),
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (data == null)
+                    const Padding(
+                      padding: EdgeInsets.all(40),
+                      child: Center(child: CircularProgressIndicator()),
+                    )
+                  else if (lessons.isEmpty)
+                    const EmptyState(
+                      icon: Icons.hourglass_empty,
+                      title: 'Pas encore de leçon',
+                      message: 'Les leçons de cette matière apparaîtront ici.',
+                    )
+                  else
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 18, 16, 0),
+                      child: Column(
+                        children: [
+                          for (var i = 0; i < lessons.length; i++)
+                            _step(context, i, lessons[i], decks[lessons[i].id], color,
+                                current: i == current, last: i == lessons.length - 1),
+                        ],
+                      ),
+                    ),
+                ],
+              );
+            },
           );
         },
       ),
     );
   }
 
-  Widget _lessonTile(
-      BuildContext context, int index, Lesson l, FlashcardDeck? deck, Color color) {
+  Widget _step(BuildContext context, int index, Lesson l, FlashcardDeck? deck, Color color,
+      {required bool current, required bool last}) {
     final p = ProgressRepo.instance.of(l.id);
-    Widget? trailing;
-    if (p?.quizDone == true) {
-      final ok = p!.bestScore! * 2 >= p.total;
-      trailing = Pill('QCM ${p.bestScore}/${p.total}',
-          color: ok ? JangColors.success : JangColors.error,
-          background: ok ? JangColors.successBg : JangColors.errorBg);
-    } else if (p?.seen == true) {
-      trailing = const Pill('Lue', color: JangColors.textSecondary, background: JangColors.noteBg);
-    }
+    final done = p?.seen == true;
     final t = Theme.of(context).textTheme;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: Card(
-        child: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => LessonScreen(lesson: l, subject: widget.subject)),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(14, 14, 12, 14),
-            child: Row(
-              children: [
-                Container(
-                  width: 34,
-                  height: 34,
+    final Color nodeBg = done ? JangColors.success : (current ? JangColors.ocre : Colors.white);
+    final Color nodeFg = done ? Colors.white : (current ? JangColors.text : JangColors.textSecondary);
+    void open() => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => LessonScreen(lesson: l, subject: widget.subject)),
+        );
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SizedBox(
+            width: 52,
+            child: Column(children: [
+              const SizedBox(height: 8),
+              Transform.rotate(
+                angle: pi / 4,
+                child: Container(
+                  width: 40,
+                  height: 40,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: p?.seen == true ? color : color.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(9),
+                    color: nodeBg,
+                    borderRadius: BorderRadius.circular(11),
+                    border: done || current ? null : Border.all(color: JangColors.border, width: 2),
+                    boxShadow: done || current
+                        ? [BoxShadow(color: JangColors.darker(nodeBg, 0.15), offset: const Offset(3, 3))]
+                        : null,
                   ),
-                  child: Text('${index + 1}',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          color: p?.seen == true ? Colors.white : color)),
+                  child: Transform.rotate(
+                    angle: -pi / 4,
+                    child: done
+                        ? const Icon(Icons.check_rounded, color: Colors.white, size: 22)
+                        : Text('${index + 1}', style: titleStyle(19, color: nodeFg, weight: 800)),
+                  ),
                 ),
-                const SizedBox(width: 12),
+              ),
+              if (!last)
                 Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(l.title, style: t.titleMedium),
-                      const SizedBox(height: 3),
-                      Text(_details(l, deck), style: t.bodySmall),
-                    ],
-                  ),
-                ),
-                if (trailing != null) ...[const SizedBox(width: 8), trailing],
-                if (deck != null)
-                  IconButton(
-                    tooltip: 'Révision',
-                    color: color,
-                    icon: const Icon(Icons.style_outlined),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => FlashcardsScreen(deck: deck, title: l.title, color: color)),
+                  child: Container(
+                    width: 4,
+                    margin: const EdgeInsets.only(top: 10),
+                    decoration: BoxDecoration(
+                      color: done ? JangColors.success.withValues(alpha: 0.4) : JangColors.border,
+                      borderRadius: BorderRadius.circular(2),
                     ),
                   ),
-              ],
+                ),
+            ]),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: GestureDetector(
+                onTap: open,
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(14, 12, 8, 12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(18),
+                    border: Border.all(color: current ? JangColors.ocre : JangColors.border, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                          color: current ? JangColors.ocre : JangColors.border,
+                          offset: const Offset(0, 4)),
+                    ],
+                  ),
+                  child: Row(children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(l.title, style: titleStyle(18, weight: 800)),
+                          const SizedBox(height: 2),
+                          Text(_details(l, deck, p), style: t.bodySmall),
+                          if (current) ...[
+                            const SizedBox(height: 8),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: ChunkyButton(label: 'Commencer', onPressed: open),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                    if (deck != null)
+                      IconButton(
+                        tooltip: 'Révision',
+                        color: color,
+                        icon: const Icon(Icons.style_rounded),
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  FlashcardsScreen(deck: deck, title: l.title, color: color)),
+                        ),
+                      ),
+                  ]),
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
 
-  String _details(Lesson l, FlashcardDeck? deck) {
+  String _details(Lesson l, FlashcardDeck? deck, LessonProgress? p) {
     final parts = <String>[];
+    if (p?.quizDone == true) {
+      parts.add('QCM ${p!.bestScore}/${p.total}');
+    } else if (l.quiz.isNotEmpty) {
+      parts.add('QCM ${l.quiz.length}');
+    }
     if (l.videos.isNotEmpty) parts.add('${l.videos.length} vidéo${l.videos.length > 1 ? 's' : ''}');
-    if (l.body.trim().isNotEmpty) parts.add('leçon');
-    if (l.quiz.isNotEmpty) parts.add('QCM ${l.quiz.length}');
     if (deck != null) parts.add('révision ${deck.cards.length}');
+    if (parts.isEmpty && l.body.trim().isNotEmpty) parts.add('leçon');
     return parts.isEmpty ? 'En préparation' : parts.join(' · ');
   }
 }

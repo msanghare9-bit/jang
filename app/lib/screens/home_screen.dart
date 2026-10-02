@@ -10,6 +10,7 @@ import '../theme.dart';
 import '../widgets/cheer.dart';
 import '../widgets/common.dart';
 import '../widgets/engagement.dart';
+import '../widgets/jang_ui.dart';
 import '../services/engagement_service.dart';
 import 'admin/admin_home.dart';
 import 'profile_screen.dart';
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
     final destinations = <NavigationDestination>[
       const NavigationDestination(
-          icon: Icon(Icons.menu_book_outlined), selectedIcon: Icon(Icons.menu_book), label: 'Matières'),
+          icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded), label: 'Accueil'),
       const NavigationDestination(
           icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: 'Progrès'),
       if (admin)
@@ -162,76 +163,110 @@ class _SubjectsTabState extends State<SubjectsTab> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: FutureBuilder<_SubjectsData>(
-        future: _future,
-        builder: (context, snap) {
-          if (!snap.hasData) return const Center(child: CircularProgressIndicator());
-          final data = snap.data!;
-          return RefreshIndicator(
-            onRefresh: _refresh,
-            child: ListView(
-              padding: const EdgeInsets.fromLTRB(18, 18, 18, 24),
-              children: [
-                Text('Bonjour ${_firstName()}', style: titleStyle(26)),
-                const SizedBox(height: 4),
-                Text(_welcome, style: Theme.of(context).textTheme.titleSmall!.copyWith(color: JangColors.primary)),
-                const SizedBox(height: 2),
-                Text(
-                  data.exam == null ? 'Choisis ton niveau pour commencer.' : 'Niveau : ${data.exam!.name}',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(color: JangColors.textSecondary),
+    final top = MediaQuery.of(context).padding.top;
+    return FutureBuilder<_SubjectsData>(
+      future: _future,
+      builder: (context, snap) {
+        if (!snap.hasData) return const Center(child: CircularProgressIndicator());
+        final data = snap.data!;
+        final name = _firstName();
+        return RefreshIndicator(
+          onRefresh: _refresh,
+          child: ListView(
+            padding: const EdgeInsets.only(bottom: 24),
+            children: [
+              WaxHeader(
+                color: JangColors.primary,
+                padding: EdgeInsets.fromLTRB(20, top + 12, 20, 22),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(children: [
+                      if (data.exam != null) Chip2(data.exam!.name),
+                      const Spacer(),
+                      ValueListenableBuilder(
+                        valueListenable: EngagementService.instance.revision,
+                        builder: (context, _, __) =>
+                            Chip2('🌱 ${EngagementService.instance.streak} j'),
+                      ),
+                    ]),
+                    const SizedBox(height: 14),
+                    Text(name.isEmpty ? 'Na nga def ?' : 'Na nga def, $name ?',
+                        style: titleStyle(30, color: Colors.white, weight: 800)),
+                    const SizedBox(height: 2),
+                    Text(_welcome,
+                        style: const TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16)),
+                  ],
                 ),
-                const SizedBox(height: 8),
-                const _SyncStatus(),
-                const SizedBox(height: 12),
-                if (data.exam != null) ...[
-                  const ReviewCard(),
-                  const WeekGoalCard(),
-                  const SizedBox(height: 8),
-                ],
-                if (data.exams.isEmpty)
-                  EmptyState(
-                    icon: Icons.cloud_download_outlined,
-                    title: 'Aucun contenu sur ce téléphone',
-                    message:
-                        'Connecte-toi à internet puis appuie sur « Télécharger » pour récupérer les leçons.',
-                    action: FilledButton(onPressed: _refresh, child: const Text('Télécharger')),
-                  )
-                else if (data.exam == null)
-                  ...data.exams.map((e) => Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: OutlinedButton(
-                          onPressed: () => AuthService.instance.updateExam(e.id),
-                          child: Text(e.name),
-                        ),
-                      ))
-                else if (data.subjects.isEmpty)
-                  const EmptyState(
-                      icon: Icons.hourglass_empty,
-                      title: 'Pas encore de matière',
-                      message: 'Les matières apparaîtront ici dès qu\'elles seront publiées.')
-                else
-                  ...data.subjects.map((s) => Padding(
-                        padding: const EdgeInsets.only(bottom: 12),
-                        child: _SubjectCard(
-                          subject: s,
-                          lessons: data.lessons.where((l) => l.subjectId == s.id).toList(),
-                        ),
-                      )),
-                const SizedBox(height: 8),
-                OutlinedButton.icon(
-                  onPressed: () => shareApp(context),
-                  icon: const Icon(Icons.share_outlined),
-                  label: const Text('Partager Jàng avec un ami'),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const _SyncStatus(),
+                    const SizedBox(height: 8),
+                    if (data.exam != null) ...[
+                      const PlantCard(),
+                      const SizedBox(height: 10),
+                      const ReviewCard(),
+                      const SizedBox(height: 10),
+                    ],
+                    if (data.exams.isEmpty)
+                      EmptyState(
+                        icon: Icons.cloud_download_outlined,
+                        title: 'Aucun contenu sur ce téléphone',
+                        message:
+                            'Connecte-toi à internet puis appuie sur « Télécharger » pour récupérer les leçons.',
+                        action: ChunkyButton(label: 'Télécharger', onPressed: _refresh),
+                      )
+                    else if (data.exam == null) ...[
+                      Text('Choisis ton niveau', style: titleStyle(22, weight: 800)),
+                      const SizedBox(height: 10),
+                      ...data.exams.map((e) => Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: ChunkyButton(
+                              label: e.name,
+                              color: JangColors.primary,
+                              onPressed: () => AuthService.instance.updateExam(e.id),
+                            ),
+                          )),
+                    ] else if (data.subjects.isEmpty)
+                      const EmptyState(
+                          icon: Icons.hourglass_empty,
+                          title: 'Pas encore de matière',
+                          message: 'Les matières apparaîtront ici dès qu\'elles seront publiées.')
+                    else ...[
+                      Text('Mes matières', style: titleStyle(22, weight: 800)),
+                      const SizedBox(height: 10),
+                      ...data.subjects.map((s) => Padding(
+                            padding: const EdgeInsets.only(bottom: 14),
+                            child: _SubjectCard(
+                              subject: s,
+                              lessons: data.lessons.where((l) => l.subjectId == s.id).toList(),
+                            ),
+                          )),
+                    ],
+                    if (data.exam != null) ...[
+                      const SizedBox(height: 4),
+                      const WeekGoalCard(),
+                    ],
+                    const SizedBox(height: 14),
+                    ChunkyButton(
+                      label: 'Partager Jàng avec un ami',
+                      icon: Icons.share_outlined,
+                      outlined: true,
+                      color: JangColors.primary,
+                      onPressed: () => shareApp(context),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          );
-        },
-      ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -288,49 +323,68 @@ class _SubjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = JangColors.fromHex(subject.color);
+    final fg = JangColors.on(color);
     return ValueListenableBuilder(
       valueListenable: ProgressRepo.instance.revision,
       builder: (context, _, __) {
-        final done = lessons.where((l) => ProgressRepo.instance.of(l.id)?.quizDone == true).length;
+        final done = lessons.where((l) => ProgressRepo.instance.of(l.id)?.seen == true).length;
         final total = lessons.length;
-        return Card(
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (_) => SubjectScreen(subject: subject))),
-            child: IntrinsicHeight(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(width: 8, color: color),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 16, 12, 16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(subject.name, style: titleStyle(21, color: color)),
-                          const SizedBox(height: 6),
-                          Text(
-                            total == 0
-                                ? 'Aucune leçon pour le moment'
-                                : '$done / $total leçon${total > 1 ? 's' : ''} avec QCM fait',
-                            style: Theme.of(context).textTheme.bodySmall,
-                          ),
-                          if (total > 0) ...[
-                            const SizedBox(height: 10),
-                            ProgressBar(value: done / total, color: color),
-                          ],
-                        ],
-                      ),
+        final pct = total == 0 ? 0.0 : done / total;
+        return GestureDetector(
+          onTap: () => Navigator.push(
+              context, MaterialPageRoute(builder: (_) => SubjectScreen(subject: subject))),
+          child: Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(22),
+              boxShadow: [BoxShadow(color: JangColors.darker(color, 0.15), offset: const Offset(0, 5))],
+            ),
+            child: Row(
+              children: [
+                Transform.rotate(
+                  angle: -0.1,
+                  child: Container(
+                    width: 56,
+                    height: 56,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.25),
+                      borderRadius: BorderRadius.circular(16),
                     ),
+                    child: Text(subjectEmoji(subject.name), style: const TextStyle(fontSize: 30)),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(right: 10),
-                    child: Icon(Icons.chevron_right, color: JangColors.textSecondary),
+                ),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(subject.name, style: titleStyle(22, color: fg, weight: 800)),
+                      Text(
+                        total == 0
+                            ? 'Bientôt des leçons'
+                            : '$total leçon${total > 1 ? 's' : ''} · $done vue${done > 1 ? 's' : ''}',
+                        style: TextStyle(color: fg, fontWeight: FontWeight.w700, fontSize: 14),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  width: 48,
+                  height: 48,
+                  child: Stack(alignment: Alignment.center, children: [
+                    CircularProgressIndicator(
+                      value: pct,
+                      strokeWidth: 5,
+                      color: fg,
+                      backgroundColor: fg.withValues(alpha: 0.25),
+                    ),
+                    Text('${(pct * 100).round()}%',
+                        style: TextStyle(color: fg, fontWeight: FontWeight.w800, fontSize: 12)),
+                  ]),
+                ),
+              ],
             ),
           ),
         );
