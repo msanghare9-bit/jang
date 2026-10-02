@@ -7,6 +7,7 @@ import '../models.dart';
 import '../services/content_repo.dart';
 import '../services/flashcard_service.dart';
 import '../services/progress_repo.dart';
+import '../services/speech_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/discussion.dart';
@@ -248,7 +249,8 @@ class _LessonScreenState extends State<LessonScreen> {
                 if (hasBody) ...[
                   if (lesson.videos.isNotEmpty) SectionTitle('La leçon', color: color),
                   if (lesson.videos.isEmpty) const SizedBox(height: 12),
-                  LessonText(lesson.body, accent: color, scale: _scale),
+                  LessonText(lesson.body,
+                      accent: color, scale: _scale, speak: Speech.isEnglish(widget.subject.name)),
                 ],
                 if (empty)
                   const Padding(
@@ -273,7 +275,10 @@ class _LessonScreenState extends State<LessonScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (_) => FlashcardsScreen(
-                                deck: _deck!, title: lesson.title, color: color)),
+                                deck: _deck!,
+                                title: lesson.title,
+                                color: color,
+                                speak: Speech.isEnglish(widget.subject.name))),
                       );
                       _load();
                     },

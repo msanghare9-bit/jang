@@ -86,7 +86,7 @@ void showFormatHelp(BuildContext context) {
     ['[photo …] Une carotte', 'une photo avec sa légende (bouton « Photo »)'],
     ['## Giving advice', 'un titre de partie numéroté'],
     ['- You should study.', 'une puce'],
-    ['**SHOULD**', 'un mot en gras'],
+    ['**You should study.**', 'en gras ; en anglais, l\'élève le touche pour entendre la prononciation 🔊'],
     ['*Tu devrais étudier.*', 'une traduction (italique gris)'],
     ['À retenir : SHOULD + verbe', 'un encadré vert'],
     ['Exemple : He should study.', 'un encadré exemple'],

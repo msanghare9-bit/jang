@@ -9,13 +9,18 @@ import '../widgets/cheer.dart';
 import '../widgets/common.dart';
 import '../widgets/jang_ui.dart';
 import '../services/media_service.dart';
+import '../services/speech_service.dart';
 
 /// Révision d'un paquet de flashcards.
 class FlashcardsScreen extends StatefulWidget {
   final FlashcardDeck deck;
   final String title;
   final Color color;
-  const FlashcardsScreen({super.key, required this.deck, required this.title, required this.color});
+
+  /// Anglais : bouton pour écouter la carte.
+  final bool speak;
+  const FlashcardsScreen(
+      {super.key, required this.deck, required this.title, required this.color, this.speak = false});
 
   @override
   State<FlashcardsScreen> createState() => _FlashcardsScreenState();
@@ -163,6 +168,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                                           textAlign: TextAlign.center,
                                           style: titleStyle(24, weight: 800),
                                         ),
+                                        if (widget.speak) ...[
+                                          const SizedBox(height: 8),
+                                          IconButton.filledTonal(
+                                            tooltip: 'Écouter',
+                                            iconSize: 30,
+                                            onPressed: () => Speech.instance
+                                                .say(showBack ? card.back : card.question),
+                                            icon: const Icon(Icons.volume_up_rounded),
+                                          ),
+                                        ],
                                       ]),
                                     ),
                                   ),

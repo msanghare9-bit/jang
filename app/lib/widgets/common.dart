@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../services/media_service.dart';
+import '../services/speech_service.dart';
 import '../theme.dart';
 
 /// Message affiché quand une liste est vide.
@@ -114,7 +116,11 @@ class LessonText extends StatelessWidget {
 
   /// Taille du texte (1 = normal). Le bouton « A A » de la leçon la change.
   final double scale;
-  const LessonText(this.text, {super.key, this.accent = JangColors.primary, this.scale = 1});
+
+  /// Leçon d'anglais : les mots en gras se touchent pour entendre la prononciation.
+  final bool speak;
+  const LessonText(this.text,
+      {super.key, this.accent = JangColors.primary, this.scale = 1, this.speak = false});
 
   static final _photoRe = RegExp(r'^\[photo ([A-Za-z0-9_-]+)\]\s*(.*)$');
   static final _boxRe = RegExp(r'^(À retenir|A retenir|Exemple|Attention|Astuce)\s*:\s*(.*)$',
@@ -319,8 +325,20 @@ class LessonText extends StatelessWidget {
       if (m.start > i) spans.add(TextSpan(text: s.substring(i, m.start)));
       final t = m.group(0)!;
       if (t.startsWith('**')) {
-        spans.add(TextSpan(
-            text: t.substring(2, t.length - 2), style: const TextStyle(fontWeight: FontWeight.w700)));
+        final word = t.substring(2, t.length - 2);
+        if (speak) {
+          spans.add(TextSpan(
+            text: '$word 🔊',
+            style: TextStyle(
+                fontWeight: FontWeight.w800,
+                color: accent,
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.dotted),
+            recognizer: TapGestureRecognizer()..onTap = () => Speech.instance.say(word),
+          ));
+        } else {
+          spans.add(TextSpan(text: word, style: const TextStyle(fontWeight: FontWeight.w700)));
+        }
       } else if (t.startsWith('*')) {
         // L'italique sert aux traductions : en gris pour les distinguer.
         spans.add(TextSpan(

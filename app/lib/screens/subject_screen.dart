@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../models.dart';
 import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
+import '../services/speech_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/jang_ui.dart';
@@ -225,7 +226,11 @@ class _SubjectScreenState extends State<SubjectScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (_) =>
-                                  FlashcardsScreen(deck: deck, title: l.title, color: color)),
+                                  FlashcardsScreen(
+                                  deck: deck,
+                                  title: l.title,
+                                  color: color,
+                                  speak: Speech.isEnglish(widget.subject.name))),
                         ),
                       ),
                   ]),

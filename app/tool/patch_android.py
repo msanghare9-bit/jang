@@ -57,6 +57,13 @@ m = re.sub(r'android:label="[^"]*"', 'android:label="Jàng"', m, count=1)
 if "EnableImpeller" not in m:
     m = m.replace("</application>",
                   '    <meta-data android:name="io.flutter.embedding.android.EnableImpeller" android:value="false" />\n    </application>', 1)
+# Lecture à voix haute (prononciation de l'anglais) : Android 11+ doit voir le moteur de synthèse vocale.
+if "TTS_SERVICE" not in m:
+    tts = '<intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>'
+    if "<queries>" in m:
+        m = m.replace("<queries>", "<queries>\n        " + tts, 1)
+    else:
+        m = m.replace("</manifest>", "    <queries>" + tts + "</queries>\n</manifest>", 1)
 manifest.write_text(m)
 
 # 3. Icône de l'application.
