@@ -68,7 +68,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                   onPressed: () => Navigator.push(
                       context, MaterialPageRoute(builder: (_) => const TutorLogsScreen())),
                   icon: const Icon(Icons.psychology_alt_outlined),
-                  label: const Text('Questions posées au Prof'),
+                  label: const Text('Questions posées à Jàngalekat'),
                 ),
                 const SectionTitle('Niveaux'),
                 if (exams.isEmpty)

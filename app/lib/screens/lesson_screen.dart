@@ -97,6 +97,8 @@ class _LessonScreenState extends State<LessonScreen> {
           videoId: id,
           autoPlay: true,
           params: const YoutubePlayerParams(
+            // Sans cette origine, YouTube refuse la vidéo (« Vidéo non disponible », erreur 152/153).
+            origin: 'https://www.youtube-nocookie.com',
             showFullscreenButton: true,
             strictRelatedVideos: true,
             showVideoAnnotations: false,
@@ -232,6 +234,16 @@ class _LessonScreenState extends State<LessonScreen> {
                       ),
                     ),
                   Text('Les vidéos demandent une connexion internet.', style: t.bodySmall),
+                  if (_playing >= 0)
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton.icon(
+                        onPressed: () => openLink(
+                            'https://youtu.be/${lesson.videos[_playing].youtubeId}'),
+                        icon: const Icon(Icons.open_in_new, size: 18),
+                        label: const Text('La vidéo ne marche pas ? L\'ouvrir dans YouTube'),
+                      ),
+                    ),
                 ],
                 if (hasBody) ...[
                   if (lesson.videos.isNotEmpty) SectionTitle('La leçon', color: color),
@@ -281,7 +293,7 @@ class _LessonScreenState extends State<LessonScreen> {
                       foregroundColor: Colors.white,
                       child: const Icon(Icons.school_outlined),
                     ),
-                    title: Text('Demander au Prof', style: t.titleSmall),
+                    title: Text('Demander à Jàngalekat', style: t.titleSmall),
                     subtitle: Text('Il t\'explique la leçon en français simple.',
                         style: t.bodySmall),
                     trailing: const Icon(Icons.chevron_right),

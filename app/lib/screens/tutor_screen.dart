@@ -6,7 +6,7 @@ import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/consent.dart';
 
-/// Le « Prof » (intelligence artificielle) d'une leçon.
+/// « Jàngalekat » (intelligence artificielle) d'une leçon.
 class TutorScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
@@ -67,7 +67,7 @@ class _TutorScreenState extends State<TutorScreen> {
     final t = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Prof', style: titleStyle(20, color: Colors.white)),
+        title: Text('Jàngalekat', style: titleStyle(20, color: Colors.white)),
         backgroundColor: color,
         foregroundColor: Colors.white,
       ),
@@ -83,7 +83,7 @@ class _TutorScreenState extends State<TutorScreen> {
                   decoration: BoxDecoration(
                       color: JangColors.noteBg, borderRadius: BorderRadius.circular(10)),
                   child: Text(
-                    'Le Prof est une intelligence artificielle. Il peut se tromper : '
+                    'Jàngalekat est une intelligence artificielle. Il peut se tromper : '
                     'vérifie avec ton professeur. '
                     'Il répond sur la leçon « ${widget.lesson.title} », en français simple. '
                     '${TutorService.perDay} questions par jour.',
@@ -117,7 +117,7 @@ class _TutorScreenState extends State<TutorScreen> {
                         children: [
                           LessonText(e.answer!, accent: color),
                           const SizedBox(height: 6),
-                          Text('Réponse du Prof (IA), à vérifier avec ton professeur.',
+                          Text('Réponse de Jàngalekat (IA), à vérifier avec ton professeur.',
                               style: t.bodySmall),
                         ],
                       ),
@@ -147,7 +147,7 @@ class _TutorScreenState extends State<TutorScreen> {
                     child: Row(children: [
                       SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)),
                       SizedBox(width: 10),
-                      Text('Le Prof réfléchit…'),
+                      Text('Jàngalekat réfléchit…'),
                     ]),
                   ),
               ],

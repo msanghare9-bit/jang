@@ -192,7 +192,7 @@ class _ModerationScreenState extends State<ModerationScreen> {
   }
 }
 
-/// Journal des questions posées au Prof (50 dernières).
+/// Journal des questions posées à Jàngalekat (50 dernières).
 class TutorLogsScreen extends StatelessWidget {
   const TutorLogsScreen({super.key});
 
@@ -200,7 +200,7 @@ class TutorLogsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = Theme.of(context).textTheme;
     return Scaffold(
-      appBar: AppBar(title: const Text('Questions posées au Prof')),
+      appBar: AppBar(title: const Text('Questions posées à Jàngalekat')),
       body: FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
         future: FirebaseFirestore.instance
             .collection('tutorLogs')
