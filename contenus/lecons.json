@@ -1499,6 +1499,161 @@
      "verso": "Ma couleur préférée est ..."
     }
    ]
+  },
+  {
+   "id": "ang6-12",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Fruits – Les fruits",
+   "texte": "## Objectif\nNommer les fruits en anglais et dire lesquels j'aime.\n\n## Étape 1 : Les fruits de tous les jours\n- **a mango** *une mangue*\n- **a banana** *une banane*\n- **an orange** *une orange*\n- **a lemon** *un citron*\n- **an apple** *une pomme*\n- **a coconut** *une noix de coco*\n\nExemple : **This is a mango.** *C'est une mangue.*\nExemple : **This is a banana.** *C'est une banane.*\nExemple : **This is an orange.** *C'est une orange.*\nExemple : **This is an apple.** *C'est une pomme.*\n\nAstuce : Rappel : **an** devant a, e, i, o, u → **an orange**, **an apple**. Mais **a mango**, **a banana**.\n\n## Étape 2 : Les fruits de chez nous\n- **a watermelon** *une pastèque* (Wolof : xaal)\n- **a papaya** *une papaye*\n- **a pineapple** *un ananas*\n- **a guava** *une goyave*\n- **baobab fruit** *le pain de singe* (Wolof : buy)\n- **tamarind** *le tamarin* (Wolof : daxar)\n- **cashew apple** *la pomme de cajou*\n\nExemple : **In Kébémer, we eat watermelon.** *À Kébémer, on mange de la pastèque.*\nExemple : **Bouye juice is made with baobab fruit.** *Le jus de bouye est fait avec du pain de singe.*\nExemple : **Casamance has many cashew apples.** *En Casamance, il y a beaucoup de pommes de cajou.*\n\n## Étape 3 : Un fruit, des fruits\nOn ajoute **s** quand il y en a plusieurs.\n\nExemple : **one mango → two mangoes** *une mangue → deux mangues*\nExemple : **one banana → three bananas** *une banane → trois bananes*\nExemple : **one orange → five oranges** *une orange → cinq oranges*\nExemple : **one lemon → ten lemons** *un citron → dix citrons*\n\nAttention : **mango** devient **mangoes** (avec **es**).\n\n## Étape 4 : La couleur des fruits\nExemple : **The banana is yellow.** *La banane est jaune.*\nExemple : **The watermelon is green and red.** *La pastèque est verte et rouge.*\nExemple : **The lemon is green.** *Le citron est vert.*\nExemple : **The orange is orange.** *L'orange est orange.*\nExemple : **The mango is green and yellow.** *La mangue est verte et jaune.*\n\n## Étape 5 : Les fruits que j'aime\nExemple : **I like mangoes.** *J'aime les mangues.*\nExemple : **I love watermelon.** *J'adore la pastèque.*\nExemple : **I don't like lemons.** *Je n'aime pas les citrons.*\nExemple : **Do you like bananas?** **Yes, I do.**\nExemple : **My favourite fruit is the mango.** *Mon fruit préféré est la mangue.*\n\n## Petit dialogue\nAu marché de Kébémer.\nAwa : **Good morning! I want mangoes, please.** *Je veux des mangues, s'il vous plaît.*\nSeller : **Good morning! How many mangoes?** *Combien de mangues ?*\nAwa : **Four mangoes, please. And one watermelon.**\nSeller : **Here you are.** *Voilà.*\nAwa : **Thank you!**\nSeller : **You're welcome!**\n\nÀ retenir : mango, banana, orange, lemon, apple, watermelon, papaya, pineapple. **an** orange, **an** apple. Plusieurs fruits → **s** : bananas, mangoes.",
+   "qcm": [
+    {
+     "question": "« A mango » veut dire :",
+     "options": [
+      "une banane",
+      "une mangue",
+      "une orange",
+      "un citron"
+     ],
+     "reponse": 1,
+     "explication": "mango = mangue."
+    },
+    {
+     "question": "Comment dit-on « une pastèque » ?",
+     "options": [
+      "a watermelon",
+      "a lemon",
+      "a papaya",
+      "an apple"
+     ],
+     "reponse": 0,
+     "explication": "watermelon = pastèque = xaal."
+    },
+    {
+     "question": "Quel mot est correct ?",
+     "options": [
+      "a orange",
+      "an orange",
+      "an banana",
+      "an mango"
+     ],
+     "reponse": 1,
+     "explication": "an devant a, e, i, o, u : an orange."
+    },
+    {
+     "question": "« Trois bananes » se dit :",
+     "options": [
+      "three banana",
+      "three bananas",
+      "three bananaes",
+      "a three banana"
+     ],
+     "reponse": 1,
+     "explication": "Plusieurs : on ajoute s → bananas."
+    },
+    {
+     "question": "Le pluriel de « mango » est :",
+     "options": [
+      "mangos",
+      "mangoes",
+      "mangies",
+      "mango"
+     ],
+     "reponse": 1,
+     "explication": "mango → mangoes (avec es)."
+    },
+    {
+     "question": "« A pineapple », c'est :",
+     "options": [
+      "une pomme",
+      "un ananas",
+      "une papaye",
+      "une goyave"
+     ],
+     "reponse": 1,
+     "explication": "pineapple = ananas."
+    },
+    {
+     "question": "La banane est :",
+     "options": [
+      "blue",
+      "red",
+      "yellow",
+      "black"
+     ],
+     "reponse": 2,
+     "explication": "The banana is yellow."
+    },
+    {
+     "question": "« My favourite fruit is the mango » veut dire :",
+     "options": [
+      "J'ai une mangue.",
+      "Mon fruit préféré est la mangue.",
+      "Je n'aime pas la mangue.",
+      "La mangue est verte."
+     ],
+     "reponse": 1,
+     "explication": "favourite fruit = fruit préféré."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a mango",
+     "verso": "une mangue"
+    },
+    {
+     "recto": "a banana",
+     "verso": "une banane"
+    },
+    {
+     "recto": "an orange",
+     "verso": "une orange"
+    },
+    {
+     "recto": "a lemon",
+     "verso": "un citron"
+    },
+    {
+     "recto": "an apple",
+     "verso": "une pomme"
+    },
+    {
+     "recto": "a coconut",
+     "verso": "une noix de coco"
+    },
+    {
+     "recto": "a watermelon",
+     "verso": "une pastèque (xaal)"
+    },
+    {
+     "recto": "a papaya",
+     "verso": "une papaye"
+    },
+    {
+     "recto": "a pineapple",
+     "verso": "un ananas"
+    },
+    {
+     "recto": "a guava",
+     "verso": "une goyave"
+    },
+    {
+     "recto": "baobab fruit",
+     "verso": "pain de singe (buy)"
+    },
+    {
+     "recto": "tamarind",
+     "verso": "tamarin (daxar)"
+    },
+    {
+     "recto": "two mangoes",
+     "verso": "deux mangues"
+    },
+    {
+     "recto": "My favourite fruit is ...",
+     "verso": "Mon fruit préféré est ..."
+    }
+   ]
   }
  ]
 }
