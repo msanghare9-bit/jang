@@ -685,6 +685,115 @@
      "verso": "J'ai deux frères."
     }
    ]
+  },
+  {
+   "id": "ang6-06",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Introducing myself – Se présenter",
+   "texte": "## Objectif\nSe présenter en anglais : dire son nom, son âge et parler de sa famille.\n\n## Étape 1 : Je dis bonjour et mon nom\n- **Hello!** *Bonjour !*\n- **My name is ...** *Je m'appelle ...*\n\nExemple : **Hello! My name is Awa.**\nExemple : **Hello! My name is Modou.**\nExemple : **Good morning! My name is Fatou.**\nExemple : **Hi! My name is Ibrahima.**\n\n## Étape 2 : Je dis mon âge\n- **I am ... years old.** *J'ai ... ans.*\n\nExemple : **I am eleven years old.** *J'ai onze ans.*\nExemple : **I am twelve years old.** *J'ai douze ans.*\nExemple : **I am thirteen years old.** *J'ai treize ans.*\n\n## Étape 3 : Je parle de ma famille\n- **I have ...** *J'ai ...*\n- **My father's name is ...** *Mon père s'appelle ...*\n- **My mother's name is ...** *Ma mère s'appelle ...*\n\nExemple : **I have one brother.** *J'ai un frère.*\nExemple : **I have two sisters.** *J'ai deux sœurs.*\nExemple : **I have two brothers and one sister.** *J'ai deux frères et une sœur.*\nExemple : **My father's name is Moussa.** *Mon père s'appelle Moussa.*\nExemple : **My mother's name is Aminata.** *Ma mère s'appelle Aminata.*\n\n## Étape 4 : Je mets tout ensemble\nOn suit toujours le même ordre : **bonjour → nom → âge → famille**.\n\nExemple : **Hello! My name is Awa. I am eleven years old. I have two brothers.**\nExemple : **Hi! My name is Modou. I am twelve years old. I have one sister.**\nExemple : **Good morning! My name is Fatou. I am thirteen years old. My father's name is Moussa. My mother's name is Aminata.**\nExemple : **Hello! My name is Ibou. I am eleven years old. I have three brothers and two sisters.**\n\nAstuce : Apprends ta présentation par cœur. Tu peux la dire devant la classe !\n\n## Petit dialogue\nTeacher : **Good morning! What is your name?**\nAwa : **Good morning! My name is Awa.**\nTeacher : **How old are you, Awa?**\nAwa : **I am eleven years old.**\nTeacher : **Do you have brothers and sisters?**\nAwa : **Yes. I have two brothers and one sister.**\nTeacher : **Very good, Awa! Thank you.**\n\nÀ retenir : **Hello! My name is ... I am ... years old. I have ...**",
+   "qcm": [
+    {
+     "question": "Pour dire ton nom, tu dis :",
+     "options": [
+      "My name is Awa.",
+      "I have Awa.",
+      "How old is Awa?",
+      "This is Awa?"
+     ],
+     "reponse": 0,
+     "explication": "My name is ... = Je m'appelle ..."
+    },
+    {
+     "question": "« J'ai onze ans » se dit :",
+     "options": [
+      "I have eleven years.",
+      "I am eleven years old.",
+      "My name is eleven.",
+      "I am one years old."
+     ],
+     "reponse": 1,
+     "explication": "I am ... years old = J'ai ... ans."
+    },
+    {
+     "question": "« J'ai deux frères » se dit :",
+     "options": [
+      "I am two brothers.",
+      "I have two brother.",
+      "I have two brothers.",
+      "My two brothers."
+     ],
+     "reponse": 2,
+     "explication": "I have + two brothers (avec s)."
+    },
+    {
+     "question": "« Ma mère s'appelle Aminata » se dit :",
+     "options": [
+      "My mother's name is Aminata.",
+      "My mother is name Aminata.",
+      "I am Aminata.",
+      "Her mother Aminata."
+     ],
+     "reponse": 0,
+     "explication": "My mother's name is ... = Ma mère s'appelle ..."
+    },
+    {
+     "question": "Quel est le bon ordre pour se présenter ?",
+     "options": [
+      "âge → nom → bonjour",
+      "bonjour → nom → âge → famille",
+      "famille → bonjour → nom",
+      "nom → famille → bonjour"
+     ],
+     "reponse": 1,
+     "explication": "Bonjour, puis nom, âge et famille."
+    },
+    {
+     "question": "Le professeur demande « How old are you? ». Tu réponds :",
+     "options": [
+      "My name is Modou.",
+      "I am twelve years old.",
+      "I have one sister.",
+      "Good morning!"
+     ],
+     "reponse": 1,
+     "explication": "How old are you? → I am ... years old."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Hello! My name is ...",
+     "verso": "Bonjour ! Je m'appelle ..."
+    },
+    {
+     "recto": "I am eleven years old.",
+     "verso": "J'ai onze ans."
+    },
+    {
+     "recto": "I am twelve years old.",
+     "verso": "J'ai douze ans."
+    },
+    {
+     "recto": "I have one brother.",
+     "verso": "J'ai un frère."
+    },
+    {
+     "recto": "I have two sisters.",
+     "verso": "J'ai deux sœurs."
+    },
+    {
+     "recto": "My father's name is ...",
+     "verso": "Mon père s'appelle ..."
+    },
+    {
+     "recto": "My mother's name is ...",
+     "verso": "Ma mère s'appelle ..."
+    },
+    {
+     "recto": "Do you have brothers and sisters?",
+     "verso": "As-tu des frères et sœurs ?"
+    }
+   ]
   }
  ]
 }
