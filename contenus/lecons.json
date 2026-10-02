@@ -2409,6 +2409,679 @@
      "verso": "Est-elle infirmière ? – Non."
     }
    ]
+  },
+  {
+   "id": "ang6-18",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Present simple – Mes habitudes",
+   "texte": "## Objectif\nUtiliser le **présent simple** pour parler de ses habitudes et de sa journée.\n\n## Étape 1 : J'écoute une situation\nModou raconte sa journée.\n**I wake up at six o'clock. I wash my face. I eat breakfast with my family. I go to school at seven thirty. I study English and maths. I play football in the afternoon. I do my homework in the evening. I go to bed at nine.**\n\n## Étape 2 : Je remarque\nLe présent simple sert à parler de ce qu'on fait **tous les jours**, **souvent**, **toujours**.\nAvec **I, you, we, they**, le verbe ne change pas : **I play**, **you play**, **we play**, **they play**.\n\nExemple : **I go to school.** *Je vais à l'école.*\nExemple : **We eat rice.** *Nous mangeons du riz.*\nExemple : **They live in Kébémer.** *Ils habitent à Kébémer.*\nExemple : **You speak Wolof.** *Tu parles wolof.*\n\n## Étape 3 : Avec he, she, it → on ajoute S\nExemple : **I play → he plays** *il joue*\nExemple : **I eat → she eats** *elle mange*\nExemple : **I live → Awa lives in Louga.** *Awa habite à Louga.*\nExemple : **I work → My father works in the field.** *Mon père travaille au champ.*\nExemple : **I drink → The goat drinks water.** *La chèvre boit de l'eau.*\n\nAttention : Quelques verbes prennent **es** : **go → goes**, **do → does**, **wash → washes**, **watch → watches**.\nExemple : **She goes to the market.** *Elle va au marché.*\nExemple : **He watches TV.** *Il regarde la télé.*\n\nAttention : **have → has** : **She has two brothers.** *Elle a deux frères.*\n\n## Étape 4 : Les mots qui disent « souvent »\n- **always** *toujours*\n- **usually** *d'habitude*\n- **sometimes** *parfois*\n- **never** *jamais*\n- **every day** *tous les jours*\n\nExemple : **I always wash my hands before eating.** *Je me lave toujours les mains avant de manger.*\nExemple : **My mother usually cooks thieboudienne on Sunday.** *Ma mère prépare d'habitude le thiéboudiène le dimanche.*\nExemple : **I sometimes drink bissap.** *Je bois parfois du bissap.*\nExemple : **He never eats fish.** *Il ne mange jamais de poisson.*\nExemple : **I go to school every day.** *Je vais à l'école tous les jours.*\n\n## Étape 5 : Dire « non »\n- **I / you / we / they → don't** + verbe\n- **he / she / it → doesn't** + verbe (sans s)\n\nExemple : **I don't like rain.** *Je n'aime pas la pluie.*\nExemple : **We don't go to school on Sunday.** *Nous n'allons pas à l'école le dimanche.*\nExemple : **She doesn't eat meat.** *Elle ne mange pas de viande.*\nExemple : **My father doesn't drink coffee.** *Mon père ne boit pas de café.*\n\nAttention : Après **doesn't**, le verbe n'a plus de s : **She doesn't play** (pas « plays »).\n\n## Étape 6 : Poser une question\n- **Do** + I / you / we / they + verbe ?\n- **Does** + he / she / it + verbe ?\n\nExemple : **Do you play football?** **Yes, I do.** / **No, I don't.**\nExemple : **Do they live in Dakar?** **No, they don't.**\nExemple : **Does Awa like music?** **Yes, she does.**\nExemple : **Does your father work in the field?** **Yes, he does.**\n\n## Étape 7 : À moi de parler !\nRaconte ta journée :\nExemple : **I wake up at six. I go to school at eight. I eat lunch at two. I play with my friends. I go to bed at nine.**\nRaconte la journée de ta mère :\nExemple : **My mother wakes up at five. She cooks breakfast. She goes to the market. She sells vegetables.**\n\nÀ retenir : Habitudes → présent simple. **he / she / it → s** (plays, goes, has). Non : **don't / doesn't**. Question : **Do you…? Does he…?**",
+   "qcm": [
+    {
+     "question": "Complète : I ___ to school every day.",
+     "options": [
+      "go",
+      "goes",
+      "going",
+      "am go"
+     ],
+     "reponse": 0,
+     "explication": "Avec I : go (sans s)."
+    },
+    {
+     "question": "Complète : She ___ in Louga.",
+     "options": [
+      "live",
+      "lives",
+      "living",
+      "is live"
+     ],
+     "reponse": 1,
+     "explication": "Avec she : on ajoute s → lives."
+    },
+    {
+     "question": "Complète : He ___ to the market.",
+     "options": [
+      "go",
+      "gos",
+      "goes",
+      "going"
+     ],
+     "reponse": 2,
+     "explication": "go → goes avec he."
+    },
+    {
+     "question": "Complète : My mother ___ two sisters.",
+     "options": [
+      "have",
+      "has",
+      "haves",
+      "having"
+     ],
+     "reponse": 1,
+     "explication": "have → has avec she."
+    },
+    {
+     "question": "« Elle ne mange pas de viande » se dit :",
+     "options": [
+      "She don't eat meat.",
+      "She doesn't eat meat.",
+      "She doesn't eats meat.",
+      "She not eat meat."
+     ],
+     "reponse": 1,
+     "explication": "doesn't + verbe sans s."
+    },
+    {
+     "question": "Comment poser la question ?",
+     "options": [
+      "You play football?",
+      "Do you play football?",
+      "Does you play football?",
+      "Are you play football?"
+     ],
+     "reponse": 1,
+     "explication": "Do + you + verbe ?"
+    },
+    {
+     "question": "« Does Awa like music? » — Oui :",
+     "options": [
+      "Yes, she does.",
+      "Yes, she do.",
+      "Yes, she likes.",
+      "Yes, she is."
+     ],
+     "reponse": 0,
+     "explication": "Yes, she does."
+    },
+    {
+     "question": "« Never » veut dire :",
+     "options": [
+      "toujours",
+      "parfois",
+      "jamais",
+      "d'habitude"
+     ],
+     "reponse": 2,
+     "explication": "never = jamais."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I play / he plays",
+     "verso": "je joue / il joue"
+    },
+    {
+     "recto": "I go / she goes",
+     "verso": "je vais / elle va"
+    },
+    {
+     "recto": "I have / he has",
+     "verso": "j'ai / il a"
+    },
+    {
+     "recto": "always",
+     "verso": "toujours"
+    },
+    {
+     "recto": "usually",
+     "verso": "d'habitude"
+    },
+    {
+     "recto": "sometimes",
+     "verso": "parfois"
+    },
+    {
+     "recto": "never",
+     "verso": "jamais"
+    },
+    {
+     "recto": "every day",
+     "verso": "tous les jours"
+    },
+    {
+     "recto": "I don't like ...",
+     "verso": "Je n'aime pas ..."
+    },
+    {
+     "recto": "She doesn't eat ...",
+     "verso": "Elle ne mange pas ..."
+    },
+    {
+     "recto": "Do you ...? – Yes, I do.",
+     "verso": "Est-ce que tu ... ? – Oui."
+    },
+    {
+     "recto": "Does he ...? – No, he doesn't.",
+     "verso": "Est-ce qu'il ... ? – Non."
+    }
+   ]
+  },
+  {
+   "id": "ang6-19",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Present continuous – Ce que je fais maintenant",
+   "texte": "## Objectif\nUtiliser le **présent continu** pour dire ce qu'on fait **maintenant**.\n\n## Étape 1 : J'écoute une situation\nAwa appelle Fatou au téléphone.\nAwa : **Hello Fatou! What are you doing?**\nFatou : **I am cooking with my mother. And you?**\nAwa : **I am doing my homework. My brother is watching TV.**\nFatou : **And your father?**\nAwa : **He is sleeping!**\n\n## Étape 2 : Je remarque\nPour dire ce qu'on fait **en ce moment**, on utilise :\n**am / is / are** + verbe + **ing**\n\n- **I am cooking** *je suis en train de cuisiner*\n- **you are playing** *tu es en train de jouer*\n- **he is sleeping** *il est en train de dormir*\n- **she is reading** *elle est en train de lire*\n- **we are eating** *nous sommes en train de manger*\n- **they are dancing** *ils sont en train de danser*\n\nAstuce : Les mots **now** (maintenant) et **at the moment** (en ce moment) vont souvent avec le présent continu.\n\n## Étape 3 : Je décris une image\nAu marché de Kébémer, en ce moment :\nExemple : **A woman is selling tomatoes.** *Une femme vend des tomates.*\nExemple : **A man is buying fish.** *Un homme achète du poisson.*\nExemple : **The children are playing.** *Les enfants jouent.*\nExemple : **A driver is waiting.** *Un chauffeur attend.*\nExemple : **The goat is eating grass.** *La chèvre mange de l'herbe.*\n\n## Étape 4 : Comment écrire le verbe + ing\nExemple : **play → playing**, **eat → eating**, **read → reading**\nAttention : Le verbe finit par **e** → on enlève le e : **dance → dancing**, **write → writing**, **come → coming**.\nAttention : Certains verbes doublent la dernière lettre : **run → running**, **swim → swimming**, **sit → sitting**.\n\n## Étape 5 : Dire « non »\nOn ajoute **not** : **am not**, **isn't**, **aren't**.\n\nExemple : **I am not sleeping.** *Je ne suis pas en train de dormir.*\nExemple : **She isn't cooking. She is reading.** *Elle ne cuisine pas. Elle lit.*\nExemple : **They aren't playing football now.** *Ils ne jouent pas au football maintenant.*\n\n## Étape 6 : Poser une question\nOn met **am / is / are** au début.\n\nExemple : **Are you studying?** **Yes, I am.**\nExemple : **Is he sleeping?** **No, he isn't.**\nExemple : **What are you doing?** **I am writing.** *Que fais-tu ? J'écris.*\nExemple : **What is your mother doing?** **She is cooking.**\n\n## Étape 7 : Habitude ou maintenant ?\nExemple : **I play football every Saturday.** → habitude (présent simple)\nExemple : **I am playing football now.** → maintenant (présent continu)\nExemple : **My mother cooks every day. Now she is sleeping.** *Ma mère cuisine tous les jours. Maintenant, elle dort.*\n\n## Étape 8 : À moi de parler !\nRegarde autour de toi et dis ce que les gens font :\nExemple : **The teacher is writing on the blackboard. Awa is reading. Modou is listening. I am learning English!**\n\nÀ retenir : Maintenant → **am / is / are + verbe-ing**. Non : **isn't / aren't**. Question : **What are you doing?**",
+   "qcm": [
+    {
+     "question": "Complète : I ___ cooking now.",
+     "options": [
+      "is",
+      "am",
+      "are",
+      "do"
+     ],
+     "reponse": 1,
+     "explication": "I am + verbe-ing."
+    },
+    {
+     "question": "Complète : They ___ playing football.",
+     "options": [
+      "is",
+      "am",
+      "are",
+      "does"
+     ],
+     "reponse": 2,
+     "explication": "they are + verbe-ing."
+    },
+    {
+     "question": "Le verbe « dance » + ing devient :",
+     "options": [
+      "danceing",
+      "dancing",
+      "dancking",
+      "dances"
+     ],
+     "reponse": 1,
+     "explication": "On enlève le e : dancing."
+    },
+    {
+     "question": "Le verbe « swim » + ing devient :",
+     "options": [
+      "swiming",
+      "swimming",
+      "swimeing",
+      "swims"
+     ],
+     "reponse": 1,
+     "explication": "On double le m : swimming."
+    },
+    {
+     "question": "« Que fais-tu ? » se dit :",
+     "options": [
+      "What do you do?",
+      "What are you doing?",
+      "What you doing?",
+      "What is you doing?"
+     ],
+     "reponse": 1,
+     "explication": "What are you doing? = Que fais-tu (maintenant) ?"
+    },
+    {
+     "question": "« Elle ne cuisine pas » (maintenant) se dit :",
+     "options": [
+      "She isn't cooking.",
+      "She doesn't cooking.",
+      "She not cook.",
+      "She aren't cooking."
+     ],
+     "reponse": 0,
+     "explication": "isn't + verbe-ing."
+    },
+    {
+     "question": "Quelle phrase parle de MAINTENANT ?",
+     "options": [
+      "I play football every Saturday.",
+      "I am playing football now.",
+      "I always play football.",
+      "I play football."
+     ],
+     "reponse": 1,
+     "explication": "now + am playing = maintenant."
+    },
+    {
+     "question": "« Is he sleeping? » — Non :",
+     "options": [
+      "No, he isn't.",
+      "No, he doesn't.",
+      "No, he not.",
+      "No, he aren't."
+     ],
+     "reponse": 0,
+     "explication": "No, he isn't."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I am cooking",
+     "verso": "je suis en train de cuisiner"
+    },
+    {
+     "recto": "she is reading",
+     "verso": "elle est en train de lire"
+    },
+    {
+     "recto": "they are playing",
+     "verso": "ils sont en train de jouer"
+    },
+    {
+     "recto": "now",
+     "verso": "maintenant"
+    },
+    {
+     "recto": "at the moment",
+     "verso": "en ce moment"
+    },
+    {
+     "recto": "What are you doing?",
+     "verso": "Que fais-tu ?"
+    },
+    {
+     "recto": "dance → dancing",
+     "verso": "on enlève le e"
+    },
+    {
+     "recto": "swim → swimming",
+     "verso": "on double la lettre"
+    },
+    {
+     "recto": "She isn't cooking.",
+     "verso": "Elle ne cuisine pas."
+    },
+    {
+     "recto": "Are you studying? – Yes, I am.",
+     "verso": "Tu étudies ? – Oui."
+    }
+   ]
+  },
+  {
+   "id": "ang6-20",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Can / can't – Ce que je sais faire",
+   "texte": "## Objectif\nUtiliser **can** et **can't** pour dire ce qu'on sait faire, ou pas.\n\n## Étape 1 : J'écoute une situation\nAu club d'anglais.\nTeacher : **Modou, can you swim?**\nModou : **Yes, I can. I swim in the river.**\nTeacher : **Awa, can you swim?**\nAwa : **No, I can't. But I can dance!**\nTeacher : **Very good! Ibou, what can you do?**\nIbou : **I can play football and I can draw.**\n\n## Étape 2 : Je remarque\n- **can** = savoir / pouvoir\n- **can't** (cannot) = ne pas savoir / ne pas pouvoir\n\nLe verbe après can ne change jamais.\n\nExemple : **I can swim.** *Je sais nager.*\nExemple : **You can sing.** *Tu sais chanter.*\nExemple : **He can ride a bike.** *Il sait faire du vélo.*\nExemple : **She can cook thieboudienne.** *Elle sait préparer le thiéboudiène.*\nExemple : **We can speak Wolof.** *Nous savons parler wolof.*\n\nAttention : Avec he / she, **pas de s** : **he can play** (pas « he cans plays »).\n\n## Étape 3 : Dire « non » avec can't\nExemple : **I can't swim.** *Je ne sais pas nager.*\nExemple : **My little brother can't read.** *Mon petit frère ne sait pas lire.*\nExemple : **A goat can't fly.** *Une chèvre ne peut pas voler.*\nExemple : **I can speak Wolof, but I can't speak Chinese.** *Je sais parler wolof, mais je ne sais pas parler chinois.*\n\n## Étape 4 : Poser une question\nOn met **can** au début.\n\nExemple : **Can you dance?** **Yes, I can.** / **No, I can't.**\nExemple : **Can your father drive?** **Yes, he can.**\nExemple : **Can she cook?** **Yes, she can.**\nExemple : **What can you do?** **I can draw.** *Que sais-tu faire ? Je sais dessiner.*\n\n## Étape 5 : Demander la permission\n**Can** sert aussi à demander poliment.\n\nExemple : **Can I go out, please?** *Est-ce que je peux sortir, s'il vous plaît ?*\nExemple : **Can I borrow your pen?** *Est-ce que je peux emprunter ton stylo ?*\nExemple : **Can I drink water?** *Est-ce que je peux boire de l'eau ?*\nRéponses : **Yes, you can.** *Oui.* / **Sorry, you can't.** *Désolé, non.*\n\n## Étape 6 : À moi de parler !\nDis 3 choses que tu sais faire et 2 que tu ne sais pas faire :\nExemple : **I can run fast. I can sing. I can speak French. I can't swim. I can't drive.**\n\nÀ retenir : **can** + verbe (sans s). **can't** = ne pas savoir / pouvoir. Question : **Can you…? Yes, I can. / No, I can't.** Permission : **Can I…, please?**",
+   "qcm": [
+    {
+     "question": "« I can swim » veut dire :",
+     "options": [
+      "Je nage.",
+      "Je sais nager.",
+      "Je ne sais pas nager.",
+      "J'aime nager."
+     ],
+     "reponse": 1,
+     "explication": "can = savoir / pouvoir."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "He can plays football.",
+      "He cans play football.",
+      "He can play football.",
+      "He can to play football."
+     ],
+     "reponse": 2,
+     "explication": "can + verbe sans s."
+    },
+    {
+     "question": "« Je ne sais pas nager » se dit :",
+     "options": [
+      "I can't swim.",
+      "I don't can swim.",
+      "I not can swim.",
+      "I can swim not."
+     ],
+     "reponse": 0,
+     "explication": "can't = ne pas savoir."
+    },
+    {
+     "question": "Comment poser la question ?",
+     "options": [
+      "You can dance?",
+      "Can you dance?",
+      "Do you can dance?",
+      "Can you to dance?"
+     ],
+     "reponse": 1,
+     "explication": "Can au début : Can you…?"
+    },
+    {
+     "question": "« Can your father drive? » — Oui :",
+     "options": [
+      "Yes, he can.",
+      "Yes, he cans.",
+      "Yes, he does.",
+      "Yes, he is."
+     ],
+     "reponse": 0,
+     "explication": "Yes, he can."
+    },
+    {
+     "question": "Pour demander la permission de sortir :",
+     "options": [
+      "I go out.",
+      "Can I go out, please?",
+      "Can go out I?",
+      "I can go out?"
+     ],
+     "reponse": 1,
+     "explication": "Can I…, please? = Est-ce que je peux… ?"
+    },
+    {
+     "question": "« A goat can't fly » veut dire :",
+     "options": [
+      "Une chèvre sait voler.",
+      "Une chèvre ne peut pas voler.",
+      "La chèvre vole.",
+      "Une chèvre mange."
+     ],
+     "reponse": 1,
+     "explication": "can't = ne peut pas."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I can ...",
+     "verso": "Je sais / je peux ..."
+    },
+    {
+     "recto": "I can't ...",
+     "verso": "Je ne sais pas / je ne peux pas ..."
+    },
+    {
+     "recto": "I can swim.",
+     "verso": "Je sais nager."
+    },
+    {
+     "recto": "She can cook.",
+     "verso": "Elle sait cuisiner."
+    },
+    {
+     "recto": "Can you dance?",
+     "verso": "Sais-tu danser ?"
+    },
+    {
+     "recto": "Yes, I can. / No, I can't.",
+     "verso": "Oui. / Non."
+    },
+    {
+     "recto": "What can you do?",
+     "verso": "Que sais-tu faire ?"
+    },
+    {
+     "recto": "Can I go out, please?",
+     "verso": "Je peux sortir, s'il vous plaît ?"
+    }
+   ]
+  },
+  {
+   "id": "ang6-21",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "There is / there are – Décrire un lieu",
+   "texte": "## Objectif\nUtiliser **there is** et **there are** pour décrire un lieu.\n\n## Étape 1 : J'écoute une situation\nAwa décrit sa classe.\n**In my classroom, there is a big blackboard. There is a teacher's table. There are forty tables and eighty chairs. There are two windows. There is a map of Senegal on the wall.**\n\n## Étape 2 : Je remarque\n- **There is** + **une** chose → *Il y a ...*\n- **There are** + **plusieurs** choses → *Il y a ...*\n\nExemple : **There is a door.** *Il y a une porte.*\nExemple : **There are two doors.** *Il y a deux portes.*\nExemple : **There is a mango tree.** *Il y a un manguier.*\nExemple : **There are many mango trees.** *Il y a beaucoup de manguiers.*\n\nAstuce : **There is → There's** quand on parle vite.\n\n## Étape 3 : Je décris mon village\nExemple : **In my village, there is a mosque.** *Dans mon village, il y a une mosquée.*\nExemple : **There is a well.** *Il y a un puits.*\nExemple : **There is a small shop.** *Il y a une petite boutique.*\nExemple : **There are many goats and sheep.** *Il y a beaucoup de chèvres et de moutons.*\nExemple : **There are fields of groundnuts.** *Il y a des champs d'arachide.*\n\n## Étape 4 : Je décris ma maison\nExemple : **In my house, there are three rooms.** *Dans ma maison, il y a trois chambres.*\nExemple : **There is a big courtyard.** *Il y a une grande cour.*\nExemple : **There is a TV in the living room.** *Il y a une télé dans le salon.*\nExemple : **There are ten people in my family.** *Il y a dix personnes dans ma famille.*\n\n## Étape 5 : Dire « non »\n- **There isn't** + une chose\n- **There aren't** + plusieurs choses\n\nExemple : **There isn't a hospital in my village.** *Il n'y a pas d'hôpital dans mon village.*\nExemple : **There aren't any computers in my class.** *Il n'y a pas d'ordinateurs dans ma classe.*\nExemple : **There isn't any water in the bottle.** *Il n'y a pas d'eau dans la bouteille.*\n\n## Étape 6 : Poser une question\nExemple : **Is there a school in your village?** **Yes, there is.**\nExemple : **Is there a market in Kébémer?** **Yes, there is.**\nExemple : **Are there many students in your class?** **Yes, there are.**\nExemple : **How many students are there?** **There are forty students.** *Combien d'élèves y a-t-il ? Il y a quarante élèves.*\n\n## Étape 7 : À moi de parler !\nDécris ta classe ou ton village :\nExemple : **In my village, there is a mosque and a school. There are many trees. There isn't a hospital.**\n\nÀ retenir : **There is** + 1 chose. **There are** + plusieurs choses. Non : **There isn't / There aren't**. Question : **Is there…? Are there…? How many… are there?**",
+   "qcm": [
+    {
+     "question": "Complète : ___ a mosque in my village.",
+     "options": [
+      "There is",
+      "There are",
+      "It are",
+      "They is"
+     ],
+     "reponse": 0,
+     "explication": "Une chose → There is."
+    },
+    {
+     "question": "Complète : ___ forty students in my class.",
+     "options": [
+      "There is",
+      "There are",
+      "There am",
+      "It is"
+     ],
+     "reponse": 1,
+     "explication": "Plusieurs → There are."
+    },
+    {
+     "question": "« Il y a deux fenêtres » se dit :",
+     "options": [
+      "There is two windows.",
+      "There are two windows.",
+      "It is two windows.",
+      "There two windows."
+     ],
+     "reponse": 1,
+     "explication": "two windows → There are."
+    },
+    {
+     "question": "« Il n'y a pas d'hôpital » se dit :",
+     "options": [
+      "There isn't a hospital.",
+      "There aren't a hospital.",
+      "There not hospital.",
+      "Isn't there hospital."
+     ],
+     "reponse": 0,
+     "explication": "Une chose → There isn't."
+    },
+    {
+     "question": "Comment poser la question ?",
+     "options": [
+      "There is a market?",
+      "Is there a market?",
+      "Are there a market?",
+      "Is a market there is?"
+     ],
+     "reponse": 1,
+     "explication": "Is there…? pour une chose."
+    },
+    {
+     "question": "« Combien d'élèves y a-t-il ? » se dit :",
+     "options": [
+      "How many students are there?",
+      "How many students is there?",
+      "How students are there?",
+      "How much student there?"
+     ],
+     "reponse": 0,
+     "explication": "How many … are there?"
+    },
+    {
+     "question": "« Are there many goats? » — Oui :",
+     "options": [
+      "Yes, there is.",
+      "Yes, there are.",
+      "Yes, they are.",
+      "Yes, it is."
+     ],
+     "reponse": 1,
+     "explication": "Yes, there are."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "There is a ...",
+     "verso": "Il y a un(e) ..."
+    },
+    {
+     "recto": "There are two ...",
+     "verso": "Il y a deux ..."
+    },
+    {
+     "recto": "There's",
+     "verso": "There is (forme courte)"
+    },
+    {
+     "recto": "There isn't a ...",
+     "verso": "Il n'y a pas de ..."
+    },
+    {
+     "recto": "There aren't any ...",
+     "verso": "Il n'y a pas de ..."
+    },
+    {
+     "recto": "Is there a ...?",
+     "verso": "Y a-t-il un(e) ... ?"
+    },
+    {
+     "recto": "Are there many ...?",
+     "verso": "Y a-t-il beaucoup de ... ?"
+    },
+    {
+     "recto": "How many ... are there?",
+     "verso": "Combien de ... y a-t-il ?"
+    }
+   ]
+  },
+  {
+   "id": "ang6-22",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Questions – Poser des questions",
+   "texte": "## Objectif\nPoser des **questions** en anglais avec les mots interrogatifs.\n\n## Étape 1 : J'écoute une situation\nUn nouvel élève arrive. Awa lui pose des questions.\nAwa : **What is your name?**\nLamine : **My name is Lamine.**\nAwa : **Where are you from?**\nLamine : **I am from Thiès.**\nAwa : **How old are you?**\nLamine : **I am twelve.**\nAwa : **Who is your best friend?**\nLamine : **I don't know! I am new.**\nAwa : **When is your birthday?**\nLamine : **It is in June.**\n\n## Étape 2 : Les mots des questions\n- **What** *Quoi / Quel / Que*\n- **Where** *Où*\n- **Who** *Qui*\n- **When** *Quand*\n- **Why** *Pourquoi*\n- **How** *Comment*\n- **How many** *Combien (on peut compter)*\n- **How old** *Quel âge*\n- **What time** *À quelle heure / Quelle heure*\n\n## Étape 3 : What, Where, Who\nExemple : **What is this?** **It is a book.** *Qu'est-ce que c'est ?*\nExemple : **What do you like?** **I like mangoes.** *Qu'est-ce que tu aimes ?*\nExemple : **Where do you live?** **I live in Kébémer.** *Où habites-tu ?*\nExemple : **Where is my bag?** **It is on the table.** *Où est mon sac ?*\nExemple : **Who is she?** **She is my sister.** *Qui est-ce ?*\nExemple : **Who is your teacher?** **Mr Diop.** *Qui est ton professeur ?*\n\n## Étape 4 : When, What time, Why\nExemple : **When is your birthday?** **It is in May.** *Quand est ton anniversaire ?*\nExemple : **When do you play football?** **On Saturday.** *Quand joues-tu au football ?*\nExemple : **What time is it?** **It is ten thirty.** *Quelle heure est-il ?*\nExemple : **What time do you go to school?** **At eight o'clock.** *À quelle heure vas-tu à l'école ?*\nExemple : **Why are you late?** **Because the car rapide is slow.** *Pourquoi es-tu en retard ? Parce que le car rapide est lent.*\n\nAstuce : On répond à **Why** avec **because** (parce que).\n\n## Étape 5 : How, How old, How many\nExemple : **How are you?** **I am fine, thank you.** *Comment vas-tu ?*\nExemple : **How old are you?** **I am eleven.** *Quel âge as-tu ?*\nExemple : **How many brothers do you have?** **I have two brothers.** *Combien de frères as-tu ?*\nExemple : **How many students are there?** **There are forty.** *Combien d'élèves y a-t-il ?*\nExemple : **How do you go to school?** **On foot.** *Comment vas-tu à l'école ? À pied.*\n\n## Étape 6 : Comment construire la question\nAvec **be** : mot interrogatif + **am / is / are** + sujet ?\nExemple : **Where is Modou?** **Who are they?** **How old is your sister?**\n\nAvec les autres verbes : mot interrogatif + **do / does** + sujet + verbe ?\nExemple : **Where do you live?** *Où habites-tu ?*\nExemple : **What does your father do?** *Que fait ton père ?*\nExemple : **When does Awa go to the market?** *Quand Awa va-t-elle au marché ?*\n\nAttention : Avec **does**, le verbe n'a pas de s : **Where does she live?** (pas « lives »).\n\n## Étape 7 : À moi de parler !\nPose 5 questions à ton voisin :\nExemple : **What is your name? How old are you? Where do you live? How many sisters do you have? What do you like?**\n\nÀ retenir : What = quoi. Where = où. Who = qui. When = quand. Why = pourquoi (→ because). How = comment. How many = combien. How old = quel âge.",
+   "qcm": [
+    {
+     "question": "« Where » veut dire :",
+     "options": [
+      "quand",
+      "où",
+      "qui",
+      "pourquoi"
+     ],
+     "reponse": 1,
+     "explication": "Where = où."
+    },
+    {
+     "question": "« Who » veut dire :",
+     "options": [
+      "qui",
+      "quoi",
+      "comment",
+      "combien"
+     ],
+     "reponse": 0,
+     "explication": "Who = qui."
+    },
+    {
+     "question": "Pour demander « Quand est ton anniversaire ? » :",
+     "options": [
+      "Where is your birthday?",
+      "When is your birthday?",
+      "What is your birthday?",
+      "Who is your birthday?"
+     ],
+     "reponse": 1,
+     "explication": "When = quand."
+    },
+    {
+     "question": "On répond à « Why » avec :",
+     "options": [
+      "because",
+      "but",
+      "and",
+      "so"
+     ],
+     "reponse": 0,
+     "explication": "Why…? → Because…"
+    },
+    {
+     "question": "« Combien de frères as-tu ? » se dit :",
+     "options": [
+      "How old brothers do you have?",
+      "How many brothers do you have?",
+      "How brothers you have?",
+      "What brothers do you have?"
+     ],
+     "reponse": 1,
+     "explication": "How many = combien."
+    },
+    {
+     "question": "Complète : Where ___ you live?",
+     "options": [
+      "are",
+      "does",
+      "do",
+      "is"
+     ],
+     "reponse": 2,
+     "explication": "Avec you : do."
+    },
+    {
+     "question": "Complète : Where does she ___?",
+     "options": [
+      "lives",
+      "live",
+      "living",
+      "to live"
+     ],
+     "reponse": 1,
+     "explication": "Après does, le verbe est sans s."
+    },
+    {
+     "question": "« How old are you? » veut dire :",
+     "options": [
+      "Comment vas-tu ?",
+      "Quel âge as-tu ?",
+      "Où vas-tu ?",
+      "Qui es-tu ?"
+     ],
+     "reponse": 1,
+     "explication": "How old = quel âge."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "What",
+     "verso": "quoi / quel / que"
+    },
+    {
+     "recto": "Where",
+     "verso": "où"
+    },
+    {
+     "recto": "Who",
+     "verso": "qui"
+    },
+    {
+     "recto": "When",
+     "verso": "quand"
+    },
+    {
+     "recto": "Why",
+     "verso": "pourquoi"
+    },
+    {
+     "recto": "because",
+     "verso": "parce que"
+    },
+    {
+     "recto": "How",
+     "verso": "comment"
+    },
+    {
+     "recto": "How many",
+     "verso": "combien"
+    },
+    {
+     "recto": "How old",
+     "verso": "quel âge"
+    },
+    {
+     "recto": "What time",
+     "verso": "à quelle heure"
+    },
+    {
+     "recto": "Where do you live?",
+     "verso": "Où habites-tu ?"
+    },
+    {
+     "recto": "What does your father do?",
+     "verso": "Que fait ton père ?"
+    }
+   ]
   }
  ]
 }
