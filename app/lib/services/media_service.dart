@@ -137,7 +137,7 @@ class _MediaImageState extends State<MediaImage> {
           return Container(
             height: widget.height ?? 160,
             width: double.infinity,
-            color: const Color(0xFFF4EFE6),
+            color: const Color(0xFFF7F7F7),
             alignment: Alignment.center,
             child: waiting
                 ? const SizedBox(

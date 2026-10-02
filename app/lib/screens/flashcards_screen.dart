@@ -199,7 +199,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                           Expanded(
                             child: ChunkyButton(
                               label: 'À revoir',
-                              color: JangColors.accent,
+                              color: JangColors.error,
                               onPressed: () => _answer(false),
                             ),
                           ),

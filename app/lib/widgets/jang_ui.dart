@@ -30,7 +30,7 @@ class _ChunkyButtonState extends State<ChunkyButton> {
   @override
   Widget build(BuildContext context) {
     final enabled = widget.onPressed != null;
-    final base = enabled ? widget.color : const Color(0xFFE5E1DA);
+    final base = enabled ? widget.color : const Color(0xFFE5E5E5);
     final bg = widget.outlined ? Colors.white : base;
     final shadow = widget.outlined ? JangColors.border : JangColors.darker(base, 0.15);
     final fg = widget.textColor ??

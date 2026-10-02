@@ -18,8 +18,9 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  static const _letters = ['A', 'B', 'C', 'D'];
-  static const _colors = [JangColors.accent, JangColors.primary, JangColors.ocre, JangColors.success];
+  // Tuiles façon Kahoot : rouge ▲, bleu ◆, jaune ●, vert ■.
+  static const _shapes = ['▲', '◆', '●', '■'];
+  static const _colors = [Color(0xFFE21B3C), Color(0xFF1368CE), Color(0xFFD89E00), Color(0xFF26890C)];
 
   late List<int?> _answers;
   int _index = 0;
@@ -112,8 +113,8 @@ class _QuizScreenState extends State<QuizScreen> {
               margin: const EdgeInsets.symmetric(horizontal: 2),
               decoration: BoxDecoration(
                 color: _answers[i] != null
-                    ? (_answers[i] == _quiz[i].answer ? JangColors.success : JangColors.accent)
-                    : (i == _index && !_finished ? JangColors.ocre : JangColors.border),
+                    ? (_answers[i] == _quiz[i].answer ? JangColors.success : JangColors.error)
+                    : (i == _index && !_finished ? JangColors.primary : JangColors.border),
                 borderRadius: BorderRadius.circular(6),
               ),
             ),
@@ -127,6 +128,7 @@ class _QuizScreenState extends State<QuizScreen> {
     final chosen = _answers[_index];
     final answered = chosen != null;
     final correct = chosen == q.answer;
+    final fbColor = correct ? JangColors.successDark : JangColors.errorDark;
     return Column(
       children: [
         Expanded(
@@ -164,34 +166,30 @@ class _QuizScreenState extends State<QuizScreen> {
                   padding: EdgeInsets.fromLTRB(
                       20, 18, 20, 18 + MediaQuery.of(context).padding.bottom),
                   decoration: BoxDecoration(
-                    color: correct ? JangColors.success : JangColors.accent,
+                    color: correct ? JangColors.successBg : JangColors.errorBg,
                     borderRadius: const BorderRadius.vertical(top: Radius.circular(26)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(correct ? 'Waaw, bravo ! 🎉' : 'Presque !',
-                          style: titleStyle(26, color: Colors.white, weight: 800)),
+                          style: titleStyle(26, color: fbColor, weight: 800)),
                       const SizedBox(height: 2),
                       Text(_cheer,
-                          style: const TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16)),
+                          style: TextStyle(color: fbColor, fontWeight: FontWeight.w700, fontSize: 16)),
                       if (!correct) ...[
                         const SizedBox(height: 6),
                         Text('Bonne réponse : ${q.options[q.answer]}',
-                            style: const TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.w800, fontSize: 16)),
+                            style: TextStyle(color: fbColor, fontWeight: FontWeight.w800, fontSize: 16)),
                       ],
                       if (q.explanation.trim().isNotEmpty) ...[
                         const SizedBox(height: 4),
-                        Text(q.explanation,
-                            style: const TextStyle(color: Colors.white, fontSize: 15)),
+                        Text(q.explanation, style: TextStyle(color: fbColor, fontSize: 15)),
                       ],
                       const SizedBox(height: 14),
                       ChunkyButton(
-                        label: _index < _quiz.length - 1 ? 'Continuer' : 'Voir ma note',
-                        color: Colors.white,
-                        textColor: correct ? JangColors.successDark : JangColors.accentDark,
+                        label: _index < _quiz.length - 1 ? 'CONTINUER' : 'VOIR MA NOTE',
+                        color: correct ? JangColors.success : JangColors.error,
                         onPressed: _next,
                       ),
                     ],
@@ -206,49 +204,37 @@ class _QuizScreenState extends State<QuizScreen> {
     final answered = chosen != null;
     final isAnswer = o == q.answer;
     final isChosen = o == chosen;
-    var border = JangColors.border;
-    var bg = Colors.white;
-    if (answered && isAnswer) {
-      border = JangColors.success;
-      bg = JangColors.successBg;
-    } else if (answered && isChosen) {
-      border = JangColors.accent;
-      bg = JangColors.errorBg;
-    }
-    final dim = answered && !isAnswer && !isChosen;
+    final color = _colors[o];
+    final dim = answered && !isAnswer;
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Opacity(
-        opacity: dim ? 0.55 : 1,
+        opacity: dim ? (isChosen ? 0.75 : 0.35) : 1,
         child: GestureDetector(
           onTap: answered ? null : () => _choose(o),
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            constraints: const BoxConstraints(minHeight: 64),
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
             decoration: BoxDecoration(
-              color: bg,
-              borderRadius: BorderRadius.circular(18),
-              border: Border.all(color: border, width: 2),
-              boxShadow: [BoxShadow(color: border, offset: const Offset(0, 4))],
+              color: color,
+              borderRadius: BorderRadius.circular(14),
+              boxShadow: [BoxShadow(color: JangColors.darker(color, 0.12), offset: const Offset(0, 5))],
             ),
             child: Row(children: [
-              Container(
-                width: 38,
-                height: 38,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: _colors[o],
-                  borderRadius: BorderRadius.circular(11),
-                ),
+              SizedBox(
+                width: 34,
                 child: answered && (isAnswer || isChosen)
-                    ? Icon(isAnswer ? Icons.check_rounded : Icons.close_rounded,
-                        color: JangColors.on(_colors[o]))
-                    : Text(_letters[o],
-                        style: titleStyle(20, color: JangColors.on(_colors[o]), weight: 800)),
+                    ? Icon(isAnswer ? Icons.check_circle_rounded : Icons.cancel_rounded,
+                        color: Colors.white, size: 30)
+                    : Text(_shapes[o],
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(color: Colors.white, fontSize: 24, height: 1)),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: 10),
               Expanded(
                 child: Text(q.options[o],
-                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800)),
+                    style: const TextStyle(
+                        color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800)),
               ),
             ]),
           ),
@@ -269,7 +255,7 @@ class _QuizScreenState extends State<QuizScreen> {
         Center(child: Text('Ta note', style: Theme.of(context).textTheme.bodySmall)),
         Center(
           child: Text('$score / $total',
-              style: titleStyle(52, color: good ? JangColors.success : JangColors.accent, weight: 800)),
+              style: titleStyle(52, color: good ? JangColors.success : JangColors.error, weight: 800)),
         ),
         const SizedBox(height: 6),
         Text(_endMessage, textAlign: TextAlign.center, style: Theme.of(context).textTheme.titleMedium),
@@ -279,7 +265,7 @@ class _QuizScreenState extends State<QuizScreen> {
             padding: const EdgeInsets.only(bottom: 8),
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Icon(_answers[i] == _quiz[i].answer ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                  color: _answers[i] == _quiz[i].answer ? JangColors.success : JangColors.accent),
+                  color: _answers[i] == _quiz[i].answer ? JangColors.success : JangColors.error),
               const SizedBox(width: 8),
               Expanded(
                 child: Text.rich(TextSpan(children: [

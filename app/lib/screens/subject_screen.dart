@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -132,8 +131,8 @@ class _SubjectScreenState extends State<SubjectScreen> {
     final p = ProgressRepo.instance.of(l.id);
     final done = p?.seen == true;
     final t = Theme.of(context).textTheme;
-    final Color nodeBg = done ? JangColors.success : (current ? JangColors.ocre : Colors.white);
-    final Color nodeFg = done ? Colors.white : (current ? JangColors.text : JangColors.textSecondary);
+    final Color nodeBg = done ? JangColors.ocre : (current ? JangColors.primary : const Color(0xFFE5E5E5));
+    final Color nodeFg = done ? JangColors.text : (current ? Colors.white : const Color(0xFFAFAFAF));
     void open() => Navigator.push(
           context,
           MaterialPageRoute(builder: (_) => LessonScreen(lesson: l, subject: widget.subject)),
@@ -143,30 +142,24 @@ class _SubjectScreenState extends State<SubjectScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SizedBox(
-            width: 52,
+            width: 56,
             child: Column(children: [
               const SizedBox(height: 8),
-              Transform.rotate(
-                angle: pi / 4,
-                child: Container(
-                  width: 40,
-                  height: 40,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: nodeBg,
-                    borderRadius: BorderRadius.circular(11),
-                    border: done || current ? null : Border.all(color: JangColors.border, width: 2),
-                    boxShadow: done || current
-                        ? [BoxShadow(color: JangColors.darker(nodeBg, 0.15), offset: const Offset(3, 3))]
-                        : null,
-                  ),
-                  child: Transform.rotate(
-                    angle: -pi / 4,
-                    child: done
-                        ? const Icon(Icons.check_rounded, color: Colors.white, size: 22)
-                        : Text('${index + 1}', style: titleStyle(19, color: nodeFg, weight: 800)),
-                  ),
+              Container(
+                width: 46,
+                height: 46,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: nodeBg,
+                  shape: BoxShape.circle,
+                  border: current ? Border.all(color: JangColors.noteBg, width: 4) : null,
+                  boxShadow: [
+                    BoxShadow(color: JangColors.darker(nodeBg, 0.12), offset: const Offset(0, 4)),
+                  ],
                 ),
+                child: done
+                    ? const Icon(Icons.star_rounded, color: Colors.white, size: 28)
+                    : Text('${index + 1}', style: titleStyle(19, color: nodeFg, weight: 800)),
               ),
               if (!last)
                 Expanded(
@@ -174,7 +167,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                     width: 4,
                     margin: const EdgeInsets.only(top: 10),
                     decoration: BoxDecoration(
-                      color: done ? JangColors.success.withValues(alpha: 0.4) : JangColors.border,
+                      color: done ? JangColors.ocre.withValues(alpha: 0.5) : JangColors.border,
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -192,10 +185,10 @@ class _SubjectScreenState extends State<SubjectScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(18),
-                    border: Border.all(color: current ? JangColors.ocre : JangColors.border, width: 2),
+                    border: Border.all(color: current ? JangColors.primary : JangColors.border, width: 2),
                     boxShadow: [
                       BoxShadow(
-                          color: current ? JangColors.ocre : JangColors.border,
+                          color: current ? JangColors.primaryDark : JangColors.border,
                           offset: const Offset(0, 4)),
                     ],
                   ),

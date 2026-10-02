@@ -1,52 +1,63 @@
 import 'package:flutter/material.dart';
 
-/// Couleurs de Jàng : indigo, terre, ocre et vert, sur fond blanc.
+/// Couleurs de Jàng : vives et joyeuses (style Duolingo / Kahoot), sur fond blanc.
 class JangColors {
   static const background = Colors.white;
-  static const text = Color(0xFF23255E);
-  static const textSecondary = Color(0xFF66658A);
-  static const primary = Color(0xFF2B2E83); // indigo
-  static const primaryDark = Color(0xFF181A5A);
-  static const accent = Color(0xFFD8562C); // terre
-  static const accentDark = Color(0xFFAE3F1C);
-  static const ocre = Color(0xFFEFA82E);
-  static const ocreDark = Color(0xFFC9861A);
+  static const text = Color(0xFF3C3C3C);
+  static const textSecondary = Color(0xFF777777);
+  static const primary = Color(0xFF1CB0F6); // bleu
+  static const primaryDark = Color(0xFF1899D6);
+  static const accent = Color(0xFF58CC02); // vert (boutons principaux)
+  static const accentDark = Color(0xFF58A700);
+  static const ocre = Color(0xFFFFC800); // jaune
+  static const ocreDark = Color(0xFFE5A500);
   static const surface = Colors.white;
-  static const border = Color(0xFFEAE3D6);
-  static const success = Color(0xFF22965A);
-  static const successDark = Color(0xFF17703F);
-  static const successBg = Color(0xFFE3F6EA);
-  static const error = Color(0xFFD8562C);
-  static const errorBg = Color(0xFFFCE7DF);
-  static const noteBg = Color(0xFFE3F6EA);
-  static const warning = Color(0xFFB0700D);
-  static const warningBg = Color(0xFFFDF0D5);
+  static const border = Color(0xFFE5E5E5);
+  static const success = Color(0xFF58CC02);
+  static const successDark = Color(0xFF58A700);
+  static const successBg = Color(0xFFD7FFB8);
+  static const error = Color(0xFFFF4B4B);
+  static const errorDark = Color(0xFFEA2B2B);
+  static const errorBg = Color(0xFFFFDFE0);
+  static const noteBg = Color(0xFFDDF4FF);
+  static const warning = Color(0xFFFF9600);
+  static const warningBg = Color(0xFFFFF4D6);
 
-  /// Couleurs proposées pour les matières (la première série : français, maths, anglais, SVT).
+  /// Couleurs proposées pour les matières (français, maths, anglais, SVT…).
   static const subjectPalette = <String>[
-    '#D8562C', // Français : terre
-    '#2B2E83', // Maths : indigo
-    '#EFA82E', // Anglais : ocre
-    '#22965A', // SVT : vert
-    '#0E8FB8', // bleu lagune
-    '#8E3B8C', // bissap
-    '#C2185B', // hibiscus
-    '#7A4B2A', // terre de Kébémer
-    '#00897B', // menthe
-    '#5C6BC0', // lavande
+    '#FF4B4B', // rouge
+    '#1CB0F6', // bleu
+    '#FFC800', // jaune
+    '#58CC02', // vert
+    '#CE82FF', // violet
+    '#FF9600', // orange
+    '#E21B3C', // rouge Kahoot
+    '#1368CE', // bleu Kahoot
+    '#26890C', // vert Kahoot
+    '#2B70C9', // bleu nuit
   ];
 
   /// Anciennes couleurs des matières : affichées avec la nouvelle palette.
   static const _old = <String, String>{
-    '8C2F39': '#D8562C',
-    '1F4E8C': '#2B2E83',
-    '9A5A00': '#EFA82E',
-    '5B3F8C': '#22965A',
-    '0F5C4A': '#0E8FB8',
-    '2E6B73': '#8E3B8C',
-    '4A5A1F': '#00897B',
-    '6B2E5E': '#C2185B',
-    '3A3F4A': '#5C6BC0',
+    '8C2F39': '#FF4B4B',
+    '1F4E8C': '#1CB0F6',
+    '9A5A00': '#FFC800',
+    '5B3F8C': '#58CC02',
+    '0F5C4A': '#2B70C9',
+    '2E6B73': '#CE82FF',
+    '4A5A1F': '#26890C',
+    '6B2E5E': '#E21B3C',
+    '3A3F4A': '#1368CE',
+    'D8562C': '#FF4B4B',
+    '2B2E83': '#1CB0F6',
+    'EFA82E': '#FFC800',
+    '22965A': '#58CC02',
+    '0E8FB8': '#2B70C9',
+    '8E3B8C': '#CE82FF',
+    'C2185B': '#E21B3C',
+    '7A4B2A': '#FF9600',
+    '00897B': '#26890C',
+    '5C6BC0': '#1368CE',
   };
 
   static Color fromHex(String? hex, {Color fallback = primary}) {
@@ -59,8 +70,8 @@ class JangColors {
     return v == null ? fallback : Color(v);
   }
 
-  /// Couleur du texte à poser sur [c] (indigo sur les couleurs claires, blanc sinon).
-  static Color on(Color c) => c.computeLuminance() > 0.4 ? text : Colors.white;
+  /// Couleur du texte à poser sur [c] (gris foncé sur les couleurs claires, blanc sinon).
+  static Color on(Color c) => c.computeLuminance() > 0.55 ? text : Colors.white;
 
   /// Version plus foncée de [c], pour l'ombre des gros boutons.
   static Color darker(Color c, [double amount = 0.22]) {
@@ -69,7 +80,7 @@ class JangColors {
   }
 }
 
-const titleFont = 'Baloo';
+const titleFont = 'Nunito';
 const bodyFont = 'Nunito';
 
 FontWeight _weight(double w) => FontWeight.values[((w / 100).round() - 1).clamp(0, 8)];
@@ -189,16 +200,16 @@ ThemeData buildTheme() {
     ),
     navigationBarTheme: NavigationBarThemeData(
       backgroundColor: Colors.white,
-      indicatorColor: JangColors.errorBg,
+      indicatorColor: JangColors.noteBg,
       height: 70,
       iconTheme: WidgetStateProperty.resolveWith((s) => IconThemeData(
-            color: s.contains(WidgetState.selected) ? JangColors.accent : JangColors.textSecondary,
+            color: s.contains(WidgetState.selected) ? JangColors.primary : JangColors.textSecondary,
           )),
       labelTextStyle: WidgetStateProperty.resolveWith((s) => TextStyle(
             fontFamily: bodyFont,
             fontSize: 13,
             fontWeight: FontWeight.w800,
-            color: s.contains(WidgetState.selected) ? JangColors.accent : JangColors.textSecondary,
+            color: s.contains(WidgetState.selected) ? JangColors.primary : JangColors.textSecondary,
           )),
     ),
     dialogTheme: DialogThemeData(
@@ -208,7 +219,7 @@ ThemeData buildTheme() {
     dividerTheme: const DividerThemeData(color: JangColors.border, space: 1, thickness: 2),
     snackBarTheme: SnackBarThemeData(
       behavior: SnackBarBehavior.floating,
-      backgroundColor: JangColors.primary,
+      backgroundColor: JangColors.text,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
     ),
   );
