@@ -11347,6 +11347,3202 @@
      "verso": "réussir le BFEM"
     }
    ]
+  },
+  {
+   "id": "ang2-01",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Family ties 1 – Se présenter (be, have)",
+   "texte": "## Objectif\nSe présenter et présenter sa famille. Thème : **Family ties** *les liens familiaux*. Grammaire : **be** et **have** au présent simple.\n\n## Étape 1 : La situation\nLe premier jour au lycée, Aminata se présente.\n**Hello everybody! My name is Aminata Fall. I am fifteen. I am from Kébémer. I have a big family: I have two brothers and three sisters. My father is a farmer and my mother is a trader. We are very close.**\n\n## Étape 2 : Le vocabulaire de la famille\n- **parents** *les parents (père et mère)*\n- **relatives** *les membres de la famille, les proches*\n- **an only child** *un enfant unique*\n- **the eldest / the youngest** *l'aîné / le cadet*\n- **a nuclear family** *la famille nucléaire (parents + enfants)*\n- **an extended family** *la famille élargie (avec grands-parents, oncles, cousins...)*\n- **twins** *des jumeaux*\n\n## Étape 3 : Se présenter (étape par étape)\n1. Le nom : **My name is ... / I'm ...**\n2. L'âge : **I'm fifteen (years old).**\n3. L'origine : **I'm from Louga. / I live in Kébémer.**\n4. La famille : **I have two brothers. / I'm an only child.**\n5. Les goûts : **I like football.**\nAstuce : pour finir, on dit **Nice to meet you!** *Enchanté(e) !*\n\n## Étape 4 : BE et HAVE au présent\n- **BE** : **I am, you are, he / she / it is, we / you / they are**\n- **HAVE** : **I have, you have, he / she / it has, we / you / they have**\nExemple : **She is my cousin.** *C'est ma cousine.*\nExemple : **He has three children.** *Il a trois enfants.*\nNégatif : **I am not tired. / She isn't here. / I don't have a car. / He doesn't have a bike.**\nQuestion : **Are you new? – Yes, I am. / Do you have a sister? – No, I don't.**\nAttention : en français on dit « j'ai 15 ans », en anglais **I am 15** (avec BE, pas HAVE).\n\n## Encore des exemples\nExemple : **I am the eldest in my family.** *Je suis l'aîné de ma famille.*\nExemple : **We are an extended family.** *Nous sommes une famille élargie.*\nExemple : **My grandmother is seventy.** *Ma grand-mère a soixante-dix ans.*\nExemple : **My uncle has two wives.** *Mon oncle a deux épouses.*\nExemple : **They have a big house in Louga.** *Ils ont une grande maison à Louga.*\nExemple : **Is your brother a student? – Yes, he is.** *Ton frère est élève ? – Oui.*\nExemple : **Does she have a phone? – No, she doesn't.** *Elle a un téléphone ? – Non.*\n\n## Étape 5 : À moi de parler !\nExemple : **My name is Ousmane. I'm sixteen. I'm from Mbacké. I have one brother. He is a tailor. My family is an extended family: my grandparents live with us.**\n\nÀ retenir : âge → **I am 15**. **he / she / it is / has**. Négatif : **isn't / doesn't have**. Question : **Are you...? / Do you have...?**",
+   "qcm": [
+    {
+     "question": "D'où vient Aminata ?",
+     "options": [
+      "Louga",
+      "Kébémer",
+      "Dakar",
+      "Thiès"
+     ],
+     "reponse": 1,
+     "explication": "I am from Kébémer."
+    },
+    {
+     "question": "« J'ai 15 ans » se dit :",
+     "options": [
+      "I have 15 years.",
+      "I am 15.",
+      "I have 15.",
+      "I'm 15 years have."
+     ],
+     "reponse": 1,
+     "explication": "L'âge se dit avec BE."
+    },
+    {
+     "question": "Complète : She ___ my cousin.",
+     "options": [
+      "am",
+      "are",
+      "is",
+      "have"
+     ],
+     "reponse": 2,
+     "explication": "she → is."
+    },
+    {
+     "question": "Complète : He ___ three children.",
+     "options": [
+      "have",
+      "has",
+      "is",
+      "are"
+     ],
+     "reponse": 1,
+     "explication": "he → has."
+    },
+    {
+     "question": "Complète : We ___ very close.",
+     "options": [
+      "is",
+      "am",
+      "are",
+      "has"
+     ],
+     "reponse": 2,
+     "explication": "we → are."
+    },
+    {
+     "question": "« An only child » veut dire :",
+     "options": [
+      "un enfant unique",
+      "un aîné",
+      "un jumeau",
+      "un orphelin"
+     ],
+     "reponse": 0,
+     "explication": "only = seul."
+    },
+    {
+     "question": "« The eldest » veut dire :",
+     "options": [
+      "le cadet",
+      "l'aîné",
+      "le père",
+      "l'oncle"
+     ],
+     "reponse": 1,
+     "explication": "eldest = le plus âgé des enfants."
+    },
+    {
+     "question": "La négation de « He has a bike » :",
+     "options": [
+      "He hasn't a bike.",
+      "He doesn't have a bike.",
+      "He don't have a bike.",
+      "He not has a bike."
+     ],
+     "reponse": 1,
+     "explication": "doesn't have."
+    },
+    {
+     "question": "La question correcte :",
+     "options": [
+      "Do you have a sister?",
+      "Have you a sister do?",
+      "You have a sister?",
+      "Does you have a sister?"
+     ],
+     "reponse": 0,
+     "explication": "Do you have ...?"
+    },
+    {
+     "question": "« An extended family » est :",
+     "options": [
+      "une petite famille",
+      "une famille élargie",
+      "une famille riche",
+      "une famille étrangère"
+     ],
+     "reponse": 1,
+     "explication": "Avec grands-parents, oncles, cousins."
+    },
+    {
+     "question": "Réponse courte à « Are you new? » :",
+     "options": [
+      "Yes, I do.",
+      "Yes, I am.",
+      "Yes, I have.",
+      "Yes, I'm."
+     ],
+     "reponse": 1,
+     "explication": "Are you ...? → Yes, I am."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "My name is ...",
+     "verso": "Je m'appelle ..."
+    },
+    {
+     "recto": "I'm fifteen.",
+     "verso": "J'ai quinze ans."
+    },
+    {
+     "recto": "I'm from ...",
+     "verso": "Je viens de ..."
+    },
+    {
+     "recto": "I have two brothers.",
+     "verso": "J'ai deux frères."
+    },
+    {
+     "recto": "an only child",
+     "verso": "un enfant unique"
+    },
+    {
+     "recto": "the eldest",
+     "verso": "l'aîné"
+    },
+    {
+     "recto": "the youngest",
+     "verso": "le cadet"
+    },
+    {
+     "recto": "relatives",
+     "verso": "les proches, la famille"
+    },
+    {
+     "recto": "a nuclear family",
+     "verso": "une famille nucléaire"
+    },
+    {
+     "recto": "an extended family",
+     "verso": "une famille élargie"
+    },
+    {
+     "recto": "twins",
+     "verso": "des jumeaux"
+    },
+    {
+     "recto": "he is / he has",
+     "verso": "il est / il a"
+    },
+    {
+     "recto": "I don't have ...",
+     "verso": "Je n'ai pas ..."
+    },
+    {
+     "recto": "Nice to meet you!",
+     "verso": "Enchanté(e) !"
+    }
+   ]
+  },
+  {
+   "id": "ang2-02",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Family ties 2 – Décrire un proche (possessifs)",
+   "texte": "## Objectif\nDécrire un membre de sa famille. Thème : **Family ties**. Grammaire : **les adjectifs possessifs** (my, your, his, her...).\n\n## Étape 1 : La situation\nMoussa parle de son grand frère.\n**This is my elder brother, Ibrahima. He is twenty-five. His wife is a nurse and their son is two. My brother is kind and generous. He helps our parents a lot. Our family is proud of him.**\n\n## Étape 2 : Les liens de parenté\n- **grandparents** *les grands-parents*, **grandchildren** *les petits-enfants*\n- **uncle / aunt** *oncle / tante*, **nephew / niece** *neveu / nièce*\n- **husband / wife** *mari / épouse*\n- **father-in-law / mother-in-law** *beau-père / belle-mère*\n- **a step-mother** *une belle-mère (la femme du père)*\n- **to look after** *s'occuper de*, **to respect** *respecter*\n\n## Étape 3 : Décrire un proche (étape par étape)\n1. Qui ? **This is my aunt, Khady.**\n2. Son âge et son métier : **She is forty. She is a teacher.**\n3. Son caractère : **She is kind / strict / funny / patient.**\n4. Ce qu'elle fait pour toi : **She helps me with my homework.**\n5. Ce que tu ressens : **I love her very much.**\n\n## Étape 4 : Les adjectifs possessifs\n- **I → my**, **you → your**, **he → his**, **she → her**, **it → its**, **we → our**, **they → their**\nExemple : **Ibrahima and his wife.** *Ibrahima et sa femme.* (garçon → his)\nExemple : **Awa and her husband.** *Awa et son mari.* (fille → her)\nExemple : **My parents and their friends.** *Mes parents et leurs amis.*\nAstuce : on regarde le **possesseur**, pas l'objet. « Son père » de Fatou → **her father**.\nAttention : **its** (possessif) ≠ **it's** (= it is). **their** (leur) ≠ **there** (là).\nLe cas possessif : **Moussa's brother** *le frère de Moussa*, **my parents' house** *la maison de mes parents*.\n\n## Encore des exemples\nExemple : **My mother is patient.** *Ma mère est patiente.*\nExemple : **Your uncle is very funny.** *Ton oncle est très drôle.*\nExemple : **Fatou loves her grandmother.** *Fatou aime sa grand-mère.*\nExemple : **Modou visits his aunt every Sunday.** *Modou rend visite à sa tante chaque dimanche.*\nExemple : **We respect our elders.** *Nous respectons nos aînés.*\nExemple : **The children play with their cousins.** *Les enfants jouent avec leurs cousins.*\nExemple : **This is Awa's niece.** *C'est la nièce d'Awa.*\n\n## Étape 5 : À moi de parler !\nExemple : **This is my grandmother. Her name is Mame Diarra. She is seventy. She tells us stories in the evening. Her stories are very interesting. I love her.**\n\nÀ retenir : **his** (à lui) / **her** (à elle) / **their** (à eux). On choisit selon le possesseur. **Moussa's brother** = le frère de Moussa.",
+   "qcm": [
+    {
+     "question": "Quel est le métier de la femme d'Ibrahima ?",
+     "options": [
+      "enseignante",
+      "infirmière",
+      "commerçante",
+      "couturière"
+     ],
+     "reponse": 1,
+     "explication": "His wife is a nurse."
+    },
+    {
+     "question": "Complète : Moussa and ___ brother.",
+     "options": [
+      "her",
+      "his",
+      "their",
+      "its"
+     ],
+     "reponse": 1,
+     "explication": "Moussa = garçon → his."
+    },
+    {
+     "question": "Complète : Awa and ___ husband.",
+     "options": [
+      "his",
+      "her",
+      "its",
+      "our"
+     ],
+     "reponse": 1,
+     "explication": "Awa = fille → her."
+    },
+    {
+     "question": "Complète : My parents and ___ friends.",
+     "options": [
+      "there",
+      "their",
+      "they",
+      "them"
+     ],
+     "reponse": 1,
+     "explication": "their = leur(s)."
+    },
+    {
+     "question": "Complète : We respect ___ elders.",
+     "options": [
+      "us",
+      "we",
+      "our",
+      "ours"
+     ],
+     "reponse": 2,
+     "explication": "we → our."
+    },
+    {
+     "question": "« Le frère de Moussa » se dit :",
+     "options": [
+      "the brother of Moussa's",
+      "Moussa's brother",
+      "Moussa brother",
+      "brother's Moussa"
+     ],
+     "reponse": 1,
+     "explication": "Cas possessif : Moussa's."
+    },
+    {
+     "question": "« Niece » veut dire :",
+     "options": [
+      "nièce",
+      "neveu",
+      "tante",
+      "cousine"
+     ],
+     "reponse": 0,
+     "explication": "niece = nièce."
+    },
+    {
+     "question": "« Father-in-law » veut dire :",
+     "options": [
+      "grand-père",
+      "beau-père",
+      "oncle",
+      "parrain"
+     ],
+     "reponse": 1,
+     "explication": "in-law = par alliance."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "The dog eats it's food.",
+      "The dog eats its food.",
+      "The dog eats his' food.",
+      "The dog eats it food."
+     ],
+     "reponse": 1,
+     "explication": "its = son (animal/chose)."
+    },
+    {
+     "question": "« He looks after his parents » :",
+     "options": [
+      "Il regarde ses parents.",
+      "Il s'occupe de ses parents.",
+      "Il cherche ses parents.",
+      "Il quitte ses parents."
+     ],
+     "reponse": 1,
+     "explication": "look after = s'occuper de."
+    },
+    {
+     "question": "« Fatou's father » : on remplace par :",
+     "options": [
+      "his father",
+      "her father",
+      "its father",
+      "their father"
+     ],
+     "reponse": 1,
+     "explication": "Fatou = fille → her."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "my / your",
+     "verso": "mon / ton"
+    },
+    {
+     "recto": "his",
+     "verso": "son (à lui)"
+    },
+    {
+     "recto": "her",
+     "verso": "son (à elle)"
+    },
+    {
+     "recto": "its",
+     "verso": "son (chose, animal)"
+    },
+    {
+     "recto": "our / their",
+     "verso": "notre / leur"
+    },
+    {
+     "recto": "Moussa's brother",
+     "verso": "le frère de Moussa"
+    },
+    {
+     "recto": "uncle / aunt",
+     "verso": "oncle / tante"
+    },
+    {
+     "recto": "nephew / niece",
+     "verso": "neveu / nièce"
+    },
+    {
+     "recto": "husband / wife",
+     "verso": "mari / épouse"
+    },
+    {
+     "recto": "father-in-law",
+     "verso": "beau-père"
+    },
+    {
+     "recto": "grandchildren",
+     "verso": "petits-enfants"
+    },
+    {
+     "recto": "to look after",
+     "verso": "s'occuper de"
+    },
+    {
+     "recto": "kind / strict",
+     "verso": "gentil / sévère"
+    },
+    {
+     "recto": "patient",
+     "verso": "patient"
+    }
+   ]
+  },
+  {
+   "id": "ang2-03",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Club membership – Inviter, accepter, refuser (questions)",
+   "texte": "## Objectif\nInviter quelqu'un, accepter ou refuser poliment. Thème : **Club membership** *être membre d'un club*. Grammaire : **les questions au présent simple**.\n\n## Étape 1 : La situation\nAwa invite Khady au club d'anglais du lycée.\nAwa : **Do you like English?**\nKhady : **Yes, I do. Why?**\nAwa : **Would you like to join our English club? We meet every Wednesday afternoon.**\nKhady : **I'd love to! What time does it start?**\nAwa : **At four o'clock. Do you want to come today?**\nKhady : **I'm sorry, I can't today. I have a maths test tomorrow. Maybe next week.**\n\n## Étape 2 : La vie des clubs\n- **a club** *un club*, **a member** *un membre*, **to join** *adhérer, rejoindre*\n- **a membership card** *une carte de membre*, **a fee** *une cotisation*\n- **a meeting** *une réunion*, **the president / the secretary / the treasurer** *le président / le secrétaire / le trésorier*\n- **the drama club, the football club, the environment club** *le club théâtre, de football, de l'environnement*\n\n## Étape 3 : Inviter, accepter, refuser\nInviter :\n- **Would you like to come to ...?** *Voudrais-tu venir à ... ?*\n- **Do you want to join us?** *Veux-tu te joindre à nous ?*\n- **Let's go to the club!** *Allons au club !*\nAccepter :\n- **Yes, I'd love to!** *Oui, avec plaisir !* / **That's a good idea!** / **Why not?**\nRefuser poliment :\n- **I'm sorry, I can't.** *Désolé, je ne peux pas.* + une raison : **I have to help my mother.**\n- **Thank you, but I'm busy.** *Merci, mais je suis occupé.*\nAstuce : quand on refuse, on remercie et on donne une raison.\n\n## Étape 4 : Les questions au présent simple\n- **Do + I / you / we / they + verbe ?** → **Do you like music?**\n- **Does + he / she / it + verbe (sans s) ?** → **Does she play football?**\n- Mot interrogatif + do / does : **Where do you meet? When does the meeting start? How much is the fee?**\nRéponses courtes : **Yes, I do. / No, I don't. / Yes, she does. / No, she doesn't.**\nAttention : après **does**, le verbe n'a pas de s : **Does he play?** (pas « Does he plays? »).\n\n## Encore des exemples\nExemple : **Do you play chess?** *Tu joues aux échecs ?*\nExemple : **Does your brother belong to a club?** *Ton frère est membre d'un club ?*\nExemple : **Where do the members meet?** *Où se réunissent les membres ?*\nExemple : **When does the meeting start?** *Quand commence la réunion ?*\nExemple : **How much do we pay?** *Combien payons-nous ?*\nExemple : **Would you like to join the drama club? – Yes, I'd love to.** *Veux-tu rejoindre le club théâtre ? – Oui, avec plaisir.*\nExemple : **Sorry, I can't. I have to study.** *Désolé, je ne peux pas. Je dois étudier.*\n\n## Étape 5 : À moi de parler !\nInvite un camarade à ton club :\nExemple : **Hi Modou! Would you like to join the environment club? We plant trees every Saturday. – Thank you, but I can't. I work with my father on Saturdays.**\n\nÀ retenir : **Do you...? / Does he...?** + verbe sans s. Inviter : **Would you like to...?** Accepter : **I'd love to!** Refuser : **I'm sorry, I can't + raison**.",
+   "qcm": [
+    {
+     "question": "Quand se réunit le club d'anglais ?",
+     "options": [
+      "le lundi matin",
+      "le mercredi après-midi",
+      "le samedi",
+      "le vendredi soir"
+     ],
+     "reponse": 1,
+     "explication": "We meet every Wednesday afternoon."
+    },
+    {
+     "question": "Pourquoi Khady refuse-t-elle aujourd'hui ?",
+     "options": [
+      "Elle est malade.",
+      "Elle a un devoir de maths demain.",
+      "Elle n'aime pas l'anglais.",
+      "Elle voyage."
+     ],
+     "reponse": 1,
+     "explication": "I have a maths test tomorrow."
+    },
+    {
+     "question": "Pour inviter poliment :",
+     "options": [
+      "Come here!",
+      "Would you like to come?",
+      "You come.",
+      "Go to the club!"
+     ],
+     "reponse": 1,
+     "explication": "Would you like to ...?"
+    },
+    {
+     "question": "Pour accepter :",
+     "options": [
+      "I'd love to!",
+      "I can't.",
+      "No way.",
+      "I'm busy."
+     ],
+     "reponse": 0,
+     "explication": "I'd love to = avec plaisir."
+    },
+    {
+     "question": "Pour refuser poliment :",
+     "options": [
+      "No!",
+      "I'm sorry, I can't. I'm busy.",
+      "Never.",
+      "Stop."
+     ],
+     "reponse": 1,
+     "explication": "Désolé + raison."
+    },
+    {
+     "question": "Complète : ___ you like music?",
+     "options": [
+      "Does",
+      "Do",
+      "Are",
+      "Is"
+     ],
+     "reponse": 1,
+     "explication": "you → Do."
+    },
+    {
+     "question": "Complète : ___ she play football?",
+     "options": [
+      "Do",
+      "Does",
+      "Is",
+      "Has"
+     ],
+     "reponse": 1,
+     "explication": "she → Does."
+    },
+    {
+     "question": "Quelle question est correcte ?",
+     "options": [
+      "Does he plays chess?",
+      "Does he play chess?",
+      "Do he play chess?",
+      "He does play chess?"
+     ],
+     "reponse": 1,
+     "explication": "Après does, pas de s."
+    },
+    {
+     "question": "Réponse courte à « Does she belong to a club? » :",
+     "options": [
+      "Yes, she is.",
+      "Yes, she does.",
+      "Yes, she do.",
+      "Yes, she has."
+     ],
+     "reponse": 1,
+     "explication": "Does ...? → Yes, she does."
+    },
+    {
+     "question": "« To join a club » veut dire :",
+     "options": [
+      "quitter un club",
+      "rejoindre un club",
+      "créer un club",
+      "fermer un club"
+     ],
+     "reponse": 1,
+     "explication": "join = adhérer."
+    },
+    {
+     "question": "« A fee » est :",
+     "options": [
+      "une cotisation",
+      "une fête",
+      "une carte",
+      "une réunion"
+     ],
+     "reponse": 0,
+     "explication": "fee = somme à payer."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a member",
+     "verso": "un membre"
+    },
+    {
+     "recto": "to join",
+     "verso": "rejoindre, adhérer"
+    },
+    {
+     "recto": "a membership card",
+     "verso": "une carte de membre"
+    },
+    {
+     "recto": "a fee",
+     "verso": "une cotisation"
+    },
+    {
+     "recto": "a meeting",
+     "verso": "une réunion"
+    },
+    {
+     "recto": "the treasurer",
+     "verso": "le trésorier"
+    },
+    {
+     "recto": "Would you like to ...?",
+     "verso": "Voudrais-tu ... ?"
+    },
+    {
+     "recto": "I'd love to!",
+     "verso": "Avec plaisir !"
+    },
+    {
+     "recto": "That's a good idea!",
+     "verso": "C'est une bonne idée !"
+    },
+    {
+     "recto": "I'm sorry, I can't.",
+     "verso": "Désolé, je ne peux pas."
+    },
+    {
+     "recto": "I'm busy.",
+     "verso": "Je suis occupé."
+    },
+    {
+     "recto": "Do you ...?",
+     "verso": "Est-ce que tu ... ?"
+    },
+    {
+     "recto": "Does he ...? (verbe sans s)",
+     "verso": "Est-ce qu'il ... ?"
+    },
+    {
+     "recto": "Yes, she does. / No, she doesn't.",
+     "verso": "Oui. / Non. (réponses courtes)"
+    }
+   ]
+  },
+  {
+   "id": "ang2-04",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Lifestyles – Mes habitudes (adverbes de fréquence)",
+   "texte": "## Objectif\nParler de ses habitudes et de son mode de vie. Thème : **Lifestyles** *les modes de vie*. Grammaire : **les adverbes de fréquence**.\n\n## Étape 1 : La situation\nDeux élèves comparent leur mode de vie.\nFatou : **I always get up at six. I usually help my mother, then I walk to school. I never eat fast food. I often go to bed at ten.**\nCheikh : **I sometimes get up late! I rarely do sport and I often stay on my phone until midnight.**\nFatou : **That's not a healthy lifestyle, Cheikh!**\n\n## Étape 2 : Le vocabulaire du mode de vie\n- **a healthy lifestyle** *un mode de vie sain* ≠ **an unhealthy lifestyle** *malsain*\n- **to do sport / to exercise** *faire du sport*\n- **to stay up late** *se coucher tard*, **to get enough sleep** *dormir assez*\n- **a balanced diet** *une alimentation équilibrée*\n- **to spend time on social media** *passer du temps sur les réseaux sociaux*\n- **to pray** *prier*, **to rest** *se reposer*\n\n## Étape 3 : Parler de ses habitudes\n- **How often do you ...?** *À quelle fréquence ... ?*\n- **Every day / every week / twice a week / once a month** *chaque jour / chaque semaine / deux fois par semaine / une fois par mois*\n- **On Fridays, I go to the mosque.** *Le vendredi, je vais à la mosquée.*\nExemple : **How often do you do sport? – Twice a week.** *Tu fais du sport tous les combien ? – Deux fois par semaine.*\n\n## Étape 4 : Les adverbes de fréquence\nDe 100 % à 0 % : **always** (toujours) → **usually** (d'habitude) → **often** (souvent) → **sometimes** (parfois) → **rarely** (rarement) → **never** (jamais)\nPlace :\n- **devant le verbe** : **I often read. She never smokes.**\n- **après BE** : **He is always late. They are never tired.**\nAttention : **never** est déjà négatif : **I never eat meat** (pas « I don't never eat »).\nAstuce : **sometimes** peut aussi se mettre au début : **Sometimes I walk to school.**\n\n## Encore des exemples\nExemple : **I always pray before I sleep.** *Je prie toujours avant de dormir.*\nExemple : **My father usually drinks attaya after lunch.** *Mon père boit d'habitude l'attaya après le déjeuner.*\nExemple : **We often play football on the beach.** *Nous jouons souvent au foot sur la plage.*\nExemple : **She sometimes cooks for the family.** *Elle cuisine parfois pour la famille.*\nExemple : **He rarely watches TV.** *Il regarde rarement la télé.*\nExemple : **I never smoke.** *Je ne fume jamais.*\nExemple : **My sister is always happy.** *Ma sœur est toujours contente.*\n\n## Étape 5 : À moi de parler !\nExemple : **I usually get up at six. I always wash and pray. I often walk to school with my friends. I sometimes stay up late, but I never miss school.**\n\nÀ retenir : **always > usually > often > sometimes > rarely > never**. Devant le verbe, mais **après be**. **How often...?** pour demander.",
+   "qcm": [
+    {
+     "question": "Qui a un mode de vie sain ?",
+     "options": [
+      "Cheikh",
+      "Fatou",
+      "les deux",
+      "personne"
+     ],
+     "reponse": 1,
+     "explication": "Fatou se lève tôt et ne mange jamais de fast-food."
+    },
+    {
+     "question": "« Never » veut dire :",
+     "options": [
+      "toujours",
+      "souvent",
+      "jamais",
+      "parfois"
+     ],
+     "reponse": 2,
+     "explication": "never = 0 %."
+    },
+    {
+     "question": "« Usually » veut dire :",
+     "options": [
+      "d'habitude",
+      "jamais",
+      "rarement",
+      "maintenant"
+     ],
+     "reponse": 0,
+     "explication": "usually = d'habitude."
+    },
+    {
+     "question": "Quel ordre est correct (du plus au moins fréquent) ?",
+     "options": [
+      "never, often, always",
+      "always, often, never",
+      "often, always, never",
+      "sometimes, always, rarely"
+     ],
+     "reponse": 1,
+     "explication": "always > often > never."
+    },
+    {
+     "question": "Place correcte :",
+     "options": [
+      "I go often to school.",
+      "I often go to school.",
+      "Often I go to school always.",
+      "I go to school often always."
+     ],
+     "reponse": 1,
+     "explication": "Devant le verbe."
+    },
+    {
+     "question": "Place correcte :",
+     "options": [
+      "He always is late.",
+      "He is always late.",
+      "Always he late is.",
+      "He is late always is."
+     ],
+     "reponse": 1,
+     "explication": "Après be."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "I don't never smoke.",
+      "I never smoke.",
+      "I never don't smoke.",
+      "I smoke never not."
+     ],
+     "reponse": 1,
+     "explication": "never est déjà négatif."
+    },
+    {
+     "question": "Pour demander la fréquence :",
+     "options": [
+      "How much ...?",
+      "How often ...?",
+      "How old ...?",
+      "How far ...?"
+     ],
+     "reponse": 1,
+     "explication": "How often = tous les combien."
+    },
+    {
+     "question": "« Twice a week » veut dire :",
+     "options": [
+      "deux fois par semaine",
+      "deux semaines",
+      "chaque semaine",
+      "une fois par mois"
+     ],
+     "reponse": 0,
+     "explication": "twice = deux fois."
+    },
+    {
+     "question": "« A healthy lifestyle » :",
+     "options": [
+      "un mode de vie sain",
+      "une vie riche",
+      "une vie difficile",
+      "une vie en ville"
+     ],
+     "reponse": 0,
+     "explication": "healthy = sain."
+    },
+    {
+     "question": "« To stay up late » :",
+     "options": [
+      "se lever tôt",
+      "se coucher tard",
+      "rester debout",
+      "arriver en retard"
+     ],
+     "reponse": 1,
+     "explication": "stay up = veiller."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "always",
+     "verso": "toujours"
+    },
+    {
+     "recto": "usually",
+     "verso": "d'habitude"
+    },
+    {
+     "recto": "often",
+     "verso": "souvent"
+    },
+    {
+     "recto": "sometimes",
+     "verso": "parfois"
+    },
+    {
+     "recto": "rarely",
+     "verso": "rarement"
+    },
+    {
+     "recto": "never",
+     "verso": "jamais"
+    },
+    {
+     "recto": "How often ...?",
+     "verso": "À quelle fréquence ... ?"
+    },
+    {
+     "recto": "once / twice a week",
+     "verso": "une / deux fois par semaine"
+    },
+    {
+     "recto": "every day",
+     "verso": "tous les jours"
+    },
+    {
+     "recto": "a healthy lifestyle",
+     "verso": "un mode de vie sain"
+    },
+    {
+     "recto": "a balanced diet",
+     "verso": "une alimentation équilibrée"
+    },
+    {
+     "recto": "to stay up late",
+     "verso": "se coucher tard"
+    },
+    {
+     "recto": "to exercise",
+     "verso": "faire du sport"
+    },
+    {
+     "recto": "He is always late. (après be)",
+     "verso": "Il est toujours en retard."
+    }
+   ]
+  },
+  {
+   "id": "ang2-05",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Youth – Décrire une personne (ordre des adjectifs)",
+   "texte": "## Objectif\nDécrire une personne (physique et caractère). Thème : **Youth** *la jeunesse*. Grammaire : **l'ordre des adjectifs**.\n\n## Étape 1 : La situation\nNdèye décrit sa meilleure amie.\n**My best friend is Coumba. She is seventeen. She is tall and slim. She has long black hair and big brown eyes. She often wears a beautiful long blue dress. She is friendly, hard-working and very funny. Young people in our neighbourhood love her.**\n\n## Étape 2 : Décrire le physique\n- **tall / short** *grand / petit*, **slim / fat** *mince / gros*, **young / old** *jeune / vieux*\n- **beautiful / handsome** *belle / beau (garçon)*, **ugly** *laid*\n- **long / short hair** *cheveux longs / courts*, **curly hair** *cheveux frisés*, **braids** *des tresses*\n- **dark skin / light skin** *peau foncée / claire*\n- Question : **What does she look like?** *Comment est-elle physiquement ?*\n\n## Étape 3 : Décrire le caractère\n- **friendly** *aimable*, **shy** *timide*, **honest** *honnête*, **lazy** *paresseux*, **hard-working** *travailleur*\n- **generous** *généreux*, **selfish** *égoïste*, **polite / rude** *poli / impoli*, **clever** *intelligent*\n- Question : **What is she like?** *Comment est-elle (caractère) ?*\nAstuce : **look like** = le physique ; **be like** = le caractère.\n\n## Étape 4 : L'ordre des adjectifs\nEn anglais, l'adjectif se met **avant le nom** et ne prend **jamais de s** : **two tall boys** (pas « talls »).\nQuand il y a plusieurs adjectifs, on suit cet ordre :\n1. **opinion** (beautiful, nice) → 2. **taille** (big, long) → 3. **âge** (young, old) → 4. **forme** (round, slim) → 5. **couleur** (black, blue) → 6. **origine** (Senegalese) → 7. **matière** (cotton, wooden) → **NOM**\nExemple : **a beautiful long blue dress** *une belle longue robe bleue*\nExemple : **a nice old wooden table** *une belle vieille table en bois*\nExemple : **a big black Senegalese drum** *un grand tambour sénégalais noir*\nAstuce : retiens **O-T-A-F-C-O-M** (Opinion, Taille, Âge, Forme, Couleur, Origine, Matière).\n\n## Encore des exemples\nExemple : **He is a tall young man.** *C'est un grand jeune homme.*\nExemple : **She has long black hair.** *Elle a de longs cheveux noirs.*\nExemple : **They are clever girls.** *Ce sont des filles intelligentes.*\nExemple : **I have a nice white cotton shirt.** *J'ai une belle chemise blanche en coton.*\nExemple : **What is your brother like? – He is shy but generous.** *Comment est ton frère ? – Timide mais généreux.*\nExemple : **What does he look like? – He is short and slim.** *À quoi ressemble-t-il ? – Petit et mince.*\nExemple : **Many young people are hard-working.** *Beaucoup de jeunes sont travailleurs.*\n\n## Étape 5 : À moi de parler !\nExemple : **My cousin Pape is a handsome young boy. He is tall and slim. He has short curly hair. He is polite and honest, but a bit lazy at school.**\n\nÀ retenir : adjectif **avant le nom**, **sans s**. Ordre : **opinion – taille – âge – forme – couleur – origine – matière**. **look like** (physique) / **be like** (caractère).",
+   "qcm": [
+    {
+     "question": "Comment est Coumba physiquement ?",
+     "options": [
+      "petite et grosse",
+      "grande et mince",
+      "petite et mince",
+      "grande et grosse"
+     ],
+     "reponse": 1,
+     "explication": "She is tall and slim."
+    },
+    {
+     "question": "Quel ordre est correct ?",
+     "options": [
+      "a blue long beautiful dress",
+      "a beautiful long blue dress",
+      "a long beautiful blue dress",
+      "a blue beautiful long dress"
+     ],
+     "reponse": 1,
+     "explication": "opinion – taille – couleur."
+    },
+    {
+     "question": "Quel ordre est correct ?",
+     "options": [
+      "an old nice table",
+      "a nice old table",
+      "a table nice old",
+      "an old table nice"
+     ],
+     "reponse": 1,
+     "explication": "opinion avant âge."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "two talls boys",
+      "two tall boys",
+      "two boys talls",
+      "two boy tall"
+     ],
+     "reponse": 1,
+     "explication": "L'adjectif ne prend pas de s."
+    },
+    {
+     "question": "« What does she look like? » demande :",
+     "options": [
+      "son caractère",
+      "son physique",
+      "son âge",
+      "son métier"
+     ],
+     "reponse": 1,
+     "explication": "look like = physique."
+    },
+    {
+     "question": "« What is he like? » demande :",
+     "options": [
+      "son caractère",
+      "son poids",
+      "son adresse",
+      "son nom"
+     ],
+     "reponse": 0,
+     "explication": "be like = caractère."
+    },
+    {
+     "question": "« Selfish » veut dire :",
+     "options": [
+      "généreux",
+      "égoïste",
+      "timide",
+      "honnête"
+     ],
+     "reponse": 1,
+     "explication": "selfish ≠ generous."
+    },
+    {
+     "question": "« Hard-working » veut dire :",
+     "options": [
+      "paresseux",
+      "travailleur",
+      "bavard",
+      "fatigué"
+     ],
+     "reponse": 1,
+     "explication": "hard-working = travailleur."
+    },
+    {
+     "question": "Quel ordre est correct ?",
+     "options": [
+      "a black big drum",
+      "a big black drum",
+      "a drum big black",
+      "black big a drum"
+     ],
+     "reponse": 1,
+     "explication": "taille avant couleur."
+    },
+    {
+     "question": "« Curly hair » :",
+     "options": [
+      "cheveux raides",
+      "cheveux frisés",
+      "cheveux courts",
+      "sans cheveux"
+     ],
+     "reponse": 1,
+     "explication": "curly = frisé."
+    },
+    {
+     "question": "Complète : She has ___ hair.",
+     "options": [
+      "black long",
+      "long black",
+      "longs black",
+      "black longs"
+     ],
+     "reponse": 1,
+     "explication": "taille avant couleur, sans s."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "tall / short",
+     "verso": "grand / petit"
+    },
+    {
+     "recto": "slim / fat",
+     "verso": "mince / gros"
+    },
+    {
+     "recto": "handsome / beautiful",
+     "verso": "beau / belle"
+    },
+    {
+     "recto": "curly hair",
+     "verso": "cheveux frisés"
+    },
+    {
+     "recto": "braids",
+     "verso": "des tresses"
+    },
+    {
+     "recto": "friendly",
+     "verso": "aimable"
+    },
+    {
+     "recto": "honest",
+     "verso": "honnête"
+    },
+    {
+     "recto": "selfish",
+     "verso": "égoïste"
+    },
+    {
+     "recto": "polite / rude",
+     "verso": "poli / impoli"
+    },
+    {
+     "recto": "clever",
+     "verso": "intelligent"
+    },
+    {
+     "recto": "What does he look like?",
+     "verso": "Comment est-il physiquement ?"
+    },
+    {
+     "recto": "What is he like?",
+     "verso": "Quel est son caractère ?"
+    },
+    {
+     "recto": "Ordre : opinion-taille-âge-forme-couleur-origine-matière",
+     "verso": "a beautiful long blue cotton dress"
+    },
+    {
+     "recto": "adjectif sans s",
+     "verso": "two tall boys"
+    }
+   ]
+  },
+  {
+   "id": "ang2-06",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Accommodation – Décrire un logement (prépositions de lieu)",
+   "texte": "## Objectif\nDécrire un logement. Thème : **Accommodation** *le logement*. Grammaire : **les prépositions de lieu**.\n\n## Étape 1 : La situation\nLamine cherche une chambre à louer à Saint-Louis pour ses études.\nLamine : **Excuse me, is there a room to rent?**\nLandlord : **Yes. It's on the first floor. There is a bed, a desk and a wardrobe. The bathroom is next to the room.**\nLamine : **How much is the rent?**\nLandlord : **Twenty-five thousand francs a month. The shop is opposite the house, and the bus stop is behind it.**\n\n## Étape 2 : Le vocabulaire du logement\n- **a house** *une maison*, **a flat / an apartment** *un appartement*, **a room** *une pièce, une chambre*\n- **to rent** *louer*, **the rent** *le loyer*, **a landlord / a tenant** *un propriétaire / un locataire*\n- **the ground floor / the first floor** *le rez-de-chaussée / le premier étage*\n- **the courtyard** *la cour*, **the roof** *le toit*, **a fan** *un ventilateur*, **a mattress** *un matelas*\n- **furnished** *meublé*, **cheap / expensive** *pas cher / cher*\n\n## Étape 3 : Décrire un logement (étape par étape)\n1. Le type : **I live in a small flat / a big family house.**\n2. Les pièces : **There are three bedrooms, a kitchen and a living room.**\n3. Les objets : **In my room, there is a bed and a fan.**\n4. L'emplacement : **The kitchen is behind the living room.**\n5. Ton avis : **It is small but comfortable.** *Elle est petite mais confortable.*\n\n## Étape 4 : Les prépositions de lieu\n- **in** *dans*, **on** *sur*, **under** *sous*\n- **next to / beside** *à côté de*, **near** *près de*, **far from** *loin de*\n- **between** *entre*, **opposite** *en face de*\n- **in front of** *devant*, **behind** *derrière*\n- **above** *au-dessus de*, **below** *en dessous de*\nExemple : **The fan is above the bed.** *Le ventilateur est au-dessus du lit.*\nExemple : **The shop is opposite the house.** *La boutique est en face de la maison.*\nAttention : **on the first floor** (étage) mais **in the room** (dans la pièce).\n\n## Encore des exemples\nExemple : **My bag is under the bed.** *Mon sac est sous le lit.*\nExemple : **The books are on the desk.** *Les livres sont sur le bureau.*\nExemple : **The kitchen is next to the courtyard.** *La cuisine est à côté de la cour.*\nExemple : **The mango tree is in front of the house.** *Le manguier est devant la maison.*\nExemple : **The toilet is behind the kitchen.** *Les toilettes sont derrière la cuisine.*\nExemple : **My room is between my brother's room and the living room.** *Ma chambre est entre celle de mon frère et le salon.*\nExemple : **The school is far from my house.** *L'école est loin de chez moi.*\n\n## Étape 5 : À moi de parler !\nExemple : **I live in a family house in Kébémer. There are four rooms around a big courtyard. My room is next to the kitchen. There is a bed, a mat and a small table in it. It is not big, but it is comfortable.**\n\nÀ retenir : **in, on, under, next to, near, between, opposite, in front of, behind, above**. **There is** (un) / **There are** (plusieurs). **on the first floor**.",
+   "qcm": [
+    {
+     "question": "Combien coûte la chambre par mois ?",
+     "options": [
+      "15 000 F",
+      "25 000 F",
+      "50 000 F",
+      "5 000 F"
+     ],
+     "reponse": 1,
+     "explication": "Twenty-five thousand francs a month."
+    },
+    {
+     "question": "Où est la salle de bain ?",
+     "options": [
+      "derrière la maison",
+      "à côté de la chambre",
+      "au rez-de-chaussée",
+      "en face de la boutique"
+     ],
+     "reponse": 1,
+     "explication": "The bathroom is next to the room."
+    },
+    {
+     "question": "« Opposite » veut dire :",
+     "options": [
+      "à côté de",
+      "en face de",
+      "derrière",
+      "entre"
+     ],
+     "reponse": 1,
+     "explication": "opposite = en face de."
+    },
+    {
+     "question": "« Behind » veut dire :",
+     "options": [
+      "devant",
+      "derrière",
+      "dessous",
+      "dessus"
+     ],
+     "reponse": 1,
+     "explication": "behind = derrière."
+    },
+    {
+     "question": "Complète : My bag is ___ the bed (sous).",
+     "options": [
+      "on",
+      "under",
+      "above",
+      "in"
+     ],
+     "reponse": 1,
+     "explication": "under = sous."
+    },
+    {
+     "question": "Complète : The fan is ___ the bed (au-dessus).",
+     "options": [
+      "under",
+      "above",
+      "behind",
+      "in"
+     ],
+     "reponse": 1,
+     "explication": "above = au-dessus de."
+    },
+    {
+     "question": "Complète : The room is ___ the first floor.",
+     "options": [
+      "in",
+      "at",
+      "on",
+      "under"
+     ],
+     "reponse": 2,
+     "explication": "on the first floor."
+    },
+    {
+     "question": "« The rent » est :",
+     "options": [
+      "le loyer",
+      "la chambre",
+      "le locataire",
+      "la clé"
+     ],
+     "reponse": 0,
+     "explication": "rent = loyer."
+    },
+    {
+     "question": "« A landlord » est :",
+     "options": [
+      "un locataire",
+      "un propriétaire",
+      "un voisin",
+      "un gardien"
+     ],
+     "reponse": 1,
+     "explication": "landlord = propriétaire."
+    },
+    {
+     "question": "Complète : There ___ three bedrooms.",
+     "options": [
+      "is",
+      "are",
+      "has",
+      "have"
+     ],
+     "reponse": 1,
+     "explication": "Plusieurs → there are."
+    },
+    {
+     "question": "« Between » veut dire :",
+     "options": [
+      "entre",
+      "près de",
+      "loin de",
+      "devant"
+     ],
+     "reponse": 0,
+     "explication": "between = entre."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a flat / an apartment",
+     "verso": "un appartement"
+    },
+    {
+     "recto": "to rent",
+     "verso": "louer"
+    },
+    {
+     "recto": "the rent",
+     "verso": "le loyer"
+    },
+    {
+     "recto": "a landlord / a tenant",
+     "verso": "propriétaire / locataire"
+    },
+    {
+     "recto": "the ground floor",
+     "verso": "le rez-de-chaussée"
+    },
+    {
+     "recto": "the first floor",
+     "verso": "le premier étage"
+    },
+    {
+     "recto": "furnished",
+     "verso": "meublé"
+    },
+    {
+     "recto": "in / on / under",
+     "verso": "dans / sur / sous"
+    },
+    {
+     "recto": "next to / near",
+     "verso": "à côté de / près de"
+    },
+    {
+     "recto": "between",
+     "verso": "entre"
+    },
+    {
+     "recto": "opposite",
+     "verso": "en face de"
+    },
+    {
+     "recto": "in front of / behind",
+     "verso": "devant / derrière"
+    },
+    {
+     "recto": "above / below",
+     "verso": "au-dessus / en dessous"
+    },
+    {
+     "recto": "far from",
+     "verso": "loin de"
+    }
+   ]
+  },
+  {
+   "id": "ang2-07",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "City life – Demander son chemin (prépositions de mouvement)",
+   "texte": "## Objectif\nDemander et indiquer son chemin en ville. Thème : **City life** *la vie en ville*. Grammaire : **les prépositions de mouvement**.\n\n## Étape 1 : La situation\nUn élève de Kébémer arrive à Dakar pour la première fois.\nBabacar : **Excuse me, sir. How can I get to Sandaga market, please?**\nMan : **Go along this avenue. Walk past the bank and turn left. Then go across the road and go through the small park. The market is at the end of the street.**\nBabacar : **Is it far?**\nMan : **No, it's about ten minutes on foot. Be careful with the traffic!**\nBabacar : **Thank you very much.**\n\n## Étape 2 : La vie en ville\n- **traffic** *la circulation*, **a traffic jam** *un embouteillage*, **traffic lights** *les feux*\n- **a crossroads** *un carrefour*, **a roundabout** *un rond-point*, **a pavement** *un trottoir*\n- **a bus stop** *un arrêt de bus*, **a taxi rank** *une station de taxis*\n- **noisy / crowded / polluted** *bruyant / bondé / pollué*\n- **to get lost** *se perdre*\n\n## Étape 3 : Demander et indiquer le chemin\nDemander :\n- **Excuse me, how can I get to ...?** *Excusez-moi, comment aller à ... ?*\n- **Where is the nearest ...?** *Où est le ... le plus proche ?*\n- **Is it far from here?** *C'est loin d'ici ?*\nIndiquer :\n- **Go straight on.** *Allez tout droit.* **Turn left / right.** *Tournez à gauche / droite.*\n- **Take the second street on the right.** *Prenez la deuxième rue à droite.*\n- **It's on your left.** *C'est sur votre gauche.*\nAstuce : l'impératif = le verbe seul : **Go! Turn! Take! Walk!**\n\n## Étape 4 : Les prépositions de mouvement\n- **along** *le long de* : **Walk along the beach.**\n- **across** *à travers, de l'autre côté (traverser)* : **Go across the road.**\n- **through** *à travers (un espace fermé)* : **Go through the park.**\n- **past** *devant (en passant)* : **Walk past the mosque.**\n- **into / out of** *dans (entrer) / hors de (sortir)* : **Go into the shop.**\n- **up / down** *en haut / en bas* : **Go up the street.**\n- **towards** *vers* : **Walk towards the sea.**\n- **from ... to ...** *de ... à ...* : **from the station to the market**\nAttention : **in** = position (je suis dans) ; **into** = mouvement (j'entre dans).\n\n## Encore des exemples\nExemple : **Go along the main road.** *Suivez la route principale.*\nExemple : **Walk across the bridge.** *Traversez le pont.*\nExemple : **The bus goes through the city centre.** *Le bus passe par le centre-ville.*\nExemple : **Drive past the hospital.** *Passez devant l'hôpital.*\nExemple : **She runs into the classroom.** *Elle entre en courant dans la classe.*\nExemple : **The children come out of the school at noon.** *Les enfants sortent de l'école à midi.*\nExemple : **I walk from my house to the lycée.** *Je marche de chez moi au lycée.*\n\n## Étape 5 : À moi de parler !\nExplique le chemin de ton lycée au marché :\nExemple : **Go out of the school. Turn right and walk along the main road. Go past the mosque and go across the road. The market is in front of you.**\n\nÀ retenir : **along, across, through, past, into, out of, up, down, towards, from... to**. Impératif : **Go / Turn / Take**. Poli : **Excuse me, how can I get to...?**",
+   "qcm": [
+    {
+     "question": "Où veut aller Babacar ?",
+     "options": [
+      "à la gare",
+      "au marché Sandaga",
+      "à la banque",
+      "au parc"
+     ],
+     "reponse": 1,
+     "explication": "How can I get to Sandaga market?"
+    },
+    {
+     "question": "« Go across the road » veut dire :",
+     "options": [
+      "Longez la route.",
+      "Traversez la route.",
+      "Quittez la route.",
+      "Montez la route."
+     ],
+     "reponse": 1,
+     "explication": "across = traverser."
+    },
+    {
+     "question": "« Walk along the beach » veut dire :",
+     "options": [
+      "Marchez le long de la plage.",
+      "Traversez la plage.",
+      "Quittez la plage.",
+      "Entrez dans la plage."
+     ],
+     "reponse": 0,
+     "explication": "along = le long de."
+    },
+    {
+     "question": "« Walk past the bank » veut dire :",
+     "options": [
+      "Entrez dans la banque.",
+      "Passez devant la banque.",
+      "Allez derrière la banque.",
+      "Cherchez la banque."
+     ],
+     "reponse": 1,
+     "explication": "past = en passant devant."
+    },
+    {
+     "question": "Complète : She goes ___ the shop (elle entre).",
+     "options": [
+      "in",
+      "into",
+      "out",
+      "on"
+     ],
+     "reponse": 1,
+     "explication": "Mouvement vers l'intérieur → into."
+    },
+    {
+     "question": "Complète : Go ___ the park (à travers le parc).",
+     "options": [
+      "through",
+      "on",
+      "under",
+      "at"
+     ],
+     "reponse": 0,
+     "explication": "through = à travers un espace."
+    },
+    {
+     "question": "« A traffic jam » :",
+     "options": [
+      "un feu rouge",
+      "un embouteillage",
+      "un rond-point",
+      "un parking"
+     ],
+     "reponse": 1,
+     "explication": "traffic jam = embouteillage."
+    },
+    {
+     "question": "« A roundabout » :",
+     "options": [
+      "un carrefour",
+      "un rond-point",
+      "un trottoir",
+      "un pont"
+     ],
+     "reponse": 1,
+     "explication": "roundabout = rond-point."
+    },
+    {
+     "question": "Pour demander poliment le chemin :",
+     "options": [
+      "Where market?",
+      "Excuse me, how can I get to the market?",
+      "Tell me the market!",
+      "Market, please now!"
+     ],
+     "reponse": 1,
+     "explication": "Excuse me + how can I get to ...?"
+    },
+    {
+     "question": "« To get lost » :",
+     "options": [
+      "se perdre",
+      "partir",
+      "arriver",
+      "se cacher"
+     ],
+     "reponse": 0,
+     "explication": "get lost = se perdre."
+    },
+    {
+     "question": "« Out of » est le contraire de :",
+     "options": [
+      "into",
+      "along",
+      "past",
+      "across"
+     ],
+     "reponse": 0,
+     "explication": "into (entrer) ≠ out of (sortir)."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "How can I get to ...?",
+     "verso": "Comment aller à ... ?"
+    },
+    {
+     "recto": "Is it far from here?",
+     "verso": "C'est loin d'ici ?"
+    },
+    {
+     "recto": "Go straight on.",
+     "verso": "Allez tout droit."
+    },
+    {
+     "recto": "Turn left / right.",
+     "verso": "Tournez à gauche / droite."
+    },
+    {
+     "recto": "along",
+     "verso": "le long de"
+    },
+    {
+     "recto": "across",
+     "verso": "de l'autre côté (traverser)"
+    },
+    {
+     "recto": "through",
+     "verso": "à travers"
+    },
+    {
+     "recto": "past",
+     "verso": "devant (en passant)"
+    },
+    {
+     "recto": "into / out of",
+     "verso": "dans (entrer) / hors de (sortir)"
+    },
+    {
+     "recto": "towards",
+     "verso": "vers"
+    },
+    {
+     "recto": "a traffic jam",
+     "verso": "un embouteillage"
+    },
+    {
+     "recto": "a crossroads",
+     "verso": "un carrefour"
+    },
+    {
+     "recto": "a roundabout",
+     "verso": "un rond-point"
+    },
+    {
+     "recto": "crowded / noisy",
+     "verso": "bondé / bruyant"
+    }
+   ]
+  },
+  {
+   "id": "ang2-08",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Consumer services – Demander poliment (can, could)",
+   "texte": "## Objectif\nFaire une demande polie dans un service (boutique, banque, poste, hôpital). Thème : **Consumer services** *les services aux consommateurs*. Grammaire : **can** et **could**.\n\n## Étape 1 : La situation\nDans une boutique de téléphones à Louga.\nCustomer : **Good morning. Could you help me, please? My phone doesn't work.**\nShop assistant : **Of course. Can I see it?**\nCustomer : **Here it is. Could you repair it today?**\nShop assistant : **I'm sorry, I can't repair it today. Can you come back tomorrow?**\nCustomer : **Yes, I can. How much does it cost?**\nShop assistant : **Five thousand francs.**\nCustomer : **Could I pay by Wave or Orange Money?**\nShop assistant : **Yes, you can.**\n\n## Étape 2 : Les services\n- **a customer** *un client*, **a shop assistant** *un vendeur*, **a cashier** *un caissier*\n- **the price** *le prix*, **a receipt** *un reçu*, **a discount** *une réduction*\n- **to buy / to sell** *acheter / vendre*, **to pay** *payer*, **to repair** *réparer*\n- **to complain** *se plaindre*, **a refund** *un remboursement*\n- **mobile money** *l'argent mobile*, **a bank account** *un compte bancaire*\n\n## Étape 3 : Demander poliment (étape par étape)\n1. Saluer : **Good morning.**\n2. Attirer l'attention : **Excuse me.**\n3. Demander : **Could you ...? / Can I ...?**\n4. Dire **please** et **thank you**.\nRéponses : **Of course. / Sure. / Certainly.** *Bien sûr.* — **I'm sorry, I can't.** *Désolé, je ne peux pas.*\nAstuce : **Could** est plus poli que **can**. On l'utilise avec un adulte ou un inconnu.\n\n## Étape 4 : CAN et COULD\n- **can** = capacité ou permission au présent : **I can swim. Can I come in?**\n- **can't (cannot)** = impossibilité ou interdiction : **You can't smoke here.**\n- **could** = passé de can : **When I was ten, I could run fast.** *Quand j'avais dix ans, je pouvais courir vite.*\n- **could** = demande polie : **Could you open the door, please?** *Pourriez-vous ouvrir la porte, s'il vous plaît ?*\nForme : **can / could + verbe sans to** (jamais « can to go », jamais « he cans »).\nQuestion : **Can you...? / Could you...?**\n\n## Encore des exemples\nExemple : **Can I try this shirt?** *Je peux essayer cette chemise ?*\nExemple : **Could you give me a receipt, please?** *Pourriez-vous me donner un reçu, s'il vous plaît ?*\nExemple : **Could you speak slowly, please?** *Pourriez-vous parler lentement, s'il vous plaît ?*\nExemple : **Can I pay by mobile money?** *Je peux payer par mobile money ?*\nExemple : **You can't use your phone in the bank.** *Vous ne pouvez pas utiliser votre téléphone dans la banque.*\nExemple : **My grandfather could read the Koran at seven.** *Mon grand-père savait lire le Coran à sept ans.*\nExemple : **Could I have a discount?** *Pourrais-je avoir une réduction ?*\n\n## Étape 5 : À moi de parler !\nExemple : **Good afternoon. Could you help me, please? I want to send money to my brother in Dakar. Can I do it here? – Of course. Could you give me his phone number?**\n\nÀ retenir : **can / could + verbe sans to**. **Could you...?** = plus poli. Toujours **please** et **thank you**. **I could** = je pouvais (passé).",
+   "qcm": [
+    {
+     "question": "Quel est le problème du client ?",
+     "options": [
+      "Il a perdu son téléphone.",
+      "Son téléphone ne marche pas.",
+      "Il veut acheter un téléphone.",
+      "Il n'a pas d'argent."
+     ],
+     "reponse": 1,
+     "explication": "My phone doesn't work."
+    },
+    {
+     "question": "Combien coûte la réparation ?",
+     "options": [
+      "2 000 F",
+      "5 000 F",
+      "10 000 F",
+      "25 000 F"
+     ],
+     "reponse": 1,
+     "explication": "Five thousand francs."
+    },
+    {
+     "question": "La demande la plus polie :",
+     "options": [
+      "Open the door!",
+      "Can you open the door?",
+      "Could you open the door, please?",
+      "You open the door."
+     ],
+     "reponse": 2,
+     "explication": "Could + please = très poli."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "I can to swim.",
+      "I can swim.",
+      "I cans swim.",
+      "I can swimming."
+     ],
+     "reponse": 1,
+     "explication": "can + verbe sans to."
+    },
+    {
+     "question": "Complète : When I was ten, I ___ run fast.",
+     "options": [
+      "can",
+      "could",
+      "must",
+      "will"
+     ],
+     "reponse": 1,
+     "explication": "Passé → could."
+    },
+    {
+     "question": "« You can't smoke here » exprime :",
+     "options": [
+      "une permission",
+      "une interdiction",
+      "un conseil",
+      "un futur"
+     ],
+     "reponse": 1,
+     "explication": "can't = interdiction."
+    },
+    {
+     "question": "« A receipt » est :",
+     "options": [
+      "un reçu",
+      "une recette",
+      "un prix",
+      "un client"
+     ],
+     "reponse": 0,
+     "explication": "receipt = reçu."
+    },
+    {
+     "question": "« A discount » est :",
+     "options": [
+      "une réduction",
+      "une dette",
+      "une facture",
+      "une banque"
+     ],
+     "reponse": 0,
+     "explication": "discount = réduction."
+    },
+    {
+     "question": "Réponse polie positive :",
+     "options": [
+      "Of course.",
+      "Never.",
+      "Go away.",
+      "No way."
+     ],
+     "reponse": 0,
+     "explication": "Of course = bien sûr."
+    },
+    {
+     "question": "« To complain » :",
+     "options": [
+      "se plaindre",
+      "acheter",
+      "payer",
+      "réparer"
+     ],
+     "reponse": 0,
+     "explication": "complain = se plaindre."
+    },
+    {
+     "question": "Question correcte :",
+     "options": [
+      "Could I to pay?",
+      "Could I pay?",
+      "Could I paying?",
+      "I could pay?"
+     ],
+     "reponse": 1,
+     "explication": "Could I + verbe."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a customer",
+     "verso": "un client"
+    },
+    {
+     "recto": "a shop assistant",
+     "verso": "un vendeur"
+    },
+    {
+     "recto": "a receipt",
+     "verso": "un reçu"
+    },
+    {
+     "recto": "a discount",
+     "verso": "une réduction"
+    },
+    {
+     "recto": "a refund",
+     "verso": "un remboursement"
+    },
+    {
+     "recto": "to complain",
+     "verso": "se plaindre"
+    },
+    {
+     "recto": "to repair",
+     "verso": "réparer"
+    },
+    {
+     "recto": "Can I ...?",
+     "verso": "Puis-je ... ?"
+    },
+    {
+     "recto": "Could you ..., please?",
+     "verso": "Pourriez-vous ..., s'il vous plaît ?"
+    },
+    {
+     "recto": "Of course. / Certainly.",
+     "verso": "Bien sûr."
+    },
+    {
+     "recto": "I'm sorry, I can't.",
+     "verso": "Désolé, je ne peux pas."
+    },
+    {
+     "recto": "I could ... (passé)",
+     "verso": "Je pouvais ..."
+    },
+    {
+     "recto": "can + verbe sans to",
+     "verso": "I can swim."
+    },
+    {
+     "recto": "How much does it cost?",
+     "verso": "Combien ça coûte ?"
+    }
+   ]
+  },
+  {
+   "id": "ang2-09",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Food and drinks – Quantifier (some, any, much, many)",
+   "texte": "## Objectif\nParler des quantités (nourriture, boissons). Thème : **Food and drinks** *la nourriture et les boissons*. Grammaire : **comptable / non comptable** et **les quantifieurs**.\n\n## Étape 1 : La situation\nMaman envoie Khadim au marché pour le thiéboudieune.\nMother : **We need some fish, some rice and a few tomatoes. We don't have any oil.**\nKhadim : **How much rice do you want?**\nMother : **Two kilos. And buy a lot of onions.**\nKhadim : **How many tomatoes?**\nMother : **Not many. Five or six. Don't spend too much money!**\n\n## Étape 2 : Le vocabulaire de la nourriture\n- **rice, millet, bread, meat, fish, oil, sugar, salt, milk, water** (non comptables)\n- **an onion, a tomato, an egg, a mango, a banana, a cabbage** (comptables)\n- **a meal** *un repas*, **breakfast / lunch / dinner** *petit-déjeuner / déjeuner / dîner*\n- **a bottle of water** *une bouteille d'eau*, **a packet of sugar** *un paquet de sucre*, **a kilo of rice** *un kilo de riz*, **a glass of milk** *un verre de lait*, **a cup of tea** *une tasse de thé*\n- **delicious** *délicieux*, **spicy** *épicé*\n\n## Étape 3 : Comptable ou non comptable ?\n- **Comptable** : on peut compter (one onion, two onions). Il a un pluriel.\n- **Non comptable** : on ne peut pas compter (rice, water, money). Pas de pluriel, pas de « a ».\nAstuce : pour compter un non comptable, on utilise un contenant : **two bottles of water, a kilo of rice**.\nAttention : **money, bread, advice, information** sont non comptables en anglais.\n\n## Étape 4 : Les quantifieurs\n- **some** (phrase affirmative) : **I have some rice. / some eggs**\n- **any** (négation et question) : **We don't have any oil. / Do you have any bread?**\n- **much** (non comptable) : **How much water? / not much money**\n- **many** (comptable) : **How many eggs? / not many friends**\n- **a lot of** (les deux) : **a lot of rice, a lot of onions**\n- **a little** (non comptable) : **a little sugar** *un peu de sucre*\n- **a few** (comptable) : **a few tomatoes** *quelques tomates*\nAstuce : **How much** pour le prix aussi : **How much is it?** *C'est combien ?*\n\n## Encore des exemples\nExemple : **I drink a lot of water.** *Je bois beaucoup d'eau.*\nExemple : **There aren't many mangoes this year.** *Il n'y a pas beaucoup de mangues cette année.*\nExemple : **Put a little salt.** *Mets un peu de sel.*\nExemple : **I need a few eggs.** *J'ai besoin de quelques œufs.*\nExemple : **Do you have any milk? – Yes, I have some.** *Tu as du lait ? – Oui, j'en ai.*\nExemple : **How much sugar do you put in your tea?** *Combien de sucre mets-tu dans ton thé ?*\nExemple : **How many people eat with you?** *Combien de personnes mangent avec toi ?*\n\n## Étape 5 : À moi de parler !\nExemple : **For lunch, we eat a lot of rice with fish and some vegetables. We drink some water. We don't eat much meat because it is expensive. After lunch, my father makes a few glasses of attaya.**\n\nÀ retenir : **some** (+) / **any** (– et ?). **much** + non comptable, **many** + comptable, **a lot of** + les deux. **a little** + non comptable, **a few** + comptable.",
+   "qcm": [
+    {
+     "question": "Qu'est-ce que la famille n'a pas ?",
+     "options": [
+      "du riz",
+      "de l'huile",
+      "du poisson",
+      "des oignons"
+     ],
+     "reponse": 1,
+     "explication": "We don't have any oil."
+    },
+    {
+     "question": "Combien de kilos de riz faut-il ?",
+     "options": [
+      "un",
+      "deux",
+      "cinq",
+      "dix"
+     ],
+     "reponse": 1,
+     "explication": "Two kilos."
+    },
+    {
+     "question": "Quel mot est NON comptable ?",
+     "options": [
+      "an onion",
+      "rice",
+      "an egg",
+      "a mango"
+     ],
+     "reponse": 1,
+     "explication": "rice ne se compte pas."
+    },
+    {
+     "question": "Complète : How ___ eggs do you need?",
+     "options": [
+      "much",
+      "many",
+      "little",
+      "any"
+     ],
+     "reponse": 1,
+     "explication": "eggs se compte → many."
+    },
+    {
+     "question": "Complète : How ___ water do you drink?",
+     "options": [
+      "many",
+      "much",
+      "few",
+      "a"
+     ],
+     "reponse": 1,
+     "explication": "water non comptable → much."
+    },
+    {
+     "question": "Complète : We don't have ___ oil.",
+     "options": [
+      "some",
+      "any",
+      "many",
+      "a few"
+     ],
+     "reponse": 1,
+     "explication": "Négation → any."
+    },
+    {
+     "question": "Complète : I have ___ bread.",
+     "options": [
+      "any",
+      "some",
+      "many",
+      "a few"
+     ],
+     "reponse": 1,
+     "explication": "Affirmatif → some."
+    },
+    {
+     "question": "Complète : Put a ___ salt.",
+     "options": [
+      "few",
+      "little",
+      "many",
+      "lot"
+     ],
+     "reponse": 1,
+     "explication": "salt non comptable → a little."
+    },
+    {
+     "question": "Complète : I need a ___ tomatoes.",
+     "options": [
+      "little",
+      "few",
+      "much",
+      "any"
+     ],
+     "reponse": 1,
+     "explication": "tomatoes comptable → a few."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "I have a money.",
+      "I have some money.",
+      "I have moneys.",
+      "I have many money."
+     ],
+     "reponse": 1,
+     "explication": "money est non comptable."
+    },
+    {
+     "question": "« A bottle of water » :",
+     "options": [
+      "une bouteille d'eau",
+      "un verre d'eau",
+      "un seau d'eau",
+      "de l'eau froide"
+     ],
+     "reponse": 0,
+     "explication": "bottle = bouteille."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "some",
+     "verso": "du, de la, des (phrase +)"
+    },
+    {
+     "recto": "any",
+     "verso": "du, de la, des (phrase – et ?)"
+    },
+    {
+     "recto": "much",
+     "verso": "beaucoup (non comptable)"
+    },
+    {
+     "recto": "many",
+     "verso": "beaucoup (comptable)"
+    },
+    {
+     "recto": "a lot of",
+     "verso": "beaucoup de (les deux)"
+    },
+    {
+     "recto": "a little",
+     "verso": "un peu de (non comptable)"
+    },
+    {
+     "recto": "a few",
+     "verso": "quelques (comptable)"
+    },
+    {
+     "recto": "How much ...?",
+     "verso": "Combien de ... ? (non comptable)"
+    },
+    {
+     "recto": "How many ...?",
+     "verso": "Combien de ... ? (comptable)"
+    },
+    {
+     "recto": "a kilo of rice",
+     "verso": "un kilo de riz"
+    },
+    {
+     "recto": "a bottle of water",
+     "verso": "une bouteille d'eau"
+    },
+    {
+     "recto": "a packet of sugar",
+     "verso": "un paquet de sucre"
+    },
+    {
+     "recto": "a meal",
+     "verso": "un repas"
+    },
+    {
+     "recto": "spicy",
+     "verso": "épicé"
+    }
+   ]
+  },
+  {
+   "id": "ang2-10",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Mobility and rural exodus – Raconter un déplacement (simple past)",
+   "texte": "## Objectif\nRaconter un déplacement ou un voyage passé. Thème : **Mobility and rural exodus** *la mobilité et l'exode rural*. Grammaire : **le prétérit (simple past)**.\n\n## Étape 1 : La situation\nOusmane raconte son départ du village.\n**Last year, I left my village near Linguère. There was no rain and no work. I took a bus to Dakar. The journey lasted eight hours. In Dakar, I lived with my uncle. I found a job in a garage. Life was hard, but I sent money to my family every month. Last month, I went back to the village for Tabaski.**\n\n## Étape 2 : Le vocabulaire de la mobilité\n- **the rural exodus** *l'exode rural*, **to migrate** *migrer*, **a migrant** *un migrant*\n- **to leave** *quitter*, **to move to** *déménager à*, **to settle** *s'installer*\n- **a journey / a trip** *un voyage, un trajet*, **a bus / a minibus / a train / a plane** *un car / un minibus / un train / un avion*\n- **unemployment** *le chômage*, **a job** *un travail*, **a better life** *une vie meilleure*\n- **the countryside** *la campagne* ≠ **the city** *la ville*\n\n## Étape 3 : Raconter un déplacement (étape par étape)\n1. Quand ? **Last year / two months ago / in 2024**\n2. D'où et vers où ? **I left Kébémer and went to Dakar.**\n3. Comment ? **I took a bus. / I travelled by train.**\n4. Combien de temps ? **The journey lasted three hours.**\n5. Qu'est-ce qui s'est passé ? **I visited my aunt. I found a job.**\nMots pour enchaîner : **first** *d'abord*, **then** *ensuite*, **after that** *après ça*, **finally** *enfin*.\n\n## Étape 4 : Le prétérit (simple past)\n- Verbes réguliers : verbe + **ed** : **travel → travelled, visit → visited, live → lived, stop → stopped, study → studied**\n- Verbes irréguliers (à apprendre) : **go → went, leave → left, take → took, find → found, send → sent, come → came, get → got, be → was / were, have → had, buy → bought**\n- Négatif : **didn't + verbe de base** : **I didn't find a job.**\n- Question : **Did + sujet + verbe de base ?** : **Did you take the bus? – Yes, I did. / No, I didn't.**\nMarqueurs : **yesterday, last week, last year, two days ago, in 2020**.\n\n## Encore des exemples\nExemple : **My brother moved to Dakar in 2022.** *Mon frère a déménagé à Dakar en 2022.*\nExemple : **We travelled by minibus.** *Nous avons voyagé en minibus.*\nExemple : **She left the village two years ago.** *Elle a quitté le village il y a deux ans.*\nExemple : **They didn't find work in the city.** *Ils n'ont pas trouvé de travail en ville.*\nExemple : **Did you visit Touba last month? – Yes, I did.** *As-tu visité Touba le mois dernier ? – Oui.*\nExemple : **First, we took a taxi, then we got on the bus.** *D'abord on a pris un taxi, puis on est montés dans le car.*\nExemple : **Many young people went to the city because of unemployment.** *Beaucoup de jeunes sont partis en ville à cause du chômage.*\n\n## Étape 5 : À moi de parler !\nExemple : **Last holidays, I went to Saint-Louis. First, I took a bus from Kébémer. The journey lasted two hours. Then I visited my cousin. We walked on the bridge. Finally, I came back on Sunday.**\n\nÀ retenir : **verbe + ed** ou forme irrégulière. **didn't + verbe**. **Did you...?** Mots : **first, then, after that, finally**.",
+   "qcm": [
+    {
+     "question": "Pourquoi Ousmane a-t-il quitté son village ?",
+     "options": [
+      "pour étudier",
+      "pas de pluie ni de travail",
+      "pour se marier",
+      "pour voir la mer"
+     ],
+     "reponse": 1,
+     "explication": "There was no rain and no work."
+    },
+    {
+     "question": "Combien de temps a duré le voyage ?",
+     "options": [
+      "deux heures",
+      "huit heures",
+      "un jour",
+      "trente minutes"
+     ],
+     "reponse": 1,
+     "explication": "The journey lasted eight hours."
+    },
+    {
+     "question": "Le prétérit de « leave » :",
+     "options": [
+      "leaved",
+      "left",
+      "leaft",
+      "leaves"
+     ],
+     "reponse": 1,
+     "explication": "leave → left."
+    },
+    {
+     "question": "Le prétérit de « take » :",
+     "options": [
+      "taked",
+      "took",
+      "taken",
+      "takes"
+     ],
+     "reponse": 1,
+     "explication": "take → took."
+    },
+    {
+     "question": "Le prétérit de « travel » :",
+     "options": [
+      "travelled",
+      "travelt",
+      "travels",
+      "travelling"
+     ],
+     "reponse": 0,
+     "explication": "travel → travelled."
+    },
+    {
+     "question": "Le prétérit de « study » :",
+     "options": [
+      "studyed",
+      "studied",
+      "studed",
+      "studies"
+     ],
+     "reponse": 1,
+     "explication": "y → ied."
+    },
+    {
+     "question": "La négation correcte :",
+     "options": [
+      "I didn't found a job.",
+      "I didn't find a job.",
+      "I don't found a job.",
+      "I not found a job."
+     ],
+     "reponse": 1,
+     "explication": "didn't + verbe de base."
+    },
+    {
+     "question": "La question correcte :",
+     "options": [
+      "Did you took the bus?",
+      "Did you take the bus?",
+      "Do you took the bus?",
+      "You did take bus?"
+     ],
+     "reponse": 1,
+     "explication": "Did + verbe de base."
+    },
+    {
+     "question": "« The rural exodus » :",
+     "options": [
+      "l'exode rural",
+      "la vie rurale",
+      "le voyage scolaire",
+      "le retour au village"
+     ],
+     "reponse": 0,
+     "explication": "exodus = exode."
+    },
+    {
+     "question": "« Two years ago » :",
+     "options": [
+      "dans deux ans",
+      "il y a deux ans",
+      "depuis deux ans",
+      "pendant deux ans"
+     ],
+     "reponse": 1,
+     "explication": "ago = il y a."
+    },
+    {
+     "question": "« Unemployment » :",
+     "options": [
+      "le chômage",
+      "l'emploi",
+      "le salaire",
+      "la migration"
+     ],
+     "reponse": 0,
+     "explication": "unemployment = chômage."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "the rural exodus",
+     "verso": "l'exode rural"
+    },
+    {
+     "recto": "to migrate",
+     "verso": "migrer"
+    },
+    {
+     "recto": "to leave → left",
+     "verso": "quitter → a quitté"
+    },
+    {
+     "recto": "to go → went",
+     "verso": "aller → est allé"
+    },
+    {
+     "recto": "to take → took",
+     "verso": "prendre → a pris"
+    },
+    {
+     "recto": "to find → found",
+     "verso": "trouver → a trouvé"
+    },
+    {
+     "recto": "to send → sent",
+     "verso": "envoyer → a envoyé"
+    },
+    {
+     "recto": "to travel → travelled",
+     "verso": "voyager → a voyagé"
+    },
+    {
+     "recto": "a journey",
+     "verso": "un trajet, un voyage"
+    },
+    {
+     "recto": "unemployment",
+     "verso": "le chômage"
+    },
+    {
+     "recto": "two years ago",
+     "verso": "il y a deux ans"
+    },
+    {
+     "recto": "I didn't go.",
+     "verso": "Je ne suis pas allé."
+    },
+    {
+     "recto": "Did you go? – Yes, I did.",
+     "verso": "Es-tu allé ? – Oui."
+    },
+    {
+     "recto": "first, then, finally",
+     "verso": "d'abord, ensuite, enfin"
+    }
+   ]
+  },
+  {
+   "id": "ang2-11",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Culture shock – Une expérience en cours (present continuous)",
+   "texte": "## Objectif\nDécrire une expérience en cours, ce qui se passe en ce moment. Thème : **Culture shock** *le choc culturel*. Grammaire : **le présent continu (present continuous)**.\n\n## Étape 1 : La situation\nAïda est en échange scolaire au Royaume-Uni. Elle appelle sa mère.\n**Hello Mum! I'm writing from London. It's raining and it's very cold. Right now, I'm sitting in my host family's kitchen. They are eating potatoes and meat with a knife and a fork. I'm trying to use them too! People here aren't greeting everybody in the street. Everything is different, but I'm learning a lot.**\n\n## Étape 2 : Le choc culturel\n- **culture shock** *le choc culturel*, **a host family** *une famille d'accueil*\n- **customs** *les coutumes*, **habits** *les habitudes*, **manners** *les bonnes manières*\n- **to feel homesick** *avoir le mal du pays*, **to miss** *manquer à quelqu'un* : **I miss my family.** *Ma famille me manque.*\n- **to adapt / to get used to** *s'adapter / s'habituer à*\n- **strange / different / surprising** *étrange / différent / surprenant*\n\n## Étape 3 : Décrire une expérience en cours\n- **At the moment, I'm living in ...** *En ce moment, je vis à ...*\n- **I'm discovering ...** *Je découvre ...*\n- **I'm getting used to the food.** *Je m'habitue à la nourriture.*\n- **It's strange because ...** *C'est étrange parce que ...*\n- **I'm feeling homesick.** *J'ai le mal du pays.*\n\n## Étape 4 : Le présent continu\nForme : **am / is / are + verbe-ing**\n- **I am eating. / She is writing. / They are sleeping.**\n- Négatif : **I'm not watching. / He isn't working. / They aren't playing.**\n- Question : **Are you studying? – Yes, I am. / Is it raining? – No, it isn't.**\nEmplois :\n1. Action en ce moment : **now, right now, at the moment, look!, listen!**\n2. Situation temporaire : **this week, this year, these days** : **I'm living in London this year.**\nOrthographe : **write → writing** (on enlève le e), **sit → sitting, swim → swimming** (on double), **lie → lying**.\nAttention : pas de -ing avec **like, love, want, know, understand, need** : **I want to go home** (pas « I'm wanting »).\n\n## Encore des exemples\nExemple : **Look! It's snowing!** *Regarde ! Il neige !*\nExemple : **I'm wearing a heavy coat today.** *Je porte un gros manteau aujourd'hui.*\nExemple : **My host father is cooking fish and chips.** *Mon père d'accueil prépare du fish and chips.*\nExemple : **They aren't speaking French; they're speaking English.** *Ils ne parlent pas français, ils parlent anglais.*\nExemple : **Are you enjoying your stay? – Yes, I am.** *Tu profites de ton séjour ? – Oui.*\nExemple : **These days, I'm getting used to the cold.** *Ces jours-ci, je m'habitue au froid.*\nExemple : **I miss thiéboudieune!** *Le thiéboudieune me manque !*\n\n## Étape 5 : À moi de parler !\nImagine que tu es dans un pays étranger :\nExemple : **I'm staying in Accra this month. Right now, I'm eating jollof rice with my friends. People are speaking English and Twi. It's different, but I'm enjoying it.**\n\nÀ retenir : **am / is / are + -ing**. En ce moment ou temporaire. Pas de -ing avec **like, want, know, need**. **I miss my family** = ma famille me manque.",
+   "qcm": [
+    {
+     "question": "Où est Aïda ?",
+     "options": [
+      "à Dakar",
+      "à Londres",
+      "à Paris",
+      "à Accra"
+     ],
+     "reponse": 1,
+     "explication": "I'm writing from London."
+    },
+    {
+     "question": "Quel temps fait-il ?",
+     "options": [
+      "chaud et ensoleillé",
+      "pluvieux et très froid",
+      "venteux et chaud",
+      "neigeux et chaud"
+     ],
+     "reponse": 1,
+     "explication": "It's raining and it's very cold."
+    },
+    {
+     "question": "Complète : Right now, I ___ in the kitchen.",
+     "options": [
+      "sit",
+      "am sitting",
+      "sits",
+      "sitting"
+     ],
+     "reponse": 1,
+     "explication": "Right now → am + -ing."
+    },
+    {
+     "question": "Complète : Look! It ___.",
+     "options": [
+      "snows",
+      "is snowing",
+      "snow",
+      "snowed"
+     ],
+     "reponse": 1,
+     "explication": "Look! → présent continu."
+    },
+    {
+     "question": "Complète : They ___ French; they're speaking English.",
+     "options": [
+      "isn't speaking",
+      "aren't speaking",
+      "don't speaking",
+      "not speak"
+     ],
+     "reponse": 1,
+     "explication": "They → aren't + -ing."
+    },
+    {
+     "question": "La question correcte :",
+     "options": [
+      "You are studying?",
+      "Are you studying?",
+      "Do you studying?",
+      "Is you studying?"
+     ],
+     "reponse": 1,
+     "explication": "Are you + -ing ?"
+    },
+    {
+     "question": "Orthographe correcte :",
+     "options": [
+      "writeing",
+      "writing",
+      "writting",
+      "writng"
+     ],
+     "reponse": 1,
+     "explication": "write → writing."
+    },
+    {
+     "question": "Orthographe correcte :",
+     "options": [
+      "siting",
+      "sitting",
+      "sittinng",
+      "sitieng"
+     ],
+     "reponse": 1,
+     "explication": "sit → sitting."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "I'm wanting to go home.",
+      "I want to go home.",
+      "I wanting to go home.",
+      "I'm want go home."
+     ],
+     "reponse": 1,
+     "explication": "want ne prend pas -ing."
+    },
+    {
+     "question": "« I miss my family » veut dire :",
+     "options": [
+      "J'ai raté ma famille.",
+      "Ma famille me manque.",
+      "Je cherche ma famille.",
+      "J'ai quitté ma famille."
+     ],
+     "reponse": 1,
+     "explication": "miss = manquer à."
+    },
+    {
+     "question": "« A host family » :",
+     "options": [
+      "une famille d'accueil",
+      "une famille riche",
+      "une famille élargie",
+      "une famille d'hôtel"
+     ],
+     "reponse": 0,
+     "explication": "host = qui accueille."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "culture shock",
+     "verso": "le choc culturel"
+    },
+    {
+     "recto": "a host family",
+     "verso": "une famille d'accueil"
+    },
+    {
+     "recto": "customs",
+     "verso": "les coutumes"
+    },
+    {
+     "recto": "manners",
+     "verso": "les bonnes manières"
+    },
+    {
+     "recto": "to feel homesick",
+     "verso": "avoir le mal du pays"
+    },
+    {
+     "recto": "I miss my family.",
+     "verso": "Ma famille me manque."
+    },
+    {
+     "recto": "to get used to",
+     "verso": "s'habituer à"
+    },
+    {
+     "recto": "strange / surprising",
+     "verso": "étrange / surprenant"
+    },
+    {
+     "recto": "I am + -ing",
+     "verso": "je suis en train de ..."
+    },
+    {
+     "recto": "right now / at the moment",
+     "verso": "en ce moment"
+    },
+    {
+     "recto": "these days",
+     "verso": "ces jours-ci"
+    },
+    {
+     "recto": "Are you ...ing? – Yes, I am.",
+     "verso": "Es-tu en train de ... ? – Oui."
+    },
+    {
+     "recto": "write → writing",
+     "verso": "on enlève le e"
+    },
+    {
+     "recto": "sit → sitting",
+     "verso": "on double la consonne"
+    }
+   ]
+  },
+  {
+   "id": "ang2-12",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Women and social classes – Comparer",
+   "texte": "## Objectif\nComparer des personnes, des situations, des époques. Thème : **Women and social classes** *les femmes et les classes sociales*. Grammaire : **les comparatifs et superlatifs**.\n\n## Étape 1 : La situation\nUne professeure compare la vie des femmes hier et aujourd'hui.\n**In the past, girls were less educated than boys. Today, more girls go to school. Some women are richer and more powerful than before: they are ministers, doctors and business leaders. But in many villages, life is still harder for women than for men. They work longer hours. Rich families are often luckier than poor families. Education is the best way to reduce inequality.**\n\n## Étape 2 : Le vocabulaire\n- **women's rights** *les droits des femmes*, **gender equality** *l'égalité femmes-hommes*\n- **inequality** *l'inégalité*, **discrimination** *la discrimination*\n- **the rich / the poor** *les riches / les pauvres*, **the middle class** *la classe moyenne*\n- **a housewife** *une femme au foyer*, **a breadwinner** *le soutien de famille*\n- **to earn money** *gagner de l'argent*, **to empower** *autonomiser*\n\n## Étape 3 : Comparer (étape par étape)\n1. Choisis deux éléments : **women / men**, **today / in the past**, **the city / the village**.\n2. Choisis un adjectif : **rich, hard, educated**...\n3. Fais la phrase : **Life is harder in the village than in the city.**\nAutres expressions :\n- **as ... as** *aussi ... que* : **Girls are as clever as boys.**\n- **not as ... as** *pas aussi ... que* : **The village is not as rich as the city.**\n- **less ... than** *moins ... que* : **Women are less paid than men.**\n\n## Étape 4 : Comparatifs et superlatifs\nMots courts (1 syllabe, ou 2 en -y) :\n- **rich → richer → the richest**, **hard → harder → the hardest**\n- **big → bigger → the biggest** (on double), **easy → easier → the easiest** (y → ier)\nMots longs :\n- **important → more important → the most important**\n- **educated → more educated → the most educated**\nIrréguliers : **good → better → the best**, **bad → worse → the worst**, **far → farther → the farthest**\nAttention : comparatif + **than** ; superlatif avec **the** : **the best student in the class**.\n\n## Encore des exemples\nExemple : **My mother works harder than my father.** *Ma mère travaille plus dur que mon père.*\nExemple : **Today, women are more independent than in the past.** *Aujourd'hui, les femmes sont plus indépendantes qu'autrefois.*\nExemple : **Girls are as intelligent as boys.** *Les filles sont aussi intelligentes que les garçons.*\nExemple : **Poor families are not as lucky as rich families.** *Les familles pauvres n'ont pas autant de chance que les riches.*\nExemple : **Education is the most important thing.** *L'éducation est la chose la plus importante.*\nExemple : **She is the best student in our class.** *C'est la meilleure élève de notre classe.*\nExemple : **The situation is worse in rural areas.** *La situation est pire dans les zones rurales.*\n\n## Étape 5 : À moi de parler !\nExemple : **In my village, women get up earlier than men. They fetch water and cook. Life is harder for them. But today, more girls are going to school. I think education is the best solution.**\n\nÀ retenir : court → **-er than / the -est**. Long → **more ... than / the most**. **good → better → the best**, **bad → worse → the worst**. **as ... as** = aussi ... que.",
+   "qcm": [
+    {
+     "question": "Selon le texte, quelle est la meilleure façon de réduire l'inégalité ?",
+     "options": [
+      "l'argent",
+      "l'éducation",
+      "la migration",
+      "le mariage"
+     ],
+     "reponse": 1,
+     "explication": "Education is the best way."
+    },
+    {
+     "question": "Complète : Life is ___ for women than for men.",
+     "options": [
+      "hard",
+      "harder",
+      "hardest",
+      "more hard"
+     ],
+     "reponse": 1,
+     "explication": "Mot court → -er."
+    },
+    {
+     "question": "Complète : Women are more independent ___ before.",
+     "options": [
+      "that",
+      "than",
+      "as",
+      "then"
+     ],
+     "reponse": 1,
+     "explication": "Comparatif + than."
+    },
+    {
+     "question": "Complète : Education is the ___ important thing.",
+     "options": [
+      "more",
+      "most",
+      "much",
+      "best"
+     ],
+     "reponse": 1,
+     "explication": "Mot long → the most."
+    },
+    {
+     "question": "Le comparatif de « good » :",
+     "options": [
+      "gooder",
+      "better",
+      "best",
+      "more good"
+     ],
+     "reponse": 1,
+     "explication": "good → better."
+    },
+    {
+     "question": "Le superlatif de « bad » :",
+     "options": [
+      "the baddest",
+      "the worst",
+      "the worse",
+      "the most bad"
+     ],
+     "reponse": 1,
+     "explication": "bad → the worst."
+    },
+    {
+     "question": "« Girls are as clever as boys » :",
+     "options": [
+      "plus intelligentes",
+      "aussi intelligentes",
+      "moins intelligentes",
+      "les plus intelligentes"
+     ],
+     "reponse": 1,
+     "explication": "as ... as = aussi ... que."
+    },
+    {
+     "question": "Le comparatif de « big » :",
+     "options": [
+      "biger",
+      "bigger",
+      "more big",
+      "biggest"
+     ],
+     "reponse": 1,
+     "explication": "On double le g."
+    },
+    {
+     "question": "Le comparatif de « easy » :",
+     "options": [
+      "easyer",
+      "easier",
+      "more easy",
+      "easiest"
+     ],
+     "reponse": 1,
+     "explication": "y → ier."
+    },
+    {
+     "question": "« Gender equality » :",
+     "options": [
+      "l'égalité femmes-hommes",
+      "l'inégalité",
+      "la discrimination",
+      "la classe sociale"
+     ],
+     "reponse": 0,
+     "explication": "equality = égalité."
+    },
+    {
+     "question": "« A breadwinner » :",
+     "options": [
+      "un boulanger",
+      "le soutien de famille",
+      "un mendiant",
+      "un riche"
+     ],
+     "reponse": 1,
+     "explication": "Celui qui gagne l'argent du foyer."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "richer than",
+     "verso": "plus riche que"
+    },
+    {
+     "recto": "the richest",
+     "verso": "le plus riche"
+    },
+    {
+     "recto": "more important than",
+     "verso": "plus important que"
+    },
+    {
+     "recto": "the most important",
+     "verso": "le plus important"
+    },
+    {
+     "recto": "good → better → the best",
+     "verso": "bon → meilleur → le meilleur"
+    },
+    {
+     "recto": "bad → worse → the worst",
+     "verso": "mauvais → pire → le pire"
+    },
+    {
+     "recto": "as ... as",
+     "verso": "aussi ... que"
+    },
+    {
+     "recto": "not as ... as",
+     "verso": "pas aussi ... que"
+    },
+    {
+     "recto": "less ... than",
+     "verso": "moins ... que"
+    },
+    {
+     "recto": "gender equality",
+     "verso": "l'égalité femmes-hommes"
+    },
+    {
+     "recto": "inequality",
+     "verso": "l'inégalité"
+    },
+    {
+     "recto": "women's rights",
+     "verso": "les droits des femmes"
+    },
+    {
+     "recto": "the middle class",
+     "verso": "la classe moyenne"
+    },
+    {
+     "recto": "a breadwinner",
+     "verso": "le soutien de famille"
+    }
+   ]
+  },
+  {
+   "id": "ang2-13",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Schooling – Donner son opinion",
+   "texte": "## Objectif\nDonner son opinion sur l'école. Thème : **Schooling** *la scolarité*. Grammaire : **les phrases déclaratives** (affirmer, nier).\n\n## Étape 1 : La situation\nDébat au lycée : « Faut-il porter l'uniforme ? »\nMariama : **In my opinion, uniforms are a good thing. All students look the same, so poor students don't feel ashamed.**\nSaliou : **I don't agree. I think that uniforms are expensive for some families.**\nTeacher : **What about you, Awa?**\nAwa : **I believe that the uniform is useful, but it should be cheap.**\n\n## Étape 2 : Le vocabulaire de l'école\n- **schooling** *la scolarité*, **to attend school** *aller à l'école*, **to drop out** *abandonner l'école*\n- **a subject** *une matière*, **a timetable** *un emploi du temps*, **a mark** *une note*\n- **to pass / to fail an exam** *réussir / échouer à un examen*\n- **a scholarship** *une bourse*, **school fees** *les frais de scolarité*\n- **overcrowded classes** *des classes surchargées*, **the BAC / the BFEM**\n\n## Étape 3 : Donner son opinion\n- **I think (that) ...** *Je pense que ...*\n- **I believe (that) ...** *Je crois que ...*\n- **In my opinion, ... / In my view, ...** *À mon avis, ...*\n- **For me, ...** *Pour moi, ...*\n- **I agree. / I don't agree. / I disagree.** *Je suis d'accord. / Je ne suis pas d'accord.*\n- Demander : **What do you think? / What's your opinion?** *Qu'en penses-tu ?*\nAstuce : on donne toujours une raison : **... because ...**\n\n## Étape 4 : Les phrases déclaratives\nUne phrase déclarative donne une information. Ordre fixe : **sujet + verbe + complément**.\n- Affirmative : **School is important. / Students work hard.**\n- Négative : **sujet + don't / doesn't / isn't / aren't + ...** : **Uniforms aren't cheap. / He doesn't like maths.**\n- Avec un verbe d'opinion : **I think + phrase déclarative** : **I think that school is important.** (**that** peut disparaître : **I think school is important.**)\nAttention : pour une opinion négative, on dit **I don't think (that) ...** : **I don't think uniforms are useful.** *Je ne pense pas que ...*\nAttention : pas d'inversion dans une phrase déclarative : **He is late** (pas « Is he late » sauf question).\n\n## Encore des exemples\nExemple : **I think that English is useful.** *Je pense que l'anglais est utile.*\nExemple : **In my opinion, classes are overcrowded.** *À mon avis, les classes sont surchargées.*\nExemple : **I believe girls should stay at school.** *Je crois que les filles doivent rester à l'école.*\nExemple : **I don't think homework is a waste of time.** *Je ne pense pas que les devoirs soient une perte de temps.*\nExemple : **Many students drop out because of poverty.** *Beaucoup d'élèves abandonnent à cause de la pauvreté.*\nExemple : **I agree with you because school fees are high.** *Je suis d'accord avec toi car les frais sont élevés.*\nExemple : **What do you think about the new timetable?** *Que penses-tu du nouvel emploi du temps ?*\n\n## Étape 5 : À moi de parler !\nExemple : **In my opinion, school is the key to success. I think that the government should build more classrooms because our classes are overcrowded. I don't think that students should drop out.**\n\nÀ retenir : **sujet + verbe + complément**. **I think (that) ...** / **I don't think ...** / **In my opinion, ...** + une raison avec **because**.",
+   "qcm": [
+    {
+     "question": "Que pense Saliou de l'uniforme ?",
+     "options": [
+      "Il est très utile.",
+      "Il coûte cher pour certaines familles.",
+      "Il est beau.",
+      "Il est obligatoire."
+     ],
+     "reponse": 1,
+     "explication": "uniforms are expensive for some families."
+    },
+    {
+     "question": "« In my opinion » veut dire :",
+     "options": [
+      "À mon avis",
+      "Par exemple",
+      "En fait",
+      "Pour conclure"
+     ],
+     "reponse": 0,
+     "explication": "opinion = avis."
+    },
+    {
+     "question": "Pour dire qu'on n'est pas d'accord :",
+     "options": [
+      "I agree.",
+      "I disagree.",
+      "Exactly.",
+      "Of course."
+     ],
+     "reponse": 1,
+     "explication": "I disagree."
+    },
+    {
+     "question": "Quelle phrase déclarative est correcte ?",
+     "options": [
+      "Important is school.",
+      "School is important.",
+      "Is school important.",
+      "School important is."
+     ],
+     "reponse": 1,
+     "explication": "sujet + verbe + complément."
+    },
+    {
+     "question": "Opinion négative correcte :",
+     "options": [
+      "I think uniforms aren't not useful.",
+      "I don't think uniforms are useful.",
+      "I not think uniforms are useful.",
+      "I think don't uniforms useful."
+     ],
+     "reponse": 1,
+     "explication": "I don't think ..."
+    },
+    {
+     "question": "Complète : He ___ like maths.",
+     "options": [
+      "don't",
+      "doesn't",
+      "isn't",
+      "not"
+     ],
+     "reponse": 1,
+     "explication": "he → doesn't."
+    },
+    {
+     "question": "« To drop out » :",
+     "options": [
+      "abandonner l'école",
+      "réussir",
+      "redoubler",
+      "s'inscrire"
+     ],
+     "reponse": 0,
+     "explication": "drop out = abandonner."
+    },
+    {
+     "question": "« A scholarship » :",
+     "options": [
+      "une bourse",
+      "une école",
+      "un professeur",
+      "une note"
+     ],
+     "reponse": 0,
+     "explication": "scholarship = bourse d'études."
+    },
+    {
+     "question": "« School fees » :",
+     "options": [
+      "les frais de scolarité",
+      "les matières",
+      "les vacances",
+      "les notes"
+     ],
+     "reponse": 0,
+     "explication": "fees = frais."
+    },
+    {
+     "question": "Pour demander l'avis de quelqu'un :",
+     "options": [
+      "What do you think?",
+      "Where are you?",
+      "How old are you?",
+      "What time is it?"
+     ],
+     "reponse": 0,
+     "explication": "What do you think?"
+    },
+    {
+     "question": "« Overcrowded classes » :",
+     "options": [
+      "des classes vides",
+      "des classes surchargées",
+      "des classes propres",
+      "des classes neuves"
+     ],
+     "reponse": 1,
+     "explication": "overcrowded = trop pleines."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I think (that) ...",
+     "verso": "Je pense que ..."
+    },
+    {
+     "recto": "I don't think ...",
+     "verso": "Je ne pense pas que ..."
+    },
+    {
+     "recto": "I believe ...",
+     "verso": "Je crois que ..."
+    },
+    {
+     "recto": "In my opinion, ...",
+     "verso": "À mon avis, ..."
+    },
+    {
+     "recto": "I agree / I disagree.",
+     "verso": "Je suis d'accord / pas d'accord."
+    },
+    {
+     "recto": "What do you think?",
+     "verso": "Qu'en penses-tu ?"
+    },
+    {
+     "recto": "sujet + verbe + complément",
+     "verso": "School is important."
+    },
+    {
+     "recto": "to drop out",
+     "verso": "abandonner l'école"
+    },
+    {
+     "recto": "a scholarship",
+     "verso": "une bourse"
+    },
+    {
+     "recto": "school fees",
+     "verso": "les frais de scolarité"
+    },
+    {
+     "recto": "a timetable",
+     "verso": "un emploi du temps"
+    },
+    {
+     "recto": "a mark",
+     "verso": "une note"
+    },
+    {
+     "recto": "to pass / to fail",
+     "verso": "réussir / échouer"
+    },
+    {
+     "recto": "overcrowded",
+     "verso": "surchargé"
+    }
+   ]
+  },
+  {
+   "id": "ang2-14",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Drugs and delinquency – Argumenter (and, but, or, so)",
+   "texte": "## Objectif\nArgumenter : donner des arguments, les relier, conclure. Thème : **Drugs and delinquency** *la drogue et la délinquance*. Grammaire : **les conjonctions de coordination** (and, but, or, so, for, nor, yet).\n\n## Étape 1 : La situation\nUn élève présente un exposé.\n**Drugs are a big problem for young people. Some teenagers smoke cannabis, and some drink alcohol. They think it is cool, but it is dangerous. Drugs damage the brain, so students fail at school. Some young drug users steal money, for they need to buy drugs. We must help them, or the problem will grow.**\n\n## Étape 2 : Le vocabulaire\n- **drugs** *la drogue*, **cannabis**, **alcohol** *l'alcool*, **a cigarette**\n- **a drug addict / a drug user** *un toxicomane / un consommateur*, **addiction** *la dépendance*\n- **to steal** *voler*, **a thief** *un voleur*, **a gang** *un gang*, **violence** *la violence*\n- **delinquency** *la délinquance*, **a crime** *un crime, un délit*, **the police** *la police*, **prison** *la prison*\n- **peer pressure** *la pression des camarades*, **to resist** *résister*, **to say no** *dire non*\n\n## Étape 3 : Argumenter (étape par étape)\n1. Présenter le problème : **Drugs are a serious problem.**\n2. Premier argument : **First, drugs damage health.** *Premièrement ...*\n3. Deuxième argument : **Second, they lead to crime.** *Deuxièmement ...*\n4. Exemple : **For example, some users steal from their parents.** *Par exemple ...*\n5. Conclure : **To conclude, we must say no to drugs.** *Pour conclure ...*\nAutres mots utiles : **moreover** *de plus*, **however** *cependant*, **because** *parce que*.\n\n## Étape 4 : Les conjonctions de coordination\nElles relient deux mots ou deux phrases. Retiens **FANBOYS** :\n- **for** *car* : **He steals, for he needs money.**\n- **and** *et* (ajout) : **He smokes and he drinks.**\n- **nor** *ni* (deux négations) : **She doesn't smoke, nor does she drink.**\n- **but** *mais* (opposition) : **It looks cool, but it is dangerous.**\n- **or** *ou* (choix, sinon) : **Say no, or you will regret it.**\n- **yet** *pourtant* : **He knows it is bad, yet he continues.**\n- **so** *donc* (conséquence) : **Drugs damage the brain, so students fail.**\nAstuce : les plus utiles sont **and, but, or, so**. On met souvent une virgule avant **but, so, for, yet** quand ils relient deux phrases.\n\n## Encore des exemples\nExemple : **Alcohol is bad for the body and for the mind.** *L'alcool est mauvais pour le corps et l'esprit.*\nExemple : **He wanted to stop, but his friends pushed him.** *Il voulait arrêter, mais ses amis l'ont poussé.*\nExemple : **You can talk to a teacher or to your parents.** *Tu peux parler à un professeur ou à tes parents.*\nExemple : **He had no money, so he stole a phone.** *Il n'avait pas d'argent, donc il a volé un téléphone.*\nExemple : **She knows the danger, yet she smokes.** *Elle connaît le danger, pourtant elle fume.*\nExemple : **First, drugs destroy health. Second, they cause violence.** *Premièrement ... Deuxièmement ...*\nExemple : **To conclude, sport is a good alternative to drugs.** *Pour conclure, le sport est une bonne alternative à la drogue.*\n\n## Étape 5 : À moi de parler !\nExemple : **Drugs are dangerous. First, they damage our health, so we can't study well. Second, many addicts steal or become violent. Some think drugs are cool, but they are wrong. To conclude, we must say no and help our friends.**\n\nÀ retenir : **and** (ajout), **but** (opposition), **or** (choix), **so** (conséquence), **for** (cause), **yet** (pourtant), **nor** (ni). Plan : **First – Second – For example – To conclude**.",
+   "qcm": [
+    {
+     "question": "Selon le texte, pourquoi certains jeunes volent-ils ?",
+     "options": [
+      "pour s'amuser",
+      "pour acheter de la drogue",
+      "pour aider leur famille",
+      "pour aller à l'école"
+     ],
+     "reponse": 1,
+     "explication": "they need to buy drugs."
+    },
+    {
+     "question": "« But » exprime :",
+     "options": [
+      "un ajout",
+      "une opposition",
+      "une conséquence",
+      "un choix"
+     ],
+     "reponse": 1,
+     "explication": "but = mais."
+    },
+    {
+     "question": "« So » exprime :",
+     "options": [
+      "une conséquence",
+      "une opposition",
+      "une cause",
+      "un choix"
+     ],
+     "reponse": 0,
+     "explication": "so = donc."
+    },
+    {
+     "question": "Complète : It looks cool, ___ it is dangerous.",
+     "options": [
+      "and",
+      "so",
+      "but",
+      "or"
+     ],
+     "reponse": 2,
+     "explication": "Opposition → but."
+    },
+    {
+     "question": "Complète : He had no money, ___ he stole a phone.",
+     "options": [
+      "but",
+      "so",
+      "or",
+      "yet"
+     ],
+     "reponse": 1,
+     "explication": "Conséquence → so."
+    },
+    {
+     "question": "Complète : Say no, ___ you will regret it.",
+     "options": [
+      "or",
+      "and",
+      "for",
+      "yet"
+     ],
+     "reponse": 0,
+     "explication": "or = sinon."
+    },
+    {
+     "question": "« Yet » dans « He knows it is bad, yet he continues » :",
+     "options": [
+      "donc",
+      "pourtant",
+      "et",
+      "car"
+     ],
+     "reponse": 1,
+     "explication": "yet = pourtant."
+    },
+    {
+     "question": "« For » dans « He steals, for he needs money » :",
+     "options": [
+      "pour",
+      "car",
+      "donc",
+      "mais"
+     ],
+     "reponse": 1,
+     "explication": "for = car."
+    },
+    {
+     "question": "« Peer pressure » :",
+     "options": [
+      "la pression des camarades",
+      "la police",
+      "la paix",
+      "la prison"
+     ],
+     "reponse": 0,
+     "explication": "peers = camarades du même âge."
+    },
+    {
+     "question": "Pour conclure un exposé :",
+     "options": [
+      "First, ...",
+      "To conclude, ...",
+      "For example, ...",
+      "Second, ..."
+     ],
+     "reponse": 1,
+     "explication": "To conclude = pour conclure."
+    },
+    {
+     "question": "« A thief » :",
+     "options": [
+      "un voleur",
+      "un policier",
+      "un juge",
+      "un drogué"
+     ],
+     "reponse": 0,
+     "explication": "thief = voleur."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "and",
+     "verso": "et (ajout)"
+    },
+    {
+     "recto": "but",
+     "verso": "mais (opposition)"
+    },
+    {
+     "recto": "or",
+     "verso": "ou / sinon (choix)"
+    },
+    {
+     "recto": "so",
+     "verso": "donc (conséquence)"
+    },
+    {
+     "recto": "for",
+     "verso": "car (cause)"
+    },
+    {
+     "recto": "yet",
+     "verso": "pourtant"
+    },
+    {
+     "recto": "nor",
+     "verso": "ni"
+    },
+    {
+     "recto": "First, ... Second, ...",
+     "verso": "Premièrement ... Deuxièmement ..."
+    },
+    {
+     "recto": "For example, ...",
+     "verso": "Par exemple, ..."
+    },
+    {
+     "recto": "To conclude, ...",
+     "verso": "Pour conclure, ..."
+    },
+    {
+     "recto": "a drug addict",
+     "verso": "un toxicomane"
+    },
+    {
+     "recto": "delinquency",
+     "verso": "la délinquance"
+    },
+    {
+     "recto": "to steal → stole",
+     "verso": "voler → a volé"
+    },
+    {
+     "recto": "peer pressure",
+     "verso": "la pression des camarades"
+    }
+   ]
+  },
+  {
+   "id": "ang2-15",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Religions – Décrire une coutume (passif présent)",
+   "texte": "## Objectif\nDécrire une coutume religieuse ou une fête. Thème : **Religions** *les religions*. Grammaire : **le passif au présent**.\n\n## Étape 1 : La situation\nIbou explique la Tabaski à un correspondant américain.\n**Tabaski is celebrated by Muslims all over Senegal. A sheep is bought weeks before the feast. On the morning of Tabaski, a special prayer is said at the mosque. Then the sheep is slaughtered. The meat is cooked and shared with neighbours and poor people. New clothes are worn and people ask for forgiveness. In Senegal, Christians are often invited too, and at Christmas, Muslims are invited by Christian friends.**\n\n## Étape 2 : Le vocabulaire des religions\n- **a religion** *une religion*, **Islam / Christianity** *l'islam / le christianisme*\n- **a Muslim / a Christian** *un musulman / un chrétien*, **a believer** *un croyant*\n- **a mosque / a church** *une mosquée / une église*, **a prayer** *une prière*, **to pray** *prier*\n- **a feast / a celebration** *une fête*, **to fast** *jeûner*, **Ramadan**, **Christmas** *Noël*, **Easter** *Pâques*\n- **a brotherhood** *une confrérie*, **a pilgrimage** *un pèlerinage* (le Magal de Touba, le pèlerinage de Popenguine)\n- **tolerance** *la tolérance*, **to respect** *respecter*, **peaceful coexistence** *la coexistence pacifique*\n\n## Étape 3 : Décrire une coutume (étape par étape)\n1. Le nom et qui la célèbre : **Korité is celebrated by Muslims.**\n2. Quand : **It is celebrated at the end of Ramadan.**\n3. Les préparatifs : **New clothes are bought. The house is cleaned.**\n4. Le jour J : **A prayer is said. A big meal is prepared.**\n5. Le sens : **It is a time of sharing and forgiveness.** *C'est un moment de partage et de pardon.*\n\n## Étape 4 : Le passif au présent\nForme : **am / is / are + participe passé**\n- Actif : **Muslims celebrate Tabaski.** → Passif : **Tabaski is celebrated by Muslims.**\n- Le complément d'agent avec **by** (par) n'est pas obligatoire : **The sheep is slaughtered.**\nParticipes passés utiles : **celebrate → celebrated, cook → cooked, share → shared, invite → invited, buy → bought, say → said, wear → worn, make → made, give → given**\nNégatif : **Meat isn't eaten during the day in Ramadan.** Question : **Is Christmas celebrated in Senegal? – Yes, it is.**\nAstuce : on utilise le passif quand l'action est plus importante que la personne qui la fait. Très utile pour décrire une coutume.\n\n## Encore des exemples\nExemple : **The Magal is celebrated in Touba.** *Le Magal est célébré à Touba.*\nExemple : **Food is shared with the neighbours.** *La nourriture est partagée avec les voisins.*\nExemple : **The children are given new clothes.** *On donne de nouveaux habits aux enfants.*\nExemple : **The church is decorated for Christmas.** *L'église est décorée pour Noël.*\nExemple : **Many guests are invited to the baptism.** *Beaucoup d'invités sont conviés au baptême.*\nExemple : **The prayer is said in Arabic.** *La prière est dite en arabe.*\nExemple : **In Senegal, all religions are respected.** *Au Sénégal, toutes les religions sont respectées.*\n\n## Étape 5 : À moi de parler !\nExemple : **Korité is celebrated at the end of Ramadan. In the morning, a prayer is said. Then a big lunch is prepared and gifts are given to children. Forgiveness is asked from friends and family.**\n\nÀ retenir : **is / are + participe passé** (+ **by** ...). Utile pour décrire une coutume. **buy → bought, say → said, wear → worn, give → given**.",
+   "qcm": [
+    {
+     "question": "Avec qui la viande est-elle partagée ?",
+     "options": [
+      "les touristes",
+      "les voisins et les pauvres",
+      "les commerçants",
+      "personne"
+     ],
+     "reponse": 1,
+     "explication": "shared with neighbours and poor people."
+    },
+    {
+     "question": "Le passif au présent se forme avec :",
+     "options": [
+      "have + participe",
+      "is / are + participe passé",
+      "will + verbe",
+      "did + verbe"
+     ],
+     "reponse": 1,
+     "explication": "am / is / are + participe passé."
+    },
+    {
+     "question": "Complète : Tabaski ___ celebrated by Muslims.",
+     "options": [
+      "are",
+      "is",
+      "has",
+      "does"
+     ],
+     "reponse": 1,
+     "explication": "Singulier → is."
+    },
+    {
+     "question": "Complète : New clothes ___ worn.",
+     "options": [
+      "is",
+      "are",
+      "has",
+      "was"
+     ],
+     "reponse": 1,
+     "explication": "Pluriel → are."
+    },
+    {
+     "question": "Passif de « Muslims celebrate Korité » :",
+     "options": [
+      "Korité celebrates Muslims.",
+      "Korité is celebrated by Muslims.",
+      "Korité is celebrate by Muslims.",
+      "Korité are celebrated Muslims."
+     ],
+     "reponse": 1,
+     "explication": "is + celebrated + by."
+    },
+    {
+     "question": "Participe passé de « buy » :",
+     "options": [
+      "buyed",
+      "bought",
+      "buying",
+      "buys"
+     ],
+     "reponse": 1,
+     "explication": "buy → bought."
+    },
+    {
+     "question": "Participe passé de « wear » :",
+     "options": [
+      "weared",
+      "wore",
+      "worn",
+      "wearing"
+     ],
+     "reponse": 2,
+     "explication": "wear → wore → worn."
+    },
+    {
+     "question": "Question correcte :",
+     "options": [
+      "Is Christmas celebrated in Senegal?",
+      "Does Christmas celebrated?",
+      "Christmas is celebrate?",
+      "Are Christmas celebrated?"
+     ],
+     "reponse": 0,
+     "explication": "Is + sujet + participe ?"
+    },
+    {
+     "question": "« To fast » :",
+     "options": [
+      "jeûner",
+      "courir",
+      "prier",
+      "partager"
+     ],
+     "reponse": 0,
+     "explication": "fast = jeûner (Ramadan)."
+    },
+    {
+     "question": "« A pilgrimage » :",
+     "options": [
+      "un pèlerinage",
+      "une prière",
+      "une mosquée",
+      "une église"
+     ],
+     "reponse": 0,
+     "explication": "Ex. : le Magal de Touba."
+    },
+    {
+     "question": "« Peaceful coexistence » :",
+     "options": [
+      "la coexistence pacifique",
+      "la guerre",
+      "la conversion",
+      "la fête"
+     ],
+     "reponse": 0,
+     "explication": "vivre ensemble en paix."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a Muslim / a Christian",
+     "verso": "un musulman / un chrétien"
+    },
+    {
+     "recto": "a mosque / a church",
+     "verso": "une mosquée / une église"
+    },
+    {
+     "recto": "a prayer / to pray",
+     "verso": "une prière / prier"
+    },
+    {
+     "recto": "to fast",
+     "verso": "jeûner"
+    },
+    {
+     "recto": "a feast",
+     "verso": "une fête"
+    },
+    {
+     "recto": "a pilgrimage",
+     "verso": "un pèlerinage"
+    },
+    {
+     "recto": "tolerance",
+     "verso": "la tolérance"
+    },
+    {
+     "recto": "peaceful coexistence",
+     "verso": "la coexistence pacifique"
+    },
+    {
+     "recto": "It is celebrated.",
+     "verso": "C'est célébré. (passif)"
+    },
+    {
+     "recto": "They are invited.",
+     "verso": "Ils sont invités."
+    },
+    {
+     "recto": "by",
+     "verso": "par (agent du passif)"
+    },
+    {
+     "recto": "buy → bought",
+     "verso": "acheter → acheté"
+    },
+    {
+     "recto": "say → said",
+     "verso": "dire → dit"
+    },
+    {
+     "recto": "wear → worn",
+     "verso": "porter → porté"
+    }
+   ]
+  },
+  {
+   "id": "ang2-16",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Youth – Exprimer ses intentions (going to, will)",
+   "texte": "## Objectif\nExprimer ses intentions et ses projets. Thème : **Youth** *la jeunesse*. Grammaire : **going to** et **will**.\n\n## Étape 1 : La situation\nAprès la classe, des amis parlent de leur avenir.\nKhady : **What are you going to do after the BAC?**\nModou : **I'm going to study agronomy at the university of Bambey. I want to modernise farming in my village.**\nKhady : **That's great! I'm going to be a journalist. I think I will work for a radio.**\nModou : **And Pape?**\nPape : **I don't know yet. Maybe I will start a small business. I'll decide next year.**\n\n## Étape 2 : La jeunesse et l'avenir\n- **youth** *la jeunesse*, **young people** *les jeunes*, **a teenager** *un adolescent*\n- **the future** *l'avenir*, **a dream** *un rêve*, **a goal** *un objectif*\n- **to study** *étudier*, **to train** *se former*, **to start a business** *créer une entreprise*\n- **an entrepreneur** *un entrepreneur*, **a volunteer** *un bénévole*\n- **to succeed** *réussir*, **hope** *l'espoir*\n\n## Étape 3 : Exprimer ses intentions\n- **I'm going to ...** *Je vais ...* (projet déjà décidé)\n- **I intend to ...** *J'ai l'intention de ...*\n- **I plan to ...** *Je prévois de ...*\n- **My dream is to ...** *Mon rêve est de ...*\n- **I hope to ...** *J'espère ...*\n- **Maybe I will ... / I think I'll ...** *Peut-être que je ... / Je pense que je ...*\n\n## Étape 4 : GOING TO et WILL\n**going to** = intention déjà décidée, ou ce qu'on voit venir :\n- **am / is / are + going to + verbe** : **I'm going to study agronomy.**\n- Ce qu'on voit : **Look at the clouds! It's going to rain.**\n**will** = décision prise maintenant, prédiction, promesse :\n- **will + verbe** (même forme pour tous) : **I'll help you. / I think it will rain.**\n- Négatif : **won't** (= will not) : **I won't give up.** *Je n'abandonnerai pas.*\n- Question : **Will you come? – Yes, I will.**\nAstuce : projet préparé → **going to** ; idée du moment, prédiction, promesse → **will**.\nAttention : **will + verbe sans to** : **I will go** (pas « I will to go »).\n\n## Encore des exemples\nExemple : **I'm going to take the BAC next year.** *Je vais passer le BAC l'année prochaine.*\nExemple : **She is going to become a nurse.** *Elle va devenir infirmière.*\nExemple : **We are going to clean the neighbourhood on Saturday.** *Nous allons nettoyer le quartier samedi.*\nExemple : **I think young people will change Senegal.** *Je pense que les jeunes changeront le Sénégal.*\nExemple : **I promise I will work hard.** *Je promets que je travaillerai dur.*\nExemple : **The phone is ringing. – I'll answer it!** *Le téléphone sonne. – Je réponds !*\nExemple : **I won't leave my country.** *Je ne quitterai pas mon pays.*\n\n## Étape 5 : À moi de parler !\nExemple : **After the BAC, I'm going to study computer science. My dream is to create apps for farmers. I think I will work in Dakar for a few years, but I will come back to my region.**\n\nÀ retenir : projet décidé → **be going to + verbe**. Décision immédiate, prédiction, promesse → **will + verbe** (**won't** au négatif).",
+   "qcm": [
+    {
+     "question": "Que va étudier Modou ?",
+     "options": [
+      "le journalisme",
+      "l'agronomie",
+      "la médecine",
+      "l'informatique"
+     ],
+     "reponse": 1,
+     "explication": "I'm going to study agronomy."
+    },
+    {
+     "question": "Que veut devenir Khady ?",
+     "options": [
+      "infirmière",
+      "journaliste",
+      "enseignante",
+      "commerçante"
+     ],
+     "reponse": 1,
+     "explication": "I'm going to be a journalist."
+    },
+    {
+     "question": "« Going to » exprime surtout :",
+     "options": [
+      "un projet déjà décidé",
+      "le passé",
+      "une habitude",
+      "une obligation"
+     ],
+     "reponse": 0,
+     "explication": "Intention préparée."
+    },
+    {
+     "question": "Complète : I ___ going to study medicine.",
+     "options": [
+      "is",
+      "am",
+      "are",
+      "will"
+     ],
+     "reponse": 1,
+     "explication": "I → am going to."
+    },
+    {
+     "question": "Complète : She ___ going to become a nurse.",
+     "options": [
+      "am",
+      "is",
+      "are",
+      "will"
+     ],
+     "reponse": 1,
+     "explication": "She → is going to."
+    },
+    {
+     "question": "Complète : Look at the clouds! It ___ rain.",
+     "options": [
+      "is going to",
+      "will to",
+      "goes",
+      "is"
+     ],
+     "reponse": 0,
+     "explication": "On voit venir → going to."
+    },
+    {
+     "question": "Le téléphone sonne. Réponse spontanée :",
+     "options": [
+      "I'm going to answer it.",
+      "I'll answer it!",
+      "I answer it yesterday.",
+      "I will to answer it."
+     ],
+     "reponse": 1,
+     "explication": "Décision immédiate → will."
+    },
+    {
+     "question": "La négation de « I will give up » :",
+     "options": [
+      "I willn't give up.",
+      "I won't give up.",
+      "I don't will give up.",
+      "I will no give up."
+     ],
+     "reponse": 1,
+     "explication": "will not = won't."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "I will to go.",
+      "I will go.",
+      "I will going.",
+      "I wills go."
+     ],
+     "reponse": 1,
+     "explication": "will + verbe sans to."
+    },
+    {
+     "question": "« My dream is to ... » :",
+     "options": [
+      "Mon rêve est de ...",
+      "Je dors ...",
+      "J'ai oublié de ...",
+      "Je déteste ..."
+     ],
+     "reponse": 0,
+     "explication": "dream = rêve."
+    },
+    {
+     "question": "« To start a business » :",
+     "options": [
+      "créer une entreprise",
+      "fermer une boutique",
+      "chercher du travail",
+      "faire des études"
+     ],
+     "reponse": 0,
+     "explication": "business = entreprise."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I'm going to ...",
+     "verso": "Je vais ... (projet décidé)"
+    },
+    {
+     "recto": "It's going to rain.",
+     "verso": "Il va pleuvoir. (on le voit)"
+    },
+    {
+     "recto": "I will ...",
+     "verso": "Je ... (décision, promesse)"
+    },
+    {
+     "recto": "I won't ...",
+     "verso": "Je ne ... pas (futur)"
+    },
+    {
+     "recto": "Will you ...? – Yes, I will.",
+     "verso": "Est-ce que tu ... ? – Oui."
+    },
+    {
+     "recto": "I intend to ...",
+     "verso": "J'ai l'intention de ..."
+    },
+    {
+     "recto": "I plan to ...",
+     "verso": "Je prévois de ..."
+    },
+    {
+     "recto": "My dream is to ...",
+     "verso": "Mon rêve est de ..."
+    },
+    {
+     "recto": "I hope to ...",
+     "verso": "J'espère ..."
+    },
+    {
+     "recto": "youth",
+     "verso": "la jeunesse"
+    },
+    {
+     "recto": "a goal",
+     "verso": "un objectif"
+    },
+    {
+     "recto": "to start a business",
+     "verso": "créer une entreprise"
+    },
+    {
+     "recto": "to succeed",
+     "verso": "réussir"
+    },
+    {
+     "recto": "a volunteer",
+     "verso": "un bénévole"
+    }
+   ]
+  },
+  {
+   "id": "ang2-17",
+   "matiere": "anglais",
+   "niveau": "Seconde",
+   "titre": "Drugs and delinquency – Avertir, poser une condition (if + présent)",
+   "texte": "## Objectif\nAvertir quelqu'un d'un danger et poser une condition. Thème : **Drugs and delinquency**. Grammaire : **le conditionnel type 1** (If + présent, ... will ...).\n\n## Étape 1 : La situation\nUn gendarme parle aux élèves pendant une journée de sensibilisation.\n**Be careful! If you take drugs, you will damage your health. If you join a gang, you will get into trouble. If the police catch you with drugs, you will go to prison. Don't follow bad friends! If you have a problem, talk to an adult. If you say no, you will stay free.**\n\n## Étape 2 : Le vocabulaire\n- **to warn** *avertir*, **a warning** *un avertissement*, **a danger** *un danger*\n- **to get into trouble** *s'attirer des ennuis*, **to be arrested** *être arrêté*\n- **to go to prison** *aller en prison*, **a fine** *une amende*\n- **bad company** *les mauvaises fréquentations*, **to avoid** *éviter*\n- **a counsellor** *un conseiller*, **help** *l'aide*\n\n## Étape 3 : Avertir quelqu'un\n- **Be careful!** *Fais attention !*\n- **Watch out!** *Attention !* (danger immédiat)\n- **Don't ...!** *Ne ... pas !* : **Don't touch that!**\n- **You'd better not ...** *Tu ferais mieux de ne pas ...*\n- **If you ..., you will ...** *Si tu ..., tu ...*\n- **Unless you stop, ...** *À moins que tu arrêtes, ...*\nAstuce : un avertissement = un danger + une conséquence.\n\n## Étape 4 : Le conditionnel type 1\nPour une condition **réelle et possible** dans le futur :\n**If + présent simple, ... will + verbe**\nExemple : **If you study, you will pass.** *Si tu étudies, tu réussiras.*\nExemple : **If it rains, we will stay at home.** *S'il pleut, nous resterons à la maison.*\nOn peut inverser : **You will pass if you study.** (pas de virgule dans ce cas)\nNégatif : **If you don't stop, you will be sick.** / **If you smoke, you won't be healthy.**\n**unless** = **if ... not** : **Unless you stop, you will be sick.** *Si tu n'arrêtes pas, tu seras malade.*\nAttention : jamais **will** après **if** : **If you take** (pas « If you will take »).\n\n## Encore des exemples\nExemple : **If you drink alcohol, you will have problems.** *Si tu bois de l'alcool, tu auras des problèmes.*\nExemple : **If he steals, he will go to prison.** *S'il vole, il ira en prison.*\nExemple : **If you need help, the counsellor will listen to you.** *Si tu as besoin d'aide, le conseiller t'écoutera.*\nExemple : **If we play sport, we won't think about drugs.** *Si on fait du sport, on ne pensera pas à la drogue.*\nExemple : **Watch out! The car is coming!** *Attention ! La voiture arrive !*\nExemple : **You'd better not go out at night.** *Tu ferais mieux de ne pas sortir la nuit.*\nExemple : **Unless you avoid bad company, you will get into trouble.** *Si tu n'évites pas les mauvaises fréquentations, tu auras des ennuis.*\n\n## Étape 5 : À moi de parler !\nAvertis un ami :\nExemple : **Be careful, Moussa! If you smoke with those boys, you will become addicted. If your parents find out, they will be very sad. If you want, we will play football together after school.**\n\nÀ retenir : **If + présent, will + verbe**. Jamais **will** après **if**. **unless** = if... not. Avertir : **Be careful! / Watch out! / Don't...!**",
+   "qcm": [
+    {
+     "question": "Selon le gendarme, que se passe-t-il si on rejoint un gang ?",
+     "options": [
+      "on devient riche",
+      "on a des ennuis",
+      "on réussit",
+      "on voyage"
+     ],
+     "reponse": 1,
+     "explication": "you will get into trouble."
+    },
+    {
+     "question": "Structure du conditionnel type 1 :",
+     "options": [
+      "If + will, ... présent",
+      "If + présent, ... will + verbe",
+      "If + passé, ... would",
+      "If + -ing, ... will"
+     ],
+     "reponse": 1,
+     "explication": "If + présent, will + verbe."
+    },
+    {
+     "question": "Complète : If you study, you ___ pass.",
+     "options": [
+      "will",
+      "would",
+      "are",
+      "did"
+     ],
+     "reponse": 0,
+     "explication": "... will + verbe."
+    },
+    {
+     "question": "Complète : If it ___, we will stay at home.",
+     "options": [
+      "will rain",
+      "rains",
+      "rained",
+      "raining"
+     ],
+     "reponse": 1,
+     "explication": "Après if → présent."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "If you will take drugs, you are sick.",
+      "If you take drugs, you will be sick.",
+      "If you take drugs, you be sick.",
+      "If you took drugs, you will sick."
+     ],
+     "reponse": 1,
+     "explication": "If + présent, will."
+    },
+    {
+     "question": "Complète : If he ___, he will go to prison.",
+     "options": [
+      "steal",
+      "steals",
+      "will steal",
+      "stealing"
+     ],
+     "reponse": 1,
+     "explication": "he → steals (présent)."
+    },
+    {
+     "question": "« Unless » veut dire :",
+     "options": [
+      "si ... ne ... pas",
+      "parce que",
+      "quand",
+      "pendant que"
+     ],
+     "reponse": 0,
+     "explication": "unless = if ... not."
+    },
+    {
+     "question": "« Watch out! » :",
+     "options": [
+      "Attention !",
+      "Regarde la montre !",
+      "Sors !",
+      "Viens !"
+     ],
+     "reponse": 0,
+     "explication": "Danger immédiat."
+    },
+    {
+     "question": "« You'd better not go » :",
+     "options": [
+      "Tu ferais mieux de ne pas y aller.",
+      "Tu iras mieux.",
+      "Tu es meilleur.",
+      "Tu ne vas pas bien."
+     ],
+     "reponse": 0,
+     "explication": "had better not."
+    },
+    {
+     "question": "« A fine » (police) :",
+     "options": [
+      "une amende",
+      "une fin",
+      "une fête",
+      "une prison"
+     ],
+     "reponse": 0,
+     "explication": "fine = amende."
+    },
+    {
+     "question": "Complète : If we play sport, we ___ think about drugs.",
+     "options": [
+      "won't",
+      "don't will",
+      "not will",
+      "willn't"
+     ],
+     "reponse": 0,
+     "explication": "will not = won't."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Be careful!",
+     "verso": "Fais attention !"
+    },
+    {
+     "recto": "Watch out!",
+     "verso": "Attention !"
+    },
+    {
+     "recto": "Don't ...!",
+     "verso": "Ne ... pas !"
+    },
+    {
+     "recto": "You'd better not ...",
+     "verso": "Tu ferais mieux de ne pas ..."
+    },
+    {
+     "recto": "If + présent, ... will + verbe",
+     "verso": "If you study, you will pass."
+    },
+    {
+     "recto": "unless",
+     "verso": "si ... ne ... pas"
+    },
+    {
+     "recto": "to warn",
+     "verso": "avertir"
+    },
+    {
+     "recto": "to get into trouble",
+     "verso": "s'attirer des ennuis"
+    },
+    {
+     "recto": "to be arrested",
+     "verso": "être arrêté"
+    },
+    {
+     "recto": "a fine",
+     "verso": "une amende"
+    },
+    {
+     "recto": "bad company",
+     "verso": "les mauvaises fréquentations"
+    },
+    {
+     "recto": "to avoid",
+     "verso": "éviter"
+    },
+    {
+     "recto": "a counsellor",
+     "verso": "un conseiller"
+    },
+    {
+     "recto": "pas de will après if",
+     "verso": "If you take ... (pas If you will take)"
+    }
+   ]
   }
  ]
 }
