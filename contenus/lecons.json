@@ -937,6 +937,165 @@
      "verso": "le week-end"
     }
    ]
+  },
+  {
+   "id": "ang6-08",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The months of the year – Les mois",
+   "texte": "## Objectif\nDire les mois de l'année en anglais.\n\n## Étape 1 : De janvier à juin\n- **January** *janvier*\n- **February** *février*\n- **March** *mars*\n- **April** *avril*\n- **May** *mai*\n- **June** *juin*\n\nAstuce : Beaucoup de mois ressemblent au français : **April** = avril, **March** = mars, **June** = juin.\n\n## Étape 2 : De juillet à décembre\n- **July** *juillet*\n- **August** *août*\n- **September** *septembre*\n- **October** *octobre*\n- **November** *novembre*\n- **December** *décembre*\n\nAstuce : Comme les jours, les mois prennent toujours une **majuscule** : **May**, pas « may ».\n\n## Étape 3 : Quel mois sommes-nous ?\n- **What month is it?** *Quel mois sommes-nous ?*\n- **It is ...** *C'est ...*\n\nExemple : **What month is it?** **It is October.** *C'est octobre.*\nExemple : **What month is it?** **It is January.** *C'est janvier.*\nExemple : **It is March.** *C'est mars.*\nExemple : **It is December.** *C'est décembre.*\n\n## Étape 4 : Dire « en » + mois\n- **in ...** *en ...*\n\nExemple : **School starts in October.** *L'école commence en octobre.*\nExemple : **The rains come in July.** *Les pluies arrivent en juillet.*\nExemple : **It is very hot in May.** *Il fait très chaud en mai.*\nExemple : **We have holidays in August.** *Nous avons des vacances en août.*\nExemple : **April 4th is Senegal's Independence Day.** *Le 4 avril est la fête de l'indépendance du Sénégal.*\n\nAstuce : Devant un mois, on met **in** : **in June**, **in December**.\n\n## Étape 5 : Mon anniversaire\n- **My birthday is in ...** *Mon anniversaire est en ...*\n- **When is your birthday?** *Quand est ton anniversaire ?*\n\nExemple : **My birthday is in May.** *Mon anniversaire est en mai.*\nExemple : **My birthday is in November.** *Mon anniversaire est en novembre.*\nExemple : **When is your birthday?** **It is in February.** *C'est en février.*\n\n## Étape 6 : L'année\n- **a year** *une année*\n- **a month** *un mois*\n\nExemple : **There are twelve months in a year.** *Il y a douze mois dans une année.*\nExemple : **January is the first month.** *Janvier est le premier mois.*\nExemple : **December is the last month.** *Décembre est le dernier mois.*\n\n## Petit dialogue\nTeacher : **Good morning, class! What month is it?**\nAwa : **It is October.**\nTeacher : **Very good! Modou, when is your birthday?**\nModou : **My birthday is in March.**\nTeacher : **And you, Fatou?**\nFatou : **My birthday is in July.**\nTeacher : **Thank you!**\n\nÀ retenir : January, February, March, April, May, June, July, August, September, October, November, December. What month is it? = Quel mois sommes-nous ? in + mois = en + mois.",
+   "qcm": [
+    {
+     "question": "« January » veut dire :",
+     "options": [
+      "juin",
+      "juillet",
+      "janvier",
+      "février"
+     ],
+     "reponse": 2,
+     "explication": "January = janvier."
+    },
+    {
+     "question": "Comment dit-on « août » ?",
+     "options": [
+      "April",
+      "August",
+      "October",
+      "June"
+     ],
+     "reponse": 1,
+     "explication": "August = août."
+    },
+    {
+     "question": "« July » veut dire :",
+     "options": [
+      "juin",
+      "juillet",
+      "janvier",
+      "mai"
+     ],
+     "reponse": 1,
+     "explication": "July = juillet. June = juin."
+    },
+    {
+     "question": "Quel mois vient après March ?",
+     "options": [
+      "May",
+      "February",
+      "April",
+      "June"
+     ],
+     "reponse": 2,
+     "explication": "January, February, March, April…"
+    },
+    {
+     "question": "Combien de mois dans une année ?",
+     "options": [
+      "seven",
+      "ten",
+      "twelve",
+      "twenty"
+     ],
+     "reponse": 2,
+     "explication": "There are twelve months in a year."
+    },
+    {
+     "question": "« Mon anniversaire est en mai » se dit :",
+     "options": [
+      "My birthday is in May.",
+      "My birthday is on May.",
+      "I am May.",
+      "May is my name."
+     ],
+     "reponse": 0,
+     "explication": "Devant un mois, on met in : in May."
+    },
+    {
+     "question": "Pour demander le mois, on dit :",
+     "options": [
+      "What day is it today?",
+      "What month is it?",
+      "How old are you?",
+      "When is it?"
+     ],
+     "reponse": 1,
+     "explication": "What month is it? = Quel mois sommes-nous ?"
+    },
+    {
+     "question": "Quel est le dernier mois de l'année ?",
+     "options": [
+      "November",
+      "January",
+      "December",
+      "October"
+     ],
+     "reponse": 2,
+     "explication": "December is the last month."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "January",
+     "verso": "janvier"
+    },
+    {
+     "recto": "February",
+     "verso": "février"
+    },
+    {
+     "recto": "March",
+     "verso": "mars"
+    },
+    {
+     "recto": "April",
+     "verso": "avril"
+    },
+    {
+     "recto": "May",
+     "verso": "mai"
+    },
+    {
+     "recto": "June",
+     "verso": "juin"
+    },
+    {
+     "recto": "July",
+     "verso": "juillet"
+    },
+    {
+     "recto": "August",
+     "verso": "août"
+    },
+    {
+     "recto": "September",
+     "verso": "septembre"
+    },
+    {
+     "recto": "October",
+     "verso": "octobre"
+    },
+    {
+     "recto": "November",
+     "verso": "novembre"
+    },
+    {
+     "recto": "December",
+     "verso": "décembre"
+    },
+    {
+     "recto": "What month is it?",
+     "verso": "Quel mois sommes-nous ?"
+    },
+    {
+     "recto": "My birthday is in ...",
+     "verso": "Mon anniversaire est en ..."
+    },
+    {
+     "recto": "twelve months in a year",
+     "verso": "douze mois dans une année"
+    }
+   ]
   }
  ]
 }
