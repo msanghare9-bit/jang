@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../models.dart';
 import '../../services/content_repo.dart';
+import '../../services/pack_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import 'admin_widgets.dart';
@@ -217,6 +220,69 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
   List<Lesson>? _lessons;
   Map<String, FlashcardDeck> _decks = const {};
   bool _migrated = false;
+  List<LessonPack> _packs = const [];
+  bool _packsLoaded = false;
+
+  Future<void> _loadPacks() async {
+    _packsLoaded = true;
+    final all = await PackService.instance.fetch();
+    final exam = await ContentRepo.instance.exam(widget.subject.examId);
+    final fit = all.where((p) => p.fits(widget.subject, exam?.name ?? '')).toList();
+    if (mounted) setState(() => _packs = fit);
+  }
+
+  List<LessonPack> get _newPacks {
+    final have = {for (final l in _lessons ?? const <Lesson>[]) l.id};
+    return _packs.where((p) => !have.contains(p.lessonId)).toList();
+  }
+
+  int get _nextOrder {
+    final lessons = _lessons ?? const <Lesson>[];
+    return lessons.isEmpty ? 0 : lessons.map((l) => l.order).reduce((a, b) => a > b ? a : b) + 1;
+  }
+
+  void _addPacks(List<LessonPack> packs) {
+    PackService.instance.add(widget.subject, packs, _nextOrder);
+    showMessage(context,
+        packs.length == 1 ? 'Leçon ajoutée.' : '${packs.length} leçons ajoutées.');
+  }
+
+  Widget _packsCard(Color color) {
+    final packs = _newPacks;
+    if (packs.isEmpty) return const SizedBox.shrink();
+    return Card(
+      margin: const EdgeInsets.only(bottom: 14),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text('✨ Leçons prêtes à ajouter (${packs.length})', style: titleStyle(17, weight: 800)),
+            const SizedBox(height: 4),
+            Text('Texte, QCM et fiches de révision déjà faits. Tu pourras tout modifier ensuite.',
+                style: Theme.of(context).textTheme.bodySmall),
+            const SizedBox(height: 8),
+            for (final p in packs)
+              Row(children: [
+                Expanded(
+                    child: Text(p.title,
+                        style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15))),
+                TextButton(onPressed: () => _addPacks([p]), child: const Text('Ajouter')),
+              ]),
+            if (packs.length > 1) ...[
+              const SizedBox(height: 6),
+              FilledButton.icon(
+                style: FilledButton.styleFrom(backgroundColor: color),
+                onPressed: () => _addPacks(packs),
+                icon: const Icon(Icons.download_done_rounded),
+                label: const Text('Tout ajouter'),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
 
   @override
   Future<void> load() async {
@@ -226,6 +292,7 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
       // Les anciennes leçons rangées par chapitres deviennent une simple liste.
       if (await repo.migrateSubject(widget.subject)) return; // load() sera rappelé
     }
+    if (!_packsLoaded) unawaited(_loadPacks());
     final l = await repo.lessonsOfSubject(widget.subject.id);
     final d = await repo.decksOfSubject(widget.subject.id);
     if (mounted) {
@@ -237,8 +304,7 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
   }
 
   void _openLesson(Lesson? lesson) {
-    final lessons = _lessons ?? const <Lesson>[];
-    final next = lessons.isEmpty ? 0 : lessons.map((l) => l.order).reduce((a, b) => a > b ? a : b) + 1;
+    final next = _nextOrder;
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -262,6 +328,7 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
           : ListView(
               padding: const EdgeInsets.fromLTRB(16, 14, 16, 28),
               children: [
+                _packsCard(color),
                 Text('${lessons.length} leçon${lessons.length > 1 ? 's' : ''}',
                     style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(height: 8),
