@@ -3726,6 +3726,2394 @@
      "verso": "la pharmacie"
     }
    ]
+  },
+  {
+   "id": "ang6-28",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Personal pronouns – Les pronoms personnels",
+   "texte": "## Objectif\nUtiliser les **pronoms personnels** pour parler des personnes et des choses sans répéter leur nom.\n\n## Étape 1 : Une situation\nAwa parle de sa famille.\n**This is my brother Modou. He is twelve. He likes football. This is my sister Fatou. She is eight. She likes music. My parents are farmers. They work in the field. I love them!**\n\n## Étape 2 : Les pronoms sujets (qui fait l'action)\n- **I** *je*\n- **you** *tu / vous*\n- **he** *il* (un garçon, un homme)\n- **she** *elle* (une fille, une femme)\n- **it** *il / elle* (une chose, un animal)\n- **we** *nous*\n- **they** *ils / elles*\n\nExemple : **Modou is my friend. He is kind.** *Modou est mon ami. Il est gentil.*\nExemple : **Awa is a student. She is in 6e.** *Awa est élève. Elle est en 6e.*\nExemple : **The goat is white. It is in the yard.** *La chèvre est blanche. Elle est dans la cour.*\nExemple : **Ibou and I play football. We play every day.** *Ibou et moi jouons au foot. Nous jouons tous les jours.*\nExemple : **My cousins live in Dakar. They are nice.** *Mes cousins habitent à Dakar. Ils sont gentils.*\n\nAttention : En anglais, une chose ou un animal = **it**. Un sac, une table, une mangue → **it**.\n\n## Étape 3 : Les pronoms compléments (après le verbe)\n- **I → me** *me / moi*\n- **you → you** *te / toi / vous*\n- **he → him** *le / lui*\n- **she → her** *la / elle*\n- **it → it** *le / la*\n- **we → us** *nous*\n- **they → them** *les / eux / elles*\n\nExemple : **Help me, please!** *Aide-moi, s'il te plaît !*\nExemple : **I know him. He is Modou.** *Je le connais. C'est Modou.*\nExemple : **Call her!** *Appelle-la !*\nExemple : **I like mangoes. I eat them every day.** *J'aime les mangues. Je les mange tous les jours.*\nExemple : **The teacher helps us.** *Le professeur nous aide.*\n\n## Étape 4 : Avant ou après le verbe ?\n- Avant le verbe → pronom **sujet** : **She** helps me.\n- Après le verbe ou après **with, for, to** → pronom **complément** : She helps **me**. Come **with us**!\n\nExemple : **He loves her.** *Il l'aime.*\nExemple : **She loves him.** *Elle l'aime.*\nExemple : **This gift is for you.** *Ce cadeau est pour toi.*\n\n## Étape 5 : À moi de parler !\nPrésente ton meilleur ami :\nExemple : **This is Lamine. He is my best friend. I play with him every day. We are in the same class.**\n\nÀ retenir : Sujets : I, you, he, she, it, we, they. Compléments : me, you, him, her, it, us, them.",
+   "qcm": [
+    {
+     "question": "Complète : Awa is my friend. ___ is kind.",
+     "options": [
+      "He",
+      "She",
+      "It",
+      "They"
+     ],
+     "reponse": 1,
+     "explication": "Awa = fille → she."
+    },
+    {
+     "question": "Complète : The goat is white. ___ is in the yard.",
+     "options": [
+      "He",
+      "She",
+      "It",
+      "We"
+     ],
+     "reponse": 2,
+     "explication": "Un animal → it."
+    },
+    {
+     "question": "Complète : My cousins live in Dakar. ___ are nice.",
+     "options": [
+      "We",
+      "He",
+      "They",
+      "It"
+     ],
+     "reponse": 2,
+     "explication": "Plusieurs personnes → they."
+    },
+    {
+     "question": "Complète : Help ___, please!",
+     "options": [
+      "I",
+      "me",
+      "my",
+      "mine"
+     ],
+     "reponse": 1,
+     "explication": "Après le verbe : me."
+    },
+    {
+     "question": "Complète : I know Modou. I like ___.",
+     "options": [
+      "he",
+      "his",
+      "him",
+      "her"
+     ],
+     "reponse": 2,
+     "explication": "Modou après le verbe → him."
+    },
+    {
+     "question": "Complète : This gift is for ___ (nous).",
+     "options": [
+      "we",
+      "us",
+      "our",
+      "ours"
+     ],
+     "reponse": 1,
+     "explication": "Après for : us."
+    },
+    {
+     "question": "Complète : I like mangoes. I eat ___ every day.",
+     "options": [
+      "they",
+      "them",
+      "their",
+      "it"
+     ],
+     "reponse": 1,
+     "explication": "Plusieurs choses après le verbe → them."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I / me",
+     "verso": "je / me, moi"
+    },
+    {
+     "recto": "he / him",
+     "verso": "il / le, lui"
+    },
+    {
+     "recto": "she / her",
+     "verso": "elle / la, elle"
+    },
+    {
+     "recto": "it",
+     "verso": "il, elle (chose, animal)"
+    },
+    {
+     "recto": "we / us",
+     "verso": "nous"
+    },
+    {
+     "recto": "they / them",
+     "verso": "ils, elles / les, eux"
+    },
+    {
+     "recto": "Help me!",
+     "verso": "Aide-moi !"
+    },
+    {
+     "recto": "I know him.",
+     "verso": "Je le connais."
+    }
+   ]
+  },
+  {
+   "id": "ang6-29",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Possessive adjectives – Les adjectifs possessifs",
+   "texte": "## Objectif\nUtiliser les **adjectifs possessifs** pour dire à qui est quelque chose.\n\n## Étape 1 : Une situation\nLe professeur trouve des affaires dans la classe.\nTeacher : **Whose bag is this?** *À qui est ce sac ?*\nAwa : **It's my bag!** *C'est mon sac !*\nTeacher : **Modou, is this your pen?**\nModou : **No, it's his pen. It's Ibou's pen.** *Non, c'est son stylo. C'est le stylo d'Ibou.*\n\n## Étape 2 : Les adjectifs possessifs\n- **I → my** *mon, ma, mes*\n- **you → your** *ton, ta, tes / votre, vos*\n- **he → his** *son, sa, ses (à lui)*\n- **she → her** *son, sa, ses (à elle)*\n- **it → its** *son, sa, ses (à une chose / un animal)*\n- **we → our** *notre, nos*\n- **they → their** *leur, leurs*\n\nAstuce : En anglais, **my** ne change pas : **my** pen, **my** bag, **my** books. Pas de « ma » ou « mes » !\n\n## Étape 3 : His ou her ?\nOn regarde **le propriétaire**, pas l'objet.\nExemple : **Modou and his mother.** *Modou et sa mère.* (Modou = garçon → **his**)\nExemple : **Awa and her father.** *Awa et son père.* (Awa = fille → **her**)\nExemple : **Ibou is washing his shirt.** *Ibou lave sa chemise.*\nExemple : **Fatou is reading her book.** *Fatou lit son livre.*\n\nAttention : En français, « sa mère » peut être à un garçon ou à une fille. En anglais, on choisit **his** (à lui) ou **her** (à elle).\n\n## Étape 4 : Plus d'exemples\nExemple : **This is my school.** *C'est mon école.*\nExemple : **What is your name?** *Quel est ton nom ?*\nExemple : **The dog is eating its food.** *Le chien mange sa nourriture.*\nExemple : **Our teacher is Mr Diop.** *Notre professeur est M. Diop.*\nExemple : **The students are in their classroom.** *Les élèves sont dans leur classe.*\n\n## Étape 5 : Le « 's » pour dire « de »\nExemple : **Ibou's pen** *le stylo d'Ibou*\nExemple : **my father's car** *la voiture de mon père*\nExemple : **Awa's mother** *la mère d'Awa*\n\n## Étape 6 : À moi de parler !\nPrésente les affaires de ta famille :\nExemple : **This is my bag. This is my sister's dress. Her dress is blue. This is our house.**\n\nÀ retenir : my, your, his, her, its, our, their. **his** = à lui, **her** = à elle. **Ibou's** pen = le stylo d'Ibou.",
+   "qcm": [
+    {
+     "question": "« Mon sac » se dit :",
+     "options": [
+      "me bag",
+      "my bag",
+      "mine bag",
+      "I bag"
+     ],
+     "reponse": 1,
+     "explication": "my = mon, ma, mes."
+    },
+    {
+     "question": "Complète : Modou and ___ mother.",
+     "options": [
+      "her",
+      "his",
+      "its",
+      "their"
+     ],
+     "reponse": 1,
+     "explication": "Modou = garçon → his."
+    },
+    {
+     "question": "Complète : Awa is reading ___ book.",
+     "options": [
+      "his",
+      "her",
+      "its",
+      "my"
+     ],
+     "reponse": 1,
+     "explication": "Awa = fille → her."
+    },
+    {
+     "question": "Complète : ___ teacher is Mr Diop (notre).",
+     "options": [
+      "Our",
+      "We",
+      "Us",
+      "Ours"
+     ],
+     "reponse": 0,
+     "explication": "our = notre."
+    },
+    {
+     "question": "Complète : The students are in ___ classroom.",
+     "options": [
+      "there",
+      "their",
+      "they",
+      "them"
+     ],
+     "reponse": 1,
+     "explication": "their = leur."
+    },
+    {
+     "question": "« Le stylo d'Ibou » se dit :",
+     "options": [
+      "the pen of Ibou",
+      "Ibou's pen",
+      "Ibou pen",
+      "pen's Ibou"
+     ],
+     "reponse": 1,
+     "explication": "Ibou's pen."
+    },
+    {
+     "question": "Complète : The dog is eating ___ food.",
+     "options": [
+      "it's",
+      "its",
+      "his",
+      "her"
+     ],
+     "reponse": 1,
+     "explication": "Un animal → its (sans apostrophe)."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "my",
+     "verso": "mon, ma, mes"
+    },
+    {
+     "recto": "your",
+     "verso": "ton, ta, tes / votre"
+    },
+    {
+     "recto": "his",
+     "verso": "son, sa, ses (à lui)"
+    },
+    {
+     "recto": "her",
+     "verso": "son, sa, ses (à elle)"
+    },
+    {
+     "recto": "its",
+     "verso": "son, sa (chose, animal)"
+    },
+    {
+     "recto": "our",
+     "verso": "notre, nos"
+    },
+    {
+     "recto": "their",
+     "verso": "leur, leurs"
+    },
+    {
+     "recto": "Ibou's pen",
+     "verso": "le stylo d'Ibou"
+    }
+   ]
+  },
+  {
+   "id": "ang6-30",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Possessive pronouns – Les pronoms possessifs",
+   "texte": "## Objectif\nUtiliser les **pronoms possessifs** : mine, yours, his, hers…\n\n## Étape 1 : Une situation\nAprès le match, il y a des bouteilles d'eau sur le banc.\nModou : **Is this bottle yours, Awa?** *Cette bouteille est à toi, Awa ?*\nAwa : **No, it isn't mine. Mine is red.** *Non, elle n'est pas à moi. La mienne est rouge.*\nModou : **Is it Ibou's?**\nAwa : **Yes, it's his.** *Oui, c'est la sienne.*\n\n## Étape 2 : Les pronoms possessifs\nIls remplacent **adjectif + nom** :\n- **my bag → mine** *le mien, la mienne*\n- **your bag → yours** *le tien, la tienne*\n- **his bag → his** *le sien (à lui)*\n- **her bag → hers** *le sien (à elle)*\n- **our bag → ours** *le nôtre*\n- **their bag → theirs** *le leur*\n\nExemple : **This is my pen. → This pen is mine.** *Ce stylo est à moi.*\nExemple : **This is your book. → This book is yours.** *Ce livre est à toi.*\nExemple : **This is her bag. → This bag is hers.** *Ce sac est à elle.*\nExemple : **This is our house. → This house is ours.** *Cette maison est à nous.*\n\n## Étape 3 : Demander à qui est un objet\n- **Whose ... is this?** *À qui est ce ... ?*\n\nExemple : **Whose ruler is this?** **It's mine.** *À qui est cette règle ? C'est la mienne.*\nExemple : **Whose shoes are these?** **They're his.** *À qui sont ces chaussures ? Ce sont les siennes.*\nExemple : **Whose goats are these?** **They're theirs.** *À qui sont ces chèvres ? Ce sont les leurs.*\n\n## Étape 4 : Adjectif ou pronom ?\n- Adjectif + nom : **my** pen, **her** bag.\n- Pronom seul (pas de nom après) : **mine**, **hers**.\n\nExemple : **Your bag is blue. Mine is black.** *Ton sac est bleu. Le mien est noir.*\nExemple : **My house is small. Theirs is big.** *Ma maison est petite. La leur est grande.*\n\nAttention : On ne dit jamais « the mine ». On dit simplement **mine**.\n\n## Étape 5 : À moi de parler !\nPrends des objets de tes camarades et demande :\nExemple : **Whose pen is this? – It's mine! / It's hers! / It's his!**\n\nÀ retenir : mine, yours, his, hers, ours, theirs. **Whose ... is this?** = À qui est ... ?",
+   "qcm": [
+    {
+     "question": "« Ce stylo est à moi » se dit :",
+     "options": [
+      "This pen is my.",
+      "This pen is mine.",
+      "This pen is me.",
+      "This pen is I."
+     ],
+     "reponse": 1,
+     "explication": "mine = le mien / à moi."
+    },
+    {
+     "question": "Complète : This bag is Awa's. It's ___.",
+     "options": [
+      "his",
+      "her",
+      "hers",
+      "she"
+     ],
+     "reponse": 2,
+     "explication": "à elle → hers."
+    },
+    {
+     "question": "Complète : This book is Modou's. It's ___.",
+     "options": [
+      "his",
+      "him",
+      "he",
+      "hers"
+     ],
+     "reponse": 0,
+     "explication": "à lui → his."
+    },
+    {
+     "question": "Pour demander « À qui est ce sac ? » :",
+     "options": [
+      "Who bag is this?",
+      "Whose bag is this?",
+      "Who's bag this?",
+      "What bag is this?"
+     ],
+     "reponse": 1,
+     "explication": "Whose ... is this?"
+    },
+    {
+     "question": "Complète : Your bag is blue. ___ is black.",
+     "options": [
+      "My",
+      "Mine",
+      "Me",
+      "The mine"
+     ],
+     "reponse": 1,
+     "explication": "Pronom seul → mine."
+    },
+    {
+     "question": "Complète : This house is ours. Ça veut dire :",
+     "options": [
+      "à eux",
+      "à nous",
+      "à vous",
+      "à elle"
+     ],
+     "reponse": 1,
+     "explication": "ours = à nous."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "It's the mine.",
+      "It's mine.",
+      "It's my.",
+      "It's mines."
+     ],
+     "reponse": 1,
+     "explication": "On ne dit jamais « the mine »."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "mine",
+     "verso": "le mien, à moi"
+    },
+    {
+     "recto": "yours",
+     "verso": "le tien, à toi"
+    },
+    {
+     "recto": "his",
+     "verso": "le sien (à lui)"
+    },
+    {
+     "recto": "hers",
+     "verso": "le sien (à elle)"
+    },
+    {
+     "recto": "ours",
+     "verso": "le nôtre, à nous"
+    },
+    {
+     "recto": "theirs",
+     "verso": "le leur, à eux"
+    },
+    {
+     "recto": "Whose bag is this?",
+     "verso": "À qui est ce sac ?"
+    },
+    {
+     "recto": "It's mine.",
+     "verso": "C'est à moi."
+    }
+   ]
+  },
+  {
+   "id": "ang6-31",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The plural – Le pluriel",
+   "texte": "## Objectif\nFormer le **pluriel** des noms en anglais.\n\n## Étape 1 : Une situation\nAu marché, Fatou fait ses courses.\n**I want two mangoes, three tomatoes, five onions, a fish and two loaves of bread. My brothers want some sweets.**\n\n## Étape 2 : La règle simple : on ajoute S\nExemple : **a book → two books** *deux livres*\nExemple : **a pen → three pens** *trois stylos*\nExemple : **a goat → ten goats** *dix chèvres*\nExemple : **a student → forty students** *quarante élèves*\n\n## Étape 3 : On ajoute ES\nAprès **s, ss, sh, ch, x, o** :\nExemple : **a bus → two buses** *deux bus*\nExemple : **a dress → two dresses** *deux robes*\nExemple : **a dish → three dishes** *trois plats*\nExemple : **a watch → two watches** *deux montres*\nExemple : **a box → four boxes** *quatre boîtes*\nExemple : **a mango → two mangoes**, **a tomato → tomatoes**, **a potato → potatoes**\n\n## Étape 4 : Y devient IES\nConsonne + **y** → **ies** :\nExemple : **a baby → two babies** *deux bébés*\nExemple : **a city → many cities** *beaucoup de villes*\nExemple : **a family → two families** *deux familles*\nAttention : voyelle + y → on ajoute juste **s** : **a boy → two boys**, **a day → seven days**.\n\n## Étape 5 : F / FE devient VES\nExemple : **a knife → two knives** *deux couteaux*\nExemple : **a leaf → many leaves** *beaucoup de feuilles*\nExemple : **a wife → wives** *épouses*\n\n## Étape 6 : Les pluriels irréguliers\nIls changent complètement :\n- **a man → men** *hommes*\n- **a woman → women** *femmes*\n- **a child → children** *enfants*\n- **a foot → feet** *pieds*\n- **a tooth → teeth** *dents*\n- **a mouse → mice** *souris*\n- **a sheep → sheep** *moutons* (ne change pas !)\n- **a fish → fish** *poissons* (ne change pas !)\n\nExemple : **There are many children in the yard.** *Il y a beaucoup d'enfants dans la cour.*\nExemple : **My father has ten sheep for Tabaski.** *Mon père a dix moutons pour la Tabaski.*\n\n## Étape 7 : À moi de parler !\nCompte les choses autour de toi :\nExemple : **In my class, there are forty students, two windows, twenty tables and one blackboard.**\n\nÀ retenir : + **s** (books), + **es** (buses, mangoes), y → **ies** (babies), f → **ves** (knives). Irréguliers : men, women, children, feet, teeth, sheep, fish.",
+   "qcm": [
+    {
+     "question": "Le pluriel de « book » est :",
+     "options": [
+      "bookes",
+      "books",
+      "bookies",
+      "book"
+     ],
+     "reponse": 1,
+     "explication": "On ajoute s."
+    },
+    {
+     "question": "Le pluriel de « bus » est :",
+     "options": [
+      "buss",
+      "buses",
+      "busies",
+      "bus"
+     ],
+     "reponse": 1,
+     "explication": "Après s → es."
+    },
+    {
+     "question": "Le pluriel de « baby » est :",
+     "options": [
+      "babys",
+      "babies",
+      "babyes",
+      "baby"
+     ],
+     "reponse": 1,
+     "explication": "Consonne + y → ies."
+    },
+    {
+     "question": "Le pluriel de « child » est :",
+     "options": [
+      "childs",
+      "childrens",
+      "children",
+      "childes"
+     ],
+     "reponse": 2,
+     "explication": "child → children."
+    },
+    {
+     "question": "Le pluriel de « man » est :",
+     "options": [
+      "mans",
+      "men",
+      "mens",
+      "manes"
+     ],
+     "reponse": 1,
+     "explication": "man → men."
+    },
+    {
+     "question": "Le pluriel de « knife » est :",
+     "options": [
+      "knifes",
+      "knives",
+      "knifs",
+      "knivs"
+     ],
+     "reponse": 1,
+     "explication": "f → ves."
+    },
+    {
+     "question": "« Dix moutons » se dit :",
+     "options": [
+      "ten sheeps",
+      "ten sheep",
+      "ten sheepes",
+      "ten sheeps'"
+     ],
+     "reponse": 1,
+     "explication": "sheep ne change pas."
+    },
+    {
+     "question": "Le pluriel de « boy » est :",
+     "options": [
+      "boies",
+      "boys",
+      "boyes",
+      "boy"
+     ],
+     "reponse": 1,
+     "explication": "Voyelle + y → s."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "book → books",
+     "verso": "+ s"
+    },
+    {
+     "recto": "bus → buses",
+     "verso": "+ es"
+    },
+    {
+     "recto": "mango → mangoes",
+     "verso": "+ es"
+    },
+    {
+     "recto": "baby → babies",
+     "verso": "y → ies"
+    },
+    {
+     "recto": "knife → knives",
+     "verso": "f → ves"
+    },
+    {
+     "recto": "man → men",
+     "verso": "hommes"
+    },
+    {
+     "recto": "woman → women",
+     "verso": "femmes"
+    },
+    {
+     "recto": "child → children",
+     "verso": "enfants"
+    },
+    {
+     "recto": "sheep → sheep",
+     "verso": "ne change pas"
+    },
+    {
+     "recto": "tooth → teeth",
+     "verso": "dents"
+    }
+   ]
+  },
+  {
+   "id": "ang6-32",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "School subjects – Les matières",
+   "texte": "## Objectif\nParler des **matières** de l'école et de son emploi du temps.\n\n## Étape 1 : Une situation\nModou montre son emploi du temps à Awa.\nAwa : **What subjects do you have on Monday?** *Quelles matières as-tu le lundi ?*\nModou : **I have maths, English and history.**\nAwa : **What is your favourite subject?** *Quelle est ta matière préférée ?*\nModou : **My favourite subject is English. And yours?**\nAwa : **Mine is science!**\n\n## Étape 2 : Les matières\n- **maths** *les maths*\n- **French** *le français*\n- **English** *l'anglais*\n- **Arabic** *l'arabe*\n- **history** *l'histoire*\n- **geography** *la géographie*\n- **science** *les sciences (SVT)*\n- **physics and chemistry** *physique-chimie*\n- **Islamic education** *éducation islamique*\n- **civic education** *éducation civique*\n- **PE (physical education)** *l'EPS / le sport*\n- **art** *le dessin / les arts*\n\nAstuce : Les langues prennent une majuscule : **English**, **French**, **Arabic**.\n\n## Étape 3 : Parler de son emploi du temps\n- **I have ... on Monday.** *J'ai ... le lundi.*\n- **At eight o'clock, I have ...** *À huit heures, j'ai ...*\n\nExemple : **On Tuesday, I have French and maths.** *Le mardi, j'ai français et maths.*\nExemple : **At ten o'clock, we have English.** *À dix heures, nous avons anglais.*\nExemple : **We have PE on Thursday afternoon.** *Nous avons sport le jeudi après-midi.*\nExemple : **We have Arabic every day.** *Nous avons arabe tous les jours.*\n\n## Étape 4 : Dire ce qu'on aime\nExemple : **My favourite subject is maths.** *Ma matière préférée est les maths.*\nExemple : **I like history because it is interesting.** *J'aime l'histoire parce que c'est intéressant.*\nExemple : **I don't like physics because it is difficult.** *Je n'aime pas la physique parce que c'est difficile.*\nExemple : **English is easy and fun!** *L'anglais est facile et amusant !*\n\n- **easy** *facile* — **difficult** *difficile*\n- **interesting** *intéressant* — **boring** *ennuyeux*\n- **useful** *utile* — **fun** *amusant*\n\n## Étape 5 : À moi de parler !\nExemple : **On Monday, I have maths, English and Arabic. My favourite subject is science because it is interesting. I don't like history because it is difficult.**\n\nÀ retenir : What subjects do you have? = Quelles matières as-tu ? My favourite subject is ... = Ma matière préférée est ... because = parce que.",
+   "qcm": [
+    {
+     "question": "« History » veut dire :",
+     "options": [
+      "la géographie",
+      "l'histoire",
+      "les sciences",
+      "l'arabe"
+     ],
+     "reponse": 1,
+     "explication": "history = histoire."
+    },
+    {
+     "question": "Comment dit-on « les maths » ?",
+     "options": [
+      "maths",
+      "physics",
+      "art",
+      "science"
+     ],
+     "reponse": 0,
+     "explication": "maths."
+    },
+    {
+     "question": "« PE » veut dire :",
+     "options": [
+      "le dessin",
+      "le sport (EPS)",
+      "la physique",
+      "le français"
+     ],
+     "reponse": 1,
+     "explication": "PE = physical education."
+    },
+    {
+     "question": "Quelle matière prend une majuscule ?",
+     "options": [
+      "maths",
+      "history",
+      "English",
+      "science"
+     ],
+     "reponse": 2,
+     "explication": "Les langues : English, French, Arabic."
+    },
+    {
+     "question": "« Ma matière préférée est l'anglais » se dit :",
+     "options": [
+      "My favourite subject is English.",
+      "I favourite English.",
+      "My subject favourite is English.",
+      "English is my subject."
+     ],
+     "reponse": 0,
+     "explication": "My favourite subject is ..."
+    },
+    {
+     "question": "« Difficult » veut dire :",
+     "options": [
+      "facile",
+      "intéressant",
+      "difficile",
+      "ennuyeux"
+     ],
+     "reponse": 2,
+     "explication": "difficult = difficile."
+    },
+    {
+     "question": "Pour donner une raison, on dit :",
+     "options": [
+      "but",
+      "because",
+      "and",
+      "so"
+     ],
+     "reponse": 1,
+     "explication": "because = parce que."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "maths",
+     "verso": "les maths"
+    },
+    {
+     "recto": "French",
+     "verso": "le français"
+    },
+    {
+     "recto": "English",
+     "verso": "l'anglais"
+    },
+    {
+     "recto": "Arabic",
+     "verso": "l'arabe"
+    },
+    {
+     "recto": "history",
+     "verso": "l'histoire"
+    },
+    {
+     "recto": "geography",
+     "verso": "la géographie"
+    },
+    {
+     "recto": "science",
+     "verso": "les sciences (SVT)"
+    },
+    {
+     "recto": "PE",
+     "verso": "le sport (EPS)"
+    },
+    {
+     "recto": "My favourite subject is ...",
+     "verso": "Ma matière préférée est ..."
+    },
+    {
+     "recto": "easy / difficult",
+     "verso": "facile / difficile"
+    }
+   ]
+  },
+  {
+   "id": "ang6-33",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Prepositions of place – Les prépositions de lieu",
+   "texte": "## Objectif\nDire **où** se trouvent les choses avec les prépositions de lieu.\n\n## Étape 1 : Une situation\nAwa cherche son téléphone.\nAwa : **Mum, where is my phone?** *Maman, où est mon téléphone ?*\nMother : **It's on the table.** *Il est sur la table.*\nAwa : **No, it isn't!**\nMother : **Look under your bed!** *Regarde sous ton lit !*\nAwa : **Yes! It's here. Thank you!**\n\n## Étape 2 : Les prépositions\n- **in** *dans*\n- **on** *sur*\n- **under** *sous*\n- **next to** *à côté de*\n- **behind** *derrière*\n- **in front of** *devant*\n- **between** *entre*\n- **opposite** *en face de*\n\n## Étape 3 : Des exemples dans la classe\nExemple : **The books are in my bag.** *Les livres sont dans mon sac.*\nExemple : **The pen is on the table.** *Le stylo est sur la table.*\nExemple : **The cat is under the chair.** *Le chat est sous la chaise.*\nExemple : **Awa sits next to Fatou.** *Awa est assise à côté de Fatou.*\nExemple : **The teacher stands in front of the blackboard.** *Le professeur est debout devant le tableau.*\nExemple : **The map is behind the teacher.** *La carte est derrière le professeur.*\nExemple : **My table is between the door and the window.** *Ma table est entre la porte et la fenêtre.*\n\n## Étape 4 : Des exemples dans le village\nExemple : **The goats are behind the house.** *Les chèvres sont derrière la maison.*\nExemple : **The shop is opposite the mosque.** *La boutique est en face de la mosquée.*\nExemple : **The well is in the middle of the village.** *Le puits est au milieu du village.*\nExemple : **The car is in front of the school.** *La voiture est devant l'école.*\n\n## Étape 5 : Poser la question\n- **Where is ...?** *Où est ... ?* (une chose)\n- **Where are ...?** *Où sont ... ?* (plusieurs choses)\n\nExemple : **Where is the ball?** **It's under the tree.** *Il est sous l'arbre.*\nExemple : **Where are my shoes?** **They're next to the door.** *Elles sont à côté de la porte.*\n\n## Étape 6 : À moi de parler !\nDécris ta chambre ou ta classe :\nExemple : **My bed is next to the window. My bag is under the bed. My books are on the table.**\n\nÀ retenir : in, on, under, next to, behind, in front of, between, opposite. **Where is ...? – It's ...**",
+   "qcm": [
+    {
+     "question": "« Under » veut dire :",
+     "options": [
+      "sur",
+      "sous",
+      "dans",
+      "derrière"
+     ],
+     "reponse": 1,
+     "explication": "under = sous."
+    },
+    {
+     "question": "« Le stylo est sur la table » se dit :",
+     "options": [
+      "The pen is in the table.",
+      "The pen is on the table.",
+      "The pen is under the table.",
+      "The pen is at table."
+     ],
+     "reponse": 1,
+     "explication": "on = sur."
+    },
+    {
+     "question": "« Next to » veut dire :",
+     "options": [
+      "en face de",
+      "à côté de",
+      "entre",
+      "devant"
+     ],
+     "reponse": 1,
+     "explication": "next to = à côté de."
+    },
+    {
+     "question": "« Behind » veut dire :",
+     "options": [
+      "devant",
+      "derrière",
+      "sous",
+      "entre"
+     ],
+     "reponse": 1,
+     "explication": "behind = derrière."
+    },
+    {
+     "question": "« Devant » se dit :",
+     "options": [
+      "behind",
+      "opposite",
+      "in front of",
+      "between"
+     ],
+     "reponse": 2,
+     "explication": "in front of = devant."
+    },
+    {
+     "question": "Pour demander où sont les chaussures :",
+     "options": [
+      "Where is my shoes?",
+      "Where are my shoes?",
+      "Where my shoes?",
+      "What are my shoes?"
+     ],
+     "reponse": 1,
+     "explication": "Plusieurs → Where are ...?"
+    },
+    {
+     "question": "« Between » veut dire :",
+     "options": [
+      "entre",
+      "dans",
+      "à côté",
+      "loin"
+     ],
+     "reponse": 0,
+     "explication": "between = entre."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "in",
+     "verso": "dans"
+    },
+    {
+     "recto": "on",
+     "verso": "sur"
+    },
+    {
+     "recto": "under",
+     "verso": "sous"
+    },
+    {
+     "recto": "next to",
+     "verso": "à côté de"
+    },
+    {
+     "recto": "behind",
+     "verso": "derrière"
+    },
+    {
+     "recto": "in front of",
+     "verso": "devant"
+    },
+    {
+     "recto": "between",
+     "verso": "entre"
+    },
+    {
+     "recto": "opposite",
+     "verso": "en face de"
+    },
+    {
+     "recto": "Where is ...?",
+     "verso": "Où est ... ?"
+    }
+   ]
+  },
+  {
+   "id": "ang6-34",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Ordinal numbers – Les nombres ordinaux",
+   "texte": "## Objectif\nUtiliser les **nombres ordinaux** : premier, deuxième, troisième…\n\n## Étape 1 : Une situation\nLes résultats de la course à l'école.\n**Modou is first! Awa is second. Ibou is third. Fatou is fourth.**\n*Modou est premier ! Awa est deuxième. Ibou est troisième. Fatou est quatrième.*\n\n## Étape 2 : Les ordinaux de 1 à 10\n- **1st → first** *premier*\n- **2nd → second** *deuxième*\n- **3rd → third** *troisième*\n- **4th → fourth** *quatrième*\n- **5th → fifth** *cinquième*\n- **6th → sixth** *sixième*\n- **7th → seventh** *septième*\n- **8th → eighth** *huitième*\n- **9th → ninth** *neuvième*\n- **10th → tenth** *dixième*\n\nAstuce : En général, on ajoute **th** au nombre : six → **sixth**, seven → **seventh**.\nAttention : **first, second, third** sont différents. Et attention à **fifth**, **eighth**, **ninth**, **twelfth**.\n\n## Étape 3 : Après 10\nExemple : **11th → eleventh**, **12th → twelfth**, **13th → thirteenth**, **20th → twentieth**\nExemple : **21st → twenty-first**, **22nd → twenty-second**, **23rd → twenty-third**, **30th → thirtieth**\n\n## Étape 4 : La classe et l'étage\nExemple : **I am in the sixth grade.** *Je suis en sixième année.*\nExemple : **January is the first month of the year.** *Janvier est le premier mois de l'année.*\nExemple : **Wednesday is the third day of the week.** *Mercredi est le troisième jour de la semaine.*\nExemple : **My aunt lives on the second floor.** *Ma tante habite au deuxième étage.*\n\n## Étape 5 : Les dates\nOn utilise les ordinaux pour les dates.\n- **What's the date today?** *Quelle est la date aujourd'hui ?*\n- **It's the 4th of April.** *C'est le 4 avril.*\n\nExemple : **Senegal's Independence Day is on the 4th of April.** *La fête de l'indépendance du Sénégal est le 4 avril.*\nExemple : **My birthday is on the 15th of May.** *Mon anniversaire est le 15 mai.*\nExemple : **School starts on the 1st of October.** *L'école commence le 1er octobre.*\n\n## Étape 6 : À moi de parler !\nExemple : **My birthday is on the 12th of March. I am the second child in my family. My classroom is the third on the left.**\n\nÀ retenir : first, second, third, fourth, fifth… **1st, 2nd, 3rd, 4th**. Les dates : **the 4th of April**.",
+   "qcm": [
+    {
+     "question": "« First » veut dire :",
+     "options": [
+      "un",
+      "premier",
+      "deuxième",
+      "troisième"
+     ],
+     "reponse": 1,
+     "explication": "first = premier."
+    },
+    {
+     "question": "Comment dit-on « troisième » ?",
+     "options": [
+      "threeth",
+      "third",
+      "thirth",
+      "three"
+     ],
+     "reponse": 1,
+     "explication": "third."
+    },
+    {
+     "question": "« 2nd » se lit :",
+     "options": [
+      "two",
+      "second",
+      "twoth",
+      "seconde"
+     ],
+     "reponse": 1,
+     "explication": "2nd = second."
+    },
+    {
+     "question": "Le cinquième se dit :",
+     "options": [
+      "fiveth",
+      "fifth",
+      "fiftieth",
+      "five"
+     ],
+     "reponse": 1,
+     "explication": "fifth."
+    },
+    {
+     "question": "« Le 4 avril » se dit :",
+     "options": [
+      "the four of April",
+      "the 4th of April",
+      "April four",
+      "the fourth April of"
+     ],
+     "reponse": 1,
+     "explication": "the 4th of April."
+    },
+    {
+     "question": "Janvier est le ___ mois de l'année.",
+     "options": [
+      "one",
+      "first",
+      "once",
+      "number"
+     ],
+     "reponse": 1,
+     "explication": "January is the first month."
+    },
+    {
+     "question": "« Twelfth » c'est :",
+     "options": [
+      "12e",
+      "20e",
+      "2e",
+      "11e"
+     ],
+     "reponse": 0,
+     "explication": "twelfth = douzième."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "first (1st)",
+     "verso": "premier"
+    },
+    {
+     "recto": "second (2nd)",
+     "verso": "deuxième"
+    },
+    {
+     "recto": "third (3rd)",
+     "verso": "troisième"
+    },
+    {
+     "recto": "fourth (4th)",
+     "verso": "quatrième"
+    },
+    {
+     "recto": "fifth (5th)",
+     "verso": "cinquième"
+    },
+    {
+     "recto": "eighth (8th)",
+     "verso": "huitième"
+    },
+    {
+     "recto": "ninth (9th)",
+     "verso": "neuvième"
+    },
+    {
+     "recto": "twelfth (12th)",
+     "verso": "douzième"
+    },
+    {
+     "recto": "the 4th of April",
+     "verso": "le 4 avril"
+    }
+   ]
+  },
+  {
+   "id": "ang6-35",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Everyday activities – Les activités quotidiennes",
+   "texte": "## Objectif\nParler des **activités de tous les jours**.\n\n## Étape 1 : Une situation\nFatou raconte sa journée.\n**I get up at six o'clock. I wash my face and I brush my teeth. I get dressed. I have breakfast with my family. I go to school at seven thirty. In the afternoon, I help my mother. In the evening, I do my homework and I watch TV. I go to bed at nine thirty.**\n\n## Étape 2 : Le matin\n- **get up** *se lever*\n- **wash my face** *me laver le visage*\n- **brush my teeth** *me brosser les dents*\n- **take a shower** *prendre une douche*\n- **get dressed** *s'habiller*\n- **have breakfast** *prendre le petit-déjeuner*\n- **go to school** *aller à l'école*\n\nExemple : **I get up at six.** *Je me lève à six heures.*\nExemple : **I have breakfast at seven.** *Je prends le petit-déjeuner à sept heures.*\n\n## Étape 3 : L'après-midi\n- **have lunch** *déjeuner*\n- **come back home** *rentrer à la maison*\n- **help my mother** *aider ma mère*\n- **fetch water** *aller chercher de l'eau*\n- **play football** *jouer au football*\n- **take a nap** *faire la sieste*\n\nExemple : **I have lunch at two o'clock.** *Je déjeune à deux heures.*\nExemple : **I fetch water at the well.** *Je vais chercher de l'eau au puits.*\n\n## Étape 4 : Le soir\n- **do my homework** *faire mes devoirs*\n- **have dinner** *dîner*\n- **watch TV** *regarder la télé*\n- **pray** *prier*\n- **go to bed** *aller au lit*\n\nExemple : **I do my homework after dinner.** *Je fais mes devoirs après le dîner.*\nExemple : **I go to bed at ten.** *Je me couche à dix heures.*\n\n## Étape 5 : Parler de quelqu'un d'autre\nRappel : avec **he / she**, on ajoute **s**.\nExemple : **My mother gets up at five.** *Ma mère se lève à cinq heures.*\nExemple : **My brother plays football in the afternoon.** *Mon frère joue au foot l'après-midi.*\nExemple : **My father goes to the field.** *Mon père va au champ.*\n\n## Étape 6 : À moi de parler !\nRaconte ta journée avec : **first** (d'abord), **then** (ensuite), **after that** (après ça), **finally** (enfin).\nExemple : **First, I get up. Then, I wash my face. After that, I have breakfast. Finally, I go to school.**\n\nÀ retenir : get up, have breakfast, go to school, have lunch, do my homework, have dinner, go to bed. **first – then – after that – finally**.",
+   "qcm": [
+    {
+     "question": "« Get up » veut dire :",
+     "options": [
+      "se coucher",
+      "se lever",
+      "s'habiller",
+      "se laver"
+     ],
+     "reponse": 1,
+     "explication": "get up = se lever."
+    },
+    {
+     "question": "« Have breakfast » veut dire :",
+     "options": [
+      "dîner",
+      "déjeuner",
+      "prendre le petit-déjeuner",
+      "goûter"
+     ],
+     "reponse": 2,
+     "explication": "breakfast = petit-déjeuner."
+    },
+    {
+     "question": "« Faire mes devoirs » se dit :",
+     "options": [
+      "make my homework",
+      "do my homework",
+      "have my homework",
+      "go my homework"
+     ],
+     "reponse": 1,
+     "explication": "do my homework."
+    },
+    {
+     "question": "« Go to bed » veut dire :",
+     "options": [
+      "aller au lit",
+      "aller à l'école",
+      "aller au marché",
+      "se lever"
+     ],
+     "reponse": 0,
+     "explication": "go to bed = se coucher."
+    },
+    {
+     "question": "Complète : My mother ___ up at five.",
+     "options": [
+      "get",
+      "gets",
+      "getting",
+      "got up"
+     ],
+     "reponse": 1,
+     "explication": "he/she → s : gets."
+    },
+    {
+     "question": "« D'abord, ensuite, enfin » se dit :",
+     "options": [
+      "first, then, finally",
+      "one, two, three",
+      "before, now, after",
+      "start, middle, end"
+     ],
+     "reponse": 0,
+     "explication": "first – then – finally."
+    },
+    {
+     "question": "« Fetch water » veut dire :",
+     "options": [
+      "boire de l'eau",
+      "aller chercher de l'eau",
+      "jeter de l'eau",
+      "chauffer de l'eau"
+     ],
+     "reponse": 1,
+     "explication": "fetch = aller chercher."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "get up",
+     "verso": "se lever"
+    },
+    {
+     "recto": "brush my teeth",
+     "verso": "me brosser les dents"
+    },
+    {
+     "recto": "get dressed",
+     "verso": "s'habiller"
+    },
+    {
+     "recto": "have breakfast",
+     "verso": "prendre le petit-déjeuner"
+    },
+    {
+     "recto": "have lunch",
+     "verso": "déjeuner"
+    },
+    {
+     "recto": "do my homework",
+     "verso": "faire mes devoirs"
+    },
+    {
+     "recto": "have dinner",
+     "verso": "dîner"
+    },
+    {
+     "recto": "go to bed",
+     "verso": "se coucher"
+    },
+    {
+     "recto": "first – then – finally",
+     "verso": "d'abord – ensuite – enfin"
+    }
+   ]
+  },
+  {
+   "id": "ang6-36",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "How many / How much – Combien",
+   "texte": "## Objectif\nDemander une quantité avec **How many** et **How much**.\n\n## Étape 1 : Une situation\nAu marché de Kébémer.\nSeller : **How many mangoes do you want?** *Combien de mangues veux-tu ?*\nAwa : **Six mangoes, please. How much are they?** *Six mangues, s'il vous plaît. Combien elles coûtent ?*\nSeller : **Six hundred francs.**\nAwa : **And how much rice do you have?** *Et combien de riz avez-vous ?*\nSeller : **I have a lot of rice!**\n\n## Étape 2 : How many = ce qu'on peut compter\nOn l'utilise avec un nom **au pluriel**.\nExemple : **How many brothers do you have?** *Combien de frères as-tu ?*\nExemple : **How many students are there in your class?** *Combien d'élèves y a-t-il dans ta classe ?*\nExemple : **How many goats does your father have?** *Combien de chèvres ton père a-t-il ?*\nExemple : **How many days are there in a week?** **Seven.**\n\n## Étape 3 : How much = ce qu'on ne peut pas compter\nOn l'utilise avec : **water, rice, sugar, milk, money, time, bread**…\nExemple : **How much water do you drink?** *Combien d'eau bois-tu ?*\nExemple : **How much sugar do you want in your tea?** *Combien de sucre veux-tu dans ton thé ?*\nExemple : **How much money do you have?** *Combien d'argent as-tu ?*\nExemple : **How much time do we have?** *Combien de temps avons-nous ?*\n\nAstuce : Est-ce que je peux dire « un, deux, trois… » ? Oui → **How many**. Non → **How much**.\nOn peut compter les mangues (1, 2, 3 mangues) → **many**. On ne compte pas « 1 riz, 2 riz » → **much**.\n\n## Étape 4 : How much = le prix\n**How much** sert aussi à demander le prix.\nExemple : **How much is this shirt?** **It's two thousand francs.** *Combien coûte cette chemise ? Deux mille francs.*\nExemple : **How much are the tomatoes?** **Five hundred francs.**\n\n## Étape 5 : À moi de parler !\nPose des questions à ton voisin :\nExemple : **How many sisters do you have? How many pens are in your bag? How much water do you drink every day?**\n\nÀ retenir : **How many** + pluriel (mangoes, brothers). **How much** + non comptable (water, rice, money). **How much is it?** = le prix.",
+   "qcm": [
+    {
+     "question": "Complète : How ___ brothers do you have?",
+     "options": [
+      "much",
+      "many",
+      "more",
+      "old"
+     ],
+     "reponse": 1,
+     "explication": "brothers (comptable) → many."
+    },
+    {
+     "question": "Complète : How ___ water do you drink?",
+     "options": [
+      "many",
+      "much",
+      "old",
+      "long"
+     ],
+     "reponse": 1,
+     "explication": "water (non comptable) → much."
+    },
+    {
+     "question": "Complète : How ___ money do you have?",
+     "options": [
+      "many",
+      "much",
+      "old",
+      "time"
+     ],
+     "reponse": 1,
+     "explication": "money → much."
+    },
+    {
+     "question": "Complète : How ___ students are there?",
+     "options": [
+      "much",
+      "many",
+      "old",
+      "more"
+     ],
+     "reponse": 1,
+     "explication": "students → many."
+    },
+    {
+     "question": "Pour demander le prix :",
+     "options": [
+      "How many is it?",
+      "How much is it?",
+      "How old is it?",
+      "What is it?"
+     ],
+     "reponse": 1,
+     "explication": "How much is it? = c'est combien ?"
+    },
+    {
+     "question": "Quel mot va avec « How much » ?",
+     "options": [
+      "mangoes",
+      "rice",
+      "goats",
+      "pens"
+     ],
+     "reponse": 1,
+     "explication": "rice ne se compte pas."
+    },
+    {
+     "question": "Quel mot va avec « How many » ?",
+     "options": [
+      "sugar",
+      "milk",
+      "eggs",
+      "water"
+     ],
+     "reponse": 2,
+     "explication": "eggs se comptent."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "How many ...?",
+     "verso": "Combien de ... ? (on compte)"
+    },
+    {
+     "recto": "How much ...?",
+     "verso": "Combien de ... ? (on ne compte pas)"
+    },
+    {
+     "recto": "How many brothers?",
+     "verso": "Combien de frères ?"
+    },
+    {
+     "recto": "How much water?",
+     "verso": "Combien d'eau ?"
+    },
+    {
+     "recto": "How much is it?",
+     "verso": "C'est combien ?"
+    },
+    {
+     "recto": "money / rice / water",
+     "verso": "non comptables"
+    }
+   ]
+  },
+  {
+   "id": "ang6-37",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Quantifiers – Some, any, a lot of, a few",
+   "texte": "## Objectif\nParler des quantités avec **some, any, a lot of, a few, a little**.\n\n## Étape 1 : Une situation\nMaman prépare le thiéboudiène.\nMother : **Awa, do we have any rice?**\nAwa : **Yes, we have a lot of rice.**\nMother : **Do we have any fish?**\nAwa : **We have some fish, but we don't have any carrots.**\nMother : **OK. Go and buy a few carrots and a little oil, please.**\n\n## Étape 2 : Some et any\n- **some** = un peu de, des → phrases **affirmatives**\n- **any** = de, des → **questions** et phrases **négatives**\n\nExemple : **I have some bread.** *J'ai du pain.*\nExemple : **There are some students in the yard.** *Il y a des élèves dans la cour.*\nExemple : **Do you have any brothers?** *As-tu des frères ?*\nExemple : **I don't have any money.** *Je n'ai pas d'argent.*\nExemple : **Is there any water?** *Y a-t-il de l'eau ?*\n\nAstuce : Pour proposer poliment, on dit **some** : **Would you like some tea?** *Veux-tu du thé ?*\n\n## Étape 3 : A lot of = beaucoup de\nAvec tout : ce qu'on compte et ce qu'on ne compte pas.\nExemple : **There are a lot of mango trees in Casamance.** *Il y a beaucoup de manguiers en Casamance.*\nExemple : **My grandmother drinks a lot of water.** *Ma grand-mère boit beaucoup d'eau.*\nExemple : **We have a lot of homework today.** *Nous avons beaucoup de devoirs aujourd'hui.*\n\n## Étape 4 : A few et a little = quelques, un peu de\n- **a few** + ce qu'on peut **compter** (pluriel)\n- **a little** + ce qu'on ne peut **pas compter**\n\nExemple : **I have a few friends in Louga.** *J'ai quelques amis à Louga.*\nExemple : **Buy a few onions, please.** *Achète quelques oignons, s'il te plaît.*\nExemple : **Put a little sugar in my tea.** *Mets un peu de sucre dans mon thé.*\nExemple : **I speak a little English.** *Je parle un peu anglais.*\n\n## Étape 5 : Résumé\n- Compter (mangoes, friends) : **some, any, a lot of, a few, how many**\n- Ne pas compter (rice, water) : **some, any, a lot of, a little, how much**\n\n## Étape 6 : À moi de parler !\nDis ce qu'il y a dans ta cuisine :\nExemple : **There is a lot of rice. There is a little oil. There are some onions. There aren't any potatoes.**\n\nÀ retenir : **some** (affirmatif), **any** (question / négatif), **a lot of** (beaucoup), **a few** + pluriel, **a little** + non comptable.",
+   "qcm": [
+    {
+     "question": "Complète : I have ___ bread.",
+     "options": [
+      "any",
+      "some",
+      "many",
+      "a few"
+     ],
+     "reponse": 1,
+     "explication": "Phrase affirmative → some."
+    },
+    {
+     "question": "Complète : Do you have ___ brothers?",
+     "options": [
+      "some",
+      "any",
+      "a little",
+      "much"
+     ],
+     "reponse": 1,
+     "explication": "Question → any."
+    },
+    {
+     "question": "Complète : I don't have ___ money.",
+     "options": [
+      "some",
+      "any",
+      "a few",
+      "many"
+     ],
+     "reponse": 1,
+     "explication": "Négatif → any."
+    },
+    {
+     "question": "« A lot of » veut dire :",
+     "options": [
+      "un peu de",
+      "quelques",
+      "beaucoup de",
+      "aucun"
+     ],
+     "reponse": 2,
+     "explication": "a lot of = beaucoup de."
+    },
+    {
+     "question": "Complète : I have ___ friends in Louga.",
+     "options": [
+      "a little",
+      "a few",
+      "much",
+      "any"
+     ],
+     "reponse": 1,
+     "explication": "friends (comptable) → a few."
+    },
+    {
+     "question": "Complète : Put ___ sugar in my tea.",
+     "options": [
+      "a few",
+      "a little",
+      "many",
+      "a lot"
+     ],
+     "reponse": 1,
+     "explication": "sugar (non comptable) → a little."
+    },
+    {
+     "question": "Pour proposer poliment : Would you like ___ tea?",
+     "options": [
+      "any",
+      "some",
+      "a few",
+      "many"
+     ],
+     "reponse": 1,
+     "explication": "Proposition → some."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "some",
+     "verso": "du, des (affirmatif)"
+    },
+    {
+     "recto": "any",
+     "verso": "du, des (question, négatif)"
+    },
+    {
+     "recto": "a lot of",
+     "verso": "beaucoup de"
+    },
+    {
+     "recto": "a few + pluriel",
+     "verso": "quelques"
+    },
+    {
+     "recto": "a little + non comptable",
+     "verso": "un peu de"
+    },
+    {
+     "recto": "I don't have any money.",
+     "verso": "Je n'ai pas d'argent."
+    },
+    {
+     "recto": "Would you like some tea?",
+     "verso": "Veux-tu du thé ?"
+    }
+   ]
+  },
+  {
+   "id": "ang6-38",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Feelings – Les sentiments",
+   "texte": "## Objectif\nDire comment on se sent : **les sentiments**.\n\n## Étape 1 : Une situation\nAprès les résultats de l'examen.\nTeacher : **How do you feel, Awa?** *Comment te sens-tu, Awa ?*\nAwa : **I feel very happy! I passed my exam.** *Je suis très contente ! J'ai réussi mon examen.*\nTeacher : **And you, Modou? You look sad.** *Et toi, Modou ? Tu as l'air triste.*\nModou : **Yes, I am sad. My grandfather is sick.**\nTeacher : **I'm sorry to hear that.** *Je suis désolé de l'apprendre.*\n\n## Étape 2 : Les sentiments\n- **happy** *content, heureux*\n- **sad** *triste*\n- **angry** *en colère*\n- **tired** *fatigué*\n- **scared / afraid** *effrayé, avoir peur*\n- **bored** *qui s'ennuie*\n- **excited** *impatient, très enthousiaste*\n- **worried** *inquiet*\n- **surprised** *surpris*\n- **hungry** *qui a faim*\n- **thirsty** *qui a soif*\n\n## Étape 3 : Dire comment je me sens\n- **I am ...** / **I feel ...** *Je suis ... / Je me sens ...*\n\nExemple : **I am happy because it's Tabaski!** *Je suis content parce que c'est la Tabaski !*\nExemple : **I feel tired after football.** *Je me sens fatigué après le foot.*\nExemple : **I am scared of dogs.** *J'ai peur des chiens.*\nExemple : **I am hungry. Let's eat!** *J'ai faim. Mangeons !*\nExemple : **I am excited about the holidays.** *J'ai hâte d'être en vacances.*\nExemple : **My mother is worried because I am late.** *Ma mère est inquiète parce que je suis en retard.*\n\nAttention : En français on dit « **j'ai** faim, **j'ai** peur ». En anglais on dit **I am** hungry, **I am** scared.\n\n## Étape 4 : Demander à quelqu'un\n- **How do you feel?** *Comment te sens-tu ?*\n- **What's wrong?** *Qu'est-ce qui ne va pas ?*\n- **Why are you sad?** *Pourquoi es-tu triste ?*\n\nExemple : **Why are you angry?** **Because my brother took my pen.** *Parce que mon frère a pris mon stylo.*\n\n## Étape 5 : Réagir\n- **That's great!** *C'est super !* (bonne nouvelle)\n- **I'm sorry to hear that.** *Je suis désolé de l'apprendre.* (mauvaise nouvelle)\n- **Don't worry!** *Ne t'inquiète pas !*\n\n## Étape 6 : À moi de parler !\nExemple : **Today I feel happy because it's Friday. Tomorrow I will play football. I am excited!**\n\nÀ retenir : happy, sad, angry, tired, scared, hungry, thirsty. **How do you feel? – I feel ...** / **I am hungry** (pas « I have hunger »).",
+   "qcm": [
+    {
+     "question": "« Happy » veut dire :",
+     "options": [
+      "triste",
+      "content",
+      "fatigué",
+      "en colère"
+     ],
+     "reponse": 1,
+     "explication": "happy = content."
+    },
+    {
+     "question": "« J'ai faim » se dit :",
+     "options": [
+      "I have hungry.",
+      "I am hungry.",
+      "I hunger.",
+      "I have hunger."
+     ],
+     "reponse": 1,
+     "explication": "I am hungry."
+    },
+    {
+     "question": "« Tired » veut dire :",
+     "options": [
+      "fatigué",
+      "inquiet",
+      "surpris",
+      "triste"
+     ],
+     "reponse": 0,
+     "explication": "tired = fatigué."
+    },
+    {
+     "question": "« J'ai peur des chiens » se dit :",
+     "options": [
+      "I have fear of dogs.",
+      "I am scared of dogs.",
+      "I scared dogs.",
+      "I am dogs scared."
+     ],
+     "reponse": 1,
+     "explication": "I am scared of ..."
+    },
+    {
+     "question": "Pour demander comment quelqu'un se sent :",
+     "options": [
+      "How old are you?",
+      "How do you feel?",
+      "How much is it?",
+      "Where are you?"
+     ],
+     "reponse": 1,
+     "explication": "How do you feel?"
+    },
+    {
+     "question": "Ton ami a une mauvaise nouvelle. Tu dis :",
+     "options": [
+      "That's great!",
+      "I'm sorry to hear that.",
+      "You're welcome.",
+      "Good luck!"
+     ],
+     "reponse": 1,
+     "explication": "I'm sorry to hear that."
+    },
+    {
+     "question": "« Angry » veut dire :",
+     "options": [
+      "en colère",
+      "heureux",
+      "excité",
+      "malade"
+     ],
+     "reponse": 0,
+     "explication": "angry = en colère."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "happy",
+     "verso": "content"
+    },
+    {
+     "recto": "sad",
+     "verso": "triste"
+    },
+    {
+     "recto": "angry",
+     "verso": "en colère"
+    },
+    {
+     "recto": "tired",
+     "verso": "fatigué"
+    },
+    {
+     "recto": "scared",
+     "verso": "avoir peur"
+    },
+    {
+     "recto": "hungry",
+     "verso": "avoir faim"
+    },
+    {
+     "recto": "thirsty",
+     "verso": "avoir soif"
+    },
+    {
+     "recto": "worried",
+     "verso": "inquiet"
+    },
+    {
+     "recto": "How do you feel?",
+     "verso": "Comment te sens-tu ?"
+    },
+    {
+     "recto": "I'm sorry to hear that.",
+     "verso": "Je suis désolé de l'apprendre."
+    }
+   ]
+  },
+  {
+   "id": "ang6-39",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Health issues – La santé",
+   "texte": "## Objectif\nParler simplement des **problèmes de santé**.\n\n## Étape 1 : Une situation\nIbou n'est pas venu à l'école. Le professeur demande à Modou.\nTeacher : **Where is Ibou today?** *Où est Ibou aujourd'hui ?*\nModou : **He is sick. He has a fever.** *Il est malade. Il a de la fièvre.*\nTeacher : **Oh no! I hope he gets better soon.** *J'espère qu'il ira vite mieux.*\n\n## Étape 2 : Les problèmes de santé\n- **I'm sick / I'm ill.** *Je suis malade.*\n- **I have a headache.** *J'ai mal à la tête.*\n- **I have a stomachache.** *J'ai mal au ventre.*\n- **I have a toothache.** *J'ai mal aux dents.*\n- **I have a sore throat.** *J'ai mal à la gorge.*\n- **I have a fever.** *J'ai de la fièvre.*\n- **I have a cold.** *J'ai un rhume.*\n- **I have a cough.** *Je tousse.*\n- **I have malaria.** *J'ai le paludisme.*\n\nAstuce : Pour dire « avoir mal à … » : **My ... hurts.** → **My leg hurts.** *J'ai mal à la jambe.*\n\n## Étape 3 : Parler des autres\nExemple : **My sister has a cold.** *Ma sœur a un rhume.*\nExemple : **He has a stomachache.** *Il a mal au ventre.*\nExemple : **My grandfather is ill. He is at the hospital.** *Mon grand-père est malade. Il est à l'hôpital.*\n\nAttention : avec he / she → **has** : **She has a fever.**\n\n## Étape 4 : Donner un conseil simple\n- **You should ...** *Tu devrais ...*\n\nExemple : **You should go to the doctor.** *Tu devrais aller chez le médecin.*\nExemple : **You should rest.** *Tu devrais te reposer.*\nExemple : **You should drink a lot of water.** *Tu devrais boire beaucoup d'eau.*\nExemple : **You should sleep under a mosquito net.** *Tu devrais dormir sous une moustiquaire.*\n\n## Étape 5 : Souhaiter un bon rétablissement\n- **Get well soon!** *Bon rétablissement !*\n- **I hope you feel better.** *J'espère que tu vas mieux.*\n\n## Étape 6 : À moi de parler !\nJoue la scène avec ton voisin :\nExemple : **A : What's the matter? – B : I have a headache. – A : You should rest. Get well soon!**\n\nÀ retenir : I have a headache / a fever / a cold. My ... hurts. **You should** go to the doctor. **Get well soon!**",
+   "qcm": [
+    {
+     "question": "« I have a headache » veut dire :",
+     "options": [
+      "J'ai mal au ventre.",
+      "J'ai mal à la tête.",
+      "J'ai de la fièvre.",
+      "J'ai un rhume."
+     ],
+     "reponse": 1,
+     "explication": "head + ache = mal à la tête."
+    },
+    {
+     "question": "« J'ai de la fièvre » se dit :",
+     "options": [
+      "I am fever.",
+      "I have a fever.",
+      "I fever.",
+      "My fever hurts."
+     ],
+     "reponse": 1,
+     "explication": "I have a fever."
+    },
+    {
+     "question": "« J'ai mal à la jambe » se dit :",
+     "options": [
+      "My leg hurts.",
+      "I have leg.",
+      "My leg is sick.",
+      "I leg hurt."
+     ],
+     "reponse": 0,
+     "explication": "My ... hurts."
+    },
+    {
+     "question": "Complète : She ___ a cold.",
+     "options": [
+      "have",
+      "has",
+      "is",
+      "am"
+     ],
+     "reponse": 1,
+     "explication": "she → has."
+    },
+    {
+     "question": "« You should rest » veut dire :",
+     "options": [
+      "Tu dois partir.",
+      "Tu devrais te reposer.",
+      "Tu es reposé.",
+      "Repose-moi."
+     ],
+     "reponse": 1,
+     "explication": "should = conseil."
+    },
+    {
+     "question": "Pour souhaiter un bon rétablissement :",
+     "options": [
+      "Good night!",
+      "Get well soon!",
+      "See you!",
+      "Well done!"
+     ],
+     "reponse": 1,
+     "explication": "Get well soon!"
+    },
+    {
+     "question": "« I have a sore throat » veut dire :",
+     "options": [
+      "J'ai mal à la gorge.",
+      "J'ai mal aux dents.",
+      "Je tousse.",
+      "J'ai froid."
+     ],
+     "reponse": 0,
+     "explication": "sore throat = mal à la gorge."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I'm sick.",
+     "verso": "Je suis malade."
+    },
+    {
+     "recto": "I have a headache.",
+     "verso": "J'ai mal à la tête."
+    },
+    {
+     "recto": "I have a stomachache.",
+     "verso": "J'ai mal au ventre."
+    },
+    {
+     "recto": "I have a sore throat.",
+     "verso": "J'ai mal à la gorge."
+    },
+    {
+     "recto": "I have a fever.",
+     "verso": "J'ai de la fièvre."
+    },
+    {
+     "recto": "I have a cough.",
+     "verso": "Je tousse."
+    },
+    {
+     "recto": "My leg hurts.",
+     "verso": "J'ai mal à la jambe."
+    },
+    {
+     "recto": "You should rest.",
+     "verso": "Tu devrais te reposer."
+    },
+    {
+     "recto": "Get well soon!",
+     "verso": "Bon rétablissement !"
+    }
+   ]
+  },
+  {
+   "id": "ang6-40",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Requests – Faire une demande",
+   "texte": "## Objectif\nFaire une **demande polie** en anglais.\n\n## Étape 1 : Une situation\nEn classe.\nAwa : **Excuse me, Modou. Can you lend me your ruler, please?** *Peux-tu me prêter ta règle, s'il te plaît ?*\nModou : **Sure, here you are.** *Bien sûr, voilà.*\nAwa : **Thank you!**\nAwa : **Sir, could you repeat the question, please?** *Monsieur, pourriez-vous répéter la question, s'il vous plaît ?*\nTeacher : **Of course.** *Bien sûr.*\n\n## Étape 2 : Demander à quelqu'un de faire quelque chose\n- **Can you ..., please?** *Peux-tu ..., s'il te plaît ?* (avec un ami)\n- **Could you ..., please?** *Pourriez-vous ..., s'il vous plaît ?* (plus poli, avec un adulte)\n\nExemple : **Can you help me, please?** *Peux-tu m'aider ?*\nExemple : **Can you close the door, please?** *Peux-tu fermer la porte ?*\nExemple : **Could you speak slowly, please?** *Pourriez-vous parler lentement ?*\nExemple : **Could you write it on the board, please?** *Pourriez-vous l'écrire au tableau ?*\n\n## Étape 3 : Demander quelque chose pour soi\n- **Can I have ..., please?** *Puis-je avoir ..., s'il vous plaît ?*\n- **Could I ..., please?** *Pourrais-je ..., s'il vous plaît ?*\n\nExemple : **Can I have some water, please?** *Puis-je avoir de l'eau ?*\nExemple : **Can I borrow your pen, please?** *Puis-je emprunter ton stylo ?*\nExemple : **Could I go out, please?** *Pourrais-je sortir, s'il vous plaît ?*\nExemple : **Could I use your phone, please?** *Pourrais-je utiliser votre téléphone ?*\n\n## Étape 4 : Répondre\nPour dire oui :\n- **Sure!** / **Of course!** *Bien sûr !*\n- **Here you are.** *Voilà.*\n- **No problem.** *Pas de problème.*\n\nPour dire non poliment :\n- **Sorry, I can't.** *Désolé, je ne peux pas.*\n- **Sorry, I'm using it.** *Désolé, je l'utilise.*\n\n## Étape 5 : Les mots magiques\nToujours dire **please** (s'il te plaît) et **thank you** (merci).\nAttention : « Give me your pen! » est un ordre. C'est impoli. Dis plutôt : **Can you give me your pen, please?**\n\n## Étape 6 : À moi de parler !\nFais 3 demandes polies à ton voisin et à ton professeur.\n\nÀ retenir : **Can you ..., please?** (ami). **Could you ..., please?** (plus poli). **Can I have ...?** Réponses : **Sure! / Of course! / Sorry, I can't.**",
+   "qcm": [
+    {
+     "question": "Pour demander poliment à un ami de t'aider :",
+     "options": [
+      "Help me!",
+      "Can you help me, please?",
+      "You help me.",
+      "Helping me!"
+     ],
+     "reponse": 1,
+     "explication": "Can you ..., please?"
+    },
+    {
+     "question": "Avec un adulte, le plus poli est :",
+     "options": [
+      "Can you",
+      "Could you",
+      "You can",
+      "Give me"
+     ],
+     "reponse": 1,
+     "explication": "Could you ... est plus poli."
+    },
+    {
+     "question": "« Can I have some water, please? » veut dire :",
+     "options": [
+      "J'ai de l'eau.",
+      "Puis-je avoir de l'eau ?",
+      "Tu veux de l'eau ?",
+      "Bois de l'eau !"
+     ],
+     "reponse": 1,
+     "explication": "Can I have ...? = Puis-je avoir ... ?"
+    },
+    {
+     "question": "Pour répondre oui :",
+     "options": [
+      "Sorry, I can't.",
+      "Sure! Here you are.",
+      "No way.",
+      "I don't know."
+     ],
+     "reponse": 1,
+     "explication": "Sure! / Of course!"
+    },
+    {
+     "question": "Pour refuser poliment :",
+     "options": [
+      "No!",
+      "Sorry, I can't.",
+      "Go away.",
+      "Never."
+     ],
+     "reponse": 1,
+     "explication": "Sorry, I can't."
+    },
+    {
+     "question": "« Give me your pen! » est :",
+     "options": [
+      "très poli",
+      "un ordre (impoli)",
+      "une excuse",
+      "une question"
+     ],
+     "reponse": 1,
+     "explication": "C'est un ordre ; on dit : Can you give me ..., please?"
+    },
+    {
+     "question": "« Could you speak slowly, please? » veut dire :",
+     "options": [
+      "Pourriez-vous parler lentement ?",
+      "Parlez fort !",
+      "Vous parlez vite.",
+      "Pouvez-vous chanter ?"
+     ],
+     "reponse": 0,
+     "explication": "slowly = lentement."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Can you ..., please?",
+     "verso": "Peux-tu ..., s'il te plaît ?"
+    },
+    {
+     "recto": "Could you ..., please?",
+     "verso": "Pourriez-vous ... ?"
+    },
+    {
+     "recto": "Can I have ..., please?",
+     "verso": "Puis-je avoir ... ?"
+    },
+    {
+     "recto": "Can I borrow your pen?",
+     "verso": "Puis-je emprunter ton stylo ?"
+    },
+    {
+     "recto": "Sure! / Of course!",
+     "verso": "Bien sûr !"
+    },
+    {
+     "recto": "Sorry, I can't.",
+     "verso": "Désolé, je ne peux pas."
+    }
+   ]
+  },
+  {
+   "id": "ang6-41",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Apologies – S'excuser",
+   "texte": "## Objectif\n**S'excuser** et répondre à des excuses.\n\n## Étape 1 : Une situation\nModou arrive en retard.\nModou : **Sorry I'm late, sir.** *Désolé d'être en retard, monsieur.*\nTeacher : **Why are you late?**\nModou : **I missed the bus. I'm really sorry.** *J'ai raté le bus. Je suis vraiment désolé.*\nTeacher : **That's OK. Sit down, please.** *Ce n'est pas grave. Assieds-toi.*\n\n## Étape 2 : Pour s'excuser\n- **Sorry!** *Pardon ! / Désolé !*\n- **I'm sorry.** *Je suis désolé(e).*\n- **I'm really sorry.** *Je suis vraiment désolé(e).*\n- **Excuse me.** *Excusez-moi.* (pour déranger ou passer)\n- **I apologize.** *Je m'excuse.* (très poli)\n\nExemple : **Sorry, I didn't see you!** *Pardon, je ne t'ai pas vu !*\nExemple : **I'm sorry I forgot my homework.** *Je suis désolé, j'ai oublié mes devoirs.*\nExemple : **Excuse me, can I pass?** *Excusez-moi, je peux passer ?*\n\n## Étape 3 : Dire pourquoi\n- **Sorry I'm late.** *Désolé d'être en retard.*\n- **Sorry for the noise.** *Désolé pour le bruit.*\n- **Sorry, it was an accident.** *Désolé, c'était un accident.*\n- **Sorry, I didn't mean it.** *Désolé, je ne l'ai pas fait exprès.*\n\nExemple : **Sorry, I broke your pen. It was an accident.** *Désolé, j'ai cassé ton stylo. C'était un accident.*\n\n## Étape 4 : Répondre à des excuses\n- **That's OK.** / **That's all right.** *Ce n'est pas grave.*\n- **No problem.** *Pas de problème.*\n- **Don't worry.** *Ne t'inquiète pas.*\n- **It doesn't matter.** *Ça ne fait rien.*\n\n## Étape 5 : Excuse me ou Sorry ?\n- **Excuse me** → **avant** : pour attirer l'attention ou demander. **Excuse me, where is the post office?**\n- **Sorry** → **après** une erreur. **Sorry, I stepped on your foot!**\n\n## Étape 6 : À moi de parler !\nJoue ces scènes avec ton voisin :\nExemple : **Tu marches sur son pied → Sorry! – That's OK.**\nExemple : **Tu oublies ton livre → I'm sorry, I forgot my book. – Don't worry.**\n\nÀ retenir : **Sorry / I'm sorry / I'm really sorry** (après une erreur). **Excuse me** (avant de demander). Réponses : **That's OK. / No problem. / Don't worry.**",
+   "qcm": [
+    {
+     "question": "Tu marches sur le pied de quelqu'un. Tu dis :",
+     "options": [
+      "Excuse me.",
+      "Sorry!",
+      "Thank you.",
+      "You're welcome."
+     ],
+     "reponse": 1,
+     "explication": "Après une erreur : Sorry!"
+    },
+    {
+     "question": "Tu veux passer devant quelqu'un. Tu dis :",
+     "options": [
+      "Sorry!",
+      "Excuse me.",
+      "Thank you.",
+      "Bye!"
+     ],
+     "reponse": 1,
+     "explication": "Avant de demander : Excuse me."
+    },
+    {
+     "question": "« Désolé d'être en retard » se dit :",
+     "options": [
+      "Sorry I'm late.",
+      "Sorry I late.",
+      "Excuse me late.",
+      "I'm late sorry."
+     ],
+     "reponse": 0,
+     "explication": "Sorry I'm late."
+    },
+    {
+     "question": "Pour répondre à des excuses :",
+     "options": [
+      "That's OK.",
+      "I'm sorry.",
+      "Excuse me.",
+      "Please."
+     ],
+     "reponse": 0,
+     "explication": "That's OK. / No problem."
+    },
+    {
+     "question": "« It was an accident » veut dire :",
+     "options": [
+      "C'était exprès.",
+      "C'était un accident.",
+      "C'était bien.",
+      "C'était hier."
+     ],
+     "reponse": 1,
+     "explication": "accident = accident."
+    },
+    {
+     "question": "« Don't worry » veut dire :",
+     "options": [
+      "Ne t'inquiète pas.",
+      "Ne pars pas.",
+      "Ne mange pas.",
+      "Ne parle pas."
+     ],
+     "reponse": 0,
+     "explication": "Don't worry = ne t'inquiète pas."
+    },
+    {
+     "question": "La forme la plus forte est :",
+     "options": [
+      "Sorry.",
+      "I'm sorry.",
+      "I'm really sorry.",
+      "Excuse me."
+     ],
+     "reponse": 2,
+     "explication": "really = vraiment."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Sorry!",
+     "verso": "Pardon ! Désolé !"
+    },
+    {
+     "recto": "I'm really sorry.",
+     "verso": "Je suis vraiment désolé."
+    },
+    {
+     "recto": "Excuse me.",
+     "verso": "Excusez-moi."
+    },
+    {
+     "recto": "Sorry I'm late.",
+     "verso": "Désolé d'être en retard."
+    },
+    {
+     "recto": "It was an accident.",
+     "verso": "C'était un accident."
+    },
+    {
+     "recto": "That's OK.",
+     "verso": "Ce n'est pas grave."
+    },
+    {
+     "recto": "Don't worry.",
+     "verso": "Ne t'inquiète pas."
+    }
+   ]
+  },
+  {
+   "id": "ang6-42",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "May – Permission et possibilité",
+   "texte": "## Objectif\nUtiliser **may** pour demander la permission poliment et pour dire « peut-être ».\n\n## Étape 1 : Une situation\nEn classe.\nFatou : **May I come in, sir?** *Puis-je entrer, monsieur ?*\nTeacher : **Yes, you may.** *Oui, tu peux.*\nFatou : **May I sit next to Awa?** *Puis-je m'asseoir à côté d'Awa ?*\nTeacher : **Yes, you may. But be quiet, please.**\n\n## Étape 2 : May pour demander la permission\n**May I ...?** est plus poli que **Can I ...?** On l'utilise surtout avec un adulte : le professeur, le directeur, un parent.\n\nExemple : **May I go out, please?** *Puis-je sortir, s'il vous plaît ?*\nExemple : **May I drink some water?** *Puis-je boire de l'eau ?*\nExemple : **May I ask a question?** *Puis-je poser une question ?*\nExemple : **May I use your phone, aunt?** *Puis-je utiliser ton téléphone, tata ?*\n\n## Étape 3 : Répondre\n- **Yes, you may.** / **Of course.** *Oui, tu peux. / Bien sûr.*\n- **No, you may not.** *Non, tu ne peux pas.*\n- **Not now, please.** *Pas maintenant, s'il te plaît.*\n\n## Étape 4 : May pour dire « peut-être »\n**may** + verbe = quelque chose de **possible**, pas sûr.\n\nExemple : **It may rain today.** *Il va peut-être pleuvoir aujourd'hui.*\nExemple : **Modou may come tomorrow.** *Modou viendra peut-être demain.*\nExemple : **The teacher may be sick.** *Le professeur est peut-être malade.*\nExemple : **I may go to Dakar for the holidays.** *J'irai peut-être à Dakar pour les vacances.*\n\nAttention : Après **may**, le verbe ne change pas : **he may come** (pas « he may comes »).\n\n## Étape 5 : À moi de parler !\nDemande 3 permissions polies à ton professeur avec **May I ...?**\nPuis dis 2 choses possibles pour demain avec **may** :\nExemple : **Tomorrow, I may play football. My uncle may visit us.**\n\nÀ retenir : **May I ...?** = Puis-je ... ? (très poli). **Yes, you may. / No, you may not.** **It may rain** = il va peut-être pleuvoir.",
+   "qcm": [
+    {
+     "question": "« May I come in? » veut dire :",
+     "options": [
+      "Je peux entrer ?",
+      "Je vais entrer.",
+      "Entre !",
+      "Je suis entré."
+     ],
+     "reponse": 0,
+     "explication": "May I ...? = Puis-je ... ?"
+    },
+    {
+     "question": "Quelle demande est la plus polie ?",
+     "options": [
+      "Can I go out?",
+      "May I go out, please?",
+      "I go out.",
+      "Go out!"
+     ],
+     "reponse": 1,
+     "explication": "May I ..., please? est très poli."
+    },
+    {
+     "question": "Réponse polie « oui » :",
+     "options": [
+      "Yes, you may.",
+      "Yes, I may.",
+      "Yes, may.",
+      "Yes, you can't."
+     ],
+     "reponse": 0,
+     "explication": "Yes, you may."
+    },
+    {
+     "question": "« It may rain » veut dire :",
+     "options": [
+      "Il pleut.",
+      "Il va peut-être pleuvoir.",
+      "Il a plu.",
+      "Il ne pleut pas."
+     ],
+     "reponse": 1,
+     "explication": "may = peut-être."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "He may comes.",
+      "He may come.",
+      "He mays come.",
+      "He may to come."
+     ],
+     "reponse": 1,
+     "explication": "Après may, le verbe ne change pas."
+    },
+    {
+     "question": "« Modou may come tomorrow » veut dire :",
+     "options": [
+      "Modou viendra sûrement demain.",
+      "Modou viendra peut-être demain.",
+      "Modou est venu.",
+      "Modou ne viendra pas."
+     ],
+     "reponse": 1,
+     "explication": "may = possible, pas sûr."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "May I ...?",
+     "verso": "Puis-je ... ? (très poli)"
+    },
+    {
+     "recto": "May I come in?",
+     "verso": "Puis-je entrer ?"
+    },
+    {
+     "recto": "Yes, you may.",
+     "verso": "Oui, tu peux."
+    },
+    {
+     "recto": "No, you may not.",
+     "verso": "Non, tu ne peux pas."
+    },
+    {
+     "recto": "It may rain.",
+     "verso": "Il va peut-être pleuvoir."
+    },
+    {
+     "recto": "He may come.",
+     "verso": "Il viendra peut-être."
+    }
+   ]
+  },
+  {
+   "id": "ang6-43",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Must / mustn't – Obligation et interdiction",
+   "texte": "## Objectif\nUtiliser **must** et **mustn't** pour parler des règles et des obligations.\n\n## Étape 1 : Une situation\nLe règlement de l'école.\n**At school, you must arrive on time. You must wear your uniform. You must respect your teachers. You mustn't fight. You mustn't run in the classroom. You mustn't use your phone in class.**\n\n## Étape 2 : Must = obligation\n**must** + verbe = il faut, on doit.\n\nExemple : **I must do my homework.** *Je dois faire mes devoirs.*\nExemple : **You must listen to the teacher.** *Tu dois écouter le professeur.*\nExemple : **We must wash our hands before eating.** *Nous devons nous laver les mains avant de manger.*\nExemple : **Drivers must stop at the red light.** *Les chauffeurs doivent s'arrêter au feu rouge.*\n\n## Étape 3 : Mustn't = interdiction\n**mustn't** (must not) + verbe = il est interdit de, on ne doit pas.\n\nExemple : **You mustn't talk during the test.** *Tu ne dois pas parler pendant le devoir.*\nExemple : **We mustn't throw plastic bags on the ground.** *Nous ne devons pas jeter de sachets plastiques par terre.*\nExemple : **Children mustn't play with fire.** *Les enfants ne doivent pas jouer avec le feu.*\nExemple : **You mustn't cut the trees.** *Tu ne dois pas couper les arbres.*\n\n## Étape 4 : La règle\nLe verbe après **must** ne change jamais.\nExemple : **He must go.** (pas « he must goes »). **She must study.** (pas « she musts »).\n\n## Étape 5 : Must ou should ?\n- **must** = obligation forte, règle. **You must wear a helmet.**\n- **should** = conseil. **You should eat fruit.** *Tu devrais manger des fruits.*\n\n## Étape 6 : À moi de parler !\nÉcris le règlement de ta maison :\nExemple : **At home, I must help my mother. I must pray. I mustn't come home late. I mustn't shout.**\n\nÀ retenir : **must** + verbe = obligation (il faut). **mustn't** + verbe = interdiction. Le verbe ne change pas.",
+   "qcm": [
+    {
+     "question": "« You must listen » veut dire :",
+     "options": [
+      "Tu peux écouter.",
+      "Tu dois écouter.",
+      "Tu as écouté.",
+      "Tu n'écoutes pas."
+     ],
+     "reponse": 1,
+     "explication": "must = obligation."
+    },
+    {
+     "question": "« You mustn't fight » veut dire :",
+     "options": [
+      "Tu dois te battre.",
+      "Tu ne dois pas te battre.",
+      "Tu peux te battre.",
+      "Tu t'es battu."
+     ],
+     "reponse": 1,
+     "explication": "mustn't = interdiction."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "She musts go.",
+      "She must go.",
+      "She must goes.",
+      "She must to go."
+     ],
+     "reponse": 1,
+     "explication": "Après must, verbe normal."
+    },
+    {
+     "question": "Pour une règle de l'école :",
+     "options": [
+      "You must arrive on time.",
+      "You may arrive on time.",
+      "You arrived on time.",
+      "You will arrive."
+     ],
+     "reponse": 0,
+     "explication": "Règle → must."
+    },
+    {
+     "question": "Pour un conseil, on utilise plutôt :",
+     "options": [
+      "must",
+      "should",
+      "mustn't",
+      "may not"
+     ],
+     "reponse": 1,
+     "explication": "Conseil → should."
+    },
+    {
+     "question": "« We mustn't throw plastic bags » veut dire :",
+     "options": [
+      "Nous devons jeter les sachets.",
+      "Nous ne devons pas jeter de sachets.",
+      "Nous jetons les sachets.",
+      "Nous aimons les sachets."
+     ],
+     "reponse": 1,
+     "explication": "mustn't = ne pas devoir."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "must",
+     "verso": "devoir (obligation)"
+    },
+    {
+     "recto": "mustn't",
+     "verso": "ne pas devoir (interdiction)"
+    },
+    {
+     "recto": "You must arrive on time.",
+     "verso": "Tu dois arriver à l'heure."
+    },
+    {
+     "recto": "You mustn't fight.",
+     "verso": "Tu ne dois pas te battre."
+    },
+    {
+     "recto": "should",
+     "verso": "devrait (conseil)"
+    }
+   ]
+  },
+  {
+   "id": "ang6-44",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Comparison – Comparer",
+   "texte": "## Objectif\n**Comparer** deux choses ou deux personnes.\n\n## Étape 1 : Une situation\nAwa et son frère.\n**My brother Modou is taller than me. But I am older than him. Modou is faster than me in football, but I am better than him in English!**\n\n## Étape 2 : Adjectif court + ER + than\nPour les adjectifs courts (1 syllabe), on ajoute **er** + **than** (que).\nExemple : **tall → taller than** *plus grand que*\nExemple : **old → older than** *plus âgé que*\nExemple : **fast → faster than** *plus rapide que*\nExemple : **small → smaller than** *plus petit que*\n\nExemple : **Modou is taller than Ibou.** *Modou est plus grand qu'Ibou.*\nExemple : **Dakar is bigger than Kébémer.** *Dakar est plus grand que Kébémer.*\nExemple : **A car is faster than a horse.** *Une voiture est plus rapide qu'un cheval.*\n\nAttention à l'orthographe : **big → bigger**, **hot → hotter**, **easy → easier**, **happy → happier**.\n\n## Étape 3 : Adjectif long : MORE + adjectif + than\nPour les adjectifs longs (2 syllabes ou plus) :\nExemple : **beautiful → more beautiful than** *plus beau que*\nExemple : **interesting → more interesting than** *plus intéressant que*\nExemple : **expensive → more expensive than** *plus cher que*\n\nExemple : **English is more interesting than history.** *L'anglais est plus intéressant que l'histoire.*\nExemple : **A phone is more expensive than a pen.** *Un téléphone est plus cher qu'un stylo.*\n\n## Étape 4 : Les irréguliers\n- **good → better than** *meilleur que*\n- **bad → worse than** *pire que*\n\nExemple : **Fatou is better than me at maths.** *Fatou est meilleure que moi en maths.*\nExemple : **The rain is worse today.** *La pluie est pire aujourd'hui.*\n\n## Étape 5 : Aussi ... que\n- **as + adjectif + as** *aussi ... que*\n\nExemple : **Awa is as tall as Fatou.** *Awa est aussi grande que Fatou.*\nExemple : **My bag is not as heavy as yours.** *Mon sac n'est pas aussi lourd que le tien.*\n\n## Étape 6 : À moi de parler !\nCompare-toi avec un membre de ta famille :\nExemple : **My father is older than me. I am taller than my sister. My mother is as kind as my grandmother.**\n\nÀ retenir : court → **-er than** (taller than). Long → **more ... than** (more beautiful than). **good → better**, **bad → worse**. **as ... as** = aussi ... que.",
+   "qcm": [
+    {
+     "question": "Complète : Modou is ___ than Ibou.",
+     "options": [
+      "tall",
+      "taller",
+      "tallest",
+      "more tall"
+     ],
+     "reponse": 1,
+     "explication": "Adjectif court → taller."
+    },
+    {
+     "question": "Complète : Dakar is ___ than Kébémer.",
+     "options": [
+      "big",
+      "biger",
+      "bigger",
+      "more big"
+     ],
+     "reponse": 2,
+     "explication": "big → bigger."
+    },
+    {
+     "question": "Complète : English is ___ than history.",
+     "options": [
+      "interestinger",
+      "more interesting",
+      "most interesting",
+      "interesting"
+     ],
+     "reponse": 1,
+     "explication": "Adjectif long → more ..."
+    },
+    {
+     "question": "Le comparatif de « good » est :",
+     "options": [
+      "gooder",
+      "better",
+      "more good",
+      "best"
+     ],
+     "reponse": 1,
+     "explication": "good → better."
+    },
+    {
+     "question": "Le comparatif de « bad » est :",
+     "options": [
+      "badder",
+      "worse",
+      "more bad",
+      "worst"
+     ],
+     "reponse": 1,
+     "explication": "bad → worse."
+    },
+    {
+     "question": "« Awa est aussi grande que Fatou » se dit :",
+     "options": [
+      "Awa is as tall as Fatou.",
+      "Awa is tall as Fatou.",
+      "Awa is taller Fatou.",
+      "Awa is so tall than Fatou."
+     ],
+     "reponse": 0,
+     "explication": "as ... as."
+    },
+    {
+     "question": "Complète : A phone is more expensive ___ a pen.",
+     "options": [
+      "that",
+      "then",
+      "than",
+      "as"
+     ],
+     "reponse": 2,
+     "explication": "than = que."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "taller than",
+     "verso": "plus grand que"
+    },
+    {
+     "recto": "bigger than",
+     "verso": "plus grand que"
+    },
+    {
+     "recto": "more interesting than",
+     "verso": "plus intéressant que"
+    },
+    {
+     "recto": "better than",
+     "verso": "meilleur que"
+    },
+    {
+     "recto": "worse than",
+     "verso": "pire que"
+    },
+    {
+     "recto": "as tall as",
+     "verso": "aussi grand que"
+    }
+   ]
+  },
+  {
+   "id": "ang6-45",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The superlative – Le superlatif",
+   "texte": "## Objectif\nUtiliser le **superlatif** : le plus, la plus…\n\n## Étape 1 : Une situation\nLe professeur parle de la classe.\n**Modou is the tallest student in the class. Awa is the youngest. Fatou is the best at maths. And this is the most beautiful classroom in the school!**\n\n## Étape 2 : Adjectif court : THE + adjectif + EST\nExemple : **tall → the tallest** *le plus grand*\nExemple : **old → the oldest** *le plus âgé*\nExemple : **young → the youngest** *le plus jeune*\nExemple : **big → the biggest** *le plus grand*\n\nExemple : **My grandfather is the oldest person in my family.** *Mon grand-père est la personne la plus âgée de ma famille.*\nExemple : **Dakar is the biggest city in Senegal.** *Dakar est la plus grande ville du Sénégal.*\nExemple : **August is the hottest month.** *Août est le mois le plus chaud.*\n\nAttention à l'orthographe : **hot → the hottest**, **easy → the easiest**, **happy → the happiest**.\n\n## Étape 3 : Adjectif long : THE MOST + adjectif\nExemple : **beautiful → the most beautiful** *le plus beau*\nExemple : **important → the most important** *le plus important*\nExemple : **expensive → the most expensive** *le plus cher*\n\nExemple : **Tabaski is the most important festival for my family.** *La Tabaski est la fête la plus importante pour ma famille.*\nExemple : **This is the most interesting book.** *C'est le livre le plus intéressant.*\n\n## Étape 4 : Les irréguliers\n- **good → the best** *le meilleur*\n- **bad → the worst** *le pire*\n\nExemple : **Sadio Mané is one of the best football players in Africa.** *Sadio Mané est l'un des meilleurs footballeurs d'Afrique.*\nExemple : **This is the worst day of my life!** *C'est le pire jour de ma vie !*\n\n## Étape 5 : Comparatif ou superlatif ?\n- 2 choses → comparatif : **Modou is taller than Ibou.**\n- 3 choses ou plus → superlatif : **Modou is the tallest in the class.**\n\n## Étape 6 : À moi de parler !\nParle de ta famille ou de ta classe :\nExemple : **In my family, my grandfather is the oldest. My little sister is the youngest. My mother is the kindest.**\n\nÀ retenir : court → **the -est** (the tallest). Long → **the most ...** (the most beautiful). **good → the best**, **bad → the worst**.",
+   "qcm": [
+    {
+     "question": "Complète : Modou is the ___ in the class.",
+     "options": [
+      "taller",
+      "tallest",
+      "most tall",
+      "tall"
+     ],
+     "reponse": 1,
+     "explication": "Superlatif court → the tallest."
+    },
+    {
+     "question": "Complète : Dakar is the ___ city in Senegal.",
+     "options": [
+      "bigger",
+      "biggest",
+      "most big",
+      "bigest"
+     ],
+     "reponse": 1,
+     "explication": "big → the biggest."
+    },
+    {
+     "question": "Complète : Tabaski is the ___ festival.",
+     "options": [
+      "importantest",
+      "most important",
+      "more important",
+      "important"
+     ],
+     "reponse": 1,
+     "explication": "Long → the most ..."
+    },
+    {
+     "question": "Le superlatif de « good » est :",
+     "options": [
+      "the goodest",
+      "the best",
+      "the better",
+      "the most good"
+     ],
+     "reponse": 1,
+     "explication": "good → the best."
+    },
+    {
+     "question": "Le superlatif de « bad » est :",
+     "options": [
+      "the baddest",
+      "the worse",
+      "the worst",
+      "the most bad"
+     ],
+     "reponse": 2,
+     "explication": "bad → the worst."
+    },
+    {
+     "question": "Pour comparer 2 choses on utilise :",
+     "options": [
+      "le superlatif",
+      "le comparatif",
+      "le pluriel",
+      "le passé"
+     ],
+     "reponse": 1,
+     "explication": "2 choses → comparatif."
+    },
+    {
+     "question": "Complète : August is the ___ month.",
+     "options": [
+      "hotter",
+      "hottest",
+      "most hot",
+      "hotest"
+     ],
+     "reponse": 1,
+     "explication": "hot → the hottest."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "the tallest",
+     "verso": "le plus grand"
+    },
+    {
+     "recto": "the biggest",
+     "verso": "le plus grand"
+    },
+    {
+     "recto": "the most beautiful",
+     "verso": "le plus beau"
+    },
+    {
+     "recto": "the best",
+     "verso": "le meilleur"
+    },
+    {
+     "recto": "the worst",
+     "verso": "le pire"
+    },
+    {
+     "recto": "the youngest",
+     "verso": "le plus jeune"
+    }
+   ]
+  },
+  {
+   "id": "ang6-46",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Simple past – Raconter le passé",
+   "texte": "## Objectif\nRaconter ce qui s'est passé avec le **prétérit** (simple past).\n\n## Étape 1 : Une situation\nLundi matin, Awa raconte son week-end.\n**Last Saturday, I visited my grandmother in the village. I helped her in the field. In the evening, we cooked thieboudienne. On Sunday, I played with my cousins and I went back home.**\n\n## Étape 2 : Les verbes réguliers : + ED\nExemple : **visit → visited** *j'ai rendu visite*\nExemple : **help → helped** *j'ai aidé*\nExemple : **play → played** *j'ai joué*\nExemple : **cook → cooked** *j'ai cuisiné*\nExemple : **watch → watched** *j'ai regardé*\n\nAttention à l'orthographe : **dance → danced**, **study → studied**, **stop → stopped**.\n\nAstuce : Au prétérit, le verbe est **le même pour tout le monde** : I played, she played, they played.\n\n## Étape 3 : Les verbes irréguliers\nIls changent complètement. Il faut les apprendre par cœur :\n- **go → went** *aller*\n- **eat → ate** *manger*\n- **see → saw** *voir*\n- **have → had** *avoir*\n- **come → came** *venir*\n- **buy → bought** *acheter*\n- **get → got** *obtenir*\n- **do → did** *faire*\n\nExemple : **I went to the market.** *Je suis allé au marché.*\nExemple : **We ate mangoes.** *Nous avons mangé des mangues.*\nExemple : **She saw a big snake!** *Elle a vu un gros serpent !*\nExemple : **My father bought a sheep for Tabaski.** *Mon père a acheté un mouton pour la Tabaski.*\n\n## Étape 4 : Le verbe BE au passé\n- **I / he / she / it → was**\n- **you / we / they → were**\n\nExemple : **I was tired yesterday.** *J'étais fatigué hier.*\nExemple : **We were at school.** *Nous étions à l'école.*\n\n## Étape 5 : Les mots du passé\n- **yesterday** *hier*\n- **last week / last year** *la semaine dernière / l'an dernier*\n- **two days ago** *il y a deux jours*\n\n## Étape 6 : Dire « non » et poser une question\n- Non : **didn't** + verbe normal. **I didn't go to school.** *Je ne suis pas allé à l'école.*\n- Question : **Did** + sujet + verbe normal ? **Did you play football?** **Yes, I did. / No, I didn't.**\n\nAttention : après **did / didn't**, le verbe reprend sa forme normale : **Did you go?** (pas « Did you went? »).\n\n## Étape 7 : À moi de parler !\nRaconte ton dernier week-end :\nExemple : **Last Sunday, I got up late. I helped my mother. In the afternoon, I played football. I was very happy.**\n\nÀ retenir : réguliers **+ed** (played). Irréguliers : went, ate, saw, had, bought. **was / were**. Non : **didn't + verbe**. Question : **Did you ...?**",
+   "qcm": [
+    {
+     "question": "Le prétérit de « play » est :",
+     "options": [
+      "plaid",
+      "played",
+      "playd",
+      "plays"
+     ],
+     "reponse": 1,
+     "explication": "Régulier → +ed."
+    },
+    {
+     "question": "Le prétérit de « go » est :",
+     "options": [
+      "goed",
+      "went",
+      "gone",
+      "goes"
+     ],
+     "reponse": 1,
+     "explication": "go → went."
+    },
+    {
+     "question": "Le prétérit de « eat » est :",
+     "options": [
+      "eated",
+      "ate",
+      "eat",
+      "eaten"
+     ],
+     "reponse": 1,
+     "explication": "eat → ate."
+    },
+    {
+     "question": "Complète : I ___ tired yesterday.",
+     "options": [
+      "were",
+      "was",
+      "am",
+      "be"
+     ],
+     "reponse": 1,
+     "explication": "I → was."
+    },
+    {
+     "question": "Complète : We ___ at school.",
+     "options": [
+      "was",
+      "were",
+      "are",
+      "is"
+     ],
+     "reponse": 1,
+     "explication": "we → were."
+    },
+    {
+     "question": "« Je ne suis pas allé à l'école » se dit :",
+     "options": [
+      "I didn't went to school.",
+      "I didn't go to school.",
+      "I not go to school.",
+      "I don't went to school."
+     ],
+     "reponse": 1,
+     "explication": "didn't + verbe normal."
+    },
+    {
+     "question": "Comment poser la question ?",
+     "options": [
+      "Did you played?",
+      "Did you play?",
+      "Do you played?",
+      "You played?"
+     ],
+     "reponse": 1,
+     "explication": "Did + verbe normal."
+    },
+    {
+     "question": "« Yesterday » veut dire :",
+     "options": [
+      "demain",
+      "hier",
+      "aujourd'hui",
+      "ce soir"
+     ],
+     "reponse": 1,
+     "explication": "yesterday = hier."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "play → played",
+     "verso": "jouer"
+    },
+    {
+     "recto": "go → went",
+     "verso": "aller"
+    },
+    {
+     "recto": "eat → ate",
+     "verso": "manger"
+    },
+    {
+     "recto": "see → saw",
+     "verso": "voir"
+    },
+    {
+     "recto": "have → had",
+     "verso": "avoir"
+    },
+    {
+     "recto": "buy → bought",
+     "verso": "acheter"
+    },
+    {
+     "recto": "was / were",
+     "verso": "étais / étions"
+    },
+    {
+     "recto": "I didn't go.",
+     "verso": "Je ne suis pas allé."
+    },
+    {
+     "recto": "Did you play?",
+     "verso": "As-tu joué ?"
+    },
+    {
+     "recto": "yesterday",
+     "verso": "hier"
+    },
+    {
+     "recto": "last week",
+     "verso": "la semaine dernière"
+    }
+   ]
+  },
+  {
+   "id": "ang6-47",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The future – Parler du futur",
+   "texte": "## Objectif\nParler du **futur** : projets et prévisions.\n\n## Étape 1 : Une situation\nLes vacances arrivent.\nModou : **What are you going to do during the holidays?** *Qu'est-ce que tu vas faire pendant les vacances ?*\nAwa : **I'm going to visit my aunt in Dakar. And you?**\nModou : **I'm going to help my father in the field. I think it will rain a lot this year.**\nAwa : **I will call you from Dakar!** *Je t'appellerai de Dakar !*\n\n## Étape 2 : Going to = un projet déjà décidé\n**am / is / are + going to + verbe**\n\nExemple : **I am going to study tonight.** *Je vais étudier ce soir.*\nExemple : **She is going to buy a new dress.** *Elle va acheter une nouvelle robe.*\nExemple : **We are going to celebrate Korité.** *Nous allons fêter la Korité.*\nExemple : **They are going to travel to Touba for the Magal.** *Ils vont aller à Touba pour le Magal.*\n\n## Étape 3 : Will = une décision rapide ou une prévision\n**will + verbe** (pareil pour tout le monde)\n\nExemple : **I will help you.** *Je vais t'aider.* (décision maintenant)\nExemple : **It will be hot tomorrow.** *Il fera chaud demain.* (prévision)\nExemple : **I think Senegal will win the match.** *Je pense que le Sénégal gagnera le match.*\nExemple : **One day, I will be a doctor.** *Un jour, je serai médecin.*\n\nAstuce : **I will → I'll**, **will not → won't**. **I won't be late.** *Je ne serai pas en retard.*\n\n## Étape 4 : Les mots du futur\n- **tomorrow** *demain*\n- **tonight** *ce soir*\n- **next week / next year** *la semaine prochaine / l'année prochaine*\n- **in the future** *dans le futur*\n- **soon** *bientôt*\n\n## Étape 5 : Poser une question\nExemple : **What are you going to do tomorrow?** *Que vas-tu faire demain ?*\nExemple : **Are you going to come?** **Yes, I am. / No, I'm not.**\nExemple : **Will you help me?** **Yes, I will. / No, I won't.**\n\n## Étape 6 : À moi de parler !\nParle de tes projets :\nExemple : **Next week, I am going to visit my grandmother. During the holidays, I am going to read books. In the future, I will be an engineer.**\n\nÀ retenir : **going to** + verbe = projet décidé. **will** + verbe = décision rapide, prévision. **won't** = will not.",
+   "qcm": [
+    {
+     "question": "« I am going to study » veut dire :",
+     "options": [
+      "J'étudie.",
+      "Je vais étudier.",
+      "J'ai étudié.",
+      "J'étudiais."
+     ],
+     "reponse": 1,
+     "explication": "going to = futur proche, projet."
+    },
+    {
+     "question": "Complète : She ___ going to buy a dress.",
+     "options": [
+      "am",
+      "is",
+      "are",
+      "be"
+     ],
+     "reponse": 1,
+     "explication": "she → is going to."
+    },
+    {
+     "question": "« It will be hot tomorrow » veut dire :",
+     "options": [
+      "Il fait chaud.",
+      "Il fera chaud demain.",
+      "Il faisait chaud.",
+      "Il a fait chaud."
+     ],
+     "reponse": 1,
+     "explication": "will = futur."
+    },
+    {
+     "question": "La forme courte de « will not » est :",
+     "options": [
+      "willn't",
+      "won't",
+      "wont",
+      "wiln't"
+     ],
+     "reponse": 1,
+     "explication": "will not → won't."
+    },
+    {
+     "question": "Quelle phrase est correcte ?",
+     "options": [
+      "I will to help you.",
+      "I will help you.",
+      "I will helps you.",
+      "I wills help you."
+     ],
+     "reponse": 1,
+     "explication": "will + verbe normal."
+    },
+    {
+     "question": "« Next year » veut dire :",
+     "options": [
+      "l'an dernier",
+      "l'année prochaine",
+      "cette année",
+      "hier"
+     ],
+     "reponse": 1,
+     "explication": "next = prochain."
+    },
+    {
+     "question": "Pour une décision rapide (« Je vais t'aider ! ») :",
+     "options": [
+      "I will help you!",
+      "I helped you!",
+      "I help you yesterday!",
+      "I am helping you yesterday!"
+     ],
+     "reponse": 0,
+     "explication": "Décision rapide → will."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I am going to ...",
+     "verso": "Je vais ... (projet)"
+    },
+    {
+     "recto": "I will ...",
+     "verso": "Je ... (futur)"
+    },
+    {
+     "recto": "won't",
+     "verso": "will not"
+    },
+    {
+     "recto": "tomorrow",
+     "verso": "demain"
+    },
+    {
+     "recto": "next week",
+     "verso": "la semaine prochaine"
+    },
+    {
+     "recto": "in the future",
+     "verso": "dans le futur"
+    },
+    {
+     "recto": "What are you going to do?",
+     "verso": "Que vas-tu faire ?"
+    }
+   ]
   }
  ]
 }
