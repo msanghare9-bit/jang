@@ -222,13 +222,22 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
   bool _migrated = false;
   List<LessonPack> _packs = const [];
   bool _packsLoaded = false;
+  String _packStatus = 'loading'; // loading | error | ok
 
   Future<void> _loadPacks() async {
     _packsLoaded = true;
+    if (mounted) setState(() => _packStatus = 'loading');
     final all = await PackService.instance.fetch();
     final exam = await ContentRepo.instance.exam(widget.subject.examId);
-    final fit = all.where((p) => p.fits(widget.subject, exam?.name ?? '')).toList();
-    if (mounted) setState(() => _packs = fit);
+    final fit = (all ?? const <LessonPack>[])
+        .where((p) => p.fits(widget.subject, exam?.name ?? ''))
+        .toList();
+    if (mounted) {
+      setState(() {
+        _packs = fit;
+        _packStatus = all == null ? 'error' : 'ok';
+      });
+    }
   }
 
   List<LessonPack> get _newPacks {
@@ -248,6 +257,22 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
   }
 
   Widget _packsCard(Color color) {
+    if (_packStatus == 'loading') {
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Text('Recherche des leçons prêtes…', style: Theme.of(context).textTheme.bodySmall),
+      );
+    }
+    if (_packStatus == 'error') {
+      return Card(
+        margin: const EdgeInsets.only(bottom: 14),
+        child: ListTile(
+          leading: const Icon(Icons.wifi_off_rounded),
+          title: const Text('Leçons prêtes : pas de connexion'),
+          trailing: TextButton(onPressed: _loadPacks, child: const Text('Réessayer')),
+        ),
+      );
+    }
     final packs = _newPacks;
     if (packs.isEmpty) return const SizedBox.shrink();
     return Card(

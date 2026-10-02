@@ -67,10 +67,30 @@ class LessonPack {
       .replaceAll(RegExp('[àâ]'), 'a')
       .replaceAll(RegExp(r'\s+'), '');
 
+  /// Niveau lu dans un nom (« 6e », « 6ème », « Sixième »…) : '6', ou '' si aucun.
+  static String levelOf(String name) {
+    final n = _norm(name);
+    const words = {
+      'sixieme': '6', 'cinquieme': '5', 'quatrieme': '4', 'troisieme': '3',
+      'seconde': '2', 'premiere': '1', 'terminale': 't',
+    };
+    for (final e in words.entries) {
+      if (n.contains(e.key)) return e.value;
+    }
+    final m = RegExp(r'(\d)(e|eme|°)').firstMatch(n);
+    return m?.group(1) ?? '';
+  }
+
   /// Vrai si ce paquet est destiné à cette matière de ce niveau.
   bool fits(Subject s, String examName) {
-    final okSubject = subject.isEmpty || _norm(s.name).contains(_norm(subject));
-    final okLevel = level.isEmpty || examName.isEmpty || _norm(examName).contains(_norm(level));
+    final name = _norm(s.name);
+    final want0 = _norm(subject);
+    final okSubject = want0.isEmpty ||
+        name.contains(want0) ||
+        (want0.startsWith('angl') && (name.contains('angl') || name.contains('english')));
+    final want = levelOf(level);
+    final have = levelOf(examName);
+    final okLevel = want.isEmpty || have.isEmpty || want == have;
     return okSubject && okLevel;
   }
 }
@@ -82,13 +102,13 @@ class PackService {
   static const _url =
       'https://raw.githubusercontent.com/msanghare9-bit/jang/main/contenus/lecons.json';
 
-  Future<List<LessonPack>> fetch() async {
+  Future<List<LessonPack>?> fetch() async {
     final client = HttpClient()..connectionTimeout = const Duration(seconds: 15);
     try {
       final uri = Uri.parse('$_url?t=${DateTime.now().millisecondsSinceEpoch ~/ 60000}');
       final req = await client.getUrl(uri);
       final res = await req.close().timeout(const Duration(seconds: 30));
-      if (res.statusCode != 200) return const [];
+      if (res.statusCode != 200) return null;
       final text = await res.transform(utf8.decoder).join();
       final data = jsonDecode(text);
       final list = data is Map && data['lecons'] is List ? data['lecons'] as List : const [];
@@ -99,7 +119,7 @@ class PackService {
           .toList();
     } catch (e) {
       debugPrint('Leçons prêtes indisponibles : $e');
-      return const [];
+      return null;
     } finally {
       client.close();
     }
