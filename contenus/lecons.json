@@ -794,6 +794,149 @@
      "verso": "As-tu des frères et sœurs ?"
     }
    ]
+  },
+  {
+   "id": "ang6-07",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "The days of the week – Les jours",
+   "texte": "## Objectif\nDire les jours de la semaine en anglais.\n\n## Étape 1 : Les 7 jours de la semaine\n- **Monday** *lundi* (Wolof : Altine)\n- **Tuesday** *mardi* (Wolof : Talaata)\n- **Wednesday** *mercredi* (Wolof : Àllarba)\n- **Thursday** *jeudi* (Wolof : Alxamis)\n- **Friday** *vendredi* (Wolof : Àjjuma)\n- **Saturday** *samedi* (Wolof : Gaawu)\n- **Sunday** *dimanche* (Wolof : Dibéer)\n\nAstuce : En anglais, les jours commencent toujours par une **majuscule** : **Monday**, pas « monday ».\nAttention : **Wednesday** s'écrit avec un « d », mais on ne l'entend pas. Écoute bien la prononciation.\n\n## Étape 2 : Quel jour sommes-nous ?\n- **What day is it today?** *Quel jour sommes-nous aujourd'hui ?*\n- **Today is ...** *Aujourd'hui, c'est ...*\n\nExemple : **What day is it today?** **Today is Monday.** *Aujourd'hui, c'est lundi.*\nExemple : **What day is it today?** **Today is Friday.** *Aujourd'hui, c'est vendredi.*\nExemple : **Today is Wednesday.** *Aujourd'hui, c'est mercredi.*\nExemple : **Today is Sunday.** *Aujourd'hui, c'est dimanche.*\n\n## Étape 3 : Demain\n- **Tomorrow is ...** *Demain, c'est ...*\n\nExemple : **Today is Monday. Tomorrow is Tuesday.** *Aujourd'hui, c'est lundi. Demain, c'est mardi.*\nExemple : **Today is Thursday. Tomorrow is Friday.** *Aujourd'hui, c'est jeudi. Demain, c'est vendredi.*\nExemple : **Today is Saturday. Tomorrow is Sunday.** *Aujourd'hui, c'est samedi. Demain, c'est dimanche.*\n\n## Étape 4 : Ce que je fais chaque jour\n- **On Monday, ...** *Le lundi, ...*\n\nExemple : **On Monday, I go to school.** *Le lundi, je vais à l'école.*\nExemple : **On Wednesday, I have English.** *Le mercredi, j'ai anglais.*\nExemple : **On Friday, my father goes to the mosque.** *Le vendredi, mon père va à la mosquée.*\nExemple : **On Saturday, I play football.** *Le samedi, je joue au football.*\nExemple : **On Sunday, I visit my grandmother.** *Le dimanche, je rends visite à ma grand-mère.*\n\nAstuce : Devant un jour, on met **on** : **on Monday**, **on Sunday**.\n\n## Étape 5 : La semaine et le week-end\n- **the week** *la semaine*\n- **the weekend** *le week-end* (samedi et dimanche)\n\nExemple : **There are seven days in a week.** *Il y a sept jours dans une semaine.*\nExemple : **I go to school from Monday to Friday.** *Je vais à l'école du lundi au vendredi.*\nExemple : **Saturday and Sunday are the weekend.** *Samedi et dimanche, c'est le week-end.*\n\n## Petit dialogue\nTeacher : **Good morning, class! What day is it today?**\nAwa : **Today is Tuesday.**\nTeacher : **Very good! And tomorrow?**\nModou : **Tomorrow is Wednesday.**\nTeacher : **Good! What do you do on Saturday, Modou?**\nModou : **On Saturday, I play football.**\nTeacher : **Very nice!**\n\nÀ retenir : Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. What day is it today? = Quel jour sommes-nous ? Today is ... = Aujourd'hui, c'est ...",
+   "qcm": [
+    {
+     "question": "« Monday » veut dire :",
+     "options": [
+      "mardi",
+      "lundi",
+      "dimanche",
+      "vendredi"
+     ],
+     "reponse": 1,
+     "explication": "Monday = lundi = Altine."
+    },
+    {
+     "question": "Comment dit-on « vendredi » ?",
+     "options": [
+      "Friday",
+      "Thursday",
+      "Saturday",
+      "Tuesday"
+     ],
+     "reponse": 0,
+     "explication": "Friday = vendredi = Àjjuma."
+    },
+    {
+     "question": "« Sunday » veut dire :",
+     "options": [
+      "samedi",
+      "lundi",
+      "dimanche",
+      "mercredi"
+     ],
+     "reponse": 2,
+     "explication": "Sunday = dimanche = Dibéer."
+    },
+    {
+     "question": "Quel jour vient après Tuesday ?",
+     "options": [
+      "Monday",
+      "Thursday",
+      "Wednesday",
+      "Friday"
+     ],
+     "reponse": 2,
+     "explication": "Monday, Tuesday, Wednesday…"
+    },
+    {
+     "question": "Pour demander le jour, on dit :",
+     "options": [
+      "How old are you?",
+      "What day is it today?",
+      "What is your name?",
+      "How are you?"
+     ],
+     "reponse": 1,
+     "explication": "What day is it today? = Quel jour sommes-nous ?"
+    },
+    {
+     "question": "Today is Thursday. Tomorrow is …",
+     "options": [
+      "Wednesday",
+      "Friday",
+      "Saturday",
+      "Monday"
+     ],
+     "reponse": 1,
+     "explication": "Après jeudi, c'est vendredi : Friday."
+    },
+    {
+     "question": "Quels jours font le week-end ?",
+     "options": [
+      "Monday and Tuesday",
+      "Friday and Saturday",
+      "Saturday and Sunday",
+      "Sunday and Monday"
+     ],
+     "reponse": 2,
+     "explication": "The weekend = Saturday and Sunday."
+    },
+    {
+     "question": "Quelle phrase est bien écrite ?",
+     "options": [
+      "Today is monday.",
+      "Today is Monday.",
+      "today is Monday",
+      "Today Monday is."
+     ],
+     "reponse": 1,
+     "explication": "Les jours prennent une majuscule : Monday."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Monday",
+     "verso": "lundi (Altine)"
+    },
+    {
+     "recto": "Tuesday",
+     "verso": "mardi (Talaata)"
+    },
+    {
+     "recto": "Wednesday",
+     "verso": "mercredi (Àllarba)"
+    },
+    {
+     "recto": "Thursday",
+     "verso": "jeudi (Alxamis)"
+    },
+    {
+     "recto": "Friday",
+     "verso": "vendredi (Àjjuma)"
+    },
+    {
+     "recto": "Saturday",
+     "verso": "samedi (Gaawu)"
+    },
+    {
+     "recto": "Sunday",
+     "verso": "dimanche (Dibéer)"
+    },
+    {
+     "recto": "What day is it today?",
+     "verso": "Quel jour sommes-nous ?"
+    },
+    {
+     "recto": "Today is ...",
+     "verso": "Aujourd'hui, c'est ..."
+    },
+    {
+     "recto": "Tomorrow is ...",
+     "verso": "Demain, c'est ..."
+    },
+    {
+     "recto": "the weekend",
+     "verso": "le week-end"
+    }
+   ]
   }
  ]
 }
