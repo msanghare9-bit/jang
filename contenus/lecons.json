@@ -2266,6 +2266,149 @@
      "verso": "Je veux être médecin."
     }
    ]
+  },
+  {
+   "id": "ang6-17",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Am, is, are – Parler de soi et des autres",
+   "texte": "## Objectif\nUtiliser **am / is / are** pour parler de soi et des autres.\n\n## Étape 1 : J'écoute une situation\nLe premier jour au LFA Kébémer.\nAwa : **Hello! I am Awa. I am eleven.**\nIbou : **Hi! I am Ibou. You are new!**\nAwa : **Yes, I am new. Who is she?**\nIbou : **She is Fatou. She is my sister.**\nAwa : **And who is he?**\nIbou : **He is Modou. He is my friend. We are in 6e.**\n\n## Étape 2 : Je remarque\nDans le dialogue, on voit **am**, **is** et **are**. Ce sont les formes du verbe **be** (être).\n\n- **I am** *je suis*\n- **you are** *tu es*\n- **he is** *il est*\n- **she is** *elle est*\n- **it is** *c'est / il, elle est* (pour une chose ou un animal)\n- **we are** *nous sommes*\n- **they are** *ils / elles sont*\n\nAstuce : **I** → **am**. **he / she / it** → **is**. **you / we / they** → **are**.\n\n## Étape 3 : Je parle de moi et des autres\nExemple : **I am a student.** *Je suis élève.*\nExemple : **You are my friend.** *Tu es mon ami.*\nExemple : **He is a farmer.** *Il est cultivateur.*\nExemple : **She is my mother.** *Elle est ma mère.*\nExemple : **It is a mango.** *C'est une mangue.*\nExemple : **We are in Kébémer.** *Nous sommes à Kébémer.*\nExemple : **They are my brothers.** *Ce sont mes frères.*\n\n## Étape 4 : La forme courte (quand on parle)\n- **I am → I'm**\n- **you are → you're**\n- **he is → he's**\n- **she is → she's**\n- **it is → it's**\n\nExemple : **I'm Awa.** *Je suis Awa.*\nExemple : **She's my sister.** *C'est ma sœur.*\nExemple : **It's hot today!** *Il fait chaud aujourd'hui !*\n\n## Étape 5 : Dire « non »\nOn ajoute **not** après am, is, are.\n\nExemple : **I am not tired.** *Je ne suis pas fatigué.*\nExemple : **He is not a teacher. He is a doctor.** *Il n'est pas professeur. Il est médecin.*\nExemple : **It is not a lemon. It is an orange.** *Ce n'est pas un citron. C'est une orange.*\nExemple : **We are not late.** *Nous ne sommes pas en retard.*\n\nAstuce : **is not → isn't**, **are not → aren't**. Exemple : **She isn't here.** *Elle n'est pas là.*\n\n## Étape 6 : Poser une question\nOn met **am / is / are** au début.\n\nExemple : **Are you Awa?** **Yes, I am.** *Oui.*\nExemple : **Is he your brother?** **Yes, he is.**\nExemple : **Is she a nurse?** **No, she isn't.** *Non.*\nExemple : **Are they your friends?** **Yes, they are.**\nExemple : **Is it a mango?** **No, it isn't. It's a papaya.**\n\n## Étape 7 : À moi de parler !\nPrésente ta famille avec am, is, are :\nExemple : **I'm Modou. I'm twelve. This is my father. He is a farmer. This is my mother. She is a trader. They are very nice!**\n\nÀ retenir : I **am** — he / she / it **is** — you / we / they **are**. Non : **not**. Question : **Are you…? Is he…?**",
+   "qcm": [
+    {
+     "question": "Complète : I ___ Awa.",
+     "options": [
+      "is",
+      "are",
+      "am",
+      "be"
+     ],
+     "reponse": 2,
+     "explication": "Avec I, on dit am."
+    },
+    {
+     "question": "Complète : She ___ my sister.",
+     "options": [
+      "am",
+      "is",
+      "are",
+      "be"
+     ],
+     "reponse": 1,
+     "explication": "Avec she, on dit is."
+    },
+    {
+     "question": "Complète : We ___ in 6e.",
+     "options": [
+      "am",
+      "is",
+      "are",
+      "be"
+     ],
+     "reponse": 2,
+     "explication": "Avec we, on dit are."
+    },
+    {
+     "question": "Complète : Modou ___ my friend.",
+     "options": [
+      "am",
+      "is",
+      "are",
+      "be"
+     ],
+     "reponse": 1,
+     "explication": "Modou = he → is."
+    },
+    {
+     "question": "« Il n'est pas professeur » se dit :",
+     "options": [
+      "He not is a teacher.",
+      "He is not a teacher.",
+      "He are not a teacher.",
+      "He am not a teacher."
+     ],
+     "reponse": 1,
+     "explication": "On met not après is."
+    },
+    {
+     "question": "Comment poser la question ?",
+     "options": [
+      "You are Awa?",
+      "Are you Awa?",
+      "Is you Awa?",
+      "Am you Awa?"
+     ],
+     "reponse": 1,
+     "explication": "On met are au début : Are you…?"
+    },
+    {
+     "question": "« Is he your brother? » — Oui :",
+     "options": [
+      "Yes, he is.",
+      "Yes, he are.",
+      "Yes, I am.",
+      "Yes, he am."
+     ],
+     "reponse": 0,
+     "explication": "Yes, he is."
+    },
+    {
+     "question": "La forme courte de « it is » est :",
+     "options": [
+      "its",
+      "it's",
+      "is it",
+      "i'ts"
+     ],
+     "reponse": 1,
+     "explication": "it is → it's."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I am",
+     "verso": "je suis"
+    },
+    {
+     "recto": "you are",
+     "verso": "tu es"
+    },
+    {
+     "recto": "he is",
+     "verso": "il est"
+    },
+    {
+     "recto": "she is",
+     "verso": "elle est"
+    },
+    {
+     "recto": "it is",
+     "verso": "c'est"
+    },
+    {
+     "recto": "we are",
+     "verso": "nous sommes"
+    },
+    {
+     "recto": "they are",
+     "verso": "ils / elles sont"
+    },
+    {
+     "recto": "I'm / she's / it's",
+     "verso": "formes courtes"
+    },
+    {
+     "recto": "He is not a teacher.",
+     "verso": "Il n'est pas professeur."
+    },
+    {
+     "recto": "Are you Awa? – Yes, I am.",
+     "verso": "Es-tu Awa ? – Oui."
+    },
+    {
+     "recto": "Is she a nurse? – No, she isn't.",
+     "verso": "Est-elle infirmière ? – Non."
+    }
+   ]
   }
  ]
 }
