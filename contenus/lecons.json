@@ -1224,6 +1224,130 @@
      "verso": "le soir"
     }
    ]
+  },
+  {
+   "id": "ang6-10",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Likes and dislikes – Ce que j'aime",
+   "texte": "## Objectif\nDire ce que j'aime et ce que je n'aime pas en anglais.\n\n## Étape 1 : J'aime\n- **I like ...** *J'aime ...* (Wolof : Bëgg naa ...)\n\nExemple : **I like rice.** *J'aime le riz.*\nExemple : **I like mangoes.** *J'aime les mangues.*\nExemple : **I like football.** *J'aime le football.*\nExemple : **I like English.** *J'aime l'anglais.*\nExemple : **I like my school.** *J'aime mon école.*\nExemple : **I like thieboudienne.** *J'aime le thiéboudiène.*\n\n## Étape 2 : J'adore\n- **I love ...** *J'adore ...*\n\nExemple : **I love football.** *J'adore le football.*\nExemple : **I love my family.** *J'adore ma famille.*\nExemple : **I love bissap juice.** *J'adore le jus de bissap.*\nExemple : **I love wrestling.** *J'adore la lutte.*\n\nAstuce : **love** est plus fort que **like**.\n\n## Étape 3 : Je n'aime pas\n- **I don't like ...** *Je n'aime pas ...* (Wolof : Bëggu ma ...)\n\nExemple : **I don't like rain.** *Je n'aime pas la pluie.*\nExemple : **I don't like onions.** *Je n'aime pas les oignons.*\nExemple : **I don't like homework.** *Je n'aime pas les devoirs.*\nExemple : **I don't like cold water.** *Je n'aime pas l'eau froide.*\nExemple : **I don't like noise.** *Je n'aime pas le bruit.*\n\nAstuce : **don't** = **do not**. On met **don't** devant **like** pour dire « ne… pas ».\n\n## Étape 4 : Demander à quelqu'un\n- **Do you like ...?** *Est-ce que tu aimes ... ?*\n- **Yes, I do.** *Oui.*\n- **No, I don't.** *Non.*\n\nExemple : **Do you like football?** **Yes, I do.** *Oui, j'aime ça.*\nExemple : **Do you like mangoes?** **Yes, I do.**\nExemple : **Do you like rain?** **No, I don't.** *Non, je n'aime pas ça.*\nExemple : **Do you like fish?** **No, I don't.**\n\n## Étape 5 : Parler des autres\n- **He likes ...** *Il aime ...*\n- **She likes ...** *Elle aime ...*\n\nExemple : **Modou likes football.** *Modou aime le football.*\nExemple : **Awa likes music.** *Awa aime la musique.*\nExemple : **My father likes attaya.** *Mon père aime l'attaya.*\nExemple : **My sister likes dancing.** *Ma sœur aime danser.*\n\nAttention : Avec **he**, **she** ou un nom (Modou, Awa…), on ajoute **s** : **likes**.\n\n## Petit dialogue\nAwa : **Modou, do you like football?**\nModou : **Yes, I do. I love football! And you?**\nAwa : **I don't like football. I like music.**\nModou : **Do you like thieboudienne?**\nAwa : **Yes, I do! I love thieboudienne.**\nModou : **Me too!** *Moi aussi !*\n\nÀ retenir : I like = J'aime. I love = J'adore. I don't like = Je n'aime pas. Do you like ...? → Yes, I do. / No, I don't.",
+   "qcm": [
+    {
+     "question": "« I like rice » veut dire :",
+     "options": [
+      "Je n'aime pas le riz.",
+      "J'aime le riz.",
+      "J'ai du riz.",
+      "Je mange du riz."
+     ],
+     "reponse": 1,
+     "explication": "I like = J'aime."
+    },
+    {
+     "question": "« Je n'aime pas la pluie » se dit :",
+     "options": [
+      "I like rain.",
+      "I don't like rain.",
+      "I not like rain.",
+      "I love rain."
+     ],
+     "reponse": 1,
+     "explication": "don't like = n'aime pas."
+    },
+    {
+     "question": "Quel mot est le plus fort ?",
+     "options": [
+      "like",
+      "don't like",
+      "love",
+      "do"
+     ],
+     "reponse": 2,
+     "explication": "love = adorer, plus fort que like."
+    },
+    {
+     "question": "« Do you like mangoes? » — Oui :",
+     "options": [
+      "Yes, I like.",
+      "Yes, I do.",
+      "Yes, I am.",
+      "Yes, I don't."
+     ],
+     "reponse": 1,
+     "explication": "Réponse courte : Yes, I do."
+    },
+    {
+     "question": "« Do you like fish? » — Non :",
+     "options": [
+      "No, I don't.",
+      "No, I do.",
+      "No, I not.",
+      "No, I am not like."
+     ],
+     "reponse": 0,
+     "explication": "Réponse courte : No, I don't."
+    },
+    {
+     "question": "Complète : Modou ___ football.",
+     "options": [
+      "like",
+      "likes",
+      "liking",
+      "do like"
+     ],
+     "reponse": 1,
+     "explication": "Avec Modou (il), on ajoute s : likes."
+    },
+    {
+     "question": "Pour demander « Est-ce que tu aimes… ? », on dit :",
+     "options": [
+      "Do you like…?",
+      "You like…?",
+      "Are you like…?",
+      "Like you…?"
+     ],
+     "reponse": 0,
+     "explication": "Do you like…? = Est-ce que tu aimes… ?"
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "I like ...",
+     "verso": "J'aime ... (Bëgg naa ...)"
+    },
+    {
+     "recto": "I love ...",
+     "verso": "J'adore ..."
+    },
+    {
+     "recto": "I don't like ...",
+     "verso": "Je n'aime pas ... (Bëggu ma ...)"
+    },
+    {
+     "recto": "Do you like ...?",
+     "verso": "Est-ce que tu aimes ... ?"
+    },
+    {
+     "recto": "Yes, I do.",
+     "verso": "Oui."
+    },
+    {
+     "recto": "No, I don't.",
+     "verso": "Non."
+    },
+    {
+     "recto": "He likes football.",
+     "verso": "Il aime le football."
+    },
+    {
+     "recto": "She likes music.",
+     "verso": "Elle aime la musique."
+    },
+    {
+     "recto": "Me too!",
+     "verso": "Moi aussi !"
+    }
+   ]
   }
  ]
 }
