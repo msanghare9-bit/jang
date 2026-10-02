@@ -1,0 +1,266 @@
+{
+ "lecons": [
+  {
+   "id": "ang6-01",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Greetings – Les salutations",
+   "texte": "## Objectif\nSaluer quelqu'un en anglais, comme on fait chaque jour au Sénégal.\n\n## Étape 1 : Dire bonjour\n- **Hello** *Bonjour* (Wolof : Salaamaalekum)\n- **Hi** *Salut*\n- **Good morning** *Bonjour (le matin)*\n- **Good afternoon** *Bonjour (l'après-midi)*\n- **Good evening** *Bonsoir*\n\nExemple : **Good morning, teacher!** *Bonjour, monsieur / madame !*\nExemple : **Good morning, Mum!** *Bonjour, maman !*\nExemple : **Hi, Modou!** *Salut, Modou !*\nExemple : **Hello, Awa!** *Bonjour, Awa !*\nExemple : **Good afternoon, Mr Diop!** *Bonjour, M. Diop !*\nExemple : **Good evening, Grandpa!** *Bonsoir, grand-père !*\n\nAstuce : Le matin = **Good morning**. L'après-midi = **Good afternoon**. Le soir = **Good evening**. **Hello** marche à tout moment.\n\n## Étape 2 : Demander « Ça va ? »\n- **How are you?** *Comment vas-tu ?* (Wolof : Na nga def ?)\n- **I'm fine, thank you.** *Je vais bien, merci.* (Wolof : Maangi fi rekk)\n- **And you?** *Et toi ?*\n\nExemple : **How are you, Ibou?** **I'm fine, thank you.**\nExemple : **How are you, Fatou?** **I'm fine, thank you. And you?**\nExemple : **How are you, teacher?** **I'm fine, thank you.**\nExemple : **I'm fine too.** *Je vais bien aussi.*\n\n## Étape 3 : Dire merci\n- **Thank you** *Merci* (Wolof : Jërëjëf)\n- **Thanks** *Merci (familier)*\n- **You're welcome** *De rien* (Wolof : Ñoo ko bokk)\n\nExemple : Le boutiquier donne le pain. **Thank you!** **You're welcome!**\nExemple : Awa prête un stylo à Khady. **Thanks, Awa!**\nExemple : Maman donne le petit-déjeuner. **Thank you, Mum!**\n\n## Étape 4 : Dire au revoir\n- **Goodbye** *Au revoir* (Wolof : Ba beneen yoon)\n- **Bye** *Salut / À plus*\n- **See you tomorrow** *À demain* (Wolof : Ba suba)\n- **Good night** *Bonne nuit* (Wolof : Fanaanal jàmm)\n\nExemple : Après les cours : **Bye, Aïda!**\nExemple : **Goodbye, teacher!** **See you tomorrow!**\nExemple : Le soir, avant de dormir : **Good night, Dad!**\nExemple : **See you tomorrow, Moussa!**\n\nAttention : **Good night** se dit seulement pour aller dormir. Pour saluer le soir, on dit **Good evening**.\n\n## Petit dialogue\nAwa : **Good morning, Moussa!**\nMoussa : **Good morning, Awa! How are you?**\nAwa : **I'm fine, thank you. And you?**\nMoussa : **I'm fine too.**\nAwa : **Bye, Moussa! See you tomorrow!**\nMoussa : **Goodbye!**\n\nÀ retenir : Hello = Bonjour. How are you? = Ça va ? Thank you = Merci. Goodbye = Au revoir.",
+   "qcm": [
+    {
+     "question": "Le matin, on dit :",
+     "options": [
+      "Good morning",
+      "Good night",
+      "Thank you",
+      "Goodbye"
+     ],
+     "reponse": 0,
+     "explication": "Morning = le matin."
+    },
+    {
+     "question": "« How are you? » veut dire :",
+     "options": [
+      "Au revoir",
+      "Comment vas-tu ?",
+      "Merci",
+      "Bonne nuit"
+     ],
+     "reponse": 1,
+     "explication": "How are you? = Na nga def ?"
+    },
+    {
+     "question": "On répond à « How are you? » par :",
+     "options": [
+      "Hello",
+      "Goodbye",
+      "I'm fine, thank you",
+      "Good evening"
+     ],
+     "reponse": 2,
+     "explication": "I'm fine = je vais bien."
+    },
+    {
+     "question": "« Jërëjëf » en anglais, c'est :",
+     "options": [
+      "Hi",
+      "Thank you",
+      "Bye",
+      "Good morning"
+     ],
+     "reponse": 1,
+     "explication": "Thank you = merci = jërëjëf."
+    },
+    {
+     "question": "Après les cours, tu dis à ton ami :",
+     "options": [
+      "Good morning",
+      "How are you?",
+      "See you tomorrow",
+      "Good afternoon"
+     ],
+     "reponse": 2,
+     "explication": "See you tomorrow = à demain."
+    },
+    {
+     "question": "Avant de dormir, tu dis :",
+     "options": [
+      "Good evening",
+      "Good night",
+      "Good afternoon",
+      "Hello"
+     ],
+     "reponse": 1,
+     "explication": "Good night = pour aller dormir."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Hello",
+     "verso": "Bonjour (Salaamaalekum)"
+    },
+    {
+     "recto": "Hi",
+     "verso": "Salut"
+    },
+    {
+     "recto": "Good morning",
+     "verso": "Bonjour (le matin)"
+    },
+    {
+     "recto": "Good afternoon",
+     "verso": "Bonjour (l'après-midi)"
+    },
+    {
+     "recto": "Good evening",
+     "verso": "Bonsoir"
+    },
+    {
+     "recto": "How are you?",
+     "verso": "Comment vas-tu ? (Na nga def ?)"
+    },
+    {
+     "recto": "I'm fine, thank you",
+     "verso": "Je vais bien, merci (Maangi fi rekk)"
+    },
+    {
+     "recto": "Thank you",
+     "verso": "Merci (Jërëjëf)"
+    },
+    {
+     "recto": "You're welcome",
+     "verso": "De rien (Ñoo ko bokk)"
+    },
+    {
+     "recto": "Goodbye",
+     "verso": "Au revoir (Ba beneen yoon)"
+    },
+    {
+     "recto": "See you tomorrow",
+     "verso": "À demain (Ba suba)"
+    },
+    {
+     "recto": "Good night",
+     "verso": "Bonne nuit (Fanaanal jàmm)"
+    }
+   ]
+  },
+  {
+   "id": "ang6-02",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "My classroom – Ma classe",
+   "texte": "## Objectif\nNommer les objets et les personnes de ma classe en anglais.\n\n## Étape 1 : Les objets de mon sac\n- **a book** *un livre* (Wolof : téere)\n- **a pen** *un stylo* (Wolof : bindukaay)\n- **a pencil** *un crayon*\n- **a ruler** *une règle*\n- **an exercise book** *un cahier*\n- **a bag** *un sac* (Wolof : saak)\n\nExemple : **I have a pen.** *J'ai un stylo.*\nExemple : **I have a book.** *J'ai un livre.*\nExemple : **I have a ruler.** *J'ai une règle.*\nExemple : **Awa has a bag.** *Awa a un sac.*\nExemple : **Modou has a pencil.** *Modou a un crayon.*\nExemple : **Fatou has an exercise book.** *Fatou a un cahier.*\n\nAstuce : On met **a** devant un mot. On met **an** devant a, e, i, o, u. Exemple : **a pen**, **a bag**, mais **an exercise book**.\n\n## Étape 2 : Dans la classe\n- **a table** *une table* (Wolof : taabal)\n- **a chair** *une chaise* (Wolof : siis)\n- **a blackboard** *un tableau*\n- **a door** *une porte*\n- **a window** *une fenêtre*\n\nExemple : **The door is open.** *La porte est ouverte.*\nExemple : **The window is big.** *La fenêtre est grande.*\nExemple : **The blackboard is black.** *Le tableau est noir.*\nExemple : **I sit on a chair.** *Je m'assois sur une chaise.*\nExemple : **My book is on the table.** *Mon livre est sur la table.*\n\n## Étape 3 : Les personnes\n- **a teacher** *un professeur* (Wolof : jàngalekat)\n- **a student** *un élève* (Wolof : ndongo)\n\nExemple : **Mr Diop is a teacher.** *M. Diop est professeur.*\nExemple : **Mrs Ndiaye is a teacher.** *Mme Ndiaye est professeure.*\nExemple : **Fatou is a student.** *Fatou est élève.*\nExemple : **Ibrahima is a student.** *Ibrahima est élève.*\nExemple : **I am a student.** *Je suis élève.*\n\n## Étape 4 : Demander et répondre\n- **What is this?** *Qu'est-ce que c'est ?*\n- **It is a ...** *C'est un(e) ...*\n\nExemple : **What is this?** **It is a pen.** *C'est un stylo.*\nExemple : **What is this?** **It is a bag.** *C'est un sac.*\nExemple : **What is this?** **It is a chair.** *C'est une chaise.*\nExemple : **What is this?** **It is a ruler.** *C'est une règle.*\nExemple : **What is this?** **It is an exercise book.** *C'est un cahier.*\n\n## Étape 5 : Dire « c'est mon... »\n- **This is my ...** *C'est mon / ma ...*\n\nExemple : **This is my pen.** *C'est mon stylo.*\nExemple : **This is my bag.** *C'est mon sac.*\nExemple : **This is my book.** *C'est mon livre.*\nExemple : **This is my teacher.** *C'est mon professeur.*\n\n## Petit dialogue\nTeacher : **Good morning, class!**\nStudents : **Good morning, teacher!**\nTeacher : **Modou, what is this?**\nModou : **It is a book.**\nTeacher : **Very good! Awa, what is this?**\nAwa : **It is a ruler.**\nTeacher : **Good! Khady, what is this?**\nKhady : **It is my bag.**\nTeacher : **Thank you!**\n\nÀ retenir : What is this? = Qu'est-ce que c'est ? It is a ... = C'est un(e) ... This is my ... = C'est mon ...",
+   "qcm": [
+    {
+     "question": "« Un stylo » en anglais, c'est :",
+     "options": [
+      "a pen",
+      "a bag",
+      "a door",
+      "a chair"
+     ],
+     "reponse": 0,
+     "explication": "Pen = stylo = bindukaay."
+    },
+    {
+     "question": "« A teacher », c'est :",
+     "options": [
+      "un élève",
+      "un professeur",
+      "une table",
+      "un livre"
+     ],
+     "reponse": 1,
+     "explication": "Teacher = professeur = jàngalekat."
+    },
+    {
+     "question": "Pour demander « Qu'est-ce que c'est ? », on dit :",
+     "options": [
+      "How are you?",
+      "What is this?",
+      "This is my bag.",
+      "Good morning!"
+     ],
+     "reponse": 1,
+     "explication": "What is this? = Qu'est-ce que c'est ?"
+    },
+    {
+     "question": "Le professeur écrit sur :",
+     "options": [
+      "the window",
+      "the chair",
+      "the blackboard",
+      "the door"
+     ],
+     "reponse": 2,
+     "explication": "Blackboard = tableau."
+    },
+    {
+     "question": "Quel mot prend « an » ?",
+     "options": [
+      "book",
+      "exercise book",
+      "ruler",
+      "pen"
+     ],
+     "reponse": 1,
+     "explication": "Exercise commence par e : an exercise book."
+    },
+    {
+     "question": "« C'est mon sac » se dit :",
+     "options": [
+      "This is my bag.",
+      "What is this?",
+      "I am a bag.",
+      "It is a pen."
+     ],
+     "reponse": 0,
+     "explication": "This is my ... = C'est mon ..."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "a book",
+     "verso": "un livre (téere)"
+    },
+    {
+     "recto": "a pen",
+     "verso": "un stylo (bindukaay)"
+    },
+    {
+     "recto": "a pencil",
+     "verso": "un crayon"
+    },
+    {
+     "recto": "a ruler",
+     "verso": "une règle"
+    },
+    {
+     "recto": "an exercise book",
+     "verso": "un cahier"
+    },
+    {
+     "recto": "a bag",
+     "verso": "un sac (saak)"
+    },
+    {
+     "recto": "a table",
+     "verso": "une table (taabal)"
+    },
+    {
+     "recto": "a chair",
+     "verso": "une chaise (siis)"
+    },
+    {
+     "recto": "a blackboard",
+     "verso": "un tableau"
+    },
+    {
+     "recto": "a door",
+     "verso": "une porte"
+    },
+    {
+     "recto": "a window",
+     "verso": "une fenêtre"
+    },
+    {
+     "recto": "a teacher",
+     "verso": "un professeur (jàngalekat)"
+    },
+    {
+     "recto": "a student",
+     "verso": "un élève (ndongo)"
+    },
+    {
+     "recto": "What is this?",
+     "verso": "Qu'est-ce que c'est ?"
+    },
+    {
+     "recto": "This is my ...",
+     "verso": "C'est mon / ma ..."
+    }
+   ]
+  }
+ ]
+}
