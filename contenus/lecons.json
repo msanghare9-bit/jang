@@ -3082,6 +3082,650 @@
      "verso": "Que fait ton père ?"
     }
    ]
+  },
+  {
+   "id": "ang6-23",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Dialogue : At the market – Au marché",
+   "texte": "## Objectif\nAcheter quelque chose au marché en anglais.\n\n## Étape 1 : La situation\nAwa va au marché de Kébémer. Elle veut acheter des fruits pour sa mère.\n\n## Étape 2 : Le dialogue\nSeller : **Good morning, young girl!** *Bonjour, jeune fille !*\nAwa : **Good morning, madam. How are you?** *Bonjour, madame. Comment allez-vous ?*\nSeller : **I'm fine, thank you. Can I help you?** *Je vais bien, merci. Je peux t'aider ?*\nAwa : **Yes, please. I want some mangoes.** *Oui, s'il vous plaît. Je veux des mangues.*\nSeller : **How many mangoes do you want?** *Combien de mangues veux-tu ?*\nAwa : **Five mangoes, please.** *Cinq mangues, s'il vous plaît.*\nSeller : **Here you are. Anything else?** *Voilà. Autre chose ?*\nAwa : **Yes. Do you have bananas?** *Oui. Vous avez des bananes ?*\nSeller : **Sorry, I don't have bananas today.** *Désolée, je n'ai pas de bananes aujourd'hui.*\nAwa : **No problem. How much is it?** *Pas de problème. C'est combien ?*\nSeller : **It's five hundred francs.** *C'est cinq cents francs.*\nAwa : **Here you are. Thank you!** *Voilà. Merci !*\nSeller : **You're welcome. Goodbye!** *De rien. Au revoir !*\n\n## Étape 3 : Les phrases utiles\n- **Can I help you?** *Je peux vous aider ?* (le vendeur)\n- **I want some ..., please.** *Je veux des ..., s'il vous plaît.* (le client)\n- **How many ... do you want?** *Combien de ... voulez-vous ?*\n- **Anything else?** *Autre chose ?*\n- **Do you have ...?** *Vous avez des ... ?*\n- **How much is it?** *C'est combien ?*\n- **Here you are.** *Voilà.* (quand on donne quelque chose)\n\nAstuce : On dit **please** quand on demande, et **thank you** quand on reçoit. C'est poli !\n\n## Étape 4 : D'autres exemples\nExemple : **I want some tomatoes, please.** *Je veux des tomates, s'il vous plaît.*\nExemple : **I want a loaf of bread, please.** *Je veux un pain, s'il vous plaît.*\nExemple : **Do you have onions?** **Yes, I do.**\nExemple : **How much is the fish?** **It's one thousand francs.** *C'est mille francs.*\n\n## Étape 5 : À toi de jouer !\nAvec ton voisin, joue la scène. L'un est le vendeur, l'autre le client.\nChange les produits : **tomatoes**, **onions**, **bread**, **fish**, **oranges**.\n\nÀ retenir : **Can I help you? – I want some ..., please. – How many? – Anything else? – How much is it? – Here you are. – Thank you!**",
+   "qcm": [
+    {
+     "question": "Que veut acheter Awa ?",
+     "options": [
+      "des bananes",
+      "des mangues",
+      "du poisson",
+      "du pain"
+     ],
+     "reponse": 1,
+     "explication": "I want some mangoes."
+    },
+    {
+     "question": "Combien de mangues veut-elle ?",
+     "options": [
+      "trois",
+      "quatre",
+      "cinq",
+      "dix"
+     ],
+     "reponse": 2,
+     "explication": "Five mangoes, please."
+    },
+    {
+     "question": "Le vendeur dit « Can I help you? ». Ça veut dire :",
+     "options": [
+      "Tu m'aides ?",
+      "Je peux t'aider ?",
+      "Tu veux de l'aide ?",
+      "Aide-moi !"
+     ],
+     "reponse": 1,
+     "explication": "Can I help you? = Je peux t'aider ?"
+    },
+    {
+     "question": "Pour demander le prix, on dit :",
+     "options": [
+      "How many is it?",
+      "How much is it?",
+      "What is it?",
+      "How old is it?"
+     ],
+     "reponse": 1,
+     "explication": "How much is it? = C'est combien ?"
+    },
+    {
+     "question": "« Anything else? » veut dire :",
+     "options": [
+      "C'est tout ?",
+      "Autre chose ?",
+      "Quoi ?",
+      "Combien ?"
+     ],
+     "reponse": 1,
+     "explication": "Anything else? = Autre chose ?"
+    },
+    {
+     "question": "Quand on donne quelque chose, on dit :",
+     "options": [
+      "Here you are.",
+      "How are you?",
+      "You're welcome.",
+      "Excuse me."
+     ],
+     "reponse": 0,
+     "explication": "Here you are = Voilà."
+    },
+    {
+     "question": "Le vendeur a-t-il des bananes aujourd'hui ?",
+     "options": [
+      "Oui, beaucoup.",
+      "Non, il n'en a pas.",
+      "Oui, cinq.",
+      "Il ne sait pas."
+     ],
+     "reponse": 1,
+     "explication": "Sorry, I don't have bananas today."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Can I help you?",
+     "verso": "Je peux vous aider ?"
+    },
+    {
+     "recto": "I want some ..., please.",
+     "verso": "Je veux des ..., s'il vous plaît."
+    },
+    {
+     "recto": "How many ... do you want?",
+     "verso": "Combien de ... voulez-vous ?"
+    },
+    {
+     "recto": "Anything else?",
+     "verso": "Autre chose ?"
+    },
+    {
+     "recto": "Do you have ...?",
+     "verso": "Vous avez des ... ?"
+    },
+    {
+     "recto": "How much is it?",
+     "verso": "C'est combien ?"
+    },
+    {
+     "recto": "Here you are.",
+     "verso": "Voilà."
+    },
+    {
+     "recto": "No problem.",
+     "verso": "Pas de problème."
+    }
+   ]
+  },
+  {
+   "id": "ang6-24",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Dialogue : At school – À l'école",
+   "texte": "## Objectif\nParler avec un camarade et le professeur le premier jour d'école.\n\n## Étape 1 : La situation\nC'est la rentrée au LFA Kébémer. Modou rencontre une nouvelle élève, puis le professeur arrive.\n\n## Étape 2 : Le dialogue\nModou : **Hello! Are you new here?** *Salut ! Tu es nouvelle ici ?*\nKhady : **Yes, I am. I'm Khady.** *Oui. Je suis Khady.*\nModou : **Nice to meet you, Khady. I'm Modou.** *Enchanté, Khady. Je suis Modou.*\nKhady : **Nice to meet you too. Where are you from?** *Enchantée aussi. Tu viens d'où ?*\nModou : **I'm from Kébémer. And you?** *Je suis de Kébémer. Et toi ?*\nKhady : **I'm from Louga.** *Je viens de Louga.*\nModou : **Welcome to our school!** *Bienvenue dans notre école !*\nTeacher : **Good morning, class!** *Bonjour, la classe !*\nStudents : **Good morning, sir!** *Bonjour, monsieur !*\nTeacher : **Sit down, please. Open your books.** *Asseyez-vous. Ouvrez vos livres.*\nKhady : **Excuse me, sir. I don't have a book.** *Excusez-moi, monsieur. Je n'ai pas de livre.*\nTeacher : **No problem. Share with Modou.** *Pas de problème. Partage avec Modou.*\nKhady : **Thank you, sir.** *Merci, monsieur.*\n\n## Étape 3 : Les phrases utiles\n- **Are you new here?** *Tu es nouveau / nouvelle ici ?*\n- **Where are you from?** *D'où viens-tu ?*\n- **I'm from ...** *Je viens de ...*\n- **Welcome!** *Bienvenue !*\n- **Excuse me, sir / madam.** *Excusez-moi, monsieur / madame.*\n\n## Étape 4 : Les consignes du professeur\n- **Sit down, please.** *Asseyez-vous.*\n- **Stand up!** *Levez-vous !*\n- **Open your books.** *Ouvrez vos livres.*\n- **Close your books.** *Fermez vos livres.*\n- **Listen!** *Écoutez !*\n- **Repeat!** *Répétez !*\n- **Be quiet, please.** *Silence, s'il vous plaît.*\n\n## Étape 5 : Ce que l'élève peut dire\nExemple : **Can you repeat, please?** *Pouvez-vous répéter, s'il vous plaît ?*\nExemple : **I don't understand.** *Je ne comprends pas.*\nExemple : **How do you say « cahier » in English?** *Comment dit-on « cahier » en anglais ?*\nExemple : **Can I go out, please?** *Je peux sortir, s'il vous plaît ?*\nExemple : **I'm sorry, I'm late.** *Désolé, je suis en retard.*\n\n## Étape 6 : À toi de jouer !\nJoue la scène à trois : Modou, Khady et le professeur. Change les noms et les villes.\n\nÀ retenir : **Where are you from? – I'm from ... – Welcome! – Excuse me, sir. – Can you repeat, please? – I don't understand.**",
+   "qcm": [
+    {
+     "question": "D'où vient Khady ?",
+     "options": [
+      "Kébémer",
+      "Louga",
+      "Dakar",
+      "Thiès"
+     ],
+     "reponse": 1,
+     "explication": "I'm from Louga."
+    },
+    {
+     "question": "« Where are you from? » veut dire :",
+     "options": [
+      "Où vas-tu ?",
+      "D'où viens-tu ?",
+      "Où habites-tu ?",
+      "Qui es-tu ?"
+     ],
+     "reponse": 1,
+     "explication": "Where are you from? = D'où viens-tu ?"
+    },
+    {
+     "question": "« Open your books » veut dire :",
+     "options": [
+      "Fermez vos livres.",
+      "Ouvrez vos livres.",
+      "Lisez vos livres.",
+      "Prenez vos livres."
+     ],
+     "reponse": 1,
+     "explication": "open = ouvrir."
+    },
+    {
+     "question": "Pour dire « Je ne comprends pas » :",
+     "options": [
+      "I don't understand.",
+      "I am not understand.",
+      "I no understand.",
+      "I can't."
+     ],
+     "reponse": 0,
+     "explication": "I don't understand."
+    },
+    {
+     "question": "Pour demander de répéter :",
+     "options": [
+      "Repeat!",
+      "Can you repeat, please?",
+      "You repeat?",
+      "Again you!"
+     ],
+     "reponse": 1,
+     "explication": "Can you repeat, please?"
+    },
+    {
+     "question": "« Welcome! » veut dire :",
+     "options": [
+      "Merci !",
+      "Bienvenue !",
+      "Au revoir !",
+      "Pardon !"
+     ],
+     "reponse": 1,
+     "explication": "Welcome = Bienvenue."
+    },
+    {
+     "question": "« Sit down, please » veut dire :",
+     "options": [
+      "Levez-vous.",
+      "Asseyez-vous.",
+      "Écoutez.",
+      "Silence."
+     ],
+     "reponse": 1,
+     "explication": "sit down = s'asseoir."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Are you new here?",
+     "verso": "Tu es nouveau ici ?"
+    },
+    {
+     "recto": "Where are you from?",
+     "verso": "D'où viens-tu ?"
+    },
+    {
+     "recto": "I'm from ...",
+     "verso": "Je viens de ..."
+    },
+    {
+     "recto": "Welcome!",
+     "verso": "Bienvenue !"
+    },
+    {
+     "recto": "Sit down, please.",
+     "verso": "Asseyez-vous."
+    },
+    {
+     "recto": "Stand up!",
+     "verso": "Levez-vous !"
+    },
+    {
+     "recto": "Open your books.",
+     "verso": "Ouvrez vos livres."
+    },
+    {
+     "recto": "Listen! / Repeat!",
+     "verso": "Écoutez ! / Répétez !"
+    },
+    {
+     "recto": "Can you repeat, please?",
+     "verso": "Pouvez-vous répéter ?"
+    },
+    {
+     "recto": "I don't understand.",
+     "verso": "Je ne comprends pas."
+    },
+    {
+     "recto": "How do you say ... in English?",
+     "verso": "Comment dit-on ... en anglais ?"
+    }
+   ]
+  },
+  {
+   "id": "ang6-25",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Dialogue : On the phone – Au téléphone",
+   "texte": "## Objectif\nTéléphoner à quelqu'un et l'inviter.\n\n## Étape 1 : La situation\nIbou appelle son ami Lamine pour l'inviter à un match de football.\n\n## Étape 2 : Le dialogue\nLamine : **Hello?** *Allô ?*\nIbou : **Hello, Lamine! It's Ibou.** *Allô, Lamine ! C'est Ibou.*\nLamine : **Hi, Ibou! How are you?** *Salut, Ibou ! Ça va ?*\nIbou : **I'm fine, thanks. What are you doing?** *Ça va, merci. Qu'est-ce que tu fais ?*\nLamine : **I'm doing my homework.** *Je fais mes devoirs.*\nIbou : **Are you free on Saturday?** *Tu es libre samedi ?*\nLamine : **Yes, I am. Why?** *Oui. Pourquoi ?*\nIbou : **There's a football match. Do you want to come?** *Il y a un match de football. Tu veux venir ?*\nLamine : **Yes, I'd love to! What time?** *Oui, avec plaisir ! À quelle heure ?*\nIbou : **At four o'clock, at the school stadium.** *À quatre heures, au stade de l'école.*\nLamine : **OK. See you on Saturday!** *D'accord. À samedi !*\nIbou : **See you! Bye!** *À plus ! Salut !*\n\n## Étape 3 : Les phrases utiles au téléphone\n- **Hello?** *Allô ?*\n- **It's ...** *C'est ...* (on ne dit pas « I am Ibou » au téléphone)\n- **Can I speak to ..., please?** *Puis-je parler à ..., s'il vous plaît ?*\n- **Hold on, please.** *Ne quittez pas.*\n- **Sorry, he isn't here.** *Désolé, il n'est pas là.*\n\n## Étape 4 : Inviter et répondre\nPour inviter :\n- **Do you want to come?** *Tu veux venir ?*\n- **Are you free on ...?** *Tu es libre le ... ?*\n\nPour dire oui :\n- **Yes, I'd love to!** *Oui, avec plaisir !*\n- **OK, great!** *D'accord, super !*\n\nPour dire non poliment :\n- **Sorry, I can't. I'm busy.** *Désolé, je ne peux pas. Je suis occupé.*\n- **Sorry, I have to help my mother.** *Désolé, je dois aider ma mère.*\n\n## Étape 5 : Un autre exemple\nFatou : **Hello, Awa! It's Fatou. Are you free on Sunday?**\nAwa : **Yes. Why?**\nFatou : **It's my birthday. Do you want to come to my house?**\nAwa : **Sorry, I can't. I'm going to my grandmother's village.**\nFatou : **Oh, no problem. Another time!** *Une autre fois !*\n\n## Étape 6 : À toi de jouer !\nAppelle ton voisin (pour de faux !) et invite-le : à un match, à un anniversaire, à la Tabaski, à réviser ensemble.\n\nÀ retenir : **Hello? – It's ... – Are you free on ...? – Do you want to come? – Yes, I'd love to! / Sorry, I can't. – See you!**",
+   "qcm": [
+    {
+     "question": "Que fait Lamine quand Ibou appelle ?",
+     "options": [
+      "Il dort.",
+      "Il fait ses devoirs.",
+      "Il joue au foot.",
+      "Il mange."
+     ],
+     "reponse": 1,
+     "explication": "I'm doing my homework."
+    },
+    {
+     "question": "Au téléphone, pour dire « C'est Ibou » :",
+     "options": [
+      "I am Ibou.",
+      "It's Ibou.",
+      "This Ibou.",
+      "Ibou is me."
+     ],
+     "reponse": 1,
+     "explication": "Au téléphone : It's ..."
+    },
+    {
+     "question": "Quel jour est le match ?",
+     "options": [
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday"
+     ],
+     "reponse": 1,
+     "explication": "Are you free on Saturday?"
+    },
+    {
+     "question": "À quelle heure est le match ?",
+     "options": [
+      "at two o'clock",
+      "at four o'clock",
+      "at six o'clock",
+      "at eight o'clock"
+     ],
+     "reponse": 1,
+     "explication": "At four o'clock."
+    },
+    {
+     "question": "Pour accepter une invitation :",
+     "options": [
+      "Sorry, I can't.",
+      "Yes, I'd love to!",
+      "I'm busy.",
+      "No problem."
+     ],
+     "reponse": 1,
+     "explication": "Yes, I'd love to! = Oui, avec plaisir !"
+    },
+    {
+     "question": "Pour refuser poliment :",
+     "options": [
+      "No!",
+      "Sorry, I can't. I'm busy.",
+      "I don't want.",
+      "Go away."
+     ],
+     "reponse": 1,
+     "explication": "Sorry, I can't. = Désolé, je ne peux pas."
+    },
+    {
+     "question": "« Do you want to come? » veut dire :",
+     "options": [
+      "Tu veux venir ?",
+      "Tu viens d'où ?",
+      "Tu es venu ?",
+      "Viens !"
+     ],
+     "reponse": 0,
+     "explication": "Do you want to come? = Tu veux venir ?"
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Hello?",
+     "verso": "Allô ?"
+    },
+    {
+     "recto": "It's ...",
+     "verso": "C'est ... (au téléphone)"
+    },
+    {
+     "recto": "Can I speak to ..., please?",
+     "verso": "Puis-je parler à ... ?"
+    },
+    {
+     "recto": "Hold on, please.",
+     "verso": "Ne quittez pas."
+    },
+    {
+     "recto": "Are you free on ...?",
+     "verso": "Es-tu libre le ... ?"
+    },
+    {
+     "recto": "Do you want to come?",
+     "verso": "Tu veux venir ?"
+    },
+    {
+     "recto": "Yes, I'd love to!",
+     "verso": "Oui, avec plaisir !"
+    },
+    {
+     "recto": "Sorry, I can't. I'm busy.",
+     "verso": "Désolé, je ne peux pas. Je suis occupé."
+    },
+    {
+     "recto": "See you on Saturday!",
+     "verso": "À samedi !"
+    }
+   ]
+  },
+  {
+   "id": "ang6-26",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Dialogue : At the health post – Au poste de santé",
+   "texte": "## Objectif\nDire qu'on est malade et expliquer où on a mal.\n\n## Étape 1 : La situation\nModou ne se sent pas bien. Sa mère l'emmène au poste de santé.\n\n## Étape 2 : Le dialogue\nNurse : **Good morning. What's the matter?** *Bonjour. Qu'est-ce qui ne va pas ?*\nMother : **Good morning. My son is sick.** *Bonjour. Mon fils est malade.*\nNurse : **What's wrong, young man?** *Qu'est-ce que tu as, jeune homme ?*\nModou : **I have a headache.** *J'ai mal à la tête.*\nNurse : **Do you have a fever?** *As-tu de la fièvre ?*\nModou : **Yes, I am very hot. And I am tired.** *Oui, j'ai très chaud. Et je suis fatigué.*\nNurse : **Do you sleep under a mosquito net?** *Dors-tu sous une moustiquaire ?*\nModou : **No, I don't.** *Non.*\nNurse : **OK. I'm going to do a test.** *D'accord. Je vais faire un test.*\nNurse : **Take this medicine three times a day. And drink a lot of water.** *Prends ce médicament trois fois par jour. Et bois beaucoup d'eau.*\nMother : **Thank you very much.** *Merci beaucoup.*\nNurse : **You're welcome. Get well soon!** *De rien. Bon rétablissement !*\n\n## Étape 3 : Dire où on a mal\n- **I have a headache.** *J'ai mal à la tête.*\n- **I have a stomachache.** *J'ai mal au ventre.*\n- **I have a toothache.** *J'ai mal aux dents.*\n- **I have a fever.** *J'ai de la fièvre.*\n- **I have a cold.** *J'ai un rhume.*\n- **I have a cough.** *Je tousse.*\n- **My leg hurts.** *J'ai mal à la jambe.*\n\nAstuce : Partie du corps + **ache** = douleur : **head** + ache, **stomach** + ache, **tooth** + ache.\n\n## Étape 4 : Les phrases utiles\n- **What's the matter?** *Qu'est-ce qui ne va pas ?*\n- **I'm sick.** *Je suis malade.*\n- **I'm tired.** *Je suis fatigué(e).*\n- **Take this medicine.** *Prends ce médicament.*\n- **Get well soon!** *Bon rétablissement !*\n\n## Étape 5 : Rester en bonne santé\nExemple : **Sleep under a mosquito net.** *Dors sous une moustiquaire.*\nExemple : **Wash your hands with soap.** *Lave-toi les mains avec du savon.*\nExemple : **Drink clean water.** *Bois de l'eau propre.*\nExemple : **Eat fruit and vegetables.** *Mange des fruits et des légumes.*\n\n## Étape 6 : À toi de jouer !\nJoue la scène avec ton voisin : l'un est l'infirmier, l'autre le malade. Change le problème : mal au ventre, mal aux dents, rhume…\n\nÀ retenir : **What's the matter? – I have a headache / a stomachache / a fever. – Take this medicine. – Get well soon!**",
+   "qcm": [
+    {
+     "question": "Qu'est-ce que Modou a ?",
+     "options": [
+      "mal au ventre",
+      "mal à la tête",
+      "mal aux dents",
+      "mal à la jambe"
+     ],
+     "reponse": 1,
+     "explication": "I have a headache."
+    },
+    {
+     "question": "« What's the matter? » veut dire :",
+     "options": [
+      "C'est quoi ?",
+      "Qu'est-ce qui ne va pas ?",
+      "Quelle heure est-il ?",
+      "Tu vas où ?"
+     ],
+     "reponse": 1,
+     "explication": "What's the matter? = Qu'est-ce qui ne va pas ?"
+    },
+    {
+     "question": "« J'ai mal au ventre » se dit :",
+     "options": [
+      "I have a headache.",
+      "I have a stomachache.",
+      "I have a toothache.",
+      "I have a fever."
+     ],
+     "reponse": 1,
+     "explication": "stomach + ache."
+    },
+    {
+     "question": "« I have a fever » veut dire :",
+     "options": [
+      "J'ai froid.",
+      "J'ai de la fièvre.",
+      "Je tousse.",
+      "J'ai faim."
+     ],
+     "reponse": 1,
+     "explication": "fever = fièvre."
+    },
+    {
+     "question": "Combien de fois par jour Modou prend-il le médicament ?",
+     "options": [
+      "une fois",
+      "deux fois",
+      "trois fois",
+      "quatre fois"
+     ],
+     "reponse": 2,
+     "explication": "three times a day."
+    },
+    {
+     "question": "Pour éviter le paludisme, on dort sous :",
+     "options": [
+      "a blanket",
+      "a mosquito net",
+      "a tree",
+      "a table"
+     ],
+     "reponse": 1,
+     "explication": "mosquito net = moustiquaire."
+    },
+    {
+     "question": "« Get well soon! » veut dire :",
+     "options": [
+      "Lève-toi vite !",
+      "Bon rétablissement !",
+      "Va-t'en !",
+      "Dors bien !"
+     ],
+     "reponse": 1,
+     "explication": "Get well soon = Bon rétablissement."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "What's the matter?",
+     "verso": "Qu'est-ce qui ne va pas ?"
+    },
+    {
+     "recto": "I'm sick.",
+     "verso": "Je suis malade."
+    },
+    {
+     "recto": "I have a headache.",
+     "verso": "J'ai mal à la tête."
+    },
+    {
+     "recto": "I have a stomachache.",
+     "verso": "J'ai mal au ventre."
+    },
+    {
+     "recto": "I have a toothache.",
+     "verso": "J'ai mal aux dents."
+    },
+    {
+     "recto": "I have a fever.",
+     "verso": "J'ai de la fièvre."
+    },
+    {
+     "recto": "I have a cold.",
+     "verso": "J'ai un rhume."
+    },
+    {
+     "recto": "My leg hurts.",
+     "verso": "J'ai mal à la jambe."
+    },
+    {
+     "recto": "Take this medicine.",
+     "verso": "Prends ce médicament."
+    },
+    {
+     "recto": "a mosquito net",
+     "verso": "une moustiquaire"
+    },
+    {
+     "recto": "Get well soon!",
+     "verso": "Bon rétablissement !"
+    }
+   ]
+  },
+  {
+   "id": "ang6-27",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Dialogue : Asking the way – Demander son chemin",
+   "texte": "## Objectif\nDemander son chemin et l'expliquer.\n\n## Étape 1 : La situation\nUn visiteur anglais arrive à Kébémer. Il parle avec Awa.\n\n## Étape 2 : Le dialogue\nVisitor : **Excuse me. Can you help me, please?** *Excusez-moi. Peux-tu m'aider, s'il te plaît ?*\nAwa : **Yes, of course.** *Oui, bien sûr.*\nVisitor : **Where is the post office?** *Où est la poste ?*\nAwa : **Go straight on. Then turn left.** *Allez tout droit. Puis tournez à gauche.*\nVisitor : **Is it far?** *C'est loin ?*\nAwa : **No, it isn't. It's near the mosque.** *Non. C'est près de la mosquée.*\nVisitor : **And where is the hospital?** *Et où est l'hôpital ?*\nAwa : **Turn right at the market. It's next to the school.** *Tournez à droite au marché. C'est à côté de l'école.*\nVisitor : **Thank you very much!** *Merci beaucoup !*\nAwa : **You're welcome. Welcome to Kébémer!** *De rien. Bienvenue à Kébémer !*\n\n## Étape 3 : Demander le chemin\n- **Excuse me, where is the ...?** *Excusez-moi, où est le / la ... ?*\n- **How can I go to the ...?** *Comment aller au / à la ... ?*\n- **Is it far?** *C'est loin ?*\n\n## Étape 4 : Expliquer le chemin\n- **Go straight on.** *Allez tout droit.*\n- **Turn left.** *Tournez à gauche.*\n- **Turn right.** *Tournez à droite.*\n- **It's near ...** *C'est près de ...*\n- **It's next to ...** *C'est à côté de ...*\n- **It's opposite ...** *C'est en face de ...*\n- **It's between ... and ...** *C'est entre ... et ...*\n\n## Étape 5 : Les lieux de la ville\n- **the market** *le marché*\n- **the mosque** *la mosquée*\n- **the hospital** *l'hôpital*\n- **the post office** *la poste*\n- **the bus station** *la gare routière*\n- **the pharmacy** *la pharmacie*\n- **the police station** *le commissariat*\n\nExemple : **The pharmacy is opposite the market.** *La pharmacie est en face du marché.*\nExemple : **The bus station is near the hospital.** *La gare routière est près de l'hôpital.*\nExemple : **The school is between the mosque and the post office.** *L'école est entre la mosquée et la poste.*\n\n## Étape 6 : À toi de jouer !\nDessine un petit plan de ton quartier. Demande à ton voisin : **Where is the market?** Il doit t'expliquer le chemin.\n\nÀ retenir : **Excuse me, where is the ...? – Go straight on. – Turn left / right. – It's near / next to / opposite ...**",
+   "qcm": [
+    {
+     "question": "Que cherche le visiteur en premier ?",
+     "options": [
+      "l'hôpital",
+      "la poste",
+      "le marché",
+      "la mosquée"
+     ],
+     "reponse": 1,
+     "explication": "Where is the post office?"
+    },
+    {
+     "question": "« Go straight on » veut dire :",
+     "options": [
+      "Tournez à gauche.",
+      "Allez tout droit.",
+      "Tournez à droite.",
+      "Arrêtez-vous."
+     ],
+     "reponse": 1,
+     "explication": "go straight on = tout droit."
+    },
+    {
+     "question": "« Turn left » veut dire :",
+     "options": [
+      "Tournez à droite.",
+      "Tournez à gauche.",
+      "Allez tout droit.",
+      "Revenez."
+     ],
+     "reponse": 1,
+     "explication": "left = gauche."
+    },
+    {
+     "question": "La poste est près de :",
+     "options": [
+      "l'école",
+      "la mosquée",
+      "le marché",
+      "l'hôpital"
+     ],
+     "reponse": 1,
+     "explication": "It's near the mosque."
+    },
+    {
+     "question": "« It's next to the school » veut dire :",
+     "options": [
+      "C'est loin de l'école.",
+      "C'est à côté de l'école.",
+      "C'est dans l'école.",
+      "C'est l'école."
+     ],
+     "reponse": 1,
+     "explication": "next to = à côté de."
+    },
+    {
+     "question": "« Opposite » veut dire :",
+     "options": [
+      "à côté de",
+      "en face de",
+      "entre",
+      "loin de"
+     ],
+     "reponse": 1,
+     "explication": "opposite = en face de."
+    },
+    {
+     "question": "Pour demander poliment son chemin, on commence par :",
+     "options": [
+      "Hey!",
+      "Excuse me.",
+      "Go!",
+      "Listen!"
+     ],
+     "reponse": 1,
+     "explication": "Excuse me = Excusez-moi."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "Excuse me, where is the ...?",
+     "verso": "Excusez-moi, où est le / la ... ?"
+    },
+    {
+     "recto": "Is it far?",
+     "verso": "C'est loin ?"
+    },
+    {
+     "recto": "Go straight on.",
+     "verso": "Allez tout droit."
+    },
+    {
+     "recto": "Turn left.",
+     "verso": "Tournez à gauche."
+    },
+    {
+     "recto": "Turn right.",
+     "verso": "Tournez à droite."
+    },
+    {
+     "recto": "near",
+     "verso": "près de"
+    },
+    {
+     "recto": "next to",
+     "verso": "à côté de"
+    },
+    {
+     "recto": "opposite",
+     "verso": "en face de"
+    },
+    {
+     "recto": "between",
+     "verso": "entre"
+    },
+    {
+     "recto": "the post office",
+     "verso": "la poste"
+    },
+    {
+     "recto": "the bus station",
+     "verso": "la gare routière"
+    },
+    {
+     "recto": "the pharmacy",
+     "verso": "la pharmacie"
+    }
+   ]
   }
  ]
 }
