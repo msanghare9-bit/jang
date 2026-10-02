@@ -526,6 +526,165 @@
      "verso": "Et toi ?"
     }
    ]
+  },
+  {
+   "id": "ang6-05",
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "My family – Ma famille",
+   "texte": "## Objectif\nPrésenter les membres de sa famille en anglais.\n\n## Étape 1 : Les parents\n- **father** *père* (Wolof : baay)\n- **mother** *mère* (Wolof : yaay)\n- **dad** *papa*\n- **mum** *maman*\n- **parents** *parents*\n\nExemple : **This is my father.** *Voici mon père.*\nExemple : **This is my mother.** *Voici ma mère.*\nExemple : **My father is a farmer.** *Mon père est cultivateur.*\nExemple : **My mother is a teacher.** *Ma mère est professeure.*\nExemple : **I love my parents.** *J'aime mes parents.*\n\n## Étape 2 : Les frères et sœurs\n- **brother** *frère*\n- **sister** *sœur*\n- **big brother** *grand frère* (Wolof : mag)\n- **little sister** *petite sœur* (Wolof : rakk)\n\nExemple : **This is my brother.** *Voici mon frère.*\nExemple : **This is my sister.** *Voici ma sœur.*\nExemple : **I have two brothers.** *J'ai deux frères.*\nExemple : **I have three sisters.** *J'ai trois sœurs.*\nExemple : **Awa has one brother and two sisters.** *Awa a un frère et deux sœurs.*\nExemple : **My big brother is in Dakar.** *Mon grand frère est à Dakar.*\n\nAstuce : Après deux, trois… on ajoute **s** : **one brother**, **two brothers**.\n\n## Étape 3 : Les grands-parents\n- **grandfather** *grand-père* (Wolof : maam)\n- **grandmother** *grand-mère* (Wolof : maam)\n- **grandparents** *grands-parents*\n\nExemple : **This is my grandfather.** *Voici mon grand-père.*\nExemple : **My grandmother lives in Kébémer.** *Ma grand-mère habite à Kébémer.*\nExemple : **I visit my grandparents in the village.** *Je rends visite à mes grands-parents au village.*\n\n## Étape 4 : Les autres membres de la famille\n- **uncle** *oncle* (Wolof : nijaay, pour le frère de la mère)\n- **aunt** *tante* (Wolof : bàjjan, pour la sœur du père)\n- **cousin** *cousin / cousine*\n\nExemple : **This is my uncle.** *Voici mon oncle.*\nExemple : **My aunt lives in Louga.** *Ma tante habite à Louga.*\nExemple : **I have many cousins.** *J'ai beaucoup de cousins.*\nExemple : **My cousin is twelve years old.** *Mon cousin a douze ans.*\n\n## Étape 5 : Dire le nom d'un membre de la famille\n- **His name is ...** *Il s'appelle ...* (pour un homme ou un garçon)\n- **Her name is ...** *Elle s'appelle ...* (pour une femme ou une fille)\n\nExemple : **This is my father. His name is Moussa.** *Voici mon père. Il s'appelle Moussa.*\nExemple : **This is my mother. Her name is Aminata.** *Voici ma mère. Elle s'appelle Aminata.*\nExemple : **This is my brother. His name is Ibou.** *Voici mon frère. Il s'appelle Ibou.*\nExemple : **This is my sister. Her name is Khady.** *Voici ma sœur. Elle s'appelle Khady.*\n\nAttention : **His** = pour un garçon ou un homme. **Her** = pour une fille ou une femme.\n\n## Étape 6 : Présenter sa famille\nExemple : **My name is Awa. I have a big family.** *Je m'appelle Awa. J'ai une grande famille.*\nExemple : **My father's name is Moussa. My mother's name is Aminata.** *Mon père s'appelle Moussa. Ma mère s'appelle Aminata.*\nExemple : **I have two brothers and one sister.** *J'ai deux frères et une sœur.*\nExemple : **I love my family.** *J'aime ma famille.*\n\n## Petit dialogue\nModou : **Awa, who is this?**\nAwa : **This is my mother. Her name is Aminata.**\nModou : **And who is this?**\nAwa : **This is my brother. His name is Ibou.**\nModou : **Do you have sisters?**\nAwa : **Yes, I have two sisters.**\nModou : **You have a big family!**\n\nÀ retenir : father = père, mother = mère, brother = frère, sister = sœur. This is my ... = Voici mon / ma ... His name is ... = Il s'appelle ... Her name is ... = Elle s'appelle ...",
+   "qcm": [
+    {
+     "question": "« Mother » veut dire :",
+     "options": [
+      "père",
+      "mère",
+      "sœur",
+      "tante"
+     ],
+     "reponse": 1,
+     "explication": "Mother = mère = yaay."
+    },
+    {
+     "question": "Comment dit-on « frère » ?",
+     "options": [
+      "sister",
+      "father",
+      "brother",
+      "uncle"
+     ],
+     "reponse": 2,
+     "explication": "Brother = frère."
+    },
+    {
+     "question": "« Grandfather » veut dire :",
+     "options": [
+      "grand frère",
+      "grand-père",
+      "oncle",
+      "cousin"
+     ],
+     "reponse": 1,
+     "explication": "Grandfather = grand-père = maam."
+    },
+    {
+     "question": "« J'ai deux sœurs » se dit :",
+     "options": [
+      "I have two sister.",
+      "I have two sisters.",
+      "I am two sisters.",
+      "My two sister."
+     ],
+     "reponse": 1,
+     "explication": "Après two, on ajoute s : sisters."
+    },
+    {
+     "question": "« Voici ma mère » se dit :",
+     "options": [
+      "This is my mother.",
+      "My name is mother.",
+      "I am my mother.",
+      "How old is mother?"
+     ],
+     "reponse": 0,
+     "explication": "This is my ... = Voici mon / ma ..."
+    },
+    {
+     "question": "Pour une fille, on dit :",
+     "options": [
+      "His name is Khady.",
+      "Her name is Khady.",
+      "He name is Khady.",
+      "My name is Khady."
+     ],
+     "reponse": 1,
+     "explication": "Her = pour une fille ou une femme."
+    },
+    {
+     "question": "Pour un garçon, on dit :",
+     "options": [
+      "Her name is Ibou.",
+      "His name is Ibou.",
+      "She name is Ibou.",
+      "Ibou name is."
+     ],
+     "reponse": 1,
+     "explication": "His = pour un garçon ou un homme."
+    },
+    {
+     "question": "« Aunt » veut dire :",
+     "options": [
+      "oncle",
+      "tante",
+      "cousine",
+      "grand-mère"
+     ],
+     "reponse": 1,
+     "explication": "Aunt = tante."
+    }
+   ],
+   "fiches": [
+    {
+     "recto": "father",
+     "verso": "père (baay)"
+    },
+    {
+     "recto": "mother",
+     "verso": "mère (yaay)"
+    },
+    {
+     "recto": "brother",
+     "verso": "frère"
+    },
+    {
+     "recto": "sister",
+     "verso": "sœur"
+    },
+    {
+     "recto": "big brother",
+     "verso": "grand frère (mag)"
+    },
+    {
+     "recto": "little sister",
+     "verso": "petite sœur (rakk)"
+    },
+    {
+     "recto": "grandfather",
+     "verso": "grand-père (maam)"
+    },
+    {
+     "recto": "grandmother",
+     "verso": "grand-mère (maam)"
+    },
+    {
+     "recto": "uncle",
+     "verso": "oncle"
+    },
+    {
+     "recto": "aunt",
+     "verso": "tante"
+    },
+    {
+     "recto": "cousin",
+     "verso": "cousin / cousine"
+    },
+    {
+     "recto": "This is my father.",
+     "verso": "Voici mon père."
+    },
+    {
+     "recto": "His name is ...",
+     "verso": "Il s'appelle ..."
+    },
+    {
+     "recto": "Her name is ...",
+     "verso": "Elle s'appelle ..."
+    },
+    {
+     "recto": "I have two brothers.",
+     "verso": "J'ai deux frères."
+    }
+   ]
   }
  ]
 }
