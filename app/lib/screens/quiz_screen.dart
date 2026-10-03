@@ -7,7 +7,7 @@ import '../theme.dart';
 import '../widgets/cheer.dart';
 import '../widgets/jang_ui.dart';
 
-/// QCM : une question à la fois, réponse corrigée tout de suite.
+/// Exercices : une question à la fois, réponse corrigée tout de suite.
 class QuizScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
@@ -150,8 +150,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
               ],
               const SizedBox(height: 16),
-              for (var o = 0; o < q.options.length; o++)
-                if (q.options[o].trim().isNotEmpty) _option(o, q, chosen),
+              _grid(q, chosen),
             ],
           ),
         ),
@@ -200,44 +199,58 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
+  /// Grandes tuiles colorées façon Kahoot, deux par ligne.
+  Widget _grid(QuizQuestion q, int? chosen) {
+    final idx = [for (var o = 0; o < q.options.length && o < 4; o++) if (q.options[o].trim().isNotEmpty) o];
+    return Column(children: [
+      for (var r = 0; r < idx.length; r += 2)
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: IntrinsicHeight(
+            child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+              Expanded(child: _option(idx[r], q, chosen)),
+              const SizedBox(width: 12),
+              Expanded(child: r + 1 < idx.length ? _option(idx[r + 1], q, chosen) : const SizedBox()),
+            ]),
+          ),
+        ),
+    ]);
+  }
+
   Widget _option(int o, QuizQuestion q, int? chosen) {
     final answered = chosen != null;
     final isAnswer = o == q.answer;
     final isChosen = o == chosen;
     final color = _colors[o];
     final dim = answered && !isAnswer;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: Opacity(
-        opacity: dim ? (isChosen ? 0.75 : 0.35) : 1,
-        child: GestureDetector(
-          onTap: answered ? null : () => _choose(o),
-          child: Container(
-            constraints: const BoxConstraints(minHeight: 64),
-            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(14),
-              boxShadow: [BoxShadow(color: JangColors.darker(color, 0.12), offset: const Offset(0, 5))],
-            ),
-            child: Row(children: [
-              SizedBox(
-                width: 34,
-                child: answered && (isAnswer || isChosen)
-                    ? Icon(isAnswer ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                        color: Colors.white, size: 30)
-                    : Text(_shapes[o],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(color: Colors.white, fontSize: 24, height: 1)),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(q.options[o],
-                    style: const TextStyle(
-                        color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800)),
-              ),
-            ]),
+    return Opacity(
+      opacity: dim ? (isChosen ? 0.75 : 0.35) : 1,
+      child: GestureDetector(
+        onTap: answered ? null : () => _choose(o),
+        child: Container(
+          constraints: const BoxConstraints(minHeight: 120),
+          padding: const EdgeInsets.fromLTRB(12, 10, 12, 14),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [BoxShadow(color: JangColors.darker(color, 0.12), offset: const Offset(0, 6))],
           ),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: answered && (isAnswer || isChosen)
+                  ? Icon(isAnswer ? Icons.check_circle_rounded : Icons.cancel_rounded,
+                      color: Colors.white, size: 30)
+                  : Text(_shapes[o], style: const TextStyle(color: Colors.white, fontSize: 26, height: 1)),
+            ),
+            Expanded(
+              child: Center(
+                child: Text(q.options[o],
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w800)),
+              ),
+            ),
+          ]),
         ),
       ),
     );

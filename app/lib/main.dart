@@ -11,6 +11,7 @@ import 'screens/login_screen.dart';
 import 'services/auth_service.dart';
 import 'services/content_repo.dart';
 import 'services/engagement_service.dart';
+import 'services/notification_service.dart';
 import 'services/progress_repo.dart';
 import 'theme.dart';
 
@@ -62,6 +63,8 @@ class _BootstrapState extends State<_Bootstrap> {
       await ContentRepo.instance.init().timeout(const Duration(seconds: 15));
       SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
       if (mounted) setState(() => _ready = true);
+      // Rappels quotidiens (après l'affichage, sans bloquer le démarrage).
+      NotificationService.instance.init();
     } catch (e) {
       if (mounted) setState(() => _error = '$e');
     }

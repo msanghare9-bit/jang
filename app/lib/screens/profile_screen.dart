@@ -113,7 +113,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 style: t.bodyMedium,
               ),
               const SizedBox(height: 4),
-              Text('Les leçons et les QCM téléchargés restent disponibles sans internet.',
+              Text('Les leçons et les exercices téléchargés restent disponibles sans internet.',
                   style: t.bodySmall),
               const SizedBox(height: 12),
               ValueListenableBuilder<bool>(

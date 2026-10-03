@@ -175,7 +175,7 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => AdminSubjectScreen(subject: subjects[i]))),
+                            builder: (_) => AdminSubjectScreen(subject: subjects[i], exam: widget.exam))),
                     onUp: i > 0 ? () => swapIn(context, 'subjects', subjects, i, i - 1) : null,
                     onDown: i < subjects.length - 1
                         ? () => swapIn(context, 'subjects', subjects, i, i + 1)
@@ -212,7 +212,8 @@ void swapIn(BuildContext context, String collection, List<dynamic> items, int a,
 
 class AdminSubjectScreen extends StatefulWidget {
   final Subject subject;
-  const AdminSubjectScreen({super.key, required this.subject});
+  final Exam? exam;
+  const AdminSubjectScreen({super.key, required this.subject, this.exam});
 
   @override
   State<AdminSubjectScreen> createState() => _AdminSubjectScreenState();
@@ -231,9 +232,11 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
     _packsLoaded = true;
     if (mounted) setState(() => _packStatus = 'loading');
     final all = await PackService.instance.fetch();
-    final names = <String>[
-      for (final id in widget.subject.examIds) (await ContentRepo.instance.exam(id))?.name ?? '',
-    ];
+    final names = widget.exam != null
+        ? [widget.exam!.name]
+        : <String>[
+            for (final id in widget.subject.examIds) (await ContentRepo.instance.exam(id))?.name ?? '',
+          ];
     final fit = (all ?? const <LessonPack>[]).where((p) => p.fits(widget.subject, names)).toList();
     if (mounted) {
       setState(() {
@@ -245,7 +248,9 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
 
   List<LessonPack> get _newPacks {
     final have = {for (final l in _lessons ?? const <Lesson>[]) l.id};
-    return _packs.where((p) => !have.contains(p.lessonId)).toList();
+    return _packs
+        .where((p) => !have.contains(p.lessonId) && !have.contains(p.lessonIdFor(widget.subject)))
+        .toList();
   }
 
   int get _nextOrder {
@@ -253,8 +258,18 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
     return lessons.isEmpty ? 0 : lessons.map((l) => l.order).reduce((a, b) => a > b ? a : b) + 1;
   }
 
+  /// Classe affichée (null : matière vue sans classe précise).
+  String? get _examId => widget.exam?.id;
+
+  /// La matière est-elle partagée entre plusieurs classes ?
+  bool get _shared => _examId != null && widget.subject.examIds.length > 1;
+
+  /// Pour une leçon créée ici : cachée dans les autres classes de la matière.
+  List<String> get _hiddenForNew =>
+      _shared ? widget.subject.examIds.where((e) => e != _examId).toList() : const [];
+
   void _addPacks(List<LessonPack> packs) {
-    PackService.instance.add(widget.subject, packs, _nextOrder);
+    PackService.instance.add(widget.subject, packs, _nextOrder, hiddenIn: _hiddenForNew);
     showMessage(context,
         packs.length == 1 ? 'Leçon ajoutée.' : '${packs.length} leçons ajoutées.');
   }
@@ -287,7 +302,7 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
           children: [
             Text('✨ Leçons prêtes à ajouter (${packs.length})', style: titleStyle(17, weight: 800)),
             const SizedBox(height: 4),
-            Text('Texte, QCM et fiches de révision déjà faits. Tu pourras tout modifier ensuite.',
+            Text('Texte, exercices et fiches de révision déjà faits. Tu pourras tout modifier ensuite.',
                 style: Theme.of(context).textTheme.bodySmall),
             const SizedBox(height: 8),
             for (final p in packs)
@@ -336,18 +351,22 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => LessonEditor(subject: widget.subject, lesson: lesson, nextOrder: next),
+        builder: (_) => LessonEditor(
+            subject: widget.subject, lesson: lesson, nextOrder: next, hiddenIn: _hiddenForNew),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    final lessons = _lessons;
+    final all = _lessons;
     final color = JangColors.fromHex(widget.subject.color);
+    final lessons = all?.where((l) => l.visibleIn(_examId)).toList();
+    final hidden = all?.where((l) => !l.visibleIn(_examId)).toList() ?? const <Lesson>[];
+    final title = widget.exam == null ? widget.subject.name : '${widget.subject.name} · ${widget.exam!.name}';
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.subject.name, style: titleStyle(20, color: Colors.white)),
+        title: Text(title, style: titleStyle(20, color: Colors.white)),
         backgroundColor: color,
         foregroundColor: Colors.white,
       ),
@@ -378,11 +397,105 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
                   label: const Text('Ajouter une leçon'),
                 ),
                 const SizedBox(height: 10),
-                Text('Le menu ⋮ de chaque leçon : Modifier, Monter, Descendre, Supprimer.',
+                Text(
+                    'Le menu ⋮ de chaque leçon : Modifier, Copier vers un autre niveau, Monter, '
+                    'Descendre, Retirer ou Supprimer.',
                     style: Theme.of(context).textTheme.bodySmall),
+                if (hidden.isNotEmpty) ...[
+                  const SizedBox(height: 18),
+                  ExpansionTile(
+                    tilePadding: EdgeInsets.zero,
+                    title: Text('Retirées de ce niveau (${hidden.length})',
+                        style: const TextStyle(fontWeight: FontWeight.w700)),
+                    subtitle: const Text('Elles restent visibles dans les autres niveaux.'),
+                    children: [
+                      for (final l in hidden)
+                        ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          title: Text(l.title),
+                          trailing: TextButton(
+                            onPressed: () => ContentRepo.instance.save('lessons', l.id, {
+                              'hiddenIn': l.hiddenIn.where((e) => e != _examId).toList(),
+                            }),
+                            child: const Text('Remettre'),
+                          ),
+                        ),
+                    ],
+                  ),
+                ],
               ],
             ),
     );
+  }
+
+  /// Copie la leçon (texte, exercices, révision) dans une autre matière / un autre niveau.
+  Future<void> _copy(Lesson l, FlashcardDeck? deck) async {
+    final repo = ContentRepo.instance;
+    final targets = <(Exam, Subject)>[];
+    for (final e in await repo.exams()) {
+      for (final s in await repo.subjects(e.id)) {
+        if (e.id == _examId && s.id == widget.subject.id) continue;
+        targets.add((e, s));
+      }
+    }
+    if (!mounted) return;
+    final t = await showModalBottomSheet<(Exam, Subject)>(
+      context: context,
+      isScrollControlled: true,
+      builder: (ctx) => SafeArea(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxHeight: MediaQuery.of(ctx).size.height * 0.75),
+          child: ListView(shrinkWrap: true, children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 18, 20, 6),
+              child: Text('Copier « ${l.title} » vers…', style: titleStyle(18)),
+            ),
+            for (final x in targets)
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: JangColors.fromHex(x.$2.color),
+                  foregroundColor: Colors.white,
+                  child: const Icon(Icons.copy_rounded, size: 18),
+                ),
+                title: Text(x.$1.name, style: const TextStyle(fontWeight: FontWeight.w800)),
+                subtitle: Text(x.$2.name),
+                onTap: () => Navigator.pop(ctx, x),
+              ),
+          ]),
+        ),
+      ),
+    );
+    if (t == null) return;
+    final (exam, subject) = t;
+    if (subject.id == widget.subject.id) {
+      // Même matière partagée : la leçon redevient visible dans ce niveau.
+      repo.save('lessons', l.id, {'hiddenIn': l.hiddenIn.where((e) => e != exam.id).toList()});
+    } else {
+      final others = await repo.lessonsOfSubject(subject.id);
+      final order = others.isEmpty ? 0 : others.map((x) => x.order).reduce((a, b) => a > b ? a : b) + 1;
+      final id = repo.newId('lessons');
+      repo.save('lessons', id, {
+        ...l.toMap(),
+        'examId': subject.examId,
+        'subjectId': subject.id,
+        'chapterId': '',
+        'order': order,
+        'hiddenIn': subject.examIds.where((e) => e != exam.id).toList(),
+        'deleted': false,
+        'status': 'published',
+      });
+      if (deck != null) {
+        repo.save('flashcards', id, {
+          'chapterId': id,
+          'lessonId': id,
+          'subjectId': subject.id,
+          'examId': subject.examId,
+          'cards': deck.cards.map((c) => c.toMap()).toList(),
+          'deleted': false,
+        });
+      }
+    }
+    if (mounted) showMessage(context, 'Leçon copiée dans ${exam.name} · ${subject.name}.');
   }
 
   Widget _row(List<Lesson> lessons, int i, Color color) {
@@ -393,45 +506,55 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
           ? ('Pas de vidéo', false)
           : ('${l.videos.length} vidéo${l.videos.length > 1 ? 's' : ''}', true),
       l.body.trim().isEmpty ? ('Pas de texte', false) : ('Leçon', true),
-      l.quiz.isEmpty ? ('Pas de QCM', false) : ('QCM ${l.quiz.length}', true),
       deck == null ? ('Pas de révision', false) : ('Révision ${deck.cards.length}', true),
+      l.quiz.isEmpty ? ('Pas d\'exercices', false) : ('Exercices ${l.quiz.length}', true),
     ];
-    return Card(
-      margin: const EdgeInsets.only(bottom: 8),
+    final parts = splitLessonTitle(l.title);
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: JangColors.border),
+        boxShadow: const [BoxShadow(color: JangColors.border, offset: Offset(0, 3))],
+      ),
       child: InkWell(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(16),
         onTap: () => _openLesson(l),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(12, 12, 4, 12),
           child: Row(
             children: [
               Container(
-                width: 30,
-                height: 30,
+                width: 36,
+                height: 36,
                 alignment: Alignment.center,
-                decoration:
-                    BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
+                decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(10)),
                 child: Text('${i + 1}',
-                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(l.title.isEmpty ? 'Sans titre' : l.title,
-                        style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
-                    const SizedBox(height: 5),
+                    if (parts.$1.isNotEmpty)
+                      Text(parts.$1.toUpperCase(),
+                          style: TextStyle(
+                              color: color, fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 0.6)),
+                    Text(parts.$2.isEmpty ? 'Sans titre' : parts.$2,
+                        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
+                    const SizedBox(height: 6),
                     Wrap(
                       spacing: 4,
                       runSpacing: 4,
                       children: [
                         for (final t in tags)
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),
+                            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
                             decoration: BoxDecoration(
                               color: t.$2 ? JangColors.noteBg : const Color(0xFFEEF1EE),
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(8),
                             ),
                             child: Text(t.$1,
                                 style: TextStyle(
@@ -447,12 +570,22 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
                 tooltip: 'Options de la leçon',
                 onSelected: (v) async {
                   if (v == 'edit') _openLesson(l);
+                  if (v == 'copy') await _copy(l, deck);
                   if (v == 'up' && i > 0) swapIn(context, 'lessons', lessons, i, i - 1);
                   if (v == 'down' && i < lessons.length - 1) {
                     swapIn(context, 'lessons', lessons, i, i + 1);
                   }
+                  if (v == 'hide' &&
+                      await confirm(context, 'Retirer « ${l.title} » de ${widget.exam?.name} ?',
+                          'Elle reste visible dans les autres niveaux.',
+                          ok: 'Retirer')) {
+                    ContentRepo.instance
+                        .save('lessons', l.id, {'hiddenIn': {...l.hiddenIn, _examId!}.toList()});
+                  }
                   if (v == 'delete' &&
-                      await confirm(context, 'Supprimer « ${l.title} » ?',
+                      await confirm(
+                          context,
+                          'Supprimer « ${l.title} » ${_shared ? 'dans tous les niveaux' : ''} ?',
                           'Les élèves ne verront plus cette leçon.',
                           ok: 'Supprimer')) {
                     ContentRepo.instance.remove('lessons', l.id);
@@ -461,10 +594,16 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
                 },
                 itemBuilder: (_) => [
                   const PopupMenuItem(value: 'edit', child: Text('Modifier')),
+                  const PopupMenuItem(value: 'copy', child: Text('Copier vers un autre niveau')),
                   if (i > 0) const PopupMenuItem(value: 'up', child: Text('Monter')),
                   if (i < lessons.length - 1)
                     const PopupMenuItem(value: 'down', child: Text('Descendre')),
-                  const PopupMenuItem(value: 'delete', child: Text('Supprimer')),
+                  if (_shared)
+                    PopupMenuItem(
+                        value: 'hide', child: Text('Retirer de ${widget.exam!.name} seulement')),
+                  PopupMenuItem(
+                      value: 'delete',
+                      child: Text(_shared ? 'Supprimer dans tous les niveaux' : 'Supprimer')),
                 ],
               ),
             ],

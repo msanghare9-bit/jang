@@ -10,7 +10,7 @@ import 'common.dart';
 
 /// Message de partage de l'application.
 String get shareText =>
-    'J\'apprends avec l\'application Jàng : leçons, vidéos et QCM corrigés, même sans internet. '
+    'J\'apprends avec l\'application Jàng : leçons, vidéos et exercices corrigés, même sans internet. '
     'Télécharge-la ici : ${GithubService.shareUrl}';
 
 /// Ouvre WhatsApp ou les SMS avec le message de partage.
@@ -65,7 +65,7 @@ class WeekGoalCard extends StatelessWidget {
         final target = e.goalTarget;
         final type = e.goalType;
         final count = e.weekCount(type);
-        final what = type == 'quiz' ? 'QCM' : 'leçon${target > 1 ? 's' : ''}';
+        final what = type == 'quiz' ? 'série${target > 1 ? 's' : ''} d\'exercices' : 'leçon${target > 1 ? 's' : ''}';
         return Card(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 14, 8, 14),
@@ -128,7 +128,7 @@ Future<void> showGoalDialog(BuildContext context) async {
             SegmentedButton<String>(
               segments: const [
                 ButtonSegment(value: 'lesson', label: Text('Leçons')),
-                ButtonSegment(value: 'quiz', label: Text('QCM')),
+                ButtonSegment(value: 'quiz', label: Text('Exercices')),
               ],
               selected: {type},
               onSelectionChanged: (s) => set(() => type = s.first),

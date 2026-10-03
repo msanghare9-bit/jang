@@ -13,11 +13,15 @@ class LessonEditor extends StatefulWidget {
   final Subject subject;
   final Lesson? lesson;
   final int nextOrder;
+
+  /// Pour une nouvelle leçon : classes de la matière où elle reste cachée.
+  final List<String> hiddenIn;
   const LessonEditor({
     super.key,
     required this.subject,
     this.lesson,
     required this.nextOrder,
+    this.hiddenIn = const [],
   });
 
   @override
@@ -268,10 +272,10 @@ class _LessonEditorState extends State<LessonEditor> {
     for (var i = 0; i < _quiz.length; i++) {
       final q = _quiz[i];
       final filled = q.options.where((o) => o.trim().isNotEmpty).length;
-      if (q.question.trim().isEmpty) return 'QCM, question ${i + 1} : écris l\'énoncé.';
-      if (filled < 2) return 'QCM, question ${i + 1} : écris au moins deux propositions.';
+      if (q.question.trim().isEmpty) return 'Exercices, question ${i + 1} : écris l\'énoncé.';
+      if (filled < 2) return 'Exercices, question ${i + 1} : écris au moins deux propositions.';
       if (q.options[q.answer].trim().isEmpty) {
-        return 'QCM, question ${i + 1} : la bonne réponse choisie est vide.';
+        return 'Exercices, question ${i + 1} : la bonne réponse choisie est vide.';
       }
     }
     return null;
@@ -295,6 +299,7 @@ class _LessonEditorState extends State<LessonEditor> {
                   image: q.image,
                 ))
             .toList(),
+        hiddenIn: widget.lesson?.hiddenIn ?? widget.hiddenIn,
       );
 
   void _save() {
@@ -372,7 +377,7 @@ class _LessonEditorState extends State<LessonEditor> {
               tabs: const [
                 Tab(text: 'Vidéos'),
                 Tab(text: 'Leçon'),
-                Tab(text: 'QCM'),
+                Tab(text: 'Exercices'),
                 Tab(text: 'Révision'),
               ],
             ),

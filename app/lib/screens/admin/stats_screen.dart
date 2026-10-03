@@ -198,7 +198,7 @@ class _StatsScreenState extends State<StatsScreen> {
                     child: StatTile(
                         value: '${_sumDays(s.days, 'lessonViews')}', label: 'leçons ouvertes')),
                 const SizedBox(width: 10),
-                Expanded(child: StatTile(value: '${_sumDays(s.days, 'quizzes')}', label: 'QCM faits')),
+                Expanded(child: StatTile(value: '${_sumDays(s.days, 'quizzes')}', label: 'Exercices faits')),
               ]),
 
               // ---------- Par matière ----------
@@ -355,7 +355,7 @@ class _SubjectStats extends StatelessWidget {
           shape: const Border(),
           title: Text(subject.name, style: titleStyle(18, color: color)),
           subtitle: Text(
-            '$views ouverture${views > 1 ? 's' : ''} de leçon · $attempts QCM'
+            '$views ouverture${views > 1 ? 's' : ''} de leçon · $attempts exercices'
             '${avg == null ? '' : ' · moyenne $avg %'}'
             '${likes + dislikes == 0 ? '' : ' · $likes j\'aime, $dislikes je n\'aime pas'}',
             style: t.bodySmall,
@@ -380,7 +380,7 @@ class _SubjectStats extends StatelessWidget {
     return ListTile(
       title: Text(l.title, style: t.titleSmall),
       subtitle: Text(
-        '${_i(d['views'])} élève(s) l\'ont ouverte · ${_i(d['quizUsers'])} ont fait le QCM'
+        '${_i(d['views'])} élève(s) l\'ont ouverte · ${_i(d['quizUsers'])} ont fait les exercices'
         '${avg == null ? '' : ' · moyenne $avg %'}'
         '${_i(d['likes']) + _i(d['dislikes']) == 0 ? '' : ' · ${_i(d['likes'])} j\'aime, ${_i(d['dislikes'])} je n\'aime pas'}',
         style: t.bodySmall,
@@ -412,7 +412,7 @@ class _LessonStatsScreen extends StatelessWidget {
     final firstUsers = _i(data['quizUsers']);
     final firstAvg = firstUsers == 0 ? null : (_i(data['sumFirstPct']) / firstUsers).round();
     return Scaffold(
-      appBar: AppBar(title: const Text('Résultats du QCM')),
+      appBar: AppBar(title: const Text('Résultats des exercices')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
         children: [

@@ -62,7 +62,7 @@ class _ReviewScreenState extends State<ReviewScreen> {
               child: EmptyState(
                 icon: Icons.check_circle_outline,
                 title: 'Aucune erreur à revoir',
-                message: 'Bravo ! Les questions que tu rates aux QCM apparaîtront ici.',
+                message: 'Bravo ! Les questions que tu rates aux exercices apparaîtront ici.',
               ),
             );
           }

@@ -27,8 +27,11 @@ class LessonPack {
     required this.cards,
   });
 
-  /// Identifiant de la leçon une fois ajoutée (le même à chaque fois : pas de doublon).
+  /// Ancien identifiant (partagé entre toutes les classes).
   String get lessonId => 'pack_$id';
+
+  /// Identifiant propre à une matière : chaque classe a sa copie.
+  String lessonIdFor(Subject s) => 'pack_${id}_${s.id}';
 
   factory LessonPack.fromMap(Map m) {
     String s(Object? v) => v is String ? v : '';
@@ -126,13 +129,15 @@ class PackService {
   }
 
   /// Ajoute les leçons dans la matière, à la suite des leçons existantes.
-  void add(Subject subject, List<LessonPack> packs, int firstOrder) {
+  /// [hiddenIn] : classes de la matière partagée où ces leçons restent cachées.
+  void add(Subject subject, List<LessonPack> packs, int firstOrder, {List<String> hiddenIn = const []}) {
     final db = FirebaseFirestore.instance;
     final now = FieldValue.serverTimestamp();
     final batch = db.batch();
     var order = firstOrder;
     for (final p in packs) {
-      batch.set(db.collection('lessons').doc(p.lessonId), {
+      final lid = p.lessonIdFor(subject);
+      batch.set(db.collection('lessons').doc(lid), {
         'examId': subject.examId,
         'subjectId': subject.id,
         'chapterId': '',
@@ -141,13 +146,14 @@ class PackService {
         'videos': <Map<String, dynamic>>[],
         'body': p.body,
         'quiz': p.quiz.map((q) => q.toMap()).toList(),
+        'hiddenIn': hiddenIn,
         'deleted': false,
         'updatedAt': now,
       });
       if (p.cards.isNotEmpty) {
-        batch.set(db.collection('flashcards').doc(p.lessonId), {
-          'chapterId': p.lessonId,
-          'lessonId': p.lessonId,
+        batch.set(db.collection('flashcards').doc(lid), {
+          'chapterId': lid,
+          'lessonId': lid,
           'subjectId': subject.id,
           'examId': subject.examId,
           'cards': p.cards.map((c) => c.toMap()).toList(),

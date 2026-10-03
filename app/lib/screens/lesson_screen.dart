@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import '../models.dart';
+import '../services/auth_service.dart';
 import '../services/content_repo.dart';
 import '../services/flashcard_service.dart';
 import '../services/progress_repo.dart';
@@ -57,7 +58,8 @@ class _LessonScreenState extends State<LessonScreen> {
     final repo = ContentRepo.instance;
     var pos = 0, count = 0;
     if (!widget.preview) {
-      final all = await repo.lessonsOfSubject(widget.subject.id);
+      final all = await repo.lessonsOfSubject(widget.subject.id,
+          examId: AuthService.instance.profile.value?.examId);
       count = all.length;
       pos = all.indexWhere((l) => l.id == widget.lesson.id) + 1;
     }
@@ -144,10 +146,21 @@ class _LessonScreenState extends State<LessonScreen> {
       if (hasBody) 'Lecture : $_readMinutes min',
       if (lesson.videos.isNotEmpty)
         '${lesson.videos.length} vidéo${lesson.videos.length > 1 ? 's' : ''}',
-      if (lesson.quiz.isNotEmpty) 'QCM de ${lesson.quiz.length} question${lesson.quiz.length > 1 ? 's' : ''}',
+      if (lesson.quiz.isNotEmpty) 'Exercices : ${lesson.quiz.length} question${lesson.quiz.length > 1 ? 's' : ''}',
     ];
 
     return Scaffold(
+      floatingActionButton: widget.preview
+          ? null
+          : FloatingActionButton.extended(
+              heroTag: 'jangalekat',
+              backgroundColor: _tutorColor,
+              foregroundColor: Colors.white,
+              onPressed: _askTutor,
+              icon: const Icon(Icons.record_voice_over_rounded),
+              label: const Text('Demander à Jàngalekat',
+                  style: TextStyle(fontWeight: FontWeight.w800)),
+            ),
       appBar: AppBar(
         title: Text(widget.preview ? 'Aperçu élève' : widget.subject.name,
             style: titleStyle(19, color: fg)),
@@ -249,8 +262,11 @@ class _LessonScreenState extends State<LessonScreen> {
                 if (hasBody) ...[
                   if (lesson.videos.isNotEmpty) SectionTitle('La leçon', color: color),
                   if (lesson.videos.isEmpty) const SizedBox(height: 12),
+                  _tutorHint(color, top: true),
                   LessonText(lesson.body,
                       accent: color, scale: _scale, speak: Speech.isEnglish(widget.subject.name)),
+                  const SizedBox(height: 16),
+                  _tutorHint(color),
                 ],
                 if (empty)
                   const Padding(
@@ -262,7 +278,6 @@ class _LessonScreenState extends State<LessonScreen> {
                     ),
                   ),
                 const SizedBox(height: 22),
-                if (lesson.quiz.isNotEmpty) _QuizButton(lesson: lesson, subject: widget.subject, color: color, preview: widget.preview),
                 if (_deck != null) ...[
                   const SizedBox(height: 10),
                   ChunkyButton(
@@ -284,29 +299,11 @@ class _LessonScreenState extends State<LessonScreen> {
                     },
                   ),
                 ],
+                if (lesson.quiz.isNotEmpty) ...[
+                  const SizedBox(height: 10),
+                  _QuizButton(lesson: lesson, subject: widget.subject, color: color, preview: widget.preview),
+                ],
                 const SizedBox(height: 18),
-                Card(
-                  child: ListTile(
-                    minVerticalPadding: 12,
-                    leading: CircleAvatar(
-                      backgroundColor: color,
-                      foregroundColor: Colors.white,
-                      child: const Icon(Icons.school_outlined),
-                    ),
-                    title: Text('Demander à Jàngalekat', style: t.titleSmall),
-                    subtitle: Text('Il t\'explique la leçon en français simple.',
-                        style: t.bodySmall),
-                    trailing: const Icon(Icons.chevron_right),
-                    onTap: widget.preview
-                        ? null
-                        : () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) =>
-                                      TutorScreen(lesson: lesson, subject: widget.subject)),
-                            ),
-                  ),
-                ),
                 if (!widget.preview) ...[
                   SectionTitle('Ton avis sur la leçon', color: color),
                   _VoteRow(lesson: lesson, color: color),
@@ -314,11 +311,80 @@ class _LessonScreenState extends State<LessonScreen> {
                   SectionTitle('Questions des élèves', color: color),
                   DiscussionSection(lesson: lesson, color: color),
                 ],
+                const SizedBox(height: 80), // place pour le bouton Jàngalekat
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  static const _tutorColor = Color(0xFF6D28D9); // violet : Jàngalekat
+
+  void _askTutor() => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => TutorScreen(lesson: widget.lesson, subject: widget.subject)),
+      );
+
+  /// Invitation à poser une question à Jàngalekat (en haut : courte ; en bas : grand encadré).
+  Widget _tutorHint(Color color, {bool top = false}) {
+    if (top) {
+      return Container(
+        margin: const EdgeInsets.only(bottom: 14),
+        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+        decoration: BoxDecoration(
+          color: JangColors.noteBg,
+          borderRadius: BorderRadius.circular(14),
+        ),
+        child: const Row(children: [
+          Text('💡', style: TextStyle(fontSize: 20)),
+          SizedBox(width: 8),
+          Expanded(
+            child: Text(
+                'Si tu ne comprends pas une partie de la leçon, pose une question à Jàngalekat. '
+                'Il t\'explique en français simple.',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14.5)),
+          ),
+        ]),
+      );
+    }
+    return Container(
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [_tutorColor, JangColors.darker(_tutorColor, 0.15)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(22),
+        boxShadow: [BoxShadow(color: JangColors.darker(_tutorColor, 0.3), offset: const Offset(0, 5))],
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Row(children: [
+          const CircleAvatar(
+            radius: 26,
+            backgroundColor: Colors.white,
+            child: Text('🤖', style: TextStyle(fontSize: 28)),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('Tu n\'as pas compris ?', style: titleStyle(21, color: Colors.white, weight: 800)),
+              const Text('Pose ta question à Jàngalekat : il t\'explique la leçon en français simple.',
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.5)),
+            ]),
+          ),
+        ]),
+        const SizedBox(height: 14),
+        ChunkyButton(
+          label: 'POSER UNE QUESTION',
+          icon: Icons.chat_bubble_rounded,
+          color: Colors.white,
+          textColor: JangColors.darker(_tutorColor, 0.2),
+          onPressed: widget.preview ? null : _askTutor,
+        ),
+      ]),
     );
   }
 
@@ -328,8 +394,8 @@ class _LessonScreenState extends State<LessonScreen> {
     final steps = <(String, bool)>[
       if (lesson.videos.isNotEmpty) ('Vidéo', _videoSeen),
       if (lesson.body.trim().isNotEmpty) ('Leçon', p?.seen == true || widget.preview),
-      if (lesson.quiz.isNotEmpty) ('QCM', p?.quizDone == true),
       if (_deck != null) ('Révision', _revStarted),
+      if (lesson.quiz.isNotEmpty) ('Exercices', p?.quizDone == true),
     ];
     if (steps.length < 2) return const SizedBox.shrink();
     final current = steps.indexWhere((s) => !s.$2);
@@ -408,7 +474,7 @@ class _QuizButton extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (_) => QuizScreen(lesson: lesson, subject: subject)),
               ),
-              label: done ? 'Refaire le QCM' : 'Faire le QCM ($n question${n > 1 ? 's' : ''})',
+              label: done ? 'Refaire les exercices' : 'Faire les exercices ($n question${n > 1 ? 's' : ''})',
             ),
             if (done) ...[
               const SizedBox(height: 6),

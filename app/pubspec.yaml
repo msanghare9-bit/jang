@@ -1,7 +1,7 @@
 name: jang
 description: "Jàng – apprendre, leçon après leçon."
 publish_to: 'none'
-version: 1.7.0+1
+version: 1.8.0+1
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
@@ -19,6 +19,8 @@ dependencies:
   url_launcher: '>=6.2.0 <100.0.0'
   image_picker: '>=1.0.7 <100.0.0'
   flutter_tts: '>=3.8.5 <4.0.0'
+  flutter_local_notifications: '>=17.2.2 <18.0.0'
+  timezone: '>=0.9.4 <0.10.0'
 
 dev_dependencies:
   flutter_lints: '>=4.0.0 <100.0.0'

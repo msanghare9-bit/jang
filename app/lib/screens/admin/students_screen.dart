@@ -124,7 +124,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
           title: Text('${m['name'] ?? ''}', style: t.titleSmall),
           subtitle: Text(
             '${m['username'] ?? ''} · dernière activité : ${_dayLabel(m['lastActiveDay'] as String?)}\n'
-            '${_i(m['lessonsSeen'])} leçon(s) ouverte(s) · $n QCM · '
+            '${_i(m['lessonsSeen'])} leçon(s) ouverte(s) · $n exercices · '
             '${avg == null ? 'pas de moyenne' : 'moyenne $avg %'}',
             style: t.bodySmall,
           ),
@@ -217,7 +217,7 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
               Text('Identifiant : ${m['username'] ?? ''}', style: t.bodyMedium),
               Text('Dernière activité : ${_dayLabel(m['lastActiveDay'] as String?)}',
                   style: t.bodyMedium),
-              Text('QCM faits (toutes tentatives) : ${_i(m['quizzesTaken'])}', style: t.bodyMedium),
+              Text('Exercices faits (toutes tentatives) : ${_i(m['quizzesTaken'])}', style: t.bodyMedium),
               const SizedBox(height: 10),
               OutlinedButton.icon(
                 onPressed: _toggleBlock,
@@ -258,7 +258,7 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                 subtitle: Text(
                     p.quizDone
                         ? '${p.attempts} tentative(s) · dernière note ${p.lastScore}/${p.total}'
-                        : 'Leçon ouverte, QCM pas encore fait',
+                        : 'Leçon ouverte, exercices pas encore faits',
                     style: t.bodySmall),
                 trailing: p.quizDone
                     ? Pill('${p.bestScore}/${p.total}',

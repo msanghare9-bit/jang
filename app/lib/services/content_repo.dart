@@ -134,10 +134,11 @@ class ContentRepo {
 
   /// Leçons d'une matière, dans l'ordre. Les anciennes leçons rangées par chapitre
   /// gardent l'ordre des chapitres, puis leur ordre dans le chapitre.
-  Future<List<Lesson>> lessonsOfSubject(String subjectId) async {
+  /// Avec [examId] : seulement les leçons visibles dans cette classe.
+  Future<List<Lesson>> lessonsOfSubject(String subjectId, {String? examId}) async {
     final docs =
         await _cached(_db.collection('lessons').where('subjectId', isEqualTo: subjectId));
-    final list = docs.map(Lesson.fromDoc).where((e) => !e.deleted).toList();
+    final list = docs.map(Lesson.fromDoc).where((e) => !e.deleted && e.visibleIn(examId)).toList();
     final chapterOrder = <String, int>{};
     if (list.any((l) => l.chapterId.isNotEmpty)) {
       for (final c in await chapters(subjectId)) {
@@ -158,7 +159,7 @@ class ContentRepo {
   Future<List<Lesson>> lessonsOfExam(String examId) async {
     final out = <Lesson>[];
     for (final s in await subjects(examId)) {
-      out.addAll(await lessonsOfSubject(s.id));
+      out.addAll(await lessonsOfSubject(s.id, examId: examId));
     }
     return out;
   }

@@ -169,6 +169,9 @@ class Lesson {
   final List<Video> videos;
   final String body;
   final List<QuizQuestion> quiz;
+
+  /// Classes (niveaux) où la leçon est retirée, quand la matière est partagée.
+  final List<String> hiddenIn;
   final bool deleted;
   Lesson({
     required this.id,
@@ -180,8 +183,12 @@ class Lesson {
     this.videos = const [],
     this.body = '',
     this.quiz = const [],
+    this.hiddenIn = const [],
     this.deleted = false,
   });
+
+  /// Vrai si la leçon est visible dans cette classe ('' = toutes).
+  bool visibleIn(String? examId) => examId == null || examId.isEmpty || !hiddenIn.contains(examId);
 
   factory Lesson.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
@@ -197,6 +204,7 @@ class Lesson {
       videos: vids.whereType<Map>().map(Video.fromMap).toList(),
       body: _str(m['body']),
       quiz: qz.whereType<Map>().map(QuizQuestion.fromMap).toList(),
+      hiddenIn: (m['hiddenIn'] is List ? m['hiddenIn'] as List : const []).whereType<String>().toList(),
       deleted: _bool(m['deleted']),
     );
   }
@@ -210,6 +218,7 @@ class Lesson {
         'videos': videos.map((v) => v.toMap()).toList(),
         'body': body,
         'quiz': quiz.map((q) => q.toMap()).toList(),
+        'hiddenIn': hiddenIn,
         'deleted': deleted,
       };
 }
@@ -422,4 +431,19 @@ class Comment {
       createdAt: ts is Timestamp ? ts.toDate() : null,
     );
   }
+}
+
+/// Découpe un titre « Vocabulary 7 – Health » en (« Vocabulary 7 », « Health »).
+/// Sans tiret : ('', titre).
+(String, String) splitLessonTitle(String title) {
+  final t = title.trim();
+  final m = RegExp(r'^(.{2,40}?)\s+[–—-]\s+(.+)$').firstMatch(t);
+  return m == null ? ('', t) : (m.group(1)!.trim(), m.group(2)!.trim());
+}
+
+/// Rubrique d'une leçon numérotée (« Vocabulary 7 » → « Vocabulary »), sinon ''.
+String lessonSection(String title) {
+  final k = splitLessonTitle(title).$1;
+  final m = RegExp(r'^(.+?)\s+\d+$').firstMatch(k);
+  return m?.group(1) ?? '';
 }

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../models.dart';
+import '../services/auth_service.dart';
 import '../services/content_repo.dart';
 import '../services/progress_repo.dart';
 import '../services/speech_service.dart';
@@ -42,7 +43,8 @@ class _SubjectScreenState extends State<SubjectScreen> {
   Future<(List<Lesson>, Map<String, FlashcardDeck>)> _load() async {
     final repo = ContentRepo.instance;
     return (
-      await repo.lessonsOfSubject(widget.subject.id),
+      await repo.lessonsOfSubject(widget.subject.id,
+          examId: AuthService.instance.profile.value?.examId),
       await repo.decksOfSubject(widget.subject.id),
     );
   }
@@ -111,9 +113,15 @@ class _SubjectScreenState extends State<SubjectScreen> {
                       padding: const EdgeInsets.fromLTRB(16, 18, 16, 0),
                       child: Column(
                         children: [
-                          for (var i = 0; i < lessons.length; i++)
+                          for (var i = 0; i < lessons.length; i++) ...[
+                            if (lessonSection(lessons[i].title).isNotEmpty &&
+                                (i == 0 ||
+                                    lessonSection(lessons[i].title) !=
+                                        lessonSection(lessons[i - 1].title)))
+                              _sectionHeader(lessonSection(lessons[i].title), color),
                             _step(context, i, lessons[i], decks[lessons[i].id], color,
                                 current: i == current, last: i == lessons.length - 1),
+                          ],
                         ],
                       ),
                     ),
@@ -197,9 +205,21 @@ class _SubjectScreenState extends State<SubjectScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(l.title, style: titleStyle(18, weight: 800)),
-                          const SizedBox(height: 2),
-                          Text(_details(l, deck, p), style: t.bodySmall),
+                          if (splitLessonTitle(l.title).$1.isNotEmpty)
+                            Text(splitLessonTitle(l.title).$1.toUpperCase(),
+                                style: TextStyle(
+                                    color: JangColors.darker(color, 0.05),
+                                    fontSize: 11.5,
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 0.7)),
+                          Text(splitLessonTitle(l.title).$2, style: titleStyle(18, weight: 800)),
+                          const SizedBox(height: 6),
+                          Row(children: [
+                            Icon(done ? Icons.check_circle_rounded : Icons.play_circle_outline_rounded,
+                                size: 16, color: done ? JangColors.success : JangColors.textSecondary),
+                            const SizedBox(width: 4),
+                            Expanded(child: Text(_details(l, deck, p), style: t.bodySmall)),
+                          ]),
                           if (current) ...[
                             const SizedBox(height: 8),
                             Align(
@@ -236,12 +256,41 @@ class _SubjectScreenState extends State<SubjectScreen> {
     );
   }
 
+  /// Titre de rubrique (Vocabulaire, Fonctions, Grammaire…) entre les leçons.
+  Widget _sectionHeader(String name, Color color) {
+    final n = name.toLowerCase();
+    final (emoji, label) = n.startsWith('vocab')
+        ? ('📚', 'Vocabulaire')
+        : n.startsWith('function')
+            ? ('💬', 'Fonctions de la langue')
+            : n.startsWith('gramm')
+                ? ('✏️', 'Grammaire')
+                : ('📌', name);
+    return Padding(
+      padding: const EdgeInsets.only(top: 6, bottom: 14),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.12),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: color.withValues(alpha: 0.35), width: 1.5),
+        ),
+        child: Row(children: [
+          Text(emoji, style: const TextStyle(fontSize: 24)),
+          const SizedBox(width: 10),
+          Text(label, style: titleStyle(20, color: JangColors.darker(color, 0.1), weight: 800)),
+        ]),
+      ),
+    );
+  }
+
   String _details(Lesson l, FlashcardDeck? deck, LessonProgress? p) {
     final parts = <String>[];
     if (p?.quizDone == true) {
-      parts.add('QCM ${p!.bestScore}/${p.total}');
+      parts.add('Exercices ${p!.bestScore}/${p.total}');
     } else if (l.quiz.isNotEmpty) {
-      parts.add('QCM ${l.quiz.length}');
+      parts.add('Exercices ${l.quiz.length}');
     }
     if (l.videos.isNotEmpty) parts.add('${l.videos.length} vidéo${l.videos.length > 1 ? 's' : ''}');
     if (deck != null) parts.add('révision ${deck.cards.length}');
