@@ -10,6 +10,7 @@ import '../theme.dart';
 import '../widgets/characters.dart';
 import '../widgets/cheer.dart';
 import '../widgets/fun.dart';
+import '../widgets/moonwalk.dart';
 import '../widgets/common.dart';
 import '../widgets/engagement.dart';
 import '../widgets/jang_ui.dart';
@@ -182,7 +183,8 @@ class _SubjectsTabState extends State<SubjectsTab> {
         if (!snap.hasData) return const Center(child: CircularProgressIndicator());
         final data = snap.data!;
         final name = _firstName();
-        return RefreshIndicator(
+        return Stack(children: [
+          RefreshIndicator(
           onRefresh: _refresh,
           child: ListView(
             padding: const EdgeInsets.only(bottom: 24),
@@ -286,7 +288,9 @@ class _SubjectsTabState extends State<SubjectsTab> {
               ),
             ],
           ),
-        );
+        ),
+          GaindeMoonwalk(name: name),
+        ]);
       },
     );
   }
