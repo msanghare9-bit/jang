@@ -1,0 +1,1287 @@
+{
+ "saisons": [
+  {
+   "matiere": "anglais",
+   "niveau": "6e",
+   "titre": "Un lionceau à l'école",
+   "episodes": [
+    {
+     "titre": "Un lionceau dans la cour",
+     "cases": [
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 100
+        },
+        {
+         "id": "gainde",
+         "x": 0.62,
+         "taille": 80,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Hello! Who are you?",
+         "fr": "Bonjour ! Qui es-tu ?",
+         "x": 0.3,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 110,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "GRRR… miaou ? 😳",
+         "fr": "Gaïndé veut rugir… raté.",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.02,
+         "taille": 95
+        },
+        {
+         "id": "awa",
+         "x": 0.3,
+         "taille": 95
+        },
+        {
+         "id": "gainde",
+         "x": 0.66,
+         "taille": 70,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "A lion at school?! I'm late for maths!",
+         "fr": "Un lion à l'école ?! Je suis en retard en maths !",
+         "x": 0.02,
+         "y": 0.03
+        },
+        {
+         "en": "Your name is Gaïndé!",
+         "fr": "Tu t'appelles Gaïndé !",
+         "x": 0.42,
+         "y": 0.32
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "Hello",
+      "Who are you?",
+      "school",
+      "one, two, three"
+     ]
+    },
+    {
+     "titre": "Gaïndé ne sait pas dire son nom",
+     "cases": [
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.06,
+         "taille": 100
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 85
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Say: My name is Gaïndé.",
+         "fr": "Dis : Je m'appelle Gaïndé.",
+         "x": 0.32,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 105,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "My name is… Mango!",
+         "fr": "Je m'appelle… Mangue !",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95,
+         "anim": "danse"
+        },
+        {
+         "id": "awa",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Ha ha! He is hungry.",
+         "fr": "Ha ha ! Il a faim.",
+         "x": 0.02,
+         "y": 0.04
+        },
+        {
+         "en": "I'm eleven. And you?",
+         "fr": "J'ai onze ans. Et toi ?",
+         "x": 0.45,
+         "y": 0.38
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "My name is…",
+      "I am eleven",
+      "family",
+      "brother, sister"
+     ]
+    },
+    {
+     "titre": "En retard ! Gaïndé a trop dormi",
+     "cases": [
+      {
+       "fond": "maison",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.3,
+         "taille": 110,
+         "anim": "immobile"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Zzz… It's Monday? No, Sunday!",
+         "fr": "Zzz… On est lundi ? Non, dimanche !",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 85,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "What time is it?",
+         "fr": "Quelle heure est-il ?",
+         "x": 0.05,
+         "y": 0.04
+        },
+        {
+         "en": "It's eight o'clock!",
+         "fr": "Il est huit heures !",
+         "x": 0.5,
+         "y": 0.35
+        }
+       ]
+      },
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "jangalekat",
+         "x": 0.4,
+         "taille": 100,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Hmm… a lion in pyjamas. Interesting.",
+         "fr": "Hmm… un lion en pyjama. Intéressant.",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "Monday",
+      "Sunday",
+      "What time is it?",
+      "o'clock"
+     ]
+    },
+    {
+     "titre": "Panique au marché : les mangues ont disparu",
+     "cases": [
+      {
+       "fond": "marche",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 85,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I like mangoes. Do you like mangoes?",
+         "fr": "J'aime les mangues. Tu aimes les mangues ?",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "marche",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.3,
+         "taille": 115,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Yes! I like ALL the mangoes. 😋",
+         "fr": "Oui ! J'aime TOUTES les mangues.",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "marche",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95,
+         "anim": "saute"
+        },
+        {
+         "id": "gainde",
+         "x": 0.62,
+         "taille": 80,
+         "anim": "immobile"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "The red mangoes, the green mangoes… all gone!",
+         "fr": "Les mangues rouges, les vertes… plus rien !",
+         "x": 0.03,
+         "y": 0.04
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "I like…",
+      "mango",
+      "banana",
+      "red, green, yellow"
+     ]
+    },
+    {
+     "titre": "Gaïndé essaie les habits de Modou",
+     "cases": [
+      {
+       "fond": "maison",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 85
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Put on my T-shirt and my cap!",
+         "fr": "Mets mon tee-shirt et ma casquette !",
+         "x": 0.05,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "maison",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.3,
+         "taille": 115,
+         "anim": "danse"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "My head is too big! My tail is too long!",
+         "fr": "Ma tête est trop grosse ! Ma queue est trop longue !",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "maison",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.08,
+         "taille": 95,
+         "anim": "danse"
+        },
+        {
+         "id": "modou",
+         "x": 0.55,
+         "taille": 95,
+         "anim": "danse2"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Nice trousers, Gaïndé! 😂",
+         "fr": "Joli pantalon, Gaïndé !",
+         "x": 0.25,
+         "y": 0.05
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "head",
+      "tail",
+      "T-shirt",
+      "cap",
+      "trousers"
+     ]
+    },
+    {
+     "titre": "Doudou et son tama",
+     "cases": [
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "doudou",
+         "x": 0.35,
+         "taille": 115,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I am Doudou. I am a griot.",
+         "fr": "Je suis Doudou. Je suis griot.",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "doudou",
+         "x": 0.05,
+         "taille": 100
+        },
+        {
+         "id": "modou",
+         "x": 0.6,
+         "taille": 90
+        }
+       ],
+       "bulles": [
+        {
+         "en": "My tama plays only for good answers.",
+         "fr": "Mon tama joue seulement pour les bonnes réponses.",
+         "x": 0.3,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95,
+         "anim": "saute"
+        },
+        {
+         "id": "doudou",
+         "x": 0.55,
+         "taille": 100,
+         "anim": "immobile"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Two plus two is… five?",
+         "fr": "Deux plus deux font… cinq ?",
+         "x": 0.03,
+         "y": 0.04
+        },
+        {
+         "en": "…silence…",
+         "fr": "Le tama ne dit rien. 😶",
+         "x": 0.5,
+         "y": 0.35
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "I am a griot",
+      "teacher",
+      "farmer",
+      "fisherman"
+     ]
+    },
+    {
+     "titre": "Le match de foot de Modou",
+     "cases": [
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.3,
+         "taille": 110,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I can play football! I can run fast!",
+         "fr": "Je sais jouer au foot ! Je cours vite !",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.05,
+         "taille": 85,
+         "anim": "danse"
+        },
+        {
+         "id": "modou",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Gaïndé is running… with the ball in his mouth!",
+         "fr": "Gaïndé court… avec le ballon dans la bouche !",
+         "x": 0.03,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.08,
+         "taille": 95
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 80,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "You can't eat the ball, Gaïndé!",
+         "fr": "Tu ne peux pas manger le ballon, Gaïndé !",
+         "x": 0.05,
+         "y": 0.04
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "I can",
+      "I can't",
+      "run",
+      "play football"
+     ]
+    },
+    {
+     "titre": "Une ombre dans la bibliothèque",
+     "cases": [
+      {
+       "fond": "bibliotheque",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "modou",
+         "x": 0.4,
+         "taille": 90
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Is there a ghost in the library?",
+         "fr": "Il y a un fantôme dans la bibliothèque ?",
+         "x": 0.25,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "bibliotheque",
+       "persos": [
+        {
+         "id": "jangalekat",
+         "x": 0.32,
+         "taille": 115,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "No! There is a panther. A very clever panther.",
+         "fr": "Non ! Il y a une panthère. Très intelligente.",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "bibliotheque",
+       "persos": [
+        {
+         "id": "jangalekat",
+         "x": 0.1,
+         "taille": 100,
+         "anim": "saute"
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 80
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Ask me questions! …Oops, I fell on the books.",
+         "fr": "Posez-moi des questions ! …Oups, je suis tombée sur les livres.",
+         "x": 0.05,
+         "y": 0.04
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "There is…",
+      "There are…",
+      "library",
+      "book",
+      "question"
+     ]
+    },
+    {
+     "titre": "Gaïndé s'est perdu !",
+     "cases": [
+      {
+       "fond": "marche",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 105,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Excuse me, where is the school?",
+         "fr": "Pardon, où est l'école ?",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "marche",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "modou",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Hello? Gaïndé is not at school!",
+         "fr": "Allô ? Gaïndé n'est pas à l'école !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "marche",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.1,
+         "taille": 90,
+         "anim": "saute"
+        },
+        {
+         "id": "modou",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Turn left, go straight… I found the bakery!",
+         "fr": "À gauche, tout droit… j'ai trouvé la boulangerie !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "Where is…?",
+      "turn left",
+      "turn right",
+      "go straight"
+     ]
+    },
+    {
+     "titre": "« C'est mon ballon ! »",
+     "cases": [
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "awa",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "It's my ball!",
+         "fr": "C'est mon ballon !",
+         "x": 0.05,
+         "y": 0.04
+        },
+        {
+         "en": "No, it's mine!",
+         "fr": "Non, c'est le mien !",
+         "x": 0.5,
+         "y": 0.35
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 105,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "It's not yours. It's not his. It's MY lunch!",
+         "fr": "Ce n'est ni le tien, ni le sien. C'est MON déjeuner !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "doudou",
+         "x": 0.3,
+         "taille": 110,
+         "anim": "danse"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Doudou sings: « The ball is ours! »",
+         "fr": "Doudou chante : « Le ballon est à nous ! »",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "my, your, his, her",
+      "mine",
+      "yours",
+      "ours"
+     ]
+    },
+    {
+     "titre": "Cache-cache en anglais",
+     "cases": [
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "modou",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Where is Gaïndé? Under the table?",
+         "fr": "Où est Gaïndé ? Sous la table ?",
+         "x": 0.05,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "jangalekat",
+         "x": 0.05,
+         "taille": 95,
+         "anim": "balance"
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 75,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "He is behind the door… with his tail outside!",
+         "fr": "Il est derrière la porte… avec la queue dehors !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "classe",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 105,
+         "anim": "danse"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I am the best at hide-and-seek!",
+         "fr": "Je suis le meilleur à cache-cache !",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "under",
+      "behind",
+      "in",
+      "on",
+      "next to"
+     ]
+    },
+    {
+     "titre": "La grande course de l'école",
+     "cases": [
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 90,
+         "anim": "saute"
+        },
+        {
+         "id": "awa",
+         "x": 0.35,
+         "taille": 90,
+         "anim": "saute"
+        },
+        {
+         "id": "gainde",
+         "x": 0.66,
+         "taille": 80,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Ready? One, two, three… go!",
+         "fr": "Prêts ? Un, deux, trois… partez !",
+         "x": 0.2,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 105,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I'm first! …No, I'm tenth. I stopped to eat.",
+         "fr": "Je suis premier ! …Non, dixième. Je me suis arrêté pour manger.",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.3,
+         "taille": 110,
+         "anim": "danse"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "How many mangoes, Gaïndé?",
+         "fr": "Combien de mangues, Gaïndé ?",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "first",
+      "second",
+      "third",
+      "How many?"
+     ]
+    },
+    {
+     "titre": "Gaïndé a le cafard",
+     "cases": [
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 105,
+         "anim": "immobile"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I am sad. I miss my family.",
+         "fr": "Je suis triste. Ma famille me manque.",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "modou",
+         "x": 0.55,
+         "taille": 95
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Don't be sad! We are your family now.",
+         "fr": "Ne sois pas triste ! On est ta famille maintenant.",
+         "x": 0.05,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "doudou",
+         "x": 0.05,
+         "taille": 95,
+         "anim": "saute"
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 85,
+         "anim": "danse"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Doudou plays the tama… Gaïndé is happy!",
+         "fr": "Doudou joue du tama… Gaïndé est content !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "sad",
+      "happy",
+      "angry",
+      "tired"
+     ]
+    },
+    {
+     "titre": "Pardon, Modou",
+     "cases": [
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.3,
+         "taille": 110,
+         "anim": "immobile"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Gaïndé! You ate my sandwich!",
+         "fr": "Gaïndé ! Tu as mangé mon sandwich !",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.35,
+         "taille": 100,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I'm sorry. May I… have the other one?",
+         "fr": "Pardon. Je peux… avoir l'autre ?",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95,
+         "anim": "danse"
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 80,
+         "anim": "danse2"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Boul bayi! Ha ha! OK, my friend.",
+         "fr": "Ha ha ! D'accord, mon ami.",
+         "x": 0.2,
+         "y": 0.05
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "I'm sorry",
+      "May I…?",
+      "Please",
+      "Can you help me?"
+     ]
+    },
+    {
+     "titre": "Qui est le plus fort de Kébémer ?",
+     "cases": [
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "modou",
+         "x": 0.05,
+         "taille": 95
+        },
+        {
+         "id": "gainde",
+         "x": 0.6,
+         "taille": 85
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I am stronger than you!",
+         "fr": "Je suis plus fort que toi !",
+         "x": 0.05,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "jangalekat",
+         "x": 0.32,
+         "taille": 110,
+         "anim": "balance"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "I am the cleverest… and the clumsiest! 🙈",
+         "fr": "Je suis la plus intelligente… et la plus maladroite !",
+         "x": 0.04,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "terrain",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.3,
+         "taille": 110,
+         "anim": "danse"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "You must stop! The strongest is… the one who learns!",
+         "fr": "Arrêtez ! Le plus fort, c'est… celui qui apprend !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "stronger than",
+      "the strongest",
+      "the best",
+      "must, mustn't"
+     ]
+    },
+    {
+     "titre": "Le premier rugissement",
+     "cases": [
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.05,
+         "taille": 90
+        },
+        {
+         "id": "modou",
+         "x": 0.38,
+         "taille": 90
+        },
+        {
+         "id": "doudou",
+         "x": 0.66,
+         "taille": 90
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Yesterday we learned a lot. Tomorrow we will learn more!",
+         "fr": "Hier on a beaucoup appris. Demain, encore plus !",
+         "x": 0.04,
+         "y": 0.04
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "gainde",
+         "x": 0.3,
+         "taille": 120,
+         "anim": "saute"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "GRRRRR… miaou! 😅",
+         "fr": "Presque un rugissement !",
+         "x": 0.05,
+         "y": 0.05
+        }
+       ]
+      },
+      {
+       "fond": "cour",
+       "persos": [
+        {
+         "id": "awa",
+         "x": 0.02,
+         "taille": 80,
+         "anim": "danse"
+        },
+        {
+         "id": "doudou",
+         "x": 0.32,
+         "taille": 95,
+         "anim": "saute"
+        },
+        {
+         "id": "modou",
+         "x": 0.64,
+         "taille": 80,
+         "anim": "danse2"
+        }
+       ],
+       "bulles": [
+        {
+         "en": "Gathié ngalama! See you in 5e!",
+         "fr": "Rendez-vous en 5e !",
+         "x": 0.25,
+         "y": 0.03
+        }
+       ]
+      }
+     ],
+     "mots": [
+      "yesterday",
+      "tomorrow",
+      "I will…",
+      "See you!"
+     ]
+    }
+   ]
+  }
+ ]
+}

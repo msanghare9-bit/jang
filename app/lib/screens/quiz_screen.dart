@@ -1,10 +1,17 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../models.dart';
+import '../services/engagement_service.dart';
 import '../services/media_service.dart';
 import '../services/progress_repo.dart';
+import '../services/sound_service.dart';
+import '../services/story_service.dart';
 import '../theme.dart';
+import '../widgets/characters.dart';
 import '../widgets/cheer.dart';
+import '../widgets/fun.dart';
 import '../widgets/jang_ui.dart';
 
 /// Exercices : une question à la fois, réponse corrigée tout de suite.
@@ -28,6 +35,20 @@ class _QuizScreenState extends State<QuizScreen> {
   int _wrongRow = 0;
   String _cheer = '';
   String _endMessage = '';
+  String _title = '';
+  bool _celebrate = false;
+  String? _newEpisode;
+  int _xp = 0;
+  static final _rand = Random();
+  static const _rightTitles = ['Comprendre nga bou bax !', 'Diambar nga ! 🎉', 'Waaw, bravo ! 🎉'];
+
+  int get _correctCount {
+    var s = 0;
+    for (var i = 0; i < _quiz.length; i++) {
+      if (_answers[i] != null && _answers[i] == _quiz[i].answer) s++;
+    }
+    return s;
+  }
 
   List<QuizQuestion> get _quiz => widget.lesson.quiz;
 
@@ -53,11 +74,14 @@ class _QuizScreenState extends State<QuizScreen> {
       if (ok) {
         _wrongRow = 0;
         _cheer = Cheer.right();
+        _title = _rightTitles[_rand.nextInt(_rightTitles.length)];
       } else {
         _wrongRow++;
         _cheer = _wrongRow >= 3 ? Cheer.streakWrong() : Cheer.wrong();
+        _title = 'Boul bayi ! Dina bax !';
       }
     });
+    if (ok) SoundService.instance.splash();
   }
 
   void _next() {
@@ -72,7 +96,18 @@ class _QuizScreenState extends State<QuizScreen> {
         Cheer.quizEnd(score, _quiz.length, improved: previousBest >= 0 && score > previousBest);
     ProgressRepo.instance.recordQuiz(
         widget.lesson, [for (var i = 0; i < _quiz.length; i++) _answers[i] == _quiz[i].answer]);
-    setState(() => _finished = true);
+    _xp = score * 10;
+    EngagementService.instance.addTo('xp', _xp);
+    final great = _quiz.isNotEmpty && score * 10 >= _quiz.length * 8;
+    if (great) SoundService.instance.tama();
+    setState(() {
+      _finished = true;
+      _celebrate = great;
+      _newEpisode = null;
+    });
+    StoryService.instance.newlyUnlocked(widget.subject).then((title) {
+      if (mounted && title != null) setState(() => _newEpisode = title);
+    });
   }
 
   void _restart() {
@@ -81,6 +116,8 @@ class _QuizScreenState extends State<QuizScreen> {
       _index = 0;
       _finished = false;
       _wrongRow = 0;
+      _celebrate = false;
+      _newEpisode = null;
     });
   }
 
@@ -96,7 +133,17 @@ class _QuizScreenState extends State<QuizScreen> {
         titleSpacing: 0,
         title: _beads(),
       ),
-      body: _finished ? _results(context) : _question(context),
+      body: !_finished
+          ? _question(context)
+          : _celebrate
+              ? Celebration(
+                  score: _score,
+                  total: _quiz.length,
+                  xp: _xp,
+                  episode: _newEpisode,
+                  onContinue: () => setState(() => _celebrate = false),
+                )
+              : _results(context),
     );
   }
 
@@ -131,6 +178,10 @@ class _QuizScreenState extends State<QuizScreen> {
     final fbColor = correct ? JangColors.successDark : JangColors.errorDark;
     return Column(
       children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(14, 2, 14, 0),
+          child: PirogueTrack(steps: _quiz.length, position: _correctCount),
+        ),
         Expanded(
           child: ListView(
             padding: const EdgeInsets.fromLTRB(18, 6, 18, 18),
@@ -171,8 +222,15 @@ class _QuizScreenState extends State<QuizScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(correct ? 'Waaw, bravo ! 🎉' : 'Presque !',
-                          style: titleStyle(26, color: fbColor, weight: 800)),
+                      Row(children: [
+                        CharacterView.of(correct ? 'awa' : 'modou',
+                            size: 54, moves: correct ? Moves.jump : Moves.sway),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(_title.isEmpty ? (correct ? 'Bravo !' : 'Presque !') : _title,
+                              style: titleStyle(24, color: fbColor, weight: 800)),
+                        ),
+                      ]),
                       const SizedBox(height: 2),
                       Text(_cheer,
                           style: TextStyle(color: fbColor, fontWeight: FontWeight.w700, fontSize: 16)),
@@ -263,7 +321,15 @@ class _QuizScreenState extends State<QuizScreen> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 32),
       children: [
-        Center(child: Text(good ? '🏆' : '🌱', style: const TextStyle(fontSize: 72))),
+        Center(
+          child: CharacterView.of(good ? 'doudou' : 'modou',
+              size: 110, moves: good ? Moves.jump : Moves.sway),
+        ),
+        if (!good)
+          Center(
+            child: Text('Boul bayi ! Dina bax !',
+                style: titleStyle(20, color: JangColors.warning, weight: 800)),
+          ),
         const SizedBox(height: 8),
         Center(child: Text('Ta note', style: Theme.of(context).textTheme.bodySmall)),
         Center(
@@ -272,6 +338,24 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         const SizedBox(height: 6),
         Text(_endMessage, textAlign: TextAlign.center, style: Theme.of(context).textTheme.titleMedium),
+        if (_xp > 0)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Text('⭐ +$_xp XP', textAlign: TextAlign.center, style: titleStyle(18, weight: 800)),
+          ),
+        if (_newEpisode != null)
+          Container(
+            margin: const EdgeInsets.only(top: 12),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: JangColors.warningBg,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: JangColors.ocre, width: 2),
+            ),
+            child: Text('📖 Nouvel épisode débloqué : « $_newEpisode ». '
+                'Va le lire dans « Mon histoire », en haut de la liste des leçons.',
+                textAlign: TextAlign.center, style: const TextStyle(fontWeight: FontWeight.w800)),
+          ),
         const SizedBox(height: 22),
         for (var i = 0; i < total; i++)
           Padding(

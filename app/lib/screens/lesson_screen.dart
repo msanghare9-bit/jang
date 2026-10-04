@@ -10,6 +10,7 @@ import '../services/flashcard_service.dart';
 import '../services/progress_repo.dart';
 import '../services/speech_service.dart';
 import '../theme.dart';
+import '../widgets/characters.dart';
 import '../widgets/common.dart';
 import '../widgets/discussion.dart';
 import '../widgets/jang_ui.dart';
@@ -53,7 +54,7 @@ class _LessonScreenState extends State<LessonScreen> {
 
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
-    final scale = prefs.getDouble('lesson_scale') ?? 1;
+    final scale = prefs.getDouble('lesson_scale') ?? 1.0;
     final videoSeen = prefs.getBool(_videoKey) ?? false;
     final repo = ContentRepo.instance;
     var pos = 0, count = 0;
@@ -157,7 +158,7 @@ class _LessonScreenState extends State<LessonScreen> {
               backgroundColor: _tutorColor,
               foregroundColor: Colors.white,
               onPressed: _askTutor,
-              icon: const Icon(Icons.record_voice_over_rounded),
+              icon: const CharacterView(Chars.panthere, size: 40, moves: Moves.sway),
               label: const Text('Demander à Jàngalekat',
                   style: TextStyle(fontWeight: FontWeight.w800)),
             ),
@@ -343,7 +344,7 @@ class _LessonScreenState extends State<LessonScreen> {
           Expanded(
             child: Text(
                 'Si tu ne comprends pas une partie de la leçon, pose une question à Jàngalekat. '
-                'Il t\'explique en français simple.',
+                'Elle t\'explique en français simple.',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14.5)),
           ),
         ]),
@@ -363,15 +364,15 @@ class _LessonScreenState extends State<LessonScreen> {
       child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Row(children: [
           const CircleAvatar(
-            radius: 26,
+            radius: 30,
             backgroundColor: Colors.white,
-            child: Text('🤖', style: TextStyle(fontSize: 28)),
+            child: CharacterView(Chars.panthere, size: 52),
           ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('Tu n\'as pas compris ?', style: titleStyle(21, color: Colors.white, weight: 800)),
-              const Text('Pose ta question à Jàngalekat : il t\'explique la leçon en français simple.',
+              const Text('Pose ta question à Jàngalekat, la panthère : elle t\'explique la leçon en français simple.',
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.5)),
             ]),
           ),

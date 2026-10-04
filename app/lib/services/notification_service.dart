@@ -14,11 +14,11 @@ class NotificationService {
   // Indice = jour de la semaine (1 = lundi … 7 = dimanche), 0 inutilisé.
   static const _messages = [
     '',
-    'Nouvelle semaine, nouvelles leçons ! Fais une leçon aujourd\'hui 💪',
+    'Gaïndé t\'attend ! Nouvelle semaine, nouvelle leçon 🦁',
     '10 minutes de révision aujourd\'hui ? Tes fiches t\'attendent 📚',
-    'Un petit exercice pour garder le rythme ? Tu peux le faire ! ✏️',
-    'Tu ne comprends pas une leçon ? Demande à Jàngalekat 🤖',
-    'Encore un effort : fais une leçon et ses exercices aujourd\'hui ⭐',
+    'La pirogue de Modou t\'attend : 10 bonnes réponses pour une belle pêche 🐟',
+    'Tu ne comprends pas une leçon ? Demande à Jàngalekat, la panthère 🐾',
+    'Doudou a sorti son tama : fais tes exercices pour l\'entendre 🥁',
     'Le week-end commence : une petite révision avant de te reposer ? 😊',
     'Prépare ta semaine : révise une leçon aujourd\'hui 🌱',
   ];

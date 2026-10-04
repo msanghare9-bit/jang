@@ -8,6 +8,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'firebase_options.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
+import 'services/update_notifier.dart';
 import 'services/auth_service.dart';
 import 'services/content_repo.dart';
 import 'services/engagement_service.dart';
@@ -64,7 +65,7 @@ class _BootstrapState extends State<_Bootstrap> {
       SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
       if (mounted) setState(() => _ready = true);
       // Rappels quotidiens (après l'affichage, sans bloquer le démarrage).
-      NotificationService.instance.init();
+      NotificationService.instance.init().then((_) => UpdateNotifier.schedule());
     } catch (e) {
       if (mounted) setState(() => _error = '$e');
     }

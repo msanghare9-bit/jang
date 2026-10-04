@@ -83,6 +83,21 @@ if "ScheduledNotificationReceiver" not in m:
             </intent-filter>
         </receiver>
     </application>''', 1)
+
+# Vérification des nouveautés en arrière-plan (android_alarm_manager_plus).
+if "AlarmService" not in m:
+    if "android.permission.WAKE_LOCK" not in m:
+        m = m.replace("<application", '<uses-permission android:name="android.permission.WAKE_LOCK"/>\n    <application', 1)
+    m = m.replace("</application>", '''    <service android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmService"
+            android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmBroadcastReceiver" android:exported="false"/>
+        <receiver android:name="dev.fluttercommunity.plus.androidalarmmanager.RebootBroadcastReceiver"
+            android:enabled="false" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+    </application>''', 1)
 manifest.write_text(m)
 
 # 3. Icône de l'application.

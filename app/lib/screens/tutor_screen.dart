@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models.dart';
 import '../services/tutor_service.dart';
 import '../theme.dart';
+import '../widgets/characters.dart';
 import '../widgets/common.dart';
 import '../widgets/consent.dart';
 
@@ -78,14 +79,17 @@ class _TutorScreenState extends State<TutorScreen> {
               controller: _scroll,
               padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
               children: [
+                const Center(child: CharacterView(Chars.panthere, size: 110, moves: Moves.sway)),
+                const SizedBox(height: 6),
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                       color: JangColors.noteBg, borderRadius: BorderRadius.circular(10)),
                   child: Text(
-                    'Jàngalekat est une intelligence artificielle. Il peut se tromper : '
+                    'Salut ! Moi, c\'est Jàngalekat, la panthère qui a lu tous les livres de la bibliothèque '
+                    '(et qui en a fait tomber beaucoup). Je suis une intelligence artificielle : je peux me tromper, '
                     'vérifie avec ton professeur. '
-                    'Il répond sur la leçon « ${widget.lesson.title} », en français simple. '
+                    'Je réponds sur la leçon « ${widget.lesson.title} », en français simple. '
                     '${TutorService.perDay} questions par jour.',
                     style: t.bodyMedium,
                   ),
@@ -147,7 +151,7 @@ class _TutorScreenState extends State<TutorScreen> {
                     child: Row(children: [
                       SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)),
                       SizedBox(width: 10),
-                      Text('Jàngalekat réfléchit…'),
+                      Text('Jàngalekat réfléchit… (elle cherche dans ses livres)'),
                     ]),
                   ),
               ],

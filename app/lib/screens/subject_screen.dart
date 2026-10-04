@@ -11,6 +11,7 @@ import '../widgets/common.dart';
 import '../widgets/jang_ui.dart';
 import 'flashcards_screen.dart';
 import 'lesson_screen.dart';
+import 'story_screen.dart';
 
 class SubjectScreen extends StatefulWidget {
   final Subject subject;
@@ -97,6 +98,8 @@ class _SubjectScreenState extends State<SubjectScreen> {
                       ],
                     ),
                   ),
+                  if (data != null && lessons.isNotEmpty)
+                    StoryCard(subject: widget.subject, lessons: lessons),
                   if (data == null)
                     const Padding(
                       padding: EdgeInsets.all(40),

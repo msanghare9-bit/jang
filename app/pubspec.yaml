@@ -1,7 +1,7 @@
 name: jang
 description: "Jàng – apprendre, leçon après leçon."
 publish_to: 'none'
-version: 1.8.0+1
+version: 1.9.0+1
 
 environment:
   sdk: '>=3.5.0 <4.0.0'
@@ -21,12 +21,17 @@ dependencies:
   flutter_tts: '>=3.8.5 <4.0.0'
   flutter_local_notifications: '>=17.2.2 <18.0.0'
   timezone: '>=0.9.4 <0.10.0'
+  flutter_svg: '>=2.0.10 <3.0.0'
+  audioplayers: '>=6.0.0 <7.0.0'
+  android_alarm_manager_plus: '>=4.0.0 <5.0.0'
 
 dev_dependencies:
   flutter_lints: '>=4.0.0 <100.0.0'
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/histoires.json
   fonts:
     - family: Baloo
       fonts:
