@@ -7,6 +7,7 @@ import '../services/progress_repo.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/engagement.dart';
+import '../widgets/fun.dart';
 
 class ProgressScreen extends StatefulWidget {
   const ProgressScreen({super.key});
@@ -61,7 +62,16 @@ class _ProgressScreenState extends State<ProgressScreen> {
                 padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
                 children: [
                   Text('Ma progression', style: titleStyle(26)),
-                  const SizedBox(height: 14),
+                  CharacterSays(
+                    'doudou',
+                    allDone.isEmpty
+                        ? 'Je suis Doudou, le griot. Je chanterai tes exploits… dès que tu auras fait tes premiers exercices 🥁'
+                        : (avg ?? 0) >= 80
+                            ? 'Gathié ngalama ! ${allDone.length} exercice${allDone.length > 1 ? 's' : ''} et $avg % de moyenne : je compose une chanson sur toi 🥁'
+                            : 'Tu as déjà fait ${allDone.length} exercice${allDone.length > 1 ? 's' : ''}. Boul bayi ! Vise 80 % et mon tama résonnera 🥁',
+                    right: true,
+                  ),
+                  const SizedBox(height: 6),
                   Row(
                     children: [
                       Expanded(

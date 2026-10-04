@@ -22,6 +22,7 @@ class StoryCard extends StatefulWidget {
 class _StoryCardState extends State<StoryCard> {
   StoryState? _state;
   int _opened = 0;
+  bool _loaded = false;
 
   @override
   void initState() {
@@ -36,12 +37,19 @@ class _StoryCardState extends State<StoryCard> {
   }
 
   Future<void> _load() async {
-    final st = await StoryService.instance.stateFor(widget.subject, lessons: widget.lessons);
-    final opened = st == null ? 0 : await StoryService.instance.opened(st.season);
+    StoryState? st;
+    var opened = 0;
+    try {
+      st = await StoryService.instance.stateFor(widget.subject, lessons: widget.lessons);
+      if (st != null) opened = await StoryService.instance.opened(st.season);
+    } catch (e) {
+      debugPrint('Histoire : $e');
+    }
     if (mounted) {
       setState(() {
         _state = st;
         _opened = opened;
+        _loaded = true;
       });
     }
   }
@@ -49,7 +57,24 @@ class _StoryCardState extends State<StoryCard> {
   @override
   Widget build(BuildContext context) {
     final st = _state;
-    if (st == null) return const SizedBox.shrink();
+    if (!_loaded) return const SizedBox.shrink();
+    if (st == null) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          decoration: BoxDecoration(color: const Color(0xFFF6F2EA), borderRadius: BorderRadius.circular(20)),
+          child: const Row(children: [
+            CharacterView(Chars.lion, size: 60),
+            SizedBox(width: 10),
+            Expanded(
+              child: Text('📖 Mon histoire : les aventures de Gaïndé arrivent bientôt pour cette matière !',
+                  style: TextStyle(fontWeight: FontWeight.w700)),
+            ),
+          ]),
+        ),
+      );
+    }
     final n = st.season.episodes.length;
     final u = st.unlocked;
     final fresh = u > _opened;

@@ -246,3 +246,35 @@ class Celebration extends StatelessWidget {
     );
   }
 }
+
+/// Un personnage qui parle (bulle à côté de lui).
+class CharacterSays extends StatelessWidget {
+  final String id;
+  final String text;
+  final Color color;
+  final bool right;
+  const CharacterSays(this.id, this.text, {super.key, this.color = const Color(0xFFFFF4D6), this.right = false});
+
+  @override
+  Widget build(BuildContext context) {
+    final bubble = Expanded(
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(12, 10, 12, 10),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0x22000000)),
+        ),
+        child: Text(text, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 14.5)),
+      ),
+    );
+    final who = CharacterView.of(id, size: 76, moves: Moves.bob, flip: right);
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: right ? [bubble, const SizedBox(width: 6), who] : [who, const SizedBox(width: 6), bubble],
+      ),
+    );
+  }
+}

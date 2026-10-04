@@ -171,19 +171,30 @@ class StoryService {
 
   /// Saison de cette matière pour le niveau de l'élève.
   Future<StoryState?> stateFor(Subject subject, {List<Lesson>? lessons}) async {
-    final examId = AuthService.instance.profile.value?.examId ?? '';
-    final exam = examId.isEmpty ? null : await ContentRepo.instance.exam(examId);
-    final level = LessonPack.levelOf(exam?.name ?? '');
-    if (level.isEmpty) return null;
+    // Niveau de l'élève ; sinon un des niveaux de la matière (matière partagée, compte enseignant…).
+    final profileExam = AuthService.instance.profile.value?.examId ?? '';
+    final candidates = <String>[
+      if (profileExam.isNotEmpty) profileExam,
+      ...subject.examIds.where((e) => e != profileExam),
+    ];
     final name = _norm(subject.name);
+    final all = await seasons();
     StorySeason? season;
-    for (final s in await seasons()) {
-      final want = _norm(s.subject);
-      final okSubject = name.contains(want) || (want.startsWith('angl') && name.contains('english'));
-      if (okSubject && LessonPack.levelOf(s.level) == level && s.episodes.isNotEmpty) {
-        season = s;
-        break;
+    var examId = profileExam;
+    for (final id in candidates) {
+      final exam = await ContentRepo.instance.exam(id);
+      final level = LessonPack.levelOf(exam?.name ?? '');
+      if (level.isEmpty) continue;
+      for (final s in all) {
+        final want = _norm(s.subject);
+        final okSubject = name.contains(want) || (want.startsWith('angl') && name.contains('english'));
+        if (okSubject && LessonPack.levelOf(s.level) == level && s.episodes.isNotEmpty) {
+          season = s;
+          examId = id;
+          break;
+        }
       }
+      if (season != null) break;
     }
     if (season == null) return null;
     final list = lessons ??

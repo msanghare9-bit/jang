@@ -7,6 +7,7 @@ import '../services/progress_repo.dart';
 import '../services/stats_service.dart';
 import '../theme.dart';
 import '../widgets/cheer.dart';
+import '../widgets/characters.dart';
 import '../widgets/common.dart';
 
 class _ReviewItem {
@@ -78,6 +79,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
+          CharacterView.of(n > 0 && _ok * 5 >= n * 4 ? 'doudou' : 'modou', size: 110, moves: Moves.dance),
+          const SizedBox(height: 8),
           Text('$_ok / $n', style: titleStyle(44, color: JangColors.primary, weight: 800)),
           const SizedBox(height: 8),
           Text(Cheer.quizEnd(_ok, n), textAlign: TextAlign.center, style: titleStyle(18)),

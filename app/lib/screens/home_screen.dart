@@ -7,7 +7,9 @@ import '../services/progress_repo.dart';
 import '../services/stats_service.dart';
 import '../services/github_service.dart';
 import '../theme.dart';
+import '../widgets/characters.dart';
 import '../widgets/cheer.dart';
+import '../widgets/fun.dart';
 import '../widgets/common.dart';
 import '../widgets/engagement.dart';
 import '../widgets/jang_ui.dart';
@@ -108,6 +110,16 @@ class SubjectsTab extends StatefulWidget {
 class _SubjectsTabState extends State<SubjectsTab> {
   late Future<_SubjectsData> _future;
   late final String _welcome = Cheer.welcome(_firstName(), EngagementService.instance.streak);
+  late final (String, String, bool) _tip = _tips[DateTime.now().hour % _tips.length];
+
+  static const _tips = <(String, String, bool)>[
+    ('awa', 'Salut ! Une petite leçon aujourd\'hui ? Diambar nga, tu peux le faire !', true),
+    ('modou', 'Ma pirogue attend tes bonnes réponses pour partir à la pêche. Boul bayi !', false),
+    ('doudou', 'Mon tama est prêt 🥁 Fais 8/10 et je joue rien que pour toi !', true),
+    ('jangalekat', 'C\'est moi, Jàngalekat ! J\'ai encore glissé sur une peau de banane… mais je suis là si tu as une question.', false),
+    ('gainde', 'MIAOU ! … euh, je voulais dire ROAR ! Viens apprendre avec moi : comprendre nga bou bax !', true),
+    ('awa', 'Chaque trois leçons, un nouvel épisode de « Mon histoire » s\'ouvre. Va voir dans ta matière !', false),
+  ];
 
   @override
   void initState() {
@@ -191,12 +203,19 @@ class _SubjectsTabState extends State<SubjectsTab> {
                       ),
                     ]),
                     const SizedBox(height: 14),
-                    Text(name.isEmpty ? 'Na nga def ?' : 'Na nga def, $name ?',
-                        style: titleStyle(30, color: Colors.white, weight: 800)),
-                    const SizedBox(height: 2),
-                    Text(_welcome,
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16)),
+                    Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                      Expanded(
+                        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                          Text(name.isEmpty ? 'Na nga def ?' : 'Na nga def, $name ?',
+                              style: titleStyle(30, color: Colors.white, weight: 800)),
+                          const SizedBox(height: 2),
+                          Text(_welcome,
+                              style: const TextStyle(
+                                  color: Colors.white, fontWeight: FontWeight.w700, fontSize: 16)),
+                        ]),
+                      ),
+                      const CharacterView(Chars.lion, size: 96, moves: Moves.dance),
+                    ]),
                   ],
                 ),
               ),
@@ -206,7 +225,9 @@ class _SubjectsTabState extends State<SubjectsTab> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const _SyncStatus(),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: 4),
+                    CharacterSays(_tip.$1, _tip.$2, right: _tip.$3),
+                    const SizedBox(height: 4),
                     if (data.exam != null) ...[
                       const PlantCard(),
                       const SizedBox(height: 10),

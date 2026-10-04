@@ -9,6 +9,7 @@ import '../version.dart';
 import '../widgets/common.dart';
 import '../widgets/contact.dart';
 import '../widgets/engagement.dart';
+import '../widgets/fun.dart';
 import 'home_screen.dart' show formatDate, showUpdateDialog;
 
 class ProfileScreen extends StatefulWidget {
@@ -61,7 +62,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
             children: [
               Text('Profil', style: titleStyle(26)),
-              const SizedBox(height: 14),
+              const CharacterSays('jangalekat',
+                  'Moi c\'est Jàngalekat, ton tuteur. Je suis une panthère très sérieuse… sauf quand je tombe de ma chaise. Change ton niveau ici si besoin !'),
+              const SizedBox(height: 6),
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16),

@@ -7,6 +7,8 @@ import '../services/flashcard_service.dart';
 import '../theme.dart';
 import '../widgets/cheer.dart';
 import '../widgets/common.dart';
+import '../widgets/characters.dart';
+import '../widgets/fun.dart';
 import '../widgets/jang_ui.dart';
 import '../services/media_service.dart';
 import '../services/speech_service.dart';
@@ -101,8 +103,9 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
       body: q == null
           ? const Center(child: CircularProgressIndicator())
           : q.isEmpty
-              ? Center(
-                  child: EmptyState(
+              ? ListView(padding: const EdgeInsets.only(top: 24), children: [
+                  CharacterView.of(_done == 0 ? 'modou' : 'awa', size: 120, moves: Moves.dance),
+                  EmptyState(
                     icon: Icons.check_circle_outline,
                     title: _done == 0 ? 'Rien à réviser aujourd\'hui' : 'Séance terminée, bravo !',
                     message: _done == 0
@@ -113,7 +116,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                         color: JangColors.primary,
                         onPressed: () => _start(all: true)),
                   ),
-                )
+                ])
               : Padding(
                   padding: const EdgeInsets.fromLTRB(18, 8, 18, 18),
                   child: Column(
@@ -121,7 +124,12 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                     children: [
                       Text('${widget.title} · ${q.length} carte${q.length > 1 ? 's' : ''} à voir',
                           style: t.bodySmall),
-                      const SizedBox(height: 12),
+                      if (_done == 0)
+                        const CharacterSays('awa',
+                            'Touche la carte pour la retourner. Moi je retiens tout… sauf où j\'ai mis mes sandales !',
+                            right: true)
+                      else
+                        const SizedBox(height: 12),
                       Expanded(
                         child: GestureDetector(
                           onTap: () => setState(() => _flipped = !_flipped),

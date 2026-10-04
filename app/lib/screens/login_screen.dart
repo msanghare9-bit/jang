@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../services/auth_service.dart';
 import '../theme.dart';
+import '../widgets/characters.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -77,6 +78,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    const Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.end, children: [
+                      CharacterView(Chars.awa, size: 70, moves: Moves.bob),
+                      CharacterView(Chars.lion, size: 96, moves: Moves.dance),
+                      CharacterView(Chars.modou, size: 70, moves: Moves.sway, flip: true),
+                    ]),
+                    const SizedBox(height: 8),
                     Text('Jàng', style: titleStyle(46, color: JangColors.primary, weight: 800)),
                     const SizedBox(height: 6),
                     Text('Apprendre, leçon après leçon.',

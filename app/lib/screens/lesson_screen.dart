@@ -11,6 +11,7 @@ import '../services/progress_repo.dart';
 import '../services/speech_service.dart';
 import '../theme.dart';
 import '../widgets/characters.dart';
+import '../widgets/fun.dart';
 import '../widgets/common.dart';
 import '../widgets/discussion.dart';
 import '../widgets/jang_ui.dart';
@@ -263,6 +264,7 @@ class _LessonScreenState extends State<LessonScreen> {
                 if (hasBody) ...[
                   if (lesson.videos.isNotEmpty) SectionTitle('La leçon', color: color),
                   if (lesson.videos.isEmpty) const SizedBox(height: 12),
+                  CharacterSays('gainde', _intro),
                   _tutorHint(color, top: true),
                   LessonText(lesson.body,
                       accent: color, scale: _scale, speak: Speech.isEnglish(widget.subject.name)),
@@ -301,7 +303,11 @@ class _LessonScreenState extends State<LessonScreen> {
                   ),
                 ],
                 if (lesson.quiz.isNotEmpty) ...[
-                  const SizedBox(height: 10),
+                  const CharacterSays('awa',
+                      'À toi maintenant ! Fais les exercices : chaque bonne réponse fait avancer la pirogue de Modou. '
+                      'Si tu as 8/10, Doudou joue du tama 🥁',
+                      right: true),
+                  const SizedBox(height: 4),
                   _QuizButton(lesson: lesson, subject: widget.subject, color: color, preview: widget.preview),
                 ],
                 const SizedBox(height: 18),
@@ -323,6 +329,14 @@ class _LessonScreenState extends State<LessonScreen> {
 
   static const _tutorColor = Color(0xFF6D28D9); // violet : Jàngalekat
 
+  static const _intros = [
+    'Comprendre nga bou bax ? On lit cette leçon ensemble ! Moi aussi j\'apprends… pour enfin savoir rugir 🦁',
+    'Lis doucement. Si un mot te bloque, appuie dessus pour l\'écouter. Et pas de mangues pendant la leçon ! 🥭',
+    'Gaïndé est prêt ! Lis la leçon, puis on part en pirogue avec les exercices 🛶',
+    'Une petite leçon par jour, et un jour je rugirai comme un vrai lion. Allez, on commence !',
+  ];
+  late final String _intro = _intros[DateTime.now().day % _intros.length];
+
   void _askTutor() => Navigator.push(
         context,
         MaterialPageRoute(builder: (_) => TutorScreen(lesson: widget.lesson, subject: widget.subject)),
@@ -339,7 +353,7 @@ class _LessonScreenState extends State<LessonScreen> {
           borderRadius: BorderRadius.circular(14),
         ),
         child: const Row(children: [
-          Text('💡', style: TextStyle(fontSize: 20)),
+          CharacterView(Chars.panthere, size: 40, moves: Moves.still),
           SizedBox(width: 8),
           Expanded(
             child: Text(

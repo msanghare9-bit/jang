@@ -8,6 +8,8 @@ import '../services/progress_repo.dart';
 import '../services/speech_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/characters.dart';
+import '../widgets/fun.dart';
 import '../widgets/jang_ui.dart';
 import 'flashcards_screen.dart';
 import 'lesson_screen.dart';
@@ -93,6 +95,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                               child: Text(widget.subject.name,
                                   style: titleStyle(32, color: fg, weight: 800)),
                             ),
+                            const CharacterView(Chars.modou, size: 70, moves: Moves.sway),
                           ]),
                         ),
                       ],
@@ -122,6 +125,13 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                     lessonSection(lessons[i].title) !=
                                         lessonSection(lessons[i - 1].title)))
                               _sectionHeader(lessonSection(lessons[i].title), color),
+                            if (i == current)
+                              CharacterSays(
+                                'gainde',
+                                i == 0
+                                    ? 'On commence ici ! Suis-moi, je connais le chemin… enfin presque 🦁'
+                                    : 'C\'est ici que tu t\'es arrêté. Allez, leçon ${i + 1} ! Comprendre nga bou bax !',
+                              ),
                             _step(context, i, lessons[i], decks[lessons[i].id], color,
                                 current: i == current, last: i == lessons.length - 1),
                           ],
