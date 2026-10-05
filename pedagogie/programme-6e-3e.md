@@ -1,5 +1,9 @@
 # Programme d'anglais de Jàng : de la 6e à la 3e
 
+> **Pour qui ?** Ce modèle concerne seulement le **collège : 6e, 5e, 4e et 3e**.
+> Pour la **Seconde, la Première et la Terminale**, on garde pour l'instant ce qui existe déjà
+> dans la version précédente de l'app (leçons, exercices, fiches de révision, histoires).
+
 Le programme suit le [modèle pédagogique](modele.md) : chaque mission travaille une
 **fonction langagière**, du **vocabulaire** et des **expressions toutes faites**.
 

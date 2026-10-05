@@ -1,5 +1,9 @@
 # Le modèle pédagogique de Jàng
 
+> **Pour qui ?** Ce modèle concerne seulement le **collège : 6e, 5e, 4e et 3e**.
+> Pour la **Seconde, la Première et la Terminale**, on garde pour l'instant ce qui existe déjà
+> dans la version précédente de l'app (leçons, exercices, fiches de révision, histoires).
+
 Jàng est une application **d'apprentissage**, pas de révision. L'élève est au centre :
 il observe, il essaie, il enseigne, il crée. Pas d'éducation « bancaire » (Freire) :
 on part de sa vie, et le savoir se construit dans l'échange, avec des méthodes
