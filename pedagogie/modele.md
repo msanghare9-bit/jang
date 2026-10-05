@@ -5,6 +5,11 @@ il observe, il essaie, il enseigne, il crée. Pas d'éducation « bancaire » (F
 on part de sa vie, et le savoir se construit dans l'échange, avec des méthodes
 communicatives et interactives.
 
+**Le but est d'apprendre la langue.** Le thème d'une mission (les salutations, le marché,
+le climat…) sert seulement de contexte pour communiquer. On ne cherche pas à enseigner le thème
+lui-même, et on n'évalue que ce que l'élève sait faire en anglais. Gaïndé se trompe toujours
+sur la langue (mots, grammaire, prononciation, registre), jamais sur le fond du thème.
+
 ## Les 5 principes
 
 1. **On part de l'élève, pas du programme.** Les thèmes viennent de sa vie : son quartier,
