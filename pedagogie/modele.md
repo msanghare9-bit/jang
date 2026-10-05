@@ -39,6 +39,31 @@ J'observe → Je comprends → J'enseigne à Gaïndé → Gaïndé se trompe →
   qui retourne vers Gaïndé.
 - **« Je ne sais pas encore »** est un bouton valorisé : il appelle Jàngalekat, sans pénalité.
 
+## Parler, écrire ou les deux : l'élève choisit
+
+Quand l'élève doit produire, il choisit comment il répond :
+
+- 🎤 **Je parle** : il s'enregistre. Le téléphone essaie de transcrire et on affiche
+  « Gaïndé a entendu : … ». Sans réseau ou si la transcription échoue, l'élève se réécoute,
+  se compare au modèle et valide lui-même (« Je l'ai dit »).
+- ⌨️ **J'écris** : il tape sa réponse.
+- 🎤 + ⌨️ **Les deux** : il parle, puis écrit ce qu'il a dit (ou l'inverse). Il relie
+  le son et l'écrit, et c'est le chemin le plus complet.
+
+Règles :
+
+- **Aucune option n'est meilleure qu'une autre.** Chaque façon de répondre valide l'étape.
+  Faire les deux rapporte un petit bonus, pas une obligation.
+- **On juge le sens**, pas la prononciation parfaite ni l'orthographe parfaite.
+- **On ne bloque jamais** : si le micro ne comprend pas après deux essais, l'élève peut
+  écrire ou valider lui-même.
+- **Le choix est mémorisé** : l'app propose par défaut la dernière façon choisie, et
+  l'élève peut changer à chaque fois.
+- **Ses enregistrements restent sur son téléphone**, sauf s'il choisit de les partager.
+  On demande l'accord des parents. Il peut réécouter sa voix d'une mission à l'autre.
+- Le prof voit **comment** l'élève a répondu, pour l'encourager à essayer l'autre façon
+  de temps en temps.
+
 ## La Mission (remplace la leçon)
 
 | Temps | Ce qui se passe |

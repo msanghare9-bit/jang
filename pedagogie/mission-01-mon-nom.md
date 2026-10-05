@@ -94,7 +94,9 @@ Quatre marches. Après **deux réussites du premier coup de suite**, on saute la
 
 ## Dans l'app (plus tard)
 
-- L'élève parlera au micro (`speech_service`) au lieu d'écrire.
+- **L'élève choisit comment il répond** : 🎤 parler, ⌨️ écrire, ou les deux
+  (voir « Parler, écrire ou les deux » dans [modele.md](modele.md)). Le micro est à créer :
+  aujourd'hui l'app sait seulement lire à voix haute.
 - La mission complète doit marcher **hors-ligne**. Seul le dialogue libre avec l'IA demande
   Internet.
 - Le prof voit les « Je sais… » et les productions, pas une note.
