@@ -2,7 +2,7 @@
 
 Trois nouvelles actions dans **Admin › Élèves** : **envoyer un message** à un élève pour
 l'aider, **faire une annonce** à un groupe d'élèves, et **supprimer** un élève. Toutes
-envoient des **notifications push**. Elles valent pour toutes les classes (collège et lycée).
+envoient des **notifications push**. Tout fonctionne **gratuitement**. Elles valent pour toutes les classes (collège et lycée).
 
 ## Ce qui existe déjà
 
@@ -72,16 +72,27 @@ Les messages et les annonces arrivent sur le téléphone **même quand l'app est
 - L'élève peut couper les annonces dans ses réglages, mais pas les messages de son prof.
 - Pas de notifications la nuit : celles envoyées entre 21 h et 7 h attendent 7 h.
 
-### Technique
+### Technique : 100 % gratuit
 
-- On ajoute **Firebase Cloud Messaging** (`firebase_messaging`) à l'app.
-- Chaque téléphone s'abonne à des **sujets** qui correspondent à ses choix :
-  `tous`, `niveau_4e`, `matiere_anglais`, `anglais_4e`… Une annonce est envoyée au bon sujet.
-- L'envoi se fait par une **petite fonction sur le serveur** (Firebase Cloud Functions),
-  déclenchée quand le prof enregistre un message ou une annonce. L'app admin ne peut pas
-  envoyer de push directement.
-- Cela demande un projet Firebase avec la facturation activée (le coût reste très faible
-  pour quelques milliers d'élèves).
+On reste sur l'offre **gratuite** de Firebase (Spark), sans carte bancaire et sans Cloud Functions.
+
+- **Firebase Cloud Messaging** (`firebase_messaging`) est gratuit : il transporte les
+  notifications jusqu'aux téléphones.
+- Chaque téléphone s'abonne à des **sujets** : `tous`, `niveau_4e`, `matiere_anglais`,
+  `anglais_4e`… Une annonce est envoyée au bon sujet.
+- Pour **envoyer** une notification, il faut un petit programme « serveur » qui détient la clé
+  secrète de Firebase. Au lieu de Cloud Functions (payant), on utilise un **Cloudflare Worker**,
+  gratuit jusqu'à 100 000 appels par jour, sans carte bancaire :
+  1. le prof écrit son message ou son annonce dans l'app admin ;
+  2. l'app admin appelle le Worker, en prouvant que c'est bien un admin (jeton de connexion
+     Firebase) ;
+  3. le Worker envoie la notification push via Firebase Cloud Messaging.
+- La clé secrète de Firebase reste **dans le Worker**, jamais dans l'app.
+- **Solution de secours**, gratuite aussi : une tâche GitHub Actions qui tourne toutes les
+  15 à 30 minutes, lit les annonces en attente dans Firestore et les envoie. Plus lent
+  (jusqu'à 30 minutes de retard), mais sans aucun nouveau service.
+- Les **annonces programmées** : le Worker a une tâche planifiée gratuite (« cron ») qui
+  vérifie chaque minute s'il y a une annonce à envoyer.
 
 ## 4. Supprimer un élève
 
@@ -97,9 +108,9 @@ Deux niveaux, pour éviter les erreurs :
   désactiver ou les supprimer ensemble.
 - Chaque suppression est notée dans un journal (qui, quand), sans garder les données de l'élève.
 
-### Technique (pour plus tard)
+### Technique : gratuit aussi
 
 - « Désactiver » se fait directement depuis l'app admin.
-- « Supprimer définitivement » le compte de connexion demande une petite fonction sur le
-  serveur (Firebase ne permet pas de supprimer le compte d'un autre utilisateur depuis
-  l'app). En attendant, on peut effacer les données et désactiver le compte.
+- « Supprimer définitivement » : les données sont effacées depuis l'app admin, et le compte de
+  connexion est supprimé par le **même Cloudflare Worker** (gratuit), car Firebase ne permet pas
+  de supprimer le compte d'un autre utilisateur depuis l'app.
