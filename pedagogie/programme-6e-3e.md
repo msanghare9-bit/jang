@@ -3,23 +3,24 @@
 Le programme suit le [modèle pédagogique](modele.md) : chaque mission travaille une
 **fonction langagière**, du **vocabulaire** et des **expressions toutes faites**.
 
-Il couvre la progression officielle *« A proposal for a common harmonized content progress:
-First Cycle »* (IA de Louga, CRFPE, section anglais, PHARES 2025) : mêmes thèmes, mêmes périodes,
-mêmes contenus. Les points de grammaire du programme officiel ne sont pas enseignés comme des
+Il couvre les contenus de la progression officielle *« A proposal for a common harmonized content
+progress: First Cycle »* (IA de Louga, CRFPE, section anglais, PHARES 2025), sans en reprendre
+le découpage en périodes : c'est un syllabus par classe.
+Les points de grammaire du programme officiel ne sont pas enseignés comme des
 règles : ils sont appris **en bloc, dans des expressions**, au moment où une fonction en a besoin
 (voir le tableau à la fin).
 
 ## Organisation
 
 - **4 années**, chacune portée par **une saison de l'histoire**.
-- **3 périodes**, comme le programme officiel : novembre-décembre, janvier-mars, avril-juillet.
-- **2 unités par période**, soit 6 unités par an, autour d'un thème proche de la vie de l'élève.
+- **6 unités par classe**, autour d'un thème proche de la vie de l'élève. L'ordre des unités
+  est indicatif.
 - **4 missions par unité**, soit environ **24 missions par an**.
 - Chaque unité se termine par **une production** que l'élève choisit de faire à l'oral,
   à l'écrit ou les deux.
 - **Progression en spirale** : les mêmes fonctions reviennent d'une année à l'autre, avec des
-  expressions plus riches. La « révision des acquis » du programme officiel en début de 5e, 4e et
-  3e se fait par une **mission d'accueil** qui réutilise les expressions de l'année précédente.
+  expressions plus riches. Chaque classe commence par une **mission d'accueil** qui réutilise
+  les expressions de l'année précédente.
 
 ## Ce qui évolue d'une année à l'autre
 
@@ -33,66 +34,66 @@ règles : ils sont appris **en bloc, dans des expressions**, au moment où une f
 
 ---
 
-## 6e : Moi, mon école, mon village
+## Syllabus de 6e : moi, mon école, mon village
 
 *Saison : « Un lionceau à l'école ». Gaïndé arrive au collège et ne parle pas anglais.*
 
-| Période | Unité | Fonctions | Vocabulaire | Expressions clés |
-|---|---|---|---|---|
-| Nov.-déc. | **1. Hello!** | Saluer (familier et poli), se présenter, épeler son nom, dire son âge, répondre oui ou non | salutations, l'alphabet, nombres 1 à 20 | *Hello! / Good morning, Sir!* · *My name is… It's spelt A-W-A.* · *I'm … years old.* · *Are you…? Yes, I am. / No, I'm not.* |
-| Nov.-déc. | **2. My classroom** | Nommer les objets, dire à qui ils sont, situer quelque chose, compter | objets de la classe, couleurs, nombres, nombres ordinaux | *What's this? It's a red pen.* · *It's Awa's bag.* · *It's on / in / under the table.* · *Where is…?* · *the first, the second…* |
-| Janv.-mars | **3. My family** | Présenter sa famille, décrire une personne, dire son métier | la famille, le corps, adjectifs simples, métiers | *This is my uncle.* · *He's tall and kind.* · *She has got long hair.* · *My father is a fisherman.* |
-| Janv.-mars | **4. My day** | Dire l'heure et la date, parler de sa journée, dire ce qu'on aime | l'heure, jours, mois, dates, activités, habits | *What time is it? It's half past seven.* · *My birthday is on the 5th of May.* · *I get up at six.* · *I like… / I don't like…* · *I'm wearing…* |
-| Avril-juil. | **5. At the market** | Demander un prix, acheter, compter l'argent, dire ce qu'on aime manger | fruits, légumes, plats et boissons, nombres jusqu'à 10 000 (francs CFA) | *How much is it? It's 2 500 francs.* · *I'd like a kilo of…, please.* · *It's too expensive!* · *I love mangoes!* |
-| Avril-juil. | **6. My village, my town** | Décrire un lieu, dire ce que les gens font en ce moment, écrire un SMS, raconter une journée | village, ville, activités, mots des SMS | *There is a big tree.* · *Look! Modou is playing football.* · *What are you doing? I'm…* · *Tomorrow, I'm going to…* · *C U 2morrow!* |
+| Unité | Fonctions | Vocabulaire | Expressions clés |
+|---|---|---|---|
+| **1. Hello!** | Saluer (familier et poli), se présenter, épeler son nom, dire son âge, répondre oui ou non | salutations, l'alphabet, nombres 1 à 20 | *Hello! / Good morning, Sir!* · *My name is… It's spelt A-W-A.* · *I'm … years old.* · *Are you…? Yes, I am. / No, I'm not.* |
+| **2. My classroom** | Nommer les objets, dire à qui ils sont, situer quelque chose, compter | objets de la classe, couleurs, nombres, nombres ordinaux | *What's this? It's a red pen.* · *It's Awa's bag.* · *It's on / in / under the table.* · *Where is…?* · *the first, the second…* |
+| **3. My family** | Présenter sa famille, décrire une personne, dire son métier | la famille, le corps, adjectifs simples, métiers | *This is my uncle.* · *He's tall and kind.* · *She has got long hair.* · *My father is a fisherman.* |
+| **4. My day** | Dire l'heure et la date, parler de sa journée, dire ce qu'on aime | l'heure, jours, mois, dates, activités, habits | *What time is it? It's half past seven.* · *My birthday is on the 5th of May.* · *I get up at six.* · *I like… / I don't like…* · *I'm wearing…* |
+| **5. At the market** | Demander un prix, acheter, compter l'argent, dire ce qu'on aime manger | fruits, légumes, plats et boissons, nombres jusqu'à 10 000 (francs CFA) | *How much is it? It's 2 500 francs.* · *I'd like a kilo of…, please.* · *It's too expensive!* · *I love mangoes!* |
+| **6. My village, my town** | Décrire un lieu, dire ce que les gens font en ce moment, écrire un SMS, raconter une journée | village, ville, activités, mots des SMS | *There is a big tree.* · *Look! Modou is playing football.* · *What are you doing? I'm…* · *Tomorrow, I'm going to…* · *C U 2morrow!* |
 
 **Production de fin d'année** : « *A day in my village* », raconter une journée en 5 à 6 phrases
 (texte narratif), en enregistrement ou à l'écrit.
 
-## 5e : Ma famille, mes sentiments, mes histoires
+## Syllabus de 5e : ma famille, mes sentiments, mes histoires
 
 *Saison : « Les vacances au village ». Gaïndé suit Awa en vacances chez sa grand-mère.*
 
-| Période | Unité | Fonctions | Vocabulaire | Expressions clés |
-|---|---|---|---|---|
-| Nov.-déc. | **1. My big family** | Présenter la famille élargie, dire ce qu'on aime, dire en quoi on est doué | famille élargie, loisirs, talents | *She's my cousin / my aunt's daughter.* · *I like dancing but I hate cooking.* · *He's good at drawing. I'm bad at maths.* |
-| Nov.-déc. | **2. Food and drinks** | Demander et dire des quantités, poser des questions, dire comment un plat est fait | aliments, boissons, quantités, plats sénégalais | *How much rice? How many fish?* · *some bread, a lot of water, a few onions* · *What…? Where…? How often…?* · *Thiéboudienne is made with rice and fish.* |
-| Janv.-mars | **3. Last holidays** | Raconter ce qu'on a fait, parler de ses expériences | lieux, activités de vacances, dates et moments | *On Monday the 3rd of August, I went to…* · *I saw… It was great!* · *Have you ever been to…? Yes, I have.* · *I've just arrived.* |
-| Janv.-mars | **4. Bigger, better, the best** | Comparer, décrire, dire son accord | ville et village, sport, animaux, adjectifs | *Dakar is bigger than Louga.* · *Sadio Mané is the best!* · *I agree. / Me too! / So do I.* |
-| Avril-juil. | **5. How do you feel?** | Exprimer ses sentiments, parler de sa santé, dire ce qu'on peut ou ne peut pas faire | sentiments, le corps, maladies courantes | *I feel happy / sad / tired.* · *I've got a stomachache.* · *I can't play today.* · *Can I go out, please?* |
-| Avril-juil. | **6. Keep in touch** | Écrire un SMS et une lettre, faire la conversation, inviter | mots des SMS et des lettres, la fête | *Dear Awa, … Love, Fatou* · *It's hot today, isn't it?* · *You're coming, aren't you?* · *Would you like to come?* · *The letter was sent yesterday.* |
+| Unité | Fonctions | Vocabulaire | Expressions clés |
+|---|---|---|---|
+| **1. My big family** | Présenter la famille élargie, dire ce qu'on aime, dire en quoi on est doué | famille élargie, loisirs, talents | *She's my cousin / my aunt's daughter.* · *I like dancing but I hate cooking.* · *He's good at drawing. I'm bad at maths.* |
+| **2. Food and drinks** | Demander et dire des quantités, poser des questions, dire comment un plat est fait | aliments, boissons, quantités, plats sénégalais | *How much rice? How many fish?* · *some bread, a lot of water, a few onions* · *What…? Where…? How often…?* · *Thiéboudienne is made with rice and fish.* |
+| **3. Last holidays** | Raconter ce qu'on a fait, parler de ses expériences | lieux, activités de vacances, dates et moments | *On Monday the 3rd of August, I went to…* · *I saw… It was great!* · *Have you ever been to…? Yes, I have.* · *I've just arrived.* |
+| **4. Bigger, better, the best** | Comparer, décrire, dire son accord | ville et village, sport, animaux, adjectifs | *Dakar is bigger than Louga.* · *Sadio Mané is the best!* · *I agree. / Me too! / So do I.* |
+| **5. How do you feel?** | Exprimer ses sentiments, parler de sa santé, dire ce qu'on peut ou ne peut pas faire | sentiments, le corps, maladies courantes | *I feel happy / sad / tired.* · *I've got a stomachache.* · *I can't play today.* · *Can I go out, please?* |
+| **6. Keep in touch** | Écrire un SMS et une lettre, faire la conversation, inviter | mots des SMS et des lettres, la fête | *Dear Awa, … Love, Fatou* · *It's hot today, isn't it?* · *You're coming, aren't you?* · *Would you like to come?* · *The letter was sent yesterday.* |
 
 **Production de fin d'année** : « *A letter from my holidays* », une lettre ou un message vocal
 pour raconter ses vacances et décrire sa famille.
 
-## 4e : Moi et la société
+## Syllabus de 4e : moi et la société
 
 *Saison : « La pirogue de Kayar ». Gaïndé découvre la pêche avec l'oncle de Modou.*
 
-| Période | Unité | Fonctions | Vocabulaire | Expressions clés |
-|---|---|---|---|---|
-| Nov.-déc. | **1. Who am I?** | Se présenter en détail, présenter son arbre généalogique, décrire une image | identité, famille, la description d'une image | *I was born in Kébémer in 2012.* · *My grandfather has got five children.* · *In this picture, I can see… On the left / in the background…* |
-| Nov.-déc. | **2. Feelings and advice** | Conseiller, reprocher, compatir, regretter, exprimer une préférence | problèmes du quotidien, sentiments | *You should… / You'd better…* · *You shouldn't have done that!* · *I'm sorry to hear that.* · *I'm sorry I didn't…* · *I prefer… to…* |
-| Janv.-mars | **3. Public places** | Demander son chemin, comprendre un panneau, suggérer, donner un ordre, rapporter un message | lieux publics, transports, panneaux | *How can I get to the hospital?* · *No smoking. Keep off the grass.* · *Let's… / Why don't we…?* · *Sit down, please!* · *He said the bus was late.* |
-| Janv.-mars | **4. Climate** | Décrire un changement, dire depuis quand, être d'accord ou pas | météo, saisons, environnement | *It hasn't rained for three months.* · *since 2010 / two years ago* · *I agree with you. / I don't think so.* · *The beach was destroyed by the sea.* |
-| Avril-juil. | **5. Migration and jobs** | Parler de ses projets, faire des hypothèses, former des mots de la même famille | métiers, migration, études | *If I find a job, I'll stay.* · *I will / I may / I must…* · *teach → teacher → teaching* · *employ → unemployment* |
-| Avril-juil. | **6. Sports, leisure and health** | Dire ce qu'on aime faire, parler de culture et d'école, de santé | sports, loisirs, culture, santé | *I enjoy swimming.* · *I'm interested in…* · *Playing football is good for your health.* · *I'm fond of…* |
+| Unité | Fonctions | Vocabulaire | Expressions clés |
+|---|---|---|---|
+| **1. Who am I?** | Se présenter en détail, présenter son arbre généalogique, décrire une image | identité, famille, la description d'une image | *I was born in Kébémer in 2012.* · *My grandfather has got five children.* · *In this picture, I can see… On the left / in the background…* |
+| **2. Feelings and advice** | Conseiller, reprocher, compatir, regretter, exprimer une préférence | problèmes du quotidien, sentiments | *You should… / You'd better…* · *You shouldn't have done that!* · *I'm sorry to hear that.* · *I'm sorry I didn't…* · *I prefer… to…* |
+| **3. Public places** | Demander son chemin, comprendre un panneau, suggérer, donner un ordre, rapporter un message | lieux publics, transports, panneaux | *How can I get to the hospital?* · *No smoking. Keep off the grass.* · *Let's… / Why don't we…?* · *Sit down, please!* · *He said the bus was late.* |
+| **4. Climate** | Décrire un changement, dire depuis quand, être d'accord ou pas | météo, saisons, environnement | *It hasn't rained for three months.* · *since 2010 / two years ago* · *I agree with you. / I don't think so.* · *The beach was destroyed by the sea.* |
+| **5. Migration and jobs** | Parler de ses projets, faire des hypothèses, former des mots de la même famille | métiers, migration, études | *If I find a job, I'll stay.* · *I will / I may / I must…* · *teach → teacher → teaching* · *employ → unemployment* |
+| **6. Sports, leisure and health** | Dire ce qu'on aime faire, parler de culture et d'école, de santé | sports, loisirs, culture, santé | *I enjoy swimming.* · *I'm interested in…* · *Playing football is good for your health.* · *I'm fond of…* |
 
 **Production de fin d'année** : « *My Senegal* », un court discours ou une lettre pour présenter
 un lieu, une tradition ou un métier à un correspondant étranger.
 
-## 3e : Moi, les autres et le monde
+## Syllabus de 3e : moi, les autres et le monde
 
 *Saison : « Radio Jàng ». Awa, Modou et Gaïndé lancent la radio du collège.*
 
-| Période | Unité | Fonctions | Vocabulaire | Expressions clés |
-|---|---|---|---|---|
-| Nov.-déc. | **1. Pros and cons** | Donner des avantages et des inconvénients | téléphone, ville et village, réseaux sociaux | *The advantage is that…* · *On the one hand… on the other hand…* · *It's useful but…* |
-| Nov.-déc. | **2. Food and health** | Décrire la composition d'un aliment, parler de maladies, conseiller | nutriments, maladies (paludisme, diabète…), prévention | *It contains proteins and vitamins.* · *It makes you strong.* · *Malaria is caused by mosquitoes.* · *You must sleep under a net.* |
-| Janv.-mars | **3. Breaking news** | Rapporter ce que quelqu'un a dit, annoncer une nouvelle, situer dans le temps | actualité, événements, mots de la même famille | *She said that… / He asked me if…* · *The school was built in 1990.* · *for / since / ago / during the holidays* · *happy → happiness → unhappy* |
-| Janv.-mars | **4. Wishes and regrets** | Exprimer un souhait, un regret, parler de la vie de famille | vie de famille, mariage, tentations, éducation | *I wish I had a phone.* · *I wish it would rain.* · *I wish I hadn't said that.* · *If only…* |
-| Avril-juil. | **5. Telling stories** | Raconter un souvenir, une fête, parler d'habitudes passées et présentes | fêtes, cérémonies, souvenirs | *While I was walking, I saw…* · *We used to… Now we…* · *I usually… / I'm used to…* · *I had my hair cut.* |
-| Avril-juil. | **6. Let's debate!** | Débattre, donner son avis, convaincre, écrire une lettre formelle ou informelle | catastrophes naturelles, émigration, chômage | *In my opinion… / I strongly believe…* · *I see your point, but…* · *Dear Sir, I am writing to…* · *Yours faithfully* |
+| Unité | Fonctions | Vocabulaire | Expressions clés |
+|---|---|---|---|
+| **1. Pros and cons** | Donner des avantages et des inconvénients | téléphone, ville et village, réseaux sociaux | *The advantage is that…* · *On the one hand… on the other hand…* · *It's useful but…* |
+| **2. Food and health** | Décrire la composition d'un aliment, parler de maladies, conseiller | nutriments, maladies (paludisme, diabète…), prévention | *It contains proteins and vitamins.* · *It makes you strong.* · *Malaria is caused by mosquitoes.* · *You must sleep under a net.* |
+| **3. Breaking news** | Rapporter ce que quelqu'un a dit, annoncer une nouvelle, situer dans le temps | actualité, événements, mots de la même famille | *She said that… / He asked me if…* · *The school was built in 1990.* · *for / since / ago / during the holidays* · *happy → happiness → unhappy* |
+| **4. Wishes and regrets** | Exprimer un souhait, un regret, parler de la vie de famille | vie de famille, mariage, tentations, éducation | *I wish I had a phone.* · *I wish it would rain.* · *I wish I hadn't said that.* · *If only…* |
+| **5. Telling stories** | Raconter un souvenir, une fête, parler d'habitudes passées et présentes | fêtes, cérémonies, souvenirs | *While I was walking, I saw…* · *We used to… Now we…* · *I usually… / I'm used to…* · *I had my hair cut.* |
+| **6. Let's debate!** | Débattre, donner son avis, convaincre, écrire une lettre formelle ou informelle | catastrophes naturelles, émigration, chômage | *In my opinion… / I strongly believe…* · *I see your point, but…* · *Dear Sir, I am writing to…* · *Yours faithfully* |
 
 **Production de fin d'année** : « *Radio Jàng* », une émission enregistrée d'une minute (une
 interview, une nouvelle rapportée, ou un mini-débat).
