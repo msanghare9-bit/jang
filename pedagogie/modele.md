@@ -106,7 +106,9 @@ l'app (consignes, aides de Jàngalekat, corrections, boutons, « Je sais… ») 
 
 - **Phrases courtes** : une idée par phrase, 10 mots au plus si possible.
 - **Mots de tous les jours** : « dire bonjour » et pas « saluer », « dire au revoir » et pas
-  « prendre congé », « dire les lettres » et pas « épeler », « je regarde » et pas « j'observe ».
+  « prendre congé », « je regarde » et pas « j'observe ».
+- **Garder les mots que les élèves connaissent déjà de l'école**, même s'ils sont un peu
+  savants : « épeler », par exemple.
 - **Pas de mots de prof** : pas de « fonction », « expression », « production », « palier »,
   « réviser les acquis », ni de mots de grammaire.
 - **Tutoiement et présent** : « Écoute Awa. », « Touche un mot. », « À toi ! ».
