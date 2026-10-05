@@ -13,7 +13,7 @@
 
 ## 0. Je parle déjà anglais !
 
-**Jàngalekat** : « Avant de commencer : tu parles déjà anglais, sans le savoir ! Touche les
+**Kocc** : « Avant de commencer : tu parles déjà anglais, sans le savoir ! Touche les
 mots que tu connais. »
 
 Mots proposés : *football, phone, taxi, OK, goal, bus, internet, hello, sandwich, match*.
@@ -37,14 +37,14 @@ Scène dans la cour du collège. Chaque bulle peut être écoutée, et on peut a
 
 ## 2. Je comprends
 
-**Jàngalekat** pose deux questions sur la scène.
+**Kocc** pose deux questions sur la scène.
 
 1. « Qu'est-ce qu'Awa a dit **juste avant** son prénom ? »
    - **My name is** ✔ · Nice to meet · Hello
 2. « Awa dit *Hello*, Modou dit *Hi*. Ça veut dire quoi ? »
    - **Bonjour / Salut** ✔ · Au revoir · Merci
 
-En cas d'erreur, Jàngalekat ne corrige pas tout de suite. Elle rejoue la bulle concernée :
+En cas d'erreur, Kocc ne corrige pas tout de suite. Il rejoue la bulle concernée :
 « Écoute encore Awa. »
 
 ## 3. J'enseigne à Gaïndé
@@ -62,13 +62,13 @@ Quatre marches. Après **deux réussites du premier coup de suite**, on saute la
 ### Quand l'élève se trompe ou appuie sur « Je ne sais pas encore »
 
 1. Gaïndé réagit avec humour (« Grrr… j'ai l'air bête là ! »).
-2. Jàngalekat aide par paliers. Chaque nouvelle erreur fait monter d'un palier :
+2. Kocc aide par paliers. Chaque nouvelle erreur fait monter d'un palier :
 
-| Palier | Aide de Jàngalekat (exemple marche B) |
+| Palier | Aide de Kocc (exemple marche B) |
 |---|---|
 | 1. Une question | « Quel mot Awa a-t-elle dit en premier ? » |
 | 2. La scène rejouée | Elle rejoue « *My name is Awa.* » |
-| 3. Un modèle | « Moi, je dis : *My name is Jàngalekat.* Et Gaïndé ? » |
+| 3. Un modèle | « Moi, je dis : *My name is Kocc.* Et Gaïndé ? » |
 | 4. Une explication | « En wolof, on dit *Maa ngi tudd Gaïndé*. En anglais, on dit *My* (mon) + *name* (nom) + *is* (est) + *Gaïndé*. » |
 
 3. Ensuite, c'est **toujours l'élève** qui retourne aider Gaïndé.
@@ -89,7 +89,7 @@ Quatre marches. Après **deux réussites du premier coup de suite**, on saute la
   Dans l'app, elle pourra être partagée sur le mur de la classe.
 - **Mes « Je sais… »** : l'élève se situe lui-même pour chaque « Je sais » (*Pas encore*,
   *Avec de l'aide* ou *Tout seul*).
-- **Ce qui était difficile** : un choix ou un mot libre. Jàngalekat répond avec bienveillance.
+- **Ce qui était difficile** : un choix ou un mot libre. Kocc répond avec bienveillance.
 - **Mon carnet de mots** reçoit les mots de la mission.
 
 ## Dans l'app (plus tard)

@@ -45,7 +45,7 @@ les *tag questions* deviennent « vérifier que l'autre est d'accord avec moi »
 
 **La grammaire est réduite au minimum.** Pas de règle, pas de tableau de conjugaison, pas de
 mots techniques (« présent parfait », « auxiliaire »…). Si une forme gêne la compréhension,
-Jàngalekat donne une **astuce d'une phrase** au moment où l'élève en a besoin, puis on revient
+Kocc donne une **astuce d'une phrase** au moment où l'élève en a besoin, puis on revient
 à la communication.
 
 ## Les 5 principes
@@ -64,7 +64,7 @@ Jàngalekat donne une **astuce d'une phrase** au moment où l'élève en a besoi
 ```
 J'observe → Je comprends → J'enseigne à Gaïndé → Gaïndé se trompe → je le corrige
                                      ↑                     |
-                                     └── Jàngalekat m'aide ┘  (si je bloque)
+                                     └── Kocc m'aide ┘  (si je bloque)
 ```
 
 - **On ne commence jamais à vide.** L'élève observe d'abord une courte scène
@@ -78,10 +78,10 @@ J'observe → Je comprends → J'enseigne à Gaïndé → Gaïndé se trompe →
   4. dire ou écrire seul.
 
   Si l'élève réussit du premier coup, il saute une marche.
-- **Jàngalekat aide sans donner la réponse**, par paliers : une question → la scène rejouée →
+- **Kocc aide sans donner la réponse**, par paliers : une question → la scène rejouée →
   un modèle → le sens en français ou en wolof (une astuce, jamais une règle de grammaire). Ensuite, c'est toujours l'élève
   qui retourne vers Gaïndé.
-- **« Je ne sais pas encore »** est un bouton valorisé : il appelle Jàngalekat, sans pénalité.
+- **« Je ne sais pas encore »** est un bouton valorisé : il appelle Kocc, sans pénalité.
 
 ## Les histoires : un épisode toutes les 2 missions
 
@@ -91,7 +91,7 @@ compte donc **environ 15 épisodes**.
 
 Chaque épisode doit être :
 
-- **Très drôle** : Gaïndé fait des bêtises, se trompe de mot, tombe, exagère ; Jàngalekat glisse
+- **Très drôle** : Gaïndé fait des bêtises, se trompe de mot, tombe, exagère ; Kocc glisse
   sur une peau de banane ; Modou est toujours en retard ; Awa garde son calme.
 - **Très simple** : 3 à 5 cases, des bulles courtes, des phrases en anglais que l'élève connaît
   déjà, chacune avec son icône haut-parleur et sa traduction à la demande.
@@ -131,7 +131,7 @@ Ici, une note sur 10 est affichée : c'est un entraînement, pas une évaluation
 ## Un français très simple
 
 Beaucoup d'élèves ne comprennent pas bien le français. Tout le français que l'élève lit dans
-l'app (consignes, aides de Jàngalekat, corrections, boutons, « Je sais… ») doit être **très simple**.
+l'app (consignes, aides de Kocc, corrections, boutons, « Je sais… ») doit être **très simple**.
 
 - **Phrases courtes** : une idée par phrase, 10 mots au plus si possible.
 - **Mots de tous les jours** : « dire bonjour » et pas « saluer », « dire au revoir » et pas
@@ -142,7 +142,7 @@ l'app (consignes, aides de Jàngalekat, corrections, boutons, « Je sais… ») 
   « réviser les acquis », ni de mots de grammaire.
 - **Tutoiement et présent** : « Écoute Awa. », « Touche un mot. », « À toi ! ».
 - **Montrer plutôt qu'expliquer** : une image, un exemple, la phrase qu'on écoute.
-- **Le wolof aide** quand le français ne suffit pas (traduction des mots, aide de Jàngalekat).
+- **Le wolof aide** quand le français ne suffit pas (traduction des mots, aide de Kocc).
 
 Les documents pour les profs (ce dossier `pedagogie/`) peuvent garder les mots techniques.
 Mais les « Je sais… » des syllabus seront réécrits en français simple avant d'aller dans l'app.
@@ -191,20 +191,20 @@ Règles :
 |---|---|
 | 0. Mes mots | Une photo et une liste de mots : l'élève choisit ceux qui vont avec la photo. |
 | 1. J'observe | Une scène de l'histoire pose un problème de communication. |
-| 2. Je comprends | Jàngalekat pose une ou deux questions simples sur la scène. |
+| 2. Je comprends | Kocc pose une ou deux questions simples sur la scène. |
 | 3. J'enseigne à Gaïndé | L'élève aide Gaïndé, avec une aide qui diminue. |
 | 4. Je le fais pour de vrai | L'élève échange lui-même avec un personnage (jeu de rôle). |
 | 5. Je garde et je réfléchis | Une production à garder, les « Je sais… », le carnet de mots. |
 
 ### Le temps 0 : « Mes mots »
 
-Jàngalekat montre une photo liée au thème et une liste d'environ 10 mots (illustrés et
+Kocc montre une photo liée au thème et une liste d'environ 10 mots (illustrés et
 prononcés au toucher) : environ 6 vont avec la photo, 4 n'y vont pas. L'élève touche les mots
 qu'il pense voir sur la photo.
 
-- **Mot juste** : Jàngalekat le confirme et explique en une phrase, en montrant l'endroit sur
+- **Mot juste** : Kocc le confirme et explique en une phrase, en montrant l'endroit sur
   la photo (« Oui ! *waves*, ce sont les vagues, là. »).
-- **Mot qui ne va pas** : on ne dit pas seulement « faux ». Jàngalekat explique **pourquoi**
+- **Mot qui ne va pas** : on ne dit pas seulement « faux ». Kocc explique **pourquoi**
   (« *desert*, c'est le désert : du sable, mais pas d'eau. Regarde bien la photo… ») et
   encourage l'élève à réessayer.
 - **Les intrus sont choisis pour faire réfléchir** : ils sont proches du thème ou se
@@ -216,8 +216,8 @@ qu'il pense voir sur la photo.
 
 - **L'élève** : acteur, auteur, enseignant.
 - **Gaïndé** : son élève. Il se trompe, l'élève corrige.
-- **Jàngalekat** : une jeune prof sénégalaise (moussor jaune, lunettes, livre bleu). Elle
-  guide par des questions. Son nom veut dire « celle qui enseigne » en wolof.
+- **Kocc** : un jeune prof sénégalais, inspiré du sage Kocc Barma (trois touffes sur la tête,
+  lunettes, boubou violet, livre bleu). Il guide par des questions, sans donner la réponse.
 - **Awa, Modou, Doudou** : partenaires de conversation (jeux de rôle).
 - **Les autres élèves, le prof, la famille** : défis à deux, mur de productions,
   interviews en famille.
@@ -230,7 +230,7 @@ qu'il pense voir sur la photo.
 | Fiches | Mon carnet de mots, avec mes propres phrases |
 | QCM | Marches d'aide, échauffements, défis entre amis |
 | Histoires | Le fil de toutes les missions |
-| Tuteur IA | Jàngalekat et les personnages en jeu de rôle |
+| Tuteur IA | Kocc et les personnages en jeu de rôle |
 | Séries, badges | Récompensent le fait de créer et d'aider |
 
 ## Points à surveiller

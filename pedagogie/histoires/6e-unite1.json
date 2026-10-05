@@ -5,33 +5,33 @@
   "unite": 1,
   "episodes": [
     {
-      "titre": "Bonjour, Madame la chèvre !",
+      "titre": "Bonjour, Monsieur le bouc !",
       "apres_missions": [1, 2],
       "cases": [
         {"fond": "cour", "persos": [{"id": "gainde", "x": 0.35, "taille": 110, "anim": "saute"}],
          "bulles": [{"en": "Hi! Hi! Hi! Hi!", "fr": "Salut ! Salut ! Salut ! Salut !", "x": 0.05, "y": 0.05}]},
-        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 95, "anim": "saute"}, {"id": "jangalekat", "x": 0.6, "taille": 100}],
-         "bulles": [{"en": "Hi, Jàngalekat! How are you?", "fr": "Salut, Jàngalekat ! Ça va ?", "x": 0.02, "y": 0.04},
+        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 95, "anim": "saute"}, {"id": "kocc", "x": 0.6, "taille": 100}],
+         "bulles": [{"en": "Hi, Kocc! How are you?", "fr": "Salut, Kocc ! Ça va ?", "x": 0.02, "y": 0.04},
                     {"en": "Hmm… Good morning, Gaïndé.", "fr": "Hmm… Bonjour, Gaïndé.", "x": 0.45, "y": 0.35}]},
-        {"fond": "cour", "persos": [{"id": "awa", "x": 0.02, "taille": 90}, {"id": "gainde", "x": 0.35, "taille": 90}, {"id": "jangalekat", "x": 0.68, "taille": 90}],
-         "bulles": [{"en": "Say: Good morning, Madam!", "fr": "Dis : Bonjour, Madame !", "x": 0.02, "y": 0.03},
-                    {"en": "Good morning, Madam!", "fr": "Bonjour, Madame !", "x": 0.3, "y": 0.25},
+        {"fond": "cour", "persos": [{"id": "awa", "x": 0.02, "taille": 90}, {"id": "gainde", "x": 0.35, "taille": 90}, {"id": "kocc", "x": 0.68, "taille": 90}],
+         "bulles": [{"en": "Say: Good morning, Sir!", "fr": "Dis : Bonjour, Monsieur !", "x": 0.02, "y": 0.03},
+                    {"en": "Good morning, Sir!", "fr": "Bonjour, Monsieur !", "x": 0.3, "y": 0.25},
                     {"en": "I'm fine, thank you!", "fr": "Je vais bien, merci !", "x": 0.55, "y": 0.47}]},
-        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 95, "anim": "balance"}, {"id": "chevre", "x": 0.42, "taille": 80}, {"id": "modou", "x": 0.7, "taille": 90, "anim": "danse"}],
-         "bulles": [{"en": "Good morning, Madam!", "fr": "Bonjour, Madame !", "x": 0.02, "y": 0.04},
+        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 95, "anim": "balance"}, {"id": "bouc", "x": 0.42, "taille": 80}, {"id": "modou", "x": 0.7, "taille": 90, "anim": "danse"}],
+         "bulles": [{"en": "Good morning, Sir!", "fr": "Bonjour, Monsieur !", "x": 0.02, "y": 0.04},
                     {"en": "Bêêê!", "fr": "Bêêê !", "x": 0.4, "y": 0.3},
                     {"en": "Ha ha ha!", "fr": "Ha ha ha !", "x": 0.68, "y": 0.06}]}
       ],
-      "mots": ["Hi!", "How are you?", "Good morning, Madam!", "I'm fine, thank you."]
+      "mots": ["Hi!", "How are you?", "Good morning, Sir!", "I'm fine, thank you."]
     },
     {
       "titre": "M-A-N-G-O",
       "apres_missions": [3, 4],
       "cases": [
-        {"fond": "classe", "persos": [{"id": "jangalekat", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
+        {"fond": "classe", "persos": [{"id": "kocc", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
          "bulles": [{"en": "What's your name?", "fr": "Comment tu t'appelles ?", "x": 0.03, "y": 0.04},
                     {"en": "My name is Gaïndé!", "fr": "Je m'appelle Gaïndé !", "x": 0.5, "y": 0.32}]},
-        {"fond": "classe", "persos": [{"id": "jangalekat", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
+        {"fond": "classe", "persos": [{"id": "kocc", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
          "bulles": [{"en": "How do you spell it?", "fr": "Ça s'écrit comment ?", "x": 0.03, "y": 0.04},
                     {"en": "Hmm…", "fr": "Hmm… (Grrrooouuu, fait son ventre)", "x": 0.55, "y": 0.32}]},
         {"fond": "classe", "persos": [{"id": "gainde", "x": 0.05, "taille": 105, "anim": "saute"}, {"id": "awa", "x": 0.6, "taille": 95}],
@@ -56,7 +56,7 @@
         {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 100, "anim": "saute"}, {"id": "awa", "x": 0.6, "taille": 95}],
          "bulles": [{"en": "…nineteen, twenty! Twenty… and twenty… and twenty!", "fr": "…dix-neuf, vingt ! Vingt… et vingt… et vingt !", "x": 0.03, "y": 0.04},
                     {"en": "No, Gaïndé! You are two!", "fr": "Non, Gaïndé ! Tu as deux ans !", "x": 0.45, "y": 0.38}]},
-        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.02, "taille": 95, "anim": "danse"}, {"id": "jangalekat", "x": 0.38, "taille": 90}, {"id": "doudou", "x": 0.7, "taille": 90, "anim": "danse2"}],
+        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.02, "taille": 95, "anim": "danse"}, {"id": "kocc", "x": 0.38, "taille": 90}, {"id": "doudou", "x": 0.7, "taille": 90, "anim": "danse2"}],
          "bulles": [{"en": "Two?! Am I a pupil?", "fr": "Deux ans ?! Je suis élève ?", "x": 0.02, "y": 0.04},
                     {"en": "Yes, you are!", "fr": "Oui !", "x": 0.38, "y": 0.3},
                     {"en": "Yes, I am!", "fr": "Oui, je suis élève !", "x": 0.05, "y": 0.5}]}
@@ -72,10 +72,10 @@
                     {"en": "Bye!", "fr": "Salut !", "x": 0.38, "y": 0.35}]},
         {"fond": "cour", "persos": [{"id": "gainde", "x": 0.35, "taille": 110, "anim": "balance"}],
          "bulles": [{"en": "Bye! … Bye! … Bye! … Bye!", "fr": "Salut ! … Salut ! … Salut ! … Salut !", "x": 0.05, "y": 0.05}]},
-        {"fond": "nuit", "persos": [{"id": "jangalekat", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
+        {"fond": "nuit", "persos": [{"id": "kocc", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
          "bulles": [{"en": "Gaïndé?! Good evening!", "fr": "Gaïndé ?! Bonsoir !", "x": 0.03, "y": 0.04},
                     {"en": "Good evening! I'm fine, thank you!", "fr": "Bonsoir ! Je vais bien, merci !", "x": 0.4, "y": 0.34}]},
-        {"fond": "nuit", "persos": [{"id": "gainde", "x": 0.1, "taille": 95, "anim": "immobile"}, {"id": "jangalekat", "x": 0.6, "taille": 95}],
+        {"fond": "nuit", "persos": [{"id": "gainde", "x": 0.1, "taille": 95, "anim": "immobile"}, {"id": "kocc", "x": 0.6, "taille": 95}],
          "bulles": [{"en": "Good night, Gaïndé. See you tomorrow!", "fr": "Bonne nuit, Gaïndé. À demain !", "x": 0.4, "y": 0.04},
                     {"en": "Zzz…", "fr": "Zzz…", "x": 0.1, "y": 0.35}]}
       ],

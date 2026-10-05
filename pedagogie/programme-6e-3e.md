@@ -37,7 +37,7 @@ règles : ils sont appris **en bloc, dans des expressions**, au moment où une f
 |---|---|---|---|---|
 | **Ce que l'élève produit** | Des mots, des phrases courtes | 2 ou 3 phrases liées, un SMS | Un mini-dialogue, une lettre courte | Un échange suivi, une minute de parole, un texte court |
 | **Ce que fait Gaïndé** | Il se trompe de mot | Il se trompe d'expression | Il se trompe de ton (trop familier, impoli) | Il comprend mal, ou ne sait pas nuancer ni convaincre |
-| **Aide de Jàngalekat** | Toujours proche | Fréquente | Sur demande | Rare : l'élève s'aide de son carnet |
+| **Aide de Kocc** | Toujours proche | Fréquente | Sur demande | Rare : l'élève s'aide de son carnet |
 | **Supports** | Scènes dessinées, dialogues de 3 répliques | Dialogues, SMS, petites annonces | Récits, interviews, émissions de radio | Reportages, débats, articles courts |
 | **Saison de l'histoire** | *Un lionceau à l'école* (existe) | *Les vacances au village* (à créer) | *La pirogue de Kayar* (existe) | *Radio Jàng, la radio du collège* (à créer) |
 
