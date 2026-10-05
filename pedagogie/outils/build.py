@@ -262,7 +262,7 @@ def main():
         {"matiere": "anglais", "niveau": n, "saison": SAISONS[n], "unites": par[n]["unites"]}
         for n in NIVEAUX if par[n]["unites"]]}
     for p in [ROOT / "contenus" / "missions.json", ROOT / "app" / "assets" / "missions.json"]:
-        p.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        p.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 
     hist = json.loads((ROOT / "contenus" / "histoires.json").read_text(encoding="utf-8"))
     saisons = [s for s in hist["saisons"] if not (s.get("matiere") == "anglais" and s.get("niveau") in NIVEAUX)]
