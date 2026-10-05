@@ -31,6 +31,14 @@ Pour chaque fonction, l'élève apprend :
 - **des expressions toutes faites**, apprises en bloc comme on les entend (*How much is it?*,
   *Can I have…?*, *It used to be…*, *I think that…*). On ne les décortique pas.
 
+**Une mission = une seule chose.** Chaque mission vise un seul « Je sais… » et une seule
+famille d'expressions. On ne mélange pas deux fonctions dans la même mission (par exemple, on ne
+fait pas « épeler son nom » et « dire son âge » ensemble).
+
+**Pas de leçon de grammaire.** Un point de grammaire du programme officiel devient une mission
+nommée par ce qu'il permet de faire : le passif devient « dire comment une chose est faite »,
+les *tag questions* deviennent « vérifier que l'autre est d'accord avec moi ».
+
 **La grammaire est réduite au minimum.** Pas de règle, pas de tableau de conjugaison, pas de
 mots techniques (« présent parfait », « auxiliaire »…). Si une forme gêne la compréhension,
 Jàngalekat donne une **astuce d'une phrase** au moment où l'élève en a besoin, puis on revient
