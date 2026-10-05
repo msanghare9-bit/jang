@@ -8,13 +8,40 @@ communicatives et interactives.
 **Le but est d'apprendre la langue.** Le thème d'une mission (les salutations, le marché,
 le climat…) sert seulement de contexte pour communiquer. On ne cherche pas à enseigner le thème
 lui-même, et on n'évalue que ce que l'élève sait faire en anglais. Gaïndé se trompe toujours
-sur la langue (mots, grammaire, prononciation, registre), jamais sur le fond du thème.
+sur la langue (mauvais mot, expression qui ne va pas avec la situation, registre), jamais sur
+le fond du thème.
+
+## Ce qu'on apprend : des fonctions, des mots, des expressions
+
+Une mission est construite autour d'une **fonction langagière** (ce qu'on fait avec la langue),
+pas autour d'un point de grammaire :
+
+- saluer, se présenter, prendre congé ;
+- demander et donner une information (nom, âge, chemin, prix, heure) ;
+- décrire (une personne, un lieu, sa journée) ;
+- exprimer ses goûts, son avis, son accord ou son désaccord ;
+- demander, proposer, inviter, accepter, refuser ;
+- remercier, s'excuser, féliciter ;
+- raconter (ce qui s'est passé, comment c'était avant) ;
+- conseiller, prévenir, exprimer un souhait ou un projet.
+
+Pour chaque fonction, l'élève apprend :
+
+- **le vocabulaire du thème**, qu'il range dans son carnet de mots ;
+- **des expressions toutes faites**, apprises en bloc comme on les entend (*How much is it?*,
+  *Can I have…?*, *It used to be…*, *I think that…*). On ne les décortique pas.
+
+**La grammaire est réduite au minimum.** Pas de règle, pas de tableau de conjugaison, pas de
+mots techniques (« présent parfait », « auxiliaire »…). Si une forme gêne la compréhension,
+Jàngalekat donne une **astuce d'une phrase** au moment où l'élève en a besoin, puis on revient
+à la communication.
 
 ## Les 5 principes
 
 1. **On part de l'élève, pas du programme.** Les thèmes viennent de sa vie : son quartier,
    sa famille, le foot, le marché, ses rêves. Le programme officiel est couvert *à travers* eux.
-2. **On communique d'abord, la grammaire vient ensuite, quand on en a besoin.**
+2. **On communique.** On apprend des mots et des expressions pour faire quelque chose avec
+   la langue. La grammaire reste discrète : une astuce, seulement si elle aide à se faire comprendre.
 3. **L'élève produit.** Il parle, écrit, raconte. Le QCM sert seulement de marche pour y arriver.
 4. **L'élève enseigne.** Gaïndé ne sait pas parler anglais : c'est l'élève qui lui apprend.
 5. **L'élève juge ses propres progrès.** Pas de note, mais des « Je sais… » prouvés par
@@ -40,7 +67,7 @@ J'observe → Je comprends → J'enseigne à Gaïndé → Gaïndé se trompe →
 
   Si l'élève réussit du premier coup, il saute une marche.
 - **Jàngalekat aide sans donner la réponse**, par paliers : une question → la scène rejouée →
-  un modèle → une explication courte en français ou en wolof. Ensuite, c'est toujours l'élève
+  un modèle → le sens en français ou en wolof (une astuce, jamais une règle de grammaire). Ensuite, c'est toujours l'élève
   qui retourne vers Gaïndé.
 - **« Je ne sais pas encore »** est un bouton valorisé : il appelle Jàngalekat, sans pénalité.
 
