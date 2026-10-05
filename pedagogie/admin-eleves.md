@@ -32,7 +32,7 @@ envoient des **notifications push**. Elles valent pour toutes les classes (coll�
 - Le message reste dans **Moi › Mes messages**.
 - L'élève peut répondre en un geste : « Merci ! », « J'ai une question » (il écrit sa
   question), ou un message vocal.
-- Une notification sur le téléphone s'affiche quand l'app récupère le message.
+- Une **notification push** arrive sur le téléphone, même si l'app est fermée.
 
 ### Règles
 
