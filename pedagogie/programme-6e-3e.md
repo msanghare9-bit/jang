@@ -62,39 +62,39 @@ entière**, nommée par ce qu'il permet de faire, et qui ne travaille que lui.
 |---|---|---|
 | Auxiliaires, questions oui / non | répondre par oui ou par non | 6e, 1.6 |
 | Cas possessif | dire à qui est un objet | 6e, 2.3 |
-| Nombres ordinaux | dire un rang | 6e, 2.6 |
-| Adjectifs | décrire le caractère de quelqu'un | 6e, 3.3 |
-| Présent simple | dire ce que je fais chaque jour | 6e, 4.4 |
+| Nombres ordinaux | dire premier, deuxième, troisième… | 6e, 2.6 |
+| Adjectifs | dire si une personne est gentille, drôle… | 6e, 3.3 |
+| Présent simple | dire ce que je fais tous les jours | 6e, 4.4 |
 | Présent continu | dire ce que les gens font en ce moment | 6e, 6.2 |
 | Futur | dire ce que je vais faire | 6e, 6.3 |
-| *Good / bad at* + -ing | dire en quoi je suis doué ou pas | 5e, 1.4 |
-| Dénombrables / indénombrables | demander une quantité | 5e, 2.3 |
-| Quantifieurs | dire une quantité approximative | 5e, 2.4 |
-| Questions en Wh / How | poser une question pour m'informer | 5e, 2.5 |
-| Actif / passif | dire comment un plat est fait | 5e, 2.6 |
+| *Good / bad at* + -ing | dire ce que je fais bien et ce que je fais mal | 5e, 1.4 |
+| Dénombrables / indénombrables | demander combien | 5e, 2.3 |
+| Quantifieurs | dire un peu, beaucoup | 5e, 2.4 |
+| Questions en Wh / How | poser des questions (qui ? où ? quand ?) | 5e, 2.5 |
+| Actif / passif | dire avec quoi on fait un plat | 5e, 2.6 |
 | Prétérit | raconter ce que j'ai fait | 5e, 3.1 |
-| Present perfect | parler de mes expériences · dire ce qui vient de se passer | 5e, 3.3 et 3.4 |
-| Comparatif | comparer deux choses | 5e, 4.1 |
-| Superlatif | dire ce qui est le plus… | 5e, 4.2 |
+| Present perfect | dire ce que j'ai déjà fait, ou jamais fait · dire ce qui s'est passé à l'instant | 5e, 3.3 et 3.4 |
+| Comparatif | comparer deux choses (plus grand que…) | 5e, 4.1 |
+| Superlatif | dire le plus grand, le meilleur… | 5e, 4.2 |
 | *Can / can't* | dire ce que je sais faire · demander la permission | 5e, 5.4 et 5.5 |
-| *Tag questions* | vérifier que l'autre est d'accord avec moi | 5e, 6.3 |
-| Modaux (*must, shall, may, will*) | dire ce qui est obligatoire ou interdit · suggérer · dire ce qui est possible | 4e, 3.2, 3.3 et 5.4 |
-| Discours rapporté | rapporter ce que quelqu'un a dit | 4e, 3.5 |
-| *Since, for* | dire depuis quand | 4e, 4.2 |
-| *Ago* | dire quand quelque chose s'est passé | 4e, 4.3 |
-| Actif / passif | dire ce qui a été fait, et par qui | 4e, 4.4 |
-| Proposition en *if* | faire une hypothèse | 4e, 5.2 |
-| Dérivation | former des mots de la même famille | 4e, 5.5 |
-| Gérondif | dire ce que j'aime faire pendant mes loisirs | 4e, 6.1 |
-| *Make* + objet + verbe | dire l'effet de quelque chose sur quelqu'un | 3e, 2.2 |
-| Passif (étendu) | annoncer ce qui a été fait | 3e, 3.1 |
-| Discours rapporté (étendu) | rapporter des paroles · une question · un ordre | 3e, 3.2, 3.3 et 3.4 |
-| *Since, for, ago, during* | situer un événement dans le temps | 3e, 3.5 |
-| Formation des mots (étendue) | former des mots de la même famille | 3e, 3.6 |
-| *Wish* | exprimer un souhait pour maintenant · pour l'avenir · un regret | 3e, 4.1, 4.2 et 4.3 |
-| Habitudes passées et présentes | parler de mes habitudes passées · présentes | 3e, 5.1 et 5.2 |
-| Actions passées simultanées | raconter deux actions en même temps | 3e, 5.3 |
-| *Have* + objet + participe passé | dire ce que je me fais faire | 3e, 5.5 |
+| *Tag questions* | demander « n'est-ce pas ? » | 5e, 6.3 |
+| Modaux (*must, shall, may, will*) | dire ce qu'on doit faire et ce qui est interdit · proposer une idée · dire « peut-être » ou « c'est sûr » | 4e, 3.2, 3.3 et 5.4 |
+| Discours rapporté | répéter ce qu'une personne a dit | 4e, 3.5 |
+| *Since, for* | dire depuis combien de temps | 4e, 4.2 |
+| *Ago* | dire il y a combien de temps | 4e, 4.3 |
+| Actif / passif | dire qui a fait quelque chose | 4e, 4.4 |
+| Proposition en *if* | dire « si… alors… » | 4e, 5.2 |
+| Dérivation | trouver les mots de la même famille | 4e, 5.5 |
+| Gérondif | dire ce que j'aime faire quand je suis libre | 4e, 6.1 |
+| *Make* + objet + verbe | dire ce qu'une chose fait au corps (Ça rend fort…) | 3e, 2.2 |
+| Passif (étendu) | annoncer une nouvelle | 3e, 3.1 |
+| Discours rapporté (étendu) | répéter ce qu'une personne a dit · sa question · ce qu'elle a demandé de faire | 3e, 3.2, 3.3 et 3.4 |
+| *Since, for, ago, during* | dire quand et depuis quand | 3e, 3.5 |
+| Formation des mots (étendue) | trouver les mots de la même famille | 3e, 3.6 |
+| *Wish* | dire ce que je voudrais avoir maintenant · ce que je voudrais pour demain · ce que je regrette | 3e, 4.1, 4.2 et 4.3 |
+| Habitudes passées et présentes | dire ce que je faisais avant · ce que je fais d'habitude | 3e, 5.1 et 5.2 |
+| Actions passées simultanées | raconter deux choses qui arrivent en même temps | 3e, 5.3 |
+| *Have* + objet + participe passé | dire ce qu'une autre personne fait pour moi (coiffeur…) | 3e, 5.5 |
 
 ## Lien avec les contenus existants
 
