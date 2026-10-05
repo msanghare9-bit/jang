@@ -193,7 +193,7 @@ class _StoryScreenState extends State<StoryScreen> {
     final ep = st.season.episodes[i];
     final open = i < unlocked;
     final fresh = open && i >= _opened;
-    final need = st.season.required(i, st.total);
+    final need = st.need(i);
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Material(

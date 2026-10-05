@@ -1,68 +1,10 @@
-"""Écrit contenus/missions.json (et la copie de l'app) : parcours d'anglais de 6e, unités 1 et 2.
-
-Lancer depuis la racine du dépôt :  python3 pedagogie/outils/missions_6e.py
-"""
+"""Parcours d'anglais de 6e, unités 1 et 2 (les épisodes sont dans pedagogie/histoires/6e-unite*.json)."""
 import json
 import pathlib
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
+from jang_lib import *  # noqa: F401,F403
 
-DIFFICILE = [
-    "Comprendre la scène|C'est normal au début. Tu as pu réécouter : c'est comme ça qu'on apprend.",
-    "L'ordre des mots|En anglais, l'ordre des mots est important. Tu vas le revoir souvent.",
-    "Écrire seul|Écrire seul, c'est le plus dur. Et tu l'as fait !",
-    "Parler au micro|Parler fait un peu peur au début. Plus tu parles, plus c'est facile.",
-    "Rien !|Super ! La prochaine mission sera un peu plus dure.",
-]
-
-
-def mot(m, ok, pourquoi):
-    return {"mot": m, "ok": ok, "pourquoi": pourquoi}
-
-
-def r(qui, en, fr):
-    return {"qui": qui, "en": en, "fr": fr}
-
-
-def q(question, options, reponse, rejouer=-1):
-    return {"question": question, "options": options, "reponse": reponse, "rejouer": rejouer}
-
-
-def aides(question, rejouer, texte_rejouer, modele, sens):
-    return [question, {"rejouer": rejouer, "texte": texte_rejouer}, modele, sens]
-
-
-def choix(gainde, options, reponse, a):
-    return {"type": "choix", "gainde": gainde, "options": options, "reponse": reponse, "aides": a}
-
-
-def ordre(gainde, tuiles, cible, dit, a):
-    return {"type": "ordre", "gainde": gainde, "tuiles": tuiles, "cible": cible, "dit": dit, "aides": a}
-
-
-def trou(gainde, avant, apres, accepte, dit, a):
-    return {"type": "trou", "gainde": gainde, "avant": avant, "apres": apres, "accepte": accepte, "dit": dit, "aides": a}
-
-
-def libre(gainde, cles, a):
-    return {"type": "libre", "gainde": gainde, "cles": cles, "aides": a}
-
-
-def tour(qui, en, fr, cles, modele, reponse):
-    return {"qui": qui, "en": en, "fr": fr, "cles": cles, "modele": modele, "reponse": reponse}
-
-
-def mission(id, titre, jesais, expressions, mots, scene, questions, marches, pourdevrai, carnet, histoire=""):
-    return {
-        "id": id, "titre": titre, "histoire": histoire or titre, "jesais": jesais, "expressions": expressions,
-        "mots": mots, "scene": scene, "questions": questions, "marches": marches,
-        "pourdevrai": pourdevrai, "carnet": carnet, "difficile": DIFFICILE,
-    }
-
-
-def ex(question, options, reponse, explication):
-    return {"question": question, "options": options, "reponse": reponse, "explication": explication}
-
+NIVEAU = "6e"
 
 # ======================= UNITÉ 1 : HELLO! =======================
 
@@ -661,13 +603,12 @@ unite2 = {
     ],
 }
 
-data = {
-    "version": 1,
-    "parcours": [
-        {"matiere": "anglais", "niveau": "6e", "saison": "Un lionceau à l'école", "unites": [unite1, unite2]},
-    ],
-}
 
-for path in [ROOT / "contenus" / "missions.json", ROOT / "app" / "assets" / "missions.json"]:
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-print("missions écrites :", sum(len(u["missions"]) for u in [unite1, unite2]))
+UNITES = [unite1, unite2]
+
+_H = pathlib.Path(__file__).resolve().parents[2] / "histoires"
+_APRES = {1: ["6e-u1-m2", "6e-u1-m4", "6e-u1-m6", "6e-u1-m7"], 2: ["6e-u2-m2", "6e-u2-m4", "6e-u2-m6"]}
+EPISODES = []
+for _n in (1, 2):
+    for _e, _a in zip(json.loads((_H / f"6e-unite{_n}.json").read_text(encoding="utf-8"))["episodes"], _APRES[_n]):
+        EPISODES.append({"titre": _e["titre"], "apres": _a, "cases": _e["cases"], "mots": _e.get("mots", [])})

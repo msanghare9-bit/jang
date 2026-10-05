@@ -42,7 +42,10 @@ class StoryEpisode {
   final String title;
   final List<StoryPanel> panels;
   final List<String> words;
-  StoryEpisode(this.title, this.panels, this.words);
+
+  /// Mission après laquelle l'épisode s'ouvre (parcours en missions), ou vide.
+  final String after;
+  StoryEpisode(this.title, this.panels, this.words, {this.after = ''});
 }
 
 /// Une saison = l'histoire d'une matière pour un niveau.
@@ -81,14 +84,28 @@ class StoryState {
 
   /// Leçons (3) ou missions (2) par épisode.
   final int per;
-  StoryState(this.season, this.done, this.total, {this.per = 3});
-  int get unlocked => season.unlocked(done, total, per: per);
+
+  /// Missions à terminer pour ouvrir chaque épisode, quand l'épisode dit après quelle mission il vient.
+  final List<int>? needs;
+  StoryState(this.season, this.done, this.total, {this.per = 3, this.needs});
+
+  /// Leçons (ou missions) terminées nécessaires pour ouvrir l'épisode [i].
+  int need(int i) => needs != null && i < needs!.length ? needs![i] : season.required(i, total, per: per);
+
+  int get unlocked {
+    if (total == 0) return 0;
+    var n = 0;
+    for (var i = 0; i < season.episodes.length; i++) {
+      if (done >= need(i)) n = i + 1;
+    }
+    return n;
+  }
 
   /// Leçons qu'il reste à terminer pour ouvrir le prochain épisode (0 si tout est ouvert).
   int get lessonsToNext {
     final u = unlocked;
     if (u >= season.episodes.length) return 0;
-    return season.required(u, total, per: per) - done;
+    return need(u) - done;
   }
 }
 
@@ -160,7 +177,8 @@ class StoryService {
           ));
         }
         eps.add(StoryEpisode(
-            _s(e['titre']), panels, [for (final w in (e['mots'] as List? ?? const [])) '$w']));
+            _s(e['titre']), panels, [for (final w in (e['mots'] as List? ?? const [])) '$w'],
+            after: _s(e['apres'])));
       }
       out.add(StorySeason(_s(s['matiere']), _s(s['niveau']), _s(s['titre']), eps));
     }
@@ -204,7 +222,15 @@ class StoryService {
     // Parcours en missions (collège) : un épisode toutes les 2 missions.
     final course = await MissionService.instance.courseFor(subject, examId);
     if (course != null) {
-      return StoryState(season, MissionService.instance.doneCount(course), course.missions.length, per: 2);
+      final ids = [for (final m in course.missions) m.id];
+      final needs = <int>[];
+      for (var i = 0; i < season.episodes.length; i++) {
+        final at = ids.indexOf(season.episodes[i].after);
+        var n = at >= 0 ? at + 1 : season.required(i, ids.length, per: 2);
+        if (needs.isNotEmpty && n < needs.last) n = needs.last;
+        needs.add(n);
+      }
+      return StoryState(season, MissionService.instance.doneCount(course), ids.length, per: 2, needs: needs);
     }
     final list = lessons ??
         await ContentRepo.instance.lessonsOfSubject(subject.id, examId: examId.isEmpty ? null : examId);
