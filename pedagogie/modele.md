@@ -99,6 +99,19 @@ les versions 1.8 et 1.9 de l'app :
 Ici, une note sur 10 est affichée : c'est un entraînement, pas une évaluation. Les
 « Je sais… » restent l'outil principal pour suivre les progrès.
 
+## Écouter : chaque mot et chaque phrase en anglais se prononce
+
+Partout dans l'app, **chaque mot et chaque phrase en anglais** a son **icône haut-parleur**.
+Un toucher fait entendre la prononciation : dans les scènes, les choix de réponse, les
+consignes, le carnet, la fiche de révision, les cartes, les exercices et les corrections.
+
+- Une seule icône, toujours la même, placée juste après le texte anglais.
+- Les puces de mots (temps 0, carnet) se prononcent quand on les touche.
+- La voix est lente et claire (anglais britannique, sinon américain), et marche hors-ligne
+  avec la voix du téléphone.
+- Le texte en français ou en wolof n'a pas d'icône : on sait ainsi tout de suite ce qui est
+  de l'anglais.
+
 ## Parler, écrire ou les deux : l'élève choisit
 
 Quand l'élève doit produire, il choisit comment il répond :
