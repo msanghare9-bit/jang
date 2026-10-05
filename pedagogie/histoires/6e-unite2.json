@@ -1,0 +1,65 @@
+{
+  "matiere": "anglais",
+  "niveau": "6e",
+  "saison": "Un lionceau à l'école",
+  "unite": 2,
+  "episodes": [
+    {
+      "titre": "Gaïndé de toutes les couleurs",
+      "apres_missions": [1, 2],
+      "cases": [
+        {"fond": "classe", "persos": [{"id": "kocc", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95, "anim": "saute"}],
+         "bulles": [{"en": "What's this?", "fr": "Qu'est-ce que c'est ? (Kocc Barma tient une règle)", "x": 0.03, "y": 0.04},
+                    {"en": "It's a pen!", "fr": "C'est un stylo !", "x": 0.55, "y": 0.32}]},
+        {"fond": "classe", "persos": [{"id": "modou", "x": 0.05, "taille": 95}, {"id": "gainde", "x": 0.6, "taille": 95}],
+         "bulles": [{"en": "No, Gaïndé! It's a ruler!", "fr": "Non, Gaïndé ! C'est une règle !", "x": 0.03, "y": 0.04},
+                    {"en": "A ruler… for lions?", "fr": "Une règle… pour les lions ?", "x": 0.5, "y": 0.34}]},
+        {"fond": "classe", "persos": [{"id": "kocc", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 95}],
+         "bulles": [{"en": "What colour is it?", "fr": "De quelle couleur est-il ? (le tableau)", "x": 0.03, "y": 0.04},
+                    {"en": "It's… green!", "fr": "Il est… vert ! (Gaïndé lèche le tableau)", "x": 0.5, "y": 0.34}]},
+        {"fond": "classe", "persos": [{"id": "awa", "x": 0.02, "taille": 90}, {"id": "gainde", "x": 0.35, "taille": 100, "anim": "danse"}, {"id": "doudou", "x": 0.7, "taille": 90, "anim": "saute"}],
+         "bulles": [{"en": "Gaïndé! What colour are you?!", "fr": "Gaïndé ! Tu es de quelle couleur ?!", "x": 0.02, "y": 0.03},
+                    {"en": "Red, blue, yellow… and green!", "fr": "Rouge, bleu, jaune… et vert !", "x": 0.3, "y": 0.36}]}
+      ],
+      "mots": ["What's this?", "It's a pen.", "It's a ruler.", "What colour is it?", "red, blue, yellow, green"]
+    },
+    {
+      "titre": "Où est le sac de Gaïndé ?",
+      "apres_missions": [3, 4],
+      "cases": [
+        {"fond": "classe", "persos": [{"id": "gainde", "x": 0.35, "taille": 110, "anim": "saute"}],
+         "bulles": [{"en": "Where is my bag?! Where is my bag?!", "fr": "Où est mon sac ?! Où est mon sac ?!", "x": 0.05, "y": 0.05}]},
+        {"fond": "classe", "persos": [{"id": "modou", "x": 0.02, "taille": 90}, {"id": "awa", "x": 0.35, "taille": 90}, {"id": "gainde", "x": 0.68, "taille": 90}],
+         "bulles": [{"en": "Is it your bag?", "fr": "C'est ton sac ? (un sac rose)", "x": 0.02, "y": 0.03},
+                    {"en": "No! It's Awa's bag!", "fr": "Non ! C'est le sac d'Awa !", "x": 0.35, "y": 0.35}]},
+        {"fond": "classe", "persos": [{"id": "awa", "x": 0.05, "taille": 95}, {"id": "gainde", "x": 0.6, "taille": 95, "anim": "saute"}],
+         "bulles": [{"en": "Is it under the table?", "fr": "Il est sous la table ?", "x": 0.03, "y": 0.03},
+                    {"en": "No!", "fr": "Non !", "x": 0.62, "y": 0.22},
+                    {"en": "Is it on the chair?", "fr": "Il est sur la chaise ?", "x": 0.03, "y": 0.42},
+                    {"en": "No!", "fr": "Non !", "x": 0.62, "y": 0.6}]},
+        {"fond": "classe", "persos": [{"id": "modou", "x": 0.05, "taille": 95, "anim": "danse"}, {"id": "gainde", "x": 0.6, "taille": 95}],
+         "bulles": [{"en": "Ha ha! Gaïndé! It's on you!", "fr": "Ha ha ! Gaïndé ! Il est sur toi ! (sur son dos)", "x": 0.03, "y": 0.04},
+                    {"en": "Oh!", "fr": "Oh !", "x": 0.62, "y": 0.34}]}
+      ],
+      "mots": ["Where is my bag?", "Is it your bag?", "It's Awa's bag.", "under the table", "on the chair"]
+    },
+    {
+      "titre": "Gaïndé, chef de classe",
+      "apres_missions": [5, 6],
+      "cases": [
+        {"fond": "classe", "persos": [{"id": "kocc", "x": 0.05, "taille": 100}, {"id": "gainde", "x": 0.6, "taille": 100, "anim": "saute"}],
+         "bulles": [{"en": "Gaïndé, you are the class leader!", "fr": "Gaïndé, tu es le chef de classe !", "x": 0.03, "y": 0.04},
+                    {"en": "Yes, I am!", "fr": "Oui, c'est moi !", "x": 0.6, "y": 0.34}]},
+        {"fond": "classe", "persos": [{"id": "gainde", "x": 0.02, "taille": 95, "anim": "saute"}, {"id": "awa", "x": 0.4, "taille": 85, "anim": "balance"}, {"id": "modou", "x": 0.7, "taille": 85, "anim": "balance"}],
+         "bulles": [{"en": "Stand up! Sit down! Stand up! Sit down! Stand up!", "fr": "Levez-vous ! Asseyez-vous ! Levez-vous ! Asseyez-vous ! Levez-vous !", "x": 0.02, "y": 0.03}]},
+        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 95, "anim": "saute"}, {"id": "awa", "x": 0.4, "taille": 90}, {"id": "modou", "x": 0.7, "taille": 90}],
+         "bulles": [{"en": "I'm the first! I'm the first!", "fr": "Je suis le premier ! Je suis le premier !", "x": 0.02, "y": 0.04},
+                    {"en": "No! I'm the first!", "fr": "Non ! C'est moi la première !", "x": 0.4, "y": 0.34}]},
+        {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 90}, {"id": "kocc", "x": 0.6, "taille": 100}],
+         "bulles": [{"en": "I'm the… tenth.", "fr": "Je suis… le dixième.", "x": 0.03, "y": 0.04},
+                    {"en": "Gaïndé! Sit down!", "fr": "Gaïndé ! Assieds-toi ! (il s'assoit sur le chapeau de Kocc Barma)", "x": 0.5, "y": 0.34}]}
+      ],
+      "mots": ["Stand up!", "Sit down!", "the first", "the tenth", "Yes, I am!"]
+    }
+  ]
+}
