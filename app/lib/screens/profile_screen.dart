@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'inbox_screen.dart';
+
 import '../models.dart';
 import '../services/auth_service.dart';
 import '../services/content_repo.dart';
@@ -64,6 +66,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Text('Profil', style: titleStyle(26)),
               const CharacterSays('kocc',
                   'Moi c\'est Kocc Barma, ton prof. Je suis très sérieux… sauf quand je tombe de ma chaise. Change ton niveau ici si besoin !'),
+              const SizedBox(height: 6),
+              Card(
+                child: ListTile(
+                  leading: const Icon(Icons.mail_outline, color: JangColors.primaryDark),
+                  title: const Text('Mes messages', style: TextStyle(fontWeight: FontWeight.w800)),
+                  subtitle: const Text('Messages de tes profs et annonces'),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
+                ),
+              ),
               const SizedBox(height: 6),
               Card(
                 child: Padding(

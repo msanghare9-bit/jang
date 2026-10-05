@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
 import 'engagement_service.dart';
+import 'sheep_service.dart';
 import 'stats_service.dart';
 
 /// Progression de l'élève, enregistrée sur son compte (users/{uid}/progress/{leçon}).
@@ -112,6 +113,8 @@ class ProgressRepo {
       _bumpUser(uid, {'lessonsSeen': 1});
     }
     StatsService.instance.recordQuiz(lesson, correct, firstTime: p?.quizDone != true);
+    // Le mouton grandit la première fois qu'une leçon est terminée.
+    if (p?.quizDone != true) unawaited(SheepService.instance.feed());
     // Résumé sur la fiche de l'élève : nombre de QCM faits et somme des meilleures notes (en %).
     final newPct = total == 0 ? 0 : (score * 100 / total).round();
     final oldPct = (p?.quizDone == true && p!.total > 0) ? (p.bestScore! * 100 / p.total).round() : null;

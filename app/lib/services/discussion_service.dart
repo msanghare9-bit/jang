@@ -41,7 +41,7 @@ class DiscussionService {
     final t = text.trim();
     if (t.length < 2) return 'Écris un message un peu plus long.';
     if (t.length > 1000) return 'Message trop long (1000 caractères au maximum).';
-    if (!p.isAdmin) {
+    if (!p.isStaff) {
       final prefs = await SharedPreferences.getInstance();
       final key = 'posts_${p.uid}';
       final now = DateTime.now().millisecondsSinceEpoch;
@@ -54,7 +54,7 @@ class DiscussionService {
       }
       await prefs.setStringList(key, [...recent, now].map((e) => '$e').toList());
     }
-    final staff = p.isAdmin;
+    final staff = p.isStaff;
     final batch = _db.batch();
     batch.set(_col.doc(), {
       'lessonId': lesson.id,

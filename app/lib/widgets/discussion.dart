@@ -137,7 +137,7 @@ class _DiscussionSectionState extends State<DiscussionSection> {
     final t = Theme.of(context).textTheme;
     final me = AuthService.instance.profile.value;
     final mine = me?.uid == c.uid;
-    final admin = me?.isAdmin == true;
+    final admin = me?.isStaff == true;
     final hidden = c.reports >= DiscussionService.hideAfterReports && !admin && !mine;
     return Container(
       margin: const EdgeInsets.only(bottom: 8),

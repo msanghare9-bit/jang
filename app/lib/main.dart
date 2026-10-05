@@ -14,6 +14,7 @@ import 'services/content_repo.dart';
 import 'services/engagement_service.dart';
 import 'services/notification_service.dart';
 import 'services/progress_repo.dart';
+import 'services/sheep_service.dart';
 import 'theme.dart';
 
 Future<void> main() async {
@@ -155,6 +156,7 @@ class _AuthGateState extends State<AuthGate> {
     await AuthService.instance.loadProfile();
     await ProgressRepo.instance.load(user.uid);
     await EngagementService.instance.init(user.uid);
+    await SheepService.instance.load(user.uid);
     _loadedFor = user.uid;
     _loading = false;
     if (mounted) setState(() {});
@@ -183,6 +185,7 @@ class _AuthGateState extends State<AuthGate> {
               _loadedFor = null;
               setState(() {});
             });
+            if (profile.disabled) return const _Disabled();
             return const HomeScreen();
           },
         );
@@ -200,6 +203,35 @@ class _Splash extends StatelessWidget {
       backgroundColor: JangColors.primary,
       body: Center(
         child: Text('Jàng', style: titleStyle(52, color: Colors.white, weight: 800)),
+      ),
+    );
+  }
+}
+
+/// Compte désactivé par l'admin.
+class _Disabled extends StatelessWidget {
+  const _Disabled();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text('Compte désactivé', style: titleStyle(24)),
+              const SizedBox(height: 12),
+              const Text('Ton compte a été désactivé par ton prof. Parle-lui si tu penses que c\'est une erreur.'),
+              const SizedBox(height: 24),
+              OutlinedButton(
+                  onPressed: () => AuthService.instance.signOut(),
+                  child: const Text('Se déconnecter')),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -78,6 +78,11 @@ class Chars {
   /// Ancien nom (histoires et écrans existants).
   static const panthere = kocc;
 
+  /// Le mouton de l'élève.
+  static const mouton = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130">
+<ellipse cx="65" cy="124" rx="34" ry="5" fill="#000" fill-opacity=".1"/><rect x="42" y="94" width="7" height="28" rx="3" fill="#4a3b33"/><rect x="56" y="96" width="7" height="26" rx="3" fill="#4a3b33"/><rect x="74" y="96" width="7" height="26" rx="3" fill="#4a3b33"/><rect x="87" y="94" width="7" height="28" rx="3" fill="#4a3b33"/><g fill="#ffffff" stroke="#dfe3e6" stroke-width="2"><circle cx="45" cy="80" r="15"/><circle cx="62" cy="72" r="17"/><circle cx="80" cy="74" r="16"/><circle cx="94" cy="84" r="13"/><circle cx="52" cy="94" r="14"/><circle cx="72" cy="96" r="15"/><circle cx="88" cy="96" r="12"/></g><ellipse cx="34" cy="62" rx="15" ry="18" fill="#f1e2cc"/><path d="M22 52 Q10 54 14 64" stroke="#4a3b33" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M28 46 Q16 34 30 30 Q42 30 40 44" stroke="#c89b5a" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="29" cy="60" r="3" fill="#1d1b26"/><circle cx="40" cy="60" r="3" fill="#1d1b26"/><circle cx="30" cy="59" r="1" fill="#fff"/><circle cx="41" cy="59" r="1" fill="#fff"/><ellipse cx="34" cy="72" rx="7" ry="5" fill="#e0c9a6"/><path d="M31 72 Q34 75 37 72" stroke="#4a3b33" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="24" cy="68" r="2.5" fill="#ff9fb0"/><circle cx="44" cy="68" r="2.5" fill="#ff9fb0"/><path d="M26 82 Q34 88 42 82" stroke="#1cb0f6" stroke-width="3" fill="none"/><circle cx="34" cy="88" r="3" fill="#ffc800"/>
+</svg>''';
+
   /// La pirogue Jàmm.
   static const pirogue = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 90">
 <path d="M60 16 L60 58" stroke="#6b4129" stroke-width="3"/>
@@ -106,6 +111,8 @@ class Chars {
     'doudou': doudou,
     'griot': doudou,
     'kocc': kocc,
+    'mouton': mouton,
+    'bouc': mouton,
     'jangalekat': kocc,
     'panthere': kocc,
     'pirogue': pirogue,

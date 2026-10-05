@@ -11,6 +11,11 @@ import 'admin_widgets.dart';
 import 'lesson_editor.dart';
 import 'moderation_screen.dart';
 import 'stats_screen.dart';
+import 'announce_screen.dart';
+import 'home_config_screen.dart';
+import 'profs_screen.dart';
+import 'students_screen.dart';
+import '../../services/auth_service.dart';
 
 /// Onglet « Gestion » du responsable : niveaux > matières > leçons.
 class AdminHome extends StatefulWidget {
@@ -25,8 +30,23 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
 
   @override
   Future<void> load() async {
-    final e = await ContentRepo.instance.exams();
+    var e = await ContentRepo.instance.exams();
+    final me = AuthService.instance.profile.value;
+    // Un prof ne voit que ses niveaux.
+    if (me != null && me.isProf && me.profExams.isNotEmpty) {
+      e = e.where((x) => me.profExams.contains(x.id)).toList();
+    }
     if (mounted) setState(() => _exams = e);
+  }
+
+  Widget _go(String label, IconData icon, Widget screen, {bool filled = false}) {
+    void onPressed() => Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: filled
+          ? FilledButton.icon(onPressed: onPressed, icon: Icon(icon), label: Text(label))
+          : OutlinedButton.icon(onPressed: onPressed, icon: Icon(icon), label: Text(label)),
+    );
   }
 
   Future<void> _addExam() async {
@@ -40,41 +60,33 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
   @override
   Widget build(BuildContext context) {
     final exams = _exams;
+    final me = AuthService.instance.profile.value!;
+    final admin = me.isAdmin;
+    final canEdit = admin || me.canEdit;
     return SafeArea(
       child: exams == null
           ? const Center(child: CircularProgressIndicator())
           : ListView(
               padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
               children: [
-                Text('Gestion du contenu', style: titleStyle(26)),
+                Text(admin ? 'Gestion' : 'Espace prof', style: titleStyle(26)),
                 const SizedBox(height: 6),
                 Text(
-                    'Ce que tu enregistres ici est publié pour les élèves. Sans connexion, '
-                    'l\'envoi se fait automatiquement dès le retour d\'internet.',
+                    admin
+                        ? 'Ce que tu enregistres ici est publié pour les élèves. Sans connexion, '
+                            'l\'envoi se fait automatiquement dès le retour d\'internet.'
+                        : 'Tu suis tes élèves, tu leur écris et tu fais des annonces dans tes matières.',
                     style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(height: 16),
-                FilledButton.icon(
-                  onPressed: () => Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => const StatsScreen())),
-                  icon: const Icon(Icons.bar_chart),
-                  label: const Text('Statistiques d\'utilisation'),
-                ),
-                const SizedBox(height: 10),
-                OutlinedButton.icon(
-                  onPressed: () => Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => const ModerationScreen())),
-                  icon: const Icon(Icons.forum_outlined),
-                  label: const Text('Questions des élèves'),
-                ),
-                const SizedBox(height: 10),
-                OutlinedButton.icon(
-                  onPressed: () => Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => const TutorLogsScreen())),
-                  icon: const Icon(Icons.psychology_alt_outlined),
-                  label: const Text('Questions posées à Kocc Barma'),
-                ),
-                const SectionTitle('Niveaux'),
-                if (exams.isEmpty)
+                _go(admin ? 'Élèves' : 'Mes élèves', Icons.groups_outlined, const StudentsScreen(), filled: true),
+                _go('Annonces', Icons.campaign_outlined, const AnnouncementsScreen()),
+                if (admin) _go('Accueil de l\'app', Icons.home_outlined, const HomeConfigScreen()),
+                if (admin) _go('Les profs', Icons.badge_outlined, const ProfsScreen()),
+                if (admin) _go('Statistiques d\'utilisation', Icons.bar_chart, const StatsScreen()),
+                _go('Questions des élèves', Icons.forum_outlined, const ModerationScreen()),
+                if (admin) _go('Questions posées à Kocc Barma', Icons.psychology_alt_outlined, const TutorLogsScreen()),
+                if (canEdit) const SectionTitle('Niveaux'),
+                if (canEdit && exams.isEmpty && admin)
                   EmptyState(
                     icon: Icons.school_outlined,
                     title: 'Aucun niveau',
@@ -87,21 +99,22 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                       child: const Text('Créer un niveau'),
                     ),
                   ),
+                if (canEdit)
                 for (var i = 0; i < exams.length; i++)
                   AdminRow(
                     title: exams[i].name,
                     onTap: () => Navigator.push(context,
                         MaterialPageRoute(builder: (_) => AdminExamScreen(exam: exams[i]))),
-                    onUp: i > 0 ? () => swapIn(context, 'exams', exams, i, i - 1) : null,
-                    onDown: i < exams.length - 1
+                    onUp: admin && i > 0 ? () => swapIn(context, 'exams', exams, i, i - 1) : null,
+                    onDown: admin && i < exams.length - 1
                         ? () => swapIn(context, 'exams', exams, i, i + 1)
                         : null,
-                    onEdit: () async {
+                    onEdit: !admin ? null : () async {
                       final n = await askText(context, 'Renommer le niveau', 'Nom',
                           initial: exams[i].name);
                       if (n != null) ContentRepo.instance.save('exams', exams[i].id, {'name': n});
                     },
-                    onDelete: () async {
+                    onDelete: !admin ? null : () async {
                       if (await confirm(context, 'Supprimer ${exams[i].name} ?',
                           'Le niveau et tout son contenu ne seront plus visibles par les élèves.',
                           ok: 'Supprimer')) {
@@ -110,6 +123,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                     },
                   ),
                 const SizedBox(height: 8),
+                if (admin)
                 OutlinedButton.icon(
                     onPressed: _addExam, icon: const Icon(Icons.add), label: const Text('Ajouter un niveau')),
               ],
@@ -128,10 +142,13 @@ class AdminExamScreen extends StatefulWidget {
 
 class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<AdminExamScreen> {
   List<Subject>? _subjects;
+  bool get _admin => AuthService.instance.profile.value?.isAdmin ?? false;
 
   @override
   Future<void> load() async {
-    final s = await ContentRepo.instance.subjects(widget.exam.id);
+    var s = await ContentRepo.instance.subjects(widget.exam.id);
+    final me = AuthService.instance.profile.value;
+    if (me != null && !me.isAdmin) s = s.where((x) => me.canEditSubject(x.name)).toList();
     if (mounted) setState(() => _subjects = s);
   }
 
@@ -180,8 +197,8 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
                     onDown: i < subjects.length - 1
                         ? () => swapIn(context, 'subjects', subjects, i, i + 1)
                         : null,
-                    onEdit: () => _edit(subjects[i]),
-                    onDelete: () async {
+                    onEdit: _admin ? () => _edit(subjects[i]) : null,
+                    onDelete: !_admin ? null : () async {
                       if (await confirm(context, 'Supprimer ${subjects[i].name} ?',
                           'La matière et ses leçons ne seront plus visibles par les élèves.',
                           ok: 'Supprimer')) {
@@ -190,6 +207,7 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
                     },
                   ),
                 const SizedBox(height: 8),
+                if (_admin)
                 OutlinedButton.icon(
                     onPressed: () => _edit(),
                     icon: const Icon(Icons.add),

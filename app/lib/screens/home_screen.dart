@@ -18,6 +18,10 @@ import '../services/engagement_service.dart';
 import 'admin/admin_home.dart';
 import 'profile_screen.dart';
 import 'progress_screen.dart';
+import 'sheep_screen.dart';
+import 'inbox_screen.dart';
+import '../services/home_config_service.dart';
+import '../services/push_service.dart';
 import 'subject_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,11 +42,19 @@ class _HomeScreenState extends State<HomeScreen> {
     if (p != null) StatsService.instance.recordActive(p);
     _checkUpdate();
     EngagementService.instance.newBadge.addListener(_onBadge);
+    PushService.instance.opened.addListener(_onPush);
+    if (p != null) PushService.instance.start(p);
+  }
+
+  void _onPush() {
+    if (!mounted) return;
+    Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen()));
   }
 
   @override
   void dispose() {
     EngagementService.instance.newBadge.removeListener(_onBadge);
+    PushService.instance.opened.removeListener(_onPush);
     super.dispose();
   }
 
@@ -70,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final profile = AuthService.instance.profile.value!;
-    final admin = profile.isAdmin;
+    final admin = profile.isStaff;
     final pages = <Widget>[
       const SubjectsTab(),
       const ProgressScreen(),
@@ -110,8 +122,9 @@ class SubjectsTab extends StatefulWidget {
 
 class _SubjectsTabState extends State<SubjectsTab> {
   late Future<_SubjectsData> _future;
-  late final String _welcome = Cheer.welcome(_firstName(), EngagementService.instance.streak);
-  late final (String, String, bool) _tip = _tips[DateTime.now().hour % _tips.length];
+  late String _welcome = Cheer.welcome(_firstName(), EngagementService.instance.streak);
+  late (String, String, bool) _tip = _tips[DateTime.now().hour % _tips.length];
+  HomeConfig _config = HomeConfig();
 
   static const _tips = <(String, String, bool)>[
     ('awa', 'Salut ! Une petite leçon aujourd\'hui ? Diambar nga, tu peux le faire !', true),
@@ -119,7 +132,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
     ('doudou', 'Mon tama est prêt 🥁 Fais 8/10 et je joue rien que pour toi !', true),
     ('kocc', 'C\'est moi, Kocc Barma ! J\'ai encore glissé sur une peau de banane… mais je suis là si tu as une question.', false),
     ('gainde', 'MIAOU ! … euh, je voulais dire ROAR ! Viens apprendre avec moi : comprendre nga bou bax !', true),
-    ('awa', 'Chaque trois leçons, un nouvel épisode de « Mon histoire » s\'ouvre. Va voir dans ta matière !', false),
+    ('awa', 'Toutes les 2 missions, un nouvel épisode de « Mon histoire » s\'ouvre. Va voir dans ta matière !', false),
   ];
 
   @override
@@ -160,7 +173,22 @@ class _SubjectsTabState extends State<SubjectsTab> {
     }
     final subjects = await repo.subjects(exam.id);
     final lessons = await repo.lessonsOfExam(exam.id);
+    _applyConfig(await HomeConfigService.instance.forExam(exam.id));
     return _SubjectsData(exams: exams, exam: exam, subjects: subjects, lessons: lessons);
+  }
+
+  /// Messages et bulles choisis par l'admin (sinon, ceux de l'app).
+  void _applyConfig(HomeConfig c) {
+    _config = c;
+    if (c.welcome.isNotEmpty) {
+      _welcome = HomeConfigService.fill(
+          HomeConfigService.pick(c.welcome), _firstName(), EngagementService.instance.streak);
+    }
+    if (c.tips.isNotEmpty) {
+      final t = HomeConfigService.pick(c.tips);
+      _tip = (t.id, HomeConfigService.fill(t.text, _firstName(), EngagementService.instance.streak),
+          DateTime.now().second.isEven);
+    }
   }
 
   Future<void> _refresh() async {
@@ -201,7 +229,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
                       ValueListenableBuilder(
                         valueListenable: EngagementService.instance.revision,
                         builder: (context, _, __) =>
-                            Chip2('🌱 ${EngagementService.instance.streak} j'),
+                            Chip2('🔥 ${EngagementService.instance.streak} j'),
                       ),
                     ]),
                     const SizedBox(height: 14),
@@ -228,13 +256,30 @@ class _SubjectsTabState extends State<SubjectsTab> {
                   children: [
                     const _SyncStatus(),
                     const SizedBox(height: 4),
+                    const InboxCard(),
+                    if (_config.show('banniere') && (_config.banner?.active ?? false))
+                      Container(
+                        margin: const EdgeInsets.only(bottom: 10),
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: JangColors.warningBg,
+                          border: Border.all(color: JangColors.ocre, width: 2),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: Text(_config.banner!.text,
+                            style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 15)),
+                      ),
                     CharacterSays(_tip.$1, _tip.$2, right: _tip.$3),
                     const SizedBox(height: 4),
                     if (data.exam != null) ...[
-                      const PlantCard(),
-                      const SizedBox(height: 10),
-                      const ReviewCard(),
-                      const SizedBox(height: 10),
+                      if (_config.show('mouton')) ...[
+                        const SheepCard(),
+                        const SizedBox(height: 10),
+                      ],
+                      if (_config.show('revisions')) ...[
+                        const ReviewCard(),
+                        const SizedBox(height: 10),
+                      ],
                     ],
                     if (data.exams.isEmpty)
                       EmptyState(
@@ -271,7 +316,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
                             ),
                           )),
                     ],
-                    if (data.exam != null) ...[
+                    if (data.exam != null && _config.show('objectif')) ...[
                       const SizedBox(height: 4),
                       const WeekGoalCard(),
                     ],

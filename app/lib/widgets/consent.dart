@@ -7,7 +7,7 @@ import '../theme.dart';
 Future<bool> ensureParentConsent(BuildContext context) async {
   final p = AuthService.instance.profile.value;
   if (p == null) return false;
-  if (p.parentConsent || p.isAdmin) return true;
+  if (p.parentConsent || p.isStaff) return true;
   final ok = await showDialog<bool>(
     context: context,
     builder: (c) => AlertDialog(

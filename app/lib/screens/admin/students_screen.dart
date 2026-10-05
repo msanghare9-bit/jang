@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../../services/auth_service.dart';
 import '../../services/discussion_service.dart';
+import '../../services/student_admin_service.dart';
 
 import '../../models.dart';
 import '../../services/content_repo.dart';
@@ -27,13 +29,63 @@ class _StudentsScreenState extends State<StudentsScreen> {
   late Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>> _future = _load();
   String _search = '';
   String _sort = 'activity';
+  String _filter = 'all';
+  final Set<String> _selected = {};
 
   Future<List<QueryDocumentSnapshot<Map<String, dynamic>>>> _load() async {
     final s = await FirebaseFirestore.instance
         .collection('users')
         .where('role', isEqualTo: 'student')
         .get(const GetOptions(source: Source.server));
-    return s.docs;
+    final me = AuthService.instance.profile.value;
+    // Un prof ne voit que les élèves de ses niveaux.
+    return s.docs.where((d) {
+      if (d.data()['deleted'] == true) return false;
+      if (me == null || me.isAdmin || me.profExams.isEmpty) return true;
+      return me.profExams.contains(d.data()['examId']);
+    }).toList();
+  }
+
+  bool _absent(Map<String, dynamic> m) {
+    final day = m['lastActiveDay'] as String?;
+    if (day == null) return true;
+    final d = DateTime.tryParse(day);
+    return d == null || DateTime.now().difference(d).inDays >= 7;
+  }
+
+  Future<void> _messageSelected() async {
+    final n = await composeMessage(context, _selected.toList(),
+        '${_selected.length} élève${_selected.length > 1 ? 's' : ''}');
+    if (n == null || !mounted) return;
+    showMessage(context, 'Message envoyé à $n élève${n > 1 ? 's' : ''}.');
+    setState(_selected.clear);
+  }
+
+  Future<void> _removeSelected(List<QueryDocumentSnapshot<Map<String, dynamic>>> all) async {
+    final names = all.where((d) => _selected.contains(d.id)).map((d) => '${d.data()['name']}').toList();
+    final label = names.length == 1 ? names.first : '${names.length} élèves';
+    final choice = await confirmRemoval(context, names.length == 1 ? names.first : label);
+    if (choice == null || !mounted) return;
+    var authOk = true;
+    for (final uid in _selected) {
+      if (choice == 'delete') {
+        authOk = await StudentAdminService.instance.delete(uid) && authOk;
+      } else {
+        await StudentAdminService.instance.setDisabled(uid, true);
+      }
+    }
+    if (!mounted) return;
+    showMessage(
+        context,
+        choice == 'disable'
+            ? 'Compte désactivé.'
+            : authOk
+                ? 'Élève supprimé.'
+                : 'Données effacées. Le compte de connexion sera supprimé quand le serveur sera configuré.');
+    setState(() {
+      _selected.clear();
+      _future = _load();
+    });
   }
 
   @override
@@ -58,11 +110,16 @@ class _StudentsScreenState extends State<StudentsScreen> {
           }
           if (!snap.hasData) return const Center(child: CircularProgressIndicator());
           final q = _search.trim().toLowerCase();
-          final list = snap.data!.where((d) {
-            if (q.isEmpty) return true;
+          final all = snap.data!;
+          final list = all.where((d) {
             final m = d.data();
+            if (_filter == 'absent' && (!_absent(m) || m['disabled'] == true)) return false;
+            if (_filter == 'disabled' && m['disabled'] != true) return false;
+            if (_filter == 'all' && m['disabled'] == true) return false;
+            if (q.isEmpty) return true;
             return '${m['name']} ${m['username']}'.toLowerCase().contains(q);
           }).toList();
+          final admin = AuthService.instance.profile.value?.isAdmin ?? false;
           int avg(Map<String, dynamic> m) {
             final n = _i(m['quizLessons']);
             return n == 0 ? -1 : (_i(m['sumBestPct']) / n).round();
@@ -79,9 +136,23 @@ class _StudentsScreenState extends State<StudentsScreen> {
                 return '${y['lastActiveDay'] ?? ''}'.compareTo('${x['lastActiveDay'] ?? ''}');
             }
           });
-          return ListView(
+          return Column(children: [
+            Expanded(child: ListView(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
             children: [
+              Wrap(spacing: 8, children: [
+                for (final e in const {
+                  'all': 'Tous',
+                  'absent': 'Absents 7 jours',
+                  'disabled': 'Désactivés',
+                }.entries)
+                  ChoiceChip(
+                    label: Text(e.value),
+                    selected: _filter == e.key,
+                    onSelected: (_) => setState(() => _filter = e.key),
+                  ),
+              ]),
+              const SizedBox(height: 6),
               TextField(
                 decoration: const InputDecoration(
                     labelText: 'Rechercher un élève', prefixIcon: Icon(Icons.search)),
@@ -102,10 +173,37 @@ class _StudentsScreenState extends State<StudentsScreen> {
               ]),
               const SizedBox(height: 6),
               Text('${list.length} élève${list.length > 1 ? 's' : ''}', style: t.bodySmall),
+              Text('Coche des élèves pour leur écrire ou les supprimer.', style: t.bodySmall),
               const SizedBox(height: 8),
               for (final d in list) _row(context, d),
             ],
-          );
+          )),
+            if (_selected.isNotEmpty)
+              SafeArea(
+                top: false,
+                child: Container(
+                  padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
+                  color: JangColors.noteBg,
+                  child: Row(children: [
+                    Expanded(
+                      child: FilledButton.icon(
+                        onPressed: _messageSelected,
+                        icon: const Icon(Icons.mail_outline),
+                        label: Text('Écrire (${_selected.length})'),
+                      ),
+                    ),
+                    if (admin) ...[
+                      const SizedBox(width: 8),
+                      OutlinedButton(
+                        onPressed: () => _removeSelected(all),
+                        style: OutlinedButton.styleFrom(foregroundColor: JangColors.errorDark),
+                        child: const Text('Supprimer'),
+                      ),
+                    ],
+                  ]),
+                ),
+              ),
+          ]);
         },
       ),
     );
@@ -121,7 +219,11 @@ class _StudentsScreenState extends State<StudentsScreen> {
       child: Card(
         child: ListTile(
           minVerticalPadding: 12,
-          title: Text('${m['name'] ?? ''}', style: t.titleSmall),
+          leading: Checkbox(
+            value: _selected.contains(d.id),
+            onChanged: (v) => setState(() => v == true ? _selected.add(d.id) : _selected.remove(d.id)),
+          ),
+          title: Text('${m['name'] ?? ''}${m['disabled'] == true ? ' (désactivé)' : ''}', style: t.titleSmall),
           subtitle: Text(
             '${m['username'] ?? ''} · dernière activité : ${_dayLabel(m['lastActiveDay'] as String?)}\n'
             '${_i(m['lessonsSeen'])} leçon(s) ouverte(s) · $n exercices · '
@@ -130,10 +232,11 @@ class _StudentsScreenState extends State<StudentsScreen> {
           ),
           isThreeLine: true,
           trailing: const Icon(Icons.chevron_right),
-          onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (_) => StudentDetailScreen(uid: d.id, data: m))),
+          onTap: () async {
+            await Navigator.push(
+                context, MaterialPageRoute(builder: (_) => StudentDetailScreen(uid: d.id, data: m)));
+            if (mounted) setState(() => _future = _load());
+          },
         ),
       ),
     );
@@ -153,6 +256,34 @@ class StudentDetailScreen extends StatefulWidget {
 class _StudentDetailScreenState extends State<StudentDetailScreen> {
   late final Future<(List<LessonProgress>, List<Subject>, List<Lesson>)> _future = _load();
   late bool _blocked = widget.data['blocked'] == true;
+  late bool _disabled = widget.data['disabled'] == true;
+
+  Future<void> _toggleDisabled() async {
+    final name = '${widget.data['name'] ?? 'cet élève'}';
+    final off = !_disabled;
+    if (!await confirm(context, off ? 'Désactiver $name ?' : 'Réactiver $name ?',
+        off ? 'Il ne pourra plus se connecter. Ses résultats sont gardés.' : 'Il pourra de nouveau se connecter.',
+        ok: off ? 'Désactiver' : 'Réactiver')) {
+      return;
+    }
+    await StudentAdminService.instance.setDisabled(widget.uid, off);
+    if (mounted) setState(() => _disabled = off);
+  }
+
+  Future<void> _delete() async {
+    final name = '${widget.data['name'] ?? 'Élève'}';
+    final choice = await confirmRemoval(context, name);
+    if (choice == null || !mounted) return;
+    if (choice == 'disable') {
+      await StudentAdminService.instance.setDisabled(widget.uid, true);
+      if (mounted) setState(() => _disabled = true);
+      return;
+    }
+    final ok = await StudentAdminService.instance.delete(widget.uid);
+    if (!mounted) return;
+    showMessage(context, ok ? 'Élève supprimé.' : 'Données effacées. Compte de connexion à supprimer quand le serveur sera configuré.');
+    Navigator.pop(context);
+  }
 
   Future<void> _toggleBlock() async {
     final name = '${widget.data['name'] ?? 'cet élève'}';
@@ -219,6 +350,30 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                   style: t.bodyMedium),
               Text('Exercices faits (toutes tentatives) : ${_i(m['quizzesTaken'])}', style: t.bodyMedium),
               const SizedBox(height: 10),
+              FilledButton.icon(
+                onPressed: () async {
+                  final n = await composeMessage(context, [widget.uid], '${m['name'] ?? 'l\'élève'}');
+                  if (n != null && context.mounted) showMessage(context, 'Message envoyé.');
+                },
+                icon: const Icon(Icons.mail_outline),
+                label: const Text('Envoyer un message'),
+              ),
+              if (AuthService.instance.profile.value?.isAdmin ?? false) ...[
+                const SizedBox(height: 6),
+                OutlinedButton.icon(
+                  onPressed: _toggleDisabled,
+                  icon: Icon(_disabled ? Icons.lock_open : Icons.person_off_outlined),
+                  label: Text(_disabled ? 'Réactiver le compte' : 'Désactiver le compte'),
+                ),
+                const SizedBox(height: 6),
+                OutlinedButton.icon(
+                  onPressed: _delete,
+                  style: OutlinedButton.styleFrom(foregroundColor: JangColors.errorDark),
+                  icon: const Icon(Icons.delete_outline),
+                  label: const Text('Supprimer l\'élève'),
+                ),
+              ],
+              const SizedBox(height: 6),
               OutlinedButton.icon(
                 onPressed: _toggleBlock,
                 icon: Icon(_blocked ? Icons.lock_open : Icons.block),

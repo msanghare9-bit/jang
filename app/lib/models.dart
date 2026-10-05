@@ -227,11 +227,25 @@ class UserProfile {
   final String uid;
   final String name;
   final String username;
-  final String role; // student | teacher | admin
+  final String role; // student | prof | admin
   final String examId;
   final bool parentConsent;
   final bool blocked;
   final List<String> badges;
+
+  /// Prof : matières (noms simplifiés, ex. « anglais ») et niveaux (identifiants) qu'il suit.
+  final List<String> profSubjects;
+  final List<String> profExams;
+
+  /// Prof : peut modifier les contenus de ses matières.
+  final bool canEdit;
+
+  /// Compte désactivé par l'admin : l'élève ne peut plus entrer.
+  final bool disabled;
+
+  /// Le prénom n'est pas montré aux autres élèves (comparaison des moutons).
+  final bool hideName;
+  final String sheepName;
   UserProfile({
     required this.uid,
     required this.name,
@@ -241,12 +255,38 @@ class UserProfile {
     this.parentConsent = false,
     this.blocked = false,
     this.badges = const [],
+    this.profSubjects = const [],
+    this.profExams = const [],
+    this.canEdit = false,
+    this.disabled = false,
+    this.hideName = false,
+    this.sheepName = '',
   });
 
   bool get isAdmin => role == 'admin';
+  bool get isProf => role == 'prof';
+
+  /// Admin ou prof : accès à l'onglet « Gestion ».
+  bool get isStaff => isAdmin || isProf;
+
+  /// Peut modifier les contenus de cette matière (nom de la matière).
+  bool canEditSubject(String subjectName) =>
+      isAdmin || (isProf && canEdit && profSubjects.contains(subjectKey(subjectName)));
+
+  /// Suit cette matière dans ce niveau (vide = tous les niveaux de ses matières).
+  bool follows(String subjectName, String examId) =>
+      isAdmin ||
+      (isProf &&
+          profSubjects.contains(subjectKey(subjectName)) &&
+          (profExams.isEmpty || profExams.contains(examId)));
 
   /// Nom affiché publiquement : prénom + initiale du nom (« Awa D. »).
   String get publicName => publicNameOf(name);
+
+  String get firstName {
+    final n = name.trim();
+    return n.isEmpty ? '' : n.split(RegExp(r'\s+')).first;
+  }
 
   static String publicNameOf(String full) {
     final parts = full.trim().split(RegExp(r'\s+')).where((p) => p.isNotEmpty).toList();
@@ -255,7 +295,8 @@ class UserProfile {
     return '${parts.first} ${parts.last[0].toUpperCase()}.';
   }
 
-  UserProfile copyWith({String? examId, bool? parentConsent}) => UserProfile(
+  UserProfile copyWith({String? examId, bool? parentConsent, bool? hideName, String? sheepName}) =>
+      UserProfile(
         uid: uid,
         name: name,
         username: username,
@@ -264,21 +305,55 @@ class UserProfile {
         parentConsent: parentConsent ?? this.parentConsent,
         blocked: blocked,
         badges: badges,
+        profSubjects: profSubjects,
+        profExams: profExams,
+        canEdit: canEdit,
+        disabled: disabled,
+        hideName: hideName ?? this.hideName,
+        sheepName: sheepName ?? this.sheepName,
       );
 
   factory UserProfile.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
+    List<String> list(dynamic v) => (v is List ? v : const []).whereType<String>().toList();
+    var role = _str(m['role'], 'student');
+    if (role == 'teacher') role = 'prof';
     return UserProfile(
       uid: d.id,
       name: _str(m['name']),
       username: _str(m['username']),
-      role: _str(m['role'], 'student'),
+      role: role,
       examId: _str(m['examId']),
       parentConsent: _bool(m['parentConsent']),
       blocked: _bool(m['blocked']),
-      badges: (m['badges'] is List ? m['badges'] as List : const []).whereType<String>().toList(),
+      badges: list(m['badges']),
+      profSubjects: list(m['profSubjects']),
+      profExams: list(m['profExams']),
+      canEdit: _bool(m['canEdit']),
+      disabled: _bool(m['disabled']),
+      hideName: _bool(m['hideName']),
+      sheepName: _str(m['sheepName']),
     );
   }
+}
+
+/// Clé simple d'une matière, pour comparer des noms écrits différemment
+/// (« Anglais », « anglais 6e », « English » → « anglais »).
+String subjectKey(String name) {
+  var n = name.toLowerCase().trim();
+  const from = 'àâäáãåçéèêëíìîïñóòôöõúùûüýÿ';
+  const to = 'aaaaaaceeeeiiiinooooouuuuyy';
+  final b = StringBuffer();
+  for (final ch in n.split('')) {
+    final i = from.indexOf(ch);
+    b.write(i >= 0 ? to[i] : ch);
+  }
+  n = b.toString();
+  if (n.contains('angl') || n.contains('english')) return 'anglais';
+  if (n.contains('franc')) return 'francais';
+  if (n.contains('math')) return 'maths';
+  if (n.contains('svt') || n.contains('vie et de la terre')) return 'svt';
+  return n.replaceAll(RegExp(r'[^a-z0-9]+'), '_').replaceAll(RegExp(r'^_+|_+$'), '');
 }
 
 class LessonProgress {
