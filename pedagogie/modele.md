@@ -83,6 +83,31 @@ J'observe → Je comprends → J'enseigne à Gaïndé → Gaïndé se trompe →
   qui retourne vers Gaïndé.
 - **« Je ne sais pas encore »** est un bouton valorisé : il appelle Jàngalekat, sans pénalité.
 
+## Les histoires : un épisode toutes les 2 missions
+
+Au collège, un **nouvel épisode** de l'histoire de la saison se débloque **toutes les
+2 missions** (avant, c'était toutes les 3 leçons). Avec environ 30 missions par an, une saison
+compte donc **environ 15 épisodes**.
+
+Chaque épisode doit être :
+
+- **Très drôle** : Gaïndé fait des bêtises, se trompe de mot, tombe, exagère ; Jàngalekat glisse
+  sur une peau de banane ; Modou est toujours en retard ; Awa garde son calme.
+- **Très simple** : 3 à 5 cases, des bulles courtes, des phrases en anglais que l'élève connaît
+  déjà, chacune avec son icône haut-parleur et sa traduction à la demande.
+- **En lien avec les 2 missions qu'on vient de faire** : l'épisode réutilise leurs expressions
+  dans une situation nouvelle et marrante. Pas de mot nouveau dans un épisode.
+
+Exemples (6e, unité 1) :
+
+| Après les missions… | Épisode |
+|---|---|
+| « dire bonjour à un ami » + « dire bonjour à un adulte » | Gaïndé dit « *Hi, buddy!* » au directeur et « *Good morning, Sir!* » à une chèvre. La chèvre répond « Bêêê ». |
+| « dire mon nom » + « épeler un mot » | Le prof demande à Gaïndé d'épeler son nom. Il épelle « M-A-N-G-O » parce qu'il a faim. |
+| « dire mon âge » + « répondre par oui ou par non » | Modou : « *Are you eleven?* » Gaïndé : « *No! I'm… one hundred!* » Il compte sur ses griffes et se trompe. |
+
+Pour la Seconde, la Première et la Terminale, on garde le rythme actuel (toutes les 3 leçons).
+
 ## Fin d'unité : réviser et s'exercer (format classique)
 
 Après les missions d'une unité, l'élève passe par un moment plus classique, comme dans
