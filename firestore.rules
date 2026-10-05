@@ -1,0 +1,95 @@
+rules_version = '2';
+
+// Règles Firestore de Jàng (version 2.0).
+// À coller dans la console Firebase : Firestore Database > Règles > Publier.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function me() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function role() { return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)) ? me().get('role', 'student') : ''; }
+    function isAdmin() { return role() == 'admin'; }
+    function isStaff() { return role() in ['admin', 'prof', 'teacher']; }
+    function canEdit() { return isAdmin() || (isStaff() && me().get('canEdit', false) == true); }
+    function isMe(uid) { return signedIn() && request.auth.uid == uid; }
+    // Champs qu'un élève ne peut pas changer lui-même.
+    function protectedFields() { return ['role', 'disabled', 'blocked', 'profSubjects', 'profExams', 'canEdit', 'deleted']; }
+    function keepsProtected() {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(protectedFields());
+    }
+
+    // ---------- Comptes ----------
+    match /users/{uid} {
+      allow read: if isMe(uid) || isStaff();
+      allow create: if isMe(uid) && request.resource.data.get('role', 'student') == 'student'
+                    && !request.resource.data.keys().hasAny(['disabled', 'canEdit', 'profSubjects', 'profExams']);
+      allow update: if (isMe(uid) && keepsProtected()) || isAdmin()
+                    || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['disabled', 'blocked']));
+      allow delete: if isAdmin();
+
+      match /progress/{id} {
+        allow read: if isMe(uid) || isStaff();
+        allow write: if isMe(uid);
+        allow delete: if isMe(uid) || isStaff();
+      }
+      match /missions/{id} {
+        allow read: if isMe(uid) || isStaff();
+        allow write: if isMe(uid);
+        allow delete: if isMe(uid) || isStaff();
+      }
+      // Messages des profs à un élève.
+      match /messages/{id} {
+        allow read: if isMe(uid) || isStaff();
+        allow create: if isStaff();
+        allow update: if isStaff()
+                      || (isMe(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt', 'reply', 'replyAt']));
+        allow delete: if isStaff();
+      }
+    }
+
+    // ---------- Contenus ----------
+    match /exams/{id} { allow read: if true; allow write: if isAdmin(); }
+    match /subjects/{id} { allow read: if true; allow write: if canEdit(); }
+    match /chapters/{id} { allow read: if true; allow write: if canEdit(); }
+    match /lessons/{id} { allow read: if true; allow write: if canEdit(); }
+    match /flashcards/{id} { allow read: if true; allow write: if canEdit(); }
+    match /media/{id} { allow read: if true; allow write: if canEdit(); }
+
+    // Accueil, contact, adresse du serveur de notifications.
+    match /config/{id} { allow read: if true; allow write: if isAdmin(); }
+
+    // ---------- Vie de la classe ----------
+    match /annonces/{id} {
+      allow read: if signedIn();
+      allow create, update, delete: if isStaff();
+      match /lus/{uid} {
+        allow read: if isStaff() || isMe(uid);
+        allow write: if isMe(uid);
+      }
+    }
+
+    // Moutons : prénom (ou caché), nom du mouton, total de la semaine.
+    match /moutons/{uid} {
+      allow read: if signedIn();
+      allow write: if isMe(uid);
+      allow delete: if isMe(uid) || isStaff();
+    }
+
+    match /comments/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.get('uid', request.auth.uid) == request.auth.uid;
+      allow update: if isStaff()
+                    || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reports', 'answered']));
+      allow delete: if isStaff() || (signedIn() && resource.data.get('uid', '') == request.auth.uid);
+    }
+
+    // ---------- Statistiques et journaux ----------
+    match /statsLessons/{id} { allow read: if isStaff(); allow write: if signedIn(); }
+    match /statsDays/{id} { allow read: if isStaff(); allow write: if signedIn(); }
+    match /tutorLogs/{id} { allow read, delete: if isStaff(); allow create: if signedIn(); }
+    match /journal/{id} { allow read: if isAdmin(); allow create: if isStaff(); }
+
+    // File d'attente des notifications de nuit : seul le serveur (compte de service) y touche.
+    match /pushQueue/{id} { allow read, write: if false; }
+  }
+}

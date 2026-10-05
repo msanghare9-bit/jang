@@ -340,7 +340,7 @@ class _WordsPhaseState extends State<_WordsPhase> {
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
           Text(m.wordsIntro.isEmpty ? 'Quels mots vont avec l\'image ?' : m.wordsIntro, style: titleStyle(22, weight: 800)),
           const SizedBox(height: 8),
-          _SceneBox(background: m.scene, actors: m.sceneActors.take(2).toList(), objects: m.objects),
+          _SceneBox(background: m.scene, actors: m.sceneActors.take(3).toList(), objects: m.objects),
           const SizedBox(height: 12),
           Wrap(spacing: 8, runSpacing: 8, children: [
             for (var i = 0; i < m.words.length; i++)
