@@ -79,6 +79,26 @@ J'observe → Je comprends → J'enseigne à Gaïndé → Gaïndé se trompe →
   qui retourne vers Gaïndé.
 - **« Je ne sais pas encore »** est un bouton valorisé : il appelle Jàngalekat, sans pénalité.
 
+## Fin d'unité : réviser et s'exercer (format classique)
+
+Après les missions d'une unité, l'élève passe par un moment plus classique, comme dans
+les versions 1.8 et 1.9 de l'app :
+
+1. **La fiche de révision** : toute l'unité sur une page. Les expressions rangées par
+   fonction (une ligne par mission), les mots en anglais, français et wolof, et un encadré
+   « Attention aux pièges ». On peut tout écouter.
+2. **Les cartes de révision** : recto, verso, puis « Je savais » ou « À revoir ». Les cartes
+   reviennent selon la révision espacée (1, 3, 7 puis 14 jours).
+3. **Les exercices** : une série d'environ 10 questions sur l'unité (choix, phrase à compléter,
+   mots à remettre dans l'ordre, traduction, association). Chaque bonne réponse fait avancer la
+   pirogue de Modou. Chaque réponse est suivie d'une courte explication.
+4. **Le résultat** : la note, la « belle pêche », la fête des personnages, les erreurs envoyées
+   dans « Corriger mes erreurs », et parfois un nouvel épisode de l'histoire.
+5. **La production de l'unité.**
+
+Ici, une note sur 10 est affichée : c'est un entraînement, pas une évaluation. Les
+« Je sais… » restent l'outil principal pour suivre les progrès.
+
 ## Parler, écrire ou les deux : l'élève choisit
 
 Quand l'élève doit produire, il choisit comment il répond :

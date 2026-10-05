@@ -20,7 +20,8 @@ règles : ils sont appris **en bloc, dans des expressions**, au moment où une f
   est indicatif.
 - **4 à 7 missions par unité**, soit environ **30 missions par an**. **Une mission = une seule
   chose** : un seul « Je sais… », une seule famille d'expressions.
-- Chaque unité se termine par **une production** que l'élève choisit de faire à l'oral,
+- Chaque unité se termine par **une fiche de révision, des cartes de révision et des exercices
+  classiques** (la pirogue de Modou), puis par **une production** que l'élève choisit de faire à l'oral,
   à l'écrit ou les deux.
 - **Progression en spirale** : les mêmes fonctions reviennent d'une année à l'autre, avec des
   expressions plus riches. Chaque classe commence par une **mission d'accueil** qui réutilise
