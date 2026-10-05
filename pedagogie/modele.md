@@ -99,6 +99,23 @@ les versions 1.8 et 1.9 de l'app :
 Ici, une note sur 10 est affichée : c'est un entraînement, pas une évaluation. Les
 « Je sais… » restent l'outil principal pour suivre les progrès.
 
+## Un français très simple
+
+Beaucoup d'élèves ne comprennent pas bien le français. Tout le français que l'élève lit dans
+l'app (consignes, aides de Jàngalekat, corrections, boutons, « Je sais… ») doit être **très simple**.
+
+- **Phrases courtes** : une idée par phrase, 10 mots au plus si possible.
+- **Mots de tous les jours** : « dire bonjour » et pas « saluer », « dire au revoir » et pas
+  « prendre congé », « dire les lettres » et pas « épeler », « je regarde » et pas « j'observe ».
+- **Pas de mots de prof** : pas de « fonction », « expression », « production », « palier »,
+  « réviser les acquis », ni de mots de grammaire.
+- **Tutoiement et présent** : « Écoute Awa. », « Touche un mot. », « À toi ! ».
+- **Montrer plutôt qu'expliquer** : une image, un exemple, la phrase qu'on écoute.
+- **Le wolof aide** quand le français ne suffit pas (traduction des mots, aide de Jàngalekat).
+
+Les documents pour les profs (ce dossier `pedagogie/`) peuvent garder les mots techniques.
+Mais les « Je sais… » des syllabus seront réécrits en français simple avant d'aller dans l'app.
+
 ## Écouter : chaque mot et chaque phrase en anglais se prononce
 
 Partout dans l'app, **chaque mot et chaque phrase en anglais** a son **icône haut-parleur**.
