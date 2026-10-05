@@ -21,20 +21,20 @@ nouveau), 4 cases, chaque bulle en anglais avec son haut-parleur et sa traductio
 | Case | Décor | Qui | Bulles (anglais · français) | Ce qu'on voit |
 |---|---|---|---|---|
 | 1 | cour | Gaïndé (saute) | Gaïndé : *Hi! Hi! Hi! Hi!* · Salut ! Salut ! Salut ! Salut ! | Gaïndé saute partout et dit « Hi! » à un arbre, à un ballon, à son ombre. |
-| 2 | cour | Gaïndé, Kocc | Gaïndé : *Hi, Kocc! How are you?* · Salut, Kocc ! Ça va ? — Kocc : *Hmm… Good morning, Gaïndé.* · Hmm… Bonjour, Gaïndé. | Kocc lève un sourcil : on ne dit pas « Hi! » à son prof. |
-| 3 | cour | Awa, Gaïndé, Kocc | Awa (tout bas) : *Say: Good morning, Sir!* · Dis : Bonjour, Monsieur ! — Gaïndé : *Good morning, Sir!* · Bonjour, Monsieur ! — Kocc : *I'm fine, thank you!* · Je vais bien, merci ! | Kocc sourit. Gaïndé est très fier de lui. |
+| 2 | cour | Gaïndé, Kocc Barma | Gaïndé : *Hi, Kocc Barma! How are you?* · Salut, Kocc Barma ! Ça va ? — Kocc Barma : *Hmm… Good morning, Gaïndé.* · Hmm… Bonjour, Gaïndé. | Kocc Barma lève un sourcil : on ne dit pas « Hi! » à son prof. |
+| 3 | cour | Awa, Gaïndé, Kocc Barma | Awa (tout bas) : *Say: Good morning, Sir!* · Dis : Bonjour, Monsieur ! — Gaïndé : *Good morning, Sir!* · Bonjour, Monsieur ! — Kocc Barma : *I'm fine, thank you!* · Je vais bien, merci ! | Kocc Barma sourit. Gaïndé est très fier de lui. |
 | 4 | cour | Gaïndé, bouc, Modou (danse) | Gaïndé (il salue un bouc) : *Good morning, Sir!* · Bonjour, Monsieur ! — Le bouc : *Bêêê!* · Bêêê ! — Modou : *Ha ha ha!* · Ha ha ha ! | Gaïndé fait une grande révérence à un bouc. Modou est mort de rire. |
 
 **Mots de l'épisode** : *Hi! · How are you? · Good morning, Sir! · I'm fine, thank you.*
 
 ## Épisode 2 : M-A-N-G-O
 
-*En classe. Kocc fait l'appel. Gaïndé n'a pas mangé ce matin…*
+*En classe. Kocc Barma fait l'appel. Gaïndé n'a pas mangé ce matin…*
 
 | Case | Décor | Qui | Bulles (anglais · français) | Ce qu'on voit |
 |---|---|---|---|---|
-| 1 | classe | Kocc, Gaïndé | Kocc : *What's your name?* · Comment tu t'appelles ? — Gaïndé : *My name is Gaïndé!* · Je m'appelle Gaïndé ! | Gaïndé se lève, très sérieux. |
-| 2 | classe | Kocc, Gaïndé | Kocc : *How do you spell it?* · Ça s'écrit comment ? — Gaïndé : *Hmm…* · Hmm… | Le ventre de Gaïndé gargouille : « Grrrooouuu ». |
+| 1 | classe | Kocc Barma, Gaïndé | Kocc Barma : *What's your name?* · Comment tu t'appelles ? — Gaïndé : *My name is Gaïndé!* · Je m'appelle Gaïndé ! | Gaïndé se lève, très sérieux. |
+| 2 | classe | Kocc Barma, Gaïndé | Kocc Barma : *How do you spell it?* · Ça s'écrit comment ? — Gaïndé : *Hmm…* · Hmm… | Le ventre de Gaïndé gargouille : « Grrrooouuu ». |
 | 3 | classe | Gaïndé (saute), Awa | Gaïndé : *M… A… N… G… O!* · M… A… N… G… O ! — Awa : *No, Gaïndé! G-A-I-N-D-E!* · Non, Gaïndé ! G-A-I-N-D-E ! | Gaïndé a épelé « mango » (la mangue). Il bave un peu. |
 | 4 | classe | Modou, Gaïndé (saute) | Modou (en retard, une mangue à la main) : *Hello!* · Bonjour ! — Gaïndé (à la mangue) : *Nice to meet you!* · Enchanté ! | Gaïndé serre la main… de la mangue. Toute la classe rit. |
 
@@ -51,7 +51,7 @@ nouveau), 4 cases, chaque bulle en anglais avec son haut-parleur et sa traductio
 | 1 | cour | Modou, Gaïndé | Modou : *Are you a pupil, Gaïndé?* · Tu es élève, Gaïndé ? — Gaïndé : *Yes, I am!* · Oui ! | Gaïndé gonfle la poitrine, avec son sac sur le dos. |
 | 2 | cour | Modou, Gaïndé | Modou : *How old are you?* · Tu as quel âge ? — Gaïndé : *I'm… one, two, three, four…* · J'ai… un, deux, trois, quatre… | Gaïndé compte sur ses griffes. |
 | 3 | cour | Gaïndé, Awa | Gaïndé : *…nineteen, twenty! Twenty… and twenty… and twenty!* · …dix-neuf, vingt ! Vingt… et vingt… et vingt ! — Awa : *No, Gaïndé! You are two!* · Non, Gaïndé ! Tu as deux ans ! | Gaïndé n'a plus de griffes pour compter. Il compte les doigts de Modou, puis les orteils d'Awa. |
-| 4 | cour | Gaïndé, Kocc, Doudou | Gaïndé : *Two?! Am I a pupil?* · Deux ans ?! Je suis élève ? — Kocc : *Yes, you are!* · Oui ! — Gaïndé : *Yes, I am!* · Oui, je suis élève ! | Doudou joue du tama. Gaïndé danse. |
+| 4 | cour | Gaïndé, Kocc Barma, Doudou | Gaïndé : *Two?! Am I a pupil?* · Deux ans ?! Je suis élève ? — Kocc Barma : *Yes, you are!* · Oui ! — Gaïndé : *Yes, I am!* · Oui, je suis élève ! | Doudou joue du tama. Gaïndé danse. |
 
 **Mots de l'épisode** : *Are you a pupil? · Yes, I am. · How old are you? · I'm… · one → twenty*
 
@@ -63,8 +63,8 @@ nouveau), 4 cases, chaque bulle en anglais avec son haut-parleur et sa traductio
 |---|---|---|---|---|
 | 1 | cour | Awa, Modou, Gaïndé | Awa : *Goodbye, Gaïndé! See you tomorrow!* · Au revoir, Gaïndé ! À demain ! — Modou : *Bye!* · Salut ! | Awa et Modou partent avec leur sac. |
 | 2 | cour | Gaïndé (balance) | Gaïndé : *Bye! … Bye! … Bye! … Bye!* · Salut ! … Salut ! … Salut ! … Salut ! | Gaïndé fait au revoir de la main pendant des heures. Le soleil se couche. Il ne bouge pas. |
-| 3 | nuit | Kocc, Gaïndé | Kocc (avec une lampe) : *Gaïndé?! Good evening!* · Gaïndé ?! Bonsoir ! — Gaïndé : *Good evening! I'm fine, thank you!* · Bonsoir ! Je vais bien, merci ! | Gaïndé répond même à une question qu'on ne lui a pas posée. |
-| 4 | nuit | Gaïndé, Kocc | Kocc : *Good night, Gaïndé. See you tomorrow!* · Bonne nuit, Gaïndé. À demain ! — Gaïndé : *Zzz…* | Gaïndé s'est endormi sur le banc, son sac comme oreiller. Kocc le couvre avec un pagne. |
+| 3 | nuit | Kocc Barma, Gaïndé | Kocc Barma (avec une lampe) : *Gaïndé?! Good evening!* · Gaïndé ?! Bonsoir ! — Gaïndé : *Good evening! I'm fine, thank you!* · Bonsoir ! Je vais bien, merci ! | Gaïndé répond même à une question qu'on ne lui a pas posée. |
+| 4 | nuit | Gaïndé, Kocc Barma | Kocc Barma : *Good night, Gaïndé. See you tomorrow!* · Bonne nuit, Gaïndé. À demain ! — Gaïndé : *Zzz…* | Gaïndé s'est endormi sur le banc, son sac comme oreiller. Kocc Barma le couvre avec un pagne. |
 
 **Mots de l'épisode** : *Goodbye! · Bye! · See you tomorrow! · Good evening! · Good night!*
 
@@ -75,5 +75,5 @@ nouveau), 4 cases, chaque bulle en anglais avec son haut-parleur et sa traductio
 - **Un nouveau personnage : le bouc** (épisode 1). Il servira aussi en 4e (« Kayar, ses
   chèvres et son vent »). Il faut le dessiner en SVG comme les autres personnages.
 - Le reste utilise ce qui existe déjà : décors `cour`, `classe`, `nuit` ; personnages Gaïndé,
-  Awa, Modou, Doudou, Kocc ; animations `saute`, `danse`, `balance`.
+  Awa, Modou, Doudou, Kocc Barma ; animations `saute`, `danse`, `balance`.
 - Les épisodes sont aussi écrits au format de l'app dans [6e-unite1.json](6e-unite1.json).

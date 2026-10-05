@@ -28,7 +28,7 @@ envoient des **notifications push**. Tout fonctionne **gratuitement**. Elles val
 ### Côté élève
 
 - À l'ouverture de l'app, une carte **« Message de ton prof »** s'affiche sur l'accueil,
-  apportée par Kocc.
+  apportée par Kocc Barma.
 - Le message reste dans **Moi › Mes messages**.
 - L'élève peut répondre en un geste : « Merci ! », « J'ai une question » (il écrit sa
   question), ou un message vocal.

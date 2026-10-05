@@ -11,7 +11,7 @@
         {"fond": "cour", "persos": [{"id": "gainde", "x": 0.35, "taille": 110, "anim": "saute"}],
          "bulles": [{"en": "Hi! Hi! Hi! Hi!", "fr": "Salut ! Salut ! Salut ! Salut !", "x": 0.05, "y": 0.05}]},
         {"fond": "cour", "persos": [{"id": "gainde", "x": 0.05, "taille": 95, "anim": "saute"}, {"id": "kocc", "x": 0.6, "taille": 100}],
-         "bulles": [{"en": "Hi, Kocc! How are you?", "fr": "Salut, Kocc ! Ça va ?", "x": 0.02, "y": 0.04},
+         "bulles": [{"en": "Hi, Kocc Barma! How are you?", "fr": "Salut, Kocc Barma ! Ça va ?", "x": 0.02, "y": 0.04},
                     {"en": "Hmm… Good morning, Gaïndé.", "fr": "Hmm… Bonjour, Gaïndé.", "x": 0.45, "y": 0.35}]},
         {"fond": "cour", "persos": [{"id": "awa", "x": 0.02, "taille": 90}, {"id": "gainde", "x": 0.35, "taille": 90}, {"id": "kocc", "x": 0.68, "taille": 90}],
          "bulles": [{"en": "Say: Good morning, Sir!", "fr": "Dis : Bonjour, Monsieur !", "x": 0.02, "y": 0.03},
