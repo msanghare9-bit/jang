@@ -216,7 +216,8 @@ qu'il pense voir sur la photo.
 
 - **L'élève** : acteur, auteur, enseignant.
 - **Gaïndé** : son élève. Il se trompe, l'élève corrige.
-- **Jàngalekat** : la tutrice qui guide par des questions.
+- **Jàngalekat** : une jeune prof sénégalaise (moussor jaune, lunettes, livre bleu). Elle
+  guide par des questions. Son nom veut dire « celle qui enseigne » en wolof.
 - **Awa, Modou, Doudou** : partenaires de conversation (jeux de rôle).
 - **Les autres élèves, le prof, la famille** : défis à deux, mur de productions,
   interviews en famille.
