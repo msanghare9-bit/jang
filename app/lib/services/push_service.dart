@@ -44,6 +44,10 @@ class PushService {
     try {
       final fm = FirebaseMessaging.instance;
       await fm.requestPermission();
+      await _local
+          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+          ?.createNotificationChannel(const AndroidNotificationChannel('messages', 'Messages et annonces',
+              description: 'Messages de ton prof et annonces', importance: Importance.high));
       final token = await fm.getToken();
       if (token != null) {
         unawaited(FirebaseFirestore.instance

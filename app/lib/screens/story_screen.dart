@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../services/speech_service.dart';
+
 import '../models.dart';
 import '../services/story_service.dart';
 import '../theme.dart';
@@ -239,6 +241,12 @@ class _StoryScreenState extends State<StoryScreen> {
 }
 
 /// Un épisode : une petite bande dessinée.
+/// Couleurs (ciel, sol) d'un décor d'histoire : cour, classe, marché, nuit…
+(Color, Color) storyColors(String name) => EpisodeScreen._bg(name);
+
+/// Animation d'un personnage à partir de son nom (« danse », « saute »…).
+Moves storyMoves(String name) => EpisodeScreen._moves(name);
+
 class EpisodeScreen extends StatelessWidget {
   final StorySeason season;
   final int index;
@@ -339,7 +347,15 @@ class EpisodeScreen extends StatelessWidget {
                   ),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
                     if (b.en.isNotEmpty)
-                      Text(b.en, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13.5)),
+                      GestureDetector(
+                        onTap: () => Speech.instance.say(b.en),
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          Flexible(
+                              child: Text(b.en, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 13.5))),
+                          const SizedBox(width: 4),
+                          const Icon(Icons.volume_up_rounded, size: 16, color: JangColors.primaryDark),
+                        ]),
+                      ),
                     if (b.fr.isNotEmpty)
                       Text(b.fr,
                           style: const TextStyle(color: JangColors.textSecondary, fontSize: 12, fontStyle: FontStyle.italic)),

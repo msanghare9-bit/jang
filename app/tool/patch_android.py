@@ -68,6 +68,16 @@ if "TTS_SERVICE" not in m:
         m = m.replace("<queries>", "<queries>\n        " + tts, 1)
     else:
         m = m.replace("</manifest>", "    <queries>" + tts + "</queries>\n</manifest>", 1)
+# Micro (l'élève répond en parlant) : permission et moteur de reconnaissance vocale (Android 11+).
+if "RECORD_AUDIO" not in m:
+    m = m.replace("<application", '<uses-permission android:name="android.permission.RECORD_AUDIO"/>\n    '
+                  '<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>\n    <application', 1)
+if "RecognitionService" not in m:
+    stt = '<intent><action android:name="android.speech.RecognitionService" /></intent>'
+    if "<queries>" in m:
+        m = m.replace("<queries>", "<queries>\n        " + stt, 1)
+    else:
+        m = m.replace("</manifest>", "    <queries>" + stt + "</queries>\n</manifest>", 1)
 # Rappels quotidiens : permission d'afficher des notifications et récepteurs de programmation.
 if "POST_NOTIFICATIONS" not in m:
     m = m.replace("<application", '<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>\n    '

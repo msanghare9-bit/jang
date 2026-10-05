@@ -1,0 +1,16 @@
+name = "jang-push"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+FIREBASE_PROJECT_ID = "jang-ea5f3"
+# Clé publique de l'app (la même que dans app/lib/firebase_options.dart).
+FIREBASE_API_KEY = "AIzaSyCbal9_LtoEZt0jm8KedzzwYb58KmxNE50"
+
+# Annonces programmées et notifications retenues la nuit : toutes les 5 minutes.
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Secret à ajouter (jamais dans ce fichier) :
+#   npx wrangler secret put SERVICE_ACCOUNT
+# puis coller tout le contenu du fichier JSON du compte de service Firebase.

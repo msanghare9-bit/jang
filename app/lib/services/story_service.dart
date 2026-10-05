@@ -9,6 +9,7 @@ import '../models.dart';
 import 'auth_service.dart';
 import 'content_repo.dart';
 import 'pack_service.dart';
+import 'mission_service.dart';
 import 'progress_repo.dart';
 
 /// Un personnage placé dans une case de bande dessinée.
@@ -54,19 +55,19 @@ class StorySeason {
 
   String get key => '${subject}_$level'.toLowerCase().replaceAll(' ', '');
 
-  /// Leçons terminées nécessaires pour ouvrir l'épisode [i] (0 = premier) :
-  /// un épisode toutes les 3 leçons, le dernier à la fin du niveau.
-  int required(int i, int totalLessons) {
+  /// Leçons (ou missions) terminées nécessaires pour ouvrir l'épisode [i] (0 = premier) :
+  /// un épisode toutes les [per] leçons (3) ou missions (2), le dernier à la fin du niveau.
+  int required(int i, int totalLessons, {int per = 3}) {
     if (i == episodes.length - 1) return totalLessons;
-    final r = 3 * (i + 1);
+    final r = per * (i + 1);
     return r > totalLessons ? totalLessons : r;
   }
 
-  int unlocked(int done, int totalLessons) {
+  int unlocked(int done, int totalLessons, {int per = 3}) {
     if (totalLessons == 0) return 0;
     var n = 0;
     for (var i = 0; i < episodes.length; i++) {
-      if (done >= required(i, totalLessons)) n = i + 1;
+      if (done >= required(i, totalLessons, per: per)) n = i + 1;
     }
     return n;
   }
@@ -77,14 +78,17 @@ class StoryState {
   final StorySeason season;
   final int done;
   final int total;
-  StoryState(this.season, this.done, this.total);
-  int get unlocked => season.unlocked(done, total);
+
+  /// Leçons (3) ou missions (2) par épisode.
+  final int per;
+  StoryState(this.season, this.done, this.total, {this.per = 3});
+  int get unlocked => season.unlocked(done, total, per: per);
 
   /// Leçons qu'il reste à terminer pour ouvrir le prochain épisode (0 si tout est ouvert).
   int get lessonsToNext {
     final u = unlocked;
     if (u >= season.episodes.length) return 0;
-    return season.required(u, total) - done;
+    return season.required(u, total, per: per) - done;
   }
 }
 
@@ -197,6 +201,11 @@ class StoryService {
       if (season != null) break;
     }
     if (season == null) return null;
+    // Parcours en missions (collège) : un épisode toutes les 2 missions.
+    final course = await MissionService.instance.courseFor(subject, examId);
+    if (course != null) {
+      return StoryState(season, MissionService.instance.doneCount(course), course.missions.length, per: 2);
+    }
     final list = lessons ??
         await ContentRepo.instance.lessonsOfSubject(subject.id, examId: examId.isEmpty ? null : examId);
     final withQuiz = list.where((l) => l.quiz.isNotEmpty).toList();

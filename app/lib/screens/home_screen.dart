@@ -20,6 +20,8 @@ import 'profile_screen.dart';
 import 'progress_screen.dart';
 import 'sheep_screen.dart';
 import 'inbox_screen.dart';
+import 'mission/course_screen.dart';
+import '../services/mission_service.dart';
 import '../services/home_config_service.dart';
 import '../services/push_service.dart';
 import 'subject_screen.dart';
@@ -401,8 +403,18 @@ class _SubjectCard extends StatelessWidget {
         final total = lessons.length;
         final pct = total == 0 ? 0.0 : done / total;
         return GestureDetector(
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (_) => SubjectScreen(subject: subject))),
+          onTap: () async {
+            // Collège : la matière s'ouvre sur le parcours en missions, s'il existe.
+            final examId = AuthService.instance.profile.value?.examId ?? '';
+            final course = await MissionService.instance.courseFor(subject, examId);
+            if (!context.mounted) return;
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => course == null
+                        ? SubjectScreen(subject: subject)
+                        : CourseScreen(course: course, subject: subject)));
+          },
           child: Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
