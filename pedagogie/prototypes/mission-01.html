@@ -1,0 +1,546 @@
+<title>Jàng · Mission 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap">
+<style>
+/* Mise en page : un écran de téléphone centré. En haut les 6 temps de la mission,
+   au milieu la scène (cour du collège, personnages), en bas le panneau d'action. */
+:root {
+  --bg: #f4f8fb;
+  --surface: #ffffff;
+  --fg: #3c3c3c;
+  --muted: #6f7378;
+  --line: #e3e7ea;
+  --blue: #1cb0f6; --blue-d: #1899d6; --note: #ddf4ff;
+  --green: #58cc02; --green-d: #58a700; --ok-bg: #d7ffb8;
+  --red: #ff4b4b; --red-d: #ea2b2b; --err-bg: #ffdfe0;
+  --gold: #ffc800; --gold-d: #e5a500; --warn-bg: #fff4d6;
+  --violet: #8b5cf6; --violet-bg: #f1ebff;
+  --sky: #cdeefd; --sand: #f3d9a4; --sand-d: #e2bf7c;
+  --font-title: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Nunito", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12171c; --surface: #1c232a; --fg: #eef1f3; --muted: #a3acb4; --line: #2e3841;
+    --note: #123247; --ok-bg: #1f3a10; --err-bg: #47191b; --warn-bg: #3e3210; --violet-bg: #2b2245;
+    --sky: #1d3a52; --sand: #6b5532; --sand-d: #57442a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12171c; --surface: #1c232a; --fg: #eef1f3; --muted: #a3acb4; --line: #2e3841;
+  --note: #123247; --ok-bg: #1f3a10; --err-bg: #47191b; --warn-bg: #3e3210; --violet-bg: #2b2245;
+  --sky: #1d3a52; --sand: #6b5532; --sand-d: #57442a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.45;
+  padding-inline: 16px; padding-block: 16px 32px;
+}
+.app { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+h1, h2, h3 { font-family: var(--font-title); margin: 0; line-height: 1.15; text-wrap: balance; }
+
+/* En-tête */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.top h1 { font-size: 20px; font-weight: 800; }
+.top .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.why-btn { border: 2px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 999px;
+  font: 700 13px var(--font-body); padding: 4px 12px; cursor: pointer; white-space: nowrap; }
+.why-btn[aria-pressed="true"] { border-color: var(--violet); color: var(--violet); }
+
+.steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.steps div { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.steps i { display: block; height: 8px; border-radius: 4px; background: var(--line); }
+.steps span { font-size: 10.5px; font-weight: 700; color: var(--muted); text-align: center; line-height: 1.1; }
+.steps .done i { background: var(--green); }
+.steps .now i { background: var(--blue); }
+.steps .now span { color: var(--blue-d); }
+.why { background: var(--violet-bg); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+.why b { color: var(--violet); }
+
+/* Scène */
+.scene { position: relative; border-radius: 20px; overflow: hidden; background: var(--sky);
+  border: 2px solid var(--line); min-height: 270px; display: flex; flex-direction: column; }
+.scene .decor { position: absolute; inset: auto 0 0 0; height: 46%; background: var(--sand);
+  border-top: 4px solid var(--sand-d); }
+.scene .baobab { position: absolute; right: -10px; bottom: 34%; width: 120px; opacity: .55; }
+.bubbles { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 8px; padding: 12px; }
+.cast { position: relative; z-index: 1; margin-top: auto; display: flex; justify-content: space-around; align-items: flex-end;
+  padding: 0 8px 6px; min-height: 120px; }
+.char { width: 104px; max-width: 30%; transition: transform .3s; }
+.char svg { width: 100%; height: auto; display: block; }
+.char.small { width: 80px; }
+.char.peek { transform: translateX(18px) rotate(-8deg); }
+.char.hop { animation: hop .6s ease-in-out infinite alternate; }
+.char.sad { animation: shake .4s ease-in-out 2; }
+.char.moon { animation: moon 1.6s ease-in-out infinite; }
+@keyframes hop { to { transform: translateY(-10px); } }
+@keyframes shake { 25% { transform: translateX(-6px) rotate(-4deg); } 75% { transform: translateX(6px) rotate(4deg); } }
+@keyframes moon { 0% { transform: translateX(14px) scaleX(-1); } 50% { transform: translateX(-14px) scaleX(-1); }
+  51% { transform: translateX(-14px) scaleX(1); } 100% { transform: translateX(14px) scaleX(1); } }
+
+.bubble { background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 8px 12px;
+  max-width: 92%; display: flex; gap: 8px; align-items: flex-start; animation: pop .25s ease-out; }
+.bubble.right { align-self: flex-end; }
+.bubble .who { font: 800 12px var(--font-body); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.bubble .en { font-weight: 800; font-size: 17px; }
+.bubble .fr { font-size: 14px; color: var(--muted); font-style: italic; }
+.bubble.jang { border-color: var(--violet); background: var(--violet-bg); }
+.bubble.jang .who { color: var(--violet); }
+.bubble.gainde { border-color: var(--gold); background: var(--warn-bg); }
+.bubble.gainde .who { color: var(--gold-d); }
+.bubble .txt { min-width: 0; flex: 1; }
+@keyframes pop { from { transform: scale(.92); opacity: .4; } }
+.say { flex: none; border: 0; background: var(--note); color: var(--blue-d); border-radius: 50%; width: 32px; height: 32px;
+  cursor: pointer; font-size: 15px; }
+.tr { border: 0; background: none; color: var(--blue-d); font: 700 13px var(--font-body); cursor: pointer; padding: 2px 0; }
+
+/* Panneau d'action */
+.panel { background: var(--surface); border: 2px solid var(--line); border-radius: 20px; padding: 16px;
+  display: flex; flex-direction: column; gap: 12px; }
+.panel h2 { font-size: 20px; font-weight: 800; }
+.panel p { margin: 0; }
+.muted { color: var(--muted); font-size: 14px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.col { display: flex; flex-direction: column; gap: 8px; }
+
+.btn { font: 800 16px var(--font-body); letter-spacing: .02em; border-radius: 14px; padding: 12px 18px; cursor: pointer;
+  border: 2px solid transparent; border-bottom-width: 5px; transition: transform .05s; }
+.btn:active { transform: translateY(2px); border-bottom-width: 3px; }
+.btn.main { background: var(--green); color: #fff; border-color: var(--green-d); width: 100%; text-transform: uppercase; }
+.btn.main:disabled { background: var(--line); border-color: var(--line); color: var(--muted); cursor: default; }
+.btn.soft { background: var(--surface); color: var(--violet); border-color: var(--violet); }
+.btn.ghost { background: transparent; color: var(--muted); border: 2px dashed var(--line); font-size: 14px; border-bottom-width: 2px; }
+
+.opt { text-align: left; background: var(--surface); color: var(--fg); border: 2px solid var(--line); border-bottom-width: 4px;
+  border-radius: 14px; padding: 12px 14px; font: 700 16px var(--font-body); cursor: pointer; }
+.opt:hover { border-color: var(--blue); }
+.opt.good { background: var(--ok-bg); border-color: var(--green); }
+.opt.bad { background: var(--err-bg); border-color: var(--red); }
+
+.chip { border: 2px solid var(--line); border-bottom-width: 4px; background: var(--surface); color: var(--fg);
+  border-radius: 12px; padding: 8px 12px; font: 800 16px var(--font-body); cursor: pointer; }
+.chip.on { background: var(--note); border-color: var(--blue); color: var(--blue-d); }
+.chip:disabled { visibility: hidden; }
+.slot { min-height: 54px; border-bottom: 2px solid var(--line); padding-bottom: 6px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+input[type=text] { width: 100%; font: 700 18px var(--font-body); color: var(--fg); background: var(--bg);
+  border: 2px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+input[type=text]:focus { outline: none; border-color: var(--blue); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.help { border: 2px solid var(--violet); background: var(--violet-bg); border-radius: 14px; padding: 10px 12px;
+  display: flex; gap: 10px; align-items: flex-start; }
+.help .face { width: 44px; flex: none; }
+.help .tier { font: 800 11px var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--violet); }
+.help p { font-size: 15px; }
+.feedback { border-radius: 14px; padding: 10px 12px; font-weight: 700; }
+.feedback.ok { background: var(--ok-bg); color: var(--green-d); }
+.feedback.ko { background: var(--err-bg); color: var(--red-d); }
+.feedback.info { background: var(--warn-bg); }
+
+/* Fin de mission */
+.card { border-radius: 18px; padding: 16px; background: var(--note); border: 2px solid var(--blue); display: flex; gap: 12px; align-items: center; }
+.card .face { width: 72px; flex: none; }
+.card .big { font: 800 22px var(--font-title); }
+.cando { display: flex; flex-direction: column; gap: 6px; }
+.cando .lbl { font-weight: 800; }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.seg button { border: 2px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 10px; padding: 8px 4px;
+  font: 700 13px var(--font-body); cursor: pointer; }
+.seg button[aria-pressed="true"] { border-color: var(--green); background: var(--ok-bg); }
+.words { display: flex; flex-wrap: wrap; gap: 6px; }
+.words span { background: var(--warn-bg); border-radius: 8px; padding: 4px 10px; font-weight: 800; }
+.note { font-size: 13px; color: var(--muted); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .char.hop, .char.sad, .char.moon, .bubble { animation: none; }
+}
+</style>
+
+<div class="app">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Anglais 6e · Un lionceau à l'école</div>
+      <h1>Mission 1 : Gaïndé ne sait pas dire son nom</h1>
+    </div>
+    <button class="why-btn" id="why-btn" aria-pressed="false">Pourquoi ?</button>
+  </header>
+  <nav class="steps" id="steps" aria-label="Étapes de la mission"></nav>
+  <div class="why" id="why" hidden></div>
+  <section class="scene" id="scene" aria-live="polite">
+    <div class="decor"></div>
+    <svg class="baobab" viewBox="0 0 120 140" aria-hidden="true">
+      <path d="M50 140 L54 70 Q40 60 22 64 M54 74 Q60 50 50 30 M60 72 Q78 52 98 56 M62 70 L66 140Z" stroke="#7b5a3a" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M48 140 Q52 100 54 70 L66 70 Q68 100 72 140Z" fill="#8a6644"/>
+      <circle cx="22" cy="58" r="14" fill="#6aa84f"/><circle cx="50" cy="26" r="16" fill="#6aa84f"/><circle cx="98" cy="50" r="15" fill="#6aa84f"/>
+    </svg>
+    <div class="bubbles" id="bubbles"></div>
+    <div class="cast" id="cast"></div>
+  </section>
+  <section class="panel" id="panel"></section>
+  <p class="note">Maquette de travail. Dans l'app, l'élève parlera au micro au lieu d'écrire.</p>
+</div>
+
+<script>
+const CHARS = {"lion": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 130 130\"> <ellipse cx=\"65\" cy=\"124\" rx=\"32\" ry=\"5\" fill=\"#000\" fill-opacity=\".1\"/> <path d=\"M98 98 Q122 92 118 70\" stroke=\"#d58a2a\" stroke-width=\"6\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"118\" cy=\"68\" r=\"6\" fill=\"#8a4b14\"/> <ellipse cx=\"65\" cy=\"100\" rx=\"30\" ry=\"22\" fill=\"#f1a83c\"/> <circle cx=\"65\" cy=\"55\" r=\"38\" fill=\"#8a4b14\"/><circle cx=\"65\" cy=\"58\" r=\"29\" fill=\"#f1a83c\"/> <circle cx=\"44\" cy=\"34\" r=\"8\" fill=\"#f1a83c\"/><circle cx=\"86\" cy=\"34\" r=\"8\" fill=\"#f1a83c\"/> <circle cx=\"55\" cy=\"55\" r=\"5\" fill=\"#1d1b26\"/><circle cx=\"75\" cy=\"55\" r=\"5\" fill=\"#1d1b26\"/><circle cx=\"56.5\" cy=\"53.5\" r=\"1.6\" fill=\"#fff\"/><circle cx=\"76.5\" cy=\"53.5\" r=\"1.6\" fill=\"#fff\"/> <ellipse cx=\"65\" cy=\"70\" rx=\"12\" ry=\"9\" fill=\"#fde3b5\"/><path d=\"M61 66 L69 66 L65 70Z\" fill=\"#5a2f0c\"/> <path d=\"M59 74 Q65 79 71 74\" stroke=\"#5a2f0c\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/> <path d=\"M38 86 Q65 100 92 86 L88 96 Q65 106 42 96Z\" fill=\"#d93a2b\"/> <circle cx=\"50\" cy=\"94\" r=\"2.5\" fill=\"#f6b81c\"/><circle cx=\"65\" cy=\"98\" r=\"2.5\" fill=\"#f6b81c\"/><circle cx=\"80\" cy=\"94\" r=\"2.5\" fill=\"#f6b81c\"/> </svg>", "awa": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 130 130\"> <ellipse cx=\"65\" cy=\"125\" rx=\"30\" ry=\"5\" fill=\"#000\" fill-opacity=\".1\"/> <path d=\"M40 125 L46 84 Q65 76 84 84 L90 125Z\" fill=\"#1f9d55\"/> <path d=\"M48 100 L54 90 L60 100Z M66 100 L72 90 L78 100Z M52 116 L58 106 L64 116Z M70 116 L76 106 L82 116Z\" fill=\"#f6b81c\"/> <path d=\"M44 88 Q28 76 30 60\" stroke=\"#7a4a2c\" stroke-width=\"7\" stroke-linecap=\"round\" fill=\"none\"/> <path d=\"M86 88 Q98 100 94 112\" stroke=\"#7a4a2c\" stroke-width=\"7\" stroke-linecap=\"round\" fill=\"none\"/> <rect x=\"58\" y=\"70\" width=\"14\" height=\"12\" fill=\"#7a4a2c\"/> <circle cx=\"65\" cy=\"54\" r=\"22\" fill=\"#7a4a2c\"/> <path d=\"M40 46 Q42 14 66 14 Q92 14 92 44 Q80 30 66 32 Q50 32 40 46Z\" fill=\"#f6b81c\"/> <circle cx=\"52\" cy=\"26\" r=\"3.5\" fill=\"#d93a2b\"/><circle cx=\"66\" cy=\"20\" r=\"3.5\" fill=\"#d93a2b\"/><circle cx=\"80\" cy=\"26\" r=\"3.5\" fill=\"#d93a2b\"/> <path d=\"M82 18 Q100 8 98 28 Q92 22 86 26Z\" fill=\"#d93a2b\"/> <circle cx=\"57\" cy=\"54\" r=\"3.2\" fill=\"#1d1b26\"/><circle cx=\"73\" cy=\"54\" r=\"3.2\" fill=\"#1d1b26\"/> <path d=\"M58 64 Q65 70 72 64\" stroke=\"#fff\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/> <circle cx=\"44\" cy=\"58\" r=\"2.5\" fill=\"#f6b81c\"/><circle cx=\"86\" cy=\"58\" r=\"2.5\" fill=\"#f6b81c\"/> </svg>", "modou": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 130 130\"> <ellipse cx=\"65\" cy=\"125\" rx=\"30\" ry=\"5\" fill=\"#000\" fill-opacity=\".1\"/> <path d=\"M38 125 L44 82 Q65 74 86 82 L92 125Z\" fill=\"#2f7de1\"/> <rect x=\"78\" y=\"84\" width=\"20\" height=\"28\" rx=\"5\" fill=\"#d93a2b\"/> <rect x=\"58\" y=\"68\" width=\"14\" height=\"12\" fill=\"#5c3720\"/> <circle cx=\"65\" cy=\"52\" r=\"22\" fill=\"#5c3720\"/> <path d=\"M43 46 Q45 26 65 26 Q85 26 87 46 Q76 36 65 37 Q54 36 43 46Z\" fill=\"#1d1b26\"/> <circle cx=\"57\" cy=\"52\" r=\"3.2\" fill=\"#1d1b26\"/><circle cx=\"73\" cy=\"52\" r=\"3.2\" fill=\"#1d1b26\"/> <path d=\"M57 62 Q65 69 73 62\" stroke=\"#fff\" stroke-width=\"2.5\" fill=\"none\" stroke-linecap=\"round\"/> <path d=\"M44 88 Q30 70 36 56\" stroke=\"#5c3720\" stroke-width=\"7\" stroke-linecap=\"round\" fill=\"none\"/><circle cx=\"36\" cy=\"54\" r=\"5\" fill=\"#f6b81c\"/> </svg>", "panthere": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 130 130\"> <ellipse cx=\"65\" cy=\"124\" rx=\"30\" ry=\"5\" fill=\"#000\" fill-opacity=\".12\"/> <path d=\"M92 108 Q120 104 116 80 Q114 72 108 76\" stroke=\"#26232e\" stroke-width=\"7\" fill=\"none\" stroke-linecap=\"round\"/> <ellipse cx=\"66\" cy=\"102\" rx=\"28\" ry=\"18\" fill=\"#26232e\"/> <ellipse cx=\"50\" cy=\"118\" rx=\"9\" ry=\"6\" fill=\"#26232e\"/><ellipse cx=\"82\" cy=\"118\" rx=\"9\" ry=\"6\" fill=\"#26232e\"/> <path d=\"M38 34 L34 14 L52 26Z\" fill=\"#26232e\"/><path d=\"M88 34 L92 14 L74 26Z\" fill=\"#26232e\"/> <path d=\"M40 30 L38 20 L48 27Z\" fill=\"#8b5cf6\"/><path d=\"M86 30 L88 20 L78 27Z\" fill=\"#8b5cf6\"/> <ellipse cx=\"63\" cy=\"54\" rx=\"30\" ry=\"27\" fill=\"#26232e\"/> <ellipse cx=\"63\" cy=\"70\" rx=\"15\" ry=\"10\" fill=\"#3a3644\"/> <circle cx=\"51\" cy=\"50\" r=\"10\" fill=\"#f6d33c\"/><circle cx=\"75\" cy=\"50\" r=\"10\" fill=\"#f6d33c\"/> <circle cx=\"53\" cy=\"51\" r=\"4.5\" fill=\"#1d1b26\"/><circle cx=\"77\" cy=\"51\" r=\"4.5\" fill=\"#1d1b26\"/> <circle cx=\"54.5\" cy=\"49\" r=\"1.5\" fill=\"#fff\"/><circle cx=\"78.5\" cy=\"49\" r=\"1.5\" fill=\"#fff\"/> <path d=\"M59 64 L67 64 L63 69Z\" fill=\"#e48aa0\"/> <path d=\"M56 72 Q63 78 70 72\" stroke=\"#f2ede4\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/> <path d=\"M38 66 L24 62 M38 70 L24 72 M88 66 L102 62 M88 70 L102 72\" stroke=\"#8a8697\" stroke-width=\"1.5\"/> <g transform=\"rotate(-10 35 88)\"><rect x=\"24\" y=\"80\" width=\"22\" height=\"16\" rx=\"2\" fill=\"#fff\" stroke=\"#bbbbbb\"/> <path d=\"M28 85 L42 85 M28 89 L40 89 M28 93 L38 93\" stroke=\"#2f7de1\" stroke-width=\"1.2\"/></g> <ellipse cx=\"38\" cy=\"96\" rx=\"7\" ry=\"5\" fill=\"#26232e\"/> </svg>"};
+const NAMES = { lion: 'Gaïndé', awa: 'Awa', modou: 'Modou', panthere: 'Jàngalekat' };
+
+const STEPS = [
+  { id: 'warm', label: 'Je parle déjà', why: "<b>Partir de ce que l'élève sait.</b> Personne n'arrive vide : les mots anglais du quotidien prouvent à l'élève qu'il a déjà un savoir. Aucune erreur possible ici." },
+  { id: 'observe', label: "J'observe", why: "<b>Observer avant de produire.</b> L'élève entend une vraie situation de communication, avec le son et la traduction à la demande. Personne ne lui fait de cours." },
+  { id: 'understand', label: 'Je comprends', why: "<b>Vérifier la compréhension par des questions.</b> En cas d'erreur, Jàngalekat ne donne pas la réponse : elle rejoue la scène." },
+  { id: 'teach', label: "J'enseigne", why: "<b>L'élève enseigne à Gaïndé.</b> L'aide diminue : choisir, ordonner, compléter, puis écrire seul. Deux réussites du premier coup = on saute une marche. Si l'élève bloque, Jàngalekat aide par paliers, puis l'élève retourne vers Gaïndé." },
+  { id: 'real', label: 'Pour de vrai', why: "<b>Communiquer pour de vrai.</b> L'élève dit SON nom à Gaïndé, puis à Awa. On juge le sens d'abord : « I'm Fatou » est accepté." },
+  { id: 'keep', label: 'Je garde', why: "<b>L'élève juge ses progrès.</b> Une production à garder, des « Je sais… » qu'il évalue lui-même, et son carnet de mots. Pas de note." },
+];
+
+const SCENE = [
+  { who: 'awa', en: 'Hello! My name is Awa.', fr: "Bonjour ! Je m'appelle Awa." },
+  { who: 'modou', en: 'Hi! My name is Modou.', fr: "Salut ! Je m'appelle Modou.", right: true },
+  { who: 'awa', en: 'Nice to meet you, Modou!', fr: 'Enchantée, Modou !' },
+];
+
+const TEACH = [
+  { kind: 'choice', gainde: "J'hésite… Je dis laquelle ?", options: ['My name Gaïndé.', 'My name is Gaïndé.'], answer: 1,
+    hints: ["Écoute bien : Awa a dit « My name… » et ensuite ? Il y a un petit mot entre « name » et le prénom.",
+      { replay: 0, text: 'Écoute encore Awa :' },
+      "Moi, je dis : « My name is Jàngalekat. » Tu vois le petit mot « is » ?",
+      "En anglais, il faut toujours « is » : My (mon) + name (nom) + is (est) + Gaïndé." ] },
+  { kind: 'order', gainde: '« Name my is Gaïndé » ? C\'est bien ça ?', chips: ['name', 'is', 'My', 'Gaïndé'], answer: 'my name is gainde',
+    hints: ['Quel mot Awa a-t-elle dit en premier, juste après « Hello » ?',
+      { replay: 0, text: "Écoute l'ordre des mots :" },
+      "Moi, je dis : « My name is Jàngalekat. » Et Gaïndé ?",
+      "En wolof, on dit « Maa ngi tudd Gaïndé ». En anglais : My (mon) + name (nom) + is (est) + Gaïndé." ] },
+  { kind: 'fill', gainde: '« Hello! My ___ is Gaïndé. » Il me manque un mot !', before: 'Hello! My', after: 'is Gaïndé.', accept: ['name'],
+    hints: ['Quel mot veut dire « nom » dans la phrase de Modou ?',
+      { replay: 1, text: 'Écoute Modou :' },
+      "Moi, je dis : « My name is Jàngalekat. » Le mot qui manque est entre « My » et « is ».",
+      "« Nom » se dit « name ». Écris : name." ] },
+  { kind: 'free', gainde: 'Je veux dire bonjour à Awa ! Comment je dis ?',
+    test: (n) => /\b(hello|hi)\b/.test(n),
+    hints: ["Qu'est-ce qu'Awa et Modou ont dit tout au début de la scène ?",
+      { replay: 0, text: 'Écoute le début :' },
+      "Awa dit « Hello », Modou dit « Hi ». Les deux veulent dire bonjour.",
+      "Écris « Hello Awa! » ou « Hi Awa! »." ] },
+];
+
+const WARM_WORDS = ['football', 'phone', 'taxi', 'OK', 'goal', 'bus', 'internet', 'hello', 'sandwich', 'match'];
+const CARNET = ['Hello', 'Hi', 'My name is…', "What's your name?", 'Nice to meet you!'];
+const CANDO = ['Je sais dire bonjour.', 'Je sais dire mon nom.', 'Je sais demander le nom de quelqu\'un.'];
+const TIERS = ['Une question', 'Écoute encore', 'Un modèle', 'Une explication'];
+
+const S = { step: 0, teach: 0, errors: 0, streak: 0, firstTry: true, name: '', bubbleCount: 0, cando: {}, skipped: false };
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’`]/g, "'")
+  .replace(/[^a-z' ]/g, ' ').replace(/\s+/g, ' ').trim();
+
+function speak(text) {
+  try {
+    const u = new SpeechSynthesisUtterance(text.replace(/Gaïndé/g, 'Gaïndé'));
+    u.lang = 'en-GB'; u.rate = 0.85;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  } catch (e) { /* pas de voix sur cet appareil */ }
+}
+
+function renderSteps() {
+  $('steps').innerHTML = STEPS.map((s, i) =>
+    `<div class="${i < S.step ? 'done' : i === S.step ? 'now' : ''}"><i></i><span>${s.label}</span></div>`).join('');
+  $('why').innerHTML = STEPS[S.step].why;
+}
+
+function cast(list) {
+  $('cast').innerHTML = list.map((c) => `<div class="char ${c.cls || ''}" data-id="${c.id}" aria-label="${NAMES[c.id]}">${CHARS[c.id]}</div>`).join('');
+}
+function anim(id, cls) {
+  const el = document.querySelector(`.char[data-id="${id}"]`);
+  if (!el) return;
+  el.classList.remove('hop', 'sad', 'moon');
+  void el.offsetWidth;
+  if (cls) el.classList.add(cls);
+}
+
+function bubble({ who, en, fr, right, plain }) {
+  const css = who === 'panthere' ? 'jang' : who === 'lion' ? 'gainde' : '';
+  const id = 'b' + (S.bubbleCount++);
+  const html = `<div class="bubble ${css} ${right ? 'right' : ''}">
+    <div class="txt"><div class="who">${NAMES[who]}</div>
+      ${plain ? `<div>${plain}</div>` : `<div class="en">${esc(en)}</div>`}
+      ${fr ? `<div class="fr" id="${id}-fr" hidden>${esc(fr)}</div><button class="tr" data-tr="${id}">Voir en français</button>` : ''}
+    </div>
+    ${en ? `<button class="say" data-say="${esc(en)}" aria-label="Écouter">🔊</button>` : ''}
+  </div>`;
+  $('bubbles').insertAdjacentHTML('beforeend', html);
+}
+function clearBubbles() { $('bubbles').innerHTML = ''; }
+
+document.addEventListener('click', (e) => {
+  const say = e.target.closest('[data-say]');
+  if (say) speak(say.dataset.say);
+  const tr = e.target.closest('[data-tr]');
+  if (tr) { const f = $(tr.dataset.tr + '-fr'); f.hidden = !f.hidden; tr.textContent = f.hidden ? 'Voir en français' : 'Cacher'; }
+});
+
+$('why-btn').addEventListener('click', () => {
+  const w = $('why'); w.hidden = !w.hidden;
+  $('why-btn').setAttribute('aria-pressed', String(!w.hidden));
+});
+
+function go(step) { S.step = step; renderSteps(); [warm, observe, understand, teach, real, keep][step](); }
+
+/* 0. Je parle déjà anglais */
+function warm() {
+  clearBubbles(); cast([{ id: 'panthere', cls: 'hop' }, { id: 'lion', cls: 'small peek' }]);
+  bubble({ who: 'panthere', plain: "Avant de commencer : <b>tu parles déjà anglais</b>, sans le savoir ! Touche les mots que tu connais." });
+  const picked = new Set();
+  $('panel').innerHTML = `<h2>Quels mots tu connais ?</h2>
+    <div class="row" id="warm">${WARM_WORDS.map((w) => `<button class="chip" data-w="${w}" aria-pressed="false">${w}</button>`).join('')}</div>
+    <button class="btn main" id="next">C'est tout !</button>`;
+  $('warm').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-w]'); if (!b) return;
+    const on = !picked.has(b.dataset.w);
+    on ? picked.add(b.dataset.w) : picked.delete(b.dataset.w);
+    b.classList.toggle('on', on); b.setAttribute('aria-pressed', String(on));
+    if (on) speak(b.dataset.w);
+  });
+  $('next').onclick = () => {
+    const n = picked.size;
+    clearBubbles();
+    bubble({ who: 'panthere', plain: n
+      ? `Tu connais déjà <b>${n} mot${n > 1 ? 's' : ''} anglais</b> ! Tu n'es pas vide : on part de là.`
+      : "Pas grave ! <b>Taxi</b>, <b>bus</b>, <b>OK</b>… tu les dis déjà en wolof et en français. Tu vois ? Tu connais déjà de l'anglais." });
+    anim('panthere', 'hop');
+    $('panel').innerHTML = `<p>Maintenant, regardons ce qui se passe dans la cour du collège…</p>
+      <button class="btn main" id="next">On y va</button>`;
+    $('next').onclick = () => go(1);
+  };
+}
+
+/* 1. J'observe */
+function observe() {
+  clearBubbles(); cast([{ id: 'awa' }, { id: 'modou' }, { id: 'lion', cls: 'small peek' }]);
+  let i = 0;
+  const panel = () => {
+    $('panel').innerHTML = i < SCENE.length
+      ? `<h2>Écoute la scène</h2><p class="muted">Touche 🔊 pour réécouter, et « Voir en français » si tu as besoin.</p>
+         <button class="btn main" id="next">${i === 0 ? 'Écouter' : 'Suite'}</button>`
+      : `<p class="muted">Tu peux réécouter chaque phrase autant que tu veux.</p><button class="btn main" id="next">Continuer</button>`;
+    $('next').onclick = () => {
+      if (i < SCENE.length) {
+        bubble(SCENE[i]); speak(SCENE[i].en); anim(SCENE[i].who, 'hop'); i++;
+        if (i === SCENE.length) setTimeout(() => {
+          bubble({ who: 'lion', plain: "Ils disent quoi ?? 😳 Moi aussi je veux dire mon nom…" });
+          anim('lion', 'sad');
+        }, 600);
+        panel();
+      } else go(2);
+    };
+  };
+  panel();
+}
+
+/* 2. Je comprends */
+function understand() {
+  const QS = [
+    { q: "Qu'est-ce qu'Awa a dit juste avant son prénom ?", opts: ['Nice to meet', 'My name is', 'Hello'], a: 1, replay: 0 },
+    { q: 'Awa dit « Hello », Modou dit « Hi ». Ça veut dire quoi ?', opts: ['Au revoir', 'Merci', 'Bonjour / Salut'], a: 2, replay: 1 },
+  ];
+  let k = 0;
+  const ask = () => {
+    const Q = QS[k];
+    clearBubbles(); cast([{ id: 'panthere' }, { id: 'lion', cls: 'small' }]);
+    bubble({ who: 'panthere', plain: Q.q });
+    $('panel').innerHTML = `<h2>Question ${k + 1} sur ${QS.length}</h2>
+      <div class="col" id="opts">${Q.opts.map((o, j) => `<button class="opt" data-j="${j}">${esc(o)}</button>`).join('')}</div>
+      <div id="fb"></div>`;
+    $('opts').onclick = (e) => {
+      const b = e.target.closest('[data-j]'); if (!b) return;
+      if (+b.dataset.j === Q.a) {
+        b.classList.add('good'); anim('panthere', 'hop');
+        $('fb').innerHTML = `<div class="feedback ok">Oui ! Bien écouté.</div><button class="btn main" id="next" style="margin-top:12px">Continuer</button>`;
+        $('opts').onclick = null;
+        $('next').onclick = () => { k++; k < QS.length ? ask() : go(3); };
+      } else {
+        b.classList.add('bad'); b.disabled = true;
+        const line = SCENE[Q.replay];
+        $('fb').innerHTML = `<div class="help"><div class="face">${CHARS.panthere}</div><div>
+          <div class="tier">Écoute encore</div><p>Pas tout à fait. Écoute encore ${NAMES[line.who]} :</p>
+          <p><b>${esc(line.en)}</b> <button class="say" data-say="${esc(line.en)}" aria-label="Écouter">🔊</button></p></div></div>`;
+        speak(line.en);
+      }
+    };
+  };
+  ask();
+}
+
+/* 3. J'enseigne à Gaïndé */
+function teach() {
+  S.teach = 0; S.streak = 0; startTeach();
+}
+function startTeach() {
+  S.errors = 0; S.firstTry = true;
+  const T = TEACH[S.teach];
+  clearBubbles(); cast([{ id: 'lion', cls: 'hop' }, { id: 'panthere', cls: 'small' }]);
+  if (S.skipped) { bubble({ who: 'panthere', plain: 'Tu vas vite ! <b>On saute une marche.</b>' }); S.skipped = false; }
+  bubble({ who: 'lion', plain: esc(T.gainde) });
+  const head = `<h2>Aide Gaïndé</h2><p class="muted">Marche ${S.teach + 1} sur ${TEACH.length} · ${['Choisir', 'Remettre dans l\'ordre', 'Compléter', 'Tout seul'][S.teach]}</p>`;
+  const foot = `<div id="help"></div><div id="fb"></div>
+    <button class="btn ghost" id="idk">Je ne sais pas encore</button>`;
+  let body = '';
+  if (T.kind === 'choice') {
+    body = `<div class="col" id="opts">${T.options.map((o, j) => `<button class="opt" data-j="${j}">${esc(o)}</button>`).join('')}</div>`;
+  } else if (T.kind === 'order') {
+    body = `<div class="slot" id="slot" aria-label="Ta phrase"></div>
+      <div class="row" id="pool">${T.chips.map((c, j) => `<button class="chip" data-j="${j}">${c}</button>`).join('')}</div>
+      <button class="btn main" id="check" disabled>Vérifier</button>`;
+  } else {
+    body = `${T.kind === 'fill' ? `<p style="font-weight:800;font-size:18px">${esc(T.before)} <span style="color:var(--blue-d)">___</span> ${esc(T.after)}</p>` : ''}
+      <input type="text" id="ans" autocomplete="off" placeholder="${T.kind === 'fill' ? 'Le mot qui manque' : 'Écris en anglais'}" aria-label="Ta réponse">
+      <button class="btn main" id="check">Vérifier</button>`;
+  }
+  $('panel').innerHTML = head + body + foot;
+
+  if (T.kind === 'choice') {
+    $('opts').onclick = (e) => { const b = e.target.closest('[data-j]'); if (!b) return;
+      if (+b.dataset.j === T.answer) { b.classList.add('good'); success(); } else { b.classList.add('bad'); setTimeout(() => b.classList.remove('bad'), 700); fail(); } };
+  } else if (T.kind === 'order') {
+    const seq = [];
+    const upd = () => { $('slot').innerHTML = seq.map((j, p) => `<button class="chip on" data-p="${p}">${T.chips[j]}</button>`).join('');
+      $('check').disabled = seq.length !== T.chips.length; };
+    $('pool').onclick = (e) => { const b = e.target.closest('[data-j]'); if (!b) return; seq.push(+b.dataset.j); b.disabled = true; upd(); };
+    $('slot').onclick = (e) => { const b = e.target.closest('[data-p]'); if (!b) return; const j = seq.splice(+b.dataset.p, 1)[0];
+      $('pool').querySelector(`[data-j="${j}"]`).disabled = false; upd(); };
+    $('check').onclick = () => { const s = norm(seq.map((j) => T.chips[j]).join(' '));
+      if (s === T.answer) success(); else { fail(); seq.length = 0; $('pool').querySelectorAll('button').forEach((b) => (b.disabled = false)); upd(); } };
+  } else {
+    const check = () => { const v = norm($('ans').value); if (!v) return;
+      const ok = T.kind === 'fill' ? T.accept.includes(v) : T.test(v);
+      if (ok) success(); else { fail(); $('ans').select(); } };
+    $('check').onclick = check;
+    $('ans').addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+  }
+  $('idk').onclick = () => { S.firstTry = false; showHelp(true); };
+}
+function showHelp(asked) {
+  const T = TEACH[S.teach];
+  S.errors = Math.min(S.errors + 1, 4);
+  const h = T.hints[S.errors - 1];
+  let content;
+  if (typeof h === 'object') {
+    const line = SCENE[h.replay];
+    content = `<p>${h.text}</p><p><b>${esc(line.en)}</b> <button class="say" data-say="${esc(line.en)}" aria-label="Écouter">🔊</button></p>`;
+    speak(line.en);
+  } else content = `<p>${esc(h)}</p>`;
+  $('help').innerHTML = `<div class="help"><div class="face">${CHARS.panthere}</div><div>
+    <div class="tier">${asked && S.errors === 1 ? 'On cherche ensemble · ' : ''}${TIERS[S.errors - 1]}</div>${content}
+    <p class="muted">Maintenant, à toi d'aider Gaïndé.</p></div></div>`;
+  anim('panthere', 'hop');
+}
+function fail() {
+  S.firstTry = false;
+  const lines = ['Grrr… j\'ai l\'air bête là ! 😅', 'Hmm, Awa me regarde bizarrement…', 'Oups ! Tu es sûr ?', 'Aide-moi encore, s\'il te plaît !'];
+  clearBubbles(); bubble({ who: 'lion', plain: lines[Math.min(S.errors, 3)] }); anim('lion', 'sad');
+  showHelp(false);
+}
+function success() {
+  const T = TEACH[S.teach];
+  S.streak = S.firstTry ? S.streak + 1 : 0;
+  clearBubbles();
+  const said = T.kind === 'free' ? $('ans').value.trim() : T.kind === 'fill' ? 'Hello! My name is Gaïndé.' : 'My name is Gaïndé.';
+  bubble({ who: 'lion', en: said, plain: null });
+  speak(said); anim('lion', 'hop');
+  $('help').innerHTML = '';
+  $('fb').innerHTML = `<div class="feedback ok">${S.firstTry ? 'Du premier coup ! ' : 'Bravo, tu y es arrivé ! '}Gaïndé a compris grâce à toi.</div>`;
+  $('idk').outerHTML = `<button class="btn main" id="next">Continuer</button>`;
+  $('panel').querySelectorAll('#check, #opts button, #pool button').forEach((b) => (b.disabled = true));
+  $('next').onclick = () => {
+    S.teach++;
+    if (S.streak >= 2 && S.teach < TEACH.length - 1) { S.teach++; S.streak = 0; S.skipped = true; }
+    S.teach < TEACH.length ? startTeach() : go(4);
+  };
+}
+
+/* 4. Pour de vrai */
+function real() {
+  let turn = 0;
+  const ask = () => {
+    clearBubbles();
+    if (turn === 0) {
+      cast([{ id: 'lion', cls: 'hop' }]);
+      bubble({ who: 'lion', en: "Thank you! And you? What's your name?", fr: "Merci ! Et toi ? Comment tu t'appelles ?" });
+      speak("Thank you! And you? What's your name?");
+    } else {
+      cast([{ id: 'awa', cls: 'hop' }, { id: 'lion', cls: 'small' }]);
+      bubble({ who: 'awa', en: "Hello! My name is Awa. What's your name?", fr: "Bonjour ! Je m'appelle Awa. Comment tu t'appelles ?" });
+      speak("Hello! My name is Awa. What's your name?");
+    }
+    $('panel').innerHTML = `<h2>${turn === 0 ? 'Réponds à Gaïndé' : 'Réponds à Awa'}</h2>
+      <p class="muted">Avec ton vrai prénom, en faisant une phrase.</p>
+      <input type="text" id="ans" autocomplete="off" placeholder="Écris ta réponse" aria-label="Ta réponse" value="">
+      <div id="fb"></div><button class="btn main" id="check">Envoyer</button>`;
+    const check = () => {
+      const raw = $('ans').value.trim(); const v = norm(raw); if (!v) return;
+      const m = raw.match(/(?:my\s+name\s+is|\bi\s*'?\s*a?m)\s+([^\s.!,]+)/i);
+      if (m) {
+        S.name = m[1].charAt(0).toUpperCase() + m[1].slice(1);
+        const alt = !/my\s+name\s+is/i.test(raw);
+        clearBubbles(); bubble({ who: turn === 0 ? 'lion' : 'awa', plain: turn === 0
+          ? `<b>${esc(S.name)}</b> ! Quel beau prénom ! 🦁${alt ? '<br><span class="muted">(« I\'m… » marche aussi ! Awa dit plutôt « My name is… ».)</span>' : ''}`
+          : null, en: turn === 1 ? `Nice to meet you, ${S.name}!` : undefined, fr: turn === 1 ? `Enchantée, ${S.name} !` : undefined });
+        if (turn === 1) { speak(`Nice to meet you, ${S.name}!`); anim('lion', 'moon'); }
+        $('panel').innerHTML = turn === 0
+          ? `<div class="feedback ok">Tu viens de te présenter en anglais !</div><button class="btn main" id="next">Continuer</button>`
+          : `<div class="feedback ok">Awa t'a compris. Tu as eu une vraie conversation en anglais ! Gaïndé fait le moonwalk.</div><button class="btn main" id="next">Terminer la mission</button>`;
+        $('next').onclick = () => { turn++; turn < 2 ? ask() : go(5); };
+      } else if (v.split(' ').length === 1) {
+        $('fb').innerHTML = `<div class="feedback info">Presque ! Fais une phrase complète, comme Awa : « My name is… »</div>`;
+      } else {
+        $('fb').innerHTML = `<div class="help"><div class="face">${CHARS.panthere}</div><div><div class="tier">Un modèle</div>
+          <p>Commence comme Awa : <b>My name is…</b> puis ton prénom.</p></div></div>`;
+      }
+    };
+    $('check').onclick = check;
+    $('ans').addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+  };
+  ask();
+}
+
+/* 5. Je garde et je réfléchis */
+function keep() {
+  clearBubbles(); cast([{ id: 'lion', cls: 'moon' }, { id: 'awa' }, { id: 'panthere', cls: 'small hop' }]);
+  bubble({ who: 'panthere', plain: 'Mission réussie ! Maintenant, <b>c\'est toi qui juges</b> ce que tu sais faire.' });
+  const name = S.name || 'Fatou';
+  $('panel').innerHTML = `
+    <h2>Ma carte de présentation</h2>
+    <div class="card"><div class="face">${CHARS.lion}</div><div><div class="big">Hello! My name is ${esc(name)}.</div>
+      <div class="muted">Mission 1 · présentée à Gaïndé et Awa</div></div></div>
+    <h2>Mes « Je sais… »</h2>
+    <div class="col" id="cando">${CANDO.map((c, i) => `<div class="cando"><div class="lbl">${esc(c)}</div>
+      <div class="seg" data-i="${i}">${['Pas encore', "Avec de l'aide", 'Tout seul'].map((l) => `<button aria-pressed="false">${l}</button>`).join('')}</div></div>`).join('')}</div>
+    <h2>Qu'est-ce qui était difficile ?</h2>
+    <div class="row" id="hard">${['Comprendre la scène', "L'ordre des mots", 'Écrire seul', 'Rien !'].map((l) => `<button class="chip">${l}</button>`).join('')}</div>
+    <div id="hardfb"></div>
+    <h2>Mon carnet de mots</h2>
+    <div class="words">${CARNET.map((w) => `<span>${esc(w)}</span>`).join('')}</div>
+    <button class="btn soft" id="again">Rejouer la mission</button>`;
+  $('cando').onclick = (e) => { const b = e.target.closest('.seg button'); if (!b) return;
+    b.parentElement.querySelectorAll('button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); };
+  const replies = {
+    'Comprendre la scène': "C'est normal au début. Tu as eu le droit de réécouter : c'est comme ça qu'on apprend.",
+    "L'ordre des mots": "En anglais, l'ordre des mots est très important. On va le retrouver dans la prochaine mission.",
+    'Écrire seul': "Écrire seul, c'est le plus dur. Et tu l'as fait ! La prochaine fois, ce sera plus facile.",
+    'Rien !': 'Super ! La prochaine mission sera un peu plus difficile, alors. 😉',
+  };
+  $('hard').onclick = (e) => { const b = e.target.closest('.chip'); if (!b) return;
+    $('hard').querySelectorAll('.chip').forEach((x) => x.classList.toggle('on', x === b));
+    $('hardfb').innerHTML = `<div class="help"><div class="face">${CHARS.panthere}</div><div><p>${esc(replies[b.textContent])}</p></div></div>`; };
+  $('again').onclick = () => { Object.assign(S, { name: '', streak: 0 }); go(0); };
+}
+
+go(0);
+</script>
