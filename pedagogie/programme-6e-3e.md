@@ -10,6 +10,9 @@ Les points de grammaire du programme officiel ne sont pas enseignés comme des
 règles : ils sont appris **en bloc, dans des expressions**, au moment où une fonction en a besoin
 (voir le tableau à la fin).
 
+**Syllabus détaillés, classe par classe** (missions, « Je sais… », vocabulaire, productions) :
+[6e](syllabus/6e.md) · [5e](syllabus/5e.md) · [4e](syllabus/4e.md) · [3e](syllabus/3e.md)
+
 ## Organisation
 
 - **4 années**, chacune portée par **une saison de l'histoire**.
