@@ -100,11 +100,28 @@ Règles :
 
 | Temps | Ce qui se passe |
 |---|---|
+| 0. Mes mots | Une photo et une liste de mots : l'élève choisit ceux qui vont avec la photo. |
 | 1. J'observe | Une scène de l'histoire pose un problème de communication. |
 | 2. Je comprends | Jàngalekat pose une ou deux questions simples sur la scène. |
 | 3. J'enseigne à Gaïndé | L'élève aide Gaïndé, avec une aide qui diminue. |
 | 4. Je le fais pour de vrai | L'élève échange lui-même avec un personnage (jeu de rôle). |
 | 5. Je garde et je réfléchis | Une production à garder, les « Je sais… », le carnet de mots. |
+
+### Le temps 0 : « Mes mots »
+
+Jàngalekat montre une photo liée au thème et une liste d'environ 10 mots (illustrés et
+prononcés au toucher) : environ 6 vont avec la photo, 4 n'y vont pas. L'élève touche les mots
+qu'il pense voir sur la photo.
+
+- **Mot juste** : Jàngalekat le confirme et explique en une phrase, en montrant l'endroit sur
+  la photo (« Oui ! *waves*, ce sont les vagues, là. »).
+- **Mot qui ne va pas** : on ne dit pas seulement « faux ». Jàngalekat explique **pourquoi**
+  (« *desert*, c'est le désert : du sable, mais pas d'eau. Regarde bien la photo… ») et
+  encourage l'élève à réessayer.
+- **Les intrus sont choisis pour faire réfléchir** : ils sont proches du thème ou se
+  confondent facilement (*desert* / *beach*, *rain* / *wave*), pas des mots au hasard.
+- À la fin, les mots justes vont dans **mon carnet de mots**, et l'élève les retrouvera dans
+  la scène du temps 1.
 
 ## Les rôles
 
