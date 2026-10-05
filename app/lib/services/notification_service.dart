@@ -17,7 +17,7 @@ class NotificationService {
     'Gaïndé t\'attend ! Nouvelle semaine, nouvelle leçon 🦁',
     '10 minutes de révision aujourd\'hui ? Tes fiches t\'attendent 📚',
     'La pirogue de Modou t\'attend : 10 bonnes réponses pour une belle pêche 🐟',
-    'Tu ne comprends pas une leçon ? Demande à Jàngalekat, la panthère 🐾',
+    'Tu ne comprends pas une leçon ? Demande à Kocc Barma, ton prof 📘',
     'Doudou a sorti son tama : fais tes exercices pour l\'entendre 🥁',
     'Le week-end commence : une petite révision avant de te reposer ? 😊',
     'Prépare ta semaine : révise une leçon aujourd\'hui 🌱',

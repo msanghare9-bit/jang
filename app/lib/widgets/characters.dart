@@ -70,26 +70,13 @@ class Chars {
 <path d="M98 78 Q102 70 94 68" stroke="#4a2c19" stroke-width="7" stroke-linecap="round" fill="none"/>
 </svg>''';
 
-  /// Jàngalekat, la jeune panthère noire.
-  static const panthere = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130">
-<ellipse cx="65" cy="124" rx="30" ry="5" fill="#000" fill-opacity=".12"/>
-<path d="M92 108 Q120 104 116 80 Q114 72 108 76" stroke="#26232e" stroke-width="7" fill="none" stroke-linecap="round"/>
-<ellipse cx="66" cy="102" rx="28" ry="18" fill="#26232e"/>
-<ellipse cx="50" cy="118" rx="9" ry="6" fill="#26232e"/><ellipse cx="82" cy="118" rx="9" ry="6" fill="#26232e"/>
-<path d="M38 34 L34 14 L52 26Z" fill="#26232e"/><path d="M88 34 L92 14 L74 26Z" fill="#26232e"/>
-<path d="M40 30 L38 20 L48 27Z" fill="#8b5cf6"/><path d="M86 30 L88 20 L78 27Z" fill="#8b5cf6"/>
-<ellipse cx="63" cy="54" rx="30" ry="27" fill="#26232e"/>
-<ellipse cx="63" cy="70" rx="15" ry="10" fill="#3a3644"/>
-<circle cx="51" cy="50" r="10" fill="#f6d33c"/><circle cx="75" cy="50" r="10" fill="#f6d33c"/>
-<circle cx="53" cy="51" r="4.5" fill="#1d1b26"/><circle cx="77" cy="51" r="4.5" fill="#1d1b26"/>
-<circle cx="54.5" cy="49" r="1.5" fill="#fff"/><circle cx="78.5" cy="49" r="1.5" fill="#fff"/>
-<path d="M59 64 L67 64 L63 69Z" fill="#e48aa0"/>
-<path d="M56 72 Q63 78 70 72" stroke="#f2ede4" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-<path d="M38 66 L24 62 M38 70 L24 72 M88 66 L102 62 M88 70 L102 72" stroke="#8a8697" stroke-width="1.5"/>
-<g transform="rotate(-10 35 88)"><rect x="24" y="80" width="22" height="16" rx="2" fill="#fff" stroke="#bbbbbb"/>
-<path d="M28 85 L42 85 M28 89 L40 89 M28 93 L38 93" stroke="#2f7de1" stroke-width="1.2"/></g>
-<ellipse cx="38" cy="96" rx="7" ry="5" fill="#26232e"/>
+  /// Kocc Barma, le jeune prof (quatre touffes, lunettes, boubou violet, livre bleu).
+  static const kocc = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130">
+<ellipse cx="65" cy="125" rx="32" ry="5" fill="#000" fill-opacity=".1"/><path d="M34 125 L42 82 Q65 72 88 82 L96 125Z" fill="#8b5cf6"/><path d="M58 80 Q65 96 72 80" stroke="#f6b81c" stroke-width="3" fill="none"/><path d="M60 92 Q65 104 70 92" stroke="#f6b81c" stroke-width="2.5" fill="none"/><path d="M44 116 H86" stroke="#f6b81c" stroke-width="3"/><path d="M46 88 Q32 78 32 62" stroke="#6b3f22" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="32" cy="59" r="4" fill="#6b3f22"/><path d="M84 88 Q98 92 97 104" stroke="#6b3f22" stroke-width="7" stroke-linecap="round" fill="none"/><rect x="86" y="97" width="24" height="17" rx="2" fill="#1cb0f6"/><path d="M98 98 V113" stroke="#ffffff" stroke-width="1.5"/><rect x="58" y="66" width="14" height="12" fill="#6b3f22"/><circle cx="65" cy="50" r="22" fill="#6b3f22"/><circle cx="44" cy="52" r="4" fill="#6b3f22"/><circle cx="86" cy="52" r="4" fill="#6b3f22"/><circle cx="45" cy="34" r="6" fill="#1d1b26"/><circle cx="57" cy="25" r="6.5" fill="#1d1b26"/><circle cx="73" cy="25" r="6.5" fill="#1d1b26"/><circle cx="85" cy="34" r="6" fill="#1d1b26"/><path d="M50 62 Q52 76 65 78 Q78 76 80 62 Q72 70 65 70 Q58 70 50 62Z" fill="#1d1b26"/><circle cx="57" cy="49" r="3" fill="#1d1b26"/><circle cx="73" cy="49" r="3" fill="#1d1b26"/><circle cx="57" cy="49" r="7" fill="none" stroke="#3a3644" stroke-width="2"/><circle cx="73" cy="49" r="7" fill="none" stroke="#3a3644" stroke-width="2"/><path d="M64 49 H66" stroke="#3a3644" stroke-width="2"/><path d="M59 64 Q65 68 71 64" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
 </svg>''';
+
+  /// Ancien nom (histoires et écrans existants).
+  static const panthere = kocc;
 
   /// La pirogue Jàmm.
   static const pirogue = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 90">
@@ -118,8 +105,9 @@ class Chars {
     'modou': modou,
     'doudou': doudou,
     'griot': doudou,
-    'jangalekat': panthere,
-    'panthere': panthere,
+    'kocc': kocc,
+    'jangalekat': kocc,
+    'panthere': kocc,
     'pirogue': pirogue,
     'poisson': poisson,
   };

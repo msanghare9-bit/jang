@@ -117,7 +117,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
     ('awa', 'Salut ! Une petite leçon aujourd\'hui ? Diambar nga, tu peux le faire !', true),
     ('modou', 'Ma pirogue attend tes bonnes réponses pour partir à la pêche. Boul bayi !', false),
     ('doudou', 'Mon tama est prêt 🥁 Fais 8/10 et je joue rien que pour toi !', true),
-    ('jangalekat', 'C\'est moi, Jàngalekat ! J\'ai encore glissé sur une peau de banane… mais je suis là si tu as une question.', false),
+    ('kocc', 'C\'est moi, Kocc Barma ! J\'ai encore glissé sur une peau de banane… mais je suis là si tu as une question.', false),
     ('gainde', 'MIAOU ! … euh, je voulais dire ROAR ! Viens apprendre avec moi : comprendre nga bou bax !', true),
     ('awa', 'Chaque trois leçons, un nouvel épisode de « Mon histoire » s\'ouvre. Va voir dans ta matière !', false),
   ];

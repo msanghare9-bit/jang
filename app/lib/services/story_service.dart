@@ -88,7 +88,7 @@ class StoryState {
   }
 }
 
-/// Les histoires de Gaïndé, Awa, Modou, Doudou et Jàngalekat.
+/// Les histoires de Gaïndé, Awa, Modou, Doudou et Kocc Barma.
 /// Le fichier est dans l'application et peut être mis à jour depuis GitHub.
 class StoryService {
   StoryService._();

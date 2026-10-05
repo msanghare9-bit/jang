@@ -62,8 +62,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
             children: [
               Text('Profil', style: titleStyle(26)),
-              const CharacterSays('jangalekat',
-                  'Moi c\'est Jàngalekat, ton tuteur. Je suis une panthère très sérieuse… sauf quand je tombe de ma chaise. Change ton niveau ici si besoin !'),
+              const CharacterSays('kocc',
+                  'Moi c\'est Kocc Barma, ton prof. Je suis très sérieux… sauf quand je tombe de ma chaise. Change ton niveau ici si besoin !'),
               const SizedBox(height: 6),
               Card(
                 child: Padding(

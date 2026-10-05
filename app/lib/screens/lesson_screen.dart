@@ -155,12 +155,12 @@ class _LessonScreenState extends State<LessonScreen> {
       floatingActionButton: widget.preview
           ? null
           : FloatingActionButton.extended(
-              heroTag: 'jangalekat',
+              heroTag: 'kocc',
               backgroundColor: _tutorColor,
               foregroundColor: Colors.white,
               onPressed: _askTutor,
-              icon: const CharacterView(Chars.panthere, size: 40, moves: Moves.sway),
-              label: const Text('Demander à Jàngalekat',
+              icon: const CharacterView(Chars.kocc, size: 40, moves: Moves.sway),
+              label: const Text('Demander à Kocc Barma',
                   style: TextStyle(fontWeight: FontWeight.w800)),
             ),
       appBar: AppBar(
@@ -318,7 +318,7 @@ class _LessonScreenState extends State<LessonScreen> {
                   SectionTitle('Questions des élèves', color: color),
                   DiscussionSection(lesson: lesson, color: color),
                 ],
-                const SizedBox(height: 80), // place pour le bouton Jàngalekat
+                const SizedBox(height: 80), // place pour le bouton Kocc Barma
               ],
             ),
           ),
@@ -327,7 +327,7 @@ class _LessonScreenState extends State<LessonScreen> {
     );
   }
 
-  static const _tutorColor = Color(0xFF6D28D9); // violet : Jàngalekat
+  static const _tutorColor = Color(0xFF6D28D9); // violet : Kocc Barma
 
   static const _intros = [
     'Comprendre nga bou bax ? On lit cette leçon ensemble ! Moi aussi j\'apprends… pour enfin savoir rugir 🦁',
@@ -342,7 +342,7 @@ class _LessonScreenState extends State<LessonScreen> {
         MaterialPageRoute(builder: (_) => TutorScreen(lesson: widget.lesson, subject: widget.subject)),
       );
 
-  /// Invitation à poser une question à Jàngalekat (en haut : courte ; en bas : grand encadré).
+  /// Invitation à poser une question à Kocc Barma (en haut : courte ; en bas : grand encadré).
   Widget _tutorHint(Color color, {bool top = false}) {
     if (top) {
       return Container(
@@ -353,11 +353,11 @@ class _LessonScreenState extends State<LessonScreen> {
           borderRadius: BorderRadius.circular(14),
         ),
         child: const Row(children: [
-          CharacterView(Chars.panthere, size: 40, moves: Moves.still),
+          CharacterView(Chars.kocc, size: 40, moves: Moves.still),
           SizedBox(width: 8),
           Expanded(
             child: Text(
-                'Si tu ne comprends pas une partie de la leçon, pose une question à Jàngalekat. '
+                'Si tu ne comprends pas une partie de la leçon, pose une question à Kocc Barma. '
                 'Elle t\'explique en français simple.',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14.5)),
           ),
@@ -380,13 +380,13 @@ class _LessonScreenState extends State<LessonScreen> {
           const CircleAvatar(
             radius: 30,
             backgroundColor: Colors.white,
-            child: CharacterView(Chars.panthere, size: 52),
+            child: CharacterView(Chars.kocc, size: 52),
           ),
           const SizedBox(width: 12),
           Expanded(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text('Tu n\'as pas compris ?', style: titleStyle(21, color: Colors.white, weight: 800)),
-              const Text('Pose ta question à Jàngalekat, la panthère : elle t\'explique la leçon en français simple.',
+              const Text('Pose ta question à Kocc Barma, ton prof : il t\'explique la leçon en français simple.',
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 14.5)),
             ]),
           ),

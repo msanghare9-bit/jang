@@ -82,7 +82,7 @@ class TutorAnswer {
   TutorAnswer.error(this.error, {this.remaining}) : answer = null;
 }
 
-/// Texte de la leçon pour Jàngalekat : les photos deviennent « (Photo : légende) ».
+/// Texte de la leçon pour Kocc Barma : les photos deviennent « (Photo : légende) ».
 String _text(String body) {
   final t = body.replaceAllMapped(RegExp(r'\[photo [A-Za-z0-9_-]+\]\s*(.*)'),
       (m) => (m.group(1) ?? '').trim().isEmpty ? '(Photo)' : '(Photo : ${m.group(1)!.trim()})');

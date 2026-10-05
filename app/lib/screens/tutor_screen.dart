@@ -7,7 +7,7 @@ import '../widgets/characters.dart';
 import '../widgets/common.dart';
 import '../widgets/consent.dart';
 
-/// « Jàngalekat » (intelligence artificielle) d'une leçon.
+/// « Kocc Barma » (intelligence artificielle) d'une leçon.
 class TutorScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
@@ -68,7 +68,7 @@ class _TutorScreenState extends State<TutorScreen> {
     final t = Theme.of(context).textTheme;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Jàngalekat', style: titleStyle(20, color: Colors.white)),
+        title: Text('Kocc Barma', style: titleStyle(20, color: Colors.white)),
         backgroundColor: color,
         foregroundColor: Colors.white,
       ),
@@ -79,14 +79,14 @@ class _TutorScreenState extends State<TutorScreen> {
               controller: _scroll,
               padding: const EdgeInsets.fromLTRB(16, 14, 16, 16),
               children: [
-                const Center(child: CharacterView(Chars.panthere, size: 110, moves: Moves.sway)),
+                const Center(child: CharacterView(Chars.kocc, size: 110, moves: Moves.sway)),
                 const SizedBox(height: 6),
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                       color: JangColors.noteBg, borderRadius: BorderRadius.circular(10)),
                   child: Text(
-                    'Salut ! Moi, c\'est Jàngalekat, la panthère qui a lu tous les livres de la bibliothèque '
+                    'Salut ! Moi, c\'est Kocc Barma, le prof qui a lu tous les livres de la bibliothèque '
                     '(et qui en a fait tomber beaucoup). Je suis une intelligence artificielle : je peux me tromper, '
                     'vérifie avec ton professeur. '
                     'Je réponds sur la leçon « ${widget.lesson.title} », en français simple. '
@@ -121,7 +121,7 @@ class _TutorScreenState extends State<TutorScreen> {
                         children: [
                           LessonText(e.answer!, accent: color),
                           const SizedBox(height: 6),
-                          Text('Réponse de Jàngalekat (IA), à vérifier avec ton professeur.',
+                          Text('Réponse de Kocc Barma (IA), à vérifier avec ton professeur.',
                               style: t.bodySmall),
                         ],
                       ),
@@ -151,7 +151,7 @@ class _TutorScreenState extends State<TutorScreen> {
                     child: Row(children: [
                       SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2)),
                       SizedBox(width: 10),
-                      Text('Jàngalekat réfléchit… (elle cherche dans ses livres)'),
+                      Text('Kocc Barma réfléchit… (il cherche dans ses livres)'),
                     ]),
                   ),
               ],

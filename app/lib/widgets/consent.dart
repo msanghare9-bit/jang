@@ -13,7 +13,7 @@ Future<bool> ensureParentConsent(BuildContext context) async {
     builder: (c) => AlertDialog(
       title: Text('Accord des parents', style: titleStyle(20)),
       content: const Text(
-          'Pour écrire dans la discussion ou poser une question à Jàngalekat, tes parents doivent être d\'accord. '
+          'Pour écrire dans la discussion ou poser une question à Kocc Barma, tes parents doivent être d\'accord. '
           'Tes messages sont visibles par les autres élèves et par le responsable. '
           'Ne donne jamais ton numéro de téléphone ni ton adresse.'),
       actions: [
