@@ -1,0 +1,2204 @@
+{
+ "questions": [
+  {
+   "q": "I have a bag. ___ bag is blue.",
+   "o": [
+    "Your",
+    "Her",
+    "My",
+    "His"
+   ],
+   "r": 2,
+   "e": "C'est mon sac : « my » (à moi)."
+  },
+  {
+   "q": "Moussa has a bike. ___ bike is new.",
+   "o": [
+    "Its",
+    "Their",
+    "Her",
+    "His"
+   ],
+   "r": 3,
+   "e": "Le vélo de Moussa (un garçon) : « his »."
+  },
+  {
+   "q": "Fatou has a doll. ___ doll is pretty.",
+   "o": [
+    "His",
+    "Their",
+    "Its",
+    "Her"
+   ],
+   "r": 3,
+   "e": "La poupée de Fatou (une fille) : « her »."
+  },
+  {
+   "q": "We have a teacher. ___ teacher is nice.",
+   "o": [
+    "Your",
+    "Their",
+    "My",
+    "Our"
+   ],
+   "r": 3,
+   "e": "Notre professeur : « our »."
+  },
+  {
+   "q": "They have a dog. ___ dog is big.",
+   "o": [
+    "His",
+    "Our",
+    "Their",
+    "Her"
+   ],
+   "r": 2,
+   "e": "Leur chien : « their »."
+  },
+  {
+   "q": "You have a phone. Is this ___ phone?",
+   "o": [
+    "your",
+    "our",
+    "my",
+    "his"
+   ],
+   "r": 0,
+   "e": "Ton téléphone : « your »."
+  },
+  {
+   "q": "The cat is eating. ___ food is in a bowl.",
+   "o": [
+    "It's",
+    "It",
+    "Their",
+    "Its"
+   ],
+   "r": 3,
+   "e": "Pour un animal ou une chose : « its » (sans apostrophe)."
+  },
+  {
+   "q": "Comment dit-on « ma mère » ?",
+   "o": [
+    "mine mother",
+    "my mother",
+    "I mother",
+    "me mother"
+   ],
+   "r": 1,
+   "e": "« Ma, mon, mes » se dit « my »."
+  },
+  {
+   "q": "Comment dit-on « son père » (le père de Awa) ?",
+   "o": [
+    "his father",
+    "she father",
+    "its father",
+    "her father"
+   ],
+   "r": 3,
+   "e": "Le père d'une fille : « her father »."
+  },
+  {
+   "q": "Comment dit-on « sa sœur » (la sœur de Modou) ?",
+   "o": [
+    "his sister",
+    "its sister",
+    "he sister",
+    "her sister"
+   ],
+   "r": 0,
+   "e": "La sœur d'un garçon : « his sister »."
+  },
+  {
+   "q": "Comment dit-on « notre maison » ?",
+   "o": [
+    "our house",
+    "we house",
+    "us house",
+    "their house"
+   ],
+   "r": 0,
+   "e": "« Notre, nos » se dit « our »."
+  },
+  {
+   "q": "Comment dit-on « leurs livres » ?",
+   "o": [
+    "theirs books",
+    "their books",
+    "them books",
+    "they books"
+   ],
+   "r": 1,
+   "e": "« Leur, leurs » se dit « their »."
+  },
+  {
+   "q": "Comment dit-on « votre classe » ?",
+   "o": [
+    "your class",
+    "our class",
+    "yours class",
+    "you class"
+   ],
+   "r": 0,
+   "e": "« Votre, ton, ta » se dit « your »."
+  },
+  {
+   "q": "Choisis : « Awa loves ___ brother. » (le frère de Awa)",
+   "o": [
+    "its",
+    "she",
+    "her",
+    "his"
+   ],
+   "r": 2,
+   "e": "Le frère de Awa (une fille) : her brother."
+  },
+  {
+   "q": "Choisis : « Ousmane washes ___ hands. » (ses mains à lui)",
+   "o": [
+    "their",
+    "its",
+    "her",
+    "his"
+   ],
+   "r": 3,
+   "e": "Les mains d'un garçon : his hands."
+  },
+  {
+   "q": "Choisis : « The children play with ___ toys. »",
+   "o": [
+    "his",
+    "our",
+    "their",
+    "its"
+   ],
+   "r": 2,
+   "e": "Les jouets des enfants (plusieurs) : their toys."
+  },
+  {
+   "q": "Choisis : « I brush ___ teeth every morning. »",
+   "o": [
+    "your",
+    "me",
+    "his",
+    "my"
+   ],
+   "r": 3,
+   "e": "Mes dents à moi : my teeth."
+  },
+  {
+   "q": "Choisis : « We love ___ country. »",
+   "o": [
+    "our",
+    "us",
+    "their",
+    "your"
+   ],
+   "r": 0,
+   "e": "Notre pays : our country."
+  },
+  {
+   "q": "Choisis : « Mrs Sow and ___ husband live in Ziguinchor. »",
+   "o": [
+    "its",
+    "her",
+    "his",
+    "their"
+   ],
+   "r": 1,
+   "e": "Le mari de Mme Sow (une femme) : her husband."
+  },
+  {
+   "q": "Choisis : « Mr Ba and ___ wife are farmers. »",
+   "o": [
+    "its",
+    "his",
+    "their",
+    "her"
+   ],
+   "r": 1,
+   "e": "La femme de M. Ba (un homme) : his wife."
+  },
+  {
+   "q": "Choisis : « The tree has lost ___ leaves. »",
+   "o": [
+    "his",
+    "it's",
+    "her",
+    "its"
+   ],
+   "r": 3,
+   "e": "Les feuilles de l'arbre (une chose) : its leaves."
+  },
+  {
+   "q": "What's ___ name? — My name is Cheikh.",
+   "o": [
+    "her",
+    "your",
+    "his",
+    "my"
+   ],
+   "r": 1,
+   "e": "On demande « ton nom » : What's your name?"
+  },
+  {
+   "q": "What's ___ name? — Her name is Astou.",
+   "o": [
+    "your",
+    "his",
+    "her",
+    "its"
+   ],
+   "r": 2,
+   "e": "La réponse parle d'une fille : her name."
+  },
+  {
+   "q": "What's ___ name? — His name is Lamine.",
+   "o": [
+    "her",
+    "your",
+    "his",
+    "its"
+   ],
+   "r": 2,
+   "e": "La réponse parle d'un garçon : his name."
+  },
+  {
+   "q": "Trouve l'erreur : « She is doing his homework. » (ses devoirs à elle)",
+   "o": [
+    "She is doing its homework.",
+    "She is doing her homework.",
+    "She is doing she homework.",
+    "She is doing hers homework."
+   ],
+   "r": 1,
+   "e": "Ses devoirs à elle : « her homework »."
+  },
+  {
+   "q": "Trouve l'erreur : « They are in they car. »",
+   "o": [
+    "They are in there car.",
+    "They are in them car.",
+    "They are in theirs car.",
+    "They are in their car."
+   ],
+   "r": 3,
+   "e": "« Leur voiture » : their car (pas « they »)."
+  },
+  {
+   "q": "Trouve l'erreur : « I like you dress. »",
+   "o": [
+    "I like yours dress.",
+    "I like your's dress.",
+    "I like you's dress.",
+    "I like your dress."
+   ],
+   "r": 3,
+   "e": "« Ta robe » : your dress."
+  },
+  {
+   "q": "Trouve l'erreur : « Me name is Ali. »",
+   "o": [
+    "Mi name is Ali.",
+    "My name is Ali.",
+    "I name is Ali.",
+    "Mine name is Ali."
+   ],
+   "r": 1,
+   "e": "« Mon nom » : my name."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "Our school is big.",
+    "Ours school is big.",
+    "Us school is big.",
+    "We school is big."
+   ],
+   "r": 0,
+   "e": "« Notre école » : our school."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "The dog wags its tail.",
+    "The dog wags he tail.",
+    "The dog wags it tail.",
+    "The dog wags it's tail."
+   ],
+   "r": 0,
+   "e": "« Its » sans apostrophe = son, sa (pour un animal)."
+  },
+  {
+   "q": "Which word means « leur »?",
+   "o": [
+    "there",
+    "they're",
+    "them",
+    "their"
+   ],
+   "r": 3,
+   "e": "« Leur » se dit « their ». « There » veut dire « là »."
+  },
+  {
+   "q": "Which word means « notre »?",
+   "o": [
+    "us",
+    "our",
+    "we",
+    "hour"
+   ],
+   "r": 1,
+   "e": "« Notre » se dit « our »."
+  },
+  {
+   "q": "Ndeye and Binta are sisters. ___ mother is a doctor.",
+   "o": [
+    "Her",
+    "Our",
+    "Their",
+    "His"
+   ],
+   "r": 2,
+   "e": "La mère de deux filles : their mother."
+  },
+  {
+   "q": "My brother and I have a goat. ___ goat is white.",
+   "o": [
+    "His",
+    "Their",
+    "Our",
+    "My"
+   ],
+   "r": 2,
+   "e": "« My brother and I » = nous, donc « our »."
+  },
+  {
+   "q": "Aïssatou, is this ___ pen?",
+   "o": [
+    "you're",
+    "your",
+    "yours",
+    "you"
+   ],
+   "r": 1,
+   "e": "On parle à Aïssatou : « ton stylo » = your pen."
+  },
+  {
+   "q": "The bird is in ___ nest.",
+   "o": [
+    "their",
+    "it's",
+    "it",
+    "its"
+   ],
+   "r": 3,
+   "e": "Le nid de l'oiseau (un animal) : its nest."
+  },
+  {
+   "q": "Mum is in the kitchen with ___ friends.",
+   "o": [
+    "its",
+    "her",
+    "his",
+    "she"
+   ],
+   "r": 1,
+   "e": "Les amies de maman (une femme) : her friends."
+  },
+  {
+   "q": "Dad is reading ___ newspaper.",
+   "o": [
+    "its",
+    "he",
+    "her",
+    "his"
+   ],
+   "r": 3,
+   "e": "Le journal de papa (un homme) : his newspaper."
+  },
+  {
+   "q": "This is ___ ball. (la balle de Pape)",
+   "o": [
+    "Papes",
+    "of Pape",
+    "Pape's",
+    "Pape"
+   ],
+   "r": 2,
+   "e": "Pour dire « de quelqu'un », on ajoute « 's » : Pape's ball."
+  },
+  {
+   "q": "Comment dit-on « le cahier de Khady » ?",
+   "o": [
+    "notebook's Khady",
+    "Khadys notebook",
+    "Khady notebook",
+    "Khady's notebook"
+   ],
+   "r": 3,
+   "e": "On dit : la personne + « 's » + la chose : Khady's notebook."
+  },
+  {
+   "q": "Comment dit-on « la voiture de mon père » ?",
+   "o": [
+    "the car my father",
+    "my father's car",
+    "car's my father",
+    "my father car"
+   ],
+   "r": 1,
+   "e": "On dit : my father's car."
+  },
+  {
+   "q": "Comment dit-on « la chambre de ma sœur » ?",
+   "o": [
+    "my sister room",
+    "room's my sister",
+    "my sister's room",
+    "my sisters room"
+   ],
+   "r": 2,
+   "e": "On dit : my sister's room."
+  },
+  {
+   "q": "Choisis : « ___ house is in Mbour. » (la maison de Omar)",
+   "o": [
+    "Omar of",
+    "Omars",
+    "Omar's",
+    "Omar"
+   ],
+   "r": 2,
+   "e": "« 's » montre à qui est la chose : Omar's house."
+  },
+  {
+   "q": "Choisis la bonne phrase.",
+   "o": [
+    "This is teacher desk the.",
+    "This is the desk teacher.",
+    "This is the teacher's desk.",
+    "This is the teachers desk's."
+   ],
+   "r": 2,
+   "e": "Le bureau du professeur : the teacher's desk."
+  },
+  {
+   "q": "Choisis la bonne phrase.",
+   "o": [
+    "Eyes Fatou are brown.",
+    "Fatou eyes are brown.",
+    "Fatous' eyes are brown.",
+    "Fatou's eyes are brown."
+   ],
+   "r": 3,
+   "e": "Les yeux de Fatou : Fatou's eyes."
+  },
+  {
+   "q": "Trouve l'erreur : « Where is the bag of Moussa? »",
+   "o": [
+    "Where is Moussas bag?",
+    "Where is bag's Moussa?",
+    "Where is Moussa's bag?",
+    "Where is Moussa bag?"
+   ],
+   "r": 2,
+   "e": "En anglais simple, on dit : Moussa's bag."
+  },
+  {
+   "q": "___ is this pen? — It's Awa's.",
+   "o": [
+    "Whose",
+    "Who",
+    "What",
+    "Where"
+   ],
+   "r": 0,
+   "e": "« Whose » demande « à qui » : Whose is this pen?"
+  },
+  {
+   "q": "___ shoes are these? — They are my brother's.",
+   "o": [
+    "Which",
+    "When",
+    "Whose",
+    "Who"
+   ],
+   "r": 2,
+   "e": "« Whose » = à qui. On demande à qui sont les chaussures."
+  },
+  {
+   "q": "This book is mine. Cela veut dire :",
+   "o": [
+    "Ce livre est à lui.",
+    "Ce livre est à moi.",
+    "Ce livre est à toi.",
+    "Ce livre est à nous."
+   ],
+   "r": 1,
+   "e": "« Mine » veut dire « à moi »."
+  },
+  {
+   "q": "This pen is not mine. It's ___. (à toi)",
+   "o": [
+    "you",
+    "yours",
+    "your",
+    "you's"
+   ],
+   "r": 1,
+   "e": "« À toi » se dit « yours »."
+  },
+  {
+   "q": "The red car is ___. (à eux)",
+   "o": [
+    "them",
+    "theirs",
+    "they",
+    "their"
+   ],
+   "r": 1,
+   "e": "« À eux » se dit « theirs »."
+  },
+  {
+   "q": "Is this bag ___, Awa? — Yes, it's mine.",
+   "o": [
+    "you",
+    "yours",
+    "mine",
+    "your"
+   ],
+   "r": 1,
+   "e": "Pour demander « à toi », on dit « yours »."
+  },
+  {
+   "q": "That house is ___. (à nous)",
+   "o": [
+    "our",
+    "we",
+    "ours",
+    "us"
+   ],
+   "r": 2,
+   "e": "« À nous » se dit « ours »."
+  },
+  {
+   "q": "The blue pencil is ___. (à elle)",
+   "o": [
+    "hers",
+    "she",
+    "his",
+    "her"
+   ],
+   "r": 0,
+   "e": "« À elle » se dit « hers »."
+  },
+  {
+   "q": "The ball is ___. (à lui)",
+   "o": [
+    "hers",
+    "him",
+    "his",
+    "he"
+   ],
+   "r": 2,
+   "e": "« À lui » se dit « his »."
+  },
+  {
+   "q": "What is the plural of « book »?",
+   "o": [
+    "book",
+    "bookes",
+    "books",
+    "bookies"
+   ],
+   "r": 2,
+   "e": "Pour la plupart des mots, on ajoute « -s » : books."
+  },
+  {
+   "q": "What is the plural of « box »?",
+   "o": [
+    "boxes",
+    "boxies",
+    "boxs",
+    "boxen"
+   ],
+   "r": 0,
+   "e": "Après « x », on ajoute « -es » : boxes."
+  },
+  {
+   "q": "What is the plural of « baby »?",
+   "o": [
+    "babies",
+    "babyes",
+    "babis",
+    "babys"
+   ],
+   "r": 0,
+   "e": "Après une consonne + « y », on enlève « y » et on met « -ies » : babies."
+  },
+  {
+   "q": "What is the plural of « child »?",
+   "o": [
+    "childrens",
+    "childs",
+    "children",
+    "childes"
+   ],
+   "r": 2,
+   "e": "« Child » est spécial : un enfant = child, des enfants = children."
+  },
+  {
+   "q": "What is the plural of « man »?",
+   "o": [
+    "men",
+    "mans",
+    "mens",
+    "manes"
+   ],
+   "r": 0,
+   "e": "« Man » est spécial : des hommes = men."
+  },
+  {
+   "q": "What is the plural of « woman »?",
+   "o": [
+    "womens",
+    "womans",
+    "womanes",
+    "women"
+   ],
+   "r": 3,
+   "e": "« Woman » est spécial : des femmes = women."
+  },
+  {
+   "q": "What is the plural of « foot »?",
+   "o": [
+    "footes",
+    "foots",
+    "feets",
+    "feet"
+   ],
+   "r": 3,
+   "e": "« Foot » (pied) est spécial : des pieds = feet."
+  },
+  {
+   "q": "What is the plural of « tooth »?",
+   "o": [
+    "tooths",
+    "toothes",
+    "teeth",
+    "teeths"
+   ],
+   "r": 2,
+   "e": "« Tooth » (dent) est spécial : des dents = teeth."
+  },
+  {
+   "q": "What is the plural of « mouse »?",
+   "o": [
+    "mouses",
+    "mices",
+    "mousies",
+    "mice"
+   ],
+   "r": 3,
+   "e": "« Mouse » (souris) est spécial : des souris = mice."
+  },
+  {
+   "q": "What is the plural of « bus »?",
+   "o": [
+    "buss",
+    "busies",
+    "bus",
+    "buses"
+   ],
+   "r": 3,
+   "e": "Après « s », on ajoute « -es » : buses."
+  },
+  {
+   "q": "What is the plural of « dish »?",
+   "o": [
+    "dishes",
+    "dishs",
+    "dishen",
+    "dishies"
+   ],
+   "r": 0,
+   "e": "Après « sh », on ajoute « -es » : dishes."
+  },
+  {
+   "q": "What is the plural of « watch »?",
+   "o": [
+    "watchies",
+    "watchen",
+    "watchs",
+    "watches"
+   ],
+   "r": 3,
+   "e": "Après « ch », on ajoute « -es » : watches."
+  },
+  {
+   "q": "What is the plural of « tomato »?",
+   "o": [
+    "tomatoes",
+    "tomatoies",
+    "tomatos",
+    "tomatoe"
+   ],
+   "r": 0,
+   "e": "« Tomato » prend « -es » : tomatoes."
+  },
+  {
+   "q": "What is the plural of « city »?",
+   "o": [
+    "cities",
+    "cityes",
+    "citis",
+    "citys"
+   ],
+   "r": 0,
+   "e": "Consonne + « y » : on met « -ies » : cities."
+  },
+  {
+   "q": "What is the plural of « boy »?",
+   "o": [
+    "boyes",
+    "boyies",
+    "boies",
+    "boys"
+   ],
+   "r": 3,
+   "e": "Voyelle + « y » : on ajoute juste « -s » : boys."
+  },
+  {
+   "q": "What is the plural of « day »?",
+   "o": [
+    "dais",
+    "daies",
+    "days",
+    "dayes"
+   ],
+   "r": 2,
+   "e": "Voyelle + « y » : on ajoute juste « -s » : days."
+  },
+  {
+   "q": "What is the plural of « knife »?",
+   "o": [
+    "knifes",
+    "knifs",
+    "knives",
+    "knivs"
+   ],
+   "r": 2,
+   "e": "« Knife » (couteau) devient « knives » : le « f » devient « v »."
+  },
+  {
+   "q": "What is the plural of « leaf »?",
+   "o": [
+    "leafs",
+    "leafes",
+    "leaves",
+    "leavs"
+   ],
+   "r": 2,
+   "e": "« Leaf » (feuille) devient « leaves »."
+  },
+  {
+   "q": "What is the plural of « sheep »?",
+   "o": [
+    "sheeps",
+    "sheep",
+    "sheepes",
+    "shoop"
+   ],
+   "r": 1,
+   "e": "« Sheep » (mouton) ne change pas au pluriel : one sheep, two sheep."
+  },
+  {
+   "q": "What is the plural of « fish »?",
+   "o": [
+    "fishen",
+    "fishs",
+    "fishies",
+    "fish"
+   ],
+   "r": 3,
+   "e": "En général, « fish » ne change pas : one fish, three fish."
+  },
+  {
+   "q": "What is the plural of « person »?",
+   "o": [
+    "people",
+    "persones",
+    "peoples",
+    "personns"
+   ],
+   "r": 0,
+   "e": "En général, le pluriel de « person » est « people »."
+  },
+  {
+   "q": "What is the plural of « family »?",
+   "o": [
+    "familis",
+    "familyes",
+    "families",
+    "familys"
+   ],
+   "r": 2,
+   "e": "Consonne + « y » : on met « -ies » : families."
+  },
+  {
+   "q": "What is the plural of « glass »?",
+   "o": [
+    "glasss",
+    "glasses",
+    "glassies",
+    "glass"
+   ],
+   "r": 1,
+   "e": "Après « ss », on ajoute « -es » : glasses."
+  },
+  {
+   "q": "What is the plural of « key »?",
+   "o": [
+    "keyes",
+    "keys",
+    "kies",
+    "keyies"
+   ],
+   "r": 1,
+   "e": "Voyelle + « y » : on ajoute juste « -s » : keys."
+  },
+  {
+   "q": "What is the plural of « goat »?",
+   "o": [
+    "goats",
+    "goates",
+    "goaten",
+    "goaties"
+   ],
+   "r": 0,
+   "e": "On ajoute simplement « -s » : goats."
+  },
+  {
+   "q": "I have two ___. (frère)",
+   "o": [
+    "brotheres",
+    "brother",
+    "brothers",
+    "brotheries"
+   ],
+   "r": 2,
+   "e": "Plus d'un : on ajoute « -s » : two brothers."
+  },
+  {
+   "q": "My little sister has ten ___. (doigt de pied)",
+   "o": [
+    "toees",
+    "toe",
+    "tois",
+    "toes"
+   ],
+   "r": 3,
+   "e": "Le pluriel de « toe » est « toes »."
+  },
+  {
+   "q": "I eat two ___ every morning. (banane)",
+   "o": [
+    "bananaes",
+    "banana",
+    "bananies",
+    "bananas"
+   ],
+   "r": 3,
+   "e": "On ajoute « -s » : bananas."
+  },
+  {
+   "q": "We have four ___ today. (cours)",
+   "o": [
+    "lesson",
+    "lessonies",
+    "lessons",
+    "lessones"
+   ],
+   "r": 2,
+   "e": "On ajoute « -s » : lessons."
+  },
+  {
+   "q": "Two ___ are in the garden. (femme)",
+   "o": [
+    "women",
+    "womans",
+    "womens",
+    "woman"
+   ],
+   "r": 0,
+   "e": "Le pluriel de « woman » est « women »."
+  },
+  {
+   "q": "The cat catches two ___. (souris)",
+   "o": [
+    "mouse",
+    "mice",
+    "mouses",
+    "mices"
+   ],
+   "r": 1,
+   "e": "Le pluriel de « mouse » est « mice »."
+  },
+  {
+   "q": "Brush your ___ before bed. (dents)",
+   "o": [
+    "teeth",
+    "tooths",
+    "teeths",
+    "tooth"
+   ],
+   "r": 0,
+   "e": "Le pluriel de « tooth » est « teeth »."
+  },
+  {
+   "q": "My ___ are tired after the match. (pieds)",
+   "o": [
+    "feets",
+    "feet",
+    "foot",
+    "foots"
+   ],
+   "r": 1,
+   "e": "Le pluriel de « foot » est « feet »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "I have three pencilies.",
+    "I have three pencil.",
+    "I have three pencils.",
+    "I have three pencils's."
+   ],
+   "r": 2,
+   "e": "Après un nombre plus grand que un, on met « -s » : three pencils."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "The man are tall.",
+    "The men are tall.",
+    "The mans are tall.",
+    "The mens are tall."
+   ],
+   "r": 1,
+   "e": "Le pluriel de « man » est « men »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "One baby is sleeping.",
+    "One babies is sleeping.",
+    "One babyes is sleeping.",
+    "One babys is sleeping."
+   ],
+   "r": 0,
+   "e": "Avec « one », on garde le mot sans « s » : one baby."
+  },
+  {
+   "q": "Trouve l'erreur : « I have two sister. »",
+   "o": [
+    "I have two sisteres.",
+    "I have two sisteries.",
+    "I have two sisters.",
+    "I have two sister's."
+   ],
+   "r": 2,
+   "e": "Avec « two », il faut le pluriel : sisters."
+  },
+  {
+   "q": "Trouve l'erreur : « The childrens are happy. »",
+   "o": [
+    "The children are happy.",
+    "The child are happy.",
+    "The childes are happy.",
+    "The childs are happy."
+   ],
+   "r": 0,
+   "e": "« Children » est déjà au pluriel : on n'ajoute pas « s »."
+  },
+  {
+   "q": "Trouve l'erreur : « There are five peoples here. »",
+   "o": [
+    "There are five person here.",
+    "There are five persones here.",
+    "There are five people here.",
+    "There are five peoplees here."
+   ],
+   "r": 2,
+   "e": "« People » est déjà au pluriel : pas de « s »."
+  },
+  {
+   "q": "Which word is plural?",
+   "o": [
+    "horse",
+    "mouse",
+    "horses",
+    "house"
+   ],
+   "r": 2,
+   "e": "« Horses » (des chevaux) se termine par « -s » : c'est le pluriel."
+  },
+  {
+   "q": "Comment dit-on « des chaises » ?",
+   "o": [
+    "chaires",
+    "chairies",
+    "chairs",
+    "chair"
+   ],
+   "r": 2,
+   "e": "On ajoute « -s » : chairs."
+  },
+  {
+   "q": "Comment dit-on « des pays » ?",
+   "o": [
+    "countries",
+    "countryes",
+    "country",
+    "countrys"
+   ],
+   "r": 0,
+   "e": "« Country » : consonne + « y », on met « -ies » : countries."
+  },
+  {
+   "q": "Comment dit-on « des églises » ?",
+   "o": [
+    "churchies",
+    "churchs",
+    "churches",
+    "church"
+   ],
+   "r": 2,
+   "e": "Après « ch », on ajoute « -es » : churches."
+  },
+  {
+   "q": "I eat ___ apple.",
+   "o": [
+    "a",
+    "an",
+    "two",
+    "many"
+   ],
+   "r": 1,
+   "e": "Devant un son de voyelle (a, e, i, o, u), on met « an » : an apple."
+  },
+  {
+   "q": "She has ___ cat.",
+   "o": [
+    "a",
+    "two",
+    "an",
+    "many"
+   ],
+   "r": 0,
+   "e": "Devant un son de consonne, on met « a » : a cat."
+  },
+  {
+   "q": "He is ___ engineer.",
+   "o": [
+    "a",
+    "two",
+    "many",
+    "an"
+   ],
+   "r": 3,
+   "e": "« Engineer » commence par « e » (voyelle) : an engineer."
+  },
+  {
+   "q": "My mother is ___ teacher.",
+   "o": [
+    "a",
+    "two",
+    "many",
+    "an"
+   ],
+   "r": 0,
+   "e": "« Teacher » commence par « t » (consonne) : a teacher."
+  },
+  {
+   "q": "This is ___ egg.",
+   "o": [
+    "many",
+    "an",
+    "two",
+    "a"
+   ],
+   "r": 1,
+   "e": "« Egg » commence par « e » : an egg."
+  },
+  {
+   "q": "I want ___ orange.",
+   "o": [
+    "many",
+    "two",
+    "a",
+    "an"
+   ],
+   "r": 3,
+   "e": "« Orange » commence par « o » : an orange."
+  },
+  {
+   "q": "It is ___ elephant.",
+   "o": [
+    "a",
+    "two",
+    "many",
+    "an"
+   ],
+   "r": 3,
+   "e": "« Elephant » commence par « e » : an elephant."
+  },
+  {
+   "q": "Pape has ___ umbrella.",
+   "o": [
+    "two",
+    "an",
+    "many",
+    "a"
+   ],
+   "r": 1,
+   "e": "« Umbrella » commence par « u » (son de voyelle) : an umbrella."
+  },
+  {
+   "q": "We have ___ big house.",
+   "o": [
+    "two",
+    "an",
+    "many",
+    "a"
+   ],
+   "r": 3,
+   "e": "« Big » commence par « b » : a big house."
+  },
+  {
+   "q": "It's ___ old car.",
+   "o": [
+    "many",
+    "two",
+    "a",
+    "an"
+   ],
+   "r": 3,
+   "e": "« Old » commence par « o » : an old car."
+  },
+  {
+   "q": "Wait for ___ hour.",
+   "o": [
+    "many",
+    "an",
+    "a",
+    "two"
+   ],
+   "r": 1,
+   "e": "Dans « hour », on ne prononce pas le « h » : on entend une voyelle, donc « an hour »."
+  },
+  {
+   "q": "She eats ___ banana.",
+   "o": [
+    "an",
+    "two",
+    "many",
+    "a"
+   ],
+   "r": 3,
+   "e": "« Banana » commence par « b » : a banana."
+  },
+  {
+   "q": "There is ___ ant on the table.",
+   "o": [
+    "an",
+    "many",
+    "a",
+    "two"
+   ],
+   "r": 0,
+   "e": "« Ant » (fourmi) commence par « a » : an ant."
+  },
+  {
+   "q": "My father is ___ farmer.",
+   "o": [
+    "an",
+    "a",
+    "many",
+    "two"
+   ],
+   "r": 1,
+   "e": "« Farmer » commence par « f » : a farmer."
+  },
+  {
+   "q": "I see ___ owl in the tree.",
+   "o": [
+    "a",
+    "many",
+    "an",
+    "two"
+   ],
+   "r": 2,
+   "e": "« Owl » (hibou) commence par « o » : an owl."
+  },
+  {
+   "q": "He has ___ idea.",
+   "o": [
+    "many",
+    "a",
+    "an",
+    "two"
+   ],
+   "r": 2,
+   "e": "« Idea » commence par « i » : an idea."
+  },
+  {
+   "q": "Comment dit-on « un ananas » ?",
+   "o": [
+    "pineapple",
+    "a pineapple",
+    "a pineapples",
+    "an pineapple"
+   ],
+   "r": 1,
+   "e": "« Pineapple » commence par « p » : a pineapple."
+  },
+  {
+   "q": "Comment dit-on « une île » ?",
+   "o": [
+    "a island",
+    "an islands",
+    "island",
+    "an island"
+   ],
+   "r": 3,
+   "e": "« Island » commence par un son de voyelle : an island."
+  },
+  {
+   "q": "Comment dit-on « une infirmière » ?",
+   "o": [
+    "a nurse",
+    "nurse",
+    "an nurse",
+    "a nurses"
+   ],
+   "r": 0,
+   "e": "« Nurse » commence par « n » : a nurse."
+  },
+  {
+   "q": "Comment dit-on « une oreille » ?",
+   "o": [
+    "an ears",
+    "ear",
+    "a ear",
+    "an ear"
+   ],
+   "r": 3,
+   "e": "« Ear » commence par « e » : an ear."
+  },
+  {
+   "q": "Choisis : « It's ___ easy exercise. »",
+   "o": [
+    "two",
+    "many",
+    "a",
+    "an"
+   ],
+   "r": 3,
+   "e": "« Easy » commence par « e » : an easy exercise."
+  },
+  {
+   "q": "Choisis : « It's ___ difficult exercise. »",
+   "o": [
+    "many",
+    "two",
+    "a",
+    "an"
+   ],
+   "r": 2,
+   "e": "« Difficult » commence par « d » : a difficult exercise."
+  },
+  {
+   "q": "Choisis : « She is ___ actress. »",
+   "o": [
+    "two",
+    "an",
+    "a",
+    "many"
+   ],
+   "r": 1,
+   "e": "« Actress » commence par « a » : an actress."
+  },
+  {
+   "q": "Choisis : « He is ___ driver. »",
+   "o": [
+    "a",
+    "many",
+    "two",
+    "an"
+   ],
+   "r": 0,
+   "e": "« Driver » commence par « d » : a driver."
+  },
+  {
+   "q": "Trouve l'erreur : « I have a uncle in Louga. »",
+   "o": [
+    "I have a uncles in Louga.",
+    "I have an uncle in Louga.",
+    "I have uncle in Louga.",
+    "I have an uncles in Louga."
+   ],
+   "r": 1,
+   "e": "« Uncle » commence par « u » (son de voyelle) : an uncle."
+  },
+  {
+   "q": "Trouve l'erreur : « She has an bicycle. »",
+   "o": [
+    "She has an bicycles.",
+    "She has bicycle.",
+    "She has a bicycles.",
+    "She has a bicycle."
+   ],
+   "r": 3,
+   "e": "« Bicycle » commence par « b » : a bicycle."
+  },
+  {
+   "q": "Trouve l'erreur : « It is a onion. »",
+   "o": [
+    "It is an onions.",
+    "It is an onion.",
+    "It is onion.",
+    "It is a onions."
+   ],
+   "r": 1,
+   "e": "« Onion » commence par « o » : an onion."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "I am an only child.",
+    "I am a only child.",
+    "I am only child.",
+    "I am an only childs."
+   ],
+   "r": 0,
+   "e": "« Only » commence par « o » : an only child (enfant unique)."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "My cousin has an dog and a ox.",
+    "My cousin has a dog and an ox.",
+    "My cousin has an dog and an ox.",
+    "My cousin has a dog and a ox."
+   ],
+   "r": 1,
+   "e": "« Dog » commence par « d » : a dog. « Ox » commence par « o » : an ox."
+  },
+  {
+   "q": "Which one is correct?",
+   "o": [
+    "a insect",
+    "an insect",
+    "an book",
+    "an lion"
+   ],
+   "r": 1,
+   "e": "« Insect » commence par « i » : an insect. « Lion » et « book » prennent « a »."
+  },
+  {
+   "q": "Which one is correct?",
+   "o": [
+    "an blue shirt",
+    "an yellow shirt",
+    "a yellow shirt",
+    "a orange shirt"
+   ],
+   "r": 2,
+   "e": "« Yellow » commence par « y », son de consonne : a yellow shirt."
+  },
+  {
+   "q": "Which one is correct?",
+   "o": [
+    "an exam",
+    "an pen",
+    "a exam",
+    "an test"
+   ],
+   "r": 0,
+   "e": "« Exam » commence par « e » : an exam. On dit « a test », « a pen »."
+  },
+  {
+   "q": "Look at ___ moon! It's beautiful.",
+   "o": [
+    "some",
+    "a",
+    "an",
+    "the"
+   ],
+   "r": 3,
+   "e": "Il n'y a qu'une lune : on dit « the moon »."
+  },
+  {
+   "q": "I have a dog. ___ dog is brown.",
+   "o": [
+    "A",
+    "An",
+    "Some",
+    "The"
+   ],
+   "r": 3,
+   "e": "On parle encore du même chien : on dit « the »."
+  },
+  {
+   "q": "I like ___. (le riz, en général)",
+   "o": [
+    "rice",
+    "the rice",
+    "an rice",
+    "a rice"
+   ],
+   "r": 0,
+   "e": "Pour une chose en général, on ne met rien : I like rice."
+  },
+  {
+   "q": "Cats like ___. (le lait, en général)",
+   "o": [
+    "the milk",
+    "a milk",
+    "milk",
+    "an milk"
+   ],
+   "r": 2,
+   "e": "En général, on ne met pas d'article : cats like milk."
+  },
+  {
+   "q": "Open ___ door, please. (la porte de la classe)",
+   "o": [
+    "some",
+    "the",
+    "an",
+    "a"
+   ],
+   "r": 1,
+   "e": "On parle d'une porte précise que tout le monde connaît : the door."
+  },
+  {
+   "q": "I play ___ every day. (le football)",
+   "o": [
+    "a football",
+    "the football",
+    "an football",
+    "football"
+   ],
+   "r": 3,
+   "e": "Pour un sport, on ne met pas d'article : I play football."
+  },
+  {
+   "q": "I go to school ___. (le lundi)",
+   "o": [
+    "in Monday",
+    "on the Monday",
+    "on Monday",
+    "at Monday"
+   ],
+   "r": 2,
+   "e": "Avec les jours, on dit « on Monday » sans « the »."
+  },
+  {
+   "q": "I speak ___. (l'anglais)",
+   "o": [
+    "English",
+    "the English",
+    "an English",
+    "a English"
+   ],
+   "r": 0,
+   "e": "Pour une langue, on ne met pas d'article : I speak English."
+  },
+  {
+   "q": "___ is my pen. (ici, dans ma main)",
+   "o": [
+    "These",
+    "They",
+    "This",
+    "Those"
+   ],
+   "r": 2,
+   "e": "Pour une chose près de moi : « this » (ce, cette… ici)."
+  },
+  {
+   "q": "___ is my house. (là-bas, loin)",
+   "o": [
+    "Those",
+    "These",
+    "This",
+    "That"
+   ],
+   "r": 3,
+   "e": "Pour une chose loin de moi : « that » (là-bas)."
+  },
+  {
+   "q": "___ are my books. (ici, sur ma table)",
+   "o": [
+    "These",
+    "Those",
+    "This",
+    "That"
+   ],
+   "r": 0,
+   "e": "Pour plusieurs choses près de moi : « these »."
+  },
+  {
+   "q": "___ are our cows. (là-bas, dans le champ)",
+   "o": [
+    "Those",
+    "That",
+    "These",
+    "This"
+   ],
+   "r": 0,
+   "e": "Pour plusieurs choses loin de moi : « those »."
+  },
+  {
+   "q": "Comment dit-on « cette chaise-ci » ?",
+   "o": [
+    "these chair",
+    "those chair",
+    "this chair",
+    "this chairs"
+   ],
+   "r": 2,
+   "e": "Une chose près de moi : this chair."
+  },
+  {
+   "q": "Comment dit-on « ces garçons-là » (loin) ?",
+   "o": [
+    "these boys",
+    "this boys",
+    "that boys",
+    "those boys"
+   ],
+   "r": 3,
+   "e": "Plusieurs personnes loin de moi : those boys."
+  },
+  {
+   "q": "Comment dit-on « ces œufs-ci » ?",
+   "o": [
+    "these eggs",
+    "those eggs",
+    "that eggs",
+    "this eggs"
+   ],
+   "r": 0,
+   "e": "Plusieurs choses près de moi : these eggs."
+  },
+  {
+   "q": "Comment dit-on « cet arbre là-bas » ?",
+   "o": [
+    "that tree",
+    "this tree",
+    "these tree",
+    "those tree"
+   ],
+   "r": 0,
+   "e": "Une chose loin de moi : that tree."
+  },
+  {
+   "q": "Choisis : « ___ shoes are too small. » (les chaussures que je porte)",
+   "o": [
+    "This",
+    "These",
+    "That",
+    "It"
+   ],
+   "r": 1,
+   "e": "Plusieurs choses près de moi : these shoes."
+  },
+  {
+   "q": "Choisis : « Who is ___ man over there? »",
+   "o": [
+    "that",
+    "this",
+    "these",
+    "those"
+   ],
+   "r": 0,
+   "e": "« Over there » = là-bas. Une personne loin : that man."
+  },
+  {
+   "q": "Choisis : « ___ girls over there are my cousins. »",
+   "o": [
+    "These",
+    "Those",
+    "This",
+    "That"
+   ],
+   "r": 1,
+   "e": "« Over there » = là-bas. Plusieurs personnes loin : those girls."
+  },
+  {
+   "q": "Choisis : « I like ___ mango. » (la mangue dans ma main)",
+   "o": [
+    "those",
+    "this",
+    "these",
+    "them"
+   ],
+   "r": 1,
+   "e": "Une chose près de moi : this mango."
+  },
+  {
+   "q": "Trouve l'erreur : « This apples are red. »",
+   "o": [
+    "This apple are red.",
+    "Those apple are red.",
+    "These apples are red.",
+    "That apples are red."
+   ],
+   "r": 2,
+   "e": "Avec plusieurs choses (apples), on dit « these »."
+  },
+  {
+   "q": "Trouve l'erreur : « Those car is fast. »",
+   "o": [
+    "That car is fast.",
+    "Those cars is fast.",
+    "This cars is fast.",
+    "These car is fast."
+   ],
+   "r": 0,
+   "e": "Avec une seule chose (car), on dit « that » (pas « those »)."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "These is my parents.",
+    "This are my parents.",
+    "These are my parents.",
+    "That are my parents."
+   ],
+   "r": 2,
+   "e": "Plusieurs personnes près de moi : « these are »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "Those is my school.",
+    "These is my school.",
+    "That are my school.",
+    "That is my school."
+   ],
+   "r": 3,
+   "e": "Une chose loin de moi : « that is »."
+  },
+  {
+   "q": "What is the plural of « this »?",
+   "o": [
+    "these",
+    "those",
+    "thises",
+    "that"
+   ],
+   "r": 0,
+   "e": "Le pluriel de « this » est « these »."
+  },
+  {
+   "q": "What is the plural of « that »?",
+   "o": [
+    "those",
+    "this",
+    "these",
+    "thats"
+   ],
+   "r": 0,
+   "e": "Le pluriel de « that » est « those »."
+  },
+  {
+   "q": "Is ___ your bag? (le sac ici, à côté de toi)",
+   "o": [
+    "they",
+    "this",
+    "those",
+    "these"
+   ],
+   "r": 1,
+   "e": "Une chose près de nous : Is this your bag?"
+  },
+  {
+   "q": "Are ___ your sandals? (là-bas, près de la porte)",
+   "o": [
+    "this",
+    "that",
+    "those",
+    "these"
+   ],
+   "r": 2,
+   "e": "Plusieurs choses loin : Are those your sandals?"
+  },
+  {
+   "q": "The ___ room is big. (la chambre des enfants)",
+   "o": [
+    "children",
+    "children's",
+    "child",
+    "childrens'"
+   ],
+   "r": 1,
+   "e": "« Children » ne finit pas par « s », donc on ajoute « 's » : the children's room."
+  },
+  {
+   "q": "Which word means « ses » in « Moussa and his friends »?",
+   "o": [
+    "its",
+    "his",
+    "their",
+    "her"
+   ],
+   "r": 1,
+   "e": "Les amis de Moussa (un garçon) : his friends."
+  },
+  {
+   "q": "Comment dit-on « une pomme et deux oranges » ?",
+   "o": [
+    "a apple and two oranges",
+    "an apple and two orange",
+    "an apple and two oranges",
+    "a apple and two orange"
+   ],
+   "r": 2,
+   "e": "« An apple » (voyelle) et « two oranges » (avec « -s »)."
+  },
+  {
+   "q": "Comment dit-on « mes amis » ?",
+   "o": [
+    "me friends",
+    "my friend",
+    "my friends",
+    "mine friends"
+   ],
+   "r": 2,
+   "e": "« Mes » = my, et plusieurs amis = friends."
+  },
+  {
+   "q": "Choisis : « ___ sheep are eating grass. » (là-bas)",
+   "o": [
+    "Those",
+    "That",
+    "It",
+    "This"
+   ],
+   "r": 0,
+   "e": "« Sheep » est ici au pluriel (« are ») et loin : those sheep."
+  },
+  {
+   "q": "Comment dit-on « les chaussures de Moussa » ?",
+   "o": [
+    "Moussa's shoes",
+    "Moussa shoes",
+    "shoes Moussa",
+    "shoes's Moussa"
+   ],
+   "r": 0,
+   "e": "On dit : la personne + « 's » + la chose : Moussa's shoes."
+  },
+  {
+   "q": "Comment dit-on « le nom du chien » ?",
+   "o": [
+    "the dog's name",
+    "the dog name's",
+    "dog the name",
+    "the name dog"
+   ],
+   "r": 0,
+   "e": "On dit : the dog's name (le nom du chien)."
+  },
+  {
+   "q": "Which word means « à moi »?",
+   "o": [
+    "I",
+    "me",
+    "mine",
+    "my"
+   ],
+   "r": 2,
+   "e": "« À moi » se dit « mine » : it's mine."
+  },
+  {
+   "q": "Which word means « à nous »?",
+   "o": [
+    "ours",
+    "we",
+    "our",
+    "us"
+   ],
+   "r": 0,
+   "e": "« À nous » se dit « ours »."
+  },
+  {
+   "q": "Is this your ruler? — No, it isn't ___.",
+   "o": [
+    "I",
+    "mine",
+    "my",
+    "me"
+   ],
+   "r": 1,
+   "e": "Sans nom après, on dit « mine » : it isn't mine."
+  },
+  {
+   "q": "These are not my sandals. Mine ___ black.",
+   "o": [
+    "am",
+    "has",
+    "are",
+    "is"
+   ],
+   "r": 2,
+   "e": "« Mine » remplace « mes sandales » (plusieurs) : mine are."
+  },
+  {
+   "q": "What is the plural of « bag »?",
+   "o": [
+    "bagies",
+    "bag",
+    "bages",
+    "bags"
+   ],
+   "r": 3,
+   "e": "On ajoute simplement « -s » : bags."
+  },
+  {
+   "q": "What is the plural of « party »?",
+   "o": [
+    "partis",
+    "partys",
+    "partyes",
+    "parties"
+   ],
+   "r": 3,
+   "e": "Consonne + « y » : on met « -ies » : parties."
+  },
+  {
+   "q": "What is the plural of « potato »?",
+   "o": [
+    "potatoies",
+    "potatoe",
+    "potatos",
+    "potatoes"
+   ],
+   "r": 3,
+   "e": "« Potato » prend « -es » : potatoes."
+  },
+  {
+   "q": "What is the plural of « wife »?",
+   "o": [
+    "wifs",
+    "wives",
+    "wifes",
+    "wivs"
+   ],
+   "r": 1,
+   "e": "« Wife » devient « wives » : le « f » devient « v »."
+  },
+  {
+   "q": "What is the plural of « fox »?",
+   "o": [
+    "foxs",
+    "foxes",
+    "foxen",
+    "foxies"
+   ],
+   "r": 1,
+   "e": "Après « x », on ajoute « -es » : foxes."
+  },
+  {
+   "q": "What is the plural of « toy »?",
+   "o": [
+    "toyies",
+    "toies",
+    "toys",
+    "toyes"
+   ],
+   "r": 2,
+   "e": "Voyelle + « y » : on ajoute juste « -s » : toys."
+  },
+  {
+   "q": "The ___ are in the sky. (étoile)",
+   "o": [
+    "star",
+    "stars",
+    "staries",
+    "stares"
+   ],
+   "r": 1,
+   "e": "On ajoute « -s » : stars."
+  },
+  {
+   "q": "I have one ___ and two cousins. (frère)",
+   "o": [
+    "brotheres",
+    "brother's",
+    "brother",
+    "brothers"
+   ],
+   "r": 2,
+   "e": "Avec « one », on ne met pas « -s » : one brother."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "Two ladies are singing.",
+    "Two ladys are singing.",
+    "Two lady are singing.",
+    "Two ladyes are singing."
+   ],
+   "r": 0,
+   "e": "« Lady » : consonne + « y », on met « -ies » : ladies."
+  },
+  {
+   "q": "Choisis : « She is ___ honest girl. »",
+   "o": [
+    "two",
+    "a",
+    "many",
+    "an"
+   ],
+   "r": 3,
+   "e": "Dans « honest », on ne dit pas le « h » : on entend une voyelle, donc « an »."
+  },
+  {
+   "q": "Choisis : « I need ___ new pen. »",
+   "o": [
+    "an",
+    "a",
+    "many",
+    "two"
+   ],
+   "r": 1,
+   "e": "« New » commence par « n » : a new pen."
+  },
+  {
+   "q": "Choisis : « I have ___ aunt in Kolda. »",
+   "o": [
+    "a",
+    "two",
+    "an",
+    "many"
+   ],
+   "r": 2,
+   "e": "« Aunt » commence par « a » : an aunt."
+  },
+  {
+   "q": "Choisis : « ___ is my friend Seynabou. » (Seynabou est à côté de moi)",
+   "o": [
+    "These",
+    "This",
+    "Those",
+    "It"
+   ],
+   "r": 1,
+   "e": "Pour présenter une personne près de moi : This is…"
+  },
+  {
+   "q": "Choisis : « ___ trees are mango trees. » (ici, devant nous)",
+   "o": [
+    "It",
+    "These",
+    "This",
+    "That"
+   ],
+   "r": 1,
+   "e": "Plusieurs choses près de moi : these trees."
+  },
+  {
+   "q": "Choisis : « Can you see ___ bird on the roof? » (loin)",
+   "o": [
+    "that",
+    "this",
+    "those",
+    "these"
+   ],
+   "r": 0,
+   "e": "Une chose loin de moi : that bird."
+  },
+  {
+   "q": "Trouve l'erreur : « These is my brother. »",
+   "o": [
+    "Those is my brother.",
+    "These are my brother.",
+    "This is my brother.",
+    "This are my brother."
+   ],
+   "r": 2,
+   "e": "Une seule personne : « this is »."
+  },
+  {
+   "q": "What is the plural of « monkey »?",
+   "o": [
+    "monkeyes",
+    "monkies",
+    "monkeies",
+    "monkeys"
+   ],
+   "r": 3,
+   "e": "Voyelle + « y » : on ajoute juste « -s » : monkeys."
+  },
+  {
+   "q": "What is the plural of « story »?",
+   "o": [
+    "storis",
+    "stories",
+    "storys",
+    "storyes"
+   ],
+   "r": 1,
+   "e": "Consonne + « y » : on met « -ies » : stories."
+  },
+  {
+   "q": "What is the plural of « class »?",
+   "o": [
+    "classs",
+    "classies",
+    "class",
+    "classes"
+   ],
+   "r": 3,
+   "e": "Après « ss », on ajoute « -es » : classes."
+  },
+  {
+   "q": "What is the plural of « bench »?",
+   "o": [
+    "benchies",
+    "benchs",
+    "bench",
+    "benches"
+   ],
+   "r": 3,
+   "e": "Après « ch », on ajoute « -es » : benches."
+  },
+  {
+   "q": "Two ___ are on the table. (tasse)",
+   "o": [
+    "cup",
+    "cups",
+    "cupies",
+    "cupes"
+   ],
+   "r": 1,
+   "e": "On ajoute « -s » : two cups."
+  },
+  {
+   "q": "I can see three ___ in the tree. (oiseau)",
+   "o": [
+    "birds",
+    "birdes",
+    "bird",
+    "birdses"
+   ],
+   "r": 0,
+   "e": "On ajoute « -s » : three birds."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "I have two new dresses.",
+    "I have two new dressies.",
+    "I have two new dresss.",
+    "I have two new dress."
+   ],
+   "r": 0,
+   "e": "Après « ss », on ajoute « -es » : dresses."
+  },
+  {
+   "q": "Comment dit-on « des lits » ?",
+   "o": [
+    "bedes",
+    "bedies",
+    "bed",
+    "beds"
+   ],
+   "r": 3,
+   "e": "On ajoute « -s » : beds."
+  },
+  {
+   "q": "Comment dit-on « des dictionnaires » ?",
+   "o": [
+    "dictionary",
+    "dictionarys",
+    "dictionaryes",
+    "dictionaries"
+   ],
+   "r": 3,
+   "e": "Consonne + « y » : on met « -ies » : dictionaries."
+  },
+  {
+   "q": "Comment dit-on « des brosses » ?",
+   "o": [
+    "brushs",
+    "brushes",
+    "brushies",
+    "brush"
+   ],
+   "r": 1,
+   "e": "Après « sh », on ajoute « -es » : brushes."
+  },
+  {
+   "q": "Trouve l'erreur : « My shoe are dirty. » (mes chaussures)",
+   "o": [
+    "My shoes are dirty.",
+    "My shoe is dirtys.",
+    "My shoees are dirty.",
+    "My shoe's are dirty."
+   ],
+   "r": 0,
+   "e": "Plusieurs chaussures : on ajoute « -s » : my shoes are…"
+  },
+  {
+   "q": "Comment dit-on « ses chaussures » (les chaussures de Fatou) ?",
+   "o": [
+    "her shoes",
+    "his shoes",
+    "its shoes",
+    "she shoes"
+   ],
+   "r": 0,
+   "e": "Les chaussures d'une fille : her shoes."
+  },
+  {
+   "q": "Choisis : « He eats ___ egg and ___ banana. »",
+   "o": [
+    "a / an",
+    "a / a",
+    "an / an",
+    "an / a"
+   ],
+   "r": 3,
+   "e": "« Egg » commence par une voyelle : an egg. « Banana » commence par « b » : a banana."
+  },
+  {
+   "q": "___ sun is very hot today.",
+   "o": [
+    "The",
+    "Some",
+    "An",
+    "A"
+   ],
+   "r": 0,
+   "e": "Il n'y a qu'un soleil : on dit « the sun »."
+  },
+  {
+   "q": "Choisis : « It's ___ interesting book. »",
+   "o": [
+    "two",
+    "an",
+    "a",
+    "many"
+   ],
+   "r": 1,
+   "e": "« Interesting » commence par « i » : an interesting book."
+  }
+ ]
+}

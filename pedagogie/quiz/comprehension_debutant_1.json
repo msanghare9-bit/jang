@@ -1,0 +1,2404 @@
+{
+ "questions": [
+  {
+   "t": "SMS from Awa: Hi Fatou! I am at the market with my mum. We buy rice and fish. See you at 5 o'clock.",
+   "q": "Where is Awa?",
+   "o": [
+    "At school",
+    "At the market",
+    "At home",
+    "At the beach"
+   ],
+   "r": 1,
+   "e": "Awa dit : « I am at the market » : elle est au marché."
+  },
+  {
+   "t": "SMS from Awa: Hi Fatou! I am at the market with my mum. We buy rice and fish. See you at 5 o'clock.",
+   "q": "What time will Awa see Fatou?",
+   "o": [
+    "At 3 o'clock",
+    "At 7 o'clock",
+    "At 12 o'clock",
+    "At 5 o'clock"
+   ],
+   "r": 3,
+   "e": "Le SMS dit : « See you at 5 o'clock » : à 5 heures."
+  },
+  {
+   "t": "Hello Moussa. I am sick today. I can't come to football. My head hurts. Sorry! - Ibrahima",
+   "q": "Pourquoi Ibrahima ne vient pas au football ?",
+   "o": [
+    "Il est en voyage",
+    "Il a des devoirs",
+    "Il est malade",
+    "Il dort"
+   ],
+   "r": 2,
+   "e": "« I am sick today » veut dire : je suis malade aujourd'hui."
+  },
+  {
+   "t": "Hello Moussa. I am sick today. I can't come to football. My head hurts. Sorry! - Ibrahima",
+   "q": "What hurts?",
+   "o": [
+    "His head",
+    "His leg",
+    "His tooth",
+    "His hand"
+   ],
+   "r": 0,
+   "e": "« My head hurts » : il a mal à la tête. Head = tête."
+  },
+  {
+   "t": "Mum, I am at Khady's house. We do our homework together. I come home at 7. Love, Aminata.",
+   "q": "Où est Aminata ?",
+   "o": [
+    "À l'école",
+    "Au marché",
+    "Chez sa grand-mère",
+    "Chez Khady"
+   ],
+   "r": 3,
+   "e": "« I am at Khady's house » : elle est chez Khady."
+  },
+  {
+   "t": "Mum, I am at Khady's house. We do our homework together. I come home at 7. Love, Aminata.",
+   "q": "What do Aminata and Khady do?",
+   "o": [
+    "Their homework",
+    "The cooking",
+    "A football match",
+    "Their shopping"
+   ],
+   "r": 0,
+   "e": "« We do our homework together » : elles font leurs devoirs ensemble."
+  },
+  {
+   "t": "Dad, the car is at the garage. Please take a taxi to work. The mechanic says it is ready on Friday. - Mum",
+   "q": "How does Dad go to work?",
+   "o": [
+    "By car",
+    "By taxi",
+    "By bus",
+    "On foot"
+   ],
+   "r": 1,
+   "e": "Maman dit : « Please take a taxi to work » : il prend un taxi."
+  },
+  {
+   "t": "Dad, the car is at the garage. Please take a taxi to work. The mechanic says it is ready on Friday. - Mum",
+   "q": "When is the car ready?",
+   "o": [
+    "On Monday",
+    "Today",
+    "On Friday",
+    "On Sunday"
+   ],
+   "r": 2,
+   "e": "« It is ready on Friday » : la voiture est prête vendredi."
+  },
+  {
+   "t": "Cheikh, happy birthday! You are 13 today. I have a present for you: a new ball. Your friend, Pape.",
+   "q": "How old is Cheikh today?",
+   "o": [
+    "12",
+    "14",
+    "13",
+    "30"
+   ],
+   "r": 2,
+   "e": "« You are 13 today » : Cheikh a 13 ans aujourd'hui."
+  },
+  {
+   "t": "Cheikh, happy birthday! You are 13 today. I have a present for you: a new ball. Your friend, Pape.",
+   "q": "What is the present?",
+   "o": [
+    "A book",
+    "A bike",
+    "A ball",
+    "A phone"
+   ],
+   "r": 2,
+   "e": "« I have a present for you: a new ball » : le cadeau est un ballon."
+  },
+  {
+   "t": "Hi Ousmane. The teacher is absent today. There is no maths class. We can play basketball. Come!",
+   "q": "Quel cours n'a pas lieu ?",
+   "o": [
+    "L'anglais",
+    "Le sport",
+    "Les maths",
+    "Le français"
+   ],
+   "r": 2,
+   "e": "« There is no maths class » : il n'y a pas de cours de maths."
+  },
+  {
+   "t": "Hi Ousmane. The teacher is absent today. There is no maths class. We can play basketball. Come!",
+   "q": "What can they play?",
+   "o": [
+    "Football",
+    "Cards",
+    "Tennis",
+    "Basketball"
+   ],
+   "r": 3,
+   "e": "« We can play basketball » : ils peuvent jouer au basket."
+  },
+  {
+   "t": "Grandma, I miss you! I am in Dakar with Aunt Bineta. It is hot here. I come to Kaolack in July. Kisses, Mariama.",
+   "q": "Where is Mariama now?",
+   "o": [
+    "In Kaolack",
+    "In Thiès",
+    "In Louga",
+    "In Dakar"
+   ],
+   "r": 3,
+   "e": "« I am in Dakar with Aunt Bineta » : Mariama est à Dakar."
+  },
+  {
+   "t": "Grandma, I miss you! I am in Dakar with Aunt Bineta. It is hot here. I come to Kaolack in July. Kisses, Mariama.",
+   "q": "Quand Mariama va-t-elle à Kaolack ?",
+   "o": [
+    "En juillet",
+    "En juin",
+    "En août",
+    "En janvier"
+   ],
+   "r": 0,
+   "e": "« I come to Kaolack in July » : July = juillet."
+  },
+  {
+   "t": "Modou, can you buy bread on your way home? We have no bread for dinner. Thanks! - Your sister Astou",
+   "q": "What does Astou want?",
+   "o": [
+    "Milk",
+    "Bread",
+    "Sugar",
+    "Rice"
+   ],
+   "r": 1,
+   "e": "« Can you buy bread? » : Astou veut du pain."
+  },
+  {
+   "t": "Modou, can you buy bread on your way home? We have no bread for dinner. Thanks! - Your sister Astou",
+   "q": "Who is Astou?",
+   "o": [
+    "Modou's mother",
+    "Modou's teacher",
+    "Modou's friend",
+    "Modou's sister"
+   ],
+   "r": 3,
+   "e": "Le message est signé « Your sister Astou » : c'est sa sœur."
+  },
+  {
+   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop. I see the bus now!",
+   "q": "What time does the bus leave?",
+   "o": [
+    "At 8",
+    "At 6",
+    "At 9",
+    "At 10"
+   ],
+   "r": 0,
+   "e": "« The bus leaves at 8 » : le bus part à 8 heures."
+  },
+  {
+   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop. I see the bus now!",
+   "q": "Where is Coumba?",
+   "o": [
+    "At home",
+    "At the bus stop",
+    "In the bus",
+    "At the shop"
+   ],
+   "r": 1,
+   "e": "Coumba dit : « I am at the bus stop » : à l'arrêt de bus."
+  },
+  {
+   "t": "Hi Babacar! My new phone number is 77 45 12 30. My old phone is broken. Call me tonight. - Sidy",
+   "q": "Pourquoi Sidy a un nouveau numéro ?",
+   "o": [
+    "Il a perdu son téléphone",
+    "Il habite ailleurs",
+    "Son vieux téléphone est cassé",
+    "Il n'aime pas son numéro"
+   ],
+   "r": 2,
+   "e": "« My old phone is broken » : son vieux téléphone est cassé."
+  },
+  {
+   "t": "Hi Babacar! My new phone number is 77 45 12 30. My old phone is broken. Call me tonight. - Sidy",
+   "q": "When can Babacar call Sidy?",
+   "o": [
+    "This morning",
+    "Tomorrow",
+    "On Sunday",
+    "Tonight"
+   ],
+   "r": 3,
+   "e": "« Call me tonight » : appelle-moi ce soir."
+  },
+  {
+   "t": "Message: Aissatou, the cat is under your bed. It is afraid of the rain. Please give it some milk. - Mum",
+   "q": "Where is the cat?",
+   "o": [
+    "On the table",
+    "In the garden",
+    "On the roof",
+    "Under the bed"
+   ],
+   "r": 3,
+   "e": "« The cat is under your bed » : sous le lit. Under = sous."
+  },
+  {
+   "t": "Message: Aissatou, the cat is under your bed. It is afraid of the rain. Please give it some milk. - Mum",
+   "q": "Why is the cat there?",
+   "o": [
+    "It is afraid of the rain",
+    "It is sick",
+    "It is hungry",
+    "It is sleeping"
+   ],
+   "r": 0,
+   "e": "« It is afraid of the rain » : il a peur de la pluie."
+  },
+  {
+   "t": "Hi Assane! I am in Saint-Louis. The city is beautiful. I can see the river and the big bridge. Bye! Rokhaya",
+   "q": "What can Rokhaya see?",
+   "o": [
+    "The sea and the boats",
+    "The desert",
+    "The river and the bridge",
+    "The mountains"
+   ],
+   "r": 2,
+   "e": "« I can see the river and the big bridge » : le fleuve et le grand pont."
+  },
+  {
+   "t": "Hi Assane! I am in Saint-Louis. The city is beautiful. I can see the river and the big bridge. Bye! Rokhaya",
+   "q": "Comment est la ville d'après Rokhaya ?",
+   "o": [
+    "Petite",
+    "Sale",
+    "Froide",
+    "Belle"
+   ],
+   "r": 3,
+   "e": "« The city is beautiful » : la ville est belle."
+  },
+  {
+   "t": "Demba, don't forget: Grandpa's birthday is on Sunday. We eat at his house at 2 pm. Bring your guitar! - Dad",
+   "q": "What day is Grandpa's birthday?",
+   "o": [
+    "Saturday",
+    "Monday",
+    "Friday",
+    "Sunday"
+   ],
+   "r": 3,
+   "e": "« Grandpa's birthday is on Sunday » : dimanche."
+  },
+  {
+   "t": "Demba, don't forget: Grandpa's birthday is on Sunday. We eat at his house at 2 pm. Bring your guitar! - Dad",
+   "q": "What must Demba bring?",
+   "o": [
+    "His guitar",
+    "A cake",
+    "His ball",
+    "Flowers"
+   ],
+   "r": 0,
+   "e": "« Bring your guitar! » : apporte ta guitare."
+  },
+  {
+   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come to school today. Thank you. - Mrs Diop",
+   "q": "Who writes the message?",
+   "o": [
+    "Mrs Diop",
+    "Malick",
+    "The teacher",
+    "The doctor"
+   ],
+   "r": 0,
+   "e": "Le message est signé « Mrs Diop » : c'est la maman de Malick."
+  },
+  {
+   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come to school today. Thank you. - Mrs Diop",
+   "q": "What is wrong with Malick?",
+   "o": [
+    "He has a fever",
+    "He has a broken arm",
+    "He is tired",
+    "He has a cold"
+   ],
+   "r": 0,
+   "e": "« He has a fever » : il a de la fièvre."
+  },
+  {
+   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now, it's ready.",
+   "q": "What is for lunch?",
+   "o": [
+    "Yassa",
+    "Thieboudienne",
+    "Mafé",
+    "Couscous"
+   ],
+   "r": 1,
+   "e": "Maman dit : « Thieboudienne! » : c'est le plat du déjeuner."
+  },
+  {
+   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now, it's ready.",
+   "q": "Comment se sent Sokhna ?",
+   "o": [
+    "Elle a soif",
+    "Elle a faim",
+    "Elle est fatiguée",
+    "Elle a froid"
+   ],
+   "r": 1,
+   "e": "« I'm hungry » veut dire : j'ai faim."
+  },
+  {
+   "t": "Alioune, I am late. My bus is very slow. Please wait for me at the cinema door. - Yacine",
+   "q": "Why is Yacine late?",
+   "o": [
+    "Her bus is slow",
+    "She is sick",
+    "She is sleeping",
+    "She has no money"
+   ],
+   "r": 0,
+   "e": "« My bus is very slow » : son bus est très lent."
+  },
+  {
+   "t": "Alioune, I am late. My bus is very slow. Please wait for me at the cinema door. - Yacine",
+   "q": "Where must Alioune wait?",
+   "o": [
+    "At the bus stop",
+    "At the cinema door",
+    "At the school",
+    "At the market"
+   ],
+   "r": 1,
+   "e": "« Wait for me at the cinema door » : à la porte du cinéma."
+  },
+  {
+   "t": "Hi Adama! We have a new baby in our family. She is my little sister. Her name is Ndeye. She is very small!",
+   "q": "Who is the new baby?",
+   "o": [
+    "The writer's little sister",
+    "Adama's cousin",
+    "The writer's mother",
+    "Adama's daughter"
+   ],
+   "r": 0,
+   "e": "L'auteur dit : « She is my little sister » : c'est la petite sœur de celui qui écrit."
+  },
+  {
+   "t": "Hi Adama! We have a new baby in our family. She is my little sister. Her name is Ndeye. She is very small!",
+   "q": "What is the baby's name?",
+   "o": [
+    "Adama",
+    "Fatou",
+    "Ndeye",
+    "Awa"
+   ],
+   "r": 2,
+   "e": "« Her name is Ndeye » : elle s'appelle Ndeye."
+  },
+  {
+   "t": "Fallou, I can't find my blue pen. Is it in your bag? I need it for the English test. - Serigne",
+   "q": "What colour is the pen?",
+   "o": [
+    "Red",
+    "Black",
+    "Blue",
+    "Green"
+   ],
+   "r": 2,
+   "e": "« my blue pen » : le stylo est bleu."
+  },
+  {
+   "t": "Fallou, I can't find my blue pen. Is it in your bag? I need it for the English test. - Serigne",
+   "q": "Pourquoi Serigne a besoin du stylo ?",
+   "o": [
+    "Pour dessiner",
+    "Pour écrire une lettre",
+    "Pour le cours de maths",
+    "Pour le contrôle d'anglais"
+   ],
+   "r": 3,
+   "e": "« I need it for the English test » : pour le contrôle d'anglais."
+  },
+  {
+   "t": "Message from Mame Diarra: I am at the hospital. My aunt has a new baby boy. They are fine. I come back tomorrow.",
+   "q": "Where is Mame Diarra?",
+   "o": [
+    "At the school",
+    "At the hospital",
+    "At the airport",
+    "At the market"
+   ],
+   "r": 1,
+   "e": "« I am at the hospital » : elle est à l'hôpital."
+  },
+  {
+   "t": "Message from Mame Diarra: I am at the hospital. My aunt has a new baby boy. They are fine. I come back tomorrow.",
+   "q": "When does Mame Diarra come back?",
+   "o": [
+    "Today",
+    "Tomorrow",
+    "On Friday",
+    "Next week"
+   ],
+   "r": 1,
+   "e": "« I come back tomorrow » : elle revient demain."
+  },
+  {
+   "t": "Khadim, it is raining a lot. Please close the windows of your room. I am at work until 6. - Mum",
+   "q": "What must Khadim close?",
+   "o": [
+    "The door",
+    "The shop",
+    "The windows",
+    "The gate"
+   ],
+   "r": 2,
+   "e": "« Please close the windows » : ferme les fenêtres."
+  },
+  {
+   "t": "Khadim, it is raining a lot. Please close the windows of your room. I am at work until 6. - Mum",
+   "q": "Quel temps fait-il ?",
+   "o": [
+    "Il fait très chaud",
+    "Il pleut beaucoup",
+    "Il y a du vent",
+    "Il fait beau"
+   ],
+   "r": 1,
+   "e": "« It is raining a lot » : il pleut beaucoup."
+  },
+  {
+   "t": "Marème: Can you come to my house on Saturday? Saliou: Yes, I can. What time? Marème: At 4. We can watch a film.",
+   "q": "What day is the visit?",
+   "o": [
+    "Sunday",
+    "Friday",
+    "Tuesday",
+    "Saturday"
+   ],
+   "r": 3,
+   "e": "« Can you come to my house on Saturday? » : samedi."
+  },
+  {
+   "t": "Marème: Can you come to my house on Saturday? Saliou: Yes, I can. What time? Marème: At 4. We can watch a film.",
+   "q": "What can they do?",
+   "o": [
+    "Watch a film",
+    "Play football",
+    "Cook",
+    "Read books"
+   ],
+   "r": 0,
+   "e": "« We can watch a film » : regarder un film."
+  },
+  {
+   "t": "Hi Oumou! I have two tickets for the wrestling match in Dakar. It is on Sunday at the stadium. Do you want to come?",
+   "q": "How many tickets are there?",
+   "o": [
+    "One",
+    "Three",
+    "Four",
+    "Two"
+   ],
+   "r": 3,
+   "e": "« I have two tickets » : deux billets."
+  },
+  {
+   "t": "Hi Oumou! I have two tickets for the wrestling match in Dakar. It is on Sunday at the stadium. Do you want to come?",
+   "q": "What is the match?",
+   "o": [
+    "Football",
+    "Wrestling",
+    "Basketball",
+    "Handball"
+   ],
+   "r": 1,
+   "e": "« tickets for the wrestling match » : c'est un match de lutte."
+  },
+  {
+   "t": "Boubacar, your shoes are under the sofa. Your school bag is on the chair. Hurry, it is 7:30! - Dad",
+   "q": "Where are the shoes?",
+   "o": [
+    "On the chair",
+    "Under the sofa",
+    "In the bag",
+    "Near the door"
+   ],
+   "r": 1,
+   "e": "« Your shoes are under the sofa » : sous le canapé."
+  },
+  {
+   "t": "Boubacar, your shoes are under the sofa. Your school bag is on the chair. Hurry, it is 7:30! - Dad",
+   "q": "Où est le cartable ?",
+   "o": [
+    "Sur la chaise",
+    "Sous le lit",
+    "Dans la voiture",
+    "Sur la table"
+   ],
+   "r": 0,
+   "e": "« Your school bag is on the chair » : sur la chaise."
+  },
+  {
+   "t": "Ramatoulaye, thank you for the beautiful dress! I love the colour. Yellow is my favourite colour. - Penda",
+   "q": "Why does Penda say thank you?",
+   "o": [
+    "For a cake",
+    "For a dress",
+    "For a bag",
+    "For a book"
+   ],
+   "r": 1,
+   "e": "« Thank you for the beautiful dress! » : pour la robe."
+  },
+  {
+   "t": "Ramatoulaye, thank you for the beautiful dress! I love the colour. Yellow is my favourite colour. - Penda",
+   "q": "What is Penda's favourite colour?",
+   "o": [
+    "Yellow",
+    "Red",
+    "Blue",
+    "White"
+   ],
+   "r": 0,
+   "e": "« Yellow is my favourite colour » : sa couleur préférée est le jaune."
+  },
+  {
+   "t": "Idrissa, the shop is closed today. Can you buy the sugar at Mr Fall's shop near the mosque? Thanks, Mum.",
+   "q": "Where can Idrissa buy sugar?",
+   "o": [
+    "At the market",
+    "At the supermarket",
+    "At school",
+    "At Mr Fall's shop"
+   ],
+   "r": 3,
+   "e": "« Buy the sugar at Mr Fall's shop » : à la boutique de M. Fall."
+  },
+  {
+   "t": "Idrissa, the shop is closed today. Can you buy the sugar at Mr Fall's shop near the mosque? Thanks, Mum.",
+   "q": "Où est la boutique de M. Fall ?",
+   "o": [
+    "Près de la mosquée",
+    "Près de l'école",
+    "Près de la plage",
+    "Près de la gare"
+   ],
+   "r": 0,
+   "e": "« near the mosque » : près de la mosquée."
+  },
+  {
+   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come with your sister!",
+   "q": "How many friends are with Samba?",
+   "o": [
+    "Two",
+    "One",
+    "Three",
+    "Four"
+   ],
+   "r": 0,
+   "e": "Samba est avec Kiné et Doudou : deux amis."
+  },
+  {
+   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come with your sister!",
+   "q": "How is the water?",
+   "o": [
+    "Cold but nice",
+    "Hot",
+    "Dirty",
+    "Very deep"
+   ],
+   "r": 0,
+   "e": "« The water is cold but nice » : froide mais agréable."
+  },
+  {
+   "t": "Maimouna, I am at the library. I have your English book. I give it to you tomorrow at school. - Souleymane",
+   "q": "Where is Souleymane?",
+   "o": [
+    "At home",
+    "At the library",
+    "At the mosque",
+    "At the hospital"
+   ],
+   "r": 1,
+   "e": "« I am at the library » : à la bibliothèque."
+  },
+  {
+   "t": "Maimouna, I am at the library. I have your English book. I give it to you tomorrow at school. - Souleymane",
+   "q": "Quel livre a Souleymane ?",
+   "o": [
+    "Son livre de maths",
+    "Un livre d'histoires",
+    "Le livre du professeur",
+    "Le livre d'anglais de Maimouna"
+   ],
+   "r": 3,
+   "e": "« I have your English book » : il a le livre d'anglais de Maimouna."
+  },
+  {
+   "t": "Hi Nogaye! My dog has five puppies! They are black and white. Come and see them after school.",
+   "q": "How many puppies are there?",
+   "o": [
+    "Four",
+    "Six",
+    "Five",
+    "Three"
+   ],
+   "r": 2,
+   "e": "« My dog has five puppies » : cinq chiots."
+  },
+  {
+   "t": "Hi Nogaye! My dog has five puppies! They are black and white. Come and see them after school.",
+   "q": "What colour are the puppies?",
+   "o": [
+    "Brown",
+    "Black and white",
+    "All white",
+    "Black and brown"
+   ],
+   "r": 1,
+   "e": "« They are black and white » : noir et blanc."
+  },
+  {
+   "t": "Elhadji, I have a problem. My bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
+   "q": "What is Arame's problem?",
+   "o": [
+    "She is lost",
+    "She has no money",
+    "Her phone is broken",
+    "Her bike has a flat tyre"
+   ],
+   "r": 3,
+   "e": "« My bike has a flat tyre » : son vélo a un pneu crevé."
+  },
+  {
+   "t": "Elhadji, I have a problem. My bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
+   "q": "Where is Arame?",
+   "o": [
+    "Behind the school",
+    "At the hospital",
+    "Near the beach",
+    "In front of the post office"
+   ],
+   "r": 3,
+   "e": "« I am in front of the post office » : devant la poste."
+  },
+  {
+   "t": "Thierno: Is the English class in room 5? Yaye: No, it is in room 8 today. Room 5 is closed.",
+   "q": "Where is the English class today?",
+   "o": [
+    "In room 5",
+    "In room 8",
+    "In room 3",
+    "In the library"
+   ],
+   "r": 1,
+   "e": "Yaye dit : « it is in room 8 today » : salle 8."
+  },
+  {
+   "t": "Thierno: Is the English class in room 5? Yaye: No, it is in room 8 today. Room 5 is closed.",
+   "q": "Pourquoi la salle 5 n'est pas utilisée ?",
+   "o": [
+    "Elle est fermée",
+    "Elle est trop petite",
+    "Elle est sale",
+    "Elle est occupée"
+   ],
+   "r": 0,
+   "e": "« Room 5 is closed » : la salle 5 est fermée."
+  },
+  {
+   "t": "Hello Aliou, it is Nafi. I am at the airport. My plane leaves at 10. I am going to Paris to see my uncle.",
+   "q": "Where is Nafi going?",
+   "o": [
+    "To Dakar",
+    "To London",
+    "To Paris",
+    "To Abidjan"
+   ],
+   "r": 2,
+   "e": "« I am going to Paris » : à Paris."
+  },
+  {
+   "t": "Hello Aliou, it is Nafi. I am at the airport. My plane leaves at 10. I am going to Paris to see my uncle.",
+   "q": "Who will Nafi see?",
+   "o": [
+    "Her aunt",
+    "Her uncle",
+    "Her grandmother",
+    "Her brother"
+   ],
+   "r": 1,
+   "e": "« to see my uncle » : son oncle."
+  },
+  {
+   "t": "Djibril, please feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
+   "q": "What must Djibril do?",
+   "o": [
+    "Feed the chickens",
+    "Feed the goats",
+    "Clean the house",
+    "Go to the field"
+   ],
+   "r": 0,
+   "e": "« Please feed the chickens » : donner à manger aux poules."
+  },
+  {
+   "t": "Djibril, please feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
+   "q": "Where are Djibril's parents?",
+   "o": [
+    "At the market",
+    "At the hospital",
+    "At the field",
+    "In town"
+   ],
+   "r": 2,
+   "e": "« I am at the field with your father » : au champ."
+  },
+  {
+   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20. Fanta: Thanks!",
+   "q": "Which page is the homework?",
+   "o": [
+    "Page 3",
+    "Page 20",
+    "Page 4",
+    "Page 12"
+   ],
+   "r": 1,
+   "e": "« Exercises 3 and 4, page 20 » : page 20."
+  },
+  {
+   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20. Fanta: Thanks!",
+   "q": "Quels exercices faut-il faire ?",
+   "o": [
+    "Les exercices 2 et 3",
+    "Les exercices 3 et 4",
+    "L'exercice 20",
+    "Les exercices 4 et 5"
+   ],
+   "r": 1,
+   "e": "« Exercises 3 and 4 » : les exercices 3 et 4."
+  },
+  {
+   "t": "Hi Habib! I am in Ziguinchor with my family. We visit my grandmother. She has a big garden with mango trees.",
+   "q": "Who does Habib's friend visit?",
+   "o": [
+    "The uncle",
+    "The grandmother",
+    "A teacher",
+    "A cousin"
+   ],
+   "r": 1,
+   "e": "« We visit my grandmother » : la grand-mère."
+  },
+  {
+   "t": "Hi Habib! I am in Ziguinchor with my family. We visit my grandmother. She has a big garden with mango trees.",
+   "q": "What is in the garden?",
+   "o": [
+    "Orange trees",
+    "Baobabs",
+    "Mango trees",
+    "Flowers"
+   ],
+   "r": 2,
+   "e": "« She has a big garden with mango trees » : des manguiers."
+  },
+  {
+   "t": "Anta, the water is cut today. Please don't use the shower. There is water in the big bucket in the kitchen. - Dad",
+   "q": "What is the problem today?",
+   "o": [
+    "There is no electricity",
+    "The door is broken",
+    "There is no water",
+    "The phone is cut"
+   ],
+   "r": 2,
+   "e": "« The water is cut today » : il n'y a pas d'eau."
+  },
+  {
+   "t": "Anta, the water is cut today. Please don't use the shower. There is water in the big bucket in the kitchen. - Dad",
+   "q": "Où est le grand seau d'eau ?",
+   "o": [
+    "Dans la salle de bain",
+    "Dans la cour",
+    "Dans la chambre",
+    "Dans la cuisine"
+   ],
+   "r": 3,
+   "e": "« in the big bucket in the kitchen » : dans la cuisine."
+  },
+  {
+   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new boubou for the party. It is green.",
+   "q": "Where is Dior?",
+   "o": [
+    "At home",
+    "At the tailor",
+    "At school",
+    "At the market"
+   ],
+   "r": 1,
+   "e": "« I am at the tailor » : chez le tailleur."
+  },
+  {
+   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new boubou for the party. It is green.",
+   "q": "What colour is the boubou?",
+   "o": [
+    "Green",
+    "Blue",
+    "Purple",
+    "Orange"
+   ],
+   "r": 0,
+   "e": "« It is green » : le boubou est vert."
+  },
+  {
+   "t": "Hi Ngoné! Thank you for your help with my English homework. I have 18 out of 20! You are a great friend. - Codou",
+   "q": "What is Codou's mark?",
+   "o": [
+    "20 out of 20",
+    "18 out of 20",
+    "15 out of 20",
+    "8 out of 20"
+   ],
+   "r": 1,
+   "e": "« I have 18 out of 20 » : 18 sur 20."
+  },
+  {
+   "t": "Hi Ngoné! Thank you for your help with my English homework. I have 18 out of 20! You are a great friend. - Codou",
+   "q": "Why does Codou thank Ngoné?",
+   "o": [
+    "For help with homework",
+    "For a present",
+    "For a cake",
+    "For a phone call"
+   ],
+   "r": 0,
+   "e": "« Thank you for your help with my English homework » : pour l'aide aux devoirs."
+  },
+  {
+   "t": "Gora, the electricity is off. Take the lamp from the cupboard. The matches are on the table. - Grandpa",
+   "q": "Qu'est-ce qui ne marche pas ?",
+   "o": [
+    "L'eau",
+    "L'électricité",
+    "La télé",
+    "Le téléphone"
+   ],
+   "r": 1,
+   "e": "« The electricity is off » : il n'y a pas d'électricité."
+  },
+  {
+   "t": "Gora, the electricity is off. Take the lamp from the cupboard. The matches are on the table. - Grandpa",
+   "q": "Where are the matches?",
+   "o": [
+    "In the cupboard",
+    "Under the bed",
+    "On the table",
+    "In the kitchen"
+   ],
+   "r": 2,
+   "e": "« The matches are on the table » : sur la table."
+  },
+  {
+   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. The doctor is nice. We are home at 3. - Mum",
+   "q": "Who is sick?",
+   "o": [
+    "Ndella's mum",
+    "Ndella's brother",
+    "Ndella",
+    "Ndella's sister"
+   ],
+   "r": 1,
+   "e": "« I am at the clinic with your brother. He has a bad cough » : son frère."
+  },
+  {
+   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. The doctor is nice. We are home at 3. - Mum",
+   "q": "What does the brother have?",
+   "o": [
+    "A fever",
+    "A bad cough",
+    "A broken leg",
+    "A headache"
+   ],
+   "r": 1,
+   "e": "« He has a bad cough » : une grosse toux."
+  },
+  {
+   "t": "School notice: Class 6B, tomorrow is a holiday. There is no school. Classes start again on Thursday.",
+   "q": "Is there school tomorrow?",
+   "o": [
+    "Yes, at 8",
+    "No, it is a holiday",
+    "Yes, in the afternoon",
+    "Only for 6A"
+   ],
+   "r": 1,
+   "e": "« tomorrow is a holiday. There is no school » : pas d'école demain."
+  },
+  {
+   "t": "School notice: Class 6B, tomorrow is a holiday. There is no school. Classes start again on Thursday.",
+   "q": "When do classes start again?",
+   "o": [
+    "On Monday",
+    "On Thursday",
+    "On Wednesday",
+    "On Saturday"
+   ],
+   "r": 1,
+   "e": "« Classes start again on Thursday » : jeudi."
+  },
+  {
+   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History. 11:30 Sport.",
+   "q": "What is the first class on Monday?",
+   "o": [
+    "Maths",
+    "History",
+    "Sport",
+    "English"
+   ],
+   "r": 3,
+   "e": "À 8h00, il y a « English » : c'est le premier cours."
+  },
+  {
+   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History. 11:30 Sport.",
+   "q": "What time is the break?",
+   "o": [
+    "At 10:00",
+    "At 9:00",
+    "At 10:30",
+    "At 11:30"
+   ],
+   "r": 0,
+   "e": "« 10:00 Break » : la récréation est à 10 heures."
+  },
+  {
+   "t": "My school is in Thiès. It is big. There are 20 classrooms and a big yard. My favourite place is the library.",
+   "q": "Where is the school?",
+   "o": [
+    "In Thiès",
+    "In Dakar",
+    "In Mbour",
+    "In Kaolack"
+   ],
+   "r": 0,
+   "e": "« My school is in Thiès » : à Thiès."
+  },
+  {
+   "t": "My school is in Thiès. It is big. There are 20 classrooms and a big yard. My favourite place is the library.",
+   "q": "How many classrooms are there?",
+   "o": [
+    "12",
+    "2",
+    "30",
+    "20"
+   ],
+   "r": 3,
+   "e": "« There are 20 classrooms » : 20 salles de classe."
+  },
+  {
+   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag. We like his class.",
+   "q": "Comment est M. Ndiaye ?",
+   "o": [
+    "Petit et sévère",
+    "Vieux et triste",
+    "Gros et calme",
+    "Grand et drôle"
+   ],
+   "r": 3,
+   "e": "« He is tall and funny » : grand et drôle."
+  },
+  {
+   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag. We like his class.",
+   "q": "What colour is his bag?",
+   "o": [
+    "Black",
+    "Brown",
+    "Red",
+    "Blue"
+   ],
+   "r": 3,
+   "e": "« He has a big blue bag » : son sac est bleu."
+  },
+  {
+   "t": "School rules: Come to school at 7:45. Don't run in the classroom. Don't eat in class. Respect your teachers.",
+   "q": "What time must students arrive?",
+   "o": [
+    "At 8:00",
+    "At 7:45",
+    "At 7:00",
+    "At 8:45"
+   ],
+   "r": 1,
+   "e": "« Come to school at 7:45 » : à 7h45."
+  },
+  {
+   "t": "School rules: Come to school at 7:45. Don't run in the classroom. Don't eat in class. Respect your teachers.",
+   "q": "Qu'est-ce qui est interdit en classe ?",
+   "o": [
+    "Parler anglais",
+    "Manger",
+    "Lire",
+    "Écrire"
+   ],
+   "r": 1,
+   "e": "« Don't eat in class » : ne mange pas en classe."
+  },
+  {
+   "t": "I am Moussa. I am in 6th grade. I have six subjects. My favourite subject is science because I like animals.",
+   "q": "What is Moussa's favourite subject?",
+   "o": [
+    "Maths",
+    "Science",
+    "English",
+    "History"
+   ],
+   "r": 1,
+   "e": "« My favourite subject is science » : les sciences."
+  },
+  {
+   "t": "I am Moussa. I am in 6th grade. I have six subjects. My favourite subject is science because I like animals.",
+   "q": "Pourquoi Moussa aime cette matière ?",
+   "o": [
+    "Il aime les animaux",
+    "Il aime les nombres",
+    "Le professeur est drôle",
+    "C'est facile"
+   ],
+   "r": 0,
+   "e": "« because I like animals » : parce qu'il aime les animaux."
+  },
+  {
+   "t": "In my school bag, I have three books, two notebooks, a ruler and a pencil case. My pencil case is red.",
+   "q": "How many notebooks are in the bag?",
+   "o": [
+    "Three",
+    "One",
+    "Two",
+    "Four"
+   ],
+   "r": 2,
+   "e": "« two notebooks » : deux cahiers."
+  },
+  {
+   "t": "In my school bag, I have three books, two notebooks, a ruler and a pencil case. My pencil case is red.",
+   "q": "What colour is the pencil case?",
+   "o": [
+    "Blue",
+    "Black",
+    "Yellow",
+    "Red"
+   ],
+   "r": 3,
+   "e": "« My pencil case is red » : la trousse est rouge."
+  },
+  {
+   "t": "Notice: The school canteen is closed on Friday. Please bring your lunch from home. Thank you. - The Director",
+   "q": "When is the canteen closed?",
+   "o": [
+    "On Friday",
+    "On Monday",
+    "Every day",
+    "On Wednesday"
+   ],
+   "r": 0,
+   "e": "« The school canteen is closed on Friday » : vendredi."
+  },
+  {
+   "t": "Notice: The school canteen is closed on Friday. Please bring your lunch from home. Thank you. - The Director",
+   "q": "Que doivent faire les élèves ce jour-là ?",
+   "o": [
+    "Apporter leur repas",
+    "Rester à la maison",
+    "Manger au marché",
+    "Partir à midi"
+   ],
+   "r": 0,
+   "e": "« Please bring your lunch from home » : apporter son repas."
+  },
+  {
+   "t": "Fatou is a good student. She sits in the first row. She always does her homework. Her best friend is Awa.",
+   "q": "Where does Fatou sit?",
+   "o": [
+    "In the last row",
+    "Near the window",
+    "Near the door",
+    "In the first row"
+   ],
+   "r": 3,
+   "e": "« She sits in the first row » : au premier rang."
+  },
+  {
+   "t": "Fatou is a good student. She sits in the first row. She always does her homework. Her best friend is Awa.",
+   "q": "Who is Fatou's best friend?",
+   "o": [
+    "Khady",
+    "Bineta",
+    "Awa",
+    "Coumba"
+   ],
+   "r": 2,
+   "e": "« Her best friend is Awa » : sa meilleure amie est Awa."
+  },
+  {
+   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long. Bring a pen and a pencil.",
+   "q": "What day is the English exam?",
+   "o": [
+    "Thursday",
+    "Tuesday",
+    "Monday",
+    "Friday"
+   ],
+   "r": 1,
+   "e": "« The English exam is on Tuesday » : mardi."
+  },
+  {
+   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long. Bring a pen and a pencil.",
+   "q": "How long is the exam?",
+   "o": [
+    "One hour",
+    "Two hours",
+    "Thirty minutes",
+    "Three hours"
+   ],
+   "r": 0,
+   "e": "« It is one hour long » : une heure."
+  },
+  {
+   "t": "Our classroom has 40 desks. The walls are white. There is a big map of Senegal on the wall near the board.",
+   "q": "How many desks are there?",
+   "o": [
+    "14",
+    "4",
+    "30",
+    "40"
+   ],
+   "r": 3,
+   "e": "« Our classroom has 40 desks » : 40 tables."
+  },
+  {
+   "t": "Our classroom has 40 desks. The walls are white. There is a big map of Senegal on the wall near the board.",
+   "q": "What is on the wall?",
+   "o": [
+    "A clock",
+    "A photo of the class",
+    "A calendar",
+    "A map of Senegal"
+   ],
+   "r": 3,
+   "e": "« There is a big map of Senegal on the wall » : une carte du Sénégal."
+  },
+  {
+   "t": "Mrs Sarr is the maths teacher. She is short and kind. She wears glasses. She comes to school by car.",
+   "q": "What does Mrs Sarr teach?",
+   "o": [
+    "English",
+    "Maths",
+    "Science",
+    "French"
+   ],
+   "r": 1,
+   "e": "« Mrs Sarr is the maths teacher » : elle enseigne les maths."
+  },
+  {
+   "t": "Mrs Sarr is the maths teacher. She is short and kind. She wears glasses. She comes to school by car.",
+   "q": "Comment Mme Sarr vient à l'école ?",
+   "o": [
+    "En voiture",
+    "À pied",
+    "En bus",
+    "À vélo"
+   ],
+   "r": 0,
+   "e": "« She comes to school by car » : en voiture."
+  },
+  {
+   "t": "School club: The English club meets every Wednesday at 3 pm in room 2. We sing songs and play games. Everyone is welcome!",
+   "q": "When does the English club meet?",
+   "o": [
+    "Every Monday",
+    "Every Wednesday",
+    "Every Friday",
+    "Every day"
+   ],
+   "r": 1,
+   "e": "« The English club meets every Wednesday » : chaque mercredi."
+  },
+  {
+   "t": "School club: The English club meets every Wednesday at 3 pm in room 2. We sing songs and play games. Everyone is welcome!",
+   "q": "What do they do at the club?",
+   "o": [
+    "Cook food",
+    "Play football",
+    "Watch TV",
+    "Sing songs and play games"
+   ],
+   "r": 3,
+   "e": "« We sing songs and play games » : chanter et jouer."
+  },
+  {
+   "t": "Ibrahima walks to school every morning. His school is near his house. He leaves home at 7:30 with his brother.",
+   "q": "How does Ibrahima go to school?",
+   "o": [
+    "By bus",
+    "By car",
+    "He walks",
+    "By bike"
+   ],
+   "r": 2,
+   "e": "« Ibrahima walks to school » : il va à l'école à pied."
+  },
+  {
+   "t": "Ibrahima walks to school every morning. His school is near his house. He leaves home at 7:30 with his brother.",
+   "q": "Who goes with him?",
+   "o": [
+    "His sister",
+    "His father",
+    "His friend",
+    "His brother"
+   ],
+   "r": 3,
+   "e": "« with his brother » : avec son frère."
+  },
+  {
+   "t": "Lost in the yard: a black school bag with a green bottle in it. Ask the guard at the school gate.",
+   "q": "What colour is the bag?",
+   "o": [
+    "Green",
+    "Blue",
+    "Brown",
+    "Black"
+   ],
+   "r": 3,
+   "e": "« a black school bag » : un cartable noir."
+  },
+  {
+   "t": "Lost in the yard: a black school bag with a green bottle in it. Ask the guard at the school gate.",
+   "q": "À qui faut-il demander ?",
+   "o": [
+    "Au directeur",
+    "Au professeur",
+    "Au gardien",
+    "À la cantinière"
+   ],
+   "r": 2,
+   "e": "« Ask the guard at the school gate » : au gardien."
+  },
+  {
+   "t": "Today we have a new student. His name is Lamine. He is from Kolda. He is 12 and he likes drawing.",
+   "q": "Where is Lamine from?",
+   "o": [
+    "Dakar",
+    "Matam",
+    "Kolda",
+    "Fatick"
+   ],
+   "r": 2,
+   "e": "« He is from Kolda » : il vient de Kolda."
+  },
+  {
+   "t": "Today we have a new student. His name is Lamine. He is from Kolda. He is 12 and he likes drawing.",
+   "q": "What does Lamine like?",
+   "o": [
+    "Singing",
+    "Swimming",
+    "Reading",
+    "Drawing"
+   ],
+   "r": 3,
+   "e": "« He likes drawing » : il aime dessiner."
+  },
+  {
+   "t": "Class trip! On Saturday, Class 5C visits Gorée Island. Meet at the school at 8 am. Bring water and a hat.",
+   "q": "Where does the class go?",
+   "o": [
+    "Gorée Island",
+    "Saint-Louis",
+    "Lac Rose",
+    "The zoo"
+   ],
+   "r": 0,
+   "e": "« Class 5C visits Gorée Island » : l'île de Gorée."
+  },
+  {
+   "t": "Class trip! On Saturday, Class 5C visits Gorée Island. Meet at the school at 8 am. Bring water and a hat.",
+   "q": "What must students bring?",
+   "o": [
+    "Money and a book",
+    "A ball",
+    "A camera",
+    "Water and a hat"
+   ],
+   "r": 3,
+   "e": "« Bring water and a hat » : de l'eau et un chapeau."
+  },
+  {
+   "t": "Coumba is the class captain. She helps the teacher. She cleans the board and she opens the windows every morning.",
+   "q": "What is Coumba's job in class?",
+   "o": [
+    "Teacher",
+    "Class captain",
+    "Guard",
+    "Director"
+   ],
+   "r": 1,
+   "e": "« Coumba is the class captain » : chef de classe."
+  },
+  {
+   "t": "Coumba is the class captain. She helps the teacher. She cleans the board and she opens the windows every morning.",
+   "q": "Que fait Coumba chaque matin ?",
+   "o": [
+    "Elle ferme la porte",
+    "Elle lit un livre",
+    "Elle ouvre les fenêtres",
+    "Elle arrose les plantes"
+   ],
+   "r": 2,
+   "e": "« she opens the windows every morning » : elle ouvre les fenêtres."
+  },
+  {
+   "t": "Pape is sad. His mark in French is 6 out of 20. His mother is not happy. He wants to work harder.",
+   "q": "What is Pape's mark?",
+   "o": [
+    "16 out of 20",
+    "10 out of 20",
+    "6 out of 20",
+    "20 out of 20"
+   ],
+   "r": 2,
+   "e": "« His mark in French is 6 out of 20 » : 6 sur 20."
+  },
+  {
+   "t": "Pape is sad. His mark in French is 6 out of 20. His mother is not happy. He wants to work harder.",
+   "q": "Comment se sent Pape ?",
+   "o": [
+    "Triste",
+    "Content",
+    "Fatigué",
+    "En colère"
+   ],
+   "r": 0,
+   "e": "« Pape is sad » : Pape est triste."
+  },
+  {
+   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week. Don't eat near the books.",
+   "q": "How many books can you take?",
+   "o": [
+    "One",
+    "Three",
+    "Two",
+    "Five"
+   ],
+   "r": 2,
+   "e": "« Take only two books » : deux livres seulement."
+  },
+  {
+   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week. Don't eat near the books.",
+   "q": "Quand faut-il rendre les livres ?",
+   "o": [
+    "Après un jour",
+    "Après une semaine",
+    "Après un mois",
+    "Après deux semaines"
+   ],
+   "r": 1,
+   "e": "« Bring them back after one week » : après une semaine."
+  },
+  {
+   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play with my friends in the yard.",
+   "q": "What does the writer drink?",
+   "o": [
+    "Water",
+    "Milk",
+    "Tea",
+    "Bissap juice"
+   ],
+   "r": 3,
+   "e": "« drink bissap juice » : du jus de bissap."
+  },
+  {
+   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play with my friends in the yard.",
+   "q": "Where does the writer play?",
+   "o": [
+    "In the classroom",
+    "In the street",
+    "In the library",
+    "In the yard"
+   ],
+   "r": 3,
+   "e": "« I play with my friends in the yard » : dans la cour."
+  },
+  {
+   "t": "At my school, students wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
+   "q": "What colour are the boys' trousers?",
+   "o": [
+    "Grey",
+    "Blue",
+    "Black",
+    "White"
+   ],
+   "r": 0,
+   "e": "« Boys wear a blue shirt and grey trousers » : pantalon gris."
+  },
+  {
+   "t": "At my school, students wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
+   "q": "What do girls wear?",
+   "o": [
+    "A grey skirt",
+    "A white shirt",
+    "A blue dress",
+    "A yellow dress"
+   ],
+   "r": 2,
+   "e": "« Girls wear a blue dress » : une robe bleue."
+  },
+  {
+   "t": "The school year starts in October and ends in July. We have holidays in December and in April.",
+   "q": "When does the school year start?",
+   "o": [
+    "In October",
+    "In September",
+    "In July",
+    "In January"
+   ],
+   "r": 0,
+   "e": "« The school year starts in October » : en octobre."
+  },
+  {
+   "t": "The school year starts in October and ends in July. We have holidays in December and in April.",
+   "q": "Quand y a-t-il des vacances ?",
+   "o": [
+    "En janvier et en mars",
+    "En mai et en juin",
+    "En décembre et en avril",
+    "En août seulement"
+   ],
+   "r": 2,
+   "e": "« We have holidays in December and in April » : décembre et avril."
+  },
+  {
+   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school. The teacher is not happy.",
+   "q": "Why is Ousmane late?",
+   "o": [
+    "His alarm clock does not ring",
+    "His bus is late",
+    "He is sick",
+    "He loses his bag"
+   ],
+   "r": 0,
+   "e": "« His alarm clock does not ring » : son réveil ne sonne pas."
+  },
+  {
+   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school. The teacher is not happy.",
+   "q": "Comment Ousmane va à l'école ?",
+   "o": [
+    "Il prend le bus",
+    "Son père l'emmène",
+    "Il court",
+    "À vélo"
+   ],
+   "r": 2,
+   "e": "« He runs to school » : il court."
+  },
+  {
+   "t": "Notice for parents: Parents' meeting on Saturday 12th at 10 am in the big hall. Please come. - The Director",
+   "q": "Who is the meeting for?",
+   "o": [
+    "Students",
+    "Parents",
+    "Teachers only",
+    "Guards"
+   ],
+   "r": 1,
+   "e": "« Notice for parents: Parents' meeting » : pour les parents."
+  },
+  {
+   "t": "Notice for parents: Parents' meeting on Saturday 12th at 10 am in the big hall. Please come. - The Director",
+   "q": "Where is the meeting?",
+   "o": [
+    "In room 12",
+    "In the library",
+    "In the yard",
+    "In the big hall"
+   ],
+   "r": 3,
+   "e": "« in the big hall » : dans la grande salle."
+  },
+  {
+   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil and some tomatoes.",
+   "q": "How many fish are on the list?",
+   "o": [
+    "Two",
+    "Three",
+    "One",
+    "Four"
+   ],
+   "r": 1,
+   "e": "« 3 fish » : trois poissons."
+  },
+  {
+   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil and some tomatoes.",
+   "q": "Combien de kilos d'oignons ?",
+   "o": [
+    "Un kilo",
+    "Deux kilos",
+    "Trois kilos",
+    "Un demi-kilo"
+   ],
+   "r": 0,
+   "e": "« 1 kilo of onions » : un kilo."
+  },
+  {
+   "t": "At Sandaga market, Awa sells fruit. She has mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
+   "q": "What does Awa sell?",
+   "o": [
+    "Fruit",
+    "Fish",
+    "Clothes",
+    "Shoes"
+   ],
+   "r": 0,
+   "e": "« Awa sells fruit » : elle vend des fruits."
+  },
+  {
+   "t": "At Sandaga market, Awa sells fruit. She has mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
+   "q": "How much is a kilo of mangoes?",
+   "o": [
+    "50 francs",
+    "1,000 francs",
+    "5,000 francs",
+    "500 francs"
+   ],
+   "r": 3,
+   "e": "« Mangoes are 500 francs a kilo » : 500 francs le kilo."
+  },
+  {
+   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: It is too expensive! Seller: OK, 1,500 francs.",
+   "q": "What is the first price?",
+   "o": [
+    "1,500 francs",
+    "1,000 francs",
+    "2,000 francs",
+    "2,500 francs"
+   ],
+   "r": 2,
+   "e": "Le vendeur dit d'abord : « 2,000 francs »."
+  },
+  {
+   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: It is too expensive! Seller: OK, 1,500 francs.",
+   "q": "What is the new price?",
+   "o": [
+    "2,000 francs",
+    "500 francs",
+    "1,500 francs",
+    "1,200 francs"
+   ],
+   "r": 2,
+   "e": "Ensuite il dit : « OK, 1,500 francs » : le nouveau prix."
+  },
+  {
+   "t": "Every morning, Grandma makes breakfast. We eat bread with butter and drink coffee with milk. My little brother drinks juice.",
+   "q": "Who makes breakfast?",
+   "o": [
+    "Grandma",
+    "Mum",
+    "Dad",
+    "The little brother"
+   ],
+   "r": 0,
+   "e": "« Grandma makes breakfast » : la grand-mère."
+  },
+  {
+   "t": "Every morning, Grandma makes breakfast. We eat bread with butter and drink coffee with milk. My little brother drinks juice.",
+   "q": "What does the little brother drink?",
+   "o": [
+    "Coffee",
+    "Milk",
+    "Juice",
+    "Tea"
+   ],
+   "r": 2,
+   "e": "« My little brother drinks juice » : du jus."
+  },
+  {
+   "t": "I love yassa chicken. My mother cooks it on Sundays. It has onions, lemon and chicken. It is delicious!",
+   "q": "When does the mother cook yassa?",
+   "o": [
+    "On Mondays",
+    "On Sundays",
+    "Every day",
+    "On Fridays"
+   ],
+   "r": 1,
+   "e": "« My mother cooks it on Sundays » : le dimanche."
+  },
+  {
+   "t": "I love yassa chicken. My mother cooks it on Sundays. It has onions, lemon and chicken. It is delicious!",
+   "q": "Qu'y a-t-il dans le yassa ?",
+   "o": [
+    "Poisson, riz et carottes",
+    "Viande et arachide",
+    "Oignons, citron et poulet",
+    "Tomates et pain"
+   ],
+   "r": 2,
+   "e": "« It has onions, lemon and chicken » : oignons, citron, poulet."
+  },
+  {
+   "t": "Mr Ba is a fisherman in Kayar. He goes to sea in his pirogue every morning. He sells his fish at the beach.",
+   "q": "What is Mr Ba's job?",
+   "o": [
+    "Fisherman",
+    "Farmer",
+    "Teacher",
+    "Driver"
+   ],
+   "r": 0,
+   "e": "« Mr Ba is a fisherman » : il est pêcheur."
+  },
+  {
+   "t": "Mr Ba is a fisherman in Kayar. He goes to sea in his pirogue every morning. He sells his fish at the beach.",
+   "q": "Where does he sell his fish?",
+   "o": [
+    "At the market",
+    "In his house",
+    "At the beach",
+    "At school"
+   ],
+   "r": 2,
+   "e": "« He sells his fish at the beach » : sur la plage."
+  },
+  {
+   "t": "Bineta's shop: Rice 450 F a kilo. Sugar 700 F a kilo. Milk 300 F. Bread 150 F. Open every day from 7 am to 10 pm.",
+   "q": "How much is the sugar?",
+   "o": [
+    "450 F a kilo",
+    "300 F",
+    "150 F",
+    "700 F a kilo"
+   ],
+   "r": 3,
+   "e": "« Sugar 700 F a kilo » : 700 francs le kilo."
+  },
+  {
+   "t": "Bineta's shop: Rice 450 F a kilo. Sugar 700 F a kilo. Milk 300 F. Bread 150 F. Open every day from 7 am to 10 pm.",
+   "q": "When does the shop close?",
+   "o": [
+    "At 7 pm",
+    "At 10 pm",
+    "At 7 am",
+    "At midnight"
+   ],
+   "r": 1,
+   "e": "« Open every day from 7 am to 10 pm » : elle ferme à 22h."
+  },
+  {
+   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal. They are yellow and sweet.",
+   "q": "What is the writer's favourite fruit?",
+   "o": [
+    "The banana",
+    "The orange",
+    "The papaya",
+    "The mango"
+   ],
+   "r": 3,
+   "e": "« My favourite fruit is the mango » : la mangue."
+  },
+  {
+   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal. They are yellow and sweet.",
+   "q": "Quand y a-t-il beaucoup de mangues ?",
+   "o": [
+    "En janvier",
+    "En juin",
+    "En octobre",
+    "En décembre"
+   ],
+   "r": 1,
+   "e": "« In June, there are many mangoes » : en juin."
+  },
+  {
+   "t": "Kiné: I'm thirsty. Can I have some water? Aunt Penda: Yes, there is cold water in the fridge. Take a glass.",
+   "q": "What does Kiné want?",
+   "o": [
+    "Juice",
+    "Water",
+    "Tea",
+    "Milk"
+   ],
+   "r": 1,
+   "e": "« Can I have some water? » : Kiné veut de l'eau."
+  },
+  {
+   "t": "Kiné: I'm thirsty. Can I have some water? Aunt Penda: Yes, there is cold water in the fridge. Take a glass.",
+   "q": "Where is the cold water?",
+   "o": [
+    "On the table",
+    "In the kitchen sink",
+    "In the yard",
+    "In the fridge"
+   ],
+   "r": 3,
+   "e": "« there is cold water in the fridge » : dans le frigo."
+  },
+  {
+   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. I eat a salad. We drink ginger juice.",
+   "q": "What does Mum eat?",
+   "o": [
+    "Rice with fish",
+    "A salad",
+    "Couscous",
+    "Chicken and chips"
+   ],
+   "r": 3,
+   "e": "« Mum eats chicken and chips » : poulet et frites."
+  },
+  {
+   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. I eat a salad. We drink ginger juice.",
+   "q": "What do they drink?",
+   "o": [
+    "Bissap juice",
+    "Water",
+    "Ginger juice",
+    "Coffee"
+   ],
+   "r": 2,
+   "e": "« We drink ginger juice » : du jus de gingembre."
+  },
+  {
+   "t": "Mamadou is a baker. He makes bread every night from 2 am. In the morning, people buy his bread. It is hot and good.",
+   "q": "What is Mamadou's job?",
+   "o": [
+    "Butcher",
+    "Cook",
+    "Baker",
+    "Farmer"
+   ],
+   "r": 2,
+   "e": "« Mamadou is a baker » : il est boulanger."
+  },
+  {
+   "t": "Mamadou is a baker. He makes bread every night from 2 am. In the morning, people buy his bread. It is hot and good.",
+   "q": "Quand Mamadou commence à travailler ?",
+   "o": [
+    "À 8 heures",
+    "À 2 heures du matin",
+    "À midi",
+    "À 6 heures du soir"
+   ],
+   "r": 1,
+   "e": "« He makes bread every night from 2 am » : dès 2h du matin."
+  },
+  {
+   "t": "Recipe for bissap juice: Put bissap flowers in hot water. Wait one hour. Add sugar and mint. Drink it cold.",
+   "q": "How long do you wait?",
+   "o": [
+    "Ten minutes",
+    "Two hours",
+    "One hour",
+    "One day"
+   ],
+   "r": 2,
+   "e": "« Wait one hour » : attendre une heure."
+  },
+  {
+   "t": "Recipe for bissap juice: Put bissap flowers in hot water. Wait one hour. Add sugar and mint. Drink it cold.",
+   "q": "What do you add?",
+   "o": [
+    "Sugar and mint",
+    "Milk and sugar",
+    "Lemon and salt",
+    "Honey"
+   ],
+   "r": 0,
+   "e": "« Add sugar and mint » : du sucre et de la menthe."
+  },
+  {
+   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs. Students love her peanuts.",
+   "q": "What does Seynabou sell?",
+   "o": [
+    "Mangoes",
+    "Peanuts",
+    "Biscuits",
+    "Juice"
+   ],
+   "r": 1,
+   "e": "« Seynabou sells peanuts » : des arachides."
+  },
+  {
+   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs. Students love her peanuts.",
+   "q": "How much is a big bag?",
+   "o": [
+    "100 francs",
+    "250 francs",
+    "200 francs",
+    "500 francs"
+   ],
+   "r": 1,
+   "e": "« A big bag is 250 francs » : 250 francs."
+  },
+  {
+   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: Great! I love the peanut sauce.",
+   "q": "What is for dinner?",
+   "o": [
+    "Yassa with rice",
+    "Thieboudienne",
+    "Mafé with rice",
+    "Fish and chips"
+   ],
+   "r": 2,
+   "e": "« Mafé with rice » : du mafé avec du riz."
+  },
+  {
+   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: Great! I love the peanut sauce.",
+   "q": "What does Abdou love?",
+   "o": [
+    "The rice",
+    "The fish",
+    "The peanut sauce",
+    "The onions"
+   ],
+   "r": 2,
+   "e": "« I love the peanut sauce » : la sauce d'arachide."
+  },
+  {
+   "t": "The butcher's shop is next to the bakery. It opens at 8 am. Meat is 3,500 francs a kilo. The butcher is Mr Sow.",
+   "q": "Where is the butcher's shop?",
+   "o": [
+    "Next to the school",
+    "Next to the bakery",
+    "In the market",
+    "Behind the mosque"
+   ],
+   "r": 1,
+   "e": "« The butcher's shop is next to the bakery » : à côté de la boulangerie."
+  },
+  {
+   "t": "The butcher's shop is next to the bakery. It opens at 8 am. Meat is 3,500 francs a kilo. The butcher is Mr Sow.",
+   "q": "Who is the butcher?",
+   "o": [
+    "Mr Fall",
+    "Mr Ba",
+    "Mr Sow",
+    "Mr Diallo"
+   ],
+   "r": 2,
+   "e": "« The butcher is Mr Sow » : c'est M. Sow."
+  },
+  {
+   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and eat from a big bowl. My father says \"Bon appétit!\"",
+   "q": "What time is lunch?",
+   "o": [
+    "At 12 pm",
+    "At 1 pm",
+    "At 2 pm",
+    "At 3 pm"
+   ],
+   "r": 2,
+   "e": "« We eat lunch together at 2 pm » : à 14h."
+  },
+  {
+   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and eat from a big bowl. My father says \"Bon appétit!\"",
+   "q": "Où la famille s'assoit pour manger ?",
+   "o": [
+    "Sur une natte",
+    "Sur des chaises",
+    "Dans le jardin",
+    "Au restaurant"
+   ],
+   "r": 0,
+   "e": "« We sit on a mat » : sur une natte."
+  },
+  {
+   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 francs and meat for 3,000 francs.",
+   "q": "How much money does Aminata have?",
+   "o": [
+    "2,000 francs",
+    "5,000 francs",
+    "3,000 francs",
+    "1,000 francs"
+   ],
+   "r": 1,
+   "e": "« with 5,000 francs » : elle a 5 000 francs."
+  },
+  {
+   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 francs and meat for 3,000 francs.",
+   "q": "Combien coûte la viande ?",
+   "o": [
+    "2 000 francs",
+    "5 000 francs",
+    "1 000 francs",
+    "3 000 francs"
+   ],
+   "r": 3,
+   "e": "« meat for 3,000 francs » : la viande coûte 3 000 francs."
+  },
+  {
+   "t": "Rice field in Podor: Mr Diallo is a farmer. He grows rice near the river. His sons help him in the field.",
+   "q": "What does Mr Diallo grow?",
+   "o": [
+    "Peanuts",
+    "Millet",
+    "Onions",
+    "Rice"
+   ],
+   "r": 3,
+   "e": "« He grows rice near the river » : du riz."
+  },
+  {
+   "t": "Rice field in Podor: Mr Diallo is a farmer. He grows rice near the river. His sons help him in the field.",
+   "q": "Who helps Mr Diallo?",
+   "o": [
+    "His wife",
+    "His friends",
+    "His daughters",
+    "His sons"
+   ],
+   "r": 3,
+   "e": "« His sons help him » : ses fils."
+  },
+  {
+   "t": "Ice cream shop: Vanilla 500 F. Chocolate 500 F. Mango 600 F. Coconut 700 F. Closed on Mondays.",
+   "q": "Which ice cream costs 700 F?",
+   "o": [
+    "Mango",
+    "Vanilla",
+    "Chocolate",
+    "Coconut"
+   ],
+   "r": 3,
+   "e": "« Coconut 700 F » : la glace coco."
+  },
+  {
+   "t": "Ice cream shop: Vanilla 500 F. Chocolate 500 F. Mango 600 F. Coconut 700 F. Closed on Mondays.",
+   "q": "When is the shop closed?",
+   "o": [
+    "On Mondays",
+    "On Sundays",
+    "On Fridays",
+    "Every evening"
+   ],
+   "r": 0,
+   "e": "« Closed on Mondays » : fermé le lundi."
+  },
+  {
+   "t": "Moussa does not like fish. He likes meat and eggs. For breakfast, he eats an omelette and bread.",
+   "q": "What does Moussa not like?",
+   "o": [
+    "Meat",
+    "Eggs",
+    "Fish",
+    "Bread"
+   ],
+   "r": 2,
+   "e": "« Moussa does not like fish » : il n'aime pas le poisson."
+  },
+  {
+   "t": "Moussa does not like fish. He likes meat and eggs. For breakfast, he eats an omelette and bread.",
+   "q": "What does he eat for breakfast?",
+   "o": [
+    "Fish and rice",
+    "An omelette and bread",
+    "Bread and butter",
+    "Porridge"
+   ],
+   "r": 1,
+   "e": "« he eats an omelette and bread » : une omelette et du pain."
+  },
+  {
+   "t": "Ndeye: Two bananas, please. Seller: Here you are. 200 francs. Ndeye: Here is 500 francs. Seller: Your change: 300 francs.",
+   "q": "How many bananas does Ndeye buy?",
+   "o": [
+    "Three",
+    "Five",
+    "One",
+    "Two"
+   ],
+   "r": 3,
+   "e": "« Two bananas, please » : deux bananes."
+  },
+  {
+   "t": "Ndeye: Two bananas, please. Seller: Here you are. 200 francs. Ndeye: Here is 500 francs. Seller: Your change: 300 francs.",
+   "q": "Combien de monnaie reçoit Ndeye ?",
+   "o": [
+    "200 francs",
+    "500 francs",
+    "300 francs",
+    "100 francs"
+   ],
+   "r": 2,
+   "e": "« Your change: 300 francs » : 300 francs de monnaie."
+  },
+  {
+   "t": "Lunch box: Today, Babacar has rice and chicken in his lunch box. He has an apple too. He eats at school at 12:30.",
+   "q": "What fruit is in the lunch box?",
+   "o": [
+    "A mango",
+    "An apple",
+    "A banana",
+    "An orange"
+   ],
+   "r": 1,
+   "e": "« He has an apple too » : une pomme."
+  },
+  {
+   "t": "Lunch box: Today, Babacar has rice and chicken in his lunch box. He has an apple too. He eats at school at 12:30.",
+   "q": "When does Babacar eat?",
+   "o": [
+    "At 12:30",
+    "At 12:00",
+    "At 1:30",
+    "At 10:30"
+   ],
+   "r": 0,
+   "e": "« He eats at school at 12:30 » : à 12h30."
+  },
+  {
+   "t": "Grandpa has a small farm in Fatick. He has ten goats, five cows and many chickens. He sells milk in the village.",
+   "q": "How many goats does Grandpa have?",
+   "o": [
+    "Ten",
+    "Five",
+    "Two",
+    "Fifteen"
+   ],
+   "r": 0,
+   "e": "« He has ten goats » : dix chèvres."
+  },
+  {
+   "t": "Grandpa has a small farm in Fatick. He has ten goats, five cows and many chickens. He sells milk in the village.",
+   "q": "What does Grandpa sell?",
+   "o": [
+    "Eggs",
+    "Meat",
+    "Milk",
+    "Peanuts"
+   ],
+   "r": 2,
+   "e": "« He sells milk in the village » : du lait."
+  },
+  {
+   "t": "Tea time: In the evening, my uncle makes attaya. He makes three glasses. The first glass is strong. The third glass is very sweet.",
+   "q": "Who makes attaya?",
+   "o": [
+    "The father",
+    "The uncle",
+    "The grandmother",
+    "The brother"
+   ],
+   "r": 1,
+   "e": "« my uncle makes attaya » : l'oncle."
+  },
+  {
+   "t": "Tea time: In the evening, my uncle makes attaya. He makes three glasses. The first glass is strong. The third glass is very sweet.",
+   "q": "Comment est le troisième verre ?",
+   "o": [
+    "Très sucré",
+    "Très fort",
+    "Froid",
+    "Amer"
+   ],
+   "r": 0,
+   "e": "« The third glass is very sweet » : très sucré."
+  },
+  {
+   "t": "Market day in Diourbel is on Thursday. Many people come from the villages. They sell goats, peanuts and clothes.",
+   "q": "When is market day?",
+   "o": [
+    "On Thursday",
+    "On Tuesday",
+    "On Sunday",
+    "Every day"
+   ],
+   "r": 0,
+   "e": "« Market day in Diourbel is on Thursday » : jeudi."
+  },
+  {
+   "t": "Market day in Diourbel is on Thursday. Many people come from the villages. They sell goats, peanuts and clothes.",
+   "q": "What do people sell?",
+   "o": [
+    "Goats, peanuts and clothes",
+    "Fish and rice",
+    "Cars and bikes",
+    "Books"
+   ],
+   "r": 0,
+   "e": "« They sell goats, peanuts and clothes » : chèvres, arachides, vêtements."
+  },
+  {
+   "t": "Cheikh is hungry after school. He eats a big plate of couscous with milk. Then he drinks a glass of water and sleeps.",
+   "q": "What does Cheikh eat?",
+   "o": [
+    "Rice with fish",
+    "Bread and eggs",
+    "A sandwich",
+    "Couscous with milk"
+   ],
+   "r": 3,
+   "e": "« He eats a big plate of couscous with milk » : couscous au lait."
+  },
+  {
+   "t": "Cheikh is hungry after school. He eats a big plate of couscous with milk. Then he drinks a glass of water and sleeps.",
+   "q": "What does Cheikh do after he drinks?",
+   "o": [
+    "He plays",
+    "He reads",
+    "He watches TV",
+    "He sleeps"
+   ],
+   "r": 3,
+   "e": "« Then he drinks a glass of water and sleeps » : il dort."
+  },
+  {
+   "t": "Fruit juice price list: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F. All juices are cold.",
+   "q": "Which juice is the most expensive?",
+   "o": [
+    "Bouye",
+    "Ginger",
+    "Orange",
+    "Bissap"
+   ],
+   "r": 2,
+   "e": "L'orange coûte 300 F : c'est le plus cher."
+  },
+  {
+   "t": "Fruit juice price list: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F. All juices are cold.",
+   "q": "How much is a bouye juice?",
+   "o": [
+    "200 F",
+    "300 F",
+    "150 F",
+    "250 F"
+   ],
+   "r": 3,
+   "e": "« Bouye 250 F » : 250 francs."
+  },
+  {
+   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat at her restaurant.",
+   "q": "Where is the restaurant?",
+   "o": [
+    "In Mbour",
+    "In Dakar",
+    "In Saly",
+    "In Joal"
+   ],
+   "r": 0,
+   "e": "« Mrs Faye has a restaurant in Mbour » : à Mbour."
+  },
+  {
+   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat at her restaurant.",
+   "q": "Qui mange dans son restaurant ?",
+   "o": [
+    "Les élèves",
+    "Les professeurs",
+    "Les médecins",
+    "Les touristes et les pêcheurs"
+   ],
+   "r": 3,
+   "e": "« Tourists and fishermen eat at her restaurant »."
+  },
+  {
+   "t": "Astou's birthday cake is big. It is chocolate. There are 11 candles on the cake. Her friends sing \"Happy Birthday\".",
+   "q": "What kind of cake is it?",
+   "o": [
+    "Chocolate",
+    "Vanilla",
+    "Mango",
+    "Coconut"
+   ],
+   "r": 0,
+   "e": "« It is chocolate » : un gâteau au chocolat."
+  },
+  {
+   "t": "Astou's birthday cake is big. It is chocolate. There are 11 candles on the cake. Her friends sing \"Happy Birthday\".",
+   "q": "How old is Astou?",
+   "o": [
+    "10",
+    "12",
+    "11",
+    "13"
+   ],
+   "r": 2,
+   "e": "Il y a 11 bougies : Astou a 11 ans."
+  },
+  {
+   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Can you buy a new gas bottle? - Khady",
+   "q": "What is finished?",
+   "o": [
+    "The rice",
+    "The water",
+    "The gas",
+    "The oil"
+   ],
+   "r": 2,
+   "e": "« The gas is finished » : il n'y a plus de gaz."
+  },
+  {
+   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Can you buy a new gas bottle? - Khady",
+   "q": "What can't Khady do?",
+   "o": [
+    "Wash the clothes",
+    "Go to school",
+    "Cook the rice",
+    "Watch TV"
+   ],
+   "r": 2,
+   "e": "« I can't cook the rice » : elle ne peut pas cuire le riz."
+  },
+  {
+   "t": "Hi Coumba, our team wins 3-1! I score two goals. The coach is very happy. We play again on Sunday. - Assane",
+   "q": "What is the score?",
+   "o": [
+    "3-1",
+    "2-1",
+    "1-3",
+    "3-2"
+   ],
+   "r": 0,
+   "e": "« Our team wins 3-1 » : 3 à 1."
+  },
+  {
+   "t": "Hi Coumba, our team wins 3-1! I score two goals. The coach is very happy. We play again on Sunday. - Assane",
+   "q": "How many goals does Assane score?",
+   "o": [
+    "One",
+    "Three",
+    "Four",
+    "Two"
+   ],
+   "r": 3,
+   "e": "« I score two goals » : deux buts."
+  },
+  {
+   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. Sorry. - Yacine",
+   "q": "Why can't Yacine come?",
+   "o": [
+    "She has a dentist appointment",
+    "She is sick",
+    "She has a test",
+    "She is travelling"
+   ],
+   "r": 0,
+   "e": "« I have a dentist appointment » : rendez-vous chez le dentiste."
+  },
+  {
+   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. Sorry. - Yacine",
+   "q": "What time is the appointment?",
+   "o": [
+    "At 3 pm",
+    "At 2 pm",
+    "At 4 pm",
+    "At 3 am"
+   ],
+   "r": 0,
+   "e": "« at 3 pm » : à 15 heures."
+  },
+  {
+   "t": "Hello Dieynaba. Our new house is in Pikine. It has four rooms and a small garden. Come and visit us! - Marème",
+   "q": "Where is the new house?",
+   "o": [
+    "In Rufisque",
+    "In Pikine",
+    "In Yoff",
+    "In Ngor"
+   ],
+   "r": 1,
+   "e": "« Our new house is in Pikine » : à Pikine."
+  },
+  {
+   "t": "Hello Dieynaba. Our new house is in Pikine. It has four rooms and a small garden. Come and visit us! - Marème",
+   "q": "How many rooms does it have?",
+   "o": [
+    "Four",
+    "Three",
+    "Five",
+    "Two"
+   ],
+   "r": 0,
+   "e": "« It has four rooms » : quatre pièces."
+  },
+  {
+   "t": "Teacher's note: Very good work, Malick! Your English is better now. Read more books in English. - Mrs Diouf",
+   "q": "What does the teacher think?",
+   "o": [
+    "Malick is lazy",
+    "Malick is late",
+    "Malick's work is very good",
+    "Malick talks too much"
+   ],
+   "r": 2,
+   "e": "« Very good work, Malick! » : très bon travail."
+  },
+  {
+   "t": "Teacher's note: Very good work, Malick! Your English is better now. Read more books in English. - Mrs Diouf",
+   "q": "Qu'est-ce que la professeure conseille ?",
+   "o": [
+    "Regarder la télé",
+    "Dormir plus",
+    "Faire du sport",
+    "Lire plus de livres en anglais"
+   ],
+   "r": 3,
+   "e": "« Read more books in English » : lire plus de livres en anglais."
+  },
+  {
+   "t": "Bineta: Where is my red scarf? Mum: It is in your room, on the bed. Bineta: Thanks! I wear it to the wedding today.",
+   "q": "Where is the scarf?",
+   "o": [
+    "In the cupboard",
+    "In the bag",
+    "On the bed",
+    "On the chair"
+   ],
+   "r": 2,
+   "e": "« It is in your room, on the bed » : sur le lit."
+  },
+  {
+   "t": "Bineta: Where is my red scarf? Mum: It is in your room, on the bed. Bineta: Thanks! I wear it to the wedding today.",
+   "q": "Où va Bineta aujourd'hui ?",
+   "o": [
+    "À l'école",
+    "Au marché",
+    "À un mariage",
+    "À l'hôpital"
+   ],
+   "r": 2,
+   "e": "« I wear it to the wedding today » : elle va à un mariage."
+  },
+  {
+   "t": "Kitchen note: Pape, wash the plates and the glasses, please. Then put them in the cupboard. Thank you! - Aunt Kiné",
+   "q": "What must Pape wash?",
+   "o": [
+    "The clothes",
+    "The car",
+    "The plates and the glasses",
+    "The floor"
+   ],
+   "r": 2,
+   "e": "« wash the plates and the glasses » : les assiettes et les verres."
+  },
+  {
+   "t": "Kitchen note: Pape, wash the plates and the glasses, please. Then put them in the cupboard. Thank you! - Aunt Kiné",
+   "q": "Where must Pape put them?",
+   "o": [
+    "On the table",
+    "In the fridge",
+    "In the box",
+    "In the cupboard"
+   ],
+   "r": 3,
+   "e": "« put them in the cupboard » : dans le placard."
+  }
+ ]
+}

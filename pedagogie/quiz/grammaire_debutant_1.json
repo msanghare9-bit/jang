@@ -1,0 +1,2204 @@
+{
+ "questions": [
+  {
+   "q": "I ___ a student.",
+   "o": [
+    "be",
+    "am",
+    "is",
+    "are"
+   ],
+   "r": 1,
+   "e": "Avec « I », on dit toujours « am » : I am."
+  },
+  {
+   "q": "She ___ my sister.",
+   "o": [
+    "be",
+    "are",
+    "am",
+    "is"
+   ],
+   "r": 3,
+   "e": "Avec « she » (elle), on dit « is »."
+  },
+  {
+   "q": "They ___ in the classroom.",
+   "o": [
+    "is",
+    "be",
+    "are",
+    "am"
+   ],
+   "r": 2,
+   "e": "Avec « they » (ils, elles), on dit « are »."
+  },
+  {
+   "q": "We ___ happy today.",
+   "o": [
+    "are",
+    "be",
+    "is",
+    "am"
+   ],
+   "r": 0,
+   "e": "Avec « we » (nous), on dit « are »."
+  },
+  {
+   "q": "Moussa ___ twelve years old.",
+   "o": [
+    "am",
+    "are",
+    "has",
+    "is"
+   ],
+   "r": 3,
+   "e": "Pour l'âge, on utilise « be ». Moussa = he, donc « is »."
+  },
+  {
+   "q": "My father ___ a teacher.",
+   "o": [
+    "is",
+    "are",
+    "have",
+    "am"
+   ],
+   "r": 0,
+   "e": "« My father » = he (il), donc « is »."
+  },
+  {
+   "q": "The children ___ at home.",
+   "o": [
+    "be",
+    "are",
+    "am",
+    "is"
+   ],
+   "r": 1,
+   "e": "« The children » = they (plusieurs), donc « are »."
+  },
+  {
+   "q": "You ___ my best friend.",
+   "o": [
+    "be",
+    "is",
+    "are",
+    "am"
+   ],
+   "r": 2,
+   "e": "Avec « you » (tu, vous), on dit toujours « are »."
+  },
+  {
+   "q": "It ___ hot in Dakar.",
+   "o": [
+    "am",
+    "be",
+    "is",
+    "are"
+   ],
+   "r": 2,
+   "e": "Avec « it », on dit « is » : it is hot."
+  },
+  {
+   "q": "Awa and Fatou ___ cousins.",
+   "o": [
+    "is",
+    "am",
+    "are",
+    "be"
+   ],
+   "r": 2,
+   "e": "Deux personnes = they, donc « are »."
+  },
+  {
+   "q": "The cat ___ black.",
+   "o": [
+    "are",
+    "am",
+    "is",
+    "be"
+   ],
+   "r": 2,
+   "e": "Un seul chat = it, donc « is »."
+  },
+  {
+   "q": "The books ___ on the desk.",
+   "o": [
+    "is",
+    "be",
+    "am",
+    "are"
+   ],
+   "r": 3,
+   "e": "Plusieurs livres = they, donc « are »."
+  },
+  {
+   "q": "He ___ a good footballer.",
+   "o": [
+    "am",
+    "be",
+    "are",
+    "is"
+   ],
+   "r": 3,
+   "e": "Avec « he » (il), on dit « is »."
+  },
+  {
+   "q": "Mr Diop ___ a doctor.",
+   "o": [
+    "is",
+    "are",
+    "am",
+    "have"
+   ],
+   "r": 0,
+   "e": "Une seule personne (il), donc « is »."
+  },
+  {
+   "q": "My shoes ___ new.",
+   "o": [
+    "be",
+    "are",
+    "am",
+    "is"
+   ],
+   "r": 1,
+   "e": "« My shoes » = plusieurs choses, donc « are »."
+  },
+  {
+   "q": "Comment dit-on « je suis fatigué » ?",
+   "o": [
+    "I have tired.",
+    "I are tired.",
+    "I is tired.",
+    "I am tired."
+   ],
+   "r": 3,
+   "e": "« Je suis » se dit « I am »."
+  },
+  {
+   "q": "Comment dit-on « nous sommes sénégalais » ?",
+   "o": [
+    "We are Senegalese.",
+    "We is Senegalese.",
+    "We am Senegalese.",
+    "We has Senegalese."
+   ],
+   "r": 0,
+   "e": "« Nous sommes » se dit « we are »."
+  },
+  {
+   "q": "Comment dit-on « il est grand » ?",
+   "o": [
+    "He am tall.",
+    "He is tall.",
+    "He has tall.",
+    "He are tall."
+   ],
+   "r": 1,
+   "e": "« Il est » se dit « he is »."
+  },
+  {
+   "q": "Comment dit-on « elles sont au marché » ?",
+   "o": [
+    "They is at the market.",
+    "They be at the market.",
+    "They are at the market.",
+    "They am at the market."
+   ],
+   "r": 2,
+   "e": "« Elles sont » se dit « they are »."
+  },
+  {
+   "q": "Comment dit-on « tu es gentil » ?",
+   "o": [
+    "You am kind.",
+    "You be kind.",
+    "You is kind.",
+    "You are kind."
+   ],
+   "r": 3,
+   "e": "« Tu es » se dit « you are »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "My mother be a nurse.",
+    "My mother are a nurse.",
+    "My mother am a nurse.",
+    "My mother is a nurse."
+   ],
+   "r": 3,
+   "e": "« My mother » = she, donc « is »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "The girls are in the yard.",
+    "The girls be in the yard.",
+    "The girls is in the yard.",
+    "The girls am in the yard."
+   ],
+   "r": 0,
+   "e": "« The girls » = plusieurs, donc « are »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "I are from Thiès.",
+    "I is from Thiès.",
+    "I am from Thiès.",
+    "I be from Thiès."
+   ],
+   "r": 2,
+   "e": "Avec « I », on dit « am »."
+  },
+  {
+   "q": "Trouve la bonne forme : « Ousmane and I ___ friends. »",
+   "o": [
+    "am",
+    "be",
+    "is",
+    "are"
+   ],
+   "r": 3,
+   "e": "« Ousmane and I » = we (nous), donc « are »."
+  },
+  {
+   "q": "The weather ___ nice today.",
+   "o": [
+    "be",
+    "are",
+    "am",
+    "is"
+   ],
+   "r": 3,
+   "e": "« The weather » (le temps) = it, donc « is »."
+  },
+  {
+   "q": "This mango ___ sweet.",
+   "o": [
+    "is",
+    "am",
+    "are",
+    "be"
+   ],
+   "r": 0,
+   "e": "Une seule mangue, donc « is »."
+  },
+  {
+   "q": "These oranges ___ big.",
+   "o": [
+    "are",
+    "be",
+    "is",
+    "am"
+   ],
+   "r": 0,
+   "e": "« These oranges » = plusieurs, donc « are »."
+  },
+  {
+   "q": "Our school ___ near the mosque.",
+   "o": [
+    "is",
+    "am",
+    "are",
+    "be"
+   ],
+   "r": 0,
+   "e": "Une seule école = it, donc « is »."
+  },
+  {
+   "q": "The baobab ___ very old.",
+   "o": [
+    "are",
+    "is",
+    "am",
+    "be"
+   ],
+   "r": 1,
+   "e": "Un seul baobab = it, donc « is »."
+  },
+  {
+   "q": "Khady ___ hungry.",
+   "o": [
+    "am",
+    "is",
+    "are",
+    "has"
+   ],
+   "r": 1,
+   "e": "Pour dire « avoir faim », on dit « be hungry ». Khady = she, donc « is »."
+  },
+  {
+   "q": "Comment dit-on « Je suis à la maison » ?",
+   "o": [
+    "I am at home.",
+    "I is at home.",
+    "I are at home.",
+    "I have at home."
+   ],
+   "r": 0,
+   "e": "« Je suis » se dit « I am »."
+  },
+  {
+   "q": "Comment dit-on « Nous ne sommes pas prêts » ?",
+   "o": [
+    "We not are ready.",
+    "We aren't ready.",
+    "We don't ready.",
+    "We isn't ready."
+   ],
+   "r": 1,
+   "e": "« Nous ne sommes pas » = we are not = we aren't."
+  },
+  {
+   "q": "We ___ cold.",
+   "o": [
+    "are",
+    "have",
+    "am",
+    "is"
+   ],
+   "r": 0,
+   "e": "« Avoir froid » se dit « be cold » : we are cold."
+  },
+  {
+   "q": "Comment dit-on « j'ai soif » ?",
+   "o": [
+    "I are thirsty.",
+    "I is thirsty.",
+    "I am thirsty.",
+    "I have thirsty."
+   ],
+   "r": 2,
+   "e": "« Avoir soif » se dit « be thirsty » : I am thirsty."
+  },
+  {
+   "q": "Comment dit-on « elle a douze ans » ?",
+   "o": [
+    "She are twelve.",
+    "She has twelve.",
+    "She is twelve.",
+    "She have twelve."
+   ],
+   "r": 2,
+   "e": "L'âge se dit avec « be » : she is twelve."
+  },
+  {
+   "q": "The teacher ___ in the office.",
+   "o": [
+    "are",
+    "be",
+    "am",
+    "is"
+   ],
+   "r": 3,
+   "e": "« The teacher » = une personne, donc « is »."
+  },
+  {
+   "q": "Dogs ___ friendly animals.",
+   "o": [
+    "is",
+    "are",
+    "am",
+    "be"
+   ],
+   "r": 1,
+   "e": "« Dogs » = plusieurs chiens, donc « are »."
+  },
+  {
+   "q": "Senegal ___ in Africa.",
+   "o": [
+    "are",
+    "is",
+    "be",
+    "am"
+   ],
+   "r": 1,
+   "e": "Un seul pays = it, donc « is »."
+  },
+  {
+   "q": "The doors ___ open.",
+   "o": [
+    "am",
+    "is",
+    "are",
+    "be"
+   ],
+   "r": 2,
+   "e": "« The doors » = plusieurs portes, donc « are »."
+  },
+  {
+   "q": "Lamine ___ my neighbour.",
+   "o": [
+    "am",
+    "is",
+    "are",
+    "be"
+   ],
+   "r": 1,
+   "e": "Lamine = he, donc « is »."
+  },
+  {
+   "q": "I ___ not sad.",
+   "o": [
+    "do",
+    "are",
+    "is",
+    "am"
+   ],
+   "r": 3,
+   "e": "Avec « I », la négation est « am not »."
+  },
+  {
+   "q": "She ___ at school today. Elle est malade.",
+   "o": [
+    "isn't",
+    "amn't",
+    "don't",
+    "aren't"
+   ],
+   "r": 0,
+   "e": "Avec « she », on dit « is not » = « isn't »."
+  },
+  {
+   "q": "They ___ teachers. Ce sont des élèves.",
+   "o": [
+    "don't",
+    "not",
+    "isn't",
+    "aren't"
+   ],
+   "r": 3,
+   "e": "Avec « they », on dit « are not » = « aren't »."
+  },
+  {
+   "q": "The shop ___ open on Sunday.",
+   "o": [
+    "aren't",
+    "isn't",
+    "don't",
+    "not"
+   ],
+   "r": 1,
+   "e": "« The shop » = it, donc « is not » = « isn't »."
+  },
+  {
+   "q": "We ___ late.",
+   "o": [
+    "don't",
+    "aren't",
+    "isn't",
+    "not are"
+   ],
+   "r": 1,
+   "e": "Avec « we », on dit « are not » = « aren't »."
+  },
+  {
+   "q": "Comment dit-on « je ne suis pas grand » ?",
+   "o": [
+    "I am not tall.",
+    "I is not tall.",
+    "I don't am tall.",
+    "I not am tall."
+   ],
+   "r": 0,
+   "e": "La négation de « I am » : I am not."
+  },
+  {
+   "q": "Comment dit-on « il n'est pas là » ?",
+   "o": [
+    "He not is here.",
+    "He isn't here.",
+    "He aren't here.",
+    "He don't here."
+   ],
+   "r": 1,
+   "e": "« Il n'est pas » = he is not = he isn't."
+  },
+  {
+   "q": "Comment dit-on « vous n'êtes pas en retard » ?",
+   "o": [
+    "You aren't late.",
+    "You don't late.",
+    "You isn't late.",
+    "You not are late."
+   ],
+   "r": 0,
+   "e": "« You are not » = « you aren't »."
+  },
+  {
+   "q": "Mets à la forme négative : « It is cold. »",
+   "o": [
+    "It are not cold.",
+    "It does not cold.",
+    "It not is cold.",
+    "It is not cold."
+   ],
+   "r": 3,
+   "e": "On met « not » après « is » : it is not cold."
+  },
+  {
+   "q": "Mets à la forme négative : « We are tired. »",
+   "o": [
+    "We are not tired.",
+    "We do not tired.",
+    "We not are tired.",
+    "We is not tired."
+   ],
+   "r": 0,
+   "e": "On met « not » après « are » : we are not tired."
+  },
+  {
+   "q": "Mets à la forme négative : « Binta is a nurse. »",
+   "o": [
+    "Binta isn't a nurse.",
+    "Binta aren't a nurse.",
+    "Binta don't a nurse.",
+    "Binta not is a nurse."
+   ],
+   "r": 0,
+   "e": "« Is not » = « isn't »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "My pen isn't red.",
+    "My pen aren't red.",
+    "My pen not red.",
+    "My pen don't red."
+   ],
+   "r": 0,
+   "e": "Une chose = it, donc « isn't »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "The boys not here.",
+    "The boys aren't here.",
+    "The boys doesn't here.",
+    "The boys isn't here."
+   ],
+   "r": 1,
+   "e": "Plusieurs garçons, donc « aren't »."
+  },
+  {
+   "q": "Trouve l'erreur : « I isn't hungry. »",
+   "o": [
+    "I not hungry.",
+    "I aren't hungry.",
+    "I don't hungry.",
+    "I'm not hungry."
+   ],
+   "r": 3,
+   "e": "Avec « I », on dit « I am not » = « I'm not »."
+  },
+  {
+   "q": "The bananas ___ green. Elles sont jaunes.",
+   "o": [
+    "doesn't",
+    "not",
+    "aren't",
+    "isn't"
+   ],
+   "r": 2,
+   "e": "Plusieurs bananes, donc « are not » = « aren't »."
+  },
+  {
+   "q": "My bag ___ heavy. Il est léger.",
+   "o": [
+    "not",
+    "isn't",
+    "don't",
+    "aren't"
+   ],
+   "r": 1,
+   "e": "Un seul sac = it, donc « isn't »."
+  },
+  {
+   "q": "Pape ___ ill. Il va bien.",
+   "o": [
+    "not",
+    "aren't",
+    "don't",
+    "isn't"
+   ],
+   "r": 3,
+   "e": "Pape = he, donc « is not » = « isn't »."
+  },
+  {
+   "q": "The windows ___ closed.",
+   "o": [
+    "isn't",
+    "doesn't",
+    "not",
+    "aren't"
+   ],
+   "r": 3,
+   "e": "Plusieurs fenêtres, donc « aren't »."
+  },
+  {
+   "q": "You ___ alone. Je suis avec toi.",
+   "o": [
+    "amn't",
+    "aren't",
+    "don't",
+    "isn't"
+   ],
+   "r": 1,
+   "e": "Avec « you », on dit « aren't »."
+  },
+  {
+   "q": "Which one is the short form of « is not »?",
+   "o": [
+    "isn't",
+    "aren't",
+    "doesn't",
+    "don't"
+   ],
+   "r": 0,
+   "e": "« Is not » devient « isn't »."
+  },
+  {
+   "q": "Which one is the short form of « are not »?",
+   "o": [
+    "don't",
+    "isn't",
+    "aren't",
+    "wasn't"
+   ],
+   "r": 2,
+   "e": "« Are not » devient « aren't »."
+  },
+  {
+   "q": "___ you a student?",
+   "o": [
+    "Is",
+    "Are",
+    "Do",
+    "Am"
+   ],
+   "r": 1,
+   "e": "Avec « you », la question commence par « Are »."
+  },
+  {
+   "q": "___ she your mother?",
+   "o": [
+    "Is",
+    "Does",
+    "Are",
+    "Am"
+   ],
+   "r": 0,
+   "e": "Avec « she », la question commence par « Is »."
+  },
+  {
+   "q": "___ they from Mali?",
+   "o": [
+    "Do",
+    "Am",
+    "Are",
+    "Is"
+   ],
+   "r": 2,
+   "e": "Avec « they », la question commence par « Are »."
+  },
+  {
+   "q": "___ I late?",
+   "o": [
+    "Do",
+    "Am",
+    "Is",
+    "Are"
+   ],
+   "r": 1,
+   "e": "Avec « I », la question commence par « Am »."
+  },
+  {
+   "q": "___ it your phone?",
+   "o": [
+    "Do",
+    "Is",
+    "Am",
+    "Are"
+   ],
+   "r": 1,
+   "e": "Avec « it », la question commence par « Is »."
+  },
+  {
+   "q": "___ the shops open?",
+   "o": [
+    "Am",
+    "Are",
+    "Does",
+    "Is"
+   ],
+   "r": 1,
+   "e": "« The shops » = plusieurs, donc « Are »."
+  },
+  {
+   "q": "___ your brother at home?",
+   "o": [
+    "Are",
+    "Am",
+    "Is",
+    "Do"
+   ],
+   "r": 2,
+   "e": "« Your brother » = he, donc « Is »."
+  },
+  {
+   "q": "___ we in class 6B?",
+   "o": [
+    "Is",
+    "Am",
+    "Are",
+    "Do"
+   ],
+   "r": 2,
+   "e": "Avec « we », la question commence par « Are »."
+  },
+  {
+   "q": "Mets en question : « He is happy. »",
+   "o": [
+    "Does he happy?",
+    "Are he happy?",
+    "He is happy?",
+    "Is he happy?"
+   ],
+   "r": 3,
+   "e": "Pour la question, on met « is » avant « he » : Is he happy?"
+  },
+  {
+   "q": "Mets en question : « They are ready. »",
+   "o": [
+    "Do they ready?",
+    "Are they ready?",
+    "Is they ready?",
+    "They are ready?"
+   ],
+   "r": 1,
+   "e": "On met « are » avant « they » : Are they ready?"
+  },
+  {
+   "q": "Mets en question : « You are hungry. »",
+   "o": [
+    "Are you hungry?",
+    "You hungry are?",
+    "Do you hungry?",
+    "Is you hungry?"
+   ],
+   "r": 0,
+   "e": "On met « are » avant « you » : Are you hungry?"
+  },
+  {
+   "q": "Mets en question : « The milk is cold. »",
+   "o": [
+    "Are the milk cold?",
+    "Is the milk cold?",
+    "The milk cold is?",
+    "Does the milk cold?"
+   ],
+   "r": 1,
+   "e": "On met « is » au début : Is the milk cold?"
+  },
+  {
+   "q": "Comment dit-on « Es-tu prêt ? »",
+   "o": [
+    "Are you ready?",
+    "Do you ready?",
+    "Is you ready?",
+    "You are ready?"
+   ],
+   "r": 0,
+   "e": "« Es-tu » se dit « Are you »."
+  },
+  {
+   "q": "Comment dit-on « Est-ce qu'elle est malade ? »",
+   "o": [
+    "Are she ill?",
+    "Is she ill?",
+    "Does she ill?",
+    "Is ill she?"
+   ],
+   "r": 1,
+   "e": "Avec « she », on commence par « Is »."
+  },
+  {
+   "q": "Are you tired? — Yes, I ___.",
+   "o": [
+    "do",
+    "is",
+    "am",
+    "are"
+   ],
+   "r": 2,
+   "e": "On répond avec le même verbe : Yes, I am."
+  },
+  {
+   "q": "Is Fatou your sister? — No, she ___.",
+   "o": [
+    "aren't",
+    "isn't",
+    "doesn't",
+    "don't"
+   ],
+   "r": 1,
+   "e": "Fatou = she, donc « No, she isn't »."
+  },
+  {
+   "q": "Are they at school? — Yes, they ___.",
+   "o": [
+    "is",
+    "are",
+    "am",
+    "do"
+   ],
+   "r": 1,
+   "e": "On répond avec le même verbe : Yes, they are."
+  },
+  {
+   "q": "Is it a dog? — No, it ___.",
+   "o": [
+    "aren't",
+    "isn't",
+    "don't",
+    "doesn't"
+   ],
+   "r": 1,
+   "e": "Avec « it », on répond « No, it isn't »."
+  },
+  {
+   "q": "Are we late? — No, we ___.",
+   "o": [
+    "amn't",
+    "aren't",
+    "isn't",
+    "don't"
+   ],
+   "r": 1,
+   "e": "Avec « we », on répond « No, we aren't »."
+  },
+  {
+   "q": "Is your father a driver? — Yes, he ___.",
+   "o": [
+    "does",
+    "are",
+    "has",
+    "is"
+   ],
+   "r": 3,
+   "e": "Avec « he », on répond « Yes, he is »."
+  },
+  {
+   "q": "Am I right? — Yes, you ___.",
+   "o": [
+    "are",
+    "am",
+    "is",
+    "do"
+   ],
+   "r": 0,
+   "e": "On répond « you are » à quelqu'un qui dit « I »."
+  },
+  {
+   "q": "Are you and Modou brothers? — Yes, we ___.",
+   "o": [
+    "are",
+    "is",
+    "do",
+    "am"
+   ],
+   "r": 0,
+   "e": "« You and Modou » : la réponse est avec « we » : Yes, we are."
+  },
+  {
+   "q": "Is the soup hot? — Yes, it ___.",
+   "o": [
+    "am",
+    "are",
+    "does",
+    "is"
+   ],
+   "r": 3,
+   "e": "« The soup » = it : Yes, it is."
+  },
+  {
+   "q": "Are the cows in the field? — No, they ___.",
+   "o": [
+    "don't",
+    "isn't",
+    "doesn't",
+    "aren't"
+   ],
+   "r": 3,
+   "e": "Plusieurs vaches = they : No, they aren't."
+  },
+  {
+   "q": "Quelle question est correcte ?",
+   "o": [
+    "Your house is big is?",
+    "Does your house big?",
+    "Are your house big?",
+    "Is your house big?"
+   ],
+   "r": 3,
+   "e": "Une maison = it, donc « Is »."
+  },
+  {
+   "q": "Quelle question est correcte ?",
+   "o": [
+    "Do your friends nice?",
+    "Are your friends nice?",
+    "Is your friends nice?",
+    "Are nice your friends?"
+   ],
+   "r": 1,
+   "e": "Plusieurs amis, donc « Are »."
+  },
+  {
+   "q": "___ Dakar the capital of Senegal?",
+   "o": [
+    "Am",
+    "Is",
+    "Does",
+    "Are"
+   ],
+   "r": 1,
+   "e": "Dakar = it, donc « Is »."
+  },
+  {
+   "q": "___ the eggs fresh?",
+   "o": [
+    "Am",
+    "Are",
+    "Does",
+    "Is"
+   ],
+   "r": 1,
+   "e": "Plusieurs œufs, donc « Are »."
+  },
+  {
+   "q": "___ Mrs Ndiaye your teacher?",
+   "o": [
+    "Is",
+    "Does",
+    "Are",
+    "Am"
+   ],
+   "r": 0,
+   "e": "Une personne (elle), donc « Is »."
+  },
+  {
+   "q": "___ your parents at work?",
+   "o": [
+    "Is",
+    "Am",
+    "Are",
+    "Does"
+   ],
+   "r": 2,
+   "e": "« Your parents » = they, donc « Are »."
+  },
+  {
+   "q": "Choose the short form: « I am »",
+   "o": [
+    "I'am",
+    "Ia'm",
+    "Im'",
+    "I'm"
+   ],
+   "r": 3,
+   "e": "« I am » devient « I'm »."
+  },
+  {
+   "q": "Choose the short form: « she is »",
+   "o": [
+    "she's",
+    "she'is",
+    "s'he",
+    "shes'"
+   ],
+   "r": 0,
+   "e": "« She is » devient « she's »."
+  },
+  {
+   "q": "Choose the short form: « they are »",
+   "o": [
+    "they're",
+    "there",
+    "their",
+    "theyr'e"
+   ],
+   "r": 0,
+   "e": "« They are » devient « they're »."
+  },
+  {
+   "q": "Choose the short form: « we are »",
+   "o": [
+    "we'r",
+    "wer'e",
+    "were",
+    "we're"
+   ],
+   "r": 3,
+   "e": "« We are » devient « we're »."
+  },
+  {
+   "q": "Choose the short form: « it is »",
+   "o": [
+    "it'is",
+    "i'ts",
+    "it's",
+    "its"
+   ],
+   "r": 2,
+   "e": "« It is » devient « it's » (avec l'apostrophe)."
+  },
+  {
+   "q": "What is the long form of « you're »?",
+   "o": [
+    "you were",
+    "you are",
+    "you is",
+    "your"
+   ],
+   "r": 1,
+   "e": "« You're » = « you are »."
+  },
+  {
+   "q": "What is the long form of « he's » in « He's my uncle »?",
+   "o": [
+    "he is",
+    "he are",
+    "he was",
+    "he has"
+   ],
+   "r": 0,
+   "e": "Ici « he's » = « he is » : il est mon oncle."
+  },
+  {
+   "q": "___ a beautiful day!",
+   "o": [
+    "Its",
+    "Is",
+    "It",
+    "It's"
+   ],
+   "r": 3,
+   "e": "« It's » = « it is » : c'est une belle journée."
+  },
+  {
+   "q": "___ from Senegal. (je)",
+   "o": [
+    "My",
+    "I",
+    "Me",
+    "I'm"
+   ],
+   "r": 3,
+   "e": "« I'm » = « I am » : je suis."
+  },
+  {
+   "q": "___ in the kitchen. (ils)",
+   "o": [
+    "Them",
+    "They're",
+    "There",
+    "Their"
+   ],
+   "r": 1,
+   "e": "« They're » = « they are » : ils sont."
+  },
+  {
+   "q": "I ___ a brother.",
+   "o": [
+    "have",
+    "is",
+    "has",
+    "am"
+   ],
+   "r": 0,
+   "e": "Avec « I », on dit « have »."
+  },
+  {
+   "q": "She ___ two sisters.",
+   "o": [
+    "have",
+    "has",
+    "is",
+    "are"
+   ],
+   "r": 1,
+   "e": "Avec « she », on dit « has »."
+  },
+  {
+   "q": "He ___ a bicycle.",
+   "o": [
+    "is",
+    "are",
+    "have",
+    "has"
+   ],
+   "r": 3,
+   "e": "Avec « he », on dit « has »."
+  },
+  {
+   "q": "They ___ a big house.",
+   "o": [
+    "has",
+    "is",
+    "have",
+    "are"
+   ],
+   "r": 2,
+   "e": "Avec « they », on dit « have »."
+  },
+  {
+   "q": "We ___ English on Monday.",
+   "o": [
+    "is",
+    "are",
+    "has",
+    "have"
+   ],
+   "r": 3,
+   "e": "Avec « we », on dit « have »."
+  },
+  {
+   "q": "You ___ nice shoes.",
+   "o": [
+    "has",
+    "is",
+    "are",
+    "have"
+   ],
+   "r": 3,
+   "e": "Avec « you », on dit « have »."
+  },
+  {
+   "q": "My dog ___ a long tail.",
+   "o": [
+    "is",
+    "have",
+    "has",
+    "are"
+   ],
+   "r": 2,
+   "e": "« My dog » = it, donc « has »."
+  },
+  {
+   "q": "Aminata ___ black hair.",
+   "o": [
+    "is",
+    "have",
+    "has",
+    "are"
+   ],
+   "r": 2,
+   "e": "Aminata = she, donc « has »."
+  },
+  {
+   "q": "Our class ___ thirty pupils.",
+   "o": [
+    "is",
+    "are",
+    "have",
+    "has"
+   ],
+   "r": 3,
+   "e": "« Our class » = it, donc « has »."
+  },
+  {
+   "q": "My grandparents ___ a farm.",
+   "o": [
+    "have",
+    "has",
+    "are",
+    "is"
+   ],
+   "r": 0,
+   "e": "« My grandparents » = they, donc « have »."
+  },
+  {
+   "q": "A spider ___ eight legs.",
+   "o": [
+    "are",
+    "have",
+    "is",
+    "has"
+   ],
+   "r": 3,
+   "e": "« A spider » = it, donc « has »."
+  },
+  {
+   "q": "Cheikh and Omar ___ a ball.",
+   "o": [
+    "is",
+    "have",
+    "are",
+    "has"
+   ],
+   "r": 1,
+   "e": "Deux personnes = they, donc « have »."
+  },
+  {
+   "q": "The house ___ three rooms.",
+   "o": [
+    "are",
+    "is",
+    "has",
+    "have"
+   ],
+   "r": 2,
+   "e": "Une maison = it, donc « has »."
+  },
+  {
+   "q": "Comment dit-on « j'ai un chat » ?",
+   "o": [
+    "I has a cat.",
+    "I am a cat.",
+    "I have a cat.",
+    "I is a cat."
+   ],
+   "r": 2,
+   "e": "« J'ai » se dit « I have »."
+  },
+  {
+   "q": "Comment dit-on « il a un stylo » ?",
+   "o": [
+    "He has a pen.",
+    "He haves a pen.",
+    "He is a pen.",
+    "He have a pen."
+   ],
+   "r": 0,
+   "e": "« Il a » se dit « he has »."
+  },
+  {
+   "q": "Comment dit-on « nous avons une voiture » ?",
+   "o": [
+    "We are a car.",
+    "We haves a car.",
+    "We have a car.",
+    "We has a car."
+   ],
+   "r": 2,
+   "e": "« Nous avons » se dit « we have »."
+  },
+  {
+   "q": "Comment dit-on « elle a mal à la tête » ?",
+   "o": [
+    "She have a headache.",
+    "She has a headache.",
+    "She is a headache.",
+    "She are a headache."
+   ],
+   "r": 1,
+   "e": "« Elle a » se dit « she has »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "My mother is a shop.",
+    "My mother haves a shop.",
+    "My mother have a shop.",
+    "My mother has a shop."
+   ],
+   "r": 3,
+   "e": "« My mother » = she, donc « has »."
+  },
+  {
+   "q": "Quelle phrase est correcte ?",
+   "o": [
+    "The teachers has a meeting.",
+    "The teachers is a meeting.",
+    "The teachers haves a meeting.",
+    "The teachers have a meeting."
+   ],
+   "r": 3,
+   "e": "Plusieurs professeurs = they, donc « have »."
+  },
+  {
+   "q": "Trouve l'erreur : « He have a cold. »",
+   "o": [
+    "He has a cold.",
+    "He haves a cold.",
+    "He is a cold.",
+    "He are a cold."
+   ],
+   "r": 0,
+   "e": "Avec « he », on dit « has », pas « have »."
+  },
+  {
+   "q": "Trouve l'erreur : « They has two goats. »",
+   "o": [
+    "They are two goats.",
+    "They haves two goats.",
+    "They have two goats.",
+    "They is two goats."
+   ],
+   "r": 2,
+   "e": "Avec « they », on dit « have », pas « has »."
+  },
+  {
+   "q": "I ___ breakfast at seven.",
+   "o": [
+    "have",
+    "has",
+    "am",
+    "do"
+   ],
+   "r": 0,
+   "e": "« Prendre le petit déjeuner » se dit « have breakfast ». Avec « I » : have."
+  },
+  {
+   "q": "Seynabou ___ lunch at school.",
+   "o": [
+    "is",
+    "have",
+    "has",
+    "does"
+   ],
+   "r": 2,
+   "e": "« Have lunch » = déjeuner. Avec « she » : has."
+  },
+  {
+   "q": "An elephant ___ big ears.",
+   "o": [
+    "has",
+    "is",
+    "have",
+    "are"
+   ],
+   "r": 0,
+   "e": "« An elephant » = it, donc « has »."
+  },
+  {
+   "q": "Ibrahima ___ a new phone.",
+   "o": [
+    "is",
+    "have",
+    "has",
+    "are"
+   ],
+   "r": 2,
+   "e": "Ibrahima = he, donc « has »."
+  },
+  {
+   "q": "I ___ have a sister.",
+   "o": [
+    "doesn't",
+    "don't",
+    "am not",
+    "isn't"
+   ],
+   "r": 1,
+   "e": "Avec « I », la négation de « have » est « don't have »."
+  },
+  {
+   "q": "She ___ have a car.",
+   "o": [
+    "don't",
+    "not",
+    "isn't",
+    "doesn't"
+   ],
+   "r": 3,
+   "e": "Avec « she », la négation est « doesn't have »."
+  },
+  {
+   "q": "We ___ have homework today.",
+   "o": [
+    "doesn't",
+    "don't",
+    "aren't",
+    "isn't"
+   ],
+   "r": 1,
+   "e": "Avec « we », on dit « don't have »."
+  },
+  {
+   "q": "My uncle ___ have children.",
+   "o": [
+    "doesn't",
+    "don't",
+    "aren't",
+    "isn't"
+   ],
+   "r": 0,
+   "e": "« My uncle » = he, donc « doesn't have »."
+  },
+  {
+   "q": "Comment dit-on « je n'ai pas de stylo » ?",
+   "o": [
+    "I don't have a pen.",
+    "I not have a pen.",
+    "I haven't a pen.",
+    "I doesn't have a pen."
+   ],
+   "r": 0,
+   "e": "On dit « I don't have » : je n'ai pas."
+  },
+  {
+   "q": "Comment dit-on « il n'a pas de vélo » ?",
+   "o": [
+    "He not has a bike.",
+    "He doesn't has a bike.",
+    "He don't have a bike.",
+    "He doesn't have a bike."
+   ],
+   "r": 3,
+   "e": "Avec « he », on dit « doesn't have » (pas « has » après « doesn't »)."
+  },
+  {
+   "q": "Trouve l'erreur : « She doesn't has a ruler. »",
+   "o": [
+    "She doesn't haves a ruler.",
+    "She don't have a ruler.",
+    "She doesn't have a ruler.",
+    "She not has a ruler."
+   ],
+   "r": 2,
+   "e": "Après « doesn't », on met « have », jamais « has »."
+  },
+  {
+   "q": "___ you have a dictionary?",
+   "o": [
+    "Are",
+    "Is",
+    "Do",
+    "Does"
+   ],
+   "r": 2,
+   "e": "Avec « you », la question commence par « Do » : Do you have…?"
+  },
+  {
+   "q": "___ he have a brother?",
+   "o": [
+    "Does",
+    "Is",
+    "Do",
+    "Has"
+   ],
+   "r": 0,
+   "e": "Avec « he », la question commence par « Does » : Does he have…?"
+  },
+  {
+   "q": "___ they have a garden?",
+   "o": [
+    "Does",
+    "Is",
+    "Do",
+    "Are"
+   ],
+   "r": 2,
+   "e": "Avec « they », la question commence par « Do »."
+  },
+  {
+   "q": "___ your sister have a job?",
+   "o": [
+    "Do",
+    "Does",
+    "Are",
+    "Is"
+   ],
+   "r": 1,
+   "e": "« Your sister » = she, donc « Does »."
+  },
+  {
+   "q": "Do you have a pencil? — Yes, I ___.",
+   "o": [
+    "have",
+    "am",
+    "do",
+    "does"
+   ],
+   "r": 2,
+   "e": "On répond avec « do » : Yes, I do."
+  },
+  {
+   "q": "Does Astou have a cat? — No, she ___.",
+   "o": [
+    "doesn't",
+    "isn't",
+    "don't",
+    "hasn't"
+   ],
+   "r": 0,
+   "e": "On répond avec « does » : No, she doesn't."
+  },
+  {
+   "q": "Do they have a TV? — Yes, they ___.",
+   "o": [
+    "are",
+    "has",
+    "do",
+    "does"
+   ],
+   "r": 2,
+   "e": "On répond avec « do » : Yes, they do."
+  },
+  {
+   "q": "Does your school have a library? — Yes, it ___.",
+   "o": [
+    "has",
+    "is",
+    "do",
+    "does"
+   ],
+   "r": 3,
+   "e": "« Your school » = it : Yes, it does."
+  },
+  {
+   "q": "Comment dit-on « As-tu un frère ? »",
+   "o": [
+    "You have a brother?",
+    "Do you have a brother?",
+    "Are you have a brother?",
+    "Does you have a brother?"
+   ],
+   "r": 1,
+   "e": "Avec « you », on dit « Do you have…? »."
+  },
+  {
+   "q": "Comment dit-on « A-t-elle un sac ? »",
+   "o": [
+    "Does she has a bag?",
+    "Is she have a bag?",
+    "Do she have a bag?",
+    "Does she have a bag?"
+   ],
+   "r": 3,
+   "e": "Avec « she » : Does she have…? (pas « has »)."
+  },
+  {
+   "q": "Quelle question est correcte ?",
+   "o": [
+    "Do Modou have a ball?",
+    "Does Modou have a ball?",
+    "Does Modou has a ball?",
+    "Is Modou have a ball?"
+   ],
+   "r": 1,
+   "e": "Avec une personne (il) : Does … have…?"
+  },
+  {
+   "q": "Choisis : « My sister ___ a nurse. »",
+   "o": [
+    "have",
+    "is",
+    "has",
+    "are"
+   ],
+   "r": 1,
+   "e": "On dit ce qu'une personne est (son métier) avec « be » : is."
+  },
+  {
+   "q": "Choisis : « My sister ___ a red dress. »",
+   "o": [
+    "have",
+    "is",
+    "are",
+    "has"
+   ],
+   "r": 3,
+   "e": "Pour ce qu'on possède, on utilise « have » : she has."
+  },
+  {
+   "q": "Choisis : « The boy ___ hungry. »",
+   "o": [
+    "have",
+    "are",
+    "has",
+    "is"
+   ],
+   "r": 3,
+   "e": "« Avoir faim » = « be hungry » : he is hungry."
+  },
+  {
+   "q": "Choisis : « The boy ___ a dog. »",
+   "o": [
+    "is",
+    "have",
+    "has",
+    "are"
+   ],
+   "r": 2,
+   "e": "Pour posséder quelque chose : he has."
+  },
+  {
+   "q": "Choisis : « We ___ in Saint-Louis. »",
+   "o": [
+    "have",
+    "has",
+    "are",
+    "is"
+   ],
+   "r": 2,
+   "e": "Pour dire où on est, on utilise « be » : we are."
+  },
+  {
+   "q": "Choisis : « We ___ a new teacher. »",
+   "o": [
+    "has",
+    "have",
+    "are",
+    "is"
+   ],
+   "r": 1,
+   "e": "Pour dire ce qu'on a : we have."
+  },
+  {
+   "q": "Choisis : « I ___ eleven years old. »",
+   "o": [
+    "is",
+    "have",
+    "am",
+    "has"
+   ],
+   "r": 2,
+   "e": "L'âge se dit avec « be » : I am eleven."
+  },
+  {
+   "q": "Choisis : « I ___ eleven pencils. »",
+   "o": [
+    "have",
+    "has",
+    "am",
+    "is"
+   ],
+   "r": 0,
+   "e": "Pour ce qu'on possède : I have."
+  },
+  {
+   "q": "Moussa is my friend. ___ is very kind.",
+   "o": [
+    "They",
+    "He",
+    "She",
+    "It"
+   ],
+   "r": 1,
+   "e": "Moussa est un garçon, donc « he » (il)."
+  },
+  {
+   "q": "Fatou is my cousin. ___ lives in Kaolack.",
+   "o": [
+    "They",
+    "She",
+    "It",
+    "He"
+   ],
+   "r": 1,
+   "e": "Fatou est une fille, donc « she » (elle)."
+  },
+  {
+   "q": "I have a cat. ___ is white.",
+   "o": [
+    "She",
+    "He",
+    "It",
+    "They"
+   ],
+   "r": 2,
+   "e": "Pour un animal ou une chose, on dit « it »."
+  },
+  {
+   "q": "Awa and Binta are sisters. ___ are tall.",
+   "o": [
+    "We",
+    "She",
+    "They",
+    "It"
+   ],
+   "r": 2,
+   "e": "Deux personnes = « they » (elles)."
+  },
+  {
+   "q": "My friends and I play football. ___ play every Saturday.",
+   "o": [
+    "He",
+    "We",
+    "You",
+    "They"
+   ],
+   "r": 1,
+   "e": "« My friends and I » = « we » (nous)."
+  },
+  {
+   "q": "The books are on the table. ___ are new.",
+   "o": [
+    "We",
+    "He",
+    "They",
+    "It"
+   ],
+   "r": 2,
+   "e": "Plusieurs choses = « they »."
+  },
+  {
+   "q": "Mr Fall is a farmer. ___ grows millet.",
+   "o": [
+    "They",
+    "She",
+    "He",
+    "It"
+   ],
+   "r": 2,
+   "e": "Mr Fall est un homme, donc « he »."
+  },
+  {
+   "q": "My grandmother is old. ___ is seventy.",
+   "o": [
+    "She",
+    "They",
+    "It",
+    "He"
+   ],
+   "r": 0,
+   "e": "« My grandmother » = une femme, donc « she »."
+  },
+  {
+   "q": "The car is red. ___ is fast.",
+   "o": [
+    "He",
+    "It",
+    "They",
+    "She"
+   ],
+   "r": 1,
+   "e": "Une chose = « it »."
+  },
+  {
+   "q": "Comment dit-on « nous » en anglais ?",
+   "o": [
+    "our",
+    "us",
+    "they",
+    "we"
+   ],
+   "r": 3,
+   "e": "« Nous » (sujet) se dit « we »."
+  },
+  {
+   "q": "Comment dit-on « ils » en anglais ?",
+   "o": [
+    "there",
+    "them",
+    "their",
+    "they"
+   ],
+   "r": 3,
+   "e": "« Ils » ou « elles » (sujet) se dit « they »."
+  },
+  {
+   "q": "Comment dit-on « elle » (une personne) en anglais ?",
+   "o": [
+    "he",
+    "her",
+    "it",
+    "she"
+   ],
+   "r": 3,
+   "e": "« Elle » (une personne) se dit « she »."
+  },
+  {
+   "q": "Which word means « je »?",
+   "o": [
+    "my",
+    "mine",
+    "me",
+    "I"
+   ],
+   "r": 3,
+   "e": "« Je » se dit « I » (toujours en majuscule)."
+  },
+  {
+   "q": "Which word means « tu »?",
+   "o": [
+    "you",
+    "yourself",
+    "yours",
+    "your"
+   ],
+   "r": 0,
+   "e": "« Tu » se dit « you »."
+  },
+  {
+   "q": "Trouve l'erreur : « Me am a pupil. »",
+   "o": [
+    "My am a pupil.",
+    "Mine am a pupil.",
+    "I am a pupil.",
+    "I is a pupil."
+   ],
+   "r": 2,
+   "e": "Pour le sujet (je), on dit « I », pas « me »."
+  },
+  {
+   "q": "Trouve l'erreur : « Him is my brother. »",
+   "o": [
+    "Him are my brother.",
+    "He is my brother.",
+    "His is my brother.",
+    "He are my brother."
+   ],
+   "r": 1,
+   "e": "Pour le sujet (il), on dit « he », pas « him »."
+  },
+  {
+   "q": "The sun is hot. ___ is in the sky.",
+   "o": [
+    "They",
+    "He",
+    "She",
+    "It"
+   ],
+   "r": 3,
+   "e": "Le soleil est une chose, donc « it »."
+  },
+  {
+   "q": "Lamine and you are friends. ___ are in the same class.",
+   "o": [
+    "He",
+    "She",
+    "You",
+    "It"
+   ],
+   "r": 2,
+   "e": "« Lamine and you » = « you » (vous)."
+  },
+  {
+   "q": "Look at ___! (lui, Moussa)",
+   "o": [
+    "her",
+    "him",
+    "his",
+    "he"
+   ],
+   "r": 1,
+   "e": "Après le verbe, « il » devient « him » : look at him."
+  },
+  {
+   "q": "I love ___. (elle, ma mère)",
+   "o": [
+    "her",
+    "him",
+    "hers",
+    "she"
+   ],
+   "r": 0,
+   "e": "Après le verbe, « elle » devient « her »."
+  },
+  {
+   "q": "Can you help ___? (moi)",
+   "o": [
+    "me",
+    "my",
+    "mine",
+    "I"
+   ],
+   "r": 0,
+   "e": "Après le verbe, « je » devient « me » : help me."
+  },
+  {
+   "q": "The teacher is talking to ___. (nous)",
+   "o": [
+    "our",
+    "we",
+    "us",
+    "ours"
+   ],
+   "r": 2,
+   "e": "Après « to », « nous » devient « us »."
+  },
+  {
+   "q": "Give the book to ___. (eux)",
+   "o": [
+    "they",
+    "them",
+    "theirs",
+    "their"
+   ],
+   "r": 1,
+   "e": "Après « to », « ils » devient « them »."
+  },
+  {
+   "q": "This gift is for ___. (toi)",
+   "o": [
+    "you",
+    "your",
+    "yourself",
+    "yours"
+   ],
+   "r": 0,
+   "e": "Après « for », « tu » reste « you »."
+  },
+  {
+   "q": "Where is my ball? I can't find ___.",
+   "o": [
+    "it",
+    "them",
+    "its",
+    "him"
+   ],
+   "r": 0,
+   "e": "Une chose = « it » après le verbe."
+  },
+  {
+   "q": "My shoes are dirty. Please wash ___.",
+   "o": [
+    "them",
+    "they",
+    "it",
+    "their"
+   ],
+   "r": 0,
+   "e": "Plusieurs choses = « them » après le verbe."
+  },
+  {
+   "q": "Choisis : « Call ___ tomorrow. » (Awa)",
+   "o": [
+    "she",
+    "him",
+    "hers",
+    "her"
+   ],
+   "r": 3,
+   "e": "Awa est une fille. Après le verbe : her."
+  },
+  {
+   "q": "Choisis : « Please wait for ___. » (Ousmane et moi)",
+   "o": [
+    "our",
+    "we",
+    "them",
+    "us"
+   ],
+   "r": 3,
+   "e": "« Ousmane et moi » = nous. Après « for » : us."
+  },
+  {
+   "q": "Comment dit-on « Elle me voit » ?",
+   "o": [
+    "She sees I.",
+    "She sees my.",
+    "She sees me.",
+    "Her sees me."
+   ],
+   "r": 2,
+   "e": "« Me » (moi) se dit « me » après le verbe."
+  },
+  {
+   "q": "Comment dit-on « Je les aime » (les mangues) ?",
+   "o": [
+    "I like they.",
+    "I like their.",
+    "I them like.",
+    "I like them."
+   ],
+   "r": 3,
+   "e": "« Les » (plusieurs choses) se dit « them », après le verbe."
+  },
+  {
+   "q": "Trouve l'erreur : « Give it to she. »",
+   "o": [
+    "Give it to her.",
+    "Give it to hers.",
+    "Give her it to.",
+    "Give it to he."
+   ],
+   "r": 0,
+   "e": "Après « to », on dit « her », pas « she »."
+  },
+  {
+   "q": "Trouve l'erreur : « Sit next to I. »",
+   "o": [
+    "Sit me next to.",
+    "Sit next to mine.",
+    "Sit next to my.",
+    "Sit next to me."
+   ],
+   "r": 3,
+   "e": "Après « next to », on dit « me », pas « I »."
+  },
+  {
+   "q": "Which word replaces « Pape » here: « I see Pape »?",
+   "o": [
+    "him",
+    "his",
+    "it",
+    "he"
+   ],
+   "r": 0,
+   "e": "Pape est un garçon, après le verbe : him. I see him."
+  },
+  {
+   "q": "Which word replaces « the dogs » here: « I feed the dogs »?",
+   "o": [
+    "their",
+    "they",
+    "them",
+    "it"
+   ],
+   "r": 2,
+   "e": "Plusieurs animaux, après le verbe : them."
+  },
+  {
+   "q": "Which word replaces « Khady and me » here: « Mum calls Khady and me »?",
+   "o": [
+    "our",
+    "we",
+    "us",
+    "them"
+   ],
+   "r": 2,
+   "e": "« Khady et moi » = nous ; après le verbe : us."
+  },
+  {
+   "q": "Is this letter for ___? Yes, it's for you.",
+   "o": [
+    "I",
+    "mine",
+    "me",
+    "my"
+   ],
+   "r": 2,
+   "e": "Après « for », on dit « me »."
+  },
+  {
+   "q": "I don't know ___. Who is that girl?",
+   "o": [
+    "her",
+    "him",
+    "she",
+    "hers"
+   ],
+   "r": 0,
+   "e": "On parle d'une fille, après le verbe : her."
+  },
+  {
+   "q": "My baby brother is crying. Can you hold ___?",
+   "o": [
+    "he",
+    "his",
+    "they",
+    "him"
+   ],
+   "r": 3,
+   "e": "« My baby brother » est un garçon. Après le verbe : him."
+  },
+  {
+   "q": "Choisis la bonne phrase.",
+   "o": [
+    "They help us every day.",
+    "Them help us every day.",
+    "They help we every day.",
+    "Them help we every day."
+   ],
+   "r": 0,
+   "e": "Sujet : « they ». Après le verbe : « us »."
+  },
+  {
+   "q": "Choisis la bonne phrase.",
+   "o": [
+    "We visit them on Sunday.",
+    "We visit they on Sunday.",
+    "Us visit them on Sunday.",
+    "Us visit they on Sunday."
+   ],
+   "r": 0,
+   "e": "Sujet : « we ». Après le verbe : « them »."
+  },
+  {
+   "q": "My name ___ Mariama.",
+   "o": [
+    "am",
+    "is",
+    "has",
+    "are"
+   ],
+   "r": 1,
+   "e": "« My name » = it, donc « is » : my name is…"
+  },
+  {
+   "q": "Tabaski ___ a big holiday in Senegal.",
+   "o": [
+    "is",
+    "are",
+    "am",
+    "has"
+   ],
+   "r": 0,
+   "e": "Une seule fête = it, donc « is »."
+  },
+  {
+   "q": "The pupils ___ a test today.",
+   "o": [
+    "is",
+    "are",
+    "have",
+    "has"
+   ],
+   "r": 2,
+   "e": "« Avoir un contrôle » = have a test. Plusieurs élèves : have."
+  },
+  {
+   "q": "My cousin ___ a sheep for Tabaski.",
+   "o": [
+    "have",
+    "is",
+    "are",
+    "has"
+   ],
+   "r": 3,
+   "e": "« My cousin » = une personne, donc « has »."
+  },
+  {
+   "q": "Comment dit-on « Où es-tu ? »",
+   "o": [
+    "Where do you?",
+    "Where is you?",
+    "Where are you?",
+    "Where you are?"
+   ],
+   "r": 2,
+   "e": "Avec « you », on dit « are » : Where are you?"
+  },
+  {
+   "q": "Comment dit-on « Elle a peur » ?",
+   "o": [
+    "She has afraid.",
+    "She have afraid.",
+    "She is afraid.",
+    "She are afraid."
+   ],
+   "r": 2,
+   "e": "« Avoir peur » se dit « be afraid » : she is afraid."
+  },
+  {
+   "q": "Abdou is my friend. I play with ___.",
+   "o": [
+    "them",
+    "his",
+    "him",
+    "he"
+   ],
+   "r": 2,
+   "e": "Abdou est un garçon. Après « with » : him."
+  },
+  {
+   "q": "Ndeye and I ___ in the same class.",
+   "o": [
+    "is",
+    "has",
+    "am",
+    "are"
+   ],
+   "r": 3,
+   "e": "« Ndeye and I » = we (nous), donc « are »."
+  }
+ ]
+}

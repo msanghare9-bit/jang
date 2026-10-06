@@ -1,0 +1,2204 @@
+{
+ "questions": [
+  {
+   "q": "Il est 8 heures du matin. Tu rencontres ton professeur. Tu dis :",
+   "o": [
+    "Good night, sir.",
+    "Good morning, sir.",
+    "Goodbye, sir.",
+    "Good evening, sir."
+   ],
+   "r": 1,
+   "e": "Le matin, on salue avec « Good morning »."
+  },
+  {
+   "q": "Il est 15 heures. Tu salues la directrice de l'école. Tu dis :",
+   "o": [
+    "Good night, madam.",
+    "Good morning, madam.",
+    "Good afternoon, madam.",
+    "Good evening, madam."
+   ],
+   "r": 2,
+   "e": "L'après-midi, on dit « Good afternoon »."
+  },
+  {
+   "q": "Il est 19 heures. Tu arrives chez ta tante. Tu dis :",
+   "o": [
+    "Good night, Auntie.",
+    "Good evening, Auntie.",
+    "Good afternoon, Auntie.",
+    "Good morning, Auntie."
+   ],
+   "r": 1,
+   "e": "Le soir, quand tu arrives, tu dis « Good evening »."
+  },
+  {
+   "q": "Tu vas te coucher. Tu dis à ta maman :",
+   "o": [
+    "Good evening, Mum.",
+    "Good night, Mum.",
+    "Good morning, Mum.",
+    "Good afternoon, Mum."
+   ],
+   "r": 1,
+   "e": "Avant d'aller dormir, on dit « Good night » : bonne nuit."
+  },
+  {
+   "q": "Que veut dire « Good night » ?",
+   "o": [
+    "Bonsoir",
+    "Bonne nuit",
+    "Bon après-midi",
+    "Bonjour"
+   ],
+   "r": 1,
+   "e": "« Good night » se dit avant de dormir ou en partant tard le soir."
+  },
+  {
+   "q": "Que veut dire « Good evening » ?",
+   "o": [
+    "Bonjour",
+    "Bonne nuit",
+    "Bonsoir",
+    "Au revoir"
+   ],
+   "r": 2,
+   "e": "« Good evening » = bonsoir. On le dit en arrivant le soir."
+  },
+  {
+   "q": "Comment dit-on « au revoir » en anglais ?",
+   "o": [
+    "Goodbye",
+    "Hello",
+    "Welcome",
+    "Please"
+   ],
+   "r": 0,
+   "e": "« Goodbye » veut dire au revoir."
+  },
+  {
+   "q": "Tu arrives et tu salues ton copain de façon simple. Tu dis :",
+   "o": [
+    "Thanks!",
+    "Sorry!",
+    "Hi!",
+    "Bye!"
+   ],
+   "r": 2,
+   "e": "« Hi! » veut dire salut. On le dit en arrivant."
+  },
+  {
+   "q": "Ton ami part. Il dit « See you tomorrow! ». Cela veut dire :",
+   "o": [
+    "Bienvenue !",
+    "À demain !",
+    "Bonne nuit !",
+    "À ce soir !"
+   ],
+   "r": 1,
+   "e": "Tomorrow = demain. « See you tomorrow » = à demain."
+  },
+  {
+   "q": "« See you later! » veut dire :",
+   "o": [
+    "Bonne journée !",
+    "À plus tard !",
+    "À la semaine prochaine !",
+    "À demain !"
+   ],
+   "r": 1,
+   "e": "Later = plus tard."
+  },
+  {
+   "q": "« See you next week! » veut dire :",
+   "o": [
+    "À ce soir !",
+    "À l'année prochaine !",
+    "À la semaine prochaine !",
+    "À demain !"
+   ],
+   "r": 2,
+   "e": "Next week = la semaine prochaine."
+  },
+  {
+   "q": "« See you on Monday! » veut dire :",
+   "o": [
+    "À vendredi !",
+    "À dimanche !",
+    "À lundi !",
+    "À mardi !"
+   ],
+   "r": 2,
+   "e": "Monday = lundi."
+  },
+  {
+   "q": "« See you soon! » veut dire :",
+   "o": [
+    "À bientôt !",
+    "À demain matin !",
+    "Bon voyage !",
+    "Bonne nuit !"
+   ],
+   "r": 0,
+   "e": "Soon = bientôt."
+  },
+  {
+   "q": "Le professeur dit « Good morning, class! ». Les élèves répondent :",
+   "o": [
+    "Good night, sir!",
+    "Thank you, sir!",
+    "Sorry, sir!",
+    "Good morning, sir!"
+   ],
+   "r": 3,
+   "e": "On répond à un salut par le même salut."
+  },
+  {
+   "q": "Someone asks you \"How are you?\". You answer:",
+   "o": [
+    "I'm from Dakar.",
+    "I'm fine, thank you.",
+    "I'm ten years old.",
+    "My name is Awa."
+   ],
+   "r": 1,
+   "e": "« How are you? » = comment vas-tu ? On répond « I'm fine »."
+  },
+  {
+   "q": "\"What's your name?\" Choisis la bonne réponse.",
+   "o": [
+    "I'm twelve.",
+    "I live in Thiès.",
+    "My name is Moussa.",
+    "I'm fine, thanks."
+   ],
+   "r": 2,
+   "e": "« What's your name? » = comment t'appelles-tu ?"
+  },
+  {
+   "q": "\"How old are you?\" Choisis la bonne réponse.",
+   "o": [
+    "I'm eleven years old.",
+    "I'm from Senegal.",
+    "I'm very well.",
+    "I'm a pupil."
+   ],
+   "r": 0,
+   "e": "« How old are you? » demande ton âge."
+  },
+  {
+   "q": "\"Where are you from?\" Choisis la bonne réponse.",
+   "o": [
+    "I'm from Senegal.",
+    "I'm thirteen.",
+    "I'm very well.",
+    "My name is Ali."
+   ],
+   "r": 0,
+   "e": "« Where are you from? » = d'où viens-tu ?"
+  },
+  {
+   "q": "\"Where do you live?\" Choisis la bonne réponse.",
+   "o": [
+    "I'm twelve.",
+    "I'm fine.",
+    "I live in Ziguinchor.",
+    "My name is Fatou."
+   ],
+   "r": 2,
+   "e": "« Where do you live? » = où habites-tu ?"
+  },
+  {
+   "q": "Tu veux connaître le nom d'un nouvel élève. Tu demandes :",
+   "o": [
+    "How old are you?",
+    "What's your name?",
+    "How are you?",
+    "Where are you from?"
+   ],
+   "r": 1,
+   "e": "« What's your name? » demande le nom."
+  },
+  {
+   "q": "Tu veux connaître l'âge de ton voisin. Tu demandes :",
+   "o": [
+    "Where do you live?",
+    "How old are you?",
+    "What's your name?",
+    "How are you?"
+   ],
+   "r": 1,
+   "e": "« How old are you? » demande l'âge."
+  },
+  {
+   "q": "Tu veux savoir de quel pays vient une visiteuse. Tu demandes :",
+   "o": [
+    "Where are you?",
+    "How are you?",
+    "How old are you?",
+    "Where are you from?"
+   ],
+   "r": 3,
+   "e": "« Where are you from? » = de quel pays viens-tu ?"
+  },
+  {
+   "q": "Tu veux dire « Je m'appelle Awa ».",
+   "o": [
+    "My name is Awa.",
+    "His name is Awa.",
+    "Her name is Awa.",
+    "Your name is Awa."
+   ],
+   "r": 0,
+   "e": "My = mon, ma. « My name is… » = je m'appelle…"
+  },
+  {
+   "q": "Tu veux dire « J'ai douze ans ».",
+   "o": [
+    "I'm twelve old years.",
+    "I have twelve years old.",
+    "I've twelve years.",
+    "I'm twelve years old."
+   ],
+   "r": 3,
+   "e": "Pour l'âge, on dit « I am … years old », pas « I have »."
+  },
+  {
+   "q": "Ton ami te présente sa sœur. Tu dis :",
+   "o": [
+    "See you tomorrow.",
+    "You're welcome.",
+    "Good night.",
+    "Nice to meet you."
+   ],
+   "r": 3,
+   "e": "« Nice to meet you » = enchanté, ravi de te connaître."
+  },
+  {
+   "q": "Quelqu'un te dit « Nice to meet you. ». Tu réponds :",
+   "o": [
+    "Nice to meet you too.",
+    "I'm sorry.",
+    "Good night.",
+    "You're welcome."
+   ],
+   "r": 0,
+   "e": "On répond « Nice to meet you too » : moi aussi."
+  },
+  {
+   "q": "Que veut dire « Welcome! » ?",
+   "o": [
+    "Merci !",
+    "Pardon !",
+    "Bienvenue !",
+    "Au revoir !"
+   ],
+   "r": 2,
+   "e": "« Welcome » = bienvenue."
+  },
+  {
+   "q": "Un nouvel élève arrive dans ta classe. Tu lui dis :",
+   "o": [
+    "Welcome to our class!",
+    "Good luck with your exams!",
+    "Happy birthday!",
+    "Get well soon!"
+   ],
+   "r": 0,
+   "e": "Pour accueillir quelqu'un, on dit « Welcome »."
+  },
+  {
+   "q": "\"How are you?\" Tu vas très bien. Tu réponds :",
+   "o": [
+    "I'm very late, thank you.",
+    "I'm very well, thank you.",
+    "I'm very old, thank you.",
+    "I'm very sorry, thank you."
+   ],
+   "r": 1,
+   "e": "Very well = très bien."
+  },
+  {
+   "q": "Tu es malade. Ton ami demande « How are you? ». Tu réponds :",
+   "o": [
+    "I'm not very well.",
+    "I'm very well.",
+    "I'm great.",
+    "I'm fine, thanks."
+   ],
+   "r": 0,
+   "e": "« I'm not very well » = je ne vais pas très bien."
+  },
+  {
+   "q": "Ton ami dit « I'm fine, and you? ». Que veut dire « and you? » ?",
+   "o": [
+    "Où es-tu ?",
+    "Et moi ?",
+    "Qui es-tu ?",
+    "Et toi ?"
+   ],
+   "r": 3,
+   "e": "And = et, you = toi."
+  },
+  {
+   "q": "Ton ami dit « I'm fine. And you? ». Tu vas bien aussi. Tu réponds :",
+   "o": [
+    "Yes, you are.",
+    "I'm fine too, thanks.",
+    "No, thank you.",
+    "You're welcome."
+   ],
+   "r": 1,
+   "e": "Too = aussi. « I'm fine too » = je vais bien aussi."
+  },
+  {
+   "q": "Que veut dire « Not bad » quand on répond à « How are you? » ?",
+   "o": [
+    "Très mal",
+    "Pas du tout",
+    "Pas encore",
+    "Pas mal"
+   ],
+   "r": 3,
+   "e": "« Not bad » = pas mal, ça va."
+  },
+  {
+   "q": "« So-so » veut dire :",
+   "o": [
+    "Toujours",
+    "Très très bien",
+    "Comme ci, comme ça",
+    "Pas du tout"
+   ],
+   "r": 2,
+   "e": "« So-so » = moyen, comme ci, comme ça."
+  },
+  {
+   "q": "Entre amis, « What's up? » veut dire :",
+   "o": [
+    "Quoi de neuf ?",
+    "Qu'est-ce qu'il y a en haut ?",
+    "Quelle heure est-il ?",
+    "Lève-toi !"
+   ],
+   "r": 0,
+   "e": "« What's up? » est une façon familière de dire : quoi de neuf ?"
+  },
+  {
+   "q": "\"How is your mother?\" Choisis la bonne réponse.",
+   "o": [
+    "I'm her mother.",
+    "It's fine, thank you.",
+    "He's fine, thank you.",
+    "She's fine, thank you."
+   ],
+   "r": 3,
+   "e": "Mother = une femme, donc on dit « she »."
+  },
+  {
+   "q": "\"How is your father?\" Choisis la bonne réponse.",
+   "o": [
+    "He's very well, thanks.",
+    "She's very well, thanks.",
+    "It's very well, thanks.",
+    "They're very well, thanks."
+   ],
+   "r": 0,
+   "e": "Father = un homme, donc on dit « he »."
+  },
+  {
+   "q": "\"How are your parents?\" Choisis la bonne réponse.",
+   "o": [
+    "He's fine, thanks.",
+    "They're fine, thanks.",
+    "She's fine, thanks.",
+    "It's fine, thanks."
+   ],
+   "r": 1,
+   "e": "Parents = plusieurs personnes, donc « they »."
+  },
+  {
+   "q": "Ton ami te prête un stylo. Tu dis :",
+   "o": [
+    "Goodbye.",
+    "Sorry.",
+    "Excuse me.",
+    "Thank you."
+   ],
+   "r": 3,
+   "e": "Quand on te donne ou te prête quelque chose, tu dis « Thank you »."
+  },
+  {
+   "q": "Quelqu'un te dit « Thank you! ». Tu réponds :",
+   "o": [
+    "Excuse me.",
+    "Good luck.",
+    "I'm sorry.",
+    "You're welcome."
+   ],
+   "r": 3,
+   "e": "« You're welcome » = de rien."
+  },
+  {
+   "q": "« Thanks a lot! » veut dire :",
+   "o": [
+    "Pas de quoi !",
+    "Merci beaucoup !",
+    "À bientôt !",
+    "Beaucoup de choses !"
+   ],
+   "r": 1,
+   "e": "A lot = beaucoup."
+  },
+  {
+   "q": "Comment dit-on « de rien » en anglais ?",
+   "o": [
+    "You're welcome.",
+    "Thank you.",
+    "Well done.",
+    "Excuse me."
+   ],
+   "r": 0,
+   "e": "« You're welcome » répond à « Thank you »."
+  },
+  {
+   "q": "Que veut dire « No problem! » ?",
+   "o": [
+    "Pas maintenant !",
+    "Pas encore !",
+    "Pas de chance !",
+    "Pas de problème !"
+   ],
+   "r": 3,
+   "e": "« No problem » = pas de problème. On le dit aussi pour répondre à un merci."
+  },
+  {
+   "q": "Ta grand-mère t'offre un cadeau. Tu dis :",
+   "o": [
+    "Excuse me, Grandma!",
+    "I'm sorry, Grandma!",
+    "Thank you very much, Grandma!",
+    "Help me, Grandma!"
+   ],
+   "r": 2,
+   "e": "Pour un cadeau, on remercie : « Thank you very much »."
+  },
+  {
+   "q": "Ton camarade t'aide à faire ton exercice. Tu dis :",
+   "o": [
+    "You're welcome.",
+    "Thanks for your help.",
+    "Sorry for your help.",
+    "Help me, please."
+   ],
+   "r": 1,
+   "e": "« Thanks for your help » = merci pour ton aide."
+  },
+  {
+   "q": "Ton invité dit « Thank you for the food. ». Que veut-il dire ?",
+   "o": [
+    "Je n'ai pas faim.",
+    "Le repas est froid.",
+    "Je veux de la nourriture.",
+    "Merci pour le repas."
+   ],
+   "r": 3,
+   "e": "Food = la nourriture, le repas."
+  },
+  {
+   "q": "Ta tante dit « Thank you for coming! ». Cela veut dire :",
+   "o": [
+    "Tu viens demain ?",
+    "Pardon d'être venu !",
+    "Merci d'être venu !",
+    "Viens, s'il te plaît !"
+   ],
+   "r": 2,
+   "e": "« Thank you for coming » = merci d'être venu."
+  },
+  {
+   "q": "Tu marches sur le pied de quelqu'un. Tu dis :",
+   "o": [
+    "Sorry!",
+    "Welcome!",
+    "Well done!",
+    "Thank you!"
+   ],
+   "r": 0,
+   "e": "Quand tu fais mal à quelqu'un sans le vouloir, tu dis « Sorry »."
+  },
+  {
+   "q": "Tu arrives en retard en classe. Tu dis :",
+   "o": [
+    "Sorry, I'm early.",
+    "Sorry, I'm late.",
+    "Hello, I'm early.",
+    "Thanks, I'm late."
+   ],
+   "r": 1,
+   "e": "Late = en retard. « Sorry, I'm late » = pardon, je suis en retard."
+  },
+  {
+   "q": "Tu veux passer, mais quelqu'un est devant la porte. Tu dis :",
+   "o": [
+    "Sorry, I'm late.",
+    "You're welcome.",
+    "Thank you very much.",
+    "Excuse me, please."
+   ],
+   "r": 3,
+   "e": "« Excuse me » sert à demander poliment le passage."
+  },
+  {
+   "q": "Tu veux poser une question à un inconnu dans la rue. Tu commences par :",
+   "o": [
+    "Bye-bye, …",
+    "You're welcome, …",
+    "Excuse me, …",
+    "Good night, …"
+   ],
+   "r": 2,
+   "e": "Pour attirer l'attention poliment, on dit « Excuse me »."
+  },
+  {
+   "q": "Ton ami te dit « I'm sorry. ». Tu n'es pas fâché. Tu réponds :",
+   "o": [
+    "You're welcome.",
+    "Well done.",
+    "Good luck.",
+    "That's OK."
+   ],
+   "r": 3,
+   "e": "« That's OK » = ce n'est pas grave."
+  },
+  {
+   "q": "« Never mind » veut dire :",
+   "o": [
+    "Je ne sais pas.",
+    "Ce n'est pas grave.",
+    "Jamais de la vie.",
+    "Fais attention."
+   ],
+   "r": 1,
+   "e": "« Never mind » = laisse tomber, ce n'est pas grave."
+  },
+  {
+   "q": "Tu as cassé le verre de ton voisin. Tu dis :",
+   "o": [
+    "Thank you so much.",
+    "I'm so sorry.",
+    "I'm so happy.",
+    "You're so kind."
+   ],
+   "r": 1,
+   "e": "Pour s'excuser fort, on dit « I'm so sorry »."
+  },
+  {
+   "q": "Comment dit-on « Pardon, je ne comprends pas » ?",
+   "o": [
+    "Sorry, I can't come.",
+    "Sorry, I don't know you.",
+    "Sorry, I don't like it.",
+    "Sorry, I don't understand."
+   ],
+   "r": 3,
+   "e": "Understand = comprendre."
+  },
+  {
+   "q": "Tu n'as pas bien entendu le professeur. Tu dis :",
+   "o": [
+    "Sorry, can you go out, please?",
+    "Sorry, can you sit down, please?",
+    "Sorry, can you repeat, please?",
+    "Sorry, can you close the door, please?"
+   ],
+   "r": 2,
+   "e": "Repeat = répéter."
+  },
+  {
+   "q": "Tu n'as pas ton cahier aujourd'hui. Tu dis au professeur :",
+   "o": [
+    "Sorry, I have two exercise books.",
+    "Sorry, I don't have my exercise book.",
+    "Thank you for my exercise book.",
+    "Here is my exercise book."
+   ],
+   "r": 1,
+   "e": "« I don't have » = je n'ai pas."
+  },
+  {
+   "q": "« See you this afternoon! » veut dire :",
+   "o": [
+    "À ce matin !",
+    "À ce soir !",
+    "À cet après-midi !",
+    "À demain matin !"
+   ],
+   "r": 2,
+   "e": "This afternoon = cet après-midi."
+  },
+  {
+   "q": "« Have a nice day! » veut dire :",
+   "o": [
+    "Bon anniversaire !",
+    "Bonne année !",
+    "Bonne nuit !",
+    "Bonne journée !"
+   ],
+   "r": 3,
+   "e": "Day = jour, journée."
+  },
+  {
+   "q": "Le vendeur te dit « Have a nice day! ». Tu réponds :",
+   "o": [
+    "Thanks, you too!",
+    "Sorry, you too!",
+    "No, I'm not.",
+    "Yes, I am!"
+   ],
+   "r": 0,
+   "e": "« You too » = toi aussi."
+  },
+  {
+   "q": "« Have a good weekend! » veut dire :",
+   "o": [
+    "Bon voyage !",
+    "Bon week-end !",
+    "Bonnes vacances !",
+    "Bonne semaine !"
+   ],
+   "r": 1,
+   "e": "Weekend = samedi et dimanche."
+  },
+  {
+   "q": "« Take care! » veut dire :",
+   "o": [
+    "Prends ça !",
+    "Prends soin de toi !",
+    "Fais vite !",
+    "Attends-moi !"
+   ],
+   "r": 1,
+   "e": "On dit « Take care » en partant : fais attention à toi."
+  },
+  {
+   "q": "Que veut dire « Bye! » ?",
+   "o": [
+    "Bonjour !",
+    "Bienvenue !",
+    "Merci !",
+    "Au revoir !"
+   ],
+   "r": 3,
+   "e": "« Bye » est la forme courte de « Goodbye »."
+  },
+  {
+   "q": "Que demande « What's your surname? » ?",
+   "o": [
+    "Ton âge",
+    "Ton nom de famille",
+    "Ton adresse",
+    "Ton prénom"
+   ],
+   "r": 1,
+   "e": "Surname = nom de famille (Diop, Ndiaye, Fall…)."
+  },
+  {
+   "q": "Que demande « What's your first name? » ?",
+   "o": [
+    "Ta classe",
+    "Ton prénom",
+    "Ton pays",
+    "Ton nom de famille"
+   ],
+   "r": 1,
+   "e": "First name = prénom (Awa, Moussa…)."
+  },
+  {
+   "q": "« Can you spell your name, please? » veut dire :",
+   "o": [
+    "Peux-tu dire bonjour ?",
+    "Peux-tu épeler ton nom ?",
+    "Peux-tu écrire ton âge ?",
+    "Peux-tu changer ton nom ?"
+   ],
+   "r": 1,
+   "e": "Spell = épeler, dire les lettres une par une."
+  },
+  {
+   "q": "\"What class are you in?\" Choisis la bonne réponse.",
+   "o": [
+    "I'm fine.",
+    "I'm in Dakar.",
+    "I'm in class 6A.",
+    "I'm eleven."
+   ],
+   "r": 2,
+   "e": "« What class are you in? » = tu es dans quelle classe ?"
+  },
+  {
+   "q": "\"What's your phone number?\" Choisis la bonne réponse.",
+   "o": [
+    "It's on the table.",
+    "It's my phone.",
+    "It's Moussa.",
+    "It's 77 123 45 67."
+   ],
+   "r": 3,
+   "e": "Phone number = numéro de téléphone."
+  },
+  {
+   "q": "\"Are you a student?\" Tu es élève. Tu réponds :",
+   "o": [
+    "Yes, I do.",
+    "Yes, I am.",
+    "Yes, I can.",
+    "Yes, it is."
+   ],
+   "r": 1,
+   "e": "On répond avec le même verbe : Are you…? → Yes, I am."
+  },
+  {
+   "q": "\"Do you speak Wolof?\" Tu parles wolof. Tu réponds :",
+   "o": [
+    "Yes, I have.",
+    "Yes, I am.",
+    "Yes, I do.",
+    "Yes, it does."
+   ],
+   "r": 2,
+   "e": "Do you…? → Yes, I do."
+  },
+  {
+   "q": "\"Do you speak English?\" Tu parles un peu anglais. Tu réponds :",
+   "o": [
+    "Yes, a little.",
+    "Yes, a lot of.",
+    "Yes, it is.",
+    "No, I'm not."
+   ],
+   "r": 0,
+   "e": "« A little » = un peu."
+  },
+  {
+   "q": "Tu veux dire « J'habite à Saint-Louis ».",
+   "o": [
+    "I like Saint-Louis.",
+    "I live in Saint-Louis.",
+    "I love Saint-Louis.",
+    "I leave Saint-Louis."
+   ],
+   "r": 1,
+   "e": "Live = habiter. Attention : love = aimer, leave = partir."
+  },
+  {
+   "q": "Tu veux dire « Je suis sénégalais ».",
+   "o": [
+    "I'm in Senegalese.",
+    "I'm from Senegalese.",
+    "I'm Senegalese.",
+    "I'm Senegal."
+   ],
+   "r": 2,
+   "e": "Le pays = Senegal. La nationalité = Senegalese."
+  },
+  {
+   "q": "Tu montres une photo. On te demande « Who is this? ». Tu réponds :",
+   "o": [
+    "She is fine, thanks.",
+    "She is twelve.",
+    "Yes, she is.",
+    "This is my sister, Aïda."
+   ],
+   "r": 3,
+   "e": "« Who is this? » = qui est-ce ?"
+  },
+  {
+   "q": "Tu rencontres le directeur pour la première fois. Quelle phrase est la plus polie ?",
+   "o": [
+    "See you, man!",
+    "Hi, buddy!",
+    "Pleased to meet you, sir.",
+    "Hey, what's up?"
+   ],
+   "r": 2,
+   "e": "« Pleased to meet you » est poli : ravi de vous connaître."
+  },
+  {
+   "q": "Le matin, ta voisine te dit « Good morning! ». Tu réponds :",
+   "o": [
+    "Welcome!",
+    "Goodbye!",
+    "Good night!",
+    "Good morning!"
+   ],
+   "r": 3,
+   "e": "Le matin, on répond « Good morning »."
+  },
+  {
+   "q": "« Hello, everybody! » veut dire :",
+   "o": [
+    "Au revoir à tous !",
+    "Merci à tous !",
+    "Pardon à tous !",
+    "Bonjour à tous !"
+   ],
+   "r": 3,
+   "e": "Everybody = tout le monde."
+  },
+  {
+   "q": "Tu quittes la classe à la fin de la journée. Tu dis au professeur :",
+   "o": [
+    "Hello, madam. See you tomorrow.",
+    "Sorry, madam. See you tomorrow.",
+    "Goodbye, madam. See you tomorrow.",
+    "Welcome, madam. See you tomorrow."
+   ],
+   "r": 2,
+   "e": "En partant, on dit « Goodbye »."
+  },
+  {
+   "q": "Tu veux dire « Je suis élève ».",
+   "o": [
+    "I'm a pupil.",
+    "I'm a doctor.",
+    "I'm a driver.",
+    "I'm a teacher."
+   ],
+   "r": 0,
+   "e": "Pupil = élève."
+  },
+  {
+   "q": "Tu veux dire « J'ai deux frères ».",
+   "o": [
+    "I have two sisters.",
+    "I have two friends.",
+    "I am two brothers.",
+    "I have two brothers."
+   ],
+   "r": 3,
+   "e": "Brother = frère. « I have » = j'ai."
+  },
+  {
+   "q": "\"Have you got any sisters?\" Tu as une sœur. Tu réponds :",
+   "o": [
+    "Yes, I've got one sister.",
+    "Yes, I'm one sister.",
+    "Yes, she's got a sister.",
+    "No, I've got one sister."
+   ],
+   "r": 0,
+   "e": "« I've got » = j'ai."
+  },
+  {
+   "q": "\"Do you have a brother?\" Tu n'as pas de frère. Tu réponds :",
+   "o": [
+    "No, it isn't.",
+    "Yes, I do.",
+    "No, I don't.",
+    "No, I'm not."
+   ],
+   "r": 2,
+   "e": "Do you…? → No, I don't."
+  },
+  {
+   "q": "\"Is your name Fatou?\" Oui, c'est ton nom. Tu réponds :",
+   "o": [
+    "Yes, I do.",
+    "Yes, I can.",
+    "Yes, it is.",
+    "Yes, she is."
+   ],
+   "r": 2,
+   "e": "Is your name…? → Yes, it is."
+  },
+  {
+   "q": "\"Are you Moussa?\" Non, tu es Ibrahima. Tu réponds :",
+   "o": [
+    "No, I'm not. I'm Ibrahima.",
+    "Yes, I am. I'm Ibrahima.",
+    "No, I don't. I'm Ibrahima.",
+    "No, it isn't. I'm Moussa."
+   ],
+   "r": 0,
+   "e": "Are you…? → No, I'm not."
+  },
+  {
+   "q": "Tu veux dire « Mon ami s'appelle Ali ».",
+   "o": [
+    "His friend is my Ali.",
+    "My name's friend is Ali.",
+    "I'm my friend Ali.",
+    "My friend's name is Ali."
+   ],
+   "r": 3,
+   "e": "« My friend's name » = le nom de mon ami."
+  },
+  {
+   "q": "Tu veux dire « Elle s'appelle Coumba ».",
+   "o": [
+    "His name is Coumba.",
+    "Her name is Coumba.",
+    "Your name is Coumba.",
+    "My name is Coumba."
+   ],
+   "r": 1,
+   "e": "Pour une fille : her = son, sa."
+  },
+  {
+   "q": "Tu veux dire « Il s'appelle Pape ».",
+   "o": [
+    "Her name is Pape.",
+    "Their name is Pape.",
+    "Its name is Pape.",
+    "His name is Pape."
+   ],
+   "r": 3,
+   "e": "Pour un garçon : his = son, sa."
+  },
+  {
+   "q": "Tu présentes ton ami Ali à ta mère. Tu dis :",
+   "o": [
+    "Mum, goodbye my friend Ali.",
+    "Mum, where is my friend Ali?",
+    "Mum, I'm my friend Ali.",
+    "Mum, this is my friend Ali."
+   ],
+   "r": 3,
+   "e": "« This is… » sert à présenter quelqu'un."
+  },
+  {
+   "q": "Tu présentes tes parents à ton professeur. Tu dis :",
+   "o": [
+    "That my parents.",
+    "These are my parents.",
+    "These is my parents.",
+    "This are my parents."
+   ],
+   "r": 1,
+   "e": "Pour plusieurs personnes : « These are… »."
+  },
+  {
+   "q": "« I'm fine, thanks. » veut dire :",
+   "o": [
+    "Je suis en retard, merci.",
+    "J'ai faim, merci.",
+    "Je vais bien, merci.",
+    "Je suis fini, merci."
+   ],
+   "r": 2,
+   "e": "Fine = bien. Thanks = merci."
+  },
+  {
+   "q": "« I'm great! » répond à « How are you? ». Cela veut dire :",
+   "o": [
+    "Je suis grand !",
+    "Je suis triste !",
+    "Je vais très bien !",
+    "Je suis fatigué !"
+   ],
+   "r": 2,
+   "e": "Great = super, très bien."
+  },
+  {
+   "q": "Ton ami a l'air triste. Tu demandes :",
+   "o": [
+    "What colour is it?",
+    "What's your name?",
+    "What time is it?",
+    "What's wrong?"
+   ],
+   "r": 3,
+   "e": "« What's wrong? » = qu'est-ce qui ne va pas ?"
+  },
+  {
+   "q": "« I'm tired. » veut dire :",
+   "o": [
+    "Je suis fatigué.",
+    "Je suis content.",
+    "Je suis prêt.",
+    "Je suis en avance."
+   ],
+   "r": 0,
+   "e": "Tired = fatigué."
+  },
+  {
+   "q": "Ton ami a dit « Thank you » trois fois. Tu réponds :",
+   "o": [
+    "Don't mention it.",
+    "Don't go.",
+    "Don't touch it.",
+    "Don't do it."
+   ],
+   "r": 0,
+   "e": "« Don't mention it » = il n'y a pas de quoi."
+  },
+  {
+   "q": "Quelqu'un t'ouvre la porte. Tu dis :",
+   "o": [
+    "Thank you.",
+    "You're welcome.",
+    "Excuse me.",
+    "Never mind."
+   ],
+   "r": 0,
+   "e": "On remercie : « Thank you »."
+  },
+  {
+   "q": "Tu veux savoir comment va le petit frère de ton ami. Tu demandes :",
+   "o": [
+    "How old is your little brother?",
+    "Who is your little brother?",
+    "How is your little brother?",
+    "Where is your little brother?"
+   ],
+   "r": 2,
+   "e": "« How is…? » = comment va… ?"
+  },
+  {
+   "q": "Tu veux savoir où est ta sœur. Tu demandes :",
+   "o": [
+    "Where is my sister?",
+    "Who is my sister?",
+    "What is my sister?",
+    "How is my sister?"
+   ],
+   "r": 0,
+   "e": "Where = où."
+  },
+  {
+   "q": "Tu as fait tomber les livres de ton camarade. Tu dis :",
+   "o": [
+    "Oh, welcome!",
+    "Oh, thanks!",
+    "Oh, hello!",
+    "Oh, sorry!"
+   ],
+   "r": 3,
+   "e": "Pour une petite faute, on dit « Sorry »."
+  },
+  {
+   "q": "Ton ami s'excuse : « Sorry, I'm late. ». Tu réponds gentiment :",
+   "o": [
+    "Well done. Come in.",
+    "No problem. Come in.",
+    "Happy birthday. Come in.",
+    "Thank you. Come in."
+   ],
+   "r": 1,
+   "e": "« No problem » = pas de problème."
+  },
+  {
+   "q": "« Excuse me » et « Sorry » : quand dis-tu « Excuse me » ?",
+   "o": [
+    "Avant de déranger quelqu'un",
+    "Pour dire merci",
+    "Pour dire bonne nuit",
+    "Après avoir cassé un verre"
+   ],
+   "r": 0,
+   "e": "« Excuse me » se dit avant de déranger. « Sorry » après une faute."
+  },
+  {
+   "q": "Quelqu'un t'appelle mais tu ne sais pas qui c'est. Tu demandes poliment :",
+   "o": [
+    "Sorry, where are you from?",
+    "Sorry, how are you?",
+    "Sorry, who are you?",
+    "Sorry, how old are you?"
+   ],
+   "r": 2,
+   "e": "Who = qui. « Who are you? » = qui es-tu ?"
+  },
+  {
+   "q": "Ton correspondant écrit « Hi! I'm Tom. I'm from England. ». D'où vient-il ?",
+   "o": [
+    "D'Amérique",
+    "D'Angleterre",
+    "Du Sénégal",
+    "Du Ghana"
+   ],
+   "r": 1,
+   "e": "« I'm from England » = je viens d'Angleterre."
+  },
+  {
+   "q": "Tu écris à un ami : « Bye for now! ». Cela veut dire :",
+   "o": [
+    "Salut, à bientôt !",
+    "Merci beaucoup !",
+    "Pardon, j'arrive !",
+    "Bonjour, ça va !"
+   ],
+   "r": 0,
+   "e": "« Bye for now » = au revoir pour le moment."
+  },
+  {
+   "q": "Pour finir une lettre à un ami, tu écris :",
+   "o": [
+    "Excuse me, Awa",
+    "Best wishes, Awa",
+    "How are you, Awa",
+    "Good morning, Awa"
+   ],
+   "r": 1,
+   "e": "« Best wishes » = meilleurs vœux, amitiés. On le met à la fin."
+  },
+  {
+   "q": "Pour commencer une lettre à ton ami Tom, tu écris :",
+   "o": [
+    "Goodbye Tom,",
+    "Sorry Tom,",
+    "Dear Tom,",
+    "Bye Tom,"
+   ],
+   "r": 2,
+   "e": "« Dear » = cher. On commence une lettre par « Dear… »."
+  },
+  {
+   "q": "« Long time no see! » veut dire :",
+   "o": [
+    "Je suis fatigué !",
+    "Ça fait longtemps !",
+    "Je ne vois rien !",
+    "À tout de suite !"
+   ],
+   "r": 1,
+   "e": "On dit « Long time no see » quand on n'a pas vu la personne depuis longtemps."
+  },
+  {
+   "q": "Tu rencontres un ami que tu n'as pas vu depuis un an. Tu dis :",
+   "o": [
+    "Good night!",
+    "Nice to meet you!",
+    "See you tomorrow!",
+    "Long time no see!"
+   ],
+   "r": 3,
+   "e": "« Long time no see » = ça fait longtemps qu'on ne s'est pas vus."
+  },
+  {
+   "q": "« How do you do? » se dit :",
+   "o": [
+    "Quand on rencontre quelqu'un pour la première fois",
+    "Quand on est en retard",
+    "Quand on a faim",
+    "Quand on part dormir"
+   ],
+   "r": 0,
+   "e": "C'est une façon très polie de dire bonjour à quelqu'un de nouveau."
+  },
+  {
+   "q": "Comment dit-on « Madame » poliment à une femme adulte ?",
+   "o": [
+    "Boy",
+    "Sir",
+    "Mister",
+    "Madam"
+   ],
+   "r": 3,
+   "e": "Madam = madame. Sir = monsieur."
+  },
+  {
+   "q": "Comment dit-on « Monsieur » poliment à un homme adulte ?",
+   "o": [
+    "Miss",
+    "Sir",
+    "Girl",
+    "Madam"
+   ],
+   "r": 1,
+   "e": "Sir = monsieur."
+  },
+  {
+   "q": "Ta professeure s'appelle Mrs Sarr. Tu la salues :",
+   "o": [
+    "Good morning, Mrs Sarr.",
+    "Good morning, Boy Sarr.",
+    "Good morning, Sir Sarr.",
+    "Good morning, Mr Sarr."
+   ],
+   "r": 0,
+   "e": "Mrs = madame (femme mariée). Mr = monsieur."
+  },
+  {
+   "q": "Ton professeur s'appelle Mr Faye. Tu le salues :",
+   "o": [
+    "Hello, Madam Faye.",
+    "Hello, Mrs Faye.",
+    "Hello, Mr Faye.",
+    "Hello, Miss Faye."
+   ],
+   "r": 2,
+   "e": "Mr = monsieur."
+  },
+  {
+   "q": "« Miss » devant un nom (Miss Ba) est pour :",
+   "o": [
+    "Un homme",
+    "Une femme non mariée",
+    "Un bébé",
+    "Un garçon"
+   ],
+   "r": 1,
+   "e": "Miss = mademoiselle."
+  },
+  {
+   "q": "Tu veux dire « Je suis content de te voir ».",
+   "o": [
+    "I'm happy to see you.",
+    "I'm tired to see you.",
+    "I'm sorry to see you.",
+    "I'm happy to meet you tomorrow."
+   ],
+   "r": 0,
+   "e": "Happy = content."
+  },
+  {
+   "q": "« Glad to meet you » veut dire :",
+   "o": [
+    "Pressé de te voir",
+    "Triste de te connaître",
+    "Content de partir",
+    "Content de te connaître"
+   ],
+   "r": 3,
+   "e": "Glad = content. Meet = rencontrer."
+  },
+  {
+   "q": "Un adulte te demande « And what's your name, young man? ». Tu réponds :",
+   "o": [
+    "My name is Cheikh, sir.",
+    "You're welcome, sir.",
+    "Goodbye, sir.",
+    "I'm fine, sir."
+   ],
+   "r": 0,
+   "e": "On donne son nom : « My name is… »."
+  },
+  {
+   "q": "\"Where are you from?\" \"I'm from Mali.\" Le garçon vient :",
+   "o": [
+    "Du Mali",
+    "De Mauritanie",
+    "De Guinée",
+    "Du Sénégal"
+   ],
+   "r": 0,
+   "e": "« I'm from Mali » = je viens du Mali."
+  },
+  {
+   "q": "\"Where does your family live?\" Choisis la bonne réponse.",
+   "o": [
+    "We like Kaolack.",
+    "We are five.",
+    "We live in Kaolack.",
+    "We are fine."
+   ],
+   "r": 2,
+   "e": "« Where… live? » demande le lieu où l'on habite."
+  },
+  {
+   "q": "\"How many people are in your family?\" Choisis la bonne réponse.",
+   "o": [
+    "We are very well.",
+    "We live in Louga.",
+    "There are six of us.",
+    "My family is happy."
+   ],
+   "r": 2,
+   "e": "« How many » = combien."
+  },
+  {
+   "q": "\"Who is your best friend?\" Choisis la bonne réponse.",
+   "o": [
+    "My best friend is in Dakar.",
+    "My best friend is fine.",
+    "My best friend is Ndeye.",
+    "My best friend is twelve."
+   ],
+   "r": 2,
+   "e": "« Who » = qui. On répond avec un nom."
+  },
+  {
+   "q": "\"What's your favourite colour?\" Choisis la bonne réponse.",
+   "o": [
+    "It's Monday.",
+    "It's my friend.",
+    "It's green.",
+    "It's twelve."
+   ],
+   "r": 2,
+   "e": "Colour = couleur. Green = vert."
+  },
+  {
+   "q": "\"Nice to see you again!\" veut dire :",
+   "o": [
+    "Content de te revoir !",
+    "Viens encore !",
+    "Content de te connaître !",
+    "À la prochaine fois !"
+   ],
+   "r": 0,
+   "e": "Again = encore, de nouveau."
+  },
+  {
+   "q": "« Hello, how are you doing? » veut dire :",
+   "o": [
+    "Salut, qui es-tu ?",
+    "Salut, où vas-tu ?",
+    "Salut, comment ça va ?",
+    "Salut, que fais-tu ?"
+   ],
+   "r": 2,
+   "e": "« How are you doing? » = comment ça va ?"
+  },
+  {
+   "q": "Ton ami dit « I'm OK. ». Il va :",
+   "o": [
+    "Dormir",
+    "Bien, ça va",
+    "Très mal",
+    "À l'école"
+   ],
+   "r": 1,
+   "e": "OK = ça va, bien."
+  },
+  {
+   "q": "\"How are you today?\" Tu as mal à la tête. Tu réponds :",
+   "o": [
+    "Not very good. I have a headache.",
+    "Very good. I have a headache.",
+    "Fine, thanks. I have a headache.",
+    "I'm great. I have a headache."
+   ],
+   "r": 0,
+   "e": "Headache = mal de tête."
+  },
+  {
+   "q": "Que veut dire « Sorry to hear that. » ?",
+   "o": [
+    "Parle plus fort.",
+    "Merci de m'écouter.",
+    "Désolé d'être en retard.",
+    "Désolé d'apprendre ça."
+   ],
+   "r": 3,
+   "e": "On le dit quand quelqu'un a un problème."
+  },
+  {
+   "q": "Ton ami dit « My dog is sick. ». Tu réponds :",
+   "o": [
+    "Oh, well done!",
+    "Oh, you're welcome!",
+    "Oh, nice to meet you!",
+    "Oh, I'm sorry to hear that."
+   ],
+   "r": 3,
+   "e": "Pour une mauvaise nouvelle, on dit « I'm sorry to hear that »."
+  },
+  {
+   "q": "Ton ami dit « I'm very well today! ». Tu réponds :",
+   "o": [
+    "Good! I'm happy for you.",
+    "Oh no! I'm sorry.",
+    "Excuse me!",
+    "Never mind."
+   ],
+   "r": 0,
+   "e": "C'est une bonne nouvelle, on est content."
+  },
+  {
+   "q": "Tu frappes à la porte du bureau du directeur. Tu dis :",
+   "o": [
+    "May I go out, sir?",
+    "Do you come in, sir?",
+    "Can you go home, sir?",
+    "May I come in, sir?"
+   ],
+   "r": 3,
+   "e": "« May I come in? » = puis-je entrer ?"
+  },
+  {
+   "q": "Le directeur répond « Yes, come in. ». Cela veut dire :",
+   "o": [
+    "Oui, attends.",
+    "Oui, sors.",
+    "Oui, assieds-toi.",
+    "Oui, entre."
+   ],
+   "r": 3,
+   "e": "Come in = entrer."
+  },
+  {
+   "q": "Tu entres chez ton ami. Sa mère dit « Come in and sit down. ». Elle veut dire :",
+   "o": [
+    "Entre et mange.",
+    "Viens et cours.",
+    "Sors et lève-toi.",
+    "Entre et assieds-toi."
+   ],
+   "r": 3,
+   "e": "Sit down = s'asseoir."
+  },
+  {
+   "q": "\"What does your father do?\" Choisis la bonne réponse.",
+   "o": [
+    "He's a fisherman.",
+    "He's fine.",
+    "He's fifty.",
+    "He's at home."
+   ],
+   "r": 0,
+   "e": "« What does he do? » demande le métier."
+  },
+  {
+   "q": "Tu veux dire « Mon père est chauffeur ».",
+   "o": [
+    "My father is a farmer.",
+    "My father is a doctor.",
+    "My father is a tailor.",
+    "My father is a driver."
+   ],
+   "r": 3,
+   "e": "Driver = chauffeur. Doctor = médecin, farmer = cultivateur, tailor = tailleur."
+  },
+  {
+   "q": "\"How old is your brother?\" Choisis la bonne réponse.",
+   "o": [
+    "He's fine.",
+    "He's tall.",
+    "He's a pupil.",
+    "He's fifteen."
+   ],
+   "r": 3,
+   "e": "« How old » demande l'âge."
+  },
+  {
+   "q": "Ton ami dit « I have a new baby brother! ». Tu réponds :",
+   "o": [
+    "Congratulations! What's his name?",
+    "Good night! What's his name?",
+    "Sorry! What's his name?",
+    "Never mind! What's his name?"
+   ],
+   "r": 0,
+   "e": "Pour une bonne nouvelle, on dit « Congratulations » = félicitations."
+  },
+  {
+   "q": "Tu veux savoir le métier de quelqu'un. Tu demandes :",
+   "o": [
+    "What do you do?",
+    "How old are you?",
+    "How do you do?",
+    "Where do you go?"
+   ],
+   "r": 0,
+   "e": "« What do you do? » = que fais-tu dans la vie ?"
+  },
+  {
+   "q": "\"When is your birthday?\" Choisis la bonne réponse.",
+   "o": [
+    "It's at home.",
+    "It's five years old.",
+    "It's my cake.",
+    "It's on the 5th of May."
+   ],
+   "r": 3,
+   "e": "Birthday = anniversaire. When = quand."
+  },
+  {
+   "q": "Que veut dire « Pleased to meet you. » ?",
+   "o": [
+    "Merci de votre visite.",
+    "S'il vous plaît, venez.",
+    "Asseyez-vous, s'il vous plaît.",
+    "Enchanté de vous connaître."
+   ],
+   "r": 3,
+   "e": "Pleased = content. Meet = rencontrer."
+  },
+  {
+   "q": "Tu veux dire « Je suis désolé ».",
+   "o": [
+    "I'm sure.",
+    "I'm sick.",
+    "I'm sad.",
+    "I'm sorry."
+   ],
+   "r": 3,
+   "e": "Sorry = désolé, pardon."
+  },
+  {
+   "q": "Tu veux savoir si ton ami va bien. Tu demandes :",
+   "o": [
+    "Are you old?",
+    "Are you here?",
+    "Are you OK?",
+    "Are you ten?"
+   ],
+   "r": 2,
+   "e": "« Are you OK? » = ça va ?"
+  },
+  {
+   "q": "Ton ami tombe dans la cour. Tu cours vers lui et tu demandes :",
+   "o": [
+    "Are you ready?",
+    "Are you happy?",
+    "Are you all right?",
+    "Are you hungry?"
+   ],
+   "r": 2,
+   "e": "« Are you all right? » = ça va ? tu n'as rien ?"
+  },
+  {
+   "q": "Ton ami répond « I'm all right, thanks. ». Cela veut dire :",
+   "o": [
+    "J'ai raison, merci.",
+    "Je vais bien, merci.",
+    "Je suis tout seul, merci.",
+    "Je suis prêt, merci."
+   ],
+   "r": 1,
+   "e": "« All right » = bien, ça va."
+  },
+  {
+   "q": "Un touriste dit « Hello! I'm Peter. ». Tu te présentes :",
+   "o": [
+    "Hello, Peter! I'm Babacar.",
+    "Goodbye, Peter! I'm Babacar.",
+    "Sorry, Peter! I'm Babacar.",
+    "Thank you, Peter! I'm Babacar."
+   ],
+   "r": 0,
+   "e": "On répond au salut et on donne son nom."
+  },
+  {
+   "q": "Ton ami part en voyage. Tu lui dis :",
+   "o": [
+    "Have a good night!",
+    "Have a good meal!",
+    "Have a good lesson!",
+    "Have a good trip!"
+   ],
+   "r": 3,
+   "e": "Trip = voyage. « Have a good trip » = bon voyage."
+  },
+  {
+   "q": "Ton ami va dormir chez lui. En partant, il dit « Good night! ». Tu réponds :",
+   "o": [
+    "Hello! Sleep well.",
+    "Good night! Sleep well.",
+    "Good afternoon! Sleep well.",
+    "Good morning! Sleep well."
+   ],
+   "r": 1,
+   "e": "On répond « Good night » et « Sleep well » = dors bien."
+  },
+  {
+   "q": "« Sleep well! » veut dire :",
+   "o": [
+    "Dors bien !",
+    "Joue bien !",
+    "Travaille bien !",
+    "Mange bien !"
+   ],
+   "r": 0,
+   "e": "Sleep = dormir."
+  },
+  {
+   "q": "Le matin, ta maman demande « Did you sleep well? ». Tu as bien dormi. Tu réponds :",
+   "o": [
+    "Yes, sorry, Mum.",
+    "Yes, thank you, Mum.",
+    "Yes, you're welcome, Mum.",
+    "Yes, excuse me, Mum."
+   ],
+   "r": 1,
+   "e": "Tu dis oui et merci."
+  },
+  {
+   "q": "Pour répondre poliment « Oui, s'il te plaît » à une offre, tu dis :",
+   "o": [
+    "Yes, bye.",
+    "Yes, please.",
+    "Yes, sorry.",
+    "Yes, welcome."
+   ],
+   "r": 1,
+   "e": "Please = s'il te plaît."
+  },
+  {
+   "q": "Pour refuser poliment une offre, tu dis :",
+   "o": [
+    "No, please you.",
+    "No, thank you.",
+    "No, sorry you.",
+    "No, welcome."
+   ],
+   "r": 1,
+   "e": "« No, thank you » = non, merci."
+  },
+  {
+   "q": "« Please » veut dire :",
+   "o": [
+    "Merci",
+    "De rien",
+    "S'il te plaît",
+    "Pardon"
+   ],
+   "r": 2,
+   "e": "Please = s'il te plaît, s'il vous plaît."
+  },
+  {
+   "q": "Quel mot rend la demande polie ? « Give me the book, ___. »",
+   "o": [
+    "sorry",
+    "hello",
+    "please",
+    "bye"
+   ],
+   "r": 2,
+   "e": "On ajoute « please » pour être poli."
+  },
+  {
+   "q": "Ton ami te prête son vélo. Quelle phrase est la plus polie pour remercier ?",
+   "o": [
+    "Give it.",
+    "Bye.",
+    "Thank you so much!",
+    "OK."
+   ],
+   "r": 2,
+   "e": "« Thank you so much » = merci beaucoup."
+  },
+  {
+   "q": "Ta camarade dit « Sorry, I took your pen. ». Tu réponds :",
+   "o": [
+    "Well done, don't worry.",
+    "Good night, don't worry.",
+    "Thank you, don't worry.",
+    "It's OK, don't worry."
+   ],
+   "r": 3,
+   "e": "« Don't worry » = ne t'inquiète pas."
+  },
+  {
+   "q": "« Don't worry! » veut dire :",
+   "o": [
+    "Ne mange pas !",
+    "Ne parle pas !",
+    "Ne pars pas !",
+    "Ne t'inquiète pas !"
+   ],
+   "r": 3,
+   "e": "Worry = s'inquiéter."
+  },
+  {
+   "q": "Tu as oublié le nom de quelqu'un. Tu dis :",
+   "o": [
+    "Sorry, what's your name again?",
+    "Sorry, how old are you again?",
+    "Sorry, how are you again?",
+    "Sorry, where do you live again?"
+   ],
+   "r": 0,
+   "e": "« Again » = encore, de nouveau."
+  },
+  {
+   "q": "Tu te trompes de personne dans la rue. Tu dis :",
+   "o": [
+    "Oh, sorry! I thought you were my cousin.",
+    "Oh, cheers! I thought you were my cousin.",
+    "Oh, welcome! I thought you were my cousin.",
+    "Oh, thanks! I thought you were my cousin."
+   ],
+   "r": 0,
+   "e": "Pour une erreur, on dit « Sorry »."
+  },
+  {
+   "q": "Tu as bousculé une dame au marché. Tu dis :",
+   "o": [
+    "Sorry, madam!",
+    "Thank you, madam!",
+    "Bye, madam!",
+    "Welcome, madam!"
+   ],
+   "r": 0,
+   "e": "On s'excuse : « Sorry »."
+  },
+  {
+   "q": "Une dame te dit « Excuse me, are you Awa's brother? ». C'est vrai. Tu réponds :",
+   "o": [
+    "Yes, she is.",
+    "Yes, it does.",
+    "Yes, I am.",
+    "Yes, I do."
+   ],
+   "r": 2,
+   "e": "Are you…? → Yes, I am."
+  },
+  {
+   "q": "Tu veux dire au revoir à toute la classe. Tu dis :",
+   "o": [
+    "Welcome, everyone!",
+    "Thanks, everyone!",
+    "Goodbye, everyone!",
+    "Hello, everyone!"
+   ],
+   "r": 2,
+   "e": "Everyone = tout le monde."
+  },
+  {
+   "q": "« Hi there! » veut dire :",
+   "o": [
+    "Salut !",
+    "Au revoir !",
+    "Assieds-toi là !",
+    "Va là-bas !"
+   ],
+   "r": 0,
+   "e": "C'est une façon familière de dire salut."
+  },
+  {
+   "q": "Pour saluer un ami par SMS, tu écris :",
+   "o": [
+    "Thanks Moussa! Where are you from?",
+    "Hi Moussa! How are you?",
+    "Sorry Moussa! Who are you?",
+    "Bye Moussa! How old are you?"
+   ],
+   "r": 1,
+   "e": "On salue puis on demande des nouvelles."
+  },
+  {
+   "q": "Tu finis un SMS à ton ami. Tu écris :",
+   "o": [
+    "See you!",
+    "Hello!",
+    "Excuse me!",
+    "Welcome!"
+   ],
+   "r": 0,
+   "e": "« See you » = à plus, à bientôt."
+  },
+  {
+   "q": "Ton ami te dit « Cheers! » après que tu l'as aidé. Il veut dire :",
+   "o": [
+    "Merci !",
+    "Attention !",
+    "Pardon !",
+    "Bonjour !"
+   ],
+   "r": 0,
+   "e": "En Angleterre, « Cheers » veut souvent dire merci."
+  },
+  {
+   "q": "Ta cousine dit « My name's Mariama, but you can call me Mary. ». Que veut-elle dire ?",
+   "o": [
+    "Mary est sa sœur.",
+    "Elle n'aime pas son nom.",
+    "Tu peux l'appeler Mary.",
+    "Elle s'appelle Mary Mariama."
+   ],
+   "r": 2,
+   "e": "« You can call me… » = tu peux m'appeler…"
+  },
+  {
+   "q": "Que veut dire « Call me Ibou. » ?",
+   "o": [
+    "Ibou m'appelle.",
+    "Téléphone à Ibou.",
+    "Je suis chez Ibou.",
+    "Appelle-moi Ibou."
+   ],
+   "r": 3,
+   "e": "« Call me » = appelle-moi."
+  },
+  {
+   "q": "\"Is this your brother?\" Non, c'est ton cousin. Tu réponds :",
+   "o": [
+    "No, he's my cousin.",
+    "Yes, he's my cousin.",
+    "No, I'm my cousin.",
+    "No, she's my cousin."
+   ],
+   "r": 0,
+   "e": "No + la bonne information."
+  },
+  {
+   "q": "\"Are you twins?\" Oui, tu es jumeau avec ton frère. Tu réponds :",
+   "o": [
+    "Yes, I do.",
+    "Yes, he is.",
+    "Yes, they are.",
+    "Yes, we are."
+   ],
+   "r": 3,
+   "e": "Twins = jumeaux. Are you (vous) → Yes, we are."
+  },
+  {
+   "q": "\"What's your address?\" Choisis la bonne réponse.",
+   "o": [
+    "It's 12, Rue Blaise Diagne.",
+    "It's twelve pupils.",
+    "It's twelve o'clock.",
+    "It's 12 years old."
+   ],
+   "r": 0,
+   "e": "Address = adresse."
+  },
+  {
+   "q": "\"How do you spell your name?\" Ton nom est Ba. Tu réponds :",
+   "o": [
+    "It's Ba's.",
+    "B-A.",
+    "Ba, please.",
+    "Ba is fine."
+   ],
+   "r": 1,
+   "e": "Spell = épeler : on dit les lettres."
+  },
+  {
+   "q": "Comment dit-on « Je viens de Kédougou » ?",
+   "o": [
+    "I like Kédougou.",
+    "I'm in Kédougou now.",
+    "I'm from Kédougou.",
+    "I go to Kédougou."
+   ],
+   "r": 2,
+   "e": "« I'm from… » = je viens de…"
+  },
+  {
+   "q": "Tu salues un groupe de femmes plus âgées. Quelle phrase est polie ?",
+   "o": [
+    "Hey, girls!",
+    "Good morning, ladies.",
+    "Yo, everybody!",
+    "What's up, guys?"
+   ],
+   "r": 1,
+   "e": "« Ladies » = mesdames. C'est poli."
+  },
+  {
+   "q": "Tu salues un groupe d'hommes adultes, poliment. Tu dis :",
+   "o": [
+    "Hi, guys!",
+    "Hey, boys!",
+    "Good evening, gentlemen.",
+    "Yo, men!"
+   ],
+   "r": 2,
+   "e": "« Gentlemen » = messieurs. C'est poli."
+  },
+  {
+   "q": "Le chef du village te dit « You are welcome in our village. ». Il veut dire :",
+   "o": [
+    "Tu es le bienvenu dans notre village.",
+    "Tu es en retard au village.",
+    "De rien, notre village.",
+    "Merci de quitter notre village."
+   ],
+   "r": 0,
+   "e": "« You are welcome in… » = tu es le bienvenu à…"
+  },
+  {
+   "q": "Ton ami dit « I'm new here. ». Cela veut dire :",
+   "o": [
+    "Je suis nouveau ici.",
+    "Je pars d'ici.",
+    "J'habite ici depuis longtemps.",
+    "Je suis vieux ici."
+   ],
+   "r": 0,
+   "e": "New = nouveau."
+  },
+  {
+   "q": "Le nouvel élève dit « I'm new here. ». Tu réponds gentiment :",
+   "o": [
+    "Goodbye! I can show you the school.",
+    "Sorry! I can show you the school.",
+    "Welcome! I can show you the school.",
+    "Well done! I can show you the school."
+   ],
+   "r": 2,
+   "e": "On accueille avec « Welcome »."
+  },
+  {
+   "q": "« Thank you, sir. » Tu dis cela à :",
+   "o": [
+    "Une petite fille",
+    "Une femme adulte",
+    "Un homme adulte",
+    "Ta sœur"
+   ],
+   "r": 2,
+   "e": "Sir = monsieur."
+  },
+  {
+   "q": "Que veut dire « Thank you anyway. » ?",
+   "o": [
+    "Merci pour tout.",
+    "Merci quand même.",
+    "Merci beaucoup encore.",
+    "Merci d'être là."
+   ],
+   "r": 1,
+   "e": "On le dit quand la personne a essayé de t'aider sans réussir."
+  },
+  {
+   "q": "Tu demandes un livre à la bibliothèque. Il n'y en a plus. Tu dis :",
+   "o": [
+    "OK, welcome anyway.",
+    "OK, thank you anyway.",
+    "OK, sorry anyway.",
+    "OK, hello anyway."
+   ],
+   "r": 1,
+   "e": "« Thank you anyway » = merci quand même."
+  },
+  {
+   "q": "« Thank you for everything. » veut dire :",
+   "o": [
+    "Merci tout le monde.",
+    "Merci pour tout.",
+    "Merci pour rien.",
+    "Merci encore une fois."
+   ],
+   "r": 1,
+   "e": "Everything = tout."
+  },
+  {
+   "q": "Ton professeur t'a beaucoup aidé cette année. Tu lui dis :",
+   "o": [
+    "Excuse me for everything, sir.",
+    "Thank you for everything, sir.",
+    "Welcome for everything, sir.",
+    "Sorry for everything, sir."
+   ],
+   "r": 1,
+   "e": "« Thank you for everything » = merci pour tout."
+  },
+  {
+   "q": "Tu as dit un gros mot par erreur. Tu dis :",
+   "o": [
+    "Welcome, I didn't mean it.",
+    "Hello, I didn't mean it.",
+    "Sorry, I didn't mean it.",
+    "Thanks, I didn't mean it."
+   ],
+   "r": 2,
+   "e": "« I didn't mean it » = je ne l'ai pas fait exprès."
+  },
+  {
+   "q": "Ton petit frère pleure car tu as pris son jouet. Tu dis :",
+   "o": [
+    "Thanks, here's your toy.",
+    "Sorry, here's your toy.",
+    "Bye, here's your toy.",
+    "Welcome, here's your toy."
+   ],
+   "r": 1,
+   "e": "On s'excuse et on rend le jouet."
+  },
+  {
+   "q": "Tu es en retard à un rendez-vous avec ton ami. Il dit « Where were you? ». Tu réponds :",
+   "o": [
+    "Cheers, I missed the bus.",
+    "Thanks, I missed the bus.",
+    "Welcome, I missed the bus.",
+    "Sorry, I missed the bus."
+   ],
+   "r": 3,
+   "e": "On s'excuse : « Sorry »."
+  },
+  {
+   "q": "« Excuse me, are you Mrs Diallo? » Tu n'es pas Mrs Diallo. Tu réponds :",
+   "o": [
+    "No, I don't. Sorry.",
+    "Yes, I am. Sorry.",
+    "No, it isn't. Sorry.",
+    "No, I'm not. Sorry."
+   ],
+   "r": 3,
+   "e": "Are you…? → No, I'm not."
+  },
+  {
+   "q": "Ta tante te demande « How is school? ». Tout va bien. Tu réponds :",
+   "o": [
+    "It's a school.",
+    "It's good, thank you.",
+    "It's in Dakar.",
+    "It's ten o'clock."
+   ],
+   "r": 1,
+   "e": "On donne des nouvelles : « It's good »."
+  },
+  {
+   "q": "Ta grand-mère demande « How is everybody at home? ». Tu réponds :",
+   "o": [
+    "Everybody is ten, thank you.",
+    "Everybody is at home, thank you.",
+    "Everybody is fine, thank you.",
+    "Everybody is a pupil, thank you."
+   ],
+   "r": 2,
+   "e": "« How is everybody? » = comment va tout le monde ?"
+  },
+  {
+   "q": "Tu veux demander des nouvelles de la famille de ton ami. Tu dis :",
+   "o": [
+    "How is your family?",
+    "Where is your family?",
+    "Who is your family?",
+    "What is your family?"
+   ],
+   "r": 0,
+   "e": "« How is…? » = comment va… ?"
+  },
+  {
+   "q": "Ton ami répond « They're all fine, thank you. ». Cela veut dire :",
+   "o": [
+    "Ils sont tous partis, merci.",
+    "Ils ont tous faim, merci.",
+    "Ils sont tous là, merci.",
+    "Ils vont tous bien, merci."
+   ],
+   "r": 3,
+   "e": "« All » = tous."
+  },
+  {
+   "q": "« Hello! » au téléphone, en anglais, se dit aussi pour :",
+   "o": [
+    "Dire merci",
+    "S'excuser",
+    "Dire au revoir",
+    "Répondre au téléphone"
+   ],
+   "r": 3,
+   "e": "Au téléphone, on décroche en disant « Hello? »."
+  },
+  {
+   "q": "Ton ami dit « I'm from Senegal, too! ». Que veut dire « too » ?",
+   "o": [
+    "Aussi",
+    "Deux",
+    "Trop tard",
+    "Très"
+   ],
+   "r": 0,
+   "e": "Too = aussi (à la fin de la phrase)."
+  },
+  {
+   "q": "« Me too! » veut dire :",
+   "o": [
+    "À moi !",
+    "Toi aussi !",
+    "Moi non !",
+    "Moi aussi !"
+   ],
+   "r": 3,
+   "e": "« Me too » = moi aussi."
+  },
+  {
+   "q": "Ton ami dit « I'm hungry. ». Tu as faim aussi. Tu dis :",
+   "o": [
+    "You too!",
+    "Me too!",
+    "Me neither!",
+    "Not me!"
+   ],
+   "r": 1,
+   "e": "« Me too » = moi aussi."
+  },
+  {
+   "q": "Ton ami dit « I'm not tired. ». Tu n'es pas fatigué non plus. Tu dis :",
+   "o": [
+    "You too.",
+    "Me too.",
+    "Me neither.",
+    "Not you."
+   ],
+   "r": 2,
+   "e": "Après une phrase négative, on dit « Me neither » = moi non plus."
+  },
+  {
+   "q": "« Good luck! » veut dire :",
+   "o": [
+    "Bon appétit !",
+    "Bonne année !",
+    "Bonne chance !",
+    "Bonne nuit !"
+   ],
+   "r": 2,
+   "e": "Luck = chance."
+  },
+  {
+   "q": "Que veut dire « Good afternoon » ?",
+   "o": [
+    "Bonne nuit",
+    "Bon après-midi, bonjour",
+    "Bonsoir",
+    "Bonne semaine"
+   ],
+   "r": 1,
+   "e": "On dit « Good afternoon » entre midi et le soir."
+  },
+  {
+   "q": "Tu arrives à la boutique à 10 heures. Tu salues le boutiquier :",
+   "o": [
+    "Good night!",
+    "Good evening!",
+    "Good afternoon!",
+    "Good morning!"
+   ],
+   "r": 3,
+   "e": "À 10 heures, c'est encore le matin : « Good morning »."
+  },
+  {
+   "q": "Il est 21 heures. Tu rentres et tu salues ton oncle au salon. Tu dis :",
+   "o": [
+    "Good evening, Uncle.",
+    "Goodbye, Uncle.",
+    "Good afternoon, Uncle.",
+    "Good morning, Uncle."
+   ],
+   "r": 0,
+   "e": "Le soir, en arrivant, on dit « Good evening »."
+  },
+  {
+   "q": "Ton ami dit « Bye! Take care! ». Tu réponds :",
+   "o": [
+    "Hello! You too!",
+    "Welcome! You too!",
+    "Bye! You too!",
+    "Sorry! You too!"
+   ],
+   "r": 2,
+   "e": "On répond « Bye » et « You too » = toi aussi."
+  },
+  {
+   "q": "Tu veux dire « Je suis très content de te rencontrer ».",
+   "o": [
+    "I'm very happy to meet you.",
+    "I'm very late to meet you.",
+    "I'm very tired to meet you.",
+    "I'm very sorry to meet you."
+   ],
+   "r": 0,
+   "e": "Happy = content. Meet = rencontrer."
+  },
+  {
+   "q": "Ton ami demande « Can I call you Mo? ». Tu es d'accord. Tu réponds :",
+   "o": [
+    "Sorry, I'm late.",
+    "Goodbye, see you.",
+    "Sure, no problem.",
+    "You're welcome."
+   ],
+   "r": 2,
+   "e": "« Sure » = bien sûr."
+  }
+ ]
+}

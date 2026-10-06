@@ -1,0 +1,2404 @@
+{
+ "questions": [
+  {
+   "t": "LOST: a small white cat. Her name is Mimi. She has a blue collar. Call Fatou: 77 123 45 67. Thank you!",
+   "q": "What is lost?",
+   "o": [
+    "A dog",
+    "A bag",
+    "A cat",
+    "A phone"
+   ],
+   "r": 2,
+   "e": "« LOST: a small white cat » : un chat est perdu."
+  },
+  {
+   "t": "LOST: a small white cat. Her name is Mimi. She has a blue collar. Call Fatou: 77 123 45 67. Thank you!",
+   "q": "What colour is the collar?",
+   "o": [
+    "White",
+    "Red",
+    "Black",
+    "Blue"
+   ],
+   "r": 3,
+   "e": "« She has a blue collar » : le collier est bleu."
+  },
+  {
+   "t": "FOR SALE: a red bike. It is two years old. It is in good condition. Price: 40,000 francs. Call Moussa in Thiès.",
+   "q": "What is for sale?",
+   "o": [
+    "A car",
+    "A phone",
+    "A bed",
+    "A bike"
+   ],
+   "r": 3,
+   "e": "« FOR SALE: a red bike » : un vélo est à vendre."
+  },
+  {
+   "t": "FOR SALE: a red bike. It is two years old. It is in good condition. Price: 40,000 francs. Call Moussa in Thiès.",
+   "q": "How much is it?",
+   "o": [
+    "4,000 francs",
+    "20,000 francs",
+    "400,000 francs",
+    "40,000 francs"
+   ],
+   "r": 3,
+   "e": "« Price: 40,000 francs » : 40 000 francs."
+  },
+  {
+   "t": "ROOM TO RENT in Yoff. One big room with a bathroom. Near the beach. 60,000 francs a month. Call Mr Sene.",
+   "q": "Where is the room?",
+   "o": [
+    "In Ngor",
+    "In Pikine",
+    "In Yoff",
+    "In Rufisque"
+   ],
+   "r": 2,
+   "e": "« ROOM TO RENT in Yoff » : à Yoff."
+  },
+  {
+   "t": "ROOM TO RENT in Yoff. One big room with a bathroom. Near the beach. 60,000 francs a month. Call Mr Sene.",
+   "q": "Qu'y a-t-il avec la chambre ?",
+   "o": [
+    "Une salle de bain",
+    "Une cuisine",
+    "Un jardin",
+    "Un garage"
+   ],
+   "r": 0,
+   "e": "« One big room with a bathroom » : une salle de bain."
+  },
+  {
+   "t": "FOUND: a black phone near the Kermel market. It is at the shop of Mr Diop, number 12. Come with your ID card.",
+   "q": "What is found?",
+   "o": [
+    "A black bag",
+    "A wallet",
+    "Some keys",
+    "A black phone"
+   ],
+   "r": 3,
+   "e": "« FOUND: a black phone » : un téléphone noir."
+  },
+  {
+   "t": "FOUND: a black phone near the Kermel market. It is at the shop of Mr Diop, number 12. Come with your ID card.",
+   "q": "What must you bring?",
+   "o": [
+    "Money",
+    "Your ID card",
+    "A photo",
+    "Your phone number"
+   ],
+   "r": 1,
+   "e": "« Come with your ID card » : ta carte d'identité."
+  },
+  {
+   "t": "WANTED: a teacher of English for two children, 8 and 10 years old. Every Saturday morning in Point E. Call 76 555 22 11.",
+   "q": "Who is wanted?",
+   "o": [
+    "A cook",
+    "A driver",
+    "A football coach",
+    "An English teacher"
+   ],
+   "r": 3,
+   "e": "« WANTED: a teacher of English » : on cherche un professeur d'anglais."
+  },
+  {
+   "t": "WANTED: a teacher of English for two children, 8 and 10 years old. Every Saturday morning in Point E. Call 76 555 22 11.",
+   "q": "Quand sont les cours ?",
+   "o": [
+    "Le samedi matin",
+    "Le dimanche soir",
+    "Chaque jour",
+    "Le mercredi après-midi"
+   ],
+   "r": 0,
+   "e": "« Every Saturday morning » : chaque samedi matin."
+  },
+  {
+   "t": "LOST DOG! Bobby is brown and big. He is very friendly. He is lost near the Parcelles Assainies market. Please call Lamine.",
+   "q": "What colour is Bobby?",
+   "o": [
+    "Brown",
+    "Black",
+    "White",
+    "Grey"
+   ],
+   "r": 0,
+   "e": "« Bobby is brown and big » : il est marron."
+  },
+  {
+   "t": "LOST DOG! Bobby is brown and big. He is very friendly. He is lost near the Parcelles Assainies market. Please call Lamine.",
+   "q": "Where is Bobby lost?",
+   "o": [
+    "Near the school",
+    "Near the Parcelles Assainies market",
+    "At the beach",
+    "In Thiès"
+   ],
+   "r": 1,
+   "e": "« He is lost near the Parcelles Assainies market »."
+  },
+  {
+   "t": "FOR SALE: school books for 6th grade. English, maths and French. Like new! 2,000 francs each. Ask Aissatou in class 5B.",
+   "q": "Combien coûte un livre ?",
+   "o": [
+    "2 000 francs",
+    "6 000 francs",
+    "200 francs",
+    "5 000 francs"
+   ],
+   "r": 0,
+   "e": "« 2,000 francs each » : 2 000 francs chacun."
+  },
+  {
+   "t": "FOR SALE: school books for 6th grade. English, maths and French. Like new! 2,000 francs each. Ask Aissatou in class 5B.",
+   "q": "What grade are the books for?",
+   "o": [
+    "5th grade",
+    "4th grade",
+    "6th grade",
+    "3rd grade"
+   ],
+   "r": 2,
+   "e": "« school books for 6th grade » : pour la 6e."
+  },
+  {
+   "t": "JOB: The Teranga Hotel in Saly wants a cook. You must speak French and English. Work from 6 am to 2 pm.",
+   "q": "What job is it?",
+   "o": [
+    "Driver",
+    "Guard",
+    "Teacher",
+    "Cook"
+   ],
+   "r": 3,
+   "e": "« wants a cook » : un cuisinier."
+  },
+  {
+   "t": "JOB: The Teranga Hotel in Saly wants a cook. You must speak French and English. Work from 6 am to 2 pm.",
+   "q": "Quelles langues faut-il parler ?",
+   "o": [
+    "Wolof et français",
+    "Anglais seulement",
+    "Français et anglais",
+    "Arabe et anglais"
+   ],
+   "r": 2,
+   "e": "« You must speak French and English »."
+  },
+  {
+   "t": "FOR SALE: two goats, white and black. Good for Tabaski. Ask Samba at the Kaolack livestock market.",
+   "q": "How many goats are for sale?",
+   "o": [
+    "One",
+    "Three",
+    "Four",
+    "Two"
+   ],
+   "r": 3,
+   "e": "« FOR SALE: two goats » : deux chèvres."
+  },
+  {
+   "t": "FOR SALE: two goats, white and black. Good for Tabaski. Ask Samba at the Kaolack livestock market.",
+   "q": "Where can you find Samba?",
+   "o": [
+    "At the Kaolack livestock market",
+    "At the Dakar market",
+    "At the mosque",
+    "At the farm"
+   ],
+   "r": 0,
+   "e": "« Ask Samba at the Kaolack livestock market »."
+  },
+  {
+   "t": "FREE football training for children 8 to 12 years old. Every Wednesday at 4 pm at the Médina stadium. Bring water!",
+   "q": "How much is the training?",
+   "o": [
+    "1,000 francs",
+    "It is free",
+    "500 francs",
+    "2,000 francs"
+   ],
+   "r": 1,
+   "e": "« FREE football training » : c'est gratuit."
+  },
+  {
+   "t": "FREE football training for children 8 to 12 years old. Every Wednesday at 4 pm at the Médina stadium. Bring water!",
+   "q": "Qui peut venir ?",
+   "o": [
+    "Les adultes",
+    "Les enfants de 8 à 12 ans",
+    "Les filles seulement",
+    "Les enfants de 5 ans"
+   ],
+   "r": 1,
+   "e": "« for children 8 to 12 years old »."
+  },
+  {
+   "t": "LOST: a green school bag with three notebooks and a pencil case. The name in the books is Codou Ndiaye. Call 70 222 33 44.",
+   "q": "What colour is the bag?",
+   "o": [
+    "Blue",
+    "Black",
+    "Red",
+    "Green"
+   ],
+   "r": 3,
+   "e": "« a green school bag » : un sac vert."
+  },
+  {
+   "t": "LOST: a green school bag with three notebooks and a pencil case. The name in the books is Codou Ndiaye. Call 70 222 33 44.",
+   "q": "Whose bag is it?",
+   "o": [
+    "Lamine's",
+    "Codou Ndiaye's",
+    "Fatou's",
+    "The teacher's"
+   ],
+   "r": 1,
+   "e": "« The name in the books is Codou Ndiaye » : c'est le sac de Codou."
+  },
+  {
+   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden and a garage. 250,000 francs a month.",
+   "q": "How many bedrooms are there?",
+   "o": [
+    "Two",
+    "Four",
+    "Three",
+    "One"
+   ],
+   "r": 2,
+   "e": "« three bedrooms » : trois chambres."
+  },
+  {
+   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden and a garage. 250,000 francs a month.",
+   "q": "What is the rent?",
+   "o": [
+    "25,000 francs a month",
+    "200,000 francs a month",
+    "250,000 francs a month",
+    "350,000 francs a month"
+   ],
+   "r": 2,
+   "e": "« 250,000 francs a month » : le loyer."
+  },
+  {
+   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, from 5 pm to 8 pm. Call Mrs Gaye.",
+   "q": "How old are the children?",
+   "o": [
+    "5 and 8",
+    "3 and 5",
+    "2 and 4",
+    "3 and 8"
+   ],
+   "r": 1,
+   "e": "« Two children, 3 and 5 years old » : 3 et 5 ans."
+  },
+  {
+   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, from 5 pm to 8 pm. Call Mrs Gaye.",
+   "q": "Which days?",
+   "o": [
+    "Every weekend",
+    "Only Saturday",
+    "Every day",
+    "Monday to Friday"
+   ],
+   "r": 3,
+   "e": "« Monday to Friday » : du lundi au vendredi."
+  },
+  {
+   "t": "Sewing class! Learn to make clothes with Mrs Fall. Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
+   "q": "What can you learn?",
+   "o": [
+    "To cook",
+    "To drive",
+    "To sing",
+    "To make clothes"
+   ],
+   "r": 3,
+   "e": "« Learn to make clothes » : apprendre à faire des vêtements."
+  },
+  {
+   "t": "Sewing class! Learn to make clothes with Mrs Fall. Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
+   "q": "Quels jours sont les cours ?",
+   "o": [
+    "Lundi et mercredi",
+    "Mardi et jeudi",
+    "Samedi et dimanche",
+    "Vendredi"
+   ],
+   "r": 1,
+   "e": "« Tuesday and Thursday » : mardi et jeudi."
+  },
+  {
+   "t": "FOR SALE: a big fridge, white, 5 years old. It works very well. 75,000 francs. Mr Mbaye, Rufisque.",
+   "q": "What is for sale?",
+   "o": [
+    "A fridge",
+    "A TV",
+    "A bed",
+    "A car"
+   ],
+   "r": 0,
+   "e": "« FOR SALE: a big fridge » : un réfrigérateur."
+  },
+  {
+   "t": "FOR SALE: a big fridge, white, 5 years old. It works very well. 75,000 francs. Mr Mbaye, Rufisque.",
+   "q": "Where does Mr Mbaye live?",
+   "o": [
+    "In Rufisque",
+    "In Pikine",
+    "In Mbour",
+    "In Thiès"
+   ],
+   "r": 0,
+   "e": "« Mr Mbaye, Rufisque » : à Rufisque."
+  },
+  {
+   "t": "LOST at the beach of Ngor: a gold watch. It is a present from my father. Big reward! Call Ousmane.",
+   "q": "Where is the watch lost?",
+   "o": [
+    "At school",
+    "At the market",
+    "In a taxi",
+    "At the beach of Ngor"
+   ],
+   "r": 3,
+   "e": "« LOST at the beach of Ngor » : sur la plage de Ngor."
+  },
+  {
+   "t": "LOST at the beach of Ngor: a gold watch. It is a present from my father. Big reward! Call Ousmane.",
+   "q": "Pourquoi la montre est importante ?",
+   "o": [
+    "Elle est neuve",
+    "C'est un cadeau de son père",
+    "Elle est très chère",
+    "C'est sa première montre"
+   ],
+   "r": 1,
+   "e": "« It is a present from my father »."
+  },
+  {
+   "t": "Driver wanted for a small bus. Dakar to Thiès, every day. You must have a driving licence. Call 77 900 10 10.",
+   "q": "What job is it?",
+   "o": [
+    "Mechanic",
+    "Cook",
+    "Driver",
+    "Seller"
+   ],
+   "r": 2,
+   "e": "« Driver wanted » : on cherche un chauffeur."
+  },
+  {
+   "t": "Driver wanted for a small bus. Dakar to Thiès, every day. You must have a driving licence. Call 77 900 10 10.",
+   "q": "What must you have?",
+   "o": [
+    "A car",
+    "A phone",
+    "A driving licence",
+    "A diploma"
+   ],
+   "r": 2,
+   "e": "« You must have a driving licence » : un permis de conduire."
+  },
+  {
+   "t": "Swimming lessons for children at the Saly pool. Saturday at 9 am. Ages 6 to 14. 3,000 francs a lesson.",
+   "q": "What lessons are they?",
+   "o": [
+    "Dancing",
+    "Swimming",
+    "Football",
+    "Music"
+   ],
+   "r": 1,
+   "e": "« Swimming lessons » : des cours de natation."
+  },
+  {
+   "t": "Swimming lessons for children at the Saly pool. Saturday at 9 am. Ages 6 to 14. 3,000 francs a lesson.",
+   "q": "Combien coûte une leçon ?",
+   "o": [
+    "6 000 francs",
+    "1 400 francs",
+    "9 000 francs",
+    "3 000 francs"
+   ],
+   "r": 3,
+   "e": "« 3,000 francs a lesson »."
+  },
+  {
+   "t": "FOUND: a small boy's shoe, blue, near the school gate. Ask the school guard. - School of Grand Yoff",
+   "q": "What is found?",
+   "o": [
+    "A ball",
+    "A shoe",
+    "A cap",
+    "A book"
+   ],
+   "r": 1,
+   "e": "« FOUND: a small boy's shoe » : une chaussure."
+  },
+  {
+   "t": "FOUND: a small boy's shoe, blue, near the school gate. Ask the school guard. - School of Grand Yoff",
+   "q": "Who has it?",
+   "o": [
+    "The director",
+    "A teacher",
+    "A mother",
+    "The school guard"
+   ],
+   "r": 3,
+   "e": "« Ask the school guard » : le gardien de l'école."
+  },
+  {
+   "t": "Moving sale! Chairs, a table, a sofa and a TV. Everything must go! Saturday, 10 am to 4 pm, Sicap Liberté 2, house 45.",
+   "q": "What day is the sale?",
+   "o": [
+    "Sunday",
+    "Friday",
+    "Saturday",
+    "Monday"
+   ],
+   "r": 2,
+   "e": "« Saturday, 10 am to 4 pm » : samedi."
+  },
+  {
+   "t": "Moving sale! Chairs, a table, a sofa and a TV. Everything must go! Saturday, 10 am to 4 pm, Sicap Liberté 2, house 45.",
+   "q": "What is the house number?",
+   "o": [
+    "2",
+    "10",
+    "4",
+    "45"
+   ],
+   "r": 3,
+   "e": "« house 45 » : maison numéro 45."
+  },
+  {
+   "t": "Computer class for beginners. Learn to use a computer and the internet. Every Monday at 6 pm at the youth centre of Guédiawaye.",
+   "q": "What can you learn?",
+   "o": [
+    "To repair phones",
+    "To use a computer",
+    "To drive",
+    "To swim"
+   ],
+   "r": 1,
+   "e": "« Learn to use a computer and the internet »."
+  },
+  {
+   "t": "Computer class for beginners. Learn to use a computer and the internet. Every Monday at 6 pm at the youth centre of Guédiawaye.",
+   "q": "Où ont lieu les cours ?",
+   "o": [
+    "À l'école",
+    "À la mairie",
+    "Au centre des jeunes de Guédiawaye",
+    "À la bibliothèque"
+   ],
+   "r": 2,
+   "e": "« at the youth centre of Guédiawaye »."
+  },
+  {
+   "t": "LOST: my keys! Three keys on a red key ring. Lost in a taxi from Plateau to Ouakam. Please call Khady.",
+   "q": "How many keys are lost?",
+   "o": [
+    "Two",
+    "Four",
+    "Three",
+    "One"
+   ],
+   "r": 2,
+   "e": "« Three keys on a red key ring » : trois clés."
+  },
+  {
+   "t": "LOST: my keys! Three keys on a red key ring. Lost in a taxi from Plateau to Ouakam. Please call Khady.",
+   "q": "Where are the keys lost?",
+   "o": [
+    "In a bus",
+    "At home",
+    "In a taxi",
+    "At the office"
+   ],
+   "r": 2,
+   "e": "« Lost in a taxi » : dans un taxi."
+  },
+  {
+   "t": "FOR SALE: fresh eggs from my farm. 100 francs an egg. 1,000 francs for twelve eggs. Mrs Seck, Sébikotane.",
+   "q": "What does Mrs Seck sell?",
+   "o": [
+    "Milk",
+    "Chickens",
+    "Vegetables",
+    "Eggs"
+   ],
+   "r": 3,
+   "e": "« fresh eggs from my farm » : des œufs."
+  },
+  {
+   "t": "FOR SALE: fresh eggs from my farm. 100 francs an egg. 1,000 francs for twelve eggs. Mrs Seck, Sébikotane.",
+   "q": "How much are twelve eggs?",
+   "o": [
+    "1,200 francs",
+    "100 francs",
+    "1,000 francs",
+    "1,500 francs"
+   ],
+   "r": 2,
+   "e": "« 1,000 francs for twelve eggs »."
+  },
+  {
+   "t": "Music school: guitar, piano and djembe lessons. For children and adults. Open Monday to Saturday. Medina, near the big mosque.",
+   "q": "Which instrument is NOT in the list?",
+   "o": [
+    "Violin",
+    "Guitar",
+    "Piano",
+    "Djembe"
+   ],
+   "r": 0,
+   "e": "L'annonce cite guitare, piano et djembé. Le violon n'y est pas."
+  },
+  {
+   "t": "Music school: guitar, piano and djembe lessons. For children and adults. Open Monday to Saturday. Medina, near the big mosque.",
+   "q": "Who can take lessons?",
+   "o": [
+    "Only children",
+    "Only girls",
+    "Children and adults",
+    "Only teachers"
+   ],
+   "r": 2,
+   "e": "« For children and adults » : enfants et adultes."
+  },
+  {
+   "t": "Happy Birthday, Awa! You are 12 today. We love you very much. Have a wonderful day! - Mum, Dad and Moussa",
+   "q": "How old is Awa?",
+   "o": [
+    "11",
+    "12",
+    "13",
+    "10"
+   ],
+   "r": 1,
+   "e": "« You are 12 today » : elle a 12 ans."
+  },
+  {
+   "t": "Happy Birthday, Awa! You are 12 today. We love you very much. Have a wonderful day! - Mum, Dad and Moussa",
+   "q": "Who sends the card?",
+   "o": [
+    "Awa's teacher",
+    "Mum, Dad and Moussa",
+    "Awa's friends",
+    "Grandma and Grandpa"
+   ],
+   "r": 1,
+   "e": "La carte est signée « Mum, Dad and Moussa »."
+  },
+  {
+   "t": "Invitation: Come to my birthday party! Saturday 15th May, 4 pm, at my house in Liberté 6. There is cake and music! - Cheikh",
+   "q": "What is the date of the party?",
+   "o": [
+    "Sunday 15th May",
+    "Saturday 15th May",
+    "Saturday 5th May",
+    "Friday 15th March"
+   ],
+   "r": 1,
+   "e": "« Saturday 15th May » : samedi 15 mai."
+  },
+  {
+   "t": "Invitation: Come to my birthday party! Saturday 15th May, 4 pm, at my house in Liberté 6. There is cake and music! - Cheikh",
+   "q": "Qu'y a-t-il à la fête ?",
+   "o": [
+    "Un film",
+    "Du gâteau et de la musique",
+    "Un match",
+    "Une piscine"
+   ],
+   "r": 1,
+   "e": "« There is cake and music! »."
+  },
+  {
+   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy invite you to their wedding on Sunday 3rd August at 5 pm, Hotel Ngor.",
+   "q": "Who is getting married?",
+   "o": [
+    "Mariama and Cheikh",
+    "Awa and Ibrahima",
+    "Mariama and Ibrahima",
+    "Fatou and Moussa"
+   ],
+   "r": 2,
+   "e": "« Mariama Diallo and Ibrahima Sy invite you to their wedding »."
+  },
+  {
+   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy invite you to their wedding on Sunday 3rd August at 5 pm, Hotel Ngor.",
+   "q": "Where is the wedding?",
+   "o": [
+    "At Hotel Ngor",
+    "At the mosque",
+    "At their house",
+    "At Hotel Saly"
+   ],
+   "r": 0,
+   "e": "« Hotel Ngor » : à l'hôtel Ngor."
+  },
+  {
+   "t": "Thank you card: Dear Aunt Coumba, thank you for the beautiful watch. I wear it every day to school. Love, Babacar.",
+   "q": "What is the present?",
+   "o": [
+    "A bag",
+    "A phone",
+    "A watch",
+    "Some shoes"
+   ],
+   "r": 2,
+   "e": "« thank you for the beautiful watch » : une montre."
+  },
+  {
+   "t": "Thank you card: Dear Aunt Coumba, thank you for the beautiful watch. I wear it every day to school. Love, Babacar.",
+   "q": "Quand Babacar la porte ?",
+   "o": [
+    "Le dimanche",
+    "Aux fêtes",
+    "Tous les jours à l'école",
+    "Jamais"
+   ],
+   "r": 2,
+   "e": "« I wear it every day to school »."
+  },
+  {
+   "t": "Get well soon, Pape! We miss you in class. Here are your homework and a card from all your friends. - Class 5A",
+   "q": "Why does Pape get this card?",
+   "o": [
+    "He is sick",
+    "It is his birthday",
+    "He has a new baby brother",
+    "He has a good mark"
+   ],
+   "r": 0,
+   "e": "« Get well soon » veut dire : guéris vite. Il est malade."
+  },
+  {
+   "t": "Get well soon, Pape! We miss you in class. Here are your homework and a card from all your friends. - Class 5A",
+   "q": "Who sends the card?",
+   "o": [
+    "Class 5A",
+    "His mother",
+    "The doctor",
+    "His teacher only"
+   ],
+   "r": 0,
+   "e": "« Class 5A » : toute la classe."
+  },
+  {
+   "t": "Baptism! Our baby girl is one week old. Her name is Sokhna. Come to the baptism on Saturday at 10 am. - Mr and Mrs Thiam",
+   "q": "How old is the baby?",
+   "o": [
+    "One month",
+    "One year",
+    "One week",
+    "Two weeks"
+   ],
+   "r": 2,
+   "e": "« Our baby girl is one week old » : une semaine."
+  },
+  {
+   "t": "Baptism! Our baby girl is one week old. Her name is Sokhna. Come to the baptism on Saturday at 10 am. - Mr and Mrs Thiam",
+   "q": "What is the baby's name?",
+   "o": [
+    "Sokhna",
+    "Thiam",
+    "Mariama",
+    "Astou"
+   ],
+   "r": 0,
+   "e": "« Her name is Sokhna » : elle s'appelle Sokhna."
+  },
+  {
+   "t": "Congratulations, Ndeye! You pass your exam. You are a great student. We are proud of you. - Grandma and Grandpa",
+   "q": "Why do the grandparents say congratulations?",
+   "o": [
+    "Ndeye has a birthday",
+    "Ndeye gets married",
+    "Ndeye has a new job",
+    "Ndeye passes her exam"
+   ],
+   "r": 3,
+   "e": "« You pass your exam » : elle a réussi son examen."
+  },
+  {
+   "t": "Congratulations, Ndeye! You pass your exam. You are a great student. We are proud of you. - Grandma and Grandpa",
+   "q": "Comment se sentent les grands-parents ?",
+   "o": [
+    "Tristes",
+    "Fatigués",
+    "Inquiets",
+    "Fiers"
+   ],
+   "r": 3,
+   "e": "« We are proud of you » : nous sommes fiers de toi."
+  },
+  {
+   "t": "Dear Amadou, welcome to our school! I am your new classmate. My name is Lamine. I can help you with maths.",
+   "q": "Who writes the card?",
+   "o": [
+    "Amadou",
+    "The teacher",
+    "Lamine",
+    "The director"
+   ],
+   "r": 2,
+   "e": "« My name is Lamine » : c'est Lamine qui écrit."
+  },
+  {
+   "t": "Dear Amadou, welcome to our school! I am your new classmate. My name is Lamine. I can help you with maths.",
+   "q": "What can Lamine help with?",
+   "o": [
+    "English",
+    "Football",
+    "Science",
+    "Maths"
+   ],
+   "r": 3,
+   "e": "« I can help you with maths »."
+  },
+  {
+   "t": "Happy New Year, Aunt Rokhaya! I hope 2027 is a great year for you. Come to see us in Louga soon. Kisses, Yacine.",
+   "q": "Where does Yacine live?",
+   "o": [
+    "In Dakar",
+    "In Matam",
+    "In Thiès",
+    "In Louga"
+   ],
+   "r": 3,
+   "e": "« Come to see us in Louga » : Yacine habite à Louga."
+  },
+  {
+   "t": "Happy New Year, Aunt Rokhaya! I hope 2027 is a great year for you. Come to see us in Louga soon. Kisses, Yacine.",
+   "q": "Quelle fête est-ce ?",
+   "o": [
+    "Le Nouvel An",
+    "Un anniversaire",
+    "Un mariage",
+    "Un baptême"
+   ],
+   "r": 0,
+   "e": "« Happy New Year » : bonne année."
+  },
+  {
+   "t": "Invitation: Class 6C end-of-year party. Friday 27th June, 3 pm, in the school yard. Bring a dish to share!",
+   "q": "Where is the party?",
+   "o": [
+    "In room 6C",
+    "At the beach",
+    "At the director's house",
+    "In the school yard"
+   ],
+   "r": 3,
+   "e": "« in the school yard » : dans la cour de l'école."
+  },
+  {
+   "t": "Invitation: Class 6C end-of-year party. Friday 27th June, 3 pm, in the school yard. Bring a dish to share!",
+   "q": "What must students bring?",
+   "o": [
+    "A dish to share",
+    "A present",
+    "Money",
+    "Music"
+   ],
+   "r": 0,
+   "e": "« Bring a dish to share! » : un plat à partager."
+  },
+  {
+   "t": "Dear Mum, happy Mother's Day! You are the best mother in the world. Thank you for your love and your good food. - Fatou",
+   "q": "Quelle fête est-ce ?",
+   "o": [
+    "La fête des mères",
+    "Un anniversaire",
+    "Le Nouvel An",
+    "La Tabaski"
+   ],
+   "r": 0,
+   "e": "« Happy Mother's Day » : bonne fête des mères."
+  },
+  {
+   "t": "Dear Mum, happy Mother's Day! You are the best mother in the world. Thank you for your love and your good food. - Fatou",
+   "q": "Why does Fatou thank her mum?",
+   "o": [
+    "For a present",
+    "For money",
+    "For a trip",
+    "For her love and good food"
+   ],
+   "r": 3,
+   "e": "« Thank you for your love and your good food »."
+  },
+  {
+   "t": "Sorry card: Dear Moussa, I am sorry. I break your pen. Here is a new pen for you. Are we still friends? - Pape",
+   "q": "Why is Pape sorry?",
+   "o": [
+    "He is late",
+    "He loses Moussa's book",
+    "He breaks Moussa's pen",
+    "He forgets Moussa's birthday"
+   ],
+   "r": 2,
+   "e": "« I break your pen » : il a cassé le stylo."
+  },
+  {
+   "t": "Sorry card: Dear Moussa, I am sorry. I break your pen. Here is a new pen for you. Are we still friends? - Pape",
+   "q": "What does Pape give?",
+   "o": [
+    "A new book",
+    "A ball",
+    "A new pen",
+    "Some sweets"
+   ],
+   "r": 2,
+   "e": "« Here is a new pen for you »."
+  },
+  {
+   "t": "Welcome home, Grandpa! We are happy you are back from Mecca. The family is waiting for you with a big lunch.",
+   "q": "Où était le grand-père ?",
+   "o": [
+    "À Paris",
+    "À Touba",
+    "À La Mecque",
+    "À l'hôpital"
+   ],
+   "r": 2,
+   "e": "« you are back from Mecca » : il revient de La Mecque."
+  },
+  {
+   "t": "Welcome home, Grandpa! We are happy you are back from Mecca. The family is waiting for you with a big lunch.",
+   "q": "What is the family preparing?",
+   "o": [
+    "A big cake",
+    "A big lunch",
+    "A party with music",
+    "A present"
+   ],
+   "r": 1,
+   "e": "« The family is waiting for you with a big lunch »."
+  },
+  {
+   "t": "Party invitation: Bineta is 9! Come to her party at the Hann zoo park. Sunday 11 am. We can see the animals and eat cake.",
+   "q": "How old is Bineta?",
+   "o": [
+    "10",
+    "11",
+    "8",
+    "9"
+   ],
+   "r": 3,
+   "e": "« Bineta is 9! » : elle a 9 ans."
+  },
+  {
+   "t": "Party invitation: Bineta is 9! Come to her party at the Hann zoo park. Sunday 11 am. We can see the animals and eat cake.",
+   "q": "Where is the party?",
+   "o": [
+    "At the Hann zoo park",
+    "At her house",
+    "At the beach",
+    "At school"
+   ],
+   "r": 0,
+   "e": "« at the Hann zoo park » : au parc zoologique de Hann."
+  },
+  {
+   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well tonight and eat a good breakfast. You can do it! - Your sister Khady",
+   "q": "When is the exam?",
+   "o": [
+    "Today",
+    "Next week",
+    "Tomorrow",
+    "On Friday"
+   ],
+   "r": 2,
+   "e": "« good luck for your exam tomorrow » : demain."
+  },
+  {
+   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well tonight and eat a good breakfast. You can do it! - Your sister Khady",
+   "q": "What does Khady say?",
+   "o": [
+    "Study all night",
+    "Sleep well and eat a good breakfast",
+    "Don't eat",
+    "Go to the cinema"
+   ],
+   "r": 1,
+   "e": "« Sleep well tonight and eat a good breakfast »."
+  },
+  {
+   "t": "Postcard: Hello from Cap Skirring! The beach is beautiful and the sea is warm. We swim every day. See you soon! - Mamadou",
+   "q": "Where is Mamadou?",
+   "o": [
+    "In Saly",
+    "In Cap Skirring",
+    "In Saint-Louis",
+    "In Kayar"
+   ],
+   "r": 1,
+   "e": "« Hello from Cap Skirring! »."
+  },
+  {
+   "t": "Postcard: Hello from Cap Skirring! The beach is beautiful and the sea is warm. We swim every day. See you soon! - Mamadou",
+   "q": "What does Mamadou do every day?",
+   "o": [
+    "He swims",
+    "He fishes",
+    "He plays football",
+    "He reads"
+   ],
+   "r": 0,
+   "e": "« We swim every day » : nager."
+  },
+  {
+   "t": "Dear Teacher, thank you for this school year. Your English class is very interesting. Have good holidays! - Class 4B",
+   "q": "Who is the card for?",
+   "o": [
+    "The director",
+    "A student",
+    "The teacher",
+    "A parent"
+   ],
+   "r": 2,
+   "e": "« Dear Teacher » : la carte est pour le professeur."
+  },
+  {
+   "t": "Dear Teacher, thank you for this school year. Your English class is very interesting. Have good holidays! - Class 4B",
+   "q": "What do they say about the class?",
+   "o": [
+    "It is very difficult",
+    "It is boring",
+    "It is long",
+    "It is very interesting"
+   ],
+   "r": 3,
+   "e": "« Your English class is very interesting »."
+  },
+  {
+   "t": "Invitation: Tabaski lunch at Grandma's house in Diourbel. Monday at 1 pm. All the family is there. Don't be late!",
+   "q": "Where is the lunch?",
+   "o": [
+    "At a restaurant",
+    "At school",
+    "At Uncle's house",
+    "At Grandma's house"
+   ],
+   "r": 3,
+   "e": "« Tabaski lunch at Grandma's house »."
+  },
+  {
+   "t": "Invitation: Tabaski lunch at Grandma's house in Diourbel. Monday at 1 pm. All the family is there. Don't be late!",
+   "q": "What time is the lunch?",
+   "o": [
+    "At 12 pm",
+    "At 2 pm",
+    "At 1 pm",
+    "At 11 am"
+   ],
+   "r": 2,
+   "e": "« Monday at 1 pm » : à 13 heures."
+  },
+  {
+   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa chicken, thieboudienne, mafé. Desserts: fruit, thiakry.",
+   "q": "Which one is a dessert?",
+   "o": [
+    "Thiakry",
+    "Soup",
+    "Mafé",
+    "Salad"
+   ],
+   "r": 0,
+   "e": "Dans « Desserts: fruit, thiakry », le thiakry est un dessert."
+  },
+  {
+   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa chicken, thieboudienne, mafé. Desserts: fruit, thiakry.",
+   "q": "How many main dishes are there?",
+   "o": [
+    "Two",
+    "Three",
+    "Four",
+    "Five"
+   ],
+   "r": 1,
+   "e": "Il y a yassa, thieboudienne, mafé : trois plats."
+  },
+  {
+   "t": "Menu of the day: Monday - rice and fish. Tuesday - couscous. Wednesday - pasta. Thursday - mafé. Friday - thieboudienne.",
+   "q": "What is on Wednesday?",
+   "o": [
+    "Pasta",
+    "Couscous",
+    "Mafé",
+    "Rice and fish"
+   ],
+   "r": 0,
+   "e": "« Wednesday - pasta » : des pâtes le mercredi."
+  },
+  {
+   "t": "Menu of the day: Monday - rice and fish. Tuesday - couscous. Wednesday - pasta. Thursday - mafé. Friday - thieboudienne.",
+   "q": "Quel jour y a-t-il du mafé ?",
+   "o": [
+    "Lundi",
+    "Jeudi",
+    "Mardi",
+    "Vendredi"
+   ],
+   "r": 1,
+   "e": "« Thursday - mafé » : jeudi."
+  },
+  {
+   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Croissant 400 F. Open from 7 am to 7 pm.",
+   "q": "How much is a tea?",
+   "o": [
+    "300 F",
+    "400 F",
+    "200 F",
+    "500 F"
+   ],
+   "r": 2,
+   "e": "« Tea 200 F » : 200 francs."
+  },
+  {
+   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Croissant 400 F. Open from 7 am to 7 pm.",
+   "q": "What time does the café open?",
+   "o": [
+    "At 7 pm",
+    "At 7 am",
+    "At 8 am",
+    "At 6 am"
+   ],
+   "r": 1,
+   "e": "« Open from 7 am to 7 pm » : il ouvre à 7h."
+  },
+  {
+   "t": "School canteen menu, Tuesday: Starter: carrot salad. Main: chicken with rice. Dessert: banana. Drink: water.",
+   "q": "What is the starter?",
+   "o": [
+    "Carrot salad",
+    "Chicken with rice",
+    "Banana",
+    "Soup"
+   ],
+   "r": 0,
+   "e": "« Starter: carrot salad » : salade de carottes."
+  },
+  {
+   "t": "School canteen menu, Tuesday: Starter: carrot salad. Main: chicken with rice. Dessert: banana. Drink: water.",
+   "q": "What is the drink?",
+   "o": [
+    "Juice",
+    "Milk",
+    "Water",
+    "Tea"
+   ],
+   "r": 2,
+   "e": "« Drink: water » : de l'eau."
+  },
+  {
+   "t": "Fast food Le Baobab: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F. Soda 500 F.",
+   "q": "What is the most expensive?",
+   "o": [
+    "Pizza",
+    "Hamburger",
+    "Sandwich",
+    "Chips"
+   ],
+   "r": 0,
+   "e": "La pizza coûte 3 000 F : c'est le plus cher."
+  },
+  {
+   "t": "Fast food Le Baobab: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F. Soda 500 F.",
+   "q": "Combien coûte un hamburger ?",
+   "o": [
+    "1 000 F",
+    "3 000 F",
+    "2 000 F",
+    "500 F"
+   ],
+   "r": 2,
+   "e": "« Hamburger 2,000 F »."
+  },
+  {
+   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. With onions and bread. Open every evening from 6 pm.",
+   "q": "What does the dibiterie sell?",
+   "o": [
+    "Grilled fish",
+    "Chicken",
+    "Grilled lamb",
+    "Rice"
+   ],
+   "r": 2,
+   "e": "« grilled lamb » : de l'agneau grillé."
+  },
+  {
+   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. With onions and bread. Open every evening from 6 pm.",
+   "q": "Quand ouvre la dibiterie ?",
+   "o": [
+    "Chaque matin",
+    "Le dimanche seulement",
+    "Chaque soir à 18h",
+    "À midi"
+   ],
+   "r": 2,
+   "e": "« Open every evening from 6 pm »."
+  },
+  {
+   "t": "Children's menu: one small pizza or one small plate of chicken, one juice and one ice cream. Price: 2,500 F. For children under 10.",
+   "q": "How much is the children's menu?",
+   "o": [
+    "2,500 F",
+    "2,000 F",
+    "1,500 F",
+    "10,000 F"
+   ],
+   "r": 0,
+   "e": "« Price: 2,500 F »."
+  },
+  {
+   "t": "Children's menu: one small pizza or one small plate of chicken, one juice and one ice cream. Price: 2,500 F. For children under 10.",
+   "q": "Who is the menu for?",
+   "o": [
+    "All children",
+    "Adults",
+    "Children under 10",
+    "Students"
+   ],
+   "r": 2,
+   "e": "« For children under 10 » : enfants de moins de 10 ans."
+  },
+  {
+   "t": "Breakfast at Hotel Savana: from 6:30 to 10 am. Bread, butter, jam, eggs, fruit, coffee and tea. Free for hotel guests.",
+   "q": "When does breakfast end?",
+   "o": [
+    "At 6:30 am",
+    "At 10 am",
+    "At 9 am",
+    "At 11 am"
+   ],
+   "r": 1,
+   "e": "« from 6:30 to 10 am » : jusqu'à 10 heures."
+  },
+  {
+   "t": "Breakfast at Hotel Savana: from 6:30 to 10 am. Bread, butter, jam, eggs, fruit, coffee and tea. Free for hotel guests.",
+   "q": "Pour qui le petit-déjeuner est gratuit ?",
+   "o": [
+    "Les clients de l'hôtel",
+    "Les enfants",
+    "Les employés",
+    "Tout le monde"
+   ],
+   "r": 0,
+   "e": "« Free for hotel guests »."
+  },
+  {
+   "t": "Juice bar menu: Mango juice, papaya juice, baobab juice, lemon juice. Small glass 300 F, big glass 600 F.",
+   "q": "How much is a big glass?",
+   "o": [
+    "300 F",
+    "500 F",
+    "900 F",
+    "600 F"
+   ],
+   "r": 3,
+   "e": "« big glass 600 F »."
+  },
+  {
+   "t": "Juice bar menu: Mango juice, papaya juice, baobab juice, lemon juice. Small glass 300 F, big glass 600 F.",
+   "q": "Which juice is on the menu?",
+   "o": [
+    "Baobab juice",
+    "Apple juice",
+    "Orange juice",
+    "Grape juice"
+   ],
+   "r": 0,
+   "e": "Le menu cite mangue, papaye, baobab, citron."
+  },
+  {
+   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice and salad, 3,500 F. Closed on Sunday.",
+   "q": "What is today's special?",
+   "o": [
+    "Chicken with chips",
+    "Grilled fish with rice and salad",
+    "Mafé",
+    "Pizza"
+   ],
+   "r": 1,
+   "e": "« Today's special: grilled fish with rice and salad »."
+  },
+  {
+   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice and salad, 3,500 F. Closed on Sunday.",
+   "q": "Quand le restaurant est-il fermé ?",
+   "o": [
+    "Le lundi",
+    "Le samedi",
+    "Le soir",
+    "Le dimanche"
+   ],
+   "r": 3,
+   "e": "« Closed on Sunday » : fermé le dimanche."
+  },
+  {
+   "t": "Pastry shop: Cakes 500 F. Doughnuts 100 F. Pancakes 200 F. Birthday cakes from 10,000 F. Order one day before.",
+   "q": "How much is a doughnut?",
+   "o": [
+    "200 F",
+    "500 F",
+    "1,000 F",
+    "100 F"
+   ],
+   "r": 3,
+   "e": "« Doughnuts 100 F »."
+  },
+  {
+   "t": "Pastry shop: Cakes 500 F. Doughnuts 100 F. Pancakes 200 F. Birthday cakes from 10,000 F. Order one day before.",
+   "q": "Pour un gâteau d'anniversaire, il faut…",
+   "o": [
+    "Venir le matin",
+    "Commander un jour avant",
+    "Payer 5 000 F",
+    "Appeler le soir"
+   ],
+   "r": 1,
+   "e": "« Order one day before »."
+  },
+  {
+   "t": "Street food in Dakar: Fataya (fried pastry with fish) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
+   "q": "What is in fataya?",
+   "o": [
+    "Beans",
+    "Meat",
+    "Rice",
+    "Fish"
+   ],
+   "r": 3,
+   "e": "« Fataya (fried pastry with fish) » : avec du poisson."
+  },
+  {
+   "t": "Street food in Dakar: Fataya (fried pastry with fish) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
+   "q": "How much is an accara?",
+   "o": [
+    "100 F",
+    "300 F",
+    "500 F",
+    "50 F"
+   ],
+   "r": 3,
+   "e": "« Accara (bean fritters) 50 F »."
+  },
+  {
+   "t": "Hotel restaurant: Lunch from 12 to 3 pm. Dinner from 7 to 11 pm. Please book a table for groups of more than 6 people.",
+   "q": "When is dinner?",
+   "o": [
+    "From 12 to 3 pm",
+    "From 7 to 11 pm",
+    "From 6 to 9 pm",
+    "From 8 to 12 pm"
+   ],
+   "r": 1,
+   "e": "« Dinner from 7 to 11 pm »."
+  },
+  {
+   "t": "Hotel restaurant: Lunch from 12 to 3 pm. Dinner from 7 to 11 pm. Please book a table for groups of more than 6 people.",
+   "q": "Qui doit réserver une table ?",
+   "o": [
+    "Tout le monde",
+    "Les enfants",
+    "Les touristes",
+    "Les groupes de plus de 6 personnes"
+   ],
+   "r": 3,
+   "e": "« for groups of more than 6 people »."
+  },
+  {
+   "t": "Price list at the fish market of Soumbédioune: Thiof 4,000 F a kilo. Yaboye 1,000 F a kilo. Shrimps 5,000 F a kilo.",
+   "q": "Which fish is 1,000 F a kilo?",
+   "o": [
+    "Yaboye",
+    "Thiof",
+    "Shrimps",
+    "Tuna"
+   ],
+   "r": 0,
+   "e": "« Yaboye 1,000 F a kilo »."
+  },
+  {
+   "t": "Price list at the fish market of Soumbédioune: Thiof 4,000 F a kilo. Yaboye 1,000 F a kilo. Shrimps 5,000 F a kilo.",
+   "q": "What is the most expensive?",
+   "o": [
+    "Thiof",
+    "Shrimps",
+    "Yaboye",
+    "They are the same price"
+   ],
+   "r": 1,
+   "e": "Les crevettes (shrimps) coûtent 5 000 F : c'est le plus cher."
+  },
+  {
+   "t": "Pizzeria Napoli, Mbour. Pizza Margherita 3,000 F. Pizza with fish 4,000 F. Free delivery in Mbour. Call 33 957 00 00.",
+   "q": "Where is the pizzeria?",
+   "o": [
+    "In Dakar",
+    "In Saly",
+    "In Mbour",
+    "In Thiès"
+   ],
+   "r": 2,
+   "e": "« Pizzeria Napoli, Mbour »."
+  },
+  {
+   "t": "Pizzeria Napoli, Mbour. Pizza Margherita 3,000 F. Pizza with fish 4,000 F. Free delivery in Mbour. Call 33 957 00 00.",
+   "q": "How much is delivery?",
+   "o": [
+    "1,000 F",
+    "500 F",
+    "It is free",
+    "3,000 F"
+   ],
+   "r": 2,
+   "e": "« Free delivery in Mbour » : livraison gratuite."
+  },
+  {
+   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water. Lunch is at 2 pm.",
+   "q": "What is the dessert?",
+   "o": [
+    "Ice cream",
+    "Fruit salad",
+    "Cake",
+    "Thiakry"
+   ],
+   "r": 1,
+   "e": "« then fruit salad » : salade de fruits."
+  },
+  {
+   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water. Lunch is at 2 pm.",
+   "q": "What drinks are there?",
+   "o": [
+    "Coffee and tea",
+    "Milk and juice",
+    "Soda",
+    "Bissap and water"
+   ],
+   "r": 3,
+   "e": "« Drinks: bissap and water »."
+  },
+  {
+   "t": "Grocery store sign: Fresh bread every morning at 7 am. Milk, eggs, sugar and rice. Open seven days a week.",
+   "q": "When is fresh bread ready?",
+   "o": [
+    "Every morning at 7 am",
+    "Every evening",
+    "At noon",
+    "On Sunday"
+   ],
+   "r": 0,
+   "e": "« Fresh bread every morning at 7 am »."
+  },
+  {
+   "t": "Grocery store sign: Fresh bread every morning at 7 am. Milk, eggs, sugar and rice. Open seven days a week.",
+   "q": "Combien de jours la boutique est ouverte ?",
+   "o": [
+    "Cinq jours",
+    "Six jours",
+    "Le week-end",
+    "Sept jours par semaine"
+   ],
+   "r": 3,
+   "e": "« Open seven days a week »."
+  },
+  {
+   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F. Water 250 F.",
+   "q": "How much is the vegetable soup?",
+   "o": [
+    "1,500 F",
+    "2,000 F",
+    "250 F",
+    "1,000 F"
+   ],
+   "r": 3,
+   "e": "« Vegetable soup 1,000 F »."
+  },
+  {
+   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F. Water 250 F.",
+   "q": "Which dish comes with chips?",
+   "o": [
+    "Rice",
+    "Soup",
+    "Fish",
+    "Chicken"
+   ],
+   "r": 2,
+   "e": "« Fish with chips » : le poisson."
+  },
+  {
+   "t": "Poster: BIG CONCERT at the Daniel Sorano Theatre! Saturday at 9 pm. Tickets: 5,000 F. Children under 12: free.",
+   "q": "Where is the concert?",
+   "o": [
+    "At the stadium",
+    "At the Daniel Sorano Theatre",
+    "At the beach",
+    "At school"
+   ],
+   "r": 1,
+   "e": "« at the Daniel Sorano Theatre »."
+  },
+  {
+   "t": "Poster: BIG CONCERT at the Daniel Sorano Theatre! Saturday at 9 pm. Tickets: 5,000 F. Children under 12: free.",
+   "q": "Combien paient les enfants de moins de 12 ans ?",
+   "o": [
+    "Rien, c'est gratuit",
+    "5 000 F",
+    "2 500 F",
+    "1 000 F"
+   ],
+   "r": 0,
+   "e": "« Children under 12: free »."
+  },
+  {
+   "t": "Wrestling! Big match at the Arena in Pikine. Sunday at 5 pm. Doors open at 2 pm. Tickets from 2,000 F.",
+   "q": "What time does the match start?",
+   "o": [
+    "At 2 pm",
+    "At 5 pm",
+    "At 3 pm",
+    "At 9 pm"
+   ],
+   "r": 1,
+   "e": "« Sunday at 5 pm »."
+  },
+  {
+   "t": "Wrestling! Big match at the Arena in Pikine. Sunday at 5 pm. Doors open at 2 pm. Tickets from 2,000 F.",
+   "q": "When do the doors open?",
+   "o": [
+    "At 5 pm",
+    "At 12 pm",
+    "At 4 pm",
+    "At 2 pm"
+   ],
+   "r": 3,
+   "e": "« Doors open at 2 pm »."
+  },
+  {
+   "t": "Clean-up day! Let's clean our neighbourhood in Grand Dakar. Saturday 8 am. Bring gloves. Water and bread for everyone.",
+   "q": "What is the event?",
+   "o": [
+    "A football match",
+    "A clean-up day",
+    "A concert",
+    "A party"
+   ],
+   "r": 1,
+   "e": "« Clean-up day! Let's clean our neighbourhood »."
+  },
+  {
+   "t": "Clean-up day! Let's clean our neighbourhood in Grand Dakar. Saturday 8 am. Bring gloves. Water and bread for everyone.",
+   "q": "Que faut-il apporter ?",
+   "o": [
+    "Des gants",
+    "De l'eau",
+    "Du pain",
+    "Un balai"
+   ],
+   "r": 0,
+   "e": "« Bring gloves » : apporte des gants."
+  },
+  {
+   "t": "Health day at the Kolda hospital: free checks for children. Wednesday 9 am to 1 pm. Bring the child's health card.",
+   "q": "What is free?",
+   "o": [
+    "Medicine",
+    "Checks for children",
+    "Glasses",
+    "Food"
+   ],
+   "r": 1,
+   "e": "« free checks for children » : des examens gratuits pour les enfants."
+  },
+  {
+   "t": "Health day at the Kolda hospital: free checks for children. Wednesday 9 am to 1 pm. Bring the child's health card.",
+   "q": "What must you bring?",
+   "o": [
+    "Money",
+    "The child's health card",
+    "A photo",
+    "Water"
+   ],
+   "r": 1,
+   "e": "« Bring the child's health card »."
+  },
+  {
+   "t": "Football tournament for schools! Teams of 7 players. Register before 10th March. The winner gets a cup.",
+   "q": "How many players are in a team?",
+   "o": [
+    "11",
+    "5",
+    "7",
+    "10"
+   ],
+   "r": 2,
+   "e": "« Teams of 7 players »."
+  },
+  {
+   "t": "Football tournament for schools! Teams of 7 players. Register before 10th March. The winner gets a cup.",
+   "q": "Qu'est-ce que le gagnant reçoit ?",
+   "o": [
+    "Une coupe",
+    "De l'argent",
+    "Un ballon",
+    "Une médaille"
+   ],
+   "r": 0,
+   "e": "« The winner gets a cup »."
+  },
+  {
+   "t": "Cinema tonight! A film for children at the cultural centre of Ziguinchor. 7 pm. Tickets 500 F. Popcorn 200 F.",
+   "q": "Where is the film?",
+   "o": [
+    "At school",
+    "At the stadium",
+    "At the hotel",
+    "At the cultural centre"
+   ],
+   "r": 3,
+   "e": "« at the cultural centre of Ziguinchor »."
+  },
+  {
+   "t": "Cinema tonight! A film for children at the cultural centre of Ziguinchor. 7 pm. Tickets 500 F. Popcorn 200 F.",
+   "q": "How much is a ticket?",
+   "o": [
+    "200 F",
+    "700 F",
+    "1,000 F",
+    "500 F"
+   ],
+   "r": 3,
+   "e": "« Tickets 500 F »."
+  },
+  {
+   "t": "Art show by students of class 3A. Paintings and drawings of Senegal. In the school library, Monday to Friday.",
+   "q": "Who are the artists?",
+   "o": [
+    "Students of class 3A",
+    "Teachers",
+    "Famous painters",
+    "Parents"
+   ],
+   "r": 0,
+   "e": "« Art show by students of class 3A »."
+  },
+  {
+   "t": "Art show by students of class 3A. Paintings and drawings of Senegal. In the school library, Monday to Friday.",
+   "q": "What do the paintings show?",
+   "o": [
+    "Animals",
+    "The sea",
+    "Senegal",
+    "Cars"
+   ],
+   "r": 2,
+   "e": "« Paintings and drawings of Senegal »."
+  },
+  {
+   "t": "Book fair in Dakar! Books for children and adults. Meet writers. From 10th to 15th December. Entrance free.",
+   "q": "What is the event?",
+   "o": [
+    "A music festival",
+    "A book fair",
+    "A sports day",
+    "A film night"
+   ],
+   "r": 1,
+   "e": "« Book fair in Dakar! »."
+  },
+  {
+   "t": "Book fair in Dakar! Books for children and adults. Meet writers. From 10th to 15th December. Entrance free.",
+   "q": "How much is entrance?",
+   "o": [
+    "500 F",
+    "1,000 F",
+    "2,000 F",
+    "It is free"
+   ],
+   "r": 3,
+   "e": "« Entrance free » : entrée gratuite."
+  },
+  {
+   "t": "Saint-Louis Jazz Festival. Music every night for four days. Concerts start at 9 pm. Tickets at the festival office.",
+   "q": "What kind of music is it?",
+   "o": [
+    "Rap",
+    "Mbalax",
+    "Jazz",
+    "Rock"
+   ],
+   "r": 2,
+   "e": "« Saint-Louis Jazz Festival »."
+  },
+  {
+   "t": "Saint-Louis Jazz Festival. Music every night for four days. Concerts start at 9 pm. Tickets at the festival office.",
+   "q": "Combien de jours dure le festival ?",
+   "o": [
+    "Quatre jours",
+    "Deux jours",
+    "Une semaine",
+    "Un jour"
+   ],
+   "r": 0,
+   "e": "« Music every night for four days »."
+  },
+  {
+   "t": "Running race! 5 km in Corniche Ouest. Sunday 7 am. For everyone over 14 years old. Free T-shirt for runners.",
+   "q": "How long is the race?",
+   "o": [
+    "10 km",
+    "14 km",
+    "5 km",
+    "7 km"
+   ],
+   "r": 2,
+   "e": "« 5 km in Corniche Ouest »."
+  },
+  {
+   "t": "Running race! 5 km in Corniche Ouest. Sunday 7 am. For everyone over 14 years old. Free T-shirt for runners.",
+   "q": "What do runners get?",
+   "o": [
+    "A medal",
+    "Money",
+    "A bottle",
+    "A free T-shirt"
+   ],
+   "r": 3,
+   "e": "« Free T-shirt for runners »."
+  },
+  {
+   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees. Come with your teacher.",
+   "q": "How many trees does the school plant?",
+   "o": [
+    "100",
+    "5",
+    "50",
+    "10"
+   ],
+   "r": 0,
+   "e": "« Our school plants 100 trees »."
+  },
+  {
+   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees. Come with your teacher.",
+   "q": "How many trees does each class plant?",
+   "o": [
+    "5",
+    "10",
+    "100",
+    "2"
+   ],
+   "r": 0,
+   "e": "« Every class plants 5 trees »."
+  },
+  {
+   "t": "Notice: The swimming pool is closed for cleaning on Monday and Tuesday. It opens again on Wednesday at 9 am.",
+   "q": "Why is the pool closed?",
+   "o": [
+    "For a competition",
+    "Because of rain",
+    "For cleaning",
+    "For holidays"
+   ],
+   "r": 2,
+   "e": "« closed for cleaning » : pour le nettoyage."
+  },
+  {
+   "t": "Notice: The swimming pool is closed for cleaning on Monday and Tuesday. It opens again on Wednesday at 9 am.",
+   "q": "Quand la piscine rouvre ?",
+   "o": [
+    "Lundi à 9h",
+    "Mardi soir",
+    "Jeudi",
+    "Mercredi à 9h"
+   ],
+   "r": 3,
+   "e": "« It opens again on Wednesday at 9 am »."
+  },
+  {
+   "t": "Bus notice: Line 8 does not stop at Colobane today. Please take the bus at the next stop, near the hospital.",
+   "q": "Which bus line is it?",
+   "o": [
+    "Line 8",
+    "Line 18",
+    "Line 4",
+    "Line 10"
+   ],
+   "r": 0,
+   "e": "« Line 8 does not stop at Colobane »."
+  },
+  {
+   "t": "Bus notice: Line 8 does not stop at Colobane today. Please take the bus at the next stop, near the hospital.",
+   "q": "Où prendre le bus aujourd'hui ?",
+   "o": [
+    "À l'arrêt suivant, près de l'hôpital",
+    "À Colobane",
+    "À la gare",
+    "Devant l'école"
+   ],
+   "r": 0,
+   "e": "« take the bus at the next stop, near the hospital »."
+  },
+  {
+   "t": "Shop notice: Back in 10 minutes. I am at the bank. Please wait or call 77 600 70 80. - Modou",
+   "q": "Where is Modou?",
+   "o": [
+    "At home",
+    "At the bank",
+    "At the market",
+    "At lunch"
+   ],
+   "r": 1,
+   "e": "« I am at the bank »."
+  },
+  {
+   "t": "Shop notice: Back in 10 minutes. I am at the bank. Please wait or call 77 600 70 80. - Modou",
+   "q": "When does Modou come back?",
+   "o": [
+    "In 10 minutes",
+    "In one hour",
+    "Tomorrow",
+    "At 10 o'clock"
+   ],
+   "r": 0,
+   "e": "« Back in 10 minutes »."
+  },
+  {
+   "t": "Notice at the beach: Danger! No swimming today. The sea is too strong. Swimming is OK again tomorrow.",
+   "q": "Can you swim today?",
+   "o": [
+    "Yes, in the morning",
+    "No, it is dangerous",
+    "Yes, with a guard",
+    "Only children"
+   ],
+   "r": 1,
+   "e": "« No swimming today » : on ne peut pas nager."
+  },
+  {
+   "t": "Notice at the beach: Danger! No swimming today. The sea is too strong. Swimming is OK again tomorrow.",
+   "q": "Pourquoi c'est interdit ?",
+   "o": [
+    "Il fait froid",
+    "La mer est trop forte",
+    "L'eau est sale",
+    "Il pleut"
+   ],
+   "r": 1,
+   "e": "« The sea is too strong »."
+  },
+  {
+   "t": "Zoo rules: Don't feed the animals. Don't touch the cages. Children must stay with an adult. Thank you!",
+   "q": "What must you not do?",
+   "o": [
+    "Take photos",
+    "Walk",
+    "Feed the animals",
+    "Talk"
+   ],
+   "r": 2,
+   "e": "« Don't feed the animals »."
+  },
+  {
+   "t": "Zoo rules: Don't feed the animals. Don't touch the cages. Children must stay with an adult. Thank you!",
+   "q": "Les enfants doivent…",
+   "o": [
+    "Rester avec un adulte",
+    "Payer plus",
+    "Rester dehors",
+    "Porter un chapeau"
+   ],
+   "r": 0,
+   "e": "« Children must stay with an adult »."
+  },
+  {
+   "t": "Pharmacy Thiaroye: open 24 hours a day, 7 days a week. Ask the pharmacist for help. Telephone: 33 834 55 55.",
+   "q": "When is the pharmacy open?",
+   "o": [
+    "Only in the morning",
+    "Monday to Friday",
+    "24 hours a day, 7 days a week",
+    "Only at night"
+   ],
+   "r": 2,
+   "e": "« open 24 hours a day, 7 days a week »."
+  },
+  {
+   "t": "Pharmacy Thiaroye: open 24 hours a day, 7 days a week. Ask the pharmacist for help. Telephone: 33 834 55 55.",
+   "q": "Who can help you?",
+   "o": [
+    "The doctor",
+    "The nurse",
+    "The guard",
+    "The pharmacist"
+   ],
+   "r": 3,
+   "e": "« Ask the pharmacist for help »."
+  },
+  {
+   "t": "Taxi-brousse station, Kaolack: Departures for Tambacounda at 6 am and 1 pm. Price: 7,000 F. Bags: 500 F.",
+   "q": "Where do the cars go?",
+   "o": [
+    "To Tambacounda",
+    "To Dakar",
+    "To Kolda",
+    "To Kaolack"
+   ],
+   "r": 0,
+   "e": "« Departures for Tambacounda »."
+  },
+  {
+   "t": "Taxi-brousse station, Kaolack: Departures for Tambacounda at 6 am and 1 pm. Price: 7,000 F. Bags: 500 F.",
+   "q": "Combien coûte un bagage ?",
+   "o": [
+    "500 F",
+    "7 000 F",
+    "1 000 F",
+    "6 000 F"
+   ],
+   "r": 0,
+   "e": "« Bags: 500 F »."
+  },
+  {
+   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed on Sunday.",
+   "q": "When does the post office close on Saturday?",
+   "o": [
+    "At 4 pm",
+    "At 12 pm",
+    "At 8 am",
+    "At 2 pm"
+   ],
+   "r": 1,
+   "e": "« Saturday, 8 am to 12 pm »."
+  },
+  {
+   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed on Sunday.",
+   "q": "Is it open on Sunday?",
+   "o": [
+    "Yes, in the morning",
+    "Yes, all day",
+    "No",
+    "Only in the evening"
+   ],
+   "r": 2,
+   "e": "« Closed on Sunday »."
+  },
+  {
+   "t": "Library notice: New books for children! Come and read stories in English and French. Every Saturday, 10 am, free.",
+   "q": "What is new at the library?",
+   "o": [
+    "Computers",
+    "Books for children",
+    "Films",
+    "Chairs"
+   ],
+   "r": 1,
+   "e": "« New books for children! »."
+  },
+  {
+   "t": "Library notice: New books for children! Come and read stories in English and French. Every Saturday, 10 am, free.",
+   "q": "In which languages are the stories?",
+   "o": [
+    "Wolof and French",
+    "English and French",
+    "Only English",
+    "Arabic and English"
+   ],
+   "r": 1,
+   "e": "« stories in English and French »."
+  },
+  {
+   "t": "Hairdresser Nafi: Braids 5,000 F. Haircut for men 1,000 F. Haircut for children 500 F. Open Tuesday to Sunday.",
+   "q": "How much are braids?",
+   "o": [
+    "1,000 F",
+    "500 F",
+    "5,000 F",
+    "2,000 F"
+   ],
+   "r": 2,
+   "e": "« Braids 5,000 F » : les tresses."
+  },
+  {
+   "t": "Hairdresser Nafi: Braids 5,000 F. Haircut for men 1,000 F. Haircut for children 500 F. Open Tuesday to Sunday.",
+   "q": "Quel jour est-ce fermé ?",
+   "o": [
+    "Dimanche",
+    "Mardi",
+    "Lundi",
+    "Samedi"
+   ],
+   "r": 2,
+   "e": "Ouvert du mardi au dimanche : fermé le lundi."
+  },
+  {
+   "t": "Garage Diallo: We repair cars, motorbikes and bikes. Open from 8 am to 6 pm. Behind the Total station.",
+   "q": "What does the garage repair?",
+   "o": [
+    "Cars, motorbikes and bikes",
+    "Phones and TVs",
+    "Shoes",
+    "Computers"
+   ],
+   "r": 0,
+   "e": "« We repair cars, motorbikes and bikes »."
+  },
+  {
+   "t": "Garage Diallo: We repair cars, motorbikes and bikes. Open from 8 am to 6 pm. Behind the Total station.",
+   "q": "Où est le garage ?",
+   "o": [
+    "Derrière la station Total",
+    "Devant l'école",
+    "Près de la mosquée",
+    "Au marché"
+   ],
+   "r": 0,
+   "e": "« Behind the Total station »."
+  },
+  {
+   "t": "Tailor Aliou: New boubous for the Korité party! Order now. Ready in one week. Many colours: blue, white, green.",
+   "q": "What does Aliou make?",
+   "o": [
+    "Boubous",
+    "Shoes",
+    "Bags",
+    "Hats"
+   ],
+   "r": 0,
+   "e": "« New boubous for the Korité party! »."
+  },
+  {
+   "t": "Tailor Aliou: New boubous for the Korité party! Order now. Ready in one week. Many colours: blue, white, green.",
+   "q": "When is the order ready?",
+   "o": [
+    "In one day",
+    "In one month",
+    "In one week",
+    "Tomorrow"
+   ],
+   "r": 2,
+   "e": "« Ready in one week »."
+  },
+  {
+   "t": "Phone repair: Is your phone broken? We repair it in one hour! Screen: 15,000 F. Battery: 8,000 F. Sandaga market, shop 7.",
+   "q": "How long is the repair?",
+   "o": [
+    "One hour",
+    "One day",
+    "One week",
+    "Ten minutes"
+   ],
+   "r": 0,
+   "e": "« We repair it in one hour! »."
+  },
+  {
+   "t": "Phone repair: Is your phone broken? We repair it in one hour! Screen: 15,000 F. Battery: 8,000 F. Sandaga market, shop 7.",
+   "q": "How much is a new battery?",
+   "o": [
+    "15,000 F",
+    "8,000 F",
+    "7,000 F",
+    "1,000 F"
+   ],
+   "r": 1,
+   "e": "« Battery: 8,000 F »."
+  },
+  {
+   "t": "Clinic Sainte Marie: Doctor for children every morning. Dentist on Tuesday and Friday. Eye doctor on Thursday.",
+   "q": "When is the dentist there?",
+   "o": [
+    "Every morning",
+    "Thursday",
+    "Tuesday and Friday",
+    "Monday"
+   ],
+   "r": 2,
+   "e": "« Dentist on Tuesday and Friday »."
+  },
+  {
+   "t": "Clinic Sainte Marie: Doctor for children every morning. Dentist on Tuesday and Friday. Eye doctor on Thursday.",
+   "q": "Quel médecin vient le jeudi ?",
+   "o": [
+    "Le dentiste",
+    "Le médecin des enfants",
+    "Personne",
+    "L'ophtalmologue (yeux)"
+   ],
+   "r": 3,
+   "e": "« Eye doctor on Thursday » : le médecin des yeux."
+  },
+  {
+   "t": "Sign on the door: Please take off your shoes. Thank you. - The family Ndoye",
+   "q": "What must you do?",
+   "o": [
+    "Close the door",
+    "Be quiet",
+    "Knock",
+    "Take off your shoes"
+   ],
+   "r": 3,
+   "e": "« Please take off your shoes » : enlève tes chaussures."
+  },
+  {
+   "t": "Sign on the door: Please take off your shoes. Thank you. - The family Ndoye",
+   "q": "Who writes the sign?",
+   "o": [
+    "The teacher",
+    "The guard",
+    "The doctor",
+    "The Ndoye family"
+   ],
+   "r": 3,
+   "e": "« The family Ndoye »."
+  },
+  {
+   "t": "Lost and found at Blaise Diagne Airport: Did you lose something? Go to the office near gate 3. Open 24 hours.",
+   "q": "Where is the office?",
+   "o": [
+    "Near gate 1",
+    "Near gate 3",
+    "At the car park",
+    "In the hotel"
+   ],
+   "r": 1,
+   "e": "« Go to the office near gate 3 »."
+  },
+  {
+   "t": "Lost and found at Blaise Diagne Airport: Did you lose something? Go to the office near gate 3. Open 24 hours.",
+   "q": "When is the office open?",
+   "o": [
+    "Only in the morning",
+    "24 hours",
+    "8 am to 6 pm",
+    "Only at night"
+   ],
+   "r": 1,
+   "e": "« Open 24 hours »."
+  },
+  {
+   "t": "Dance class for girls and boys! Sabar dance with Mrs Ndiaye. Friday at 5 pm, youth centre of Thiès. 1,000 F.",
+   "q": "What dance is it?",
+   "o": [
+    "Salsa",
+    "Ballet",
+    "Sabar",
+    "Hip-hop"
+   ],
+   "r": 2,
+   "e": "« Sabar dance with Mrs Ndiaye »."
+  },
+  {
+   "t": "Dance class for girls and boys! Sabar dance with Mrs Ndiaye. Friday at 5 pm, youth centre of Thiès. 1,000 F.",
+   "q": "Où a lieu le cours ?",
+   "o": [
+    "À l'école",
+    "Au centre des jeunes de Thiès",
+    "Chez Mme Ndiaye",
+    "Au théâtre"
+   ],
+   "r": 1,
+   "e": "« youth centre of Thiès »."
+  },
+  {
+   "t": "FOR SALE: a small TV, black, with remote control. Very good condition. 30,000 F. Call Rokhaya after 6 pm.",
+   "q": "What comes with the TV?",
+   "o": [
+    "A table",
+    "A phone",
+    "A remote control",
+    "A radio"
+   ],
+   "r": 2,
+   "e": "« with remote control » : avec la télécommande."
+  },
+  {
+   "t": "FOR SALE: a small TV, black, with remote control. Very good condition. 30,000 F. Call Rokhaya after 6 pm.",
+   "q": "When can you call Rokhaya?",
+   "o": [
+    "After 6 pm",
+    "Before 6 pm",
+    "In the morning",
+    "At noon"
+   ],
+   "r": 0,
+   "e": "« Call Rokhaya after 6 pm »."
+  },
+  {
+   "t": "FREE kittens! Three little kittens, two grey and one black. They are two months old. They need a good home. Call Anta.",
+   "q": "How many kittens are grey?",
+   "o": [
+    "One",
+    "Three",
+    "Four",
+    "Two"
+   ],
+   "r": 3,
+   "e": "« two grey and one black » : deux gris."
+  },
+  {
+   "t": "FREE kittens! Three little kittens, two grey and one black. They are two months old. They need a good home. Call Anta.",
+   "q": "How old are the kittens?",
+   "o": [
+    "Two weeks",
+    "Two months",
+    "Three months",
+    "One year"
+   ],
+   "r": 1,
+   "e": "« They are two months old »."
+  },
+  {
+   "t": "Volunteers wanted! Help old people in our village. Read to them, cook with them. Every Sunday afternoon. Call Demba.",
+   "q": "What do volunteers do?",
+   "o": [
+    "Teach children",
+    "Clean the beach",
+    "Help old people",
+    "Plant trees"
+   ],
+   "r": 2,
+   "e": "« Help old people in our village »."
+  },
+  {
+   "t": "Volunteers wanted! Help old people in our village. Read to them, cook with them. Every Sunday afternoon. Call Demba.",
+   "q": "Quand ?",
+   "o": [
+    "Chaque samedi matin",
+    "Chaque dimanche après-midi",
+    "Tous les soirs",
+    "Le lundi"
+   ],
+   "r": 1,
+   "e": "« Every Sunday afternoon »."
+  },
+  {
+   "t": "Car for sale: blue Toyota, 2015. 4 doors, air conditioning. 3,500,000 F. Call Mr Ka, Kaolack.",
+   "q": "What colour is the car?",
+   "o": [
+    "Black",
+    "Blue",
+    "White",
+    "Red"
+   ],
+   "r": 1,
+   "e": "« blue Toyota » : bleue."
+  },
+  {
+   "t": "Holiday camp in Toubab Dialaw! For children 7 to 13. Games, swimming, music. 1st to 15th August. Call 77 333 44 55.",
+   "q": "Where is the camp?",
+   "o": [
+    "In Toubab Dialaw",
+    "In Dakar",
+    "In Saly",
+    "In Joal"
+   ],
+   "r": 0,
+   "e": "« Holiday camp in Toubab Dialaw! »."
+  },
+  {
+   "t": "Holiday camp in Toubab Dialaw! For children 7 to 13. Games, swimming, music. 1st to 15th August. Call 77 333 44 55.",
+   "q": "Which activity is in the camp?",
+   "o": [
+    "Cooking",
+    "Computer",
+    "Swimming",
+    "Driving"
+   ],
+   "r": 2,
+   "e": "« Games, swimming, music »."
+  },
+  {
+   "t": "Invitation: Our grandfather is 80! Big family lunch in Joal on Sunday 9th. Bring your photos of Grandpa for the party.",
+   "q": "How old is the grandfather?",
+   "o": [
+    "18",
+    "90",
+    "70",
+    "80"
+   ],
+   "r": 3,
+   "e": "« Our grandfather is 80! »."
+  },
+  {
+   "t": "Invitation: Our grandfather is 80! Big family lunch in Joal on Sunday 9th. Bring your photos of Grandpa for the party.",
+   "q": "What must you bring?",
+   "o": [
+    "A cake",
+    "Photos of Grandpa",
+    "A present",
+    "Flowers"
+   ],
+   "r": 1,
+   "e": "« Bring your photos of Grandpa »."
+  },
+  {
+   "t": "Notice: The school bus is late this morning. It arrives at 8:15. The first class starts at 8:30 today.",
+   "q": "When does the bus arrive?",
+   "o": [
+    "At 8:30",
+    "At 8:00",
+    "At 7:45",
+    "At 8:15"
+   ],
+   "r": 3,
+   "e": "« It arrives at 8:15 »."
+  },
+  {
+   "t": "Notice: The school bus is late this morning. It arrives at 8:15. The first class starts at 8:30 today.",
+   "q": "What time does the first class start today?",
+   "o": [
+    "At 8:15",
+    "At 8:00",
+    "At 9:00",
+    "At 8:30"
+   ],
+   "r": 3,
+   "e": "« The first class starts at 8:30 today »."
+  },
+  {
+   "t": "Gym open in Point E: men and women. Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
+   "q": "How much is one month?",
+   "o": [
+    "10,000 F",
+    "15,000 F",
+    "6,000 F",
+    "1,500 F"
+   ],
+   "r": 1,
+   "e": "« 15,000 F a month »."
+  },
+  {
+   "t": "Gym open in Point E: men and women. Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
+   "q": "Qu'est-ce qui est gratuit ?",
+   "o": [
+    "Le premier jour",
+    "Le premier mois",
+    "Le samedi",
+    "Rien"
+   ],
+   "r": 0,
+   "e": "« First day free! » : le premier jour gratuit."
+  },
+  {
+   "t": "Message on the board: Class 5B, the history test is on Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
+   "q": "When is the history test?",
+   "o": [
+    "On Friday",
+    "On Thursday",
+    "On Monday",
+    "On Wednesday"
+   ],
+   "r": 0,
+   "e": "« the history test is on Friday, not Thursday »."
+  },
+  {
+   "t": "Message on the board: Class 5B, the history test is on Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
+   "q": "Which chapters must students study?",
+   "o": [
+    "Chapters 1 and 2",
+    "Chapter 5",
+    "Chapters 3 and 4",
+    "Chapters 2 and 3"
+   ],
+   "r": 3,
+   "e": "« Study chapters 2 and 3 »."
+  },
+  {
+   "t": "Card: Dear Penda, welcome back from Italy! We are happy to see you again. Come to dinner on Friday. - Your cousins",
+   "q": "Where is Penda back from?",
+   "o": [
+    "France",
+    "Spain",
+    "Mali",
+    "Italy"
+   ],
+   "r": 3,
+   "e": "« welcome back from Italy! »."
+  },
+  {
+   "t": "Card: Dear Penda, welcome back from Italy! We are happy to see you again. Come to dinner on Friday. - Your cousins",
+   "q": "When is the dinner?",
+   "o": [
+    "On Saturday",
+    "On Friday",
+    "Tonight",
+    "On Sunday"
+   ],
+   "r": 1,
+   "e": "« Come to dinner on Friday »."
+  },
+  {
+   "t": "Birthday card: Happy birthday, Dad! You are 45 today. You are a great father. We love you. - Seynabou and Cheikh",
+   "q": "How old is Dad?",
+   "o": [
+    "45",
+    "54",
+    "40",
+    "35"
+   ],
+   "r": 0,
+   "e": "« You are 45 today »."
+  },
+  {
+   "t": "Birthday card: Happy birthday, Dad! You are 45 today. You are a great father. We love you. - Seynabou and Cheikh",
+   "q": "Who writes the card?",
+   "o": [
+    "Seynabou and Cheikh",
+    "Dad",
+    "Mum",
+    "Grandma"
+   ],
+   "r": 0,
+   "e": "« Seynabou and Cheikh » : les enfants."
+  },
+  {
+   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month. Water and electricity included.",
+   "q": "Who is the room for?",
+   "o": [
+    "Families",
+    "Tourists",
+    "Teachers",
+    "Students"
+   ],
+   "r": 3,
+   "e": "« Room for students »."
+  },
+  {
+   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month. Water and electricity included.",
+   "q": "Where is the room?",
+   "o": [
+    "Near the university",
+    "Near the beach",
+    "Near the airport",
+    "Near the market"
+   ],
+   "r": 0,
+   "e": "« in Fann, near the university »."
+  },
+  {
+   "t": "FOR SALE: a sheep for Tabaski. Big and white. 150,000 F. Ask Idrissa, Thiaroye, near the bus station.",
+   "q": "What colour is the sheep?",
+   "o": [
+    "Black",
+    "White",
+    "Brown",
+    "Grey"
+   ],
+   "r": 1,
+   "e": "« Big and white »."
+  }
+ ]
+}
