@@ -1,5 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import '../../services/auth_service.dart';
+import '../match/match_screens.dart';
+import '../../services/quiz_bank.dart';
+import '../../services/match_service.dart';
 import 'package:flutter/services.dart';
 
 import '../../models.dart';
@@ -670,6 +674,7 @@ class _ItemResultsScreenState extends State<ItemResultsScreen> {
                   label: const Text('Corriger les rendus'),
                 ),
               ],
+              if (item.quiz.isNotEmpty) _QuizLive(classRoom: widget.classRoom, item: item, uids: [for (final st in students) st.uid]),
               SectionTitle('Élève par élève ($n)'),
               if (n == 0) Text('Pas encore d\'élève dans la classe.', style: t.bodySmall),
               for (final s in students)
@@ -862,5 +867,110 @@ class _GradeScreenState extends State<GradeScreen> {
         ],
       ),
     );
+  }
+}
+
+
+/// QCM du prof : le lancer en direct en classe, revoir les directs, et les questions les plus ratées.
+class _QuizLive extends StatefulWidget {
+  final ClassRoom classRoom;
+  final ClassItem item;
+  final List<String> uids;
+  const _QuizLive({required this.classRoom, required this.item, required this.uids});
+
+  @override
+  State<_QuizLive> createState() => _QuizLiveState();
+}
+
+class _QuizLiveState extends State<_QuizLive> {
+  late final Future<(List<LiveMatch>, List<(String, int)>)> _future = _load();
+  bool _busy = false;
+
+  Future<(List<LiveMatch>, List<(String, int)>)> _load() async {
+    final lives = (await MatchService.instance.ofClass(widget.classRoom.id))
+        .where((m) => m.itemId == widget.item.id)
+        .toList();
+    final missed = await ClassService.instance.missedQuestions(widget.item, widget.uids);
+    return (lives, missed);
+  }
+
+  Future<void> _launch() async {
+    final p = AuthService.instance.profile.value;
+    if (p == null) return;
+    setState(() => _busy = true);
+    try {
+      final m = await MatchService.instance.create(
+        host: p,
+        questions: [for (final q in widget.item.quiz) BankQuestion.fromQuiz(q)],
+        hostPlays: false,
+        title: widget.item.title,
+        classId: widget.classRoom.id,
+        itemId: widget.item.id,
+      );
+      if (!mounted) return;
+      await Navigator.push(context, MaterialPageRoute(builder: (_) => MatchRoomScreen(matchId: m.id)));
+    } catch (_) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Il faut internet pour un quiz en direct.')));
+      }
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = Theme.of(context).textTheme;
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      const SizedBox(height: 10),
+      FilledButton.icon(
+        style: FilledButton.styleFrom(backgroundColor: const Color(0xFF46178F)),
+        onPressed: _busy ? null : _launch,
+        icon: const Icon(Icons.bolt),
+        label: Text(_busy ? 'Un instant…' : 'Lancer en direct en classe'),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(top: 4),
+        child: Text('Les élèves entrent le code dans « Match ». Tu vois qui répond et le classement.', style: t.bodySmall),
+      ),
+      FutureBuilder<(List<LiveMatch>, List<(String, int)>)>(
+        future: _future,
+        builder: (context, snap) {
+          final data = snap.data;
+          if (data == null) return const SizedBox.shrink();
+          final (lives, missed) = data;
+          return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            if (missed.isNotEmpty) ...[
+              const SectionTitle('Les questions les plus ratées'),
+              for (final (q, n) in missed.take(5))
+                Card(
+                  margin: const EdgeInsets.only(bottom: 6),
+                  child: ListTile(
+                    leading: const Icon(Icons.error_outline, color: JangColors.errorDark),
+                    title: Text(q, style: t.bodyMedium),
+                    trailing: Text('$n élève${n > 1 ? 's' : ''}', style: const TextStyle(fontWeight: FontWeight.w800)),
+                  ),
+                ),
+            ],
+            if (lives.isNotEmpty) ...[
+              const SectionTitle('Quiz en direct'),
+              for (final m in lives)
+                Card(
+                  margin: const EdgeInsets.only(bottom: 6),
+                  child: ListTile(
+                    leading: const Icon(Icons.bolt, color: Color(0xFF46178F)),
+                    title: Text(m.createdAt == null
+                        ? 'Quiz en direct'
+                        : 'Le ${m.createdAt!.day}/${m.createdAt!.month} à ${m.createdAt!.hour}h${m.createdAt!.minute.toString().padLeft(2, '0')}'),
+                    subtitle: Text(m.state == LiveMatch.over ? 'Terminé : voir le podium et les réponses' : 'En cours'),
+                    trailing: const Icon(Icons.chevron_right),
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => MatchRoomScreen(matchId: m.id))),
+                  ),
+                ),
+            ],
+          ]);
+        },
+      ),
+    ]);
   }
 }

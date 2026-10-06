@@ -22,6 +22,7 @@ import 'profile_screen.dart';
 import 'progress_screen.dart';
 import 'sheep_screen.dart';
 import 'inbox_screen.dart';
+import '../widgets/home_cards.dart';
 import 'mission/learn_mode.dart';
 import '../services/home_config_service.dart';
 import '../services/push_service.dart';
@@ -258,6 +259,8 @@ class _SubjectsTabState extends State<SubjectsTab> {
                     const _SyncStatus(),
                     const SizedBox(height: 4),
                     const InboxCard(),
+                    const MyClassCard(),
+                    const MatchCard(),
                     if (_config.show('banniere') && (_config.banner?.active ?? false))
                       Container(
                         margin: const EdgeInsets.only(bottom: 10),

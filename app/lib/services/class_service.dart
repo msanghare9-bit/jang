@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 
 import '../models.dart';
+import 'stats_service.dart';
 
 /// Résumé du travail d'un élève, lu sur sa fiche (users/{uid}) : une seule lecture par élève.
 class StudentSummary {
@@ -355,5 +356,27 @@ class ClassService {
         }),
     ]);
     return out;
+  }
+
+  /// Questions d'un QCM ratées par les élèves : texte de la question -> nombre d'élèves.
+  /// (La progression garde les questions ratées tant que l'élève ne les a pas réussies 2 fois.)
+  Future<List<(String, int)>> missedQuestions(ClassItem item, List<String> uids) async {
+    if (item.quiz.isEmpty) return const [];
+    final byKey = {for (final q in item.quiz) StatsService.questionKey(q.question): q.question};
+    final counts = <String, int>{};
+    await Future.wait([
+      for (final uid in uids)
+        _db.collection('users').doc(uid).collection('progress').doc(item.progressId).get().then((d) {
+          final mk = d.data()?['mistakes'];
+          if (mk is! Map) return;
+          for (final k in mk.keys) {
+            final q = byKey['$k'];
+            if (q != null) counts[q] = (counts[q] ?? 0) + 1;
+          }
+        }).catchError((Object e) {
+          debugPrint('$e');
+        }),
+    ]);
+    return counts.entries.map((e) => (e.key, e.value)).toList()..sort((a, b) => b.$2.compareTo(a.$2));
   }
 }
