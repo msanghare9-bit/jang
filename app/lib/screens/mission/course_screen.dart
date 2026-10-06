@@ -11,6 +11,7 @@ import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../story_screen.dart';
 import 'learn_mode.dart';
+import 'mission_guide.dart';
 import 'mission_screen.dart';
 import 'unit_end_screen.dart';
 
@@ -26,6 +27,15 @@ class CourseScreen extends StatefulWidget {
 
 class _CourseScreenState extends State<CourseScreen> {
   int _tab = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // La toute première fois : le guide « Comment ça marche ».
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) MissionGuide.showFirstTime(context);
+    });
+  }
 
   Future<void> _open(Mission m) async {
     await Navigator.push(
@@ -50,6 +60,11 @@ class _CourseScreenState extends State<CourseScreen> {
       appBar: AppBar(
         title: Text(widget.subject.name),
         actions: [
+          IconButton(
+            tooltip: 'Comment ça marche',
+            icon: const Icon(Icons.help_outline_rounded),
+            onPressed: () => MissionGuide.show(context),
+          ),
           IconButton(
             tooltip: 'Mon histoire',
             icon: const Icon(Icons.auto_stories_outlined),
