@@ -12,9 +12,43 @@ import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../story_screen.dart';
 import '../subject_screen.dart';
+import 'mission_guide.dart';
 
 const _violet = Color(0xFF8B5CF6);
 const _violetBg = Color(0xFFF1EBFF);
+
+/// Ce qu'il faut faire à chaque étape (dit par Kocc Barma au début de l'étape).
+const _tips = [
+  'Touche les mots qui vont avec l\'image.',
+  'Écoute la scène. Touche une bulle pour réécouter.',
+  'Réponds aux questions. Tu peux réécouter.',
+  'Gaïndé se trompe. Choisis la bonne phrase pour l\'aider.',
+  'Maintenant, parle pour de vrai ! Choisis : parler, écrire, ou les deux.',
+  'Garde ta phrase dans ton carnet.',
+];
+
+/// Un peu plus d'aide, pour le bouton « ? ».
+const _tipsMore = [
+  'Touche un mot : tu l\'entends. Vert : il va avec l\'image. Rouge : non. Trouve tous les mots verts.',
+  'Appuie sur « Écouter », puis sur « La suite ». Le 🔊 dans une bulle fait réécouter.',
+  'Touche la bonne réponse. Si tu te trompes, Kocc Barma te fait réécouter.',
+  'Tu ne sais pas ? Touche Kocc Barma. Il te donne un indice, pas la réponse.',
+  'Écoute la question avec 🔊. Appuie sur le micro et parle, ou écris ta phrase.',
+  'Dis si tu sais faire : « Pas encore », « Avec de l\'aide » ou « Tout seul ». Puis termine.',
+];
+
+/// La consigne de Kocc Barma au début d'une étape.
+class _Consigne extends StatelessWidget {
+  final int phase;
+  final String? text;
+  const _Consigne(this.phase, {this.text});
+
+  @override
+  Widget build(BuildContext context) => KoccSays(
+        label: 'Kocc Barma · À toi',
+        child: Text(text ?? _tips[phase], style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800)),
+      );
+}
 
 /// Texte simplifié pour comparer les réponses (minuscules, sans accents ni ponctuation).
 String normAnswer(String s) {
@@ -51,9 +85,11 @@ class MissionScreen extends StatefulWidget {
 }
 
 class _MissionScreenState extends State<MissionScreen> {
-  static const _steps = ['Mes mots', 'Je regarde', 'Je comprends', 'J\'aide Gaïndé', 'Je parle', 'Je garde'];
+  static const _steps = ['Mes mots', 'Je regarde', 'Je comprends', 'J\'aide Gaïndé', 'Pour de vrai', 'Je garde'];
   int _phase = 0;
   String _phrase = '';
+  /// Première mission de l'élève (aucune finie) : guidage pas à pas.
+  bool _first = false;
 
   Mission get m => widget.mission;
 
@@ -62,6 +98,42 @@ class _MissionScreenState extends State<MissionScreen> {
     super.initState();
     // Une mission sans mots commence à la scène.
     if (m.words.isEmpty) _phase = 1;
+    final svc = MissionService.instance;
+    svc.courses().then((cs) {
+      final none = !cs.any((c) => c.missions.any((x) => svc.isDone(x.id)));
+      if (none && mounted) setState(() => _first = true);
+    }).catchError((_) {});
+  }
+
+  void _showHelp() {
+    showDialog<void>(
+      context: context,
+      builder: (c) => Dialog(
+        insetPadding: const EdgeInsets.all(16),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(12, 4, 12, 12),
+          child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            KoccSays(
+              label: 'Kocc Barma · ${_steps[_phase]}',
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text(_tips[_phase], style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800)),
+                const SizedBox(height: 6),
+                Text(_tipsMore[_phase], style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+              ]),
+            ),
+            const SizedBox(height: 10),
+            FilledButton(onPressed: () => Navigator.pop(c), child: const Text('J\'ai compris')),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(c);
+                MissionGuide.show(context);
+              },
+              child: const Text('Revoir le guide'),
+            ),
+          ]),
+        ),
+      ),
+    );
   }
 
   void _next() {
@@ -110,20 +182,11 @@ class _MissionScreenState extends State<MissionScreen> {
                   tooltip: 'Quitter la mission',
                   icon: const Icon(Icons.close),
                   onPressed: () => Navigator.pop(context)),
-              Expanded(
-                child: Row(children: [
-                  for (var i = 0; i < 6; i++)
-                    Expanded(
-                      child: Container(
-                        height: 8,
-                        margin: const EdgeInsets.symmetric(horizontal: 2),
-                        decoration: BoxDecoration(
-                          color: i < _phase ? JangColors.success : (i == _phase ? JangColors.primary : JangColors.border),
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                      ),
-                    ),
-                ]),
+              Expanded(child: StepBar(current: _phase, names: _steps)),
+              IconButton(
+                tooltip: 'Que faire ?',
+                icon: const Icon(Icons.help_outline_rounded, color: _violet),
+                onPressed: _showHelp,
               ),
               IconButton(
                 tooltip: 'Boîte à outils',
@@ -133,21 +196,12 @@ class _MissionScreenState extends State<MissionScreen> {
               ),
             ]),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 4, 20, 0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text('Temps $_phase · ${_steps[_phase]}'.toUpperCase(),
-                  style: const TextStyle(
-                      fontSize: 12, letterSpacing: 1, fontWeight: FontWeight.w800, color: JangColors.primaryDark)),
-            ),
-          ),
           Expanded(
             child: switch (_phase) {
-              0 => _WordsPhase(mission: m, onDone: _next),
+              0 => _WordsPhase(mission: m, first: _first, onDone: _next),
               1 => _ObservePhase(mission: m, onDone: _next),
               2 => _UnderstandPhase(mission: m, onDone: _next),
-              3 => _TeachPhase(mission: m, onDone: _next),
+              3 => _TeachPhase(mission: m, first: _first, onDone: _next),
               4 => _SpeakPhase(
                   mission: m,
                   onDone: (phrase) {
@@ -308,8 +362,9 @@ Widget _bottom(Widget child) => Padding(padding: const EdgeInsets.fromLTRB(20, 8
 
 class _WordsPhase extends StatefulWidget {
   final Mission mission;
+  final bool first;
   final VoidCallback onDone;
-  const _WordsPhase({required this.mission, required this.onDone});
+  const _WordsPhase({required this.mission, this.first = false, required this.onDone});
 
   @override
   State<_WordsPhase> createState() => _WordsPhaseState();
@@ -319,6 +374,7 @@ class _WordsPhaseState extends State<_WordsPhase> {
   final Set<int> _good = {};
   final Set<int> _bad = {};
   MissionWord? _last;
+  bool _tipClosed = false;
 
   int get _total => widget.mission.words.where((w) => w.ok).length;
 
@@ -335,16 +391,21 @@ class _WordsPhaseState extends State<_WordsPhase> {
   Widget build(BuildContext context) {
     final m = widget.mission;
     final last = _last;
+    final guide = widget.first && last == null && !_tipClosed;
     return Column(children: [
       Expanded(
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
           Text(m.wordsIntro.isEmpty ? 'Quels mots vont avec l\'image ?' : m.wordsIntro, style: titleStyle(22, weight: 800)),
+          const _Consigne(0),
           const SizedBox(height: 8),
           _SceneBox(background: m.scene, actors: m.sceneActors.take(3).toList(), objects: m.objects),
           const SizedBox(height: 12),
+          if (guide) GuideTip(text: 'Touche un mot.', onClose: () => setState(() => _tipClosed = true)),
           Wrap(spacing: 8, runSpacing: 8, children: [
             for (var i = 0; i < m.words.length; i++)
-              ActionChip(
+              Pulse(
+                active: guide && i == 0,
+                child: ActionChip(
                 onPressed: () => _tap(i),
                 avatar: const Icon(Icons.volume_up_rounded, size: 18, color: JangColors.primaryDark),
                 label: Text(m.words[i].word, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
@@ -361,6 +422,7 @@ class _WordsPhaseState extends State<_WordsPhase> {
                             : JangColors.border,
                     width: 2),
               ),
+              ),
           ]),
           if (last != null)
             KoccSays(
@@ -370,7 +432,7 @@ class _WordsPhaseState extends State<_WordsPhase> {
             ),
         ]),
       ),
-      Text('Trouvés : ${_good.length} sur $_total. Touche un mot pour l\'écouter.',
+      Text('Trouvés : ${_good.length} sur $_total.',
           style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.textSecondary)),
       _bottom(ChunkyButton(label: 'CONTINUER', onPressed: _good.length >= _total ? widget.onDone : null)),
     ]);
@@ -407,6 +469,7 @@ class _ObservePhaseState extends State<_ObservePhase> {
       Expanded(
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
           Text(m.story.isEmpty ? m.title : m.story, style: titleStyle(20, weight: 800)),
+          const _Consigne(1),
           const SizedBox(height: 8),
           _SceneBox(background: m.scene, actors: m.sceneActors, height: 150),
           const SizedBox(height: 10),
@@ -469,6 +532,8 @@ class _UnderstandPhaseState extends State<_UnderstandPhase> {
     return Column(children: [
       Expanded(
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
+          const _Consigne(2),
+          const SizedBox(height: 10),
           Text('Question ${_q + 1} sur ${m.questions.length}', style: const TextStyle(fontWeight: FontWeight.w800)),
           KoccSays(child: Text(q.question, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700))),
           const SizedBox(height: 12),
@@ -515,8 +580,9 @@ class _UnderstandPhaseState extends State<_UnderstandPhase> {
 
 class _TeachPhase extends StatefulWidget {
   final Mission mission;
+  final bool first;
   final VoidCallback onDone;
-  const _TeachPhase({required this.mission, required this.onDone});
+  const _TeachPhase({required this.mission, this.first = false, required this.onDone});
 
   @override
   State<_TeachPhase> createState() => _TeachPhaseState();
@@ -537,6 +603,7 @@ class _TeachPhaseState extends State<_TeachPhase> {
   bool _ok = false;
   bool _skipped = false;
   String _gaindeSays = '';
+  bool _koccTipClosed = false;
   final List<int> _order = [];
   final _text = TextEditingController();
 
@@ -699,9 +766,18 @@ class _TeachPhaseState extends State<_TeachPhase> {
     final names = ['Choisir', 'Remettre dans l\'ordre', 'Compléter', 'Tout seul'];
     final kind = {'choix': 0, 'ordre': 1, 'trou': 2}[s.type] ?? 3;
     final hint = _hint;
+    final koccTip = widget.first && !_koccTipClosed && _help == 0 && !_ok;
+    const consignes = [
+      null,
+      'Gaïndé se trompe. Remets les mots dans l\'ordre pour l\'aider.',
+      'Gaïndé se trompe. Écris le mot qui manque pour l\'aider.',
+      'Gaïndé se trompe. Écris la bonne phrase pour l\'aider.',
+    ];
     return Column(children: [
       Expanded(
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
+          _Consigne(3, text: consignes[kind]),
+          const SizedBox(height: 8),
           Text('Marche ${_i + 1} sur ${widget.mission.steps.length} · ${names[kind]}',
               style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.textSecondary)),
           if (_skipped)
@@ -739,16 +815,29 @@ class _TeachPhaseState extends State<_TeachPhase> {
       if (!_ok)
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SizedBox(
-            width: double.infinity,
-            child: OutlinedButton(
-              onPressed: () => setState(() {
-                _firstTry = false;
-                _help = (_help + 1).clamp(0, 4);
-              }),
-              child: const Text('Je ne sais pas encore'),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            if (koccTip)
+              GuideTip(
+                  text: 'Tu ne sais pas ? Touche Kocc Barma.', onClose: () => setState(() => _koccTipClosed = true)),
+            Pulse(
+              active: koccTip,
+              child: OutlinedButton.icon(
+                style: OutlinedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  side: const BorderSide(color: _violet, width: 2),
+                  backgroundColor: _violetBg,
+                ),
+                onPressed: () => setState(() {
+                  _firstTry = false;
+                  _koccTipClosed = true;
+                  _help = (_help + 1).clamp(0, 4);
+                }),
+                icon: const CharacterView(Chars.kocc, size: 34, moves: Moves.still),
+                label: const Text('Je ne sais pas encore · Kocc Barma m\'aide',
+                    style: TextStyle(fontWeight: FontWeight.w800, color: _violet)),
+              ),
             ),
-          ),
+          ]),
         ),
       _bottom(ChunkyButton(label: 'CONTINUER', onPressed: _ok ? _next : null)),
     ]);
@@ -884,6 +973,8 @@ class _SpeakPhaseState extends State<_SpeakPhase> {
     return Column(children: [
       Expanded(
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
+          const _Consigne(4),
+          const SizedBox(height: 8),
           Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
             CharacterView.of(t.who, size: 88, moves: _ok ? Moves.dance : Moves.bob),
             const SizedBox(width: 6),
@@ -985,6 +1076,7 @@ class _KeepPhaseState extends State<_KeepPhase> {
       Expanded(
         child: ListView(padding: const EdgeInsets.fromLTRB(20, 8, 20, 8), children: [
           Text('Mission réussie !', style: titleStyle(26, weight: 800)),
+          const _Consigne(5),
           const SizedBox(height: 8),
           if (widget.phrase.isNotEmpty)
             Container(
