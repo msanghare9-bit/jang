@@ -408,7 +408,7 @@ class _ClassScreenState extends State<ClassScreen> {
                     ? Pill('$todo', color: JangColors.warning, background: JangColors.warningBg)
                     : const Icon(Icons.chevron_right),
                 onTap: () => Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => HomeworkScreen(item: i, classRoom: _c))),
+                    context, MaterialPageRoute(builder: (_) => HomeworkRendusScreen(item: i, classRoom: _c))),
               ),
             );
           }),
@@ -665,7 +665,7 @@ class _ItemResultsScreenState extends State<ItemResultsScreen> {
                 const SizedBox(height: 10),
                 FilledButton.icon(
                   onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => HomeworkScreen(item: item, classRoom: widget.classRoom))),
+                      MaterialPageRoute(builder: (_) => HomeworkRendusScreen(item: item, classRoom: widget.classRoom))),
                   icon: const Icon(Icons.rate_review_outlined),
                   label: const Text('Corriger les rendus'),
                 ),
@@ -703,16 +703,16 @@ class _ItemResultsScreenState extends State<ItemResultsScreen> {
 }
 
 /// Les rendus d'un devoir.
-class HomeworkScreen extends StatefulWidget {
+class HomeworkRendusScreen extends StatefulWidget {
   final ClassItem item;
   final ClassRoom classRoom;
-  const HomeworkScreen({super.key, required this.item, required this.classRoom});
+  const HomeworkRendusScreen({super.key, required this.item, required this.classRoom});
 
   @override
-  State<HomeworkScreen> createState() => _HomeworkScreenState();
+  State<HomeworkRendusScreen> createState() => _HomeworkRendusScreenState();
 }
 
-class _HomeworkScreenState extends State<HomeworkScreen> {
+class _HomeworkRendusScreenState extends State<HomeworkRendusScreen> {
   late Future<List<Submission>> _future = ClassService.instance.submissions(widget.item.id);
 
   void _reload() => setState(() => _future = ClassService.instance.submissions(widget.item.id));

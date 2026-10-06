@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../classes/classes_admin_screen.dart';
+import '../classes/my_classes_screen.dart';
+
 import '../../models.dart';
 import '../../services/content_repo.dart';
 import '../../services/pack_service.dart';
@@ -79,6 +82,9 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                     style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(height: 16),
                 _go(admin ? 'Élèves' : 'Mes élèves', Icons.groups_outlined, const StudentsScreen(), filled: true),
+                admin
+                    ? _go('Profs et classes', Icons.school_outlined, const ClassesAdminScreen())
+                    : _go('Mes classes', Icons.school_outlined, const MyClassesScreen()),
                 _go('Annonces', Icons.campaign_outlined, const AnnouncementsScreen()),
                 if (admin) _go('Accueil de l\'app', Icons.home_outlined, const HomeConfigScreen()),
                 if (admin) _go('Les profs', Icons.badge_outlined, const ProfsScreen()),
