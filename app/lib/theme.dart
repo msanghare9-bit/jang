@@ -23,6 +23,12 @@ class JangColors {
   static const warning = Color(0xFFFF9600);
   static const warningBg = Color(0xFFFFF4D6);
 
+  /// Couleurs du drapeau du Sénégal (accueil).
+  static const snGreen = Color(0xFF00853F);
+  static const snGreenDark = Color(0xFF00602D);
+  static const snYellow = Color(0xFFFDEF42);
+  static const snRed = Color(0xFFE31B23);
+
   /// Couleurs proposées pour les matières (français, maths, anglais, SVT…).
   static const subjectPalette = <String>[
     '#FF4B4B', // rouge

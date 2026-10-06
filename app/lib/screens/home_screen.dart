@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../models.dart';
@@ -217,9 +219,8 @@ class _SubjectsTabState extends State<SubjectsTab> {
           child: ListView(
             padding: const EdgeInsets.only(bottom: 24),
             children: [
-              WaxHeader(
-                color: JangColors.primary,
-                padding: EdgeInsets.fromLTRB(20, top + 12, 20, 22),
+              _SenegalHeader(
+                padding: EdgeInsets.fromLTRB(20, top + 12, 20, 18),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -262,8 +263,8 @@ class _SubjectsTabState extends State<SubjectsTab> {
                         margin: const EdgeInsets.only(bottom: 10),
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: JangColors.warningBg,
-                          border: Border.all(color: JangColors.ocre, width: 2),
+                          color: const Color(0xFFFFFBD6),
+                          border: Border.all(color: JangColors.snGreen, width: 2),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Text(_config.banner!.text,
@@ -296,7 +297,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
                             padding: const EdgeInsets.only(bottom: 10),
                             child: ChunkyButton(
                               label: e.name,
-                              color: JangColors.primary,
+                              color: JangColors.snGreen,
                               onPressed: () => AuthService.instance.updateExam(e.id),
                             ),
                           )),
@@ -307,7 +308,9 @@ class _SubjectsTabState extends State<SubjectsTab> {
                           message: 'Les matières apparaîtront ici dès qu\'elles seront publiées.')
                     else ...[
                       Text('Mes matières', style: titleStyle(22, weight: 800)),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 6),
+                      const Align(alignment: Alignment.centerLeft, child: _FlagBar(width: 54, height: 6)),
+                      const SizedBox(height: 12),
                       ...data.subjects.map((s) => Padding(
                             padding: const EdgeInsets.only(bottom: 14),
                             child: _SubjectCard(
@@ -325,7 +328,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
                       label: 'Partager Jàng avec un ami',
                       icon: Icons.share_outlined,
                       outlined: true,
-                      color: JangColors.primary,
+                      color: JangColors.snGreen,
                       onPressed: () => shareApp(context),
                     ),
                   ],
@@ -439,6 +442,8 @@ class _SubjectCard extends StatelessWidget {
                             : '$total leçon${total > 1 ? 's' : ''} · $done vue${done > 1 ? 's' : ''}',
                         style: TextStyle(color: fg, fontWeight: FontWeight.w700, fontSize: 14),
                       ),
+                      const SizedBox(height: 6),
+                      const _FlagBar(width: 36, height: 5, outline: true),
                     ],
                   ),
                 ),
@@ -463,6 +468,122 @@ class _SubjectCard extends StatelessWidget {
       },
     );
   }
+}
+
+/// En-tête de l'accueil aux couleurs du Sénégal : un dégradé vert (texte blanc bien lisible),
+/// puis le drapeau en bandes verticales vert / jaune / rouge, avec l'étoile verte au milieu du jaune.
+class _SenegalHeader extends StatelessWidget {
+  final Widget child;
+  final EdgeInsets padding;
+  const _SenegalHeader({required this.child, required this.padding});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: const BorderRadius.vertical(bottom: Radius.circular(28)),
+      child: Column(mainAxisSize: MainAxisSize.min, children: [
+        Container(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [JangColors.snGreen, JangColors.snGreenDark],
+            ),
+          ),
+          child: Stack(children: [
+            // Grande étoile discrète en fond.
+            Positioned(
+              right: -30,
+              top: -10,
+              child: CustomPaint(
+                size: const Size(170, 170),
+                painter: _StarPainter(Colors.white.withValues(alpha: 0.07)),
+              ),
+            ),
+            Padding(
+              padding: padding,
+              child: DefaultTextStyle.merge(style: const TextStyle(color: Colors.white), child: child),
+            ),
+          ]),
+        ),
+        Container(height: 3, color: Colors.white),
+        SizedBox(
+          height: 34,
+          child: Row(children: [
+            Expanded(child: Container(color: JangColors.snGreen)),
+            Expanded(
+              child: Container(
+                color: JangColors.snYellow,
+                alignment: Alignment.center,
+                child: const CustomPaint(size: Size(24, 24), painter: _StarPainter(JangColors.snGreen)),
+              ),
+            ),
+            Expanded(child: Container(color: JangColors.snRed)),
+          ]),
+        ),
+      ]),
+    );
+  }
+}
+
+/// Petite barre vert / jaune / rouge (rappel du drapeau).
+class _FlagBar extends StatelessWidget {
+  final double width;
+  final double height;
+
+  /// Liseré blanc, pour rester visible sur une carte de couleur.
+  final bool outline;
+  const _FlagBar({required this.width, required this.height, this.outline = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(height),
+        border: outline ? Border.all(color: Colors.white, width: 1) : null,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(height),
+        child: Row(children: [
+          Expanded(child: Container(color: JangColors.snGreen)),
+          Expanded(child: Container(color: JangColors.snYellow)),
+          Expanded(child: Container(color: JangColors.snRed)),
+        ]),
+      ),
+    );
+  }
+}
+
+/// Étoile à 5 branches.
+class _StarPainter extends CustomPainter {
+  final Color color;
+  const _StarPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final c = Offset(size.width / 2, size.height / 2);
+    final outer = size.shortestSide / 2;
+    final inner = outer * 0.382;
+    final path = Path();
+    for (var i = 0; i < 10; i++) {
+      final r = i.isEven ? outer : inner;
+      final a = -math.pi / 2 + i * math.pi / 5;
+      final p = c + Offset(math.cos(a) * r, math.sin(a) * r);
+      if (i == 0) {
+        path.moveTo(p.dx, p.dy);
+      } else {
+        path.lineTo(p.dx, p.dy);
+      }
+    }
+    path.close();
+    canvas.drawPath(path, Paint()..color = color);
+  }
+
+  @override
+  bool shouldRepaint(_StarPainter oldDelegate) => oldDelegate.color != color;
 }
 
 Future<void> showUpdateDialog(BuildContext context, ReleaseInfo r) {

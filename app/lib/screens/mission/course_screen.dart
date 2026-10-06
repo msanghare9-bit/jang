@@ -6,6 +6,7 @@ import '../../services/speech_service.dart';
 import '../../services/story_service.dart';
 import '../../theme.dart';
 import '../../widgets/characters.dart';
+import '../../widgets/class_section.dart';
 import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../story_screen.dart';
@@ -84,6 +85,7 @@ class _CourseScreenState extends State<CourseScreen> {
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
       children: [
         LearnModeSwitch(current: LearnMode.practice, subject: widget.subject, course: course),
+        ClassSection(subject: widget.subject, padding: const EdgeInsets.only(top: 14)),
         const SizedBox(height: 12),
         Container(
           padding: const EdgeInsets.fromLTRB(16, 12, 10, 12),
