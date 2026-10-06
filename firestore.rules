@@ -126,6 +126,24 @@ service cloud.firestore {
       }
     }
 
+    // ---------- Matchs en direct ----------
+    match /matchs/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.hostUid == request.auth.uid;
+      allow update: if signedIn() && resource.data.hostUid == request.auth.uid;
+      match /joueurs/{uid} {
+        allow read: if signedIn();
+        allow create, update: if isMe(uid);
+        allow delete: if isMe(uid) || get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
+      }
+    }
+
+    // Questions de match signalées.
+    match /signalements/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow read, delete: if isAdmin();
+    }
+
     // ---------- Statistiques et journaux ----------
     match /statsLessons/{id} { allow read: if isStaff(); allow write: if signedIn(); }
     match /statsDays/{id} { allow read: if isStaff(); allow write: if signedIn(); }
