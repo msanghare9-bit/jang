@@ -83,6 +83,49 @@ service cloud.firestore {
       allow delete: if isStaff() || (signedIn() && resource.data.get('uid', '') == request.auth.uid);
     }
 
+    // Missions avec Gaïndé modifiées par l'admin.
+    match /missionEdits/{id} { allow read: if true; allow write: if isAdmin(); }
+
+    // ---------- Classes ----------
+    function onlyMe(after, before) {
+      // Seul l'élève connecté est ajouté ou retiré de la liste.
+      return after.toSet().difference(before.toSet()).hasOnly([request.auth.uid])
+          && before.toSet().difference(after.toSet()).hasOnly([request.auth.uid]);
+    }
+    function onlyRemoves(after, before) { return after.toSet().difference(before.toSet()).size() == 0; }
+    function onlyStudents() { return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['students']); }
+    function classOf(id) { return get(/databases/$(database)/documents/classes/$(id)).data; }
+
+    match /classes/{id} {
+      allow read: if signedIn();
+      allow create, delete: if isAdmin();
+      allow update: if isAdmin()
+                    || (isStaff() && resource.data.profUid == request.auth.uid)
+                    // un prof retire un élève qui change de classe dans la même matière
+                    || (isStaff() && onlyStudents() && onlyRemoves(request.resource.data.students, resource.data.students))
+                    // l'élève entre ou sort avec le code
+                    || (signedIn() && onlyStudents() && onlyMe(request.resource.data.students, resource.data.students));
+    }
+
+    // Contenus des profs : privés (élèves de la classe) ou publics (tous).
+    match /classItems/{id} {
+      allow read: if isStaff()
+                  || (signedIn() && resource.data.visibility == 'public')
+                  || (signedIn() && request.auth.uid in classOf(resource.data.classId).students);
+      allow create: if isStaff() && request.resource.data.ownerUid == request.auth.uid
+                    && (isAdmin() || classOf(request.resource.data.classId).profUid == request.auth.uid);
+      allow update, delete: if isAdmin() || (isStaff() && resource.data.ownerUid == request.auth.uid);
+
+      // Devoirs rendus : l'élève écrit sa réponse, le prof met la note.
+      match /rendus/{uid} {
+        allow read: if isMe(uid) || isStaff();
+        allow create: if isMe(uid) && !request.resource.data.keys().hasAny(['grade', 'comment', 'gradedAt']);
+        allow update: if (isMe(uid) && resource.data.get('grade', '') == '' && resource.data.get('comment', '') == ''
+                          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'text', 'classId', 'at']))
+                      || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['grade', 'comment', 'gradedAt']));
+      }
+    }
+
     // ---------- Statistiques et journaux ----------
     match /statsLessons/{id} { allow read: if isStaff(); allow write: if signedIn(); }
     match /statsDays/{id} { allow read: if isStaff(); allow write: if signedIn(); }
