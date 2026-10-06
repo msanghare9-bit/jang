@@ -1,0 +1,37 @@
+{
+ "version": 1,
+ "domaines": [
+  "vocabulaire",
+  "grammaire",
+  "expressions",
+  "comprehension",
+  "culture"
+ ],
+ "niveaux": [
+  "debutant",
+  "intermediaire",
+  "avance"
+ ],
+ "fichiers": {
+  "comprehension_debutant": {
+   "fichier": "comprehension_debutant.json",
+   "nombre": 400
+  },
+  "culture_debutant": {
+   "fichier": "culture_debutant.json",
+   "nombre": 200
+  },
+  "expressions_debutant": {
+   "fichier": "expressions_debutant.json",
+   "nombre": 200
+  },
+  "grammaire_debutant": {
+   "fichier": "grammaire_debutant.json",
+   "nombre": 400
+  },
+  "vocabulaire_debutant": {
+   "fichier": "vocabulaire_debutant.json",
+   "nombre": 200
+  }
+ }
+}
