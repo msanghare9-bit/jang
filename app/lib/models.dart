@@ -522,3 +522,216 @@ String lessonSection(String title) {
   final m = RegExp(r'^(.+?)\s+\d+$').firstMatch(k);
   return m?.group(1) ?? '';
 }
+
+/// Une classe : un groupe d'élèves d'un niveau, dans une matière, avec son prof (classes/{id}).
+class ClassRoom {
+  final String id;
+  final String name;
+  final String examId;
+
+  /// Matière : nom simplifié (subjectKey) et nom affiché.
+  final String subject;
+  final String subjectName;
+  final String profUid;
+  final String profName;
+
+  /// Code à donner aux élèves pour entrer dans la classe.
+  final String code;
+  final List<String> students;
+  final bool deleted;
+  ClassRoom({
+    required this.id,
+    required this.name,
+    required this.examId,
+    required this.subject,
+    required this.subjectName,
+    required this.profUid,
+    required this.profName,
+    required this.code,
+    this.students = const [],
+    this.deleted = false,
+  });
+
+  factory ClassRoom.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
+    final m = d.data() ?? {};
+    return ClassRoom(
+      id: d.id,
+      name: _str(m['name']),
+      examId: _str(m['examId']),
+      subject: _str(m['subject']),
+      subjectName: _str(m['subjectName']),
+      profUid: _str(m['profUid']),
+      profName: _str(m['profName']),
+      code: _str(m['code']),
+      students: (m['students'] is List ? m['students'] as List : const []).whereType<String>().toList(),
+      deleted: _bool(m['deleted']),
+    );
+  }
+
+  Map<String, dynamic> toMap() => {
+        'name': name,
+        'examId': examId,
+        'subject': subject,
+        'subjectName': subjectName,
+        'profUid': profUid,
+        'profName': profName,
+        'code': code,
+        'students': students,
+        'deleted': deleted,
+      };
+}
+
+/// Une phrase à trous : « avant ___ après », avec toutes les bonnes réponses.
+class GapItem {
+  String before;
+  String after;
+  List<String> answers;
+  GapItem({this.before = '', this.after = '', List<String>? answers}) : answers = answers ?? [];
+
+  factory GapItem.fromMap(Map m) => GapItem(
+        before: _str(m['before']),
+        after: _str(m['after']),
+        answers: (m['answers'] is List ? m['answers'] as List : const []).whereType<String>().toList(),
+      );
+  Map<String, dynamic> toMap() => {'before': before, 'after': after, 'answers': answers};
+}
+
+/// Un contenu créé par un prof pour sa classe (classItems/{id}).
+class ClassItem {
+  static const lesson = 'lecon';
+  static const mcq = 'qcm';
+  static const gaps = 'trous';
+  static const homework = 'devoir';
+  static const mission = 'mission';
+  static const types = [lesson, mcq, gaps, homework, mission];
+
+  static String label(String type) => switch (type) {
+        lesson => 'Leçon',
+        mcq => 'QCM',
+        gaps => 'Texte à trous',
+        homework => 'Devoir',
+        mission => 'Mission avec Gaïndé',
+        _ => type,
+      };
+
+  final String id;
+  final String classId;
+  final String ownerUid;
+  final String ownerName;
+  final String examId;
+  final String subject;
+  final String type;
+  final String title;
+
+  /// Leçon : le texte (même format que les leçons) ; devoir : la consigne.
+  final String body;
+  final List<QuizQuestion> quiz;
+  final List<GapItem> gapItems;
+
+  /// Mission avec Gaïndé : même format que contenus/missions.json.
+  final Map<String, dynamic> missionData;
+
+  /// « prive » : seulement les élèves de la classe ; « public » : tous les élèves du niveau.
+  final String visibility;
+  final bool deleted;
+  final DateTime? createdAt;
+  ClassItem({
+    required this.id,
+    required this.classId,
+    required this.ownerUid,
+    required this.ownerName,
+    required this.examId,
+    required this.subject,
+    required this.type,
+    required this.title,
+    this.body = '',
+    this.quiz = const [],
+    this.gapItems = const [],
+    this.missionData = const {},
+    this.visibility = 'prive',
+    this.deleted = false,
+    this.createdAt,
+  });
+
+  bool get isPublic => visibility == 'public';
+
+  /// Identifiant utilisé pour la progression de l'élève (progress/ ou missions/).
+  String get progressId => 'classe_$id';
+
+  factory ClassItem.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
+    final m = d.data() ?? {};
+    final ts = m['createdAt'];
+    return ClassItem(
+      id: d.id,
+      classId: _str(m['classId']),
+      ownerUid: _str(m['ownerUid']),
+      ownerName: _str(m['ownerName']),
+      examId: _str(m['examId']),
+      subject: _str(m['subject']),
+      type: _str(m['type'], lesson),
+      title: _str(m['title']),
+      body: _str(m['body']),
+      quiz: (m['quiz'] is List ? m['quiz'] as List : const []).whereType<Map>().map(QuizQuestion.fromMap).toList(),
+      gapItems: (m['gaps'] is List ? m['gaps'] as List : const []).whereType<Map>().map(GapItem.fromMap).toList(),
+      missionData: m['mission'] is Map ? Map<String, dynamic>.from(m['mission'] as Map) : const {},
+      visibility: _str(m['visibility'], 'prive'),
+      deleted: _bool(m['deleted']),
+      createdAt: ts is Timestamp ? ts.toDate() : null,
+    );
+  }
+
+  Map<String, dynamic> toMap() => {
+        'classId': classId,
+        'ownerUid': ownerUid,
+        'ownerName': ownerName,
+        'examId': examId,
+        'subject': subject,
+        'type': type,
+        'title': title,
+        'body': body,
+        'quiz': quiz.map((q) => q.toMap()).toList(),
+        'gaps': gapItems.map((g) => g.toMap()).toList(),
+        'mission': missionData,
+        'visibility': visibility,
+        'deleted': deleted,
+      };
+
+  /// Leçon fabriquée pour réutiliser les écrans de leçon et de quiz (et la progression).
+  Lesson asLesson(Subject s) => Lesson(
+        id: progressId,
+        examId: examId,
+        subjectId: s.id,
+        chapterId: '',
+        title: title,
+        body: body,
+        quiz: quiz,
+      );
+}
+
+/// Le devoir rendu par un élève (classItems/{id}/rendus/{uid}).
+class Submission {
+  final String uid;
+  final String name;
+  final String text;
+  final DateTime? at;
+
+  /// Note donnée par le prof (texte libre, ex. « 15/20 »), vide si pas encore corrigé.
+  final String grade;
+  final String comment;
+  Submission({required this.uid, required this.name, required this.text, this.at, this.grade = '', this.comment = ''});
+
+  bool get graded => grade.isNotEmpty || comment.isNotEmpty;
+
+  factory Submission.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
+    final m = d.data() ?? {};
+    final ts = m['at'];
+    return Submission(
+      uid: d.id,
+      name: _str(m['name']),
+      text: _str(m['text']),
+      at: ts is Timestamp ? ts.toDate() : null,
+      grade: _str(m['grade']),
+      comment: _str(m['comment']),
+    );
+  }
+}

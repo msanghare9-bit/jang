@@ -107,6 +107,9 @@ class Mission {
   final List<MissionTurn> turns;
   final List<String> notebook;
   final List<String> hard;
+
+  /// Les données d'origine (format de contenus/missions.json), pour l'éditeur.
+  final Map<String, dynamic> raw;
   Mission({
     required this.id,
     required this.title,
@@ -125,6 +128,7 @@ class Mission {
     required this.turns,
     required this.notebook,
     required this.hard,
+    this.raw = const {},
   });
 
   factory Mission.fromMap(Map m) {
@@ -174,6 +178,7 @@ class Mission {
       ],
       notebook: _ls(m['carnet']),
       hard: _ls(m['difficile']),
+      raw: Map<String, dynamic>.from(m),
     );
   }
 }
@@ -268,6 +273,7 @@ class MissionService {
   Future<List<Course>> courses() => _loading ??= _load();
 
   Future<List<Course>> _load() async {
+    await _loadEdits();
     final prefs = await SharedPreferences.getInstance();
     String? text;
     try {
@@ -301,12 +307,62 @@ class MissionService {
     }
   }
 
+  /// Missions modifiées par l'admin dans l'app (missionEdits/{id}) : elles remplacent celles du fichier.
+  Map<String, Map> _edits = const {};
+
+  Future<void> _loadEdits() async {
+    try {
+      final s = await FirebaseFirestore.instance
+          .collection('missionEdits')
+          .get()
+          .timeout(const Duration(seconds: 15));
+      _edits = {
+        for (final d in s.docs)
+          if (d.data()['mission'] is Map) d.id: d.data()['mission'] as Map,
+      };
+    } catch (e) {
+      debugPrint('Missions modifiées indisponibles : $e');
+    }
+  }
+
   List<Course> _parse(String text) {
     final j = jsonDecode(text) as Map<String, dynamic>;
+    Map unit(Map u) => {
+          ...u,
+          'missions': [for (final m in _lm(u['missions'])) _edits[_s(m['id'])] ?? m],
+        };
     return [
       for (final c in _lm(j['parcours']))
-        Course(_s(c['matiere']), _s(c['niveau']), _s(c['saison']), [for (final u in _lm(c['unites'])) CourseUnit.fromMap(u)]),
+        Course(_s(c['matiere']), _s(c['niveau']), _s(c['saison']),
+            [for (final u in _lm(c['unites'])) CourseUnit.fromMap(unit(u))]),
     ];
+  }
+
+  /// L'admin enregistre une mission modifiée. Elle arrive chez les élèves au prochain chargement.
+  Future<void> saveEdit(Map<String, dynamic> mission, String byUid) async {
+    final id = _s(mission['id']);
+    await FirebaseFirestore.instance.collection('missionEdits').doc(id).set({
+      'mission': mission,
+      'by': byUid,
+      'at': FieldValue.serverTimestamp(),
+    });
+    _edits = {..._edits, id: mission};
+    reload();
+  }
+
+  /// Remet la mission du fichier d'origine.
+  Future<void> resetEdit(String missionId) async {
+    await FirebaseFirestore.instance.collection('missionEdits').doc(missionId).delete();
+    _edits = {..._edits}..remove(missionId);
+    reload();
+  }
+
+  bool isEdited(String missionId) => _edits.containsKey(missionId);
+
+  /// Recharge les parcours (après une modification).
+  void reload() {
+    _loading = null;
+    revision.value++;
   }
 
   /// Parcours de cette matière pour ce niveau (null : la matière garde ses leçons).
@@ -362,6 +418,13 @@ class MissionService {
     revision.value++;
     final uid = _uid;
     if (uid != null) {
+      if (first) {
+        unawaited(FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .set({'missionsDone': FieldValue.increment(1)}, SetOptions(merge: true))
+            .catchError((e) => debugPrint('$e')));
+      }
       unawaited(_col(uid).doc(m.id).set({
         'done': true,
         if (phrase.isNotEmpty) 'phrase': phrase,

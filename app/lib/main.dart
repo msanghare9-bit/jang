@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,6 +18,7 @@ import 'services/notification_service.dart';
 import 'services/progress_repo.dart';
 import 'services/sheep_service.dart';
 import 'services/mission_service.dart';
+import 'services/class_service.dart';
 import 'theme.dart';
 
 Future<void> main() async {
@@ -159,6 +162,7 @@ class _AuthGateState extends State<AuthGate> {
     await EngagementService.instance.init(user.uid);
     await SheepService.instance.load(user.uid);
     await MissionService.instance.load(user.uid);
+    unawaited(ClassService.instance.loadMine(user.uid));
     _loadedFor = user.uid;
     _loading = false;
     if (mounted) setState(() {});
