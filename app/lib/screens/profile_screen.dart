@@ -4,10 +4,12 @@ import 'inbox_screen.dart';
 
 import '../models.dart';
 import '../services/auth_service.dart';
+import '../services/class_service.dart';
 import '../services/content_repo.dart';
 import '../services/github_service.dart';
 import '../theme.dart';
 import '../version.dart';
+import '../widgets/class_section.dart' show showJoinClassDialog;
 import '../widgets/common.dart';
 import '../widgets/contact.dart';
 import '../widgets/engagement.dart';
@@ -92,6 +94,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
+              if (!p.isStaff) _MyClasses(profile: p),
               const SectionTitle('Mon niveau'),
               FutureBuilder<List<Exam>>(
                 future: _exams,
@@ -198,5 +201,77 @@ class _ProfileScreenState extends State<ProfileScreen> {
       default:
         return 'Élève';
     }
+  }
+}
+
+/// Carte « Mes classes » de l'élève : ses classes, et le code pour entrer dans une nouvelle classe.
+class _MyClasses extends StatelessWidget {
+  final UserProfile profile;
+  const _MyClasses({required this.profile});
+
+  Future<void> _leave(BuildContext context, ClassRoom c) async {
+    if (!await confirm(context, 'Quitter la classe ?',
+        'Tu ne verras plus les leçons et les devoirs de ${c.name}. Tu pourras revenir avec le code.',
+        ok: 'Quitter')) {
+      return;
+    }
+    try {
+      await ClassService.instance.leave(c, profile.uid);
+      if (context.mounted) showMessage(context, 'Tu as quitté la classe ${c.name}.');
+    } catch (_) {
+      if (context.mounted) showMessage(context, 'Pas de connexion internet. Réessaie plus tard.');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final t = Theme.of(context).textTheme;
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      const SectionTitle('Mes classes'),
+      Card(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+          child: ValueListenableBuilder<List<ClassRoom>>(
+            valueListenable: ClassService.instance.mine,
+            builder: (context, classes, _) => Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text('Ton prof te donne un code. Une seule classe par matière.', style: t.bodyMedium),
+                const SizedBox(height: 8),
+                if (classes.isEmpty)
+                  Text('Tu n\'es encore dans aucune classe.', style: t.bodySmall)
+                else
+                  for (final c in classes)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 6),
+                      child: Row(children: [
+                        const Icon(Icons.groups_rounded, color: JangColors.primaryDark),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                            Text(c.subjectName.isEmpty ? c.name : '${c.subjectName} · ${c.name}',
+                                style: t.titleMedium),
+                            if (c.profName.isNotEmpty) Text('Prof : ${c.profName}', style: t.bodySmall),
+                          ]),
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(foregroundColor: JangColors.errorDark),
+                          onPressed: () => _leave(context, c),
+                          child: const Text('Quitter'),
+                        ),
+                      ]),
+                    ),
+                const SizedBox(height: 10),
+                FilledButton.icon(
+                  onPressed: () => showJoinClassDialog(context),
+                  icon: const Icon(Icons.vpn_key_outlined),
+                  label: const Text('Entrer dans une classe'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ]);
   }
 }

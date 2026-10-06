@@ -10,6 +10,7 @@ import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/characters.dart';
 import '../widgets/fun.dart';
+import '../widgets/class_section.dart';
 import '../widgets/jang_ui.dart';
 import 'flashcards_screen.dart';
 import 'lesson_screen.dart';
@@ -111,6 +112,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                       padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
                       child: LearnModeSwitch(current: LearnMode.read, subject: widget.subject, course: widget.course!),
                     ),
+                  ClassSection(subject: widget.subject, padding: const EdgeInsets.fromLTRB(16, 14, 16, 0)),
                   if (data != null && lessons.isNotEmpty && widget.course == null)
                     StoryCard(subject: widget.subject, lessons: lessons),
                   if (data == null)
