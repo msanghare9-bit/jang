@@ -14,10 +14,15 @@ import '../widgets/jang_ui.dart';
 import 'flashcards_screen.dart';
 import 'lesson_screen.dart';
 import 'story_screen.dart';
+import 'mission/learn_mode.dart';
+import '../services/mission_service.dart';
 
 class SubjectScreen extends StatefulWidget {
   final Subject subject;
-  const SubjectScreen({super.key, required this.subject});
+
+  /// Parcours en missions de la matière : affiche le choix « Je pratique / Je lis le cours ».
+  final Course? course;
+  const SubjectScreen({super.key, required this.subject, this.course});
 
   @override
   State<SubjectScreen> createState() => _SubjectScreenState();
@@ -101,7 +106,12 @@ class _SubjectScreenState extends State<SubjectScreen> {
                       ],
                     ),
                   ),
-                  if (data != null && lessons.isNotEmpty)
+                  if (widget.course != null)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                      child: LearnModeSwitch(current: LearnMode.read, subject: widget.subject, course: widget.course!),
+                    ),
+                  if (data != null && lessons.isNotEmpty && widget.course == null)
                     StoryCard(subject: widget.subject, lessons: lessons),
                   if (data == null)
                     const Padding(

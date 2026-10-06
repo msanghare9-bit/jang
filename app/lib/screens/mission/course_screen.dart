@@ -9,7 +9,7 @@ import '../../widgets/characters.dart';
 import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../story_screen.dart';
-import '../subject_screen.dart';
+import 'learn_mode.dart';
 import 'mission_screen.dart';
 import 'unit_end_screen.dart';
 
@@ -54,12 +54,6 @@ class _CourseScreenState extends State<CourseScreen> {
             icon: const Icon(Icons.auto_stories_outlined),
             onPressed: _story,
           ),
-          IconButton(
-            tooltip: 'Boîte à outils (leçons)',
-            icon: const Icon(Icons.menu_book_outlined),
-            onPressed: () =>
-                Navigator.push(context, MaterialPageRoute(builder: (_) => SubjectScreen(subject: widget.subject))),
-          ),
         ],
       ),
       body: ValueListenableBuilder(
@@ -89,6 +83,8 @@ class _CourseScreenState extends State<CourseScreen> {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
       children: [
+        LearnModeSwitch(current: LearnMode.practice, subject: widget.subject, course: course),
+        const SizedBox(height: 12),
         Container(
           padding: const EdgeInsets.fromLTRB(16, 12, 10, 12),
           decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(20)),
