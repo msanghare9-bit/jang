@@ -1,0 +1,2204 @@
+{
+ "questions": [
+  {
+   "q": "What is the opposite of « big »?",
+   "o": [
+    "small",
+    "heavy",
+    "come",
+    "father"
+   ],
+   "r": 0,
+   "e": "Le contraire de big (grand), c'est small (petit)."
+  },
+  {
+   "q": "What is the opposite of « hot »?",
+   "o": [
+    "push",
+    "last",
+    "right",
+    "cold"
+   ],
+   "r": 3,
+   "e": "Le contraire de hot (chaud), c'est cold (froid)."
+  },
+  {
+   "q": "What is the opposite of « happy »?",
+   "o": [
+    "slow",
+    "sad",
+    "arrive",
+    "sit down"
+   ],
+   "r": 1,
+   "e": "Le contraire de happy (content), c'est sad (triste)."
+  },
+  {
+   "q": "What is the opposite of « fast »?",
+   "o": [
+    "long",
+    "cry",
+    "answer",
+    "slow"
+   ],
+   "r": 3,
+   "e": "Le contraire de fast (rapide), c'est slow (lent)."
+  },
+  {
+   "q": "What is the opposite of « tall »?",
+   "o": [
+    "stand up",
+    "sell",
+    "sweet",
+    "short"
+   ],
+   "r": 3,
+   "e": "Le contraire de tall (grand (taille)), c'est short (petit (taille))."
+  },
+  {
+   "q": "What is the opposite of « old »?",
+   "o": [
+    "young",
+    "outside",
+    "stand up",
+    "day"
+   ],
+   "r": 0,
+   "e": "Le contraire de old (vieux), c'est young (jeune)."
+  },
+  {
+   "q": "What is the opposite of « rich »?",
+   "o": [
+    "boy",
+    "girl",
+    "easy",
+    "poor"
+   ],
+   "r": 3,
+   "e": "Le contraire de rich (riche), c'est poor (pauvre)."
+  },
+  {
+   "q": "What is the opposite of « open »?",
+   "o": [
+    "closed",
+    "far",
+    "big",
+    "father"
+   ],
+   "r": 0,
+   "e": "Le contraire de open (ouvert), c'est closed (fermé)."
+  },
+  {
+   "q": "What is the opposite of « clean »?",
+   "o": [
+    "boy",
+    "black",
+    "before",
+    "dirty"
+   ],
+   "r": 3,
+   "e": "Le contraire de clean (propre), c'est dirty (sale)."
+  },
+  {
+   "q": "What is the opposite of « full »?",
+   "o": [
+    "woman",
+    "empty",
+    "sweet",
+    "leave"
+   ],
+   "r": 1,
+   "e": "Le contraire de full (plein), c'est empty (vide)."
+  },
+  {
+   "q": "What is the opposite of « heavy »?",
+   "o": [
+    "father",
+    "light",
+    "left",
+    "cheap"
+   ],
+   "r": 1,
+   "e": "Le contraire de heavy (lourd), c'est light (léger)."
+  },
+  {
+   "q": "What is the opposite of « strong »?",
+   "o": [
+    "dirty",
+    "far",
+    "light",
+    "weak"
+   ],
+   "r": 3,
+   "e": "Le contraire de strong (fort), c'est weak (faible)."
+  },
+  {
+   "q": "What is the opposite of « early »?",
+   "o": [
+    "cold",
+    "down",
+    "pull",
+    "late"
+   ],
+   "r": 3,
+   "e": "Le contraire de early (tôt), c'est late (tard)."
+  },
+  {
+   "q": "What is the opposite of « easy »?",
+   "o": [
+    "start",
+    "difficult",
+    "thin",
+    "question"
+   ],
+   "r": 1,
+   "e": "Le contraire de easy (facile), c'est difficult (difficile)."
+  },
+  {
+   "q": "What is the opposite of « day »?",
+   "o": [
+    "after",
+    "stand up",
+    "sad",
+    "night"
+   ],
+   "r": 3,
+   "e": "Le contraire de day (jour), c'est night (nuit)."
+  },
+  {
+   "q": "What is the opposite of « up »?",
+   "o": [
+    "down",
+    "never",
+    "always",
+    "out"
+   ],
+   "r": 0,
+   "e": "Le contraire de up (en haut), c'est down (en bas)."
+  },
+  {
+   "q": "What is the opposite of « in »?",
+   "o": [
+    "hate",
+    "empty",
+    "answer",
+    "out"
+   ],
+   "r": 3,
+   "e": "Le contraire de in (dedans), c'est out (dehors)."
+  },
+  {
+   "q": "What is the opposite of « long »?",
+   "o": [
+    "loud",
+    "short",
+    "day",
+    "late"
+   ],
+   "r": 1,
+   "e": "Le contraire de long (long), c'est short (court)."
+  },
+  {
+   "q": "What is the opposite of « new »?",
+   "o": [
+    "love",
+    "easy",
+    "wrong",
+    "old"
+   ],
+   "r": 3,
+   "e": "Le contraire de new (neuf), c'est old (vieux)."
+  },
+  {
+   "q": "What is the opposite of « good »?",
+   "o": [
+    "last",
+    "bad",
+    "empty",
+    "full"
+   ],
+   "r": 1,
+   "e": "Le contraire de good (bon), c'est bad (mauvais)."
+  },
+  {
+   "q": "What is the opposite of « right »?",
+   "o": [
+    "up",
+    "wrong",
+    "light",
+    "thin"
+   ],
+   "r": 1,
+   "e": "Le contraire de right (juste), c'est wrong (faux)."
+  },
+  {
+   "q": "What is the opposite of « first »?",
+   "o": [
+    "last",
+    "outside",
+    "night",
+    "bad"
+   ],
+   "r": 0,
+   "e": "Le contraire de first (premier), c'est last (dernier)."
+  },
+  {
+   "q": "What is the opposite of « buy »?",
+   "o": [
+    "man",
+    "thin",
+    "sell",
+    "go"
+   ],
+   "r": 2,
+   "e": "Le contraire de buy (acheter), c'est sell (vendre)."
+  },
+  {
+   "q": "What is the opposite of « come »?",
+   "o": [
+    "down",
+    "woman",
+    "go",
+    "girl"
+   ],
+   "r": 2,
+   "e": "Le contraire de come (venir), c'est go (aller)."
+  },
+  {
+   "q": "What is the opposite of « love »?",
+   "o": [
+    "soft",
+    "poor",
+    "down",
+    "hate"
+   ],
+   "r": 3,
+   "e": "Le contraire de love (aimer), c'est hate (détester)."
+  },
+  {
+   "q": "What is the opposite of « win »?",
+   "o": [
+    "full",
+    "late",
+    "lose",
+    "heavy"
+   ],
+   "r": 2,
+   "e": "Le contraire de win (gagner), c'est lose (perdre)."
+  },
+  {
+   "q": "What is the opposite of « push »?",
+   "o": [
+    "pull",
+    "happy",
+    "hard",
+    "evening"
+   ],
+   "r": 0,
+   "e": "Le contraire de push (pousser), c'est pull (tirer)."
+  },
+  {
+   "q": "What is the opposite of « give »?",
+   "o": [
+    "go",
+    "start",
+    "last",
+    "take"
+   ],
+   "r": 3,
+   "e": "Le contraire de give (donner), c'est take (prendre)."
+  },
+  {
+   "q": "What is the opposite of « start »?",
+   "o": [
+    "dry",
+    "finish",
+    "long",
+    "soft"
+   ],
+   "r": 1,
+   "e": "Le contraire de start (commencer), c'est finish (finir)."
+  },
+  {
+   "q": "What is the opposite of « laugh »?",
+   "o": [
+    "cheap",
+    "girl",
+    "cry",
+    "pull"
+   ],
+   "r": 2,
+   "e": "Le contraire de laugh (rire), c'est cry (pleurer)."
+  },
+  {
+   "q": "What is the opposite of « wet »?",
+   "o": [
+    "rich",
+    "right",
+    "give",
+    "dry"
+   ],
+   "r": 3,
+   "e": "Le contraire de wet (mouillé), c'est dry (sec)."
+  },
+  {
+   "q": "What is the opposite of « loud »?",
+   "o": [
+    "happy",
+    "left",
+    "quiet",
+    "answer"
+   ],
+   "r": 2,
+   "e": "Le contraire de loud (bruyant), c'est quiet (calme)."
+  },
+  {
+   "q": "What is the opposite of « cheap »?",
+   "o": [
+    "right",
+    "loud",
+    "open",
+    "expensive"
+   ],
+   "r": 3,
+   "e": "Le contraire de cheap (pas cher), c'est expensive (cher)."
+  },
+  {
+   "q": "What is the opposite of « thick »?",
+   "o": [
+    "loud",
+    "in",
+    "thin",
+    "sell"
+   ],
+   "r": 2,
+   "e": "Le contraire de thick (épais), c'est thin (mince)."
+  },
+  {
+   "q": "What is the opposite of « near »?",
+   "o": [
+    "love",
+    "brother",
+    "tall",
+    "far"
+   ],
+   "r": 3,
+   "e": "Le contraire de near (près), c'est far (loin)."
+  },
+  {
+   "q": "What is the opposite of « before »?",
+   "o": [
+    "black",
+    "good",
+    "answer",
+    "after"
+   ],
+   "r": 3,
+   "e": "Le contraire de before (avant), c'est after (après)."
+  },
+  {
+   "q": "What is the opposite of « always »?",
+   "o": [
+    "never",
+    "closed",
+    "weak",
+    "stand up"
+   ],
+   "r": 0,
+   "e": "Le contraire de always (toujours), c'est never (jamais)."
+  },
+  {
+   "q": "What is the opposite of « inside »?",
+   "o": [
+    "outside",
+    "thin",
+    "far",
+    "weak"
+   ],
+   "r": 0,
+   "e": "Le contraire de inside (à l'intérieur), c'est outside (à l'extérieur)."
+  },
+  {
+   "q": "What is the opposite of « boy »?",
+   "o": [
+    "girl",
+    "take",
+    "tall",
+    "right"
+   ],
+   "r": 0,
+   "e": "Le contraire de boy (garçon), c'est girl (fille)."
+  },
+  {
+   "q": "What is the opposite of « man »?",
+   "o": [
+    "woman",
+    "cheap",
+    "sweet",
+    "cry"
+   ],
+   "r": 0,
+   "e": "Le contraire de man (homme), c'est woman (femme)."
+  },
+  {
+   "q": "What is the opposite of « brother »?",
+   "o": [
+    "left",
+    "down",
+    "small",
+    "sister"
+   ],
+   "r": 3,
+   "e": "Le contraire de brother (frère), c'est sister (sœur)."
+  },
+  {
+   "q": "What is the opposite of « father »?",
+   "o": [
+    "cheap",
+    "pull",
+    "expensive",
+    "mother"
+   ],
+   "r": 3,
+   "e": "Le contraire de father (père), c'est mother (mère)."
+  },
+  {
+   "q": "What is the opposite of « question »?",
+   "o": [
+    "answer",
+    "finish",
+    "start",
+    "fast"
+   ],
+   "r": 0,
+   "e": "Le contraire de question (question), c'est answer (réponse)."
+  },
+  {
+   "q": "What is the opposite of « black »?",
+   "o": [
+    "white",
+    "old",
+    "poor",
+    "after"
+   ],
+   "r": 0,
+   "e": "Le contraire de black (noir), c'est white (blanc)."
+  },
+  {
+   "q": "What is the opposite of « sweet »?",
+   "o": [
+    "cold",
+    "bitter",
+    "strong",
+    "man"
+   ],
+   "r": 1,
+   "e": "Le contraire de sweet (sucré), c'est bitter (amer)."
+  },
+  {
+   "q": "What is the opposite of « hard »?",
+   "o": [
+    "soft",
+    "open",
+    "right",
+    "sweet"
+   ],
+   "r": 0,
+   "e": "Le contraire de hard (dur), c'est soft (mou)."
+  },
+  {
+   "q": "What is the opposite of « left »?",
+   "o": [
+    "always",
+    "right",
+    "sad",
+    "full"
+   ],
+   "r": 1,
+   "e": "Le contraire de left (gauche), c'est right (droite)."
+  },
+  {
+   "q": "What is the opposite of « morning »?",
+   "o": [
+    "out",
+    "wet",
+    "stand up",
+    "evening"
+   ],
+   "r": 3,
+   "e": "Le contraire de morning (matin), c'est evening (soir)."
+  },
+  {
+   "q": "What is the opposite of « arrive »?",
+   "o": [
+    "leave",
+    "night",
+    "dry",
+    "cry"
+   ],
+   "r": 0,
+   "e": "Le contraire de arrive (arriver), c'est leave (partir)."
+  },
+  {
+   "q": "What is the opposite of « sit down »?",
+   "o": [
+    "out",
+    "stand up",
+    "sad",
+    "pull"
+   ],
+   "r": 1,
+   "e": "Le contraire de sit down (s'asseoir), c'est stand up (se lever)."
+  },
+  {
+   "q": "Which word means the same as « big »?",
+   "o": [
+    "gift",
+    "large",
+    "autumn",
+    "sack"
+   ],
+   "r": 1,
+   "e": "Big et large veulent dire la même chose : « grand »."
+  },
+  {
+   "q": "Which word means the same as « small »?",
+   "o": [
+    "cross",
+    "kind",
+    "little",
+    "unhappy"
+   ],
+   "r": 2,
+   "e": "Small et little veulent dire la même chose : « petit »."
+  },
+  {
+   "q": "Which word means the same as « happy »?",
+   "o": [
+    "student",
+    "glad",
+    "film",
+    "quiet"
+   ],
+   "r": 1,
+   "e": "Happy et glad veulent dire la même chose : « content »."
+  },
+  {
+   "q": "Which word means the same as « begin »?",
+   "o": [
+    "job",
+    "afraid",
+    "start",
+    "ill"
+   ],
+   "r": 2,
+   "e": "Begin et start veulent dire la même chose : « commencer »."
+  },
+  {
+   "q": "Which word means the same as « finish »?",
+   "o": [
+    "sick",
+    "look at",
+    "end",
+    "speak"
+   ],
+   "r": 2,
+   "e": "Finish et end veulent dire la même chose : « finir »."
+  },
+  {
+   "q": "Which word means the same as « fast »?",
+   "o": [
+    "quick",
+    "kid",
+    "huge",
+    "pupil"
+   ],
+   "r": 0,
+   "e": "Fast et quick veulent dire la même chose : « rapide »."
+  },
+  {
+   "q": "Which word means the same as « pretty »?",
+   "o": [
+    "beautiful",
+    "unhappy",
+    "quick",
+    "finish"
+   ],
+   "r": 0,
+   "e": "Pretty et beautiful veulent dire la même chose : « joli »."
+  },
+  {
+   "q": "Which word means the same as « shut »?",
+   "o": [
+    "happy",
+    "kind",
+    "store",
+    "close"
+   ],
+   "r": 3,
+   "e": "Shut et close veulent dire la même chose : « fermer »."
+  },
+  {
+   "q": "Which word means the same as « speak »?",
+   "o": [
+    "talk",
+    "hard",
+    "buy",
+    "happy"
+   ],
+   "r": 0,
+   "e": "Speak et talk veulent dire la même chose : « parler »."
+  },
+  {
+   "q": "Which word means the same as « hard »?",
+   "o": [
+    "difficult",
+    "unhappy",
+    "scared",
+    "small"
+   ],
+   "r": 0,
+   "e": "Hard et difficult veulent dire la même chose : « difficile »."
+  },
+  {
+   "q": "Which word means the same as « sick »?",
+   "o": [
+    "mum",
+    "sad",
+    "sack",
+    "ill"
+   ],
+   "r": 3,
+   "e": "Sick et ill veulent dire la même chose : « malade »."
+  },
+  {
+   "q": "Which word means the same as « mum »?",
+   "o": [
+    "film",
+    "start",
+    "work",
+    "mother"
+   ],
+   "r": 3,
+   "e": "Mum et mother veulent dire la même chose : « maman »."
+  },
+  {
+   "q": "Which word means the same as « dad »?",
+   "o": [
+    "father",
+    "shop",
+    "holiday",
+    "look at"
+   ],
+   "r": 0,
+   "e": "Dad et father veulent dire la même chose : « papa »."
+  },
+  {
+   "q": "Which word means the same as « kid »?",
+   "o": [
+    "child",
+    "angry",
+    "talk",
+    "look at"
+   ],
+   "r": 0,
+   "e": "Kid et child veulent dire la même chose : « enfant »."
+  },
+  {
+   "q": "Which word means the same as « gift »?",
+   "o": [
+    "movie",
+    "quick",
+    "present",
+    "fast"
+   ],
+   "r": 2,
+   "e": "Gift et present veulent dire la même chose : « cadeau »."
+  },
+  {
+   "q": "Which word means the same as « hi »?",
+   "o": [
+    "hello",
+    "unhappy",
+    "garbage",
+    "shut"
+   ],
+   "r": 0,
+   "e": "Hi et hello veulent dire la même chose : « salut »."
+  },
+  {
+   "q": "Which word means the same as « bye »?",
+   "o": [
+    "goodbye",
+    "father",
+    "present",
+    "holiday"
+   ],
+   "r": 0,
+   "e": "Bye et goodbye veulent dire la même chose : « au revoir »."
+  },
+  {
+   "q": "Which word means the same as « buy »?",
+   "o": [
+    "job",
+    "photo",
+    "student",
+    "purchase"
+   ],
+   "r": 3,
+   "e": "Buy et purchase veulent dire la même chose : « acheter »."
+  },
+  {
+   "q": "Which word means the same as « look at »?",
+   "o": [
+    "little",
+    "road",
+    "watch",
+    "store"
+   ],
+   "r": 2,
+   "e": "Look at et watch veulent dire la même chose : « regarder »."
+  },
+  {
+   "q": "Which word means the same as « shop »?",
+   "o": [
+    "store",
+    "buy",
+    "end",
+    "dad"
+   ],
+   "r": 0,
+   "e": "Shop et store veulent dire la même chose : « magasin »."
+  },
+  {
+   "q": "Which word means the same as « rubbish »?",
+   "o": [
+    "pretty",
+    "child",
+    "quiet",
+    "garbage"
+   ],
+   "r": 3,
+   "e": "Rubbish et garbage veulent dire la même chose : « ordures »."
+  },
+  {
+   "q": "Which word means the same as « correct »?",
+   "o": [
+    "road",
+    "right",
+    "angry",
+    "present"
+   ],
+   "r": 1,
+   "e": "Correct et right veulent dire la même chose : « juste »."
+  },
+  {
+   "q": "Which word means the same as « fine »?",
+   "o": [
+    "well",
+    "autumn",
+    "sack",
+    "little"
+   ],
+   "r": 0,
+   "e": "Fine et well veulent dire la même chose : « bien (santé) »."
+  },
+  {
+   "q": "Which word means the same as « angry »?",
+   "o": [
+    "cross",
+    "movie",
+    "small",
+    "correct"
+   ],
+   "r": 0,
+   "e": "Angry et cross veulent dire la même chose : « fâché »."
+  },
+  {
+   "q": "Which word means the same as « afraid »?",
+   "o": [
+    "scared",
+    "store",
+    "movie",
+    "photo"
+   ],
+   "r": 0,
+   "e": "Afraid et scared veulent dire la même chose : « qui a peur »."
+  },
+  {
+   "q": "Which word means the same as « smart »?",
+   "o": [
+    "little",
+    "sofa",
+    "clever",
+    "road"
+   ],
+   "r": 2,
+   "e": "Smart et clever veulent dire la même chose : « intelligent »."
+  },
+  {
+   "q": "Which word means the same as « unhappy »?",
+   "o": [
+    "hi",
+    "couch",
+    "kid",
+    "sad"
+   ],
+   "r": 3,
+   "e": "Unhappy et sad veulent dire la même chose : « triste »."
+  },
+  {
+   "q": "Which word means the same as « enormous »?",
+   "o": [
+    "mother",
+    "fast",
+    "huge",
+    "difficult"
+   ],
+   "r": 2,
+   "e": "Enormous et huge veulent dire la même chose : « énorme »."
+  },
+  {
+   "q": "Which word means the same as « road »?",
+   "o": [
+    "street",
+    "start",
+    "cab",
+    "clever"
+   ],
+   "r": 0,
+   "e": "Road et street veulent dire la même chose : « rue, route »."
+  },
+  {
+   "q": "Which word means the same as « sofa »?",
+   "o": [
+    "angry",
+    "glad",
+    "couch",
+    "difficult"
+   ],
+   "r": 2,
+   "e": "Sofa et couch veulent dire la même chose : « canapé »."
+  },
+  {
+   "q": "Which word means the same as « film »?",
+   "o": [
+    "nice",
+    "kid",
+    "movie",
+    "goodbye"
+   ],
+   "r": 2,
+   "e": "Film et movie veulent dire la même chose : « film »."
+  },
+  {
+   "q": "Which word means the same as « autumn »?",
+   "o": [
+    "beautiful",
+    "fall",
+    "garbage",
+    "angry"
+   ],
+   "r": 1,
+   "e": "Autumn et fall veulent dire la même chose : « automne »."
+  },
+  {
+   "q": "Which word means the same as « holiday »?",
+   "o": [
+    "pupil",
+    "vacation",
+    "work",
+    "picture"
+   ],
+   "r": 1,
+   "e": "Holiday et vacation veulent dire la même chose : « vacances »."
+  },
+  {
+   "q": "Which word means the same as « taxi »?",
+   "o": [
+    "large",
+    "mum",
+    "dad",
+    "cab"
+   ],
+   "r": 3,
+   "e": "Taxi et cab veulent dire la même chose : « taxi »."
+  },
+  {
+   "q": "Which word means the same as « pupil »?",
+   "o": [
+    "autumn",
+    "student",
+    "look at",
+    "end"
+   ],
+   "r": 1,
+   "e": "Pupil et student veulent dire la même chose : « élève »."
+  },
+  {
+   "q": "Which word means the same as « quiet »?",
+   "o": [
+    "calm",
+    "clever",
+    "cab",
+    "sad"
+   ],
+   "r": 0,
+   "e": "Quiet et calm veulent dire la même chose : « calme »."
+  },
+  {
+   "q": "Which word means the same as « nice »?",
+   "o": [
+    "begin",
+    "hi",
+    "kind",
+    "difficult"
+   ],
+   "r": 2,
+   "e": "Nice et kind veulent dire la même chose : « gentil »."
+  },
+  {
+   "q": "Which word means the same as « photo »?",
+   "o": [
+    "buy",
+    "shop",
+    "picture",
+    "couch"
+   ],
+   "r": 2,
+   "e": "Photo et picture veulent dire la même chose : « photo »."
+  },
+  {
+   "q": "Which word means the same as « bag »?",
+   "o": [
+    "gift",
+    "rubbish",
+    "ill",
+    "sack"
+   ],
+   "r": 3,
+   "e": "Bag et sack veulent dire la même chose : « sac »."
+  },
+  {
+   "q": "Which word means the same as « job »?",
+   "o": [
+    "work",
+    "calm",
+    "pretty",
+    "holiday"
+   ],
+   "r": 0,
+   "e": "Job et work veulent dire la même chose : « travail »."
+  },
+  {
+   "q": "Que veut dire « goat » en français ?",
+   "o": [
+    "âne",
+    "mouton",
+    "chèvre",
+    "poisson"
+   ],
+   "r": 2,
+   "e": "Goat = chèvre."
+  },
+  {
+   "q": "Que veut dire « sheep » en français ?",
+   "o": [
+    "singe",
+    "chèvre",
+    "lion",
+    "mouton"
+   ],
+   "r": 3,
+   "e": "Sheep = mouton."
+  },
+  {
+   "q": "Que veut dire « cow » en français ?",
+   "o": [
+    "chèvre",
+    "poisson",
+    "singe",
+    "vache"
+   ],
+   "r": 3,
+   "e": "Cow = vache."
+  },
+  {
+   "q": "Que veut dire « chicken » en français ?",
+   "o": [
+    "singe",
+    "vache",
+    "cheval",
+    "poulet"
+   ],
+   "r": 3,
+   "e": "Chicken = poulet."
+  },
+  {
+   "q": "Que veut dire « horse » en français ?",
+   "o": [
+    "vache",
+    "poulet",
+    "mouton",
+    "cheval"
+   ],
+   "r": 3,
+   "e": "Horse = cheval."
+  },
+  {
+   "q": "Que veut dire « donkey » en français ?",
+   "o": [
+    "lion",
+    "chèvre",
+    "poulet",
+    "âne"
+   ],
+   "r": 3,
+   "e": "Donkey = âne."
+  },
+  {
+   "q": "Que veut dire « fish » en français ?",
+   "o": [
+    "poisson",
+    "poulet",
+    "vache",
+    "oiseau"
+   ],
+   "r": 0,
+   "e": "Fish = poisson."
+  },
+  {
+   "q": "Que veut dire « bird » en français ?",
+   "o": [
+    "mouton",
+    "cheval",
+    "oiseau",
+    "singe"
+   ],
+   "r": 2,
+   "e": "Bird = oiseau."
+  },
+  {
+   "q": "Que veut dire « lion » en français ?",
+   "o": [
+    "âne",
+    "oiseau",
+    "lion",
+    "cheval"
+   ],
+   "r": 2,
+   "e": "Lion = lion."
+  },
+  {
+   "q": "Que veut dire « monkey » en français ?",
+   "o": [
+    "poisson",
+    "vache",
+    "cheval",
+    "singe"
+   ],
+   "r": 3,
+   "e": "Monkey = singe."
+  },
+  {
+   "q": "Que veut dire « rice » en français ?",
+   "o": [
+    "mangue",
+    "riz",
+    "pain",
+    "sucre"
+   ],
+   "r": 1,
+   "e": "Rice = riz."
+  },
+  {
+   "q": "Que veut dire « bread » en français ?",
+   "o": [
+    "pain",
+    "lait",
+    "arachide",
+    "oignon"
+   ],
+   "r": 0,
+   "e": "Bread = pain."
+  },
+  {
+   "q": "Que veut dire « milk » en français ?",
+   "o": [
+    "riz",
+    "lait",
+    "mangue",
+    "oignon"
+   ],
+   "r": 1,
+   "e": "Milk = lait."
+  },
+  {
+   "q": "Que veut dire « egg » en français ?",
+   "o": [
+    "œuf",
+    "mangue",
+    "lait",
+    "riz"
+   ],
+   "r": 0,
+   "e": "Egg = œuf."
+  },
+  {
+   "q": "Que veut dire « sugar » en français ?",
+   "o": [
+    "sucre",
+    "oignon",
+    "lait",
+    "pain"
+   ],
+   "r": 0,
+   "e": "Sugar = sucre."
+  },
+  {
+   "q": "Que veut dire « salt » en français ?",
+   "o": [
+    "sel",
+    "riz",
+    "sucre",
+    "viande"
+   ],
+   "r": 0,
+   "e": "Salt = sel."
+  },
+  {
+   "q": "Que veut dire « onion » en français ?",
+   "o": [
+    "lait",
+    "sucre",
+    "oignon",
+    "mangue"
+   ],
+   "r": 2,
+   "e": "Onion = oignon."
+  },
+  {
+   "q": "Que veut dire « mango » en français ?",
+   "o": [
+    "mangue",
+    "pain",
+    "œuf",
+    "arachide"
+   ],
+   "r": 0,
+   "e": "Mango = mangue."
+  },
+  {
+   "q": "Que veut dire « peanut » en français ?",
+   "o": [
+    "pain",
+    "riz",
+    "oignon",
+    "arachide"
+   ],
+   "r": 3,
+   "e": "Peanut = arachide."
+  },
+  {
+   "q": "Que veut dire « meat » en français ?",
+   "o": [
+    "pain",
+    "sel",
+    "viande",
+    "riz"
+   ],
+   "r": 2,
+   "e": "Meat = viande."
+  },
+  {
+   "q": "Que veut dire « head » en français ?",
+   "o": [
+    "tête",
+    "bras",
+    "nez",
+    "oreille"
+   ],
+   "r": 0,
+   "e": "Head = tête."
+  },
+  {
+   "q": "Que veut dire « hand » en français ?",
+   "o": [
+    "œil",
+    "oreille",
+    "bras",
+    "main"
+   ],
+   "r": 3,
+   "e": "Hand = main."
+  },
+  {
+   "q": "Que veut dire « foot » en français ?",
+   "o": [
+    "œil",
+    "nez",
+    "pied",
+    "tête"
+   ],
+   "r": 2,
+   "e": "Foot = pied."
+  },
+  {
+   "q": "Que veut dire « eye » en français ?",
+   "o": [
+    "main",
+    "œil",
+    "tête",
+    "pied"
+   ],
+   "r": 1,
+   "e": "Eye = œil."
+  },
+  {
+   "q": "Que veut dire « ear » en français ?",
+   "o": [
+    "nez",
+    "œil",
+    "oreille",
+    "bras"
+   ],
+   "r": 2,
+   "e": "Ear = oreille."
+  },
+  {
+   "q": "Que veut dire « mouth » en français ?",
+   "o": [
+    "bouche",
+    "nez",
+    "pied",
+    "jambe"
+   ],
+   "r": 0,
+   "e": "Mouth = bouche."
+  },
+  {
+   "q": "Que veut dire « nose » en français ?",
+   "o": [
+    "jambe",
+    "nez",
+    "main",
+    "œil"
+   ],
+   "r": 1,
+   "e": "Nose = nez."
+  },
+  {
+   "q": "Que veut dire « arm » en français ?",
+   "o": [
+    "oreille",
+    "jambe",
+    "tête",
+    "bras"
+   ],
+   "r": 3,
+   "e": "Arm = bras."
+  },
+  {
+   "q": "Que veut dire « leg » en français ?",
+   "o": [
+    "oreille",
+    "jambe",
+    "œil",
+    "main"
+   ],
+   "r": 1,
+   "e": "Leg = jambe."
+  },
+  {
+   "q": "Que veut dire « tooth » en français ?",
+   "o": [
+    "bras",
+    "œil",
+    "dent",
+    "pied"
+   ],
+   "r": 2,
+   "e": "Tooth = dent."
+  },
+  {
+   "q": "Que veut dire « chair » en français ?",
+   "o": [
+    "chaise",
+    "porte",
+    "cuisine",
+    "toit"
+   ],
+   "r": 0,
+   "e": "Chair = chaise."
+  },
+  {
+   "q": "Que veut dire « table » en français ?",
+   "o": [
+    "cuillère",
+    "table",
+    "chaise",
+    "clé"
+   ],
+   "r": 1,
+   "e": "Table = table."
+  },
+  {
+   "q": "Que veut dire « door » en français ?",
+   "o": [
+    "cuisine",
+    "porte",
+    "lit",
+    "fenêtre"
+   ],
+   "r": 1,
+   "e": "Door = porte."
+  },
+  {
+   "q": "Que veut dire « window » en français ?",
+   "o": [
+    "fenêtre",
+    "cuillère",
+    "table",
+    "chaise"
+   ],
+   "r": 0,
+   "e": "Window = fenêtre."
+  },
+  {
+   "q": "Que veut dire « bed » en français ?",
+   "o": [
+    "porte",
+    "toit",
+    "table",
+    "lit"
+   ],
+   "r": 3,
+   "e": "Bed = lit."
+  },
+  {
+   "q": "Que veut dire « kitchen » en français ?",
+   "o": [
+    "cuillère",
+    "porte",
+    "cuisine",
+    "lit"
+   ],
+   "r": 2,
+   "e": "Kitchen = cuisine."
+  },
+  {
+   "q": "Que veut dire « roof » en français ?",
+   "o": [
+    "clé",
+    "lit",
+    "porte",
+    "toit"
+   ],
+   "r": 3,
+   "e": "Roof = toit."
+  },
+  {
+   "q": "Que veut dire « key » en français ?",
+   "o": [
+    "lit",
+    "fenêtre",
+    "clé",
+    "chaise"
+   ],
+   "r": 2,
+   "e": "Key = clé."
+  },
+  {
+   "q": "Que veut dire « pot » en français ?",
+   "o": [
+    "porte",
+    "lit",
+    "cuisine",
+    "marmite"
+   ],
+   "r": 3,
+   "e": "Pot = marmite."
+  },
+  {
+   "q": "Que veut dire « spoon » en français ?",
+   "o": [
+    "table",
+    "cuillère",
+    "lit",
+    "chaise"
+   ],
+   "r": 1,
+   "e": "Spoon = cuillère."
+  },
+  {
+   "q": "Que veut dire « teacher » en français ?",
+   "o": [
+    "professeur",
+    "livre",
+    "tableau",
+    "crayon"
+   ],
+   "r": 0,
+   "e": "Teacher = professeur."
+  },
+  {
+   "q": "Que veut dire « pupil » en français ?",
+   "o": [
+    "livre",
+    "règle",
+    "tableau",
+    "élève"
+   ],
+   "r": 3,
+   "e": "Pupil = élève."
+  },
+  {
+   "q": "Que veut dire « pen » en français ?",
+   "o": [
+    "professeur",
+    "stylo",
+    "élève",
+    "tableau"
+   ],
+   "r": 1,
+   "e": "Pen = stylo."
+  },
+  {
+   "q": "Que veut dire « pencil » en français ?",
+   "o": [
+    "crayon",
+    "gomme",
+    "stylo",
+    "élève"
+   ],
+   "r": 0,
+   "e": "Pencil = crayon."
+  },
+  {
+   "q": "Que veut dire « ruler » en français ?",
+   "o": [
+    "cartable",
+    "élève",
+    "règle",
+    "livre"
+   ],
+   "r": 2,
+   "e": "Ruler = règle."
+  },
+  {
+   "q": "Que veut dire « book » en français ?",
+   "o": [
+    "livre",
+    "stylo",
+    "cartable",
+    "règle"
+   ],
+   "r": 0,
+   "e": "Book = livre."
+  },
+  {
+   "q": "Que veut dire « notebook » en français ?",
+   "o": [
+    "cahier",
+    "crayon",
+    "professeur",
+    "stylo"
+   ],
+   "r": 0,
+   "e": "Notebook = cahier."
+  },
+  {
+   "q": "Que veut dire « blackboard » en français ?",
+   "o": [
+    "crayon",
+    "élève",
+    "livre",
+    "tableau"
+   ],
+   "r": 3,
+   "e": "Blackboard = tableau."
+  },
+  {
+   "q": "Que veut dire « schoolbag » en français ?",
+   "o": [
+    "cartable",
+    "gomme",
+    "livre",
+    "professeur"
+   ],
+   "r": 0,
+   "e": "Schoolbag = cartable."
+  },
+  {
+   "q": "Que veut dire « rubber » en français ?",
+   "o": [
+    "gomme",
+    "cahier",
+    "crayon",
+    "règle"
+   ],
+   "r": 0,
+   "e": "Rubber = gomme."
+  },
+  {
+   "q": "Que veut dire « rain » en français ?",
+   "o": [
+    "pluie",
+    "étoile",
+    "mer",
+    "soleil"
+   ],
+   "r": 0,
+   "e": "Rain = pluie."
+  },
+  {
+   "q": "Que veut dire « sun » en français ?",
+   "o": [
+    "soleil",
+    "arbre",
+    "sable",
+    "mer"
+   ],
+   "r": 0,
+   "e": "Sun = soleil."
+  },
+  {
+   "q": "Que veut dire « moon » en français ?",
+   "o": [
+    "soleil",
+    "étoile",
+    "arbre",
+    "lune"
+   ],
+   "r": 3,
+   "e": "Moon = lune."
+  },
+  {
+   "q": "Que veut dire « star » en français ?",
+   "o": [
+    "soleil",
+    "arbre",
+    "mer",
+    "étoile"
+   ],
+   "r": 3,
+   "e": "Star = étoile."
+  },
+  {
+   "q": "Que veut dire « tree » en français ?",
+   "o": [
+    "lune",
+    "arbre",
+    "fleuve",
+    "soleil"
+   ],
+   "r": 1,
+   "e": "Tree = arbre."
+  },
+  {
+   "q": "Que veut dire « river » en français ?",
+   "o": [
+    "lune",
+    "étoile",
+    "sable",
+    "fleuve"
+   ],
+   "r": 3,
+   "e": "River = fleuve."
+  },
+  {
+   "q": "Que veut dire « sea » en français ?",
+   "o": [
+    "sable",
+    "arbre",
+    "mer",
+    "vent"
+   ],
+   "r": 2,
+   "e": "Sea = mer."
+  },
+  {
+   "q": "Que veut dire « sand » en français ?",
+   "o": [
+    "sable",
+    "mer",
+    "lune",
+    "pluie"
+   ],
+   "r": 0,
+   "e": "Sand = sable."
+  },
+  {
+   "q": "Que veut dire « wind » en français ?",
+   "o": [
+    "pluie",
+    "ciel",
+    "soleil",
+    "vent"
+   ],
+   "r": 3,
+   "e": "Wind = vent."
+  },
+  {
+   "q": "Que veut dire « sky » en français ?",
+   "o": [
+    "vent",
+    "sable",
+    "ciel",
+    "fleuve"
+   ],
+   "r": 2,
+   "e": "Sky = ciel."
+  },
+  {
+   "q": "Which word is it? « a person who teaches pupils »",
+   "o": [
+    "April",
+    "teacher",
+    "bathroom",
+    "uncle"
+   ],
+   "r": 1,
+   "e": "C'est teacher : professeur."
+  },
+  {
+   "q": "Which word is it? « a person who makes bread »",
+   "o": [
+    "baker",
+    "library",
+    "school",
+    "Friday"
+   ],
+   "r": 0,
+   "e": "C'est baker : boulanger."
+  },
+  {
+   "q": "Which word is it? « a person who catches fish »",
+   "o": [
+    "elephant",
+    "fisherman",
+    "ruler",
+    "dog"
+   ],
+   "r": 1,
+   "e": "C'est fisherman : pêcheur."
+  },
+  {
+   "q": "Which word is it? « a person who helps sick people in a hospital »",
+   "o": [
+    "banana",
+    "Friday",
+    "dinner",
+    "nurse"
+   ],
+   "r": 3,
+   "e": "C'est nurse : infirmier, infirmière."
+  },
+  {
+   "q": "Which word is it? « a person who drives a car, a bus or a taxi »",
+   "o": [
+    "scissors",
+    "bed",
+    "driver",
+    "grandmother"
+   ],
+   "r": 2,
+   "e": "C'est driver : chauffeur."
+  },
+  {
+   "q": "Which word is it? « a person who grows food on a farm »",
+   "o": [
+    "market",
+    "farmer",
+    "green",
+    "baker"
+   ],
+   "r": 1,
+   "e": "C'est farmer : agriculteur."
+  },
+  {
+   "q": "Which word is it? « a person who repairs cars »",
+   "o": [
+    "key",
+    "mechanic",
+    "bed",
+    "cook"
+   ],
+   "r": 1,
+   "e": "C'est mechanic : mécanicien."
+  },
+  {
+   "q": "Which word is it? « a person who makes clothes »",
+   "o": [
+    "giraffe",
+    "bed",
+    "breakfast",
+    "tailor"
+   ],
+   "r": 3,
+   "e": "C'est tailor : tailleur."
+  },
+  {
+   "q": "Which word is it? « a person who cooks food in a restaurant »",
+   "o": [
+    "April",
+    "lunch",
+    "key",
+    "cook"
+   ],
+   "r": 3,
+   "e": "C'est cook : cuisinier."
+  },
+  {
+   "q": "Which word is it? « a person who looks after sick people and is not a nurse »",
+   "o": [
+    "scissors",
+    "dinner",
+    "giraffe",
+    "doctor"
+   ],
+   "r": 3,
+   "e": "C'est doctor : médecin."
+  },
+  {
+   "q": "Which word is it? « the meal you eat in the morning »",
+   "o": [
+    "cook",
+    "giraffe",
+    "breakfast",
+    "mechanic"
+   ],
+   "r": 2,
+   "e": "C'est breakfast : petit-déjeuner."
+  },
+  {
+   "q": "Which word is it? « the meal you eat at midday »",
+   "o": [
+    "lunch",
+    "library",
+    "umbrella",
+    "baobab"
+   ],
+   "r": 0,
+   "e": "C'est lunch : déjeuner."
+  },
+  {
+   "q": "Which word is it? « the meal you eat in the evening »",
+   "o": [
+    "banana",
+    "watermelon",
+    "December",
+    "dinner"
+   ],
+   "r": 3,
+   "e": "C'est dinner : dîner."
+  },
+  {
+   "q": "Which word is it? « the room where you sleep »",
+   "o": [
+    "bedroom",
+    "watermelon",
+    "school",
+    "lunch"
+   ],
+   "r": 0,
+   "e": "C'est bedroom : chambre."
+  },
+  {
+   "q": "Which word is it? « the room where you cook »",
+   "o": [
+    "bed",
+    "key",
+    "December",
+    "kitchen"
+   ],
+   "r": 3,
+   "e": "C'est kitchen : cuisine."
+  },
+  {
+   "q": "Which word is it? « the room where you wash »",
+   "o": [
+    "bathroom",
+    "doctor",
+    "grandmother",
+    "ruler"
+   ],
+   "r": 0,
+   "e": "C'est bathroom : salle de bain."
+  },
+  {
+   "q": "Which word is it? « the place where you buy food and sell things »",
+   "o": [
+    "elephant",
+    "baobab",
+    "scissors",
+    "market"
+   ],
+   "r": 3,
+   "e": "C'est market : marché."
+  },
+  {
+   "q": "Which word is it? « the place where pupils learn »",
+   "o": [
+    "January",
+    "Friday",
+    "school",
+    "baobab"
+   ],
+   "r": 2,
+   "e": "C'est school : école."
+  },
+  {
+   "q": "Which word is it? « the place where sick people go »",
+   "o": [
+    "dinner",
+    "hospital",
+    "shoes",
+    "bathroom"
+   ],
+   "r": 1,
+   "e": "C'est hospital : hôpital."
+  },
+  {
+   "q": "Which word is it? « the place where you can borrow books »",
+   "o": [
+    "bedroom",
+    "green",
+    "library",
+    "December"
+   ],
+   "r": 2,
+   "e": "C'est library : bibliothèque."
+  },
+  {
+   "q": "Which word is it? « the day after Monday »",
+   "o": [
+    "cousin",
+    "Tuesday",
+    "farmer",
+    "rainy season"
+   ],
+   "r": 1,
+   "e": "C'est Tuesday : mardi."
+  },
+  {
+   "q": "Which word is it? « the day before Saturday »",
+   "o": [
+    "Friday",
+    "watermelon",
+    "nurse",
+    "April"
+   ],
+   "r": 0,
+   "e": "C'est Friday : vendredi."
+  },
+  {
+   "q": "Which word is it? « the first month of the year »",
+   "o": [
+    "lunch",
+    "January",
+    "dinner",
+    "driver"
+   ],
+   "r": 1,
+   "e": "C'est January : janvier."
+  },
+  {
+   "q": "Which word is it? « the last month of the year »",
+   "o": [
+    "rubber",
+    "hat",
+    "shoes",
+    "December"
+   ],
+   "r": 3,
+   "e": "C'est December : décembre."
+  },
+  {
+   "q": "Which word is it? « the month after March »",
+   "o": [
+    "ruler",
+    "scissors",
+    "April",
+    "baobab"
+   ],
+   "r": 2,
+   "e": "C'est April : avril."
+  },
+  {
+   "q": "Which word is it? « the season when it rains a lot in Senegal »",
+   "o": [
+    "baobab",
+    "cat",
+    "aunt",
+    "rainy season"
+   ],
+   "r": 3,
+   "e": "C'est rainy season : hivernage."
+  },
+  {
+   "q": "Which word is it? « the brother of your father or your mother »",
+   "o": [
+    "mechanic",
+    "fisherman",
+    "uncle",
+    "key"
+   ],
+   "r": 2,
+   "e": "C'est uncle : oncle."
+  },
+  {
+   "q": "Which word is it? « the sister of your father or your mother »",
+   "o": [
+    "baker",
+    "banana",
+    "aunt",
+    "April"
+   ],
+   "r": 2,
+   "e": "C'est aunt : tante."
+  },
+  {
+   "q": "Which word is it? « the mother of your mother »",
+   "o": [
+    "baobab",
+    "ruler",
+    "scissors",
+    "grandmother"
+   ],
+   "r": 3,
+   "e": "C'est grandmother : grand-mère."
+  },
+  {
+   "q": "Which word is it? « the son of your uncle »",
+   "o": [
+    "breakfast",
+    "cousin",
+    "Friday",
+    "giraffe"
+   ],
+   "r": 1,
+   "e": "C'est cousin : cousin."
+  },
+  {
+   "q": "Which word is it? « an animal that gives us milk »",
+   "o": [
+    "pirogue",
+    "cow",
+    "ruler",
+    "farmer"
+   ],
+   "r": 1,
+   "e": "C'est cow : vache."
+  },
+  {
+   "q": "Which word is it? « a big animal with a long nose »",
+   "o": [
+    "tailor",
+    "kitchen",
+    "dog",
+    "elephant"
+   ],
+   "r": 3,
+   "e": "C'est elephant : éléphant."
+  },
+  {
+   "q": "Which word is it? « a very tall animal with a long neck »",
+   "o": [
+    "lunch",
+    "giraffe",
+    "baker",
+    "cook"
+   ],
+   "r": 1,
+   "e": "C'est giraffe : girafe."
+  },
+  {
+   "q": "Which word is it? « an animal that lives in water and swims »",
+   "o": [
+    "fish",
+    "bedroom",
+    "December",
+    "hospital"
+   ],
+   "r": 0,
+   "e": "C'est fish : poisson."
+  },
+  {
+   "q": "Which word is it? « a small animal that says « meow » »",
+   "o": [
+    "hat",
+    "elephant",
+    "cat",
+    "key"
+   ],
+   "r": 2,
+   "e": "C'est cat : chat."
+  },
+  {
+   "q": "Which word is it? « an animal that says « woof » »",
+   "o": [
+    "fish",
+    "dog",
+    "blue",
+    "shoes"
+   ],
+   "r": 1,
+   "e": "C'est dog : chien."
+  },
+  {
+   "q": "Which word is it? « a fruit that is long and yellow »",
+   "o": [
+    "grandmother",
+    "nurse",
+    "green",
+    "banana"
+   ],
+   "r": 3,
+   "e": "C'est banana : banane."
+  },
+  {
+   "q": "Which word is it? « you use it to rub out pencil »",
+   "o": [
+    "watermelon",
+    "rubber",
+    "cook",
+    "dinner"
+   ],
+   "r": 1,
+   "e": "C'est rubber : gomme."
+  },
+  {
+   "q": "Which word is it? « you use it to draw a straight line »",
+   "o": [
+    "rubber",
+    "January",
+    "ruler",
+    "hospital"
+   ],
+   "r": 2,
+   "e": "C'est ruler : règle."
+  },
+  {
+   "q": "Which word is it? « you use it to cut paper »",
+   "o": [
+    "library",
+    "kitchen",
+    "scissors",
+    "shoes"
+   ],
+   "r": 2,
+   "e": "C'est scissors : ciseaux."
+  },
+  {
+   "q": "Which word is it? « you use it to open a door »",
+   "o": [
+    "cook",
+    "school",
+    "key",
+    "uncle"
+   ],
+   "r": 2,
+   "e": "C'est key : clé."
+  },
+  {
+   "q": "Which word is it? « you wear them on your feet »",
+   "o": [
+    "school",
+    "Tuesday",
+    "farmer",
+    "shoes"
+   ],
+   "r": 3,
+   "e": "C'est shoes : chaussures."
+  },
+  {
+   "q": "Which word is it? « you wear it on your head »",
+   "o": [
+    "April",
+    "blue",
+    "dog",
+    "hat"
+   ],
+   "r": 3,
+   "e": "C'est hat : chapeau."
+  },
+  {
+   "q": "Which word is it? « you use it when it rains »",
+   "o": [
+    "January",
+    "driver",
+    "umbrella",
+    "lunch"
+   ],
+   "r": 2,
+   "e": "C'est umbrella : parapluie."
+  },
+  {
+   "q": "Which word is it? « you sleep on it »",
+   "o": [
+    "key",
+    "fish",
+    "baker",
+    "bed"
+   ],
+   "r": 3,
+   "e": "C'est bed : lit."
+  },
+  {
+   "q": "Which word is it? « a boat used by fishermen in Senegal »",
+   "o": [
+    "green",
+    "ruler",
+    "hospital",
+    "pirogue"
+   ],
+   "r": 3,
+   "e": "C'est pirogue : pirogue."
+  },
+  {
+   "q": "Which word is it? « a big tree with a very thick trunk, common in Senegal »",
+   "o": [
+    "Tuesday",
+    "dog",
+    "uncle",
+    "baobab"
+   ],
+   "r": 3,
+   "e": "C'est baobab : baobab."
+  },
+  {
+   "q": "Which word is it? « the colour of the sky on a sunny day »",
+   "o": [
+    "scissors",
+    "blue",
+    "nurse",
+    "bed"
+   ],
+   "r": 1,
+   "e": "C'est blue : bleu."
+  },
+  {
+   "q": "Which word is it? « the colour of grass »",
+   "o": [
+    "Tuesday",
+    "green",
+    "elephant",
+    "cat"
+   ],
+   "r": 1,
+   "e": "C'est green : vert."
+  },
+  {
+   "q": "Which word is it? « a big green fruit, red inside, with black seeds »",
+   "o": [
+    "fisherman",
+    "watermelon",
+    "key",
+    "lunch"
+   ],
+   "r": 1,
+   "e": "C'est watermelon : pastèque."
+  }
+ ]
+}
