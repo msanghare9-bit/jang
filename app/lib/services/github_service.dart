@@ -1,5 +1,3 @@
-import 'package:flutter/foundation.dart';
-
 class ReleaseInfo {
   final String name;
   final int downloads;
@@ -20,10 +18,14 @@ class GithubService {
   static const String _download =
       'https://github.com/msanghare9-bit/jang/releases/latest/download';
 
-  String get shareUrl => 'https://github.com/msanghare9-bit/jang';
+  static String get shareUrl => 'https://github.com/msanghare9-bit/jang';
 
   static String get apkUrl {
     return '$_download/jang.apk';
+  }
+
+  Future<List<ReleaseInfo>> releases() async {
+    return [];
   }
 
   Future<List<ReleaseInfo>> getReleases() async {
@@ -31,6 +33,10 @@ class GithubService {
   }
 
   Future<ReleaseInfo?> getLatestRelease() async {
+    return null;
+  }
+
+  Future<ReleaseInfo?> newerVersion(String currentVersion) async {
     return null;
   }
 }
