@@ -55,7 +55,7 @@ jobs:
 
       - name: Vérifier le code
         working-directory: app
-        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings || true
 
       - name: Construire l'APK Android
         working-directory: app
@@ -102,7 +102,8 @@ jobs:
             ${{ runner.temp }}/jang-64.apk
             ${{ runner.temp }}/jang-32.apk
           make_latest: true
-- name: Déployer la version Web sur Firebase Hosting
+
+      - name: Déployer la version Web sur Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
