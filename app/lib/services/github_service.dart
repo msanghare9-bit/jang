@@ -36,7 +36,10 @@ class GithubService {
     return null;
   }
 
-  Future<ReleaseInfo?> newerVersion([String? currentVersion, {bool force = false}]) async {
+  Future<ReleaseInfo?> newerVersion([
+    String? currentVersion,
+    bool force = false,
+  ]) async {
     return null;
   }
 }
