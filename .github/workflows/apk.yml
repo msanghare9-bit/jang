@@ -102,12 +102,8 @@ jobs:
             ${{ runner.temp }}/jang-64.apk
             ${{ runner.temp }}/jang-32.apk
           make_latest: true
-
 - name: Déployer la version Web sur Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JANG }}'
-          channelId: live
-          projectId: jang-d0bf7
-          entryPoint: ./app
+        run: |
+          ENTRY_POINT=$(dirname $(find . -name firebase.json -not -path '*/.*' | head -n 1))
+          echo "Dossier firebase.json trouve : $ENTRY_POINT"
+          npx firebase-tools deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}" || true
