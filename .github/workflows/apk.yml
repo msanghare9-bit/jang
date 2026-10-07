@@ -102,6 +102,7 @@ jobs:
             ${{ runner.temp }}/jang-64.apk
             ${{ runner.temp }}/jang-32.apk
           make_latest: true
+
 - name: Déployer la version Web sur Firebase Hosting
         run: |
           ENTRY_POINT=$(dirname $(find . -name firebase.json -not -path '*/.*' | head -n 1))
