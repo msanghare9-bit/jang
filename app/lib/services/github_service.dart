@@ -1,18 +1,36 @@
 import 'package:flutter/foundation.dart';
-import 'dart:ffi' if (dart.library.html) 'dart:html' show Abi; // Import conditionnel ou neutralisé
+
+class ReleaseInfo {
+  final String name;
+  final int downloads;
+  final String publishedAt;
+
+  ReleaseInfo({
+    required this.name,
+    required this.downloads,
+    required this.publishedAt,
+  });
+}
 
 class GithubService {
-  static const String _download = 'https://github.com/msanghare9-bit/jang/releases/latest/download';
+  static final GithubService instance = GithubService._internal();
+
+  GithubService._internal();
+
+  static const String _download =
+      'https://github.com/msanghare9-bit/jang/releases/latest/download';
+
+  String get shareUrl => 'https://github.com/msanghare9-bit/jang';
 
   static String get apkUrl {
-    if (kIsWeb) {
-      return '$_download/jang.apk';
-    }
-    try {
-      final abi = Abi.current();
-      if (abi.toString().contains('arm64')) return '$_download/jang-64.apk';
-      if (abi.toString().contains('arm')) return '$_download/jang-32.apk';
-    } catch (_) {}
     return '$_download/jang.apk';
+  }
+
+  Future<List<ReleaseInfo>> getReleases() async {
+    return [];
+  }
+
+  Future<ReleaseInfo?> getLatestRelease() async {
+    return null;
   }
 }
