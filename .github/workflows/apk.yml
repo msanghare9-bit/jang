@@ -65,7 +65,7 @@ jobs:
           JANG_KEY_ALIAS: jang
         run: |
           if [ -n "$KEYSTORE_B64" ]; then
-            echo "$KEYSTORE_B64" \vert{} tr -d ' \r\n' \vert{} base64 -d > "$RUNNER_TEMP/jang.jks"
+            echo "$KEYSTORE_B64" | tr -d ' \r\n' | base64 -d > "$RUNNER_TEMP/jang.jks"
             export JANG_KEYSTORE_PATH="$RUNNER_TEMP/jang.jks"
             echo "SIGNED=1" >> "$GITHUB_ENV"
           else
@@ -73,7 +73,7 @@ jobs:
           fi
           VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: *//; s/+.*//')
           BUILD=${{ github.run_number }}
-          sed -i "s/^const String appVersion = .*/const String appVersion = '$VERSION';/; s/^const int appBuild = .*/const int appBuild =$BUILD;/" lib/version.dart
+          sed -i "s/^const String appVersion = .*/const String appVersion = '$VERSION';/; s/^const int appBuild = .*/const int appBuild = $BUILD;/" lib/version.dart
           OPTS="--release --build-name=$VERSION --build-number=$BUILD --obfuscate --split-debug-info=$RUNNER_TEMP/symbols"
           
           flutter build apk $OPTS --split-per-abi --target-platform android-arm,android-arm64
@@ -96,12 +96,17 @@ jobs:
         with:
           tag_name: v${{ env.VERSION }}-${{ env.BUILD }}
           name: Jàng ${{ env.VERSION }} (${{ env.BUILD }})
-          body: Version ${{ env.VERSION }}, construction${{ env.BUILD }}.
+          body: Version ${{ env.VERSION }}, construction ${{ env.BUILD }}.
           files: |
             ${{ runner.temp }}/jang.apk
-            ${{ runner.temp }}/jang-64.apk${{ runner.temp }}/jang-32.apk
+            ${{ runner.temp }}/jang-64.apk
+            ${{ runner.temp }}/jang-32.apk
           make_latest: true
 
       - name: Déployer la version Web sur Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
-        with
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JANG }}'
+          channelId: live
+          projectId: jang-d0bf7
