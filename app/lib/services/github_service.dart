@@ -36,18 +36,10 @@ class GithubService {
     return null;
   }
 
-  Future<ReleaseInfo?> newerVersion([
+  Future<ReleaseInfo?> newerVersion({
     String? currentVersion,
     bool force = false,
-  ]) async {
+  }) async {
     return null;
-  }
-
-  // Permet de capturer les appels avec arguments nommés comme newerVersion(force: true)
-  noSuchMethod(Invocation invocation) {
-    if (invocation.memberName == #newerVersion) {
-      return Future<ReleaseInfo?>.value(null);
-    }
-    return super.noSuchMethod(invocation);
   }
 }
