@@ -36,10 +36,10 @@ class GithubService {
     return null;
   }
 
-  Future<ReleaseInfo?> newerVersion({
-    String? currentVersion,
-    bool force = false,
-  }) async {
+  Future<ReleaseInfo?> newerVersion([
+    dynamic arg1,
+    dynamic arg2,
+  ]) async {
     return null;
   }
 }
