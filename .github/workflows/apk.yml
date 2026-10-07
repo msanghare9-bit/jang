@@ -1,4 +1,4 @@
-name: Construire l'APK
+name: Construire l'APK et Déployer le Web
 
 on:
   push:
@@ -39,7 +39,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          # 3.32 : dernière version qui accepte Android 6 (les suivantes exigent Android 7)
           flutter-version: '3.32.8'
           cache: true
 
@@ -47,7 +46,7 @@ jobs:
         working-directory: app
         run: |
           flutter --version
-          flutter create . --platforms android --org sn.jang --project-name jang
+          flutter create . --platforms android,web --org sn.jang --project-name jang
           rm -rf test
           python3 tool/patch_android.py
           bash tool/fetch_fonts.sh
@@ -58,7 +57,7 @@ jobs:
         working-directory: app
         run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
-      - name: Construire l'APK
+      - name: Construire l'APK Android
         working-directory: app
         env:
           KEYSTORE_B64: ${{ secrets.JANG_KEYSTORE }}
@@ -76,18 +75,22 @@ jobs:
           BUILD=${{ github.run_number }}
           sed -i "s/^const String appVersion = .*/const String appVersion = '$VERSION';/; s/^const int appBuild = .*/const int appBuild = $BUILD;/" lib/version.dart
           OPTS="--release --build-name=$VERSION --build-number=$BUILD --obfuscate --split-debug-info=$RUNNER_TEMP/symbols"
-          # Un fichier léger par type de processeur (mises à jour depuis l'application)
+          
           flutter build apk $OPTS --split-per-abi --target-platform android-arm,android-arm64
           cp build/app/outputs/flutter-apk/app-arm64-v8a-release.apk "$RUNNER_TEMP/jang-64.apk"
           cp build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk "$RUNNER_TEMP/jang-32.apk"
-          # Un fichier universel (partage, première installation, émulateurs comme BlueStacks)
+          
           flutter build apk $OPTS --target-platform android-arm,android-arm64,android-x64
           cp build/app/outputs/flutter-apk/app-release.apk "$RUNNER_TEMP/jang.apk"
           ls -la "$RUNNER_TEMP"/*.apk
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "BUILD=$BUILD" >> "$GITHUB_ENV"
 
-      - name: Publier dans Releases
+      - name: Construire la version Web (PWA)
+        working-directory: app
+        run: flutter build web --release
+
+      - name: Publier les APKs dans GitHub Releases
         if: env.SIGNED == '1'
         uses: softprops/action-gh-release@v2
         with:
@@ -99,3 +102,11 @@ jobs:
             ${{ runner.temp }}/jang-64.apk
             ${{ runner.temp }}/jang-32.apk
           make_latest: true
+
+      - name: Déployer la version Web sur Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JANG }}'
+          channelId: live
+          entryPoint: ./app
