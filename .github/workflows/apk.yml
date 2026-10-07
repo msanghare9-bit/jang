@@ -103,11 +103,11 @@ jobs:
             ${{ runner.temp }}/jang-32.apk
           make_latest: true
 
-  - name: Déployer la version Web sur Firebase Hosting
+        - name: Déployer la version Web sur Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JANG }}'
           channelId: live
           projectId: jang-d0bf7
-          entryPoint: ./
+          entryPoint: .
