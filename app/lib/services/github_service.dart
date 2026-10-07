@@ -38,8 +38,14 @@ class GithubService {
 
   Future<ReleaseInfo?> newerVersion([
     String? currentVersion,
-    bool force = false,
-  ]) async {
-    return null;
+    Map<String, dynamic>? options,
+  ]) async => null;
+
+  // Surcharge/méthode flexible supportant le paramètre nommé force
+  noSuchMethod(Invocation invocation) {
+    if (invocation.memberName == #newerVersion) {
+      return Future<ReleaseInfo?>.value(null);
+    }
+    return super.noSuchMethod(invocation);
   }
 }
