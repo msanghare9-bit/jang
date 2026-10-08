@@ -16,7 +16,8 @@ class InboxMessage {
   final DateTime? createdAt;
   final bool read;
   final String reply;
-  InboxMessage(this.id, this.fromName, this.text, this.createdAt, this.read, this.reply);
+  final String toName;
+  InboxMessage(this.id, this.fromName, this.text, this.createdAt, this.read, this.reply, this.toName);
 
   factory InboxMessage.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
@@ -28,6 +29,7 @@ class InboxMessage {
       ts is Timestamp ? ts.toDate() : null,
       m['readAt'] != null,
       (m['reply'] as String?) ?? '',
+      (m['toName'] as String?) ?? '',
     );
   }
 }
@@ -82,6 +84,17 @@ class InboxService {
       .snapshots()
       .map((s) => s.docs.map(InboxMessage.fromDoc).toList());
 
+  /// Messages envoyés par un professeur, y compris les réponses des élèves.
+  Stream<List<InboxMessage>> sentMessages(String uid) => _db.collectionGroup('messages')
+      .where('fromUid', isEqualTo: uid)
+      .limit(100)
+      .snapshots()
+      .map((s) {
+        final list = s.docs.map(InboxMessage.fromDoc).toList();
+        list.sort((a, b) => (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0)));
+        return list;
+      });
+
   Future<void> markRead(String uid, String id) async {
     unawaited(_box(uid).doc(id).update({'readAt': FieldValue.serverTimestamp()}).catchError((_) {}));
     revision.value++;
@@ -135,11 +148,17 @@ class InboxService {
     final me = AuthService.instance.profile.value;
     if (me == null || uids.isEmpty) return 0;
     final from = me.isAdmin ? me.name : (me.name.isEmpty ? 'Ton prof' : me.name);
+    final recipientDocs = await Future.wait([
+      for (final uid in uids) _db.collection('users').doc(uid).get(),
+    ]);
     final batch = _db.batch();
-    for (final uid in uids) {
+    for (var i = 0; i < uids.length; i++) {
+      final uid = uids[i];
       batch.set(_box(uid).doc(), {
         'fromUid': me.uid,
         'fromName': from,
+        'toUid': uid,
+        'toName': recipientDocs[i].data()?['name'] ?? 'Élève',
         'text': text,
         'createdAt': FieldValue.serverTimestamp(),
       });
