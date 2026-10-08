@@ -1,316 +1,316 @@
 {
   "questions": [
     {
-      "q": "Quel est un synonyme de « joyeux » ?",
+      "q": "Quel est un synonyme anglais de “happy” ?",
       "o": [
-        "triste",
-        "heureux",
-        "fatigué",
-        "fâché"
+        "glad",
+        [
+          "sad",
+          "angry",
+          "tired"
+        ],
+        "“Glad” veut aussi dire heureux."
       ],
-      "r": 1,
-      "e": "« Heureux » exprime la joie.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est un synonyme de « rapide » ?",
+      "q": "Quel est un synonyme anglais de “small” ?",
       "o": [
-        "lent",
-        "vite",
-        "rapide",
-        "fragile"
+        [
+          "tall",
+          "wide",
+          "heavy"
+        ],
+        "little",
+        "“Little” veut dire petit."
       ],
-      "r": 2,
-      "e": "« Rapide » signifie qui va vite.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est un synonyme de « commencer » ?",
+      "q": "Quel est un synonyme anglais de “big” ?",
       "o": [
-        "débuter",
-        "finir",
-        "cacher",
-        "attendre"
+        [
+          "tiny",
+          "short",
+          "weak"
+        ],
+        "“Large” veut dire grand ou large.",
+        "large"
       ],
-      "r": 0,
-      "e": "« Commencer » signifie débuter.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est un synonyme de « joli » ?",
+      "q": "Quel est un synonyme anglais de “fast” ?",
       "o": [
-        "beau",
-        "sale",
-        "bruyant",
-        "vide"
+        [
+          "slow",
+          "late",
+          "careful"
+        ],
+        "“Quick” veut dire rapide.",
+        "quick"
       ],
-      "r": 0,
-      "e": "« Beau » peut remplacer « joli ».",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est un synonyme de « regarder » ?",
+      "q": "Quel est un synonyme anglais de “smart” ?",
       "o": [
-        "écouter",
-        "observer",
-        "courir",
-        "parler"
+        "clever",
+        [
+          "lazy",
+          "quiet",
+          "young"
+        ],
+        "“Clever” veut dire intelligent."
       ],
-      "r": 1,
-      "e": "« Observer » signifie regarder attentivement.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est un synonyme de « maison » ?",
+      "q": "Quel est un synonyme anglais de “begin” ?",
       "o": [
-        "demeure",
-        "route",
-        "école",
-        "rivière"
+        [
+          "stop",
+          "wait",
+          "close"
+        ],
+        "start",
+        "“Start” veut dire commencer."
       ],
-      "r": 0,
-      "e": "Une demeure est un lieu où l'on habite.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est un synonyme de « terminer » ?",
+      "q": "Quel est un synonyme anglais de “end” ?",
       "o": [
-        "ouvrir",
-        "achever",
-        "choisir",
-        "porter"
+        [
+          "open",
+          "break",
+          "follow"
+        ],
+        "“Finish” veut dire terminer.",
+        "finish"
       ],
-      "r": 1,
-      "e": "« Achever » signifie terminer.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est un synonyme de « parler » ?",
+      "q": "Quel est un synonyme anglais de “sick” ?",
       "o": [
-        "marcher",
-        "dire",
-        "dormir",
-        "lire"
+        [
+          "well",
+          "safe",
+          "full"
+        ],
+        "“Ill” veut dire malade.",
+        "ill"
       ],
-      "r": 1,
-      "e": "« Dire » signifie exprimer quelque chose avec des mots.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est un synonyme de « peur » ?",
+      "q": "Quel est un synonyme anglais de “easy” ?",
       "o": [
-        "crainte",
-        "plaisir",
-        "colère",
-        "repos"
-      ],
-      "r": 0,
-      "e": "La crainte est un sentiment de peur.",
-      "d": "synonymes",
-      "n": "debutant"
-    },
-    {
-      "q": "Quel est un synonyme de « aider » ?",
-      "o": [
-        "secourir",
-        "gêner",
-        "oublier",
-        "perdre"
-      ],
-      "r": 0,
-      "e": "« Secourir » signifie aider quelqu'un.",
-      "d": "synonymes",
-      "n": "debutant"
-    },
-    {
-      "q": "Quel est un synonyme de « difficile » ?",
-      "o": [
-        "compliqué",
         "simple",
-        "doux",
-        "léger"
+        [
+          "difficult",
+          "expensive",
+          "early"
+        ],
+        "“Simple” veut dire facile ici."
       ],
-      "r": 0,
-      "e": "« Compliqué » signifie difficile à faire ou comprendre.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est un synonyme de « calme » ?",
+      "q": "Quel est un synonyme anglais de “angry” ?",
       "o": [
-        "paisible",
-        "agité",
-        "pressé",
-        "méchant"
+        [
+          "glad",
+          "shy",
+          "hungry"
+        ],
+        "mad",
+        "“Mad” peut vouloir dire fâché."
       ],
-      "r": 0,
-      "e": "« Paisible » décrit ce qui est calme.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est un synonyme de « ami » ?",
+      "q": "Quel est un synonyme anglais de “quiet” ?",
       "o": [
-        "camarade",
-        "ennemi",
-        "voisinage",
-        "maître"
+        [
+          "noisy",
+          "busy",
+          "bright"
+        ],
+        "“Silent” veut dire silencieux.",
+        "silent"
       ],
-      "r": 0,
-      "e": "Un camarade est une personne avec qui l'on partage des activités.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est un synonyme de « fort » ?",
+      "q": "Quel est un synonyme anglais de “near” ?",
       "o": [
-        "puissant",
-        "faible",
-        "mince",
-        "court"
+        [
+          "far",
+          "behind",
+          "across"
+        ],
+        "“Close” peut vouloir dire proche.",
+        "close"
       ],
-      "r": 0,
-      "e": "« Puissant » peut signifier fort.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est un synonyme de « choisir » ?",
+      "q": "Quel est un synonyme anglais de “gift” ?",
       "o": [
-        "sélectionner",
-        "jeter",
-        "plier",
-        "fermer"
+        "present",
+        [
+          "letter",
+          "price",
+          "shop"
+        ],
+        "“Present” veut aussi dire cadeau."
       ],
-      "r": 0,
-      "e": "« Sélectionner » signifie choisir.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est un synonyme de « raconter » ?",
+      "q": "Quel est un synonyme anglais de “child” ?",
       "o": [
-        "narrer",
-        "effacer",
-        "cuisiner",
-        "compter"
+        [
+          "parent",
+          "friend",
+          "teacher"
+        ],
+        "kid",
+        "“Kid” veut dire enfant."
       ],
-      "r": 0,
-      "e": "« Narrer » signifie raconter.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est un synonyme de « content » ?",
+      "q": "Quel est un synonyme anglais de “shop” ?",
       "o": [
-        "satisfait",
-        "inquiet",
-        "malade",
-        "vide"
+        [
+          "school",
+          "street",
+          "station"
+        ],
+        "“Store” veut aussi dire magasin.",
+        "store"
       ],
-      "r": 0,
-      "e": "« Satisfait » exprime le contentement.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est un synonyme de « finir » ?",
+      "q": "Quel est un synonyme anglais de “buy” ?",
       "o": [
-        "achever",
-        "allumer",
-        "ouvrir",
-        "commencer"
+        [
+          "sell",
+          "borrow",
+          "lend"
+        ],
+        "“Purchase” veut dire acheter.",
+        "purchase"
       ],
-      "r": 0,
-      "e": "« Achever » signifie finir.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est un synonyme de « demander » ?",
+      "q": "Quel est un synonyme anglais de “speak” ?",
       "o": [
-        "questionner",
-        "répondre",
-        "refuser",
-        "montrer"
+        "talk",
+        [
+          "listen",
+          "write",
+          "read"
+        ],
+        "“Talk” veut dire parler."
       ],
-      "r": 0,
-      "e": "« Questionner » signifie demander des renseignements.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est un synonyme de « immense » ?",
+      "q": "Quel est un synonyme anglais de “answer” ?",
       "o": [
-        "gigantesque",
-        "minuscule",
-        "étroit",
-        "ordinaire"
+        [
+          "question",
+          "story",
+          "lesson"
+        ],
+        "reply",
+        "“Reply” veut dire répondre ou réponse."
       ],
-      "r": 0,
-      "e": "« Gigantesque » signifie très grand.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est un synonyme de « courageux » ?",
+      "q": "Quel est un synonyme anglais de “beautiful” ?",
       "o": [
-        "brave",
-        "peureux",
-        "paresseux",
-        "timide"
+        [
+          "ugly",
+          "noisy",
+          "empty"
+        ],
+        "“Pretty” veut dire joli.",
+        "pretty"
       ],
-      "r": 0,
-      "e": "Une personne brave montre du courage.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est un synonyme de « propre » ?",
+      "q": "Quel est un synonyme anglais de “funny” ?",
       "o": [
-        "net",
-        "sale",
-        "cassé",
-        "mouillé"
+        [
+          "serious",
+          "sad",
+          "slow"
+        ],
+        "“Amusing” veut dire amusant.",
+        "amusing"
       ],
-      "r": 0,
-      "e": "« Net » signifie propre.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est un synonyme de « fabriquer » ?",
+      "q": "Quel est un synonyme anglais de “job” ?",
       "o": [
-        "construire",
-        "détruire",
-        "vendre",
-        "perdre"
+        "work",
+        [
+          "rest",
+          "game",
+          "meal"
+        ],
+        "“Work” peut vouloir dire travail ou emploi."
       ],
-      "r": 0,
-      "e": "« Construire » signifie fabriquer ou bâtir.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est un synonyme de « silencieux » ?",
+      "q": "Quel est un synonyme anglais de “choose” ?",
       "o": [
-        "muet",
-        "bruyant",
-        "joyeux",
-        "rapide"
+        [
+          "refuse",
+          "forget",
+          "carry"
+        ],
+        "select",
+        "“Select” veut dire choisir."
       ],
-      "r": 0,
-      "e": "« Muet » ou « silencieux » décrit l'absence de bruit.",
-      "d": "synonymes",
-      "n": "debutant"
+      "r": 1
+    },
+    {
+      "q": "Quel est un synonyme anglais de “help” ?",
+      "o": [
+        [
+          "hurt",
+          "hide",
+          "leave"
+        ],
+        "“Assist” veut dire aider.",
+        "assist"
+      ],
+      "r": 2
+    },
+    {
+      "q": "Quel est un synonyme anglais de “home” ?",
+      "o": [
+        [
+          "road",
+          "market",
+          "class"
+        ],
+        "“House” peut désigner la maison où l’on vit.",
+        "house"
+      ],
+      "r": 3
     }
   ]
 }
