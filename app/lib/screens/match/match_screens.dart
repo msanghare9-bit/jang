@@ -261,6 +261,14 @@ class _MatchFinderScreenState extends State<MatchFinderScreen> {
               padding: const EdgeInsets.all(16),
               children: [
                 const Text('Choisis un match. Son hôte devra accepter ta demande.'),
+                const SizedBox(height: 8),
+                FutureBuilder<int>(
+                  future: MatchService.instance.completedMatchCount(),
+                  builder: (context, count) => Text(
+                    '${count.data ?? '…'} matchs joués au total · ${matches.length} en cours',
+                    style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.snGreen),
+                  ),
+                ),
                 const SizedBox(height: 10),
                 for (final match in matches)
                   Card(
@@ -270,7 +278,18 @@ class _MatchFinderScreenState extends State<MatchFinderScreen> {
                         child: Icon(Icons.sensors, color: Colors.white),
                       ),
                       title: Text(match.title.isEmpty ? 'Match de ${match.hostName}' : match.title),
-                      subtitle: Text('Hôte : ${match.hostName} · ${match.questions.length} questions'),
+                      subtitle: StreamBuilder<List<MatchPlayer>>(
+                        stream: MatchService.instance.players(match.id),
+                        builder: (context, playersSnap) {
+                          final players = playersSnap.data ?? const <MatchPlayer>[];
+                          final names = players.map((p) => p.name).join(', ');
+                          return Text(
+                            'Hôte : ${match.hostName} · ${players.length} joueur${players.length == 1 ? '' : 's'}${names.isEmpty ? '' : ' : $names'}',
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          );
+                        },
+                      ),
                       trailing: FilledButton(
                         onPressed: _busy.contains(match.id) ? null : () => _observe(match),
                         child: Text(_busy.contains(match.id) ? 'Envoi…' : 'Demander'),
