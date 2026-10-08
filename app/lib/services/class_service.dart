@@ -297,8 +297,10 @@ class ClassService {
     if (existing.any((item) => item.sourceLessonId == lesson.id)) {
       throw Exception('Cette leçon est déjà dans la classe.');
     }
+    final itemRef = _items.doc();
+    final exportRef = _db.collection('courseExports').doc();
     final item = ClassItem(
-      id: '',
+      id: itemRef.id,
       classId: room.id,
       ownerUid: prof.uid,
       ownerName: prof.name,
@@ -313,8 +315,14 @@ class ClassService {
       quiz: lesson.quiz,
       visibility: 'prive',
     );
-    final itemId = await saveItem(item);
-    await _db.collection('courseExports').add({
+    final now = FieldValue.serverTimestamp();
+    final batch = _db.batch();
+    batch.set(itemRef, {
+      ...item.toMap(),
+      'createdAt': now,
+      'updatedAt': now,
+    });
+    batch.set(exportRef, {
       'exportedBy': prof.uid,
       'exporterName': prof.publicName,
       'classId': room.id,
@@ -325,10 +333,13 @@ class ClassService {
       'lessonId': lesson.id,
       'lessonTitle': lesson.title,
       'sourceOwnerName': 'Contenu officiel Jàng',
-      'classItemId': itemId,
-      'createdAt': FieldValue.serverTimestamp(),
+      'classItemId': itemRef.id,
+      'createdAt': now,
     });
-    return itemId;
+    await batch.commit();
+    revision.value++;
+    unawaited(_notifyClass(item));
+    return itemRef.id;
   }
 
   Future<void> _notifyClass(ClassItem item) async {
