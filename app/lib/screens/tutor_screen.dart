@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models.dart';
+import '../services/auth_service.dart';
 import '../services/tutor_service.dart';
 import '../theme.dart';
 import '../widgets/characters.dart';
@@ -11,7 +12,8 @@ import '../widgets/consent.dart';
 class TutorScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
-  const TutorScreen({super.key, required this.lesson, required this.subject});
+  final bool homeworkCoach;
+  const TutorScreen({super.key, required this.lesson, required this.subject, this.homeworkCoach = false});
 
   @override
   State<TutorScreen> createState() => _TutorScreenState();
@@ -47,7 +49,14 @@ class _TutorScreenState extends State<TutorScreen> {
     }
     if (!await ensureParentConsent(context)) return;
     setState(() => _busy = true);
-    final r = await TutorService.instance.ask(widget.lesson, q, previousAnswer: simplerOf);
+    final firstName = AuthService.instance.profile.value?.firstName ?? '';
+    final prompt = widget.homeworkCoach
+        ? 'Tu es Kocc Bàrma, le coach bienveillant de ${firstName.isEmpty ? 'cet élève' : firstName}. '
+            'Aide-le à réfléchir au devoir sans jamais donner la réponse finale ni faire l’exercice à sa place. '
+            'Propose un indice, une petite étape ou une question qui le guide. Encourage-le et appelle-le par son prénom. '
+            'Énoncé du devoir : « ${widget.lesson.body} ». Question de l’élève : « $q »'
+        : q;
+    final r = await TutorService.instance.ask(widget.lesson, prompt, previousAnswer: simplerOf);
     if (!mounted) return;
     setState(() {
       _busy = false;
@@ -86,11 +95,15 @@ class _TutorScreenState extends State<TutorScreen> {
                   decoration: BoxDecoration(
                       color: JangColors.noteBg, borderRadius: BorderRadius.circular(10)),
                   child: Text(
-                    'Salut ! Moi, c\'est Kocc Barma, le prof qui a lu tous les livres de la bibliothèque '
-                    '(et qui en a fait tomber beaucoup). Je suis une intelligence artificielle : je peux me tromper, '
-                    'vérifie avec ton professeur. '
-                    'Je réponds sur la leçon « ${widget.lesson.title} », en français simple. '
-                    '${TutorService.perDay} questions par jour.',
+                    widget.homeworkCoach
+                        ? 'Salut ${AuthService.instance.profile.value?.firstName ?? ''} ! Moi, c\'est Kocc Bàrma. '
+                            'Je vais t’aider à avancer dans ton devoir avec des indices et des questions. '
+                            'Je ne vais pas écrire la réponse à ta place. Courage, tu peux y arriver !'
+                        : 'Salut ! Moi, c\'est Kocc Barma, le prof qui a lu tous les livres de la bibliothèque '
+                            '(et qui en a fait tomber beaucoup). Je suis une intelligence artificielle : je peux me tromper, '
+                            'vérifie avec ton professeur. '
+                            'Je réponds sur la leçon « ${widget.lesson.title} », en français simple. '
+                            '${TutorService.perDay} questions par jour.',
                     style: t.bodyMedium,
                   ),
                 ),
