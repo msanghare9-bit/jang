@@ -228,9 +228,11 @@ class InboxCard extends StatelessWidget {
     return StreamBuilder<List<InboxMessage>>(
       stream: InboxService.instance.myMessages(p.uid),
       builder: (context, snap) {
-        final unread = (snap.data ?? const <InboxMessage>[]).where((m) => !m.read).toList();
-        if (unread.isEmpty) return const SizedBox.shrink();
-        final m = unread.first;
+        final unread = (snap.data ?? const <InboxMessage>[]).where((m) => !m.read).length;
+        final subtitle = p.isStaff
+            ? 'Messages reçus et envoyés'
+            : unread > 0
+                ? '$unread message${unread > 1 ? 's' : ''} non lu${unread > 1 ? 's' : ''} · Messages et annonces';
         return GestureDetector(
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
           child: Container(
@@ -242,19 +244,25 @@ class InboxCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(children: [
-              const CharacterView(Chars.kocc, size: 52, moves: Moves.sway),
+              const CircleAvatar(
+                backgroundColor: JangColors.snGreen,
+                child: Icon(Icons.forum_outlined, color: Colors.white),
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(
-                      unread.length > 1
-                          ? '${unread.length} messages de ton prof'
-                          : 'Un message de ${m.fromName}',
-                      style: titleStyle(17, weight: 800)),
-                  Text(m.text, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  Text('Messagerie', style: titleStyle(17, weight: 800)),
+                  Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
                 ]),
               ),
-              const Icon(Icons.chevron_right),
+              if (unread > 0)
+                CircleAvatar(
+                  radius: 14,
+                  backgroundColor: JangColors.snGreen,
+                  child: Text('$unread', style: const TextStyle(color: Colors.white, fontSize: 12)),
+                )
+              else
+                const Icon(Icons.chevron_right),
             ]),
           ),
         );
