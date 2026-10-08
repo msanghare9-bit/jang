@@ -108,8 +108,8 @@ class _TournamentDetailScreenState extends State<TournamentDetailScreen>{
     try{
       final isPlayer=p.uid==g.player1Uid||p.uid==g.player2Uid;
       if(isPlayer){
-        final(m,error)=await MatchService.instance.joinByCode(g.code,p);if(m==null){_msg(error);return;}
-        if(!mounted)return;await Navigator.push(context,MaterialPageRoute(builder:(_)=>MatchRoomScreen(matchId:m.id)));
+        final (match,error)=await MatchService.instance.joinByCode(g.code,p);if(match==null){_msg(error);return;}
+        if(!mounted)return;await Navigator.push(context,MaterialPageRoute(builder:(_)=>MatchRoomScreen(matchId:match.id)));
       }else if(p.uid==t.hostUid){
         if(!mounted)return;await Navigator.push(context,MaterialPageRoute(builder:(_)=>MatchRoomScreen(matchId:g.matchId)));
       }else{
