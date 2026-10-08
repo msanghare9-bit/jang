@@ -7,6 +7,7 @@ import '../../models.dart';
 import '../../services/auth_service.dart';
 import '../../services/match_service.dart';
 import 'xarit_screen.dart';
+import 'tournament_screen.dart';
 import '../../services/quiz_bank.dart';
 import '../../theme.dart';
 import '../../widgets/characters.dart';
@@ -71,6 +72,17 @@ class MatchHomeScreen extends StatelessWidget {
               trailing: const Icon(Icons.chevron_right),
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (_) => const XaritScreen())),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: const CircleAvatar(backgroundColor: JangColors.snGreen,
+                  child: Icon(Icons.account_tree_outlined, color: Colors.white)),
+              title: const Text('Tournois'),
+              subtitle: const Text('Joue jusqu’à la finale ou observe un match'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const TournamentHomeScreen())),
             ),
           ),
           const SizedBox(height: 8),
@@ -535,7 +547,8 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
 class MatchRoomScreen extends StatefulWidget {
   final String matchId;
   final bool spectator;
-  const MatchRoomScreen({super.key, required this.matchId, this.spectator = false});
+  final bool tournamentFree;
+  const MatchRoomScreen({super.key, required this.matchId, this.spectator = false, this.tournamentFree = false});
 
   @override
   State<MatchRoomScreen> createState() => _MatchRoomScreenState();
@@ -744,7 +757,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
   // ---------- Salle d'attente ----------
 
   Widget _lobby(LiveMatch m) {
-    final canStart = m.hostPlays ? _players.length >= 2 : _players.isNotEmpty;
+    final canStart = m.tournamentId.isNotEmpty ? _players.length >= 2 : (m.hostPlays ? _players.length >= 2 : _players.isNotEmpty);
     return ListView(padding: const EdgeInsets.fromLTRB(16, 8, 16, 28), children: [
       Container(
         padding: const EdgeInsets.all(18),
@@ -784,7 +797,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
       if (_isHost) ...[
         const SizedBox(height: 24),
         ChunkyButton(
-          label: canStart ? 'Commencer !' : 'Il faut au moins ${m.hostPlays ? 2 : 1} joueur${m.hostPlays ? 's' : ''}',
+          label: canStart ? 'Commencer !' : 'Il faut au moins ${m.tournamentId.isNotEmpty || m.hostPlays ? 2 : 1} joueur${m.tournamentId.isNotEmpty || m.hostPlays ? 's' : ''}',
           icon: Icons.play_arrow_rounded,
           color: JangColors.success,
           onPressed: canStart ? () => _svc.ask(m, 0) : null,
