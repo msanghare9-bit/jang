@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Before a meeting, Salimata tells a joke so everyone feels relaxed. She helps ___ .",
+      "o": [
+        "break the ice",
+        "miss the boat",
+        "hit the road",
+        "keep a low profile"
+      ],
+      "r": 0,
+      "e": "Break the ice veut dire détendre l’atmosphère au début d’une rencontre."
+    },
+    {
+      "q": "After reviewing the plan together, the two teams are ___ .",
+      "o": [
+        "under the weather",
+        "on the same page",
+        "out of the blue",
+        "behind the scenes"
+      ],
+      "r": 1,
+      "e": "On the same page signifie être d’accord ou avoir la même compréhension."
+    },
+    {
+      "q": "He wanted to accept the offer, but at the last moment he ___ .",
+      "o": [
+        "kept an eye on it",
+        "called it a day",
+        "got cold feet",
+        "made ends meet"
+      ],
+      "r": 2,
+      "e": "Get cold feet veut dire perdre son assurance et hésiter."
+    },
+    {
+      "q": "“The answer is exactly right,” said the teacher. “You ___.”",
+      "o": [
+        "cut corners",
+        "missed the point",
+        "turned the tables",
+        "hit the nail on the head"
+      ],
+      "r": 3,
+      "e": "Hit the nail on the head veut dire viser juste."
+    },
+    {
+      "q": "I won't come to football today; I'm feeling ___ .",
+      "o": [
+        "under the weather",
+        "on top of the world",
+        "in hot water",
+        "over the moon"
+      ],
+      "r": 0,
+      "e": "Under the weather veut dire ne pas se sentir bien."
+    },
+    {
+      "q": "I have shared my proposal. Now ___; you can decide.",
+      "o": [
+        "the coast is clear",
+        "the ball is in your court",
+        "the tables have turned",
+        "the sky is the limit"
+      ],
+      "r": 1,
+      "e": "The ball is in your court signifie que c’est à toi d’agir ou de décider."
+    },
+    {
+      "q": "We visit that small island only ___, perhaps once every few years.",
+      "o": [
+        "at the drop of a hat",
+        "in the long run",
+        "once in a blue moon",
+        "on the dot"
+      ],
+      "r": 2,
+      "e": "Once in a blue moon signifie très rarement."
+    },
+    {
+      "q": "The phone costs far too much; it would ___ .",
+      "o": [
+        "be a piece of cake",
+        "break the ice",
+        "make a difference",
+        "cost an arm and a leg"
+      ],
+      "r": 3,
+      "e": "Cost an arm and a leg signifie coûter très cher."
+    },
+    {
+      "q": "Please ___ the children while I speak to the teacher.",
+      "o": [
+        "keep an eye on",
+        "take a rain check on",
+        "get away with",
+        "put up with"
+      ],
+      "r": 0,
+      "e": "Keep an eye on veut dire surveiller."
+    },
+    {
+      "q": "The builders used weak materials to save money; they ___ .",
+      "o": [
+        "broke even",
+        "cut corners",
+        "called it a day",
+        "made up their minds"
+      ],
+      "r": 1,
+      "e": "Cut corners signifie faire quelque chose trop vite ou à moindre coût, souvent au détriment de la qualité."
+    },
+    {
+      "q": "She answered a different question and ___ .",
+      "o": [
+        "broke the ice",
+        "kept her word",
+        "missed the point",
+        "got the hang of it"
+      ],
+      "r": 2,
+      "e": "Miss the point signifie ne pas comprendre l’idée principale."
+    },
+    {
+      "q": "I can't meet tonight, but can I ___ and meet you next week?",
+      "o": [
+        "call it a day",
+        "hit the road",
+        "turn a blind eye",
+        "take a rain check"
+      ],
+      "r": 3,
+      "e": "Take a rain check veut dire reporter une invitation à une autre fois."
+    },
+    {
+      "q": "We have finished the report for today; let's ___ .",
+      "o": [
+        "call it a day",
+        "get cold feet",
+        "break the news",
+        "make ends meet"
+      ],
+      "r": 0,
+      "e": "Call it a day signifie arrêter le travail pour aujourd’hui."
+    },
+    {
+      "q": "At first the game was difficult, but I soon ___ .",
+      "o": [
+        "got out of hand",
+        "got the hang of it",
+        "lost my touch",
+        "kept my fingers crossed"
+      ],
+      "r": 1,
+      "e": "Get the hang of something veut dire apprendre à le faire."
+    },
+    {
+      "q": "Each team member must ___ and do a fair share of the work.",
+      "o": [
+        "keep their distance",
+        "take the lead",
+        "pull their weight",
+        "break even"
+      ],
+      "r": 2,
+      "e": "Pull your weight signifie faire sa part du travail."
+    },
+    {
+      "q": "The first plan failed, so the team was ___ .",
+      "o": [
+        "on cloud nine",
+        "in the same boat",
+        "ahead of the curve",
+        "back to square one"
+      ],
+      "r": 3,
+      "e": "Back to square one signifie devoir recommencer depuis le début."
+    },
+    {
+      "q": "As a rule of thumb, save a little money each month. Here, rule of thumb means ___.",
+      "o": [
+        "a general practical guide",
+        "a strict written law",
+        "a final result",
+        "a personal secret"
+      ],
+      "r": 0,
+      "e": "A rule of thumb est une règle pratique générale."
+    },
+    {
+      "q": "The rumour may be false, so take it ___ .",
+      "o": [
+        "at face value",
+        "with a grain of salt",
+        "to heart",
+        "for granted"
+      ],
+      "r": 1,
+      "e": "Take something with a grain of salt veut dire ne pas le croire sans réserve."
+    },
+    {
+      "q": "I am ___ about whether to study law or medicine.",
+      "o": [
+        "on the same page",
+        "under the weather",
+        "in two minds",
+        "at a loose end"
+      ],
+      "r": 2,
+      "e": "In two minds signifie hésiter entre deux choix."
+    },
+    {
+      "q": "She had to ___ to finish the project before morning.",
+      "o": [
+        "break the ice",
+        "hit the road",
+        "keep a low profile",
+        "burn the midnight oil"
+      ],
+      "r": 3,
+      "e": "Burn the midnight oil signifie travailler tard dans la nuit."
+    },
+    {
+      "q": "The invitation arrived ___, just as we were leaving.",
+      "o": [
+        "out of the blue",
+        "under the weather",
+        "on the same page",
+        "in the long run"
+      ],
+      "r": 0,
+      "e": "Out of the blue veut dire de façon inattendue."
+    },
+    {
+      "q": "To ___, we need more time and a smaller budget.",
+      "o": [
+        "take a rain check",
+        "make a long story short",
+        "get cold feet",
+        "cut corners"
+      ],
+      "r": 1,
+      "e": "Make a long story short sert à résumer brièvement."
+    },
+    {
+      "q": "The advice is free, with ___; you do not have to buy anything.",
+      "o": [
+        "a piece of cake",
+        "a long shot",
+        "no strings attached",
+        "a close call"
+      ],
+      "r": 2,
+      "e": "No strings attached signifie sans condition cachée."
+    },
+    {
+      "q": "He hinted that the plan was cancelled, but I didn't ___ .",
+      "o": [
+        "break the ice",
+        "pull my weight",
+        "make the most of it",
+        "get the message"
+      ],
+      "r": 3,
+      "e": "Get the message veut dire comprendre l’idée ou le sous-entendu."
+    }
+  ]
+}
