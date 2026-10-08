@@ -129,7 +129,7 @@ class SubjectsTab extends StatefulWidget {
 class _SubjectsTabState extends State<SubjectsTab> {
   late Future<_SubjectsData> _future;
   late String _welcome = Cheer.welcome(_firstName(), EngagementService.instance.streak);
-  late (String, String, bool) _tip = _tips[DateTime.now().hour % _tips.length];
+  late (String, String, bool) _tip = _tips[math.Random().nextInt(_tips.length)];
   HomeConfig _config = HomeConfig();
 
   static const _tips = <(String, String, bool)>[
