@@ -2,7 +2,7 @@
   "name": "jang-functions",
   "description": "Trusted server actions for Jàng live matches",
   "private": true,
-  "engines": { "node": "20" },
+  "engines": { "node": "22" },
   "main": "index.js",
   "scripts": { "lint": "node --check index.js" },
   "dependencies": {
