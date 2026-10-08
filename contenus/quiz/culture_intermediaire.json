@@ -9,7 +9,9 @@
         "Banjul"
       ],
       "r": 0,
-      "e": "Dakar is the capital of Senegal."
+      "e": "Dakar is the capital of Senegal.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which ocean lies west of Senegal?",
@@ -20,7 +22,9 @@
         "The Pacific Ocean"
       ],
       "r": 1,
-      "e": "Senegal has a coastline on the Atlantic Ocean."
+      "e": "Senegal has a coastline on the Atlantic Ocean.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which language is the official language of Senegal?",
@@ -31,7 +35,9 @@
         "Spanish"
       ],
       "r": 2,
-      "e": "French is Senegal’s official language; many national languages are also spoken."
+      "e": "French is Senegal’s official language; many national languages are also spoken.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Gorée Island is located near which city?",
@@ -42,7 +48,9 @@
         "Dakar"
       ],
       "r": 3,
-      "e": "Gorée Island lies close to Dakar."
+      "e": "Gorée Island lies close to Dakar.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which large river forms part of Senegal’s northern border?",
@@ -53,7 +61,9 @@
         "The Gambia River"
       ],
       "r": 0,
-      "e": "The Senegal River runs along part of the border with Mauritania."
+      "e": "The Senegal River runs along part of the border with Mauritania.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which Senegalese national park is known for wildlife and lies in the southeast?",
@@ -64,7 +74,9 @@
         "Yellowstone National Park"
       ],
       "r": 1,
-      "e": "Niokolo-Koba is a major national park in southeastern Senegal."
+      "e": "Niokolo-Koba is a major national park in southeastern Senegal.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which country is directly south of Senegal and is surrounded by Senegal on most sides?",
@@ -75,7 +87,9 @@
         "Burkina Faso"
       ],
       "r": 2,
-      "e": "The Gambia follows the Gambia River and is surrounded by Senegal except for its Atlantic coast."
+      "e": "The Gambia follows the Gambia River and is surrounded by Senegal except for its Atlantic coast.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is the name of the westernmost point of mainland Africa, near Dakar?",
@@ -86,7 +100,9 @@
         "Pointe des Almadies"
       ],
       "r": 3,
-      "e": "Pointe des Almadies is near Dakar on the western edge of mainland Africa."
+      "e": "Pointe des Almadies is near Dakar on the western edge of mainland Africa.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which Senegalese region is especially known for its mangroves and river delta?",
@@ -97,7 +113,9 @@
         "The Great Lakes"
       ],
       "r": 0,
-      "e": "The Sine-Saloum area includes an important delta and mangrove ecosystem."
+      "e": "The Sine-Saloum area includes an important delta and mangrove ecosystem.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is a baobab?",
@@ -108,7 +126,9 @@
         "A kind of boat"
       ],
       "r": 1,
-      "e": "The baobab is a large tree found in Africa."
+      "e": "The baobab is a large tree found in Africa.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which country is famous for the ancient city of Timbuktu?",
@@ -119,7 +139,9 @@
         "Tunisia"
       ],
       "r": 2,
-      "e": "Timbuktu is a historic city in Mali."
+      "e": "Timbuktu is a historic city in Mali.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which African country has the city of Mombasa on its Indian Ocean coast?",
@@ -130,7 +152,9 @@
         "Kenya"
       ],
       "r": 3,
-      "e": "Mombasa is a coastal city in Kenya."
+      "e": "Mombasa is a coastal city in Kenya.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Mount Kilimanjaro is in which country?",
@@ -141,7 +165,9 @@
         "Senegal"
       ],
       "r": 0,
-      "e": "Mount Kilimanjaro is in northeastern Tanzania."
+      "e": "Mount Kilimanjaro is in northeastern Tanzania.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which waterfall lies on the border of Zambia and Zimbabwe?",
@@ -152,7 +178,9 @@
         "Ouzoud Falls"
       ],
       "r": 1,
-      "e": "Victoria Falls is on the Zambezi River at the Zambia–Zimbabwe border."
+      "e": "Victoria Falls is on the Zambezi River at the Zambia–Zimbabwe border.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which is the largest hot desert in the world?",
@@ -163,7 +191,9 @@
         "The Atacama"
       ],
       "r": 2,
-      "e": "The Sahara is the world’s largest hot desert."
+      "e": "The Sahara is the world’s largest hot desert.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is the capital of Kenya?",
@@ -174,7 +204,9 @@
         "Nairobi"
       ],
       "r": 3,
-      "e": "Nairobi is the capital of Kenya."
+      "e": "Nairobi is the capital of Kenya.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which sea separates northeastern Africa from the Arabian Peninsula?",
@@ -185,7 +217,9 @@
         "The North Sea"
       ],
       "r": 0,
-      "e": "The Red Sea lies between northeastern Africa and the Arabian Peninsula."
+      "e": "The Red Sea lies between northeastern Africa and the Arabian Peninsula.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which country became independent from Britain in 1957 and was formerly called the Gold Coast?",
@@ -196,7 +230,9 @@
         "Algeria"
       ],
       "r": 1,
-      "e": "The former Gold Coast became independent Ghana in 1957."
+      "e": "The former Gold Coast became independent Ghana in 1957.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Lake Victoria borders Kenya, Uganda and which other country?",
@@ -207,7 +243,9 @@
         "Senegal"
       ],
       "r": 2,
-      "e": "Lake Victoria is shared by Tanzania, Uganda and Kenya."
+      "e": "Lake Victoria is shared by Tanzania, Uganda and Kenya.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which African country is home to the ancient rock-hewn churches of Lalibela?",
@@ -218,7 +256,9 @@
         "Ethiopia"
       ],
       "r": 3,
-      "e": "Lalibela’s rock-hewn churches are in Ethiopia."
+      "e": "Lalibela’s rock-hewn churches are in Ethiopia.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is the main purpose of a national park?",
@@ -229,7 +269,9 @@
         "To stop people learning"
       ],
       "r": 0,
-      "e": "National parks help conserve habitats and wildlife."
+      "e": "National parks help conserve habitats and wildlife.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which animal is the largest land mammal in Africa?",
@@ -240,7 +282,9 @@
         "The rhinoceros"
       ],
       "r": 0,
-      "e": "The African elephant is the largest land mammal on land."
+      "e": "The African elephant is the largest land mammal on land.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which continent is directly north of Senegal across the Mediterranean Sea?",
@@ -251,7 +295,9 @@
         "Antarctica"
       ],
       "r": 2,
-      "e": "Europe lies north of Africa across the Mediterranean Sea."
+      "e": "Europe lies north of Africa across the Mediterranean Sea.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which river flows through Egypt and empties into the Mediterranean Sea?",
@@ -262,7 +308,9 @@
         "The Nile"
       ],
       "r": 3,
-      "e": "The Nile flows north through Egypt to the Mediterranean."
+      "e": "The Nile flows north through Egypt to the Mediterranean.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which Senegalese dish was added to UNESCO’s Intangible Cultural Heritage list in 2021?",
@@ -273,7 +321,9 @@
         "Mafé"
       ],
       "r": 0,
-      "e": "UNESCO lists Ceebu Jën as a culinary art of Senegal."
+      "e": "UNESCO lists Ceebu Jën as a culinary art of Senegal.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Xooy is a divination ceremony associated with which Senegalese community?",
@@ -284,7 +334,9 @@
         "The Fula"
       ],
       "r": 1,
-      "e": "UNESCO describes Xooy as a Serer divination ceremony."
+      "e": "UNESCO describes Xooy as a Serer divination ceremony.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Kankurang is described by UNESCO as which kind of heritage?",
@@ -295,7 +347,9 @@
         "A harvest tool"
       ],
       "r": 2,
-      "e": "UNESCO lists Kankurang as a Manding initiatory rite."
+      "e": "UNESCO lists Kankurang as a Manding initiatory rite.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "The Stone Circles of Senegambia are shared by Senegal and which country?",
@@ -306,7 +360,9 @@
         "The Gambia"
       ],
       "r": 3,
-      "e": "The UNESCO site includes components in Senegal and The Gambia."
+      "e": "The UNESCO site includes components in Senegal and The Gambia.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which two named stone-circle groups are in Senegal?",
@@ -317,7 +373,9 @@
         "Dindéfello and Bandafassi"
       ],
       "r": 0,
-      "e": "UNESCO locates Wanar and Sine Ngayène in Senegal."
+      "e": "UNESCO locates Wanar and Sine Ngayène in Senegal.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which two named stone-circle groups are in The Gambia?",
@@ -328,7 +386,9 @@
         "Thiès and Joal"
       ],
       "r": 1,
-      "e": "UNESCO locates Wassu and Kerbatch in The Gambia."
+      "e": "UNESCO locates Wassu and Kerbatch in The Gambia.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What are many of the mounds associated with the Senegambian stone circles?",
@@ -339,7 +399,9 @@
         "School buildings"
       ],
       "r": 2,
-      "e": "UNESCO describes associated tumuli as burial mounds."
+      "e": "UNESCO describes associated tumuli as burial mounds.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which three peoples are named in the Bassari Country World Heritage site?",
@@ -350,7 +412,9 @@
         "Bassari, Fula and Bedik"
       ],
       "r": 3,
-      "e": "The UNESCO site's name identifies the Bassari, Fula and Bedik landscapes."
+      "e": "The UNESCO site's name identifies the Bassari, Fula and Bedik landscapes.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "In which part of Senegal is Bassari Country located?",
@@ -361,7 +425,9 @@
         "The lower Senegal River mouth"
       ],
       "r": 0,
-      "e": "UNESCO locates Bassari Country in south-eastern Senegal."
+      "e": "UNESCO locates Bassari Country in south-eastern Senegal.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is a feature of the Bassari landscape described by UNESCO?",
@@ -372,7 +438,9 @@
         "Desert salt lakes"
       ],
       "r": 1,
-      "e": "UNESCO describes terraces and rice paddies among Bassari villages."
+      "e": "UNESCO describes terraces and rice paddies among Bassari villages.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is characteristic of many Bedik village houses?",
@@ -383,7 +451,9 @@
         "Floating wooden platforms"
       ],
       "r": 2,
-      "e": "UNESCO describes Bedik villages with huts and steep thatched roofs."
+      "e": "UNESCO describes Bedik villages with huts and steep thatched roofs.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is the Saloum Delta especially known for in its cultural landscape?",
@@ -394,7 +464,9 @@
         "Shell mounds and fishing traditions"
       ],
       "r": 3,
-      "e": "UNESCO highlights shell mounds and coastal livelihoods in the delta."
+      "e": "UNESCO highlights shell mounds and coastal livelihoods in the delta.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What kind of water is found in parts of the Saloum Delta?",
@@ -405,7 +477,9 @@
         "Water with no salt at all"
       ],
       "r": 0,
-      "e": "UNESCO describes the delta's water as brackish."
+      "e": "UNESCO describes the delta's water as brackish.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What traditional activities helped shape the Saloum Delta landscape?",
@@ -416,7 +490,9 @@
         "Deep-sea oil drilling"
       ],
       "r": 1,
-      "e": "UNESCO describes shellfish gathering and fishing practices."
+      "e": "UNESCO describes shellfish gathering and fishing practices.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Where is the Island of Saint-Louis situated?",
@@ -427,7 +503,9 @@
         "On the coast of The Gambia River"
       ],
       "r": 2,
-      "e": "UNESCO places Saint-Louis at the mouth of the Senegal River."
+      "e": "UNESCO places Saint-Louis at the mouth of the Senegal River.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which city became Senegal’s capital after the role moved from Saint-Louis?",
@@ -438,7 +516,9 @@
         "Dakar"
       ],
       "r": 3,
-      "e": "Dakar is Senegal's national capital."
+      "e": "Dakar is Senegal's national capital.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which Senegalese island was inscribed on the World Heritage List in 1978?",
@@ -449,7 +529,9 @@
         "The Island of Carabane"
       ],
       "r": 0,
-      "e": "UNESCO lists Gorée as inscribed in 1978."
+      "e": "UNESCO lists Gorée as inscribed in 1978.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "In which year was the Island of Saint-Louis inscribed on UNESCO’s World Heritage List?",
@@ -460,7 +542,9 @@
         "2011"
       ],
       "r": 1,
-      "e": "UNESCO records the Island of Saint-Louis inscription in 2000."
+      "e": "UNESCO records the Island of Saint-Louis inscription in 2000.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "In which year was the Saloum Delta inscribed on the World Heritage List?",
@@ -471,7 +555,9 @@
         "2021"
       ],
       "r": 2,
-      "e": "UNESCO records the Saloum Delta inscription in 2011."
+      "e": "UNESCO records the Saloum Delta inscription in 2011.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "In which year were the Stone Circles of Senegambia inscribed?",
@@ -482,7 +568,9 @@
         "2006"
       ],
       "r": 3,
-      "e": "UNESCO records the inscription in 2006."
+      "e": "UNESCO records the inscription in 2006.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "Which Senegalese World Heritage site is known for a bird sanctuary?",
@@ -493,7 +581,9 @@
         "Stone Circles of Senegambia"
       ],
       "r": 0,
-      "e": "Djoudj is listed by UNESCO as a national bird sanctuary."
+      "e": "Djoudj is listed by UNESCO as a national bird sanctuary.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What kind of heritage is Ceebu Jën recognized as?",
@@ -504,7 +594,9 @@
         "A protected forest"
       ],
       "r": 1,
-      "e": "UNESCO lists Ceebu Jën as a culinary art."
+      "e": "UNESCO lists Ceebu Jën as a culinary art.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What do UNESCO World Heritage cultural landscapes often show?",
@@ -515,7 +607,9 @@
         "Only the names of rulers"
       ],
       "r": 2,
-      "e": "Cultural landscapes reflect relationships between communities and their environment."
+      "e": "Cultural landscapes reflect relationships between communities and their environment.",
+      "d": "culture",
+      "n": "intermediaire"
     },
     {
       "q": "What is a tumulus in the context of the Senegambian stone circles?",
@@ -526,7 +620,165 @@
         "A mound associated with a burial"
       ],
       "r": 3,
-      "e": "UNESCO describes tumuli as burial mounds."
+      "e": "UNESCO describes tumuli as burial mounds.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Near which Ghanaian city are the Asante Traditional Buildings located?",
+      "o": [
+        "Kumasi",
+        "Accra",
+        "Tamale",
+        "Cape Coast"
+      ],
+      "r": 0,
+      "e": "UNESCO locates the buildings near Kumasi.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Which materials are named for the Asante Traditional Buildings?",
+      "o": [
+        "Glass, steel and marble",
+        "Earth, wood and straw",
+        "Ice, leather and clay",
+        "Concrete, copper and slate"
+      ],
+      "r": 1,
+      "e": "UNESCO lists earth, wood and straw.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What decorative feature appears on Asante building walls?",
+      "o": [
+        "Glass mosaics",
+        "Carved clocks",
+        "Bas-reliefs",
+        "Painted maps"
+      ],
+      "r": 2,
+      "e": "UNESCO notes decorative bas-reliefs.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "In which country are the Royal Palaces of Abomey?",
+      "o": [
+        "Togo",
+        "Ghana",
+        "Nigeria",
+        "Benin"
+      ],
+      "r": 3,
+      "e": "Abomey is in Benin.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "How many kings succeeded one another in Abomey between 1625 and 1900?",
+      "o": [
+        "Twelve",
+        "Four",
+        "Eight",
+        "Twenty"
+      ],
+      "r": 0,
+      "e": "UNESCO counts twelve successive kings.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What material formed the traditional walls around Abomey palace compounds?",
+      "o": [
+        "Coral stone",
+        "Cob",
+        "Marble",
+        "Granite blocks"
+      ],
+      "r": 1,
+      "e": "UNESCO describes walls made of cob.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Lamu Old Town is on the coast of which country?",
+      "o": [
+        "Tanzania",
+        "Somalia",
+        "Kenya",
+        "Mozambique"
+      ],
+      "r": 2,
+      "e": "Lamu is on Kenya’s East African coast.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Which historic culture is especially represented by Lamu Old Town?",
+      "o": [
+        "Shona",
+        "Manding",
+        "Asante",
+        "Swahili"
+      ],
+      "r": 3,
+      "e": "UNESCO describes Lamu as a Swahili settlement.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Which pair of materials was used in historic buildings in Lamu?",
+      "o": [
+        "Coral stone and mangrove timber",
+        "Granite and pine",
+        "Clay brick and cedar",
+        "Marble and bamboo"
+      ],
+      "r": 0,
+      "e": "UNESCO names coral stone and mangrove timber.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Great Zimbabwe is located in which country?",
+      "o": [
+        "Zambia",
+        "Zimbabwe",
+        "Botswana",
+        "Mozambique"
+      ],
+      "r": 1,
+      "e": "The monument is in Zimbabwe.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Which people are associated with the founding of Great Zimbabwe?",
+      "o": [
+        "The Berber",
+        "The Serer",
+        "The Shona",
+        "The Asante"
+      ],
+      "r": 2,
+      "e": "UNESCO identifies the builders as the Shona.",
+      "d": "culture",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Aksum is an ancient site in which country?",
+      "o": [
+        "Eritrea",
+        "Sudan",
+        "Somalia",
+        "Ethiopia"
+      ],
+      "r": 3,
+      "e": "Aksum is in northern Ethiopia.",
+      "d": "culture",
+      "n": "intermediaire"
     }
   ]
 }
