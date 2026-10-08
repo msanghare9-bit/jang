@@ -69,14 +69,22 @@ class AuthService {
       throw AuthError(_message(e));
     }
     final uid = cred.user!.uid;
-    await _db.collection('users').doc(uid).set({
+    final normalized = normalizeUsername(username);
+    final batch = _db.batch();
+    batch.set(_db.collection('users').doc(uid), {
       'name': name.trim(),
-      'username': normalizeUsername(username),
+      'username': normalized,
       'role': 'student',
       'examId': examId,
       'parentConsent': parentConsent,
       'createdAt': FieldValue.serverTimestamp(),
     });
+    batch.set(_db.collection('usernames').doc(normalized), {
+      'uid': uid,
+      'name': UserProfile.publicNameOf(name),
+      'username': normalized,
+    });
+    await batch.commit();
     StatsService.instance.recordNewUser();
     await loadProfile();
   }
