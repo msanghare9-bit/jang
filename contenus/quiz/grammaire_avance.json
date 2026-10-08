@@ -527,6 +527,318 @@
       ],
       "r": 3,
       "e": "When “not until” begins the sentence, invert the auxiliary and subject in the main clause."
+    },
+    {
+      "q": "If I ___ more time, I would learn another language.",
+      "o": [
+        "had",
+        "have",
+        "will have",
+        "would have"
+      ],
+      "r": 0,
+      "e": "Use the simple past in the “if” clause of this unreal situation.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The report ___ by the committee last week.",
+      "o": [
+        "approved",
+        "was approved",
+        "is approving",
+        "has approve"
+      ],
+      "r": 1,
+      "e": "The past passive uses “was” plus a past participle.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "She said that she ___ the results the following day.",
+      "o": [
+        "will announce",
+        "announces",
+        "would announce",
+        "has announced"
+      ],
+      "r": 2,
+      "e": "In reported speech, “will” often changes to “would”.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The students, ___ projects won prizes, thanked their teacher.",
+      "o": [
+        "which",
+        "who",
+        "whom",
+        "whose"
+      ],
+      "r": 3,
+      "e": "Use “whose” to show that something belongs to people.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "By next June, he ___ at the school for ten years.",
+      "o": [
+        "will have worked",
+        "works",
+        "has worked",
+        "will work"
+      ],
+      "r": 0,
+      "e": "Use the future perfect for an action completed by a future time.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "Neither the coach nor the players ___ satisfied.",
+      "o": [
+        "was",
+        "were",
+        "is",
+        "be"
+      ],
+      "r": 1,
+      "e": "With “neither…nor”, the verb agrees with the nearer subject.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The results ___ tomorrow morning.",
+      "o": [
+        "publish",
+        "will publish",
+        "will be published",
+        "were publishing"
+      ],
+      "r": 2,
+      "e": "Use the future passive when the subject receives the action.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "She wishes she ___ closer to her family.",
+      "o": [
+        "lives",
+        "will live",
+        "would lived",
+        "lived"
+      ],
+      "r": 3,
+      "e": "Use the past form after “wish” for an unreal present situation.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "Hardly ___ the meeting begun when the power went out.",
+      "o": [
+        "had",
+        "has",
+        "did",
+        "was"
+      ],
+      "r": 0,
+      "e": "Use inversion with “hardly” and the past perfect.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The proposal was rejected, ___ surprised the team.",
+      "o": [
+        "who",
+        "which",
+        "where",
+        "what"
+      ],
+      "r": 1,
+      "e": "Use “which” to refer to the whole previous idea.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "If they had left earlier, they ___ the traffic.",
+      "o": [
+        "will avoid",
+        "would avoid",
+        "would have avoided",
+        "avoided"
+      ],
+      "r": 2,
+      "e": "Use “would have” plus a past participle for an unreal past result.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The manager insisted that every form ___ signed.",
+      "o": [
+        "is",
+        "was",
+        "being",
+        "be"
+      ],
+      "r": 3,
+      "e": "After “insist that”, formal English can use the base form.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "Not only ___ she finish early, but she also helped her classmates.",
+      "o": [
+        "did",
+        "has",
+        "was",
+        "would"
+      ],
+      "r": 0,
+      "e": "Use “did” before the subject in this inversion.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "I would rather you ___ the issue in private.",
+      "o": [
+        "discuss",
+        "discussed",
+        "will discuss",
+        "have discussed"
+      ],
+      "r": 1,
+      "e": "Use the past form after “would rather” for a preference.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The claim ___ further evidence before publication.",
+      "o": [
+        "is requiring",
+        "required",
+        "requires",
+        "has requiring"
+      ],
+      "r": 2,
+      "e": "A general claim takes the simple present.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "Despite ___ warned, he continued the journey.",
+      "o": [
+        "be",
+        "was",
+        "to be",
+        "being"
+      ],
+      "r": 3,
+      "e": "After “despite”, use a noun or an -ing form.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The harder she worked, ___ her results became.",
+      "o": [
+        "the better",
+        "better",
+        "the best",
+        "best"
+      ],
+      "r": 0,
+      "e": "Use “the + comparative” in a paired comparison.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The evidence is insufficient; ___, we cannot draw a conclusion.",
+      "o": [
+        "however",
+        "therefore",
+        "meanwhile",
+        "otherwise"
+      ],
+      "r": 1,
+      "e": "“Therefore” introduces a logical result.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "No sooner had they arrived ___ the rain started.",
+      "o": [
+        "when",
+        "then",
+        "than",
+        "that"
+      ],
+      "r": 2,
+      "e": "The fixed expression is “no sooner…than”.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "He denied ___ the confidential document.",
+      "o": [
+        "to share",
+        "share",
+        "shared",
+        "sharing"
+      ],
+      "r": 3,
+      "e": "After “deny”, use a verb ending in -ing.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The policy aims to reduce waste, ___ costs in the long term.",
+      "o": [
+        "thereby lowering",
+        "thereby lower",
+        "which lowering",
+        "to lowering"
+      ],
+      "r": 0,
+      "e": "“Thereby” is followed by an -ing form.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "She speaks as though she ___ the entire project.",
+      "o": [
+        "leads",
+        "had led",
+        "will lead",
+        "has lead"
+      ],
+      "r": 1,
+      "e": "Use the past perfect for an unreal earlier situation.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "The data, together with the appendix, ___ available online.",
+      "o": [
+        "are",
+        "were",
+        "is",
+        "have"
+      ],
+      "r": 2,
+      "e": "The main subject “data” is treated here as a singular mass noun.",
+      "d": "grammaire",
+      "n": "avance"
+    },
+    {
+      "q": "Only after the review ___ the team understand the risk.",
+      "o": [
+        "has",
+        "was",
+        "would",
+        "did"
+      ],
+      "r": 3,
+      "e": "Use inversion after the fronted phrase “only after”.",
+      "d": "grammaire",
+      "n": "avance"
     }
   ]
 }
