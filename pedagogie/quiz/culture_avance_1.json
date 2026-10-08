@@ -45,15 +45,15 @@
       "e": "The Atlas Mountains extend across Morocco, Algeria and Tunisia."
     },
     {
-      "q": "Which ancient West African empire was associated with the city of Timbuktu at its height?",
+      "q": "Which West African empire was ruled by Mansa Musa in the 14th century?",
       "o": [
         "The Mali Empire",
         "The Roman Empire",
-        "The Songhai Empire only",
+        "The Songhai Empire",
         "The Kingdom of Kush"
       ],
       "r": 0,
-      "e": "Timbuktu became an important center under the Mali Empire and later the Songhai Empire; the Mali Empire is the intended answer."
+      "e": "Mansa Musa ruled the Mali Empire in the 14th century."
     },
     {
       "q": "What is the name of the sea passage between Europe and Africa at Spain and Morocco?",
