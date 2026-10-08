@@ -184,10 +184,12 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
   Future<void> _chooseDueAt() async {
     final now = DateTime.now();
     final current = _dueAt ?? now.add(const Duration(days: 1));
+    final today = DateTime(now.year, now.month, now.day);
+    final initialDay = DateTime(current.year, current.month, current.day);
     final day = await showDatePicker(
       context: context,
-      initialDate: DateTime(current.year, current.month, current.day),
-      firstDate: DateTime(now.year, now.month, now.day),
+      initialDate: initialDay.isBefore(today) ? today : initialDay,
+      firstDate: today,
       lastDate: DateTime(now.year + 5),
       locale: const Locale('fr'),
     );
