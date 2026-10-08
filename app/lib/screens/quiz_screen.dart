@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:cloud_functions/cloud_functions.dart';
 
 import '../models.dart';
 import '../services/engagement_service.dart';
@@ -42,7 +41,6 @@ class _QuizScreenState extends State<QuizScreen> {
   int _xp = 0;
   int _opponentCorrect = 0;
   bool _opponentPending = false;
-  bool _checking = false;
   bool? _opponentCorrectThisQuestion;
   static final _rand = Random();
   static const _rightTitles = ['Comprendre nga bou bax !', 'Diambar nga ! 🎉', 'Waaw, bravo ! 🎉'];
@@ -72,27 +70,8 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Future<void> _choose(int option) async {
-    if (_answers[_index] != null || _checking) return;
+    if (_answers[_index] != null) return;
     final question = _quiz[_index];
-    if (question.bankId.isNotEmpty) {
-      setState(() => _checking = true);
-      try {
-        final result = await FirebaseFunctions.instance.httpsCallable('checkPracticeAnswer').call({
-          'id': question.bankId,
-        });
-        question.answer = (result.data['answer'] as num).toInt().clamp(0, 3).toInt();
-      } catch (_) {
-        if (mounted) {
-          setState(() => _checking = false);
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Impossible de corriger cette question. Vérifie ta connexion.')),
-          );
-        }
-        return;
-      }
-      if (!mounted) return;
-      setState(() => _checking = false);
-    }
     final ok = option == question.answer;
     setState(() {
       _answers[_index] = option;

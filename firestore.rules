@@ -231,22 +231,29 @@ service cloud.firestore {
     }
 
     // ---------- Matchs en direct ----------
-    // Le corrigé et les réponses individuelles sont accessibles uniquement aux Cloud Functions.
+    // Version compatible avec Firebase Spark : les résultats restent dans Firestore.
+    // Les membres authentifiés peuvent lire les questions, réponses et scores.
     match /matchAnswers/{matchId} {
       allow read, write: if false;
     }
 
     match /matchs/{id} {
       allow read: if signedIn();
-      // Création, déroulement, corrigé et fin gérés par les Cloud Functions.
-      allow create, update, delete: if false;
+      allow create: if signedIn()
+                    && request.resource.data.hostUid == request.auth.uid
+                    && request.resource.data.questions is list;
+      allow update: if signedIn()
+                    && resource.data.hostUid == request.auth.uid;
+      allow delete: if signedIn() && resource.data.hostUid == request.auth.uid;
 
       match /joueurs/{uid} {
         allow read: if signedIn();
-        allow create: if false;
+        allow create: if isMe(uid)
+                      && request.resource.data.get('uid', uid) == uid
+                      && request.resource.data.get('score', 0) == 0;
         allow update: if isMe(uid)
-                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reaction'])
-                      && request.resource.data.get('reaction', '') in ['', '👏', '😂', '🔥', '💪', '❤️'];
+                      && request.resource.data.diff(resource.data).affectedKeys()
+                         .hasOnly(['answers','score','reaction']);
         allow delete: if isMe(uid)
                       && get(/databases/$(database)/documents/matchs/$(id)).data.get('state', '') == 'attente';
 
@@ -286,7 +293,9 @@ service cloud.firestore {
     // Tournois à élimination : seuls les champs publics du tableau sont lisibles.
     match /tournaments/{tournamentId} {
       allow read: if signedIn();
-      allow create: if false;
+      allow create: if signedIn()
+                    && request.resource.data.hostUid == request.auth.uid
+                    && request.resource.data.questions is list;
       allow update: if signedIn()
                     && resource.data.hostUid == request.auth.uid
                     && request.resource.data.diff(resource.data).affectedKeys()

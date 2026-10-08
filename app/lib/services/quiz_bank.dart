@@ -67,7 +67,6 @@ class BankQuestion {
         options: options,
         answer: answer,
         explanation: explanation,
-        bankId: id,
       );
 
   factory BankQuestion.fromQuiz(QuizQuestion q) =>
@@ -126,7 +125,7 @@ class QuizBank {
     if (mem != null) return mem;
     String? text;
     final prefs = await SharedPreferences.getInstance();
-    final cacheKey = 'quiz_cache_v2_$key';
+    final cacheKey = 'quiz_cache_$key';
     final cachedAtKey = 'quiz_cache_at_$key';
     // Version locale récente (moins d'un jour) : pas besoin d'internet.
     try {
