@@ -1,0 +1,136 @@
+{
+  "questions": [
+    {
+      "q": "Near which Ghanaian city are the Asante Traditional Buildings located?",
+      "o": [
+        "Kumasi",
+        "Accra",
+        "Tamale",
+        "Cape Coast"
+      ],
+      "r": 0,
+      "e": "UNESCO locates the buildings near Kumasi."
+    },
+    {
+      "q": "Which materials are named for the Asante Traditional Buildings?",
+      "o": [
+        "Glass, steel and marble",
+        "Earth, wood and straw",
+        "Ice, leather and clay",
+        "Concrete, copper and slate"
+      ],
+      "r": 1,
+      "e": "UNESCO lists earth, wood and straw."
+    },
+    {
+      "q": "What decorative feature appears on Asante building walls?",
+      "o": [
+        "Glass mosaics",
+        "Carved clocks",
+        "Bas-reliefs",
+        "Painted maps"
+      ],
+      "r": 2,
+      "e": "UNESCO notes decorative bas-reliefs."
+    },
+    {
+      "q": "In which country are the Royal Palaces of Abomey?",
+      "o": [
+        "Togo",
+        "Ghana",
+        "Nigeria",
+        "Benin"
+      ],
+      "r": 3,
+      "e": "Abomey is in Benin."
+    },
+    {
+      "q": "How many kings succeeded one another in Abomey between 1625 and 1900?",
+      "o": [
+        "Twelve",
+        "Four",
+        "Eight",
+        "Twenty"
+      ],
+      "r": 0,
+      "e": "UNESCO counts twelve successive kings."
+    },
+    {
+      "q": "What material formed the traditional walls around Abomey palace compounds?",
+      "o": [
+        "Coral stone",
+        "Cob",
+        "Marble",
+        "Granite blocks"
+      ],
+      "r": 1,
+      "e": "UNESCO describes walls made of cob."
+    },
+    {
+      "q": "Lamu Old Town is on the coast of which country?",
+      "o": [
+        "Tanzania",
+        "Somalia",
+        "Kenya",
+        "Mozambique"
+      ],
+      "r": 2,
+      "e": "Lamu is on Kenya’s East African coast."
+    },
+    {
+      "q": "Which historic culture is especially represented by Lamu Old Town?",
+      "o": [
+        "Shona",
+        "Manding",
+        "Asante",
+        "Swahili"
+      ],
+      "r": 3,
+      "e": "UNESCO describes Lamu as a Swahili settlement."
+    },
+    {
+      "q": "Which pair of materials was used in historic buildings in Lamu?",
+      "o": [
+        "Coral stone and mangrove timber",
+        "Granite and pine",
+        "Clay brick and cedar",
+        "Marble and bamboo"
+      ],
+      "r": 0,
+      "e": "UNESCO names coral stone and mangrove timber."
+    },
+    {
+      "q": "Great Zimbabwe is located in which country?",
+      "o": [
+        "Zambia",
+        "Zimbabwe",
+        "Botswana",
+        "Mozambique"
+      ],
+      "r": 1,
+      "e": "The monument is in Zimbabwe."
+    },
+    {
+      "q": "Which people are associated with the founding of Great Zimbabwe?",
+      "o": [
+        "The Berber",
+        "The Serer",
+        "The Shona",
+        "The Asante"
+      ],
+      "r": 2,
+      "e": "UNESCO identifies the builders as the Shona."
+    },
+    {
+      "q": "Aksum is an ancient site in which country?",
+      "o": [
+        "Eritrea",
+        "Sudan",
+        "Somalia",
+        "Ethiopia"
+      ],
+      "r": 3,
+      "e": "Aksum is in northern Ethiopia."
+    }
+  ]
+}
