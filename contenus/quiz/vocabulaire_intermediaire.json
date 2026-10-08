@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What does “afford” mean?",
+      "o": [
+        "Have enough money to buy something",
+        "Borrow something for a short time",
+        "Sell something at a low price",
+        "Save money in a safe place"
+      ],
+      "r": 0,
+      "e": "If you can afford it, you have enough money to pay for it."
+    },
+    {
+      "q": "What does “borrow” mean?",
+      "o": [
+        "Give something for a short time",
+        "Take something and return it later",
+        "Buy something for someone",
+        "Repair something that is broken"
+      ],
+      "r": 1,
+      "e": "You borrow something from someone and return it."
+    },
+    {
+      "q": "What does “crowded” mean?",
+      "o": [
+        "Very quiet and empty",
+        "Far from the town",
+        "Full of people",
+        "Difficult to find"
+      ],
+      "r": 2,
+      "e": "A crowded place has many people in it."
+    },
+    {
+      "q": "What does “deliver” mean?",
+      "o": [
+        "Choose something from a list",
+        "Make something by hand",
+        "Pay for something online",
+        "Take something to a person or place"
+      ],
+      "r": 3,
+      "e": "To deliver is to bring something to its destination."
+    },
+    {
+      "q": "What does “earn” mean?",
+      "o": [
+        "Receive money for work",
+        "Spend money on food",
+        "Lend money to a friend",
+        "Find money in the street"
+      ],
+      "r": 0,
+      "e": "People earn money by working."
+    },
+    {
+      "q": "What does “lend” mean?",
+      "o": [
+        "Take something and return it later",
+        "Give something for a short time",
+        "Sell something to a customer",
+        "Keep something forever"
+      ],
+      "r": 1,
+      "e": "You lend something to a person who will return it."
+    },
+    {
+      "q": "What does “protect” mean?",
+      "o": [
+        "Make something larger",
+        "Show something to everyone",
+        "Keep someone or something safe",
+        "Leave something behind"
+      ],
+      "r": 2,
+      "e": "To protect is to keep safe from harm."
+    },
+    {
+      "q": "What does “save” mean in “save money”?",
+      "o": [
+        "Spend all the money quickly",
+        "Borrow money from a bank",
+        "Give money to a shop",
+        "Keep money for later"
+      ],
+      "r": 3,
+      "e": "To save money is to keep it for future use."
+    },
+    {
+      "q": "What does “repair” mean?",
+      "o": [
+        "Fix something that is broken",
+        "Break something into pieces",
+        "Clean something carefully",
+        "Move something to another room"
+      ],
+      "r": 0,
+      "e": "To repair is to make something work again."
+    },
+    {
+      "q": "What does “waste” mean?",
+      "o": [
+        "Keep something safe for later",
+        "Use carelessly or without good reason",
+        "Share something with a friend",
+        "Use something carefully"
+      ],
+      "r": 1,
+      "e": "To waste is to use more than needed or use badly."
+    },
+    {
+      "q": "What does “reach” mean in “reach the village”?",
+      "o": [
+        "Leave the village",
+        "Look for the village",
+        "Arrive at the village",
+        "Build a road in the village"
+      ],
+      "r": 2,
+      "e": "To reach a place is to arrive there."
+    },
+    {
+      "q": "What does “improve” mean?",
+      "o": [
+        "Make something disappear",
+        "Make something worse",
+        "Make something smaller only",
+        "Make something better"
+      ],
+      "r": 3,
+      "e": "To improve is to make better."
+    },
+    {
+      "q": "What does “avoid” mean?",
+      "o": [
+        "Stay away from something",
+        "Look after something",
+        "Wait for something",
+        "Ask for something"
+      ],
+      "r": 0,
+      "e": "To avoid a thing is to stay away from it."
+    },
+    {
+      "q": "What does “choose” mean?",
+      "o": [
+        "Return something to its owner",
+        "Select one or more things",
+        "Explain a difficult idea",
+        "Carry something upstairs"
+      ],
+      "r": 1,
+      "e": "To choose is to select."
+    },
+    {
+      "q": "What does “journey” mean?",
+      "o": [
+        "A lesson at school",
+        "A meal with friends",
+        "A trip from one place to another",
+        "A place to sleep"
+      ],
+      "r": 2,
+      "e": "A journey is a trip."
+    },
+    {
+      "q": "Who is a “customer”?",
+      "o": [
+        "A person who teaches a class",
+        "A person who repairs roads",
+        "A person who grows rice",
+        "A person who buys something"
+      ],
+      "r": 3,
+      "e": "A customer buys goods or services."
+    },
+    {
+      "q": "What is “medicine”?",
+      "o": [
+        "Something used to treat illness",
+        "A tool used to build a house",
+        "A subject taught at school",
+        "A place where people buy food"
+      ],
+      "r": 0,
+      "e": "Medicine helps treat or prevent illness."
+    },
+    {
+      "q": "What is a “schedule”?",
+      "o": [
+        "A list of things to buy",
+        "A plan that shows times and activities",
+        "A map of a town",
+        "A story about the past"
+      ],
+      "r": 1,
+      "e": "A schedule organizes activities by time."
+    },
+    {
+      "q": "What does “reduce” mean?",
+      "o": [
+        "Make something larger",
+        "Move something closer",
+        "Make something smaller or less",
+        "Keep something unchanged"
+      ],
+      "r": 2,
+      "e": "To reduce is to make less or smaller."
+    },
+    {
+      "q": "What does “raise” mean in “raise the price”?",
+      "o": [
+        "Pay the price",
+        "Forget the price",
+        "Compare two prices",
+        "Increase the price"
+      ],
+      "r": 3,
+      "e": "To raise a price is to make it higher."
+    },
+    {
+      "q": "What does “peaceful” mean?",
+      "o": [
+        "Calm, with little or no violence",
+        "Full of noise and danger",
+        "Very expensive",
+        "Hard to understand"
+      ],
+      "r": 0,
+      "e": "A peaceful place is calm and safe."
+    },
+    {
+      "q": "What does “honest” mean?",
+      "o": [
+        "Always in a hurry",
+        "Truthful and not cheating",
+        "Unable to speak clearly",
+        "Not interested in others"
+      ],
+      "r": 1,
+      "e": "An honest person tells the truth."
+    },
+    {
+      "q": "What is “advice”?",
+      "o": [
+        "A rule that must be obeyed",
+        "A story about a journey",
+        "A suggestion about what to do",
+        "A question with no answer"
+      ],
+      "r": 2,
+      "e": "Advice is a suggestion or recommendation."
+    },
+    {
+      "q": "What does “confident” mean?",
+      "o": [
+        "Afraid to meet anyone",
+        "Not able to understand",
+        "Angry about a mistake",
+        "Sure about your ability or decision"
+      ],
+      "r": 3,
+      "e": "A confident person believes they can do something."
+    }
+  ]
+}
