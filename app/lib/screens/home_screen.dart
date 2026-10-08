@@ -19,6 +19,7 @@ import '../widgets/jang_ui.dart';
 import '../services/engagement_service.dart';
 import 'admin/admin_home.dart';
 import 'profile_screen.dart';
+import 'teacher_home_screen.dart';
 import 'progress_screen.dart';
 import 'sheep_screen.dart';
 import 'inbox_screen.dart';
@@ -87,16 +88,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final profile = AuthService.instance.profile.value!;
     final admin = profile.isStaff;
     final pages = <Widget>[
-      const SubjectsTab(),
-      const ProgressScreen(),
+      if (profile.isProf) const TeacherHomeScreen() else const SubjectsTab(),
+      if (!profile.isProf) const ProgressScreen(),
       if (admin) const AdminHome(),
       const ProfileScreen(),
     ];
     final destinations = <NavigationDestination>[
       const NavigationDestination(
-          icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded), label: 'Accueil'),
-      const NavigationDestination(
-          icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: 'Progrès'),
+          icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded),
+          label: 'Accueil'),
+      if (!profile.isProf)
+        const NavigationDestination(
+            icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: 'Progrès'),
       if (admin)
         const NavigationDestination(
             icon: Icon(Icons.edit_note_outlined), selectedIcon: Icon(Icons.edit_note), label: 'Gestion'),
