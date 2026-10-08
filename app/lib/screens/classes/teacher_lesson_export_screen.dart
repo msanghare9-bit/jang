@@ -48,7 +48,27 @@ class _TeacherLessonExportScreenState extends State<TeacherLessonExportScreen> {
         body: FutureBuilder<List<Lesson>>(
           future: _future,
           builder: (context, snap) {
-            if (snap.hasError) return loadError(() => setState(() => _future = _load()));
+            if (snap.hasError) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.error_outline, size: 40),
+                      const SizedBox(height: 12),
+                      const Text('Impossible de charger les leçons.'),
+                      const SizedBox(height: 12),
+                      FilledButton.icon(
+                        onPressed: () => setState(() => _future = _load()),
+                        icon: const Icon(Icons.refresh),
+                        label: const Text('Réessayer'),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }
             if (!snap.hasData) return const Center(child: CircularProgressIndicator());
             final lessons = snap.data!;
             if (lessons.isEmpty) {
