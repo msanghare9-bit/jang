@@ -128,7 +128,7 @@ class MatchSetupScreen extends StatefulWidget {
 }
 
 class _MatchSetupScreenState extends State<MatchSetupScreen> {
-  String _domain = QuizBank.mixed;
+  final Set<String> _domains = {...QuizBank.domains};
   String _level = QuizBank.levels.first;
   int _count = 10;
   bool _busy = false;
@@ -138,14 +138,20 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
     if (p == null) return;
     setState(() => _busy = true);
     try {
-      final qs = await QuizBank.instance.draw(_domain, _level, _count);
+      if (_domains.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('Choisis au moins un domaine.')));
+        return;
+      }
+      final qs = await QuizBank.instance.drawDomains(_domains.toList(), _level, _count);
       if (!mounted) return;
       if (qs.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
             content: Text('Les questions ne sont pas encore là. Vérifie ta connexion, ou choisis un autre domaine.')));
         return;
       }
-      final title = '${QuizBank.domainLabel(_domain)} · ${QuizBank.levelLabel(_level)}';
+      final domainTitle = _domains.map(QuizBank.domainLabel).join(' + ');
+      final title = '$domainTitle · ${QuizBank.levelLabel(_level)}';
       if (widget.solo) {
         final subject = Subject(id: '', examId: p.examId, name: 'Anglais', color: '#46178F');
         await Navigator.pushReplacement(
@@ -190,11 +196,17 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
           Text('Quel domaine ?', style: titleStyle(19, weight: 800)),
           const SizedBox(height: 8),
           Wrap(spacing: 8, runSpacing: 8, children: [
-            for (final d in [QuizBank.mixed, ...QuizBank.domains])
-              ChoiceChip(
+            for (final d in QuizBank.domains)
+              FilterChip(
                 label: Text('${QuizBank.domainEmoji(d)} ${QuizBank.domainLabel(d)}'),
-                selected: _domain == d,
-                onSelected: (_) => setState(() => _domain = d),
+                selected: _domains.contains(d),
+                onSelected: (selected) => setState(() {
+                  if (selected) {
+                    _domains.add(d);
+                  } else {
+                    _domains.remove(d);
+                  }
+                }),
               ),
           ]),
           const SizedBox(height: 18),
