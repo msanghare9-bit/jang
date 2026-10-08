@@ -287,6 +287,294 @@
       "r": 3,
       "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
       "e": "Each learner explained one difficult word."
+    },
+    {
+      "q": "Where did the group start the library?",
+      "o": [
+        "In a room at the community centre",
+        "At the bus station",
+        "Inside a hospital",
+        "On a school roof"
+      ],
+      "r": 0,
+      "e": "The passage says the library uses an unused community-centre room.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "How do volunteers record each loan?",
+      "o": [
+        "They send a radio message.",
+        "They write it in a notebook.",
+        "They paint a mark on each book.",
+        "They keep the information in a box."
+      ],
+      "r": 1,
+      "e": "The volunteers write each loan in a notebook.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "How long may a reader first keep a book?",
+      "o": [
+        "One day",
+        "One month",
+        "Two weeks",
+        "One year"
+      ],
+      "r": 2,
+      "e": "A reader may keep a book for two weeks.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "When does the library open?",
+      "o": [
+        "Every Monday morning",
+        "On Friday nights",
+        "Only during holidays",
+        "Every Saturday afternoon"
+      ],
+      "r": 3,
+      "e": "The group opens every Saturday afternoon.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "Why did pupils and parents lay stones on the path?",
+      "o": [
+        "To make the muddy path easier to use",
+        "To build a wall around the school",
+        "To stop pupils from walking",
+        "To mark a football field"
+      ],
+      "r": 0,
+      "e": "They laid stones to improve the muddy footpath.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "Who helped collect the stones?",
+      "o": [
+        "Only visitors",
+        "Pupils and parents",
+        "Bus drivers and shopkeepers",
+        "The school cooks"
+      ],
+      "r": 1,
+      "e": "The passage says pupils and parents collected stones.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "Why did they leave a gap near the tree?",
+      "o": [
+        "So a bus could pass",
+        "So they could plant a new tree",
+        "So rainwater could flow",
+        "So the path would become longer"
+      ],
+      "r": 2,
+      "e": "The gap allowed rainwater to flow.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "When was the route easier to use?",
+      "o": [
+        "Before the rain",
+        "The same morning",
+        "One year later",
+        "The following week"
+      ],
+      "r": 3,
+      "e": "The passage says the route was easier the following week.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "Where did members put the notice?",
+      "o": [
+        "Beside the weighing scale",
+        "At the school gate",
+        "Inside a fishing boat",
+        "Near the bus station"
+      ],
+      "r": 0,
+      "e": "The notice was placed beside the scale.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "What information did the notice show?",
+      "o": [
+        "The names of every visitor",
+        "Prices and the checker’s name",
+        "The weather for the month",
+        "A list of school lessons"
+      ],
+      "r": 1,
+      "e": "It showed the day's prices and who checked each catch.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "When did the group discuss the notice?",
+      "o": [
+        "Before opening the cooperative",
+        "Every morning at sunrise",
+        "At the end of the week",
+        "After the next fishing season"
+      ],
+      "r": 2,
+      "e": "They discussed it at the end of the week.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "What could new members do before selling?",
+      "o": [
+        "Change every price themselves",
+        "Take the weighing scale home",
+        "Choose a different cooperative",
+        "Ask questions"
+      ],
+      "r": 3,
+      "e": "New members could ask questions before selling.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "Why did Awa take a raincoat?",
+      "o": [
+        "She heard that rain might come.",
+        "She wanted to lend it to a teacher.",
+        "The sky was very hot.",
+        "Her brother asked her to buy one."
+      ],
+      "r": 0,
+      "e": "The forecast warned that rain was possible.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "What did Awa check?",
+      "o": [
+        "A school timetable",
+        "A radio weather report",
+        "A list of bus tickets",
+        "A message about a football match"
+      ],
+      "r": 1,
+      "e": "She checked a weather report on the radio.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "What happened before noon?",
+      "o": [
+        "The sun became very hot.",
+        "Awa lost her raincoat.",
+        "It rained.",
+        "The class was cancelled."
+      ],
+      "r": 2,
+      "e": "The passage says it rained before noon.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "How did her brother stay dry?",
+      "o": [
+        "He stayed at home all day.",
+        "He wore Awa’s shoes.",
+        "He listened to a lesson on the radio.",
+        "He borrowed an umbrella from a neighbour."
+      ],
+      "r": 3,
+      "e": "He borrowed an umbrella from a neighbour.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "Why did the garden use two containers?",
+      "o": [
+        "To compare rainwater and tap water",
+        "To store two kinds of seeds",
+        "To keep the plants in the dark",
+        "To collect water for cooking"
+      ],
+      "r": 0,
+      "e": "One container held rainwater and the other tap water.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "What did learners measure?",
+      "o": [
+        "The height of the school wall",
+        "The amount of water used",
+        "The number of school books",
+        "The price of each plant"
+      ],
+      "r": 1,
+      "e": "They measured water use each Friday.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "When did learners measure the water?",
+      "o": [
+        "Every Monday evening",
+        "At the start of the year only",
+        "Each Friday",
+        "After each school holiday"
+      ],
+      "r": 2,
+      "e": "The passage says they measured it each Friday.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "How did the results help the learners?",
+      "o": [
+        "They could stop growing plants.",
+        "They could change the school calendar.",
+        "They could sell the containers.",
+        "They could plan for the dry months."
+      ],
+      "r": 3,
+      "e": "The results helped with planning for the dry months.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "How long did each group practise speaking?",
+      "o": [
+        "Three minutes",
+        "One minute",
+        "Ten minutes",
+        "Half an hour"
+      ],
+      "r": 0,
+      "e": "Each group practised for three minutes.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "What did one student do during practice?",
+      "o": [
+        "Marked the classroom floor",
+        "Watched the clock",
+        "Read the next chapter",
+        "Collected lunch money"
+      ],
+      "r": 1,
+      "e": "One student watched the clock.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "What were the two suggestions about?",
+      "o": [
+        "Clothing and handwriting",
+        "Travel and transport",
+        "Voice and clear examples",
+        "Food and exercise"
+      ],
+      "r": 2,
+      "e": "The feedback concerned voice and examples.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "When should learners use the feedback?",
+      "o": [
+        "Only at the end of the year",
+        "Before choosing a group",
+        "During the lunch break",
+        "In their next presentation"
+      ],
+      "r": 3,
+      "e": "The teacher asked them to use it in their next talk.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
     }
   ]
 }
