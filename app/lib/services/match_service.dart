@@ -97,7 +97,6 @@ class MatchPlayer {
       d.id,
       '${m['name'] ?? ''}',
       m['score'] is num ? (m['score'] as num).toInt() : 0,
-      '${m['reaction'] ?? ''}',
       {
         for (final e in a.entries)
           if (int.tryParse('${e.key}') != null && e.value is Map)
@@ -106,6 +105,7 @@ class MatchPlayer {
               (e.value as Map)['ok'] == true,
             ),
       },
+      '${m['reaction'] ?? ''}',
     );
   }
 }
