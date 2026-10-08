@@ -300,6 +300,8 @@ class _LessonEditorState extends State<LessonEditor> {
                   image: q.image,
                 ))
             .toList(),
+        createdByUid: widget.lesson?.createdByUid ?? '',
+        createdByName: widget.lesson?.createdByName ?? '',
         hiddenIn: widget.lesson?.hiddenIn ?? widget.hiddenIn,
       );
 
