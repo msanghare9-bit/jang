@@ -84,10 +84,11 @@ class MatchPlayer {
   final String uid;
   final String name;
   final int score;
+  final String reaction;
 
   /// Question -> (choix, juste ?).
   final Map<int, (int, bool)> answers;
-  MatchPlayer(this.uid, this.name, this.score, this.answers);
+  MatchPlayer(this.uid, this.name, this.score, this.answers, this.reaction);
 
   factory MatchPlayer.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
@@ -96,6 +97,7 @@ class MatchPlayer {
       d.id,
       '${m['name'] ?? ''}',
       m['score'] is num ? (m['score'] as num).toInt() : 0,
+      '${m['reaction'] ?? ''}',
       {
         for (final e in a.entries)
           if (int.tryParse('${e.key}') != null && e.value is Map)
@@ -186,6 +188,10 @@ class MatchService {
       }, SetOptions(merge: true));
 
   Future<void> leave(String id, String uid) => _col.doc(id).collection('joueurs').doc(uid).delete();
+
+  /// Enregistre une réaction emoji du joueur connecté.
+  Future<void> react(String matchId, String uid, String emoji) =>
+      _col.doc(matchId).collection('joueurs').doc(uid).update({'reaction': emoji});
 
   Stream<LiveMatch> watch(String id) => _col.doc(id).snapshots().where((d) => d.exists).map(LiveMatch.fromDoc);
 
