@@ -147,10 +147,10 @@ class _TournamentDetailScreenState extends State<TournamentDetailScreen>{
             ChunkyButton(label:_busy?'Préparation…':'Lancer le tournoi',icon:Icons.account_tree_outlined,color:JangColors.primary,
               onPressed:_busy||data.people.length<2?null:()=>_advance(t)),
           ],
-          if(t.status=='running')...[
+          if(t.status=='running'||t.status=='finished')...[
             const SizedBox(height:14),Text('Manche ${t.round}',style:titleStyle(19,weight:800)),
             for(final g in data.games)_gameCard(t,g,host),
-            if(host)Padding(padding:const EdgeInsets.only(top:10),child:ChunkyButton(
+            if(host&&t.status=='running')Padding(padding:const EdgeInsets.only(top:10),child:ChunkyButton(
               label:_busy?'Calcul…':'Calculer les vainqueurs / lancer la suite',icon:Icons.skip_next,color:JangColors.primary,
               onPressed:_busy?null:()=>_advance(t))),
             const SizedBox(height:6),const Text('Les matchs en direct du tournoi sont observables sans autorisation.',style:TextStyle(fontSize:12,color:JangColors.textSecondary)),
