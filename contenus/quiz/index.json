@@ -106,11 +106,11 @@
     },
     "culture_intermediaire": {
       "fichier": "culture_intermediaire.json",
-      "nombre": 84
+      "nombre": 108
     },
     "culture_avance": {
       "fichier": "culture_avance.json",
-      "nombre": 84
+      "nombre": 108
     }
   }
 }
