@@ -248,12 +248,15 @@ class MatchService {
       .snapshots()
       .map((doc) => doc.exists ? MatchObserver.fromDoc(doc) : null);
 
-  Future<void> requestObservation(String matchId, UserProfile p) =>
-      _col.doc(matchId).collection('observateurs').doc(p.uid).set({
-        'name': p.publicName,
-        'status': 'pending',
-        'requestedAt': FieldValue.serverTimestamp(),
-      });
+  Future<void> requestObservation(String matchId, UserProfile p) async {
+    final ref = _col.doc(matchId).collection('observateurs').doc(p.uid);
+    await ref.delete();
+    await ref.set({
+      'name': p.publicName,
+      'status': 'pending',
+      'requestedAt': FieldValue.serverTimestamp(),
+    });
+  }
 
   Future<void> decideObservation(String matchId, String uid, {required bool accept}) =>
       _col.doc(matchId).collection('observateurs').doc(uid).update({
