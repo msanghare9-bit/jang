@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the opposite of “abundant”.",
+      "o": [
+        "scarce",
+        "plentiful",
+        "ample",
+        "numerous"
+      ],
+      "r": 0,
+      "e": "“scarce” is the opposite of “abundant”."
+    },
+    {
+      "q": "Choose the opposite of “accurate”.",
+      "o": [
+        "precise",
+        "inaccurate",
+        "exact",
+        "correct"
+      ],
+      "r": 1,
+      "e": "“inaccurate” is the opposite of “accurate”."
+    },
+    {
+      "q": "Choose the opposite of “advance”.",
+      "o": [
+        "progress",
+        "approach",
+        "retreat",
+        "continue"
+      ],
+      "r": 2,
+      "e": "“retreat” is the opposite of “advance”."
+    },
+    {
+      "q": "Choose the opposite of “artificial”.",
+      "o": [
+        "synthetic",
+        "false",
+        "man-made",
+        "natural"
+      ],
+      "r": 3,
+      "e": "“natural” is the opposite of “artificial”."
+    },
+    {
+      "q": "Choose the opposite of “bold”.",
+      "o": [
+        "timid",
+        "brave",
+        "confident",
+        "daring"
+      ],
+      "r": 0,
+      "e": "“timid” is the opposite of “bold”."
+    },
+    {
+      "q": "Choose the opposite of “complex”.",
+      "o": [
+        "complicated",
+        "simple",
+        "detailed",
+        "difficult"
+      ],
+      "r": 1,
+      "e": "“simple” is the opposite of “complex”."
+    },
+    {
+      "q": "Choose the opposite of “compulsory”.",
+      "o": [
+        "required",
+        "necessary",
+        "optional",
+        "mandatory"
+      ],
+      "r": 2,
+      "e": "“optional” is the opposite of “compulsory”."
+    },
+    {
+      "q": "Choose the opposite of “conceal”.",
+      "o": [
+        "hide",
+        "cover",
+        "disguise",
+        "reveal"
+      ],
+      "r": 3,
+      "e": "“reveal” is the opposite of “conceal”."
+    },
+    {
+      "q": "Choose the opposite of “diminish”.",
+      "o": [
+        "increase",
+        "reduce",
+        "lessen",
+        "decrease"
+      ],
+      "r": 0,
+      "e": "“increase” is the opposite of “diminish”."
+    },
+    {
+      "q": "Choose the opposite of “domestic”.",
+      "o": [
+        "local",
+        "foreign",
+        "household",
+        "national"
+      ],
+      "r": 1,
+      "e": "“foreign” is the opposite of “domestic”."
+    },
+    {
+      "q": "Choose the opposite of “frequent”.",
+      "o": [
+        "regular",
+        "common",
+        "rare",
+        "usual"
+      ],
+      "r": 2,
+      "e": "“rare” is the opposite of “frequent”."
+    },
+    {
+      "q": "Choose the opposite of “generous”.",
+      "o": [
+        "giving",
+        "kind",
+        "charitable",
+        "stingy"
+      ],
+      "r": 3,
+      "e": "“stingy” is the opposite of “generous”."
+    },
+    {
+      "q": "Choose the opposite of “genuine”.",
+      "o": [
+        "fake",
+        "authentic",
+        "real",
+        "true"
+      ],
+      "r": 0,
+      "e": "“fake” is the opposite of “genuine”."
+    },
+    {
+      "q": "Choose the opposite of “humble”.",
+      "o": [
+        "modest",
+        "arrogant",
+        "respectful",
+        "unassuming"
+      ],
+      "r": 1,
+      "e": "“arrogant” is the opposite of “humble”."
+    },
+    {
+      "q": "Choose the opposite of “optimistic”.",
+      "o": [
+        "hopeful",
+        "positive",
+        "pessimistic",
+        "confident"
+      ],
+      "r": 2,
+      "e": "“pessimistic” is the opposite of “optimistic”."
+    },
+    {
+      "q": "Choose the opposite of “permanent”.",
+      "o": [
+        "lasting",
+        "constant",
+        "enduring",
+        "temporary"
+      ],
+      "r": 3,
+      "e": "“temporary” is the opposite of “permanent”."
+    },
+    {
+      "q": "Choose the opposite of “permit”.",
+      "o": [
+        "forbid",
+        "allow",
+        "authorize",
+        "approve"
+      ],
+      "r": 0,
+      "e": "“forbid” is the opposite of “permit”."
+    },
+    {
+      "q": "Choose the opposite of “prosperity”.",
+      "o": [
+        "wealth",
+        "poverty",
+        "success",
+        "fortune"
+      ],
+      "r": 1,
+      "e": "“poverty” is the opposite of “prosperity”."
+    },
+    {
+      "q": "Choose the opposite of “rigid”.",
+      "o": [
+        "stiff",
+        "strict",
+        "flexible",
+        "firm"
+      ],
+      "r": 2,
+      "e": "“flexible” is the opposite of “rigid”."
+    },
+    {
+      "q": "Choose the opposite of “rural”.",
+      "o": [
+        "countryside",
+        "agricultural",
+        "village",
+        "urban"
+      ],
+      "r": 3,
+      "e": "“urban” is the opposite of “rural”."
+    },
+    {
+      "q": "Choose the opposite of “transparent”.",
+      "o": [
+        "opaque",
+        "clear",
+        "glassy",
+        "visible"
+      ],
+      "r": 0,
+      "e": "“opaque” is the opposite of “transparent”."
+    },
+    {
+      "q": "Choose the opposite of “unanimous”.",
+      "o": [
+        "united",
+        "divided",
+        "agreed",
+        "collective"
+      ],
+      "r": 1,
+      "e": "“divided” is the opposite of “unanimous”."
+    },
+    {
+      "q": "Choose the opposite of “vacant”.",
+      "o": [
+        "empty",
+        "available",
+        "occupied",
+        "free"
+      ],
+      "r": 2,
+      "e": "“occupied” is the opposite of “vacant”."
+    },
+    {
+      "q": "Choose the opposite of “voluntary”.",
+      "o": [
+        "optional",
+        "willing",
+        "chosen",
+        "compulsory"
+      ],
+      "r": 3,
+      "e": "“compulsory” is the opposite of “voluntary”."
+    }
+  ]
+}
