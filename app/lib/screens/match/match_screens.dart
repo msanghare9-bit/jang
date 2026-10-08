@@ -631,7 +631,11 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
     }
   }
 
-  Duration get _elapsed => DateTime.now().difference(_seenAt);
+  Duration get _elapsed {
+    final askedAt = _m?.askedAt;
+    final elapsed = DateTime.now().difference(askedAt ?? _seenAt);
+    return elapsed.isNegative ? Duration.zero : elapsed;
+  }
   int get _left {
     final m = _m;
     if (m == null) return 0;
