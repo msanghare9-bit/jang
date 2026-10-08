@@ -1172,7 +1172,7 @@ class _ObserversPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => StreamBuilder<List<MatchObserver>>(
-        stream: MatchService.instance.observers(matchId),
+        stream: MatchService.instance.observers(matchId, includePending: canManage),
         builder: (context, snap) {
           final all = snap.data ?? const <MatchObserver>[];
           final approved = all.where((o) => o.status == 'accepted').toList();
