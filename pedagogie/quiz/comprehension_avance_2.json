@@ -1,0 +1,292 @@
+{
+  "questions": [
+    {
+      "q": "What changed during the trial?",
+      "o": [
+        "More customers borrowed bags by Friday.",
+        "Every stall stopped selling produce.",
+        "Fewer visitors came to the market.",
+        "The association ended the trial on Monday."
+      ],
+      "r": 0,
+      "e": "The records showed an increase in borrowed bags by Friday.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "Why is the association cautious about the result?",
+      "o": [
+        "The bags were never used.",
+        "A local event may also have affected visitor numbers.",
+        "The sales records were lost.",
+        "The trial lasted for a whole year."
+      ],
+      "r": 1,
+      "e": "The event brought extra visitors, so it may have influenced the result.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "What will the association do next?",
+      "o": [
+        "Close all six stalls",
+        "Stop keeping any sales records",
+        "Run a longer test",
+        "Replace the bags with boxes immediately"
+      ],
+      "r": 2,
+      "e": "The association plans a longer test before deciding.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "What can be concluded from this one-week trial?",
+      "o": [
+        "It proves reusable bags always increase sales.",
+        "It proves local events reduce borrowing.",
+        "It shows that records are unnecessary.",
+        "It shows a pattern, but not a definite cause."
+      ],
+      "r": 3,
+      "e": "The passage says the association has not established the cause.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "What happened after the reminders were introduced?",
+      "o": [
+        "Attendance rose during the first three months.",
+        "All appointments were cancelled.",
+        "Attendance fell in both neighbourhoods.",
+        "The clinic stopped sending messages."
+      ],
+      "r": 0,
+      "e": "The passage reports that attendance rose.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "Why should the result be interpreted carefully?",
+      "o": [
+        "The clinic had no appointments.",
+        "There was no comparison group and participation was voluntary.",
+        "The reminders were sent for several years.",
+        "Every patient received a paper letter."
+      ],
+      "r": 1,
+      "e": "The pilot lacked a comparison group and patients opted in.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "What will the clinic do before expanding?",
+      "o": [
+        "Stop recording appointments",
+        "Open a new hospital immediately",
+        "Compare later records",
+        "Remove the text reminders"
+      ],
+      "r": 2,
+      "e": "The clinic plans to compare later records.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "Who showed a particularly notable change?",
+      "o": [
+        "Patients who never had appointments",
+        "Only the clinic staff",
+        "People living outside the country",
+        "Patients who had previously missed visits"
+      ],
+      "r": 3,
+      "e": "Attendance rose especially among patients who had missed visits before.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "What did the team count first?",
+      "o": [
+        "Newly planted seedlings",
+        "The number of fishing boats",
+        "The rainfall in every country",
+        "The number of houses along the coast"
+      ],
+      "r": 0,
+      "e": "The team counted the seedlings it planted.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "What factor was linked to lower survival?",
+      "o": [
+        "More school lessons",
+        "Stronger tides",
+        "Higher market prices",
+        "Longer daylight hours"
+      ],
+      "r": 1,
+      "e": "Sites with stronger tides lost more young plants.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "Why report survival rates as well as planting totals?",
+      "o": [
+        "The team did not plant any seedlings.",
+        "The tides were measured incorrectly.",
+        "Planting totals alone do not show long-term recovery.",
+        "The number planted is always the same as the number surviving."
+      ],
+      "r": 2,
+      "e": "The passage distinguishes planted seedlings from long-term survival.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "When did the survey take place?",
+      "o": [
+        "Before the project began",
+        "After ten years",
+        "During the planting ceremony",
+        "After one rainy season"
+      ],
+      "r": 3,
+      "e": "The survey followed one rainy season.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "What increased after the library extended its hours?",
+      "o": [
+        "Evening attendance",
+        "The number of book loans",
+        "The number of library branches",
+        "The book-return period"
+      ],
+      "r": 0,
+      "e": "More people attended after classes.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "What did students seem to value most?",
+      "o": [
+        "A longer loan period",
+        "Quiet study space",
+        "New books each evening",
+        "A different return desk"
+      ],
+      "r": 1,
+      "e": "Staff observed that quiet desks mattered more than borrowing.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "What stayed unchanged?",
+      "o": [
+        "The study room closing time",
+        "The number of evening visitors",
+        "The book-return schedule",
+        "The exam timetable"
+      ],
+      "r": 2,
+      "e": "The passage says the return schedule did not change.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "When would staff review the arrangement?",
+      "o": [
+        "Before the library opened",
+        "Every hour",
+        "At the start of the next school year",
+        "After exams"
+      ],
+      "r": 3,
+      "e": "They planned a review after exams.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "What two kinds of data did the project record?",
+      "o": [
+        "Crop yields and maintenance costs",
+        "School attendance and exam scores",
+        "Rainfall and bus fares",
+        "Market prices and library loans"
+      ],
+      "r": 0,
+      "e": "The project recorded yields and maintenance costs.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "Why did repair costs differ?",
+      "o": [
+        "Every farm grew a different crop.",
+        "Access to spare parts varied by location.",
+        "The report did not include any pumps.",
+        "All farms stopped using irrigation."
+      ],
+      "r": 1,
+      "e": "The report points to differences in repair and parts access.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "What did the team recommend?",
+      "o": [
+        "Use one cost estimate for every farm.",
+        "Stop tracking maintenance costs.",
+        "Share the results with nearby communities.",
+        "Replace all crops with solar panels."
+      ],
+      "r": 2,
+      "e": "The team recommended sharing results.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "Why avoid one cost estimate for all farms?",
+      "o": [
+        "Every farm has identical equipment.",
+        "The crop yields were not recorded.",
+        "The project lasted for too many seasons.",
+        "Local conditions and repair access differ."
+      ],
+      "r": 3,
+      "e": "Different access to repairs makes a single estimate unreliable.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "What did the school add?",
+      "o": [
+        "A supervised crossing point",
+        "A new bus station",
+        "A second school library",
+        "A road beside the classroom"
+      ],
+      "r": 0,
+      "e": "The school changed the route by adding a supervised crossing.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "What else changed during the same period?",
+      "o": [
+        "The school subjects",
+        "Bus schedules",
+        "The number of teachers",
+        "The pupils’ uniforms"
+      ],
+      "r": 1,
+      "e": "Bus schedules also changed.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "Why will the school compare several months of records?",
+      "o": [
+        "To avoid asking families for information.",
+        "To prove the crossing caused every change.",
+        "To understand whether the pattern continues and what affects it.",
+        "To remove the attendance records."
+      ],
+      "r": 2,
+      "e": "A longer comparison can help separate possible influences.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "What will families be asked about?",
+      "o": [
+        "Whether the road should be painted blue",
+        "Whether lessons should be shorter",
+        "Whether the library should close",
+        "Whether transport changes affected punctuality"
+      ],
+      "r": 3,
+      "e": "The school will ask about transport and punctuality.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    }
+  ]
+}
