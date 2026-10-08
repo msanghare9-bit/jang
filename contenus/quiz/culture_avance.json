@@ -1095,12 +1095,12 @@
     {
       "q": "UNESCO dates the major civilization at Great Zimbabwe to which period?",
       "o": [
-        "5th–9th centuries",
         "11th–15th centuries",
+        "5th–9th centuries",
         "16th–18th centuries",
         "19th–20th centuries"
       ],
-      "r": 1,
+      "r": 0,
       "e": "UNESCO identifies it as Shona civilization flourishing between the 11th and 15th centuries.",
       "d": "culture",
       "n": "avance"
@@ -1109,11 +1109,11 @@
       "q": "Approximately how large is the Great Zimbabwe archaeological site?",
       "o": [
         "8 hectares",
-        "28 hectares",
         "Nearly 80 hectares",
+        "28 hectares",
         "More than 800 hectares"
       ],
-      "r": 2,
+      "r": 1,
       "e": "UNESCO gives the site an area of nearly 80 hectares.",
       "d": "culture",
       "n": "avance"
@@ -1121,12 +1121,12 @@
     {
       "q": "What does UNESCO emphasize about Great Zimbabwe’s historical role?",
       "o": [
-        "It was an important medieval trading centre",
         "It was a Portuguese naval base",
         "It was the first modern capital of Zimbabwe",
+        "It was an important medieval trading centre",
         "It was a Roman provincial town"
       ],
-      "r": 0,
+      "r": 2,
       "e": "UNESCO describes the city as an important trading centre renowned from the Middle Ages.",
       "d": "culture",
       "n": "avance"
@@ -1135,11 +1135,11 @@
       "q": "According to UNESCO, Great Zimbabwe is a unique testimony to which civilization?",
       "o": [
         "Manding",
-        "Shona",
         "Aksumite",
-        "Swahili"
+        "Swahili",
+        "Shona"
       ],
-      "r": 1,
+      "r": 3,
       "e": "The site bears witness to the Bantu civilization of the Shona.",
       "d": "culture",
       "n": "avance"
@@ -1160,12 +1160,12 @@
     {
       "q": "Which ruler is associated with the construction of Lalibela’s churches?",
       "o": [
-        "King Lalibela",
         "King Ezana",
+        "King Lalibela",
         "Mansa Musa",
         "King Mapungubwe"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO attributes the building project to King Lalibela.",
       "d": "culture",
       "n": "avance"
@@ -1173,12 +1173,12 @@
     {
       "q": "The church of Biete Ghiorgis is connected to the other churches by what?",
       "o": [
-        "A system of trenches",
         "A stone aqueduct",
         "A raised railway",
+        "A system of trenches",
         "An underground river"
       ],
-      "r": 0,
+      "r": 2,
       "e": "UNESCO notes that trenches connect the isolated Biete Ghiorgis.",
       "d": "culture",
       "n": "avance"
@@ -1186,12 +1186,12 @@
     {
       "q": "UNESCO describes Lalibela’s churches as a ‘New Jerusalem’ built after what historical change?",
       "o": [
-        "Christian pilgrimages to the Holy Land were halted",
         "The Red Sea trade ended",
         "Aksum’s obelisks were dismantled",
-        "The Portuguese arrived in Mombasa"
+        "The Portuguese arrived in Mombasa",
+        "Christian pilgrimages to the Holy Land were halted"
       ],
-      "r": 0,
+      "r": 3,
       "e": "The description links the project to Muslim conquests that halted Christian pilgrimages to the Holy Land.",
       "d": "culture",
       "n": "avance"
@@ -1212,12 +1212,12 @@
     {
       "q": "The ruins at Aksum span approximately which period?",
       "o": [
-        "1st–13th centuries CE",
         "1st–4th centuries BCE",
+        "1st–13th centuries CE",
         "10th–16th centuries CE",
         "17th–20th centuries CE"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO dates the extensive ruins from the 1st to the 13th century.",
       "d": "culture",
       "n": "avance"
@@ -1238,12 +1238,12 @@
     {
       "q": "Which three regions lay at the crossroads of the Aksumite kingdom?",
       "o": [
-        "Africa, Arabia and the Greco-Roman World",
         "Europe, East Asia and the Americas",
         "West Africa, South America and Arabia",
-        "Central Asia, India and Europe"
+        "Central Asia, India and Europe",
+        "Africa, Arabia and the Greco-Roman World"
       ],
-      "r": 0,
+      "r": 3,
       "e": "UNESCO describes Aksum at the crossroads of Africa, Arabia and the Greco-Roman World.",
       "d": "culture",
       "n": "avance"
@@ -1264,12 +1264,12 @@
     {
       "q": "Which two features helped Aksum connect sea and inland trade routes?",
       "o": [
-        "The port of Adulis and routes across north-eastern Africa",
         "The ports of Dakar and Saint-Louis",
+        "The port of Adulis and routes across north-eastern Africa",
         "The Sahara and the Nile Delta",
         "The Great Lakes and the Congo River"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO connects Adulis and inland north-eastern African routes to Aksum’s trade.",
       "d": "culture",
       "n": "avance"
@@ -1278,11 +1278,11 @@
       "q": "When was Fort Jesus built?",
       "o": [
         "1493–1496",
-        "1593–1596",
         "1693–1696",
+        "1593–1596",
         "1793–1796"
       ],
-      "r": 1,
+      "r": 2,
       "e": "UNESCO dates construction to 1593–1596.",
       "d": "culture",
       "n": "avance"
@@ -1291,11 +1291,11 @@
       "q": "What area does the Fort Jesus property cover, including the moat and immediate surroundings?",
       "o": [
         "0.36 hectares",
-        "2.36 hectares",
         "23.6 hectares",
-        "236 hectares"
+        "236 hectares",
+        "2.36 hectares"
       ],
-      "r": 1,
+      "r": 3,
       "e": "UNESCO gives the property area as 2.36 hectares.",
       "d": "culture",
       "n": "avance"
@@ -1329,12 +1329,12 @@
     {
       "q": "Which broad historical significance does UNESCO associate with Fort Jesus?",
       "o": [
-        "A Western attempt to control Indian Ocean trade routes",
         "The first railway across East Africa",
         "The end of all trade between Africa and Asia",
+        "A Western attempt to control Indian Ocean trade routes",
         "The founding of the Swahili language"
       ],
-      "r": 0,
+      "r": 2,
       "e": "UNESCO describes it as the first successful Western attempt to rule Indian Ocean trade routes.",
       "d": "culture",
       "n": "avance"
@@ -1342,12 +1342,12 @@
     {
       "q": "The Fort Jesus site is located at which edge of Mombasa’s town?",
       "o": [
-        "The southern edge",
         "The northern edge",
         "The eastern edge",
-        "The western edge"
+        "The western edge",
+        "The southern edge"
       ],
-      "r": 0,
+      "r": 3,
       "e": "UNESCO places it at the southern edge of Mombasa.",
       "d": "culture",
       "n": "avance"
@@ -1368,12 +1368,12 @@
     {
       "q": "Which groups does UNESCO name as exchanging cultural values around Fort Jesus?",
       "o": [
-        "African, Arab, Turkish, Persian and European peoples",
         "Only Portuguese and British peoples",
+        "African, Arab, Turkish, Persian and European peoples",
         "Greek, Roman and Egyptian peoples",
         "Shona, Serer and Manding peoples"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO explicitly lists these origins in its account of the fort’s cultural interchange.",
       "d": "culture",
       "n": "avance"
@@ -1381,12 +1381,12 @@
     {
       "q": "What distinguishes the churches at Lalibela from a conventional church built with separate blocks?",
       "o": [
-        "They are monolithic and carved from the rock",
         "They are floating wooden buildings",
         "They are made entirely of metal",
+        "They are monolithic and carved from the rock",
         "They are underground caves formed by water"
       ],
-      "r": 0,
+      "r": 2,
       "e": "The churches were carved as monolithic structures from rock.",
       "d": "culture",
       "n": "avance"
@@ -1394,12 +1394,12 @@
     {
       "q": "Aksum’s ruins are found near which part of Ethiopia?",
       "o": [
-        "The northern border",
         "The southern coast",
         "The western desert",
-        "The eastern delta"
+        "The eastern delta",
+        "The northern border"
       ],
-      "r": 0,
+      "r": 3,
       "e": "UNESCO locates ancient Aksum near Ethiopia’s northern border.",
       "d": "culture",
       "n": "avance"
