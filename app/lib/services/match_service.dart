@@ -218,6 +218,11 @@ class MatchService {
       .snapshots()
       .map((s) => [for (final d in s.docs) MatchPlayer.fromDoc(d)]..sort((a, b) => b.score.compareTo(a.score)));
 
+  Future<int> completedMatchCount() async {
+    final result = await _col.where('state', isEqualTo: LiveMatch.over).count().get();
+    return result.count ?? 0;
+  }
+
   /// Matchs qui ont commencé et restent ouverts à l’observation.
   Future<List<LiveMatch>> activeMatches() async {
     final snap = await _col.where('open', isEqualTo: true).get();
