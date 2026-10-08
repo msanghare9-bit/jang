@@ -278,12 +278,15 @@ service cloud.firestore {
       }
     }
 
-    // Tournois à élimination : lecture des tableaux par les comptes connectés.
+    // Les corrigés des tournois sont privés aux fonctions serveur.
+    match /tournamentAnswers/{tournamentId} {
+      allow read, write: if false;
+    }
+
+    // Tournois à élimination : seuls les champs publics du tableau sont lisibles.
     match /tournaments/{tournamentId} {
       allow read: if signedIn();
-      allow create: if signedIn()
-                    && request.resource.data.hostUid == request.auth.uid
-                    && request.resource.data.status == 'waiting';
+      allow create: if false;
       allow update: if signedIn()
                     && resource.data.hostUid == request.auth.uid
                     && request.resource.data.diff(resource.data).affectedKeys()
