@@ -66,12 +66,14 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
   late Map<String, dynamic> _mission = widget.item?.missionData ?? const {};
   bool _dirty = false;
   bool _busy = false;
+  DateTime? _dueAt;
 
   bool get _isNew => widget.item == null;
 
   @override
   void initState() {
     super.initState();
+    _dueAt = widget.item?.dueAt;
     _title.addListener(_touch);
     _body.addListener(_touch);
     if (_type == ClassItem.mcq && _quiz.isEmpty) _quiz.add(QuizQuestion.empty());
@@ -165,6 +167,7 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
         gapItems: gaps,
         missionData: _type == ClassItem.mission ? _mission : const {},
         visibility: _public ? 'public' : 'prive',
+        dueAt: _type == ClassItem.homework ? _dueAt : null,
       ));
       if (!mounted) return;
       showMessage(context, _isNew ? 'Contenu créé.' : 'Contenu enregistré.');
@@ -176,6 +179,54 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
         showMessage(context, 'Échec : $e');
       }
     }
+  }
+
+  Future<void> _chooseDueAt() async {
+    final now = DateTime.now();
+    final current = _dueAt ?? now.add(const Duration(days: 1));
+    final day = await showDatePicker(
+      context: context,
+      initialDate: DateTime(current.year, current.month, current.day),
+      firstDate: DateTime(now.year, now.month, now.day),
+      lastDate: DateTime(now.year + 5),
+      locale: const Locale('fr'),
+    );
+    if (day == null || !mounted) return;
+    final time = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.fromDateTime(current),
+      helpText: 'Heure limite',
+    );
+    if (time == null) return;
+    setState(() {
+      _dueAt = DateTime(day.year, day.month, day.day, time.hour, time.minute);
+      _dirty = true;
+    });
+  }
+
+  Widget _deadlinePicker() {
+    final due = _dueAt;
+    final label = due == null
+        ? 'Aucune date limite'
+        : '${due.day.toString().padLeft(2, '0')}/${due.month.toString().padLeft(2, '0')}/${due.year} à ${due.hour.toString().padLeft(2, '0')}:${due.minute.toString().padLeft(2, '0')}';
+    return Card(
+      child: ListTile(
+        leading: const Icon(Icons.event_available, color: JangColors.primary),
+        title: const Text('Date limite du devoir'),
+        subtitle: Text(label),
+        trailing: due == null
+            ? const Icon(Icons.chevron_right)
+            : IconButton(
+                tooltip: 'Supprimer la date limite',
+                onPressed: () => setState(() {
+                  _dueAt = null;
+                  _dirty = true;
+                }),
+                icon: const Icon(Icons.close),
+              ),
+        onTap: _chooseDueAt,
+      ),
+    );
   }
 
   Future<void> _editMission() async {
@@ -272,6 +323,8 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
                       : 'Seuls les élèves de ${widget.classRoom.name} le voient.',
                   style: t.bodySmall),
             ),
+            if (_type == ClassItem.homework) _deadlinePicker(),
+            if (_type == ClassItem.homework) const SizedBox(height: 8),
             const Divider(),
             ..._fields(context),
             const SizedBox(height: 20),
