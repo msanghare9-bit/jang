@@ -58,7 +58,7 @@ service cloud.firestore {
                     && request.resource.data.classNames.size() > 0
                     && request.resource.data.subjects is list
                     && request.resource.data.subjects.size() > 0
-                    && request.resource.data.keys().hasOnly(['uid','name','school','classNames','subjects','examId','status','createdAt']);
+                    && request.resource.data.keys().hasOnly(['uid','name','school','classNames','subjects','examId','examName','status','createdAt']);
       allow update: if isAdmin()
                     && resource.data.status == 'pending'
                     && request.resource.data.status in ['approved','rejected']
