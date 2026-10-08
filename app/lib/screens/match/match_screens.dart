@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import '../../models.dart';
 import '../../services/auth_service.dart';
 import '../../services/match_service.dart';
+import 'xarit_screen.dart';
 import '../../services/quiz_bank.dart';
 import '../../theme.dart';
 import '../../widgets/characters.dart';
@@ -58,6 +59,17 @@ class MatchHomeScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (_) => const MatchHistoryScreen()),
               ),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: const CircleAvatar(backgroundColor: JangColors.snGreen,
+                  child: Icon(Icons.people_alt_outlined, color: Colors.white)),
+              title: const Text('Mes Xarit'),
+              subtitle: const Text('Ajoute tes amis et défie-les'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const XaritScreen())),
             ),
           ),
           const SizedBox(height: 8),
@@ -365,7 +377,9 @@ Future<void> joinMatchDialog(BuildContext context) async {
 /// Choix du domaine, du niveau et du nombre de questions.
 class MatchSetupScreen extends StatefulWidget {
   final bool solo;
-  const MatchSetupScreen({super.key, this.solo = false});
+  final String? friendUid;
+  final String? friendName;
+  const MatchSetupScreen({super.key, this.solo = false, this.friendUid, this.friendName});
 
   @override
   State<MatchSetupScreen> createState() => _MatchSetupScreenState();
@@ -418,6 +432,9 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
       }
       final m = await MatchService.instance
           .create(host: p, questions: qs, domain: _domains.join(','), level: _level, title: title);
+      if (widget.friendUid != null) {
+        await XaritService.instance.inviteToMatch(p, widget.friendUid!, m);
+      }
       if (!mounted) return;
       await Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => MatchRoomScreen(matchId: m.id)));
     } catch (e) {
