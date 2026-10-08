@@ -1,0 +1,136 @@
+{
+  "questions": [
+    {
+      "q": "Which outside influences are reflected in Lamu Old Town’s architecture?",
+      "o": [
+        "Arab, Persian, Indian and European",
+        "Chinese, Japanese and Korean",
+        "Roman, Greek and Viking",
+        "Inca, Maya and Aztec"
+      ],
+      "r": 0,
+      "e": "UNESCO describes influences from Arabia, Persia, India and Europe."
+    },
+    {
+      "q": "What street pattern is characteristic of Lamu Old Town?",
+      "o": [
+        "Wide circular boulevards",
+        "Narrow, winding streets",
+        "A modern motorway grid",
+        "Raised roads over the sea"
+      ],
+      "r": 1,
+      "e": "UNESCO describes narrow winding streets."
+    },
+    {
+      "q": "What did the prosperity of Kilwa Kisiwani and Songo Mnara depend on?",
+      "o": [
+        "Trans-Saharan railways",
+        "Atlantic whaling",
+        "Indian Ocean trade",
+        "Arctic fishing"
+      ],
+      "r": 2,
+      "e": "UNESCO links the ports’ prosperity to Indian Ocean trade."
+    },
+    {
+      "q": "Which mosque is part of the ruins at Kilwa Kisiwani?",
+      "o": [
+        "The Blue Mosque of Cairo",
+        "The Great Mosque of Djenné",
+        "The Mosque of Aksum",
+        "The Great Mosque"
+      ],
+      "r": 3,
+      "e": "UNESCO lists the Great Mosque among Kilwa’s ruins."
+    },
+    {
+      "q": "What did Kilwa Kisiwani mint during part of its history?",
+      "o": [
+        "Its own currency",
+        "Porcelain plates",
+        "Printed books",
+        "Iron ploughs"
+      ],
+      "r": 0,
+      "e": "UNESCO says Kilwa minted its own currency."
+    },
+    {
+      "q": "The Meroe archaeological sites are linked to which ancient civilization?",
+      "o": [
+        "Phoenician",
+        "Kushite",
+        "Songhai",
+        "Zulu"
+      ],
+      "r": 1,
+      "e": "UNESCO associates Meroe with Kushite civilization."
+    },
+    {
+      "q": "What kind of tombs are found in Meroe’s burial grounds?",
+      "o": [
+        "Coral towers",
+        "Cave paintings",
+        "Pyramid tombs",
+        "Wooden stilt houses"
+      ],
+      "r": 2,
+      "e": "UNESCO describes extensive burial grounds of pyramid tombs."
+    },
+    {
+      "q": "Which pair names hinterland centres included with Meroe in the UNESCO property?",
+      "o": [
+        "Aksum and Lalibela",
+        "Kilwa and Lamu",
+        "Gorée and Saint-Louis",
+        "Musawwarat es-Sufra and Naqa"
+      ],
+      "r": 3,
+      "e": "UNESCO names Musawwarat es-Sufra and Naqa."
+    },
+    {
+      "q": "Which objects from China and Persia were found at Great Zimbabwe?",
+      "o": [
+        "Beads and porcelain",
+        "Paper and silk screens",
+        "Glass lamps and carpets",
+        "Bronze bells and tea bowls"
+      ],
+      "r": 0,
+      "e": "UNESCO reports beads and porcelain from China and Persia."
+    },
+    {
+      "q": "What figure from Great Zimbabwe was adopted as Zimbabwe’s emblem?",
+      "o": [
+        "A bronze lion",
+        "The soapstone Zimbabwe Bird",
+        "A wooden elephant",
+        "A clay crocodile"
+      ],
+      "r": 1,
+      "e": "The Zimbabwe Bird is a soapstone figure and national emblem."
+    },
+    {
+      "q": "Which languages appear together in some Aksumite inscriptions?",
+      "o": [
+        "Latin, Arabic and Swahili",
+        "French, Wolof and Fula",
+        "Greek, Sabaean and Ge’ez",
+        "Portuguese, Shona and Zulu"
+      ],
+      "r": 2,
+      "e": "UNESCO describes inscriptions in Greek, Sabaean and Ge’ez."
+    },
+    {
+      "q": "Which trade route did Aksum control through the port of Adulis?",
+      "o": [
+        "Atlantic trade",
+        "Mediterranean canal trade",
+        "Indian Ocean spice trade",
+        "Red Sea trade"
+      ],
+      "r": 3,
+      "e": "UNESCO notes Aksum’s control of Red Sea trade through Adulis."
+    }
+  ]
+}
