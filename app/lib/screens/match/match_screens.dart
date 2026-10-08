@@ -13,9 +13,9 @@ import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../quiz_screen.dart';
 
-// Tuiles façon Kahoot : rouge ▲, bleu ◆, jaune ●, vert ■.
-const _shapes = ['▲', '◆', '●', '■'];
-const _tileColors = [Color(0xFFE21B3C), Color(0xFF1368CE), Color(0xFFD89E00), Color(0xFF26890C)];
+// Réponses au style Jàng, sobres et lisibles.
+const _shapes = ['A', 'B', 'C', 'D'];
+const _tileColors = [Colors.white, Colors.white, Colors.white, Colors.white];
 
 /// L'accueil des matchs : créer, rejoindre, ou jouer seul.
 class MatchHomeScreen extends StatelessWidget {
@@ -30,7 +30,7 @@ class MatchHomeScreen extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(color: const Color(0xFF46178F), borderRadius: BorderRadius.circular(22)),
+            decoration: BoxDecoration(color: JangColors.snGreen, borderRadius: BorderRadius.circular(22)),
             child: Row(children: [
               const CharacterView(Chars.lion, size: 76, moves: Moves.jump),
               const SizedBox(width: 12),
@@ -376,9 +376,9 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         if (await _confirmLeave() && context.mounted) Navigator.pop(context);
       },
       child: Scaffold(
-        backgroundColor: const Color(0xFF46178F),
+        backgroundColor: JangColors.snGreen,
         appBar: AppBar(
-          backgroundColor: const Color(0xFF46178F),
+          backgroundColor: JangColors.snGreen,
           foregroundColor: Colors.white,
           title: Text(m?.title.isNotEmpty == true ? m!.title : 'Match'),
         ),
@@ -519,25 +519,50 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: Opacity(
-            opacity: reveal ? (i == q.answer ? 1 : 0.35) : (_myChoice == null || _myChoice == i ? 1 : 0.45),
-            child: Material(
-              color: _tileColors[i],
-              borderRadius: BorderRadius.circular(16),
-              child: InkWell(
+            opacity: reveal ? (i == q.answer ? 1 : 0.45) : (_myChoice == null || _myChoice == i ? 1 : 0.55),
+            child: Container(
+              decoration: BoxDecoration(
+                color: _tileColors[i],
                 borderRadius: BorderRadius.circular(16),
-                onTap: enabled && !reveal && _myChoice == null ? () => _answer(i) : null,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
-                  child: Row(children: [
-                    Text(_shapes[i], style: const TextStyle(color: Colors.white, fontSize: 22)),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Text(q.options[i],
-                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 17)),
-                    ),
-                    if (reveal && i == q.answer) const Icon(Icons.check_circle, color: Colors.white),
-                    if (!reveal && _myChoice == i) const Icon(Icons.radio_button_checked, color: Colors.white),
-                  ]),
+                border: Border.all(
+                  color: reveal && i == q.answer || _myChoice == i
+                      ? JangColors.snGreen
+                      : const Color(0xFFE5E7EB),
+                  width: reveal && i == q.answer || _myChoice == i ? 2.5 : 1.5,
+                ),
+                boxShadow: const [
+                  BoxShadow(color: Color(0x14000000), blurRadius: 8, offset: Offset(0, 3)),
+                ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(16),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(16),
+                  onTap: enabled && !reveal && _myChoice == null ? () => _answer(i) : null,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                    child: Row(children: [
+                      Container(
+                        width: 34,
+                        height: 34,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: JangColors.snGreen,
+                          borderRadius: BorderRadius.circular(11),
+                        ),
+                        child: Text(_shapes[i],
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w900)),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(q.options[i],
+                            style: const TextStyle(color: JangColors.text, fontWeight: FontWeight.w800, fontSize: 17)),
+                      ),
+                      if (reveal && i == q.answer) const Icon(Icons.check_circle, color: JangColors.snGreen),
+                      if (!reveal && _myChoice == i) const Icon(Icons.radio_button_checked, color: JangColors.snGreen),
+                    ]),
+                  ),
                 ),
               ),
             ),
