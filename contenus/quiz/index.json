@@ -90,11 +90,11 @@
     },
     "expressions_intermediaire": {
       "fichier": "expressions_intermediaire.json",
-      "nombre": 72
+      "nombre": 96
     },
     "expressions_avance": {
       "fichier": "expressions_avance.json",
-      "nombre": 72
+      "nombre": 96
     },
     "comprehension_intermediaire": {
       "fichier": "comprehension_intermediaire.json",
