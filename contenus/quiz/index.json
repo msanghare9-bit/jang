@@ -42,11 +42,11 @@
     },
     "antonymes_debutant": {
       "fichier": "antonymes_debutant.json",
-      "nombre": 72
+      "nombre": 96
     },
     "francais_anglais_debutant": {
       "fichier": "francais_anglais_debutant.json",
-      "nombre": 72
+      "nombre": 96
     },
     "synonymes_intermediaire": {
       "fichier": "synonymes_intermediaire.json",
