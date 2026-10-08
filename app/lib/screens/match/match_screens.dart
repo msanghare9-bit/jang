@@ -75,6 +75,14 @@ class MatchHomeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           ChunkyButton(
+            label: 'Observer un match en direct',
+            icon: Icons.visibility_outlined,
+            outlined: true,
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const MatchFinderScreen())),
+          ),
+          const SizedBox(height: 10),
+          ChunkyButton(
             label: 'M\'entraîner seul',
             icon: Icons.person_outline,
             outlined: true,
@@ -193,6 +201,89 @@ class _HistoryStat extends StatelessWidget {
         const SizedBox(height: 4),
         Text(label, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodySmall),
       ]);
+}
+
+
+/// Liste les matchs en cours que l’utilisateur peut demander à observer.
+class MatchFinderScreen extends StatefulWidget {
+  const MatchFinderScreen({super.key});
+
+  @override
+  State<MatchFinderScreen> createState() => _MatchFinderScreenState();
+}
+
+class _MatchFinderScreenState extends State<MatchFinderScreen> {
+  late Future<List<LiveMatch>> _future = MatchService.instance.activeMatches();
+  final Set<String> _busy = {};
+
+  Future<void> _observe(LiveMatch match) async {
+    final p = AuthService.instance.profile.value;
+    if (p == null) return;
+    setState(() => _busy.add(match.id));
+    try {
+      await MatchService.instance.requestObservation(match.id, p);
+      if (!mounted) return;
+      await Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => MatchRoomScreen(matchId: match.id, spectator: true),
+        ),
+      );
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible d’envoyer la demande. Réessaie.');
+    } finally {
+      if (mounted) setState(() => _busy.remove(match.id));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final uid = AuthService.instance.profile.value?.uid ?? '';
+    return Scaffold(
+      appBar: AppBar(title: const Text('Matchs en direct')),
+      body: FutureBuilder<List<LiveMatch>>(
+        future: _future,
+        builder: (context, snap) {
+          if (snap.hasError) return loadError(() => setState(() => _future = MatchService.instance.activeMatches()));
+          if (!snap.hasData) return const Center(child: CircularProgressIndicator());
+          final matches = snap.data!.where((m) => m.hostUid != uid).toList();
+          if (matches.isEmpty) {
+            return const Center(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Text('Aucun match en cours pour le moment. Réessaie plus tard.'),
+              ),
+            );
+          }
+          return RefreshIndicator(
+            onRefresh: () async => setState(() => _future = MatchService.instance.activeMatches()),
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                const Text('Choisis un match. Son hôte devra accepter ta demande.'),
+                const SizedBox(height: 10),
+                for (final match in matches)
+                  Card(
+                    child: ListTile(
+                      leading: const CircleAvatar(
+                        backgroundColor: JangColors.snGreen,
+                        child: Icon(Icons.sensors, color: Colors.white),
+                      ),
+                      title: Text(match.title.isEmpty ? 'Match de ${match.hostName}' : match.title),
+                      subtitle: Text('Hôte : ${match.hostName} · ${match.questions.length} questions'),
+                      trailing: FilledButton(
+                        onPressed: _busy.contains(match.id) ? null : () => _observe(match),
+                        child: Text(_busy.contains(match.id) ? 'Envoi…' : 'Demander'),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
 
 /// Demande le code et entre dans le match.
@@ -375,7 +466,8 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
 /// Sert aussi au quiz en direct du prof (il mène sans jouer).
 class MatchRoomScreen extends StatefulWidget {
   final String matchId;
-  const MatchRoomScreen({super.key, required this.matchId});
+  final bool spectator;
+  const MatchRoomScreen({super.key, required this.matchId, this.spectator = false});
 
   @override
   State<MatchRoomScreen> createState() => _MatchRoomScreenState();
@@ -388,6 +480,9 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
   LiveMatch? _m;
   List<MatchPlayer> _players = const [];
   Timer? _tick;
+  StreamSubscription<MatchObserver?>? _oSub;
+  MatchObserver? _observation;
+  bool _observationLoaded = false;
 
   /// Moment où la question en cours est apparue sur ce téléphone.
   int _seenIndex = -2;
@@ -398,12 +493,21 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
 
   String get _uid => AuthService.instance.profile.value?.uid ?? '';
   bool get _isHost => _m?.hostUid == _uid;
-  bool get _plays => _m != null && (!_isHost || _m!.hostPlays);
+  bool get _plays => !widget.spectator && _m != null && (!_isHost || _m!.hostPlays);
 
   @override
   void initState() {
     super.initState();
     _mSub = _svc.watch(widget.matchId).listen(_onMatch);
+    if (widget.spectator) {
+      _oSub = _svc.myObservation(widget.matchId, _uid).listen((o) {
+        if (!mounted) return;
+        setState(() {
+          _observation = o;
+          _observationLoaded = true;
+        });
+      });
+    }
     _pSub = _svc.players(widget.matchId).listen((p) {
       if (!mounted) return;
       setState(() => _players = p);
@@ -498,6 +602,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
   void dispose() {
     _mSub?.cancel();
     _pSub?.cancel();
+    _oSub?.cancel();
     _tick?.cancel();
     super.dispose();
   }
@@ -520,15 +625,53 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         ),
         body: m == null
             ? const Center(child: CircularProgressIndicator(color: Colors.white))
-            : switch (m.state) {
-                LiveMatch.waiting => _lobby(m),
-                LiveMatch.asking => _question(m),
-                LiveMatch.showing => _correction(m),
-                _ => _podium(m),
-              },
+            : widget.spectator && (!_observationLoaded || _observation?.status == 'pending')
+                ? _observationWaiting()
+                : widget.spectator && _observation?.status != 'accepted'
+                    ? _observationRefused()
+                    : Column(children: [
+                        _ObserversPanel(matchId: widget.matchId, canManage: _isHost),
+                        Expanded(
+                          child: switch (m.state) {
+                            LiveMatch.waiting => _lobby(m),
+                            LiveMatch.asking => _question(m),
+                            LiveMatch.showing => _correction(m),
+                            _ => _podium(m),
+                          },
+                        ),
+                      ]),
       ),
     );
   }
+
+  Widget _observationWaiting() => const Center(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            CircularProgressIndicator(color: Colors.white),
+            SizedBox(height: 16),
+            Text('Demande envoyée. Attends que l’hôte accepte pour regarder.',
+                textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+          ]),
+        ),
+      );
+
+  Widget _observationRefused() => Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            const Icon(Icons.visibility_off_outlined, color: Colors.white, size: 42),
+            const SizedBox(height: 12),
+            const Text('L’hôte n’a pas accepté la demande d’observation.',
+                textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700)),
+            const SizedBox(height: 12),
+            OutlinedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Retour'),
+            ),
+          ]),
+        ),
+      );
 
   // ---------- Salle d'attente ----------
 
@@ -650,7 +793,12 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
                   ),
               ],
             ),
-          if (_plays) _tiles(q, reveal: false) else _hostWatch(m),
+          if (_plays)
+            _tiles(q, reveal: false)
+          else if (_isHost)
+            _hostWatch(m)
+          else
+            _viewerWatch(m),
           if (_plays && _myChoice != null) ...[
             const SizedBox(height: 14),
             const Center(
@@ -733,6 +881,13 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         ),
     ]);
   }
+
+  Widget _viewerWatch(LiveMatch m) => Column(children: [
+        _tiles(m.current!, reveal: false, enabled: false),
+        const SizedBox(height: 10),
+        Text('$_answeredCount / ${_players.length} ont répondu',
+            style: titleStyle(18, color: Colors.white, weight: 800)),
+      ]);
 
   // ---------- Correction ----------
 
@@ -927,4 +1082,45 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
       ]),
     );
   }
+}
+
+class _ObserversPanel extends StatelessWidget {
+  final String matchId;
+  final bool canManage;
+  const _ObserversPanel({required this.matchId, required this.canManage});
+
+  @override
+  Widget build(BuildContext context) => StreamBuilder<List<MatchObserver>>(
+        stream: MatchService.instance.observers(matchId),
+        builder: (context, snap) {
+          final all = snap.data ?? const <MatchObserver>[];
+          final approved = all.where((o) => o.status == 'accepted').toList();
+          final pending = canManage ? all.where((o) => o.status == 'pending').toList() : const <MatchObserver>[];
+          if (approved.isEmpty && pending.isEmpty) return const SizedBox.shrink();
+          return Container(
+            width: double.infinity,
+            color: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              if (approved.isNotEmpty)
+                Text('Observateurs : ${approved.map((o) => o.name).join(', ')}',
+                    style: const TextStyle(color: JangColors.snGreen, fontWeight: FontWeight.w800)),
+              for (final o in pending)
+                Row(children: [
+                  Expanded(child: Text('${o.name} demande à observer')),
+                  IconButton(
+                    tooltip: 'Accepter',
+                    onPressed: () => MatchService.instance.decideObservation(matchId, o.uid, accept: true),
+                    icon: const Icon(Icons.check_circle, color: JangColors.snGreen),
+                  ),
+                  IconButton(
+                    tooltip: 'Refuser',
+                    onPressed: () => MatchService.instance.decideObservation(matchId, o.uid, accept: false),
+                    icon: const Icon(Icons.cancel_outlined, color: JangColors.textSecondary),
+                  ),
+                ]),
+            ]),
+          );
+        },
+      );
 }
