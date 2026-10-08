@@ -497,6 +497,13 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
             selected: {_level},
             onSelectionChanged: (s) => setState(() => _level = s.first),
           ),
+          if (_level == 'debutant') ...[
+            const SizedBox(height: 6),
+            Text(
+              'Les consignes sont en français simple. Certaines questions et réponses sont en anglais pour t’aider à apprendre.',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+          ],
           const SizedBox(height: 18),
           Text('Combien de questions ?', style: titleStyle(19, weight: 800)),
           const SizedBox(height: 8),
