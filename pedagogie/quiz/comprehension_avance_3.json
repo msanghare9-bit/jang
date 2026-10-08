@@ -1,0 +1,292 @@
+{
+  "questions": [
+    {
+      "q": "What did Awa do?",
+      "o": [
+        "compared two irrigation methods",
+        "translated the health leaflet",
+        "grouped the interview answers by theme",
+        "presented the survey limits"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Awa compared two irrigation methods.",
+      "t": "Awa compared two irrigation methods on the school garden plots over four weeks; the science club wanted to use less water."
+    },
+    {
+      "q": "Where did Moussa do it?",
+      "o": [
+        "in the research report",
+        "along the main road",
+        "using a clean container",
+        "until the second measurement"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action along the main road.",
+      "t": "Moussa interviewed local shopkeepers along the main road during the community survey; the group was studying changes in shopping habits."
+    },
+    {
+      "q": "When did Fatou do it?",
+      "o": [
+        "for the transport study",
+        "before the public opening",
+        "after the first trial",
+        "after obtaining permission"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after the first trial.",
+      "t": "Fatou revised the project schedule with her classmates after the first trial; their original plan required more time."
+    },
+    {
+      "q": "Why did Idrissa do it?",
+      "o": [
+        "some streets were missing from the survey",
+        "the teacher wanted to compare the two reading formats",
+        "the municipality needed to plan repairs",
+        "the farming group needed a reliable record"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the farming group needed a reliable record.",
+      "t": "Idrissa recorded the monthly rainfall at the village weather station throughout the rainy season; the farming group needed a reliable record."
+    },
+    {
+      "q": "What did Mariama do?",
+      "o": [
+        "translated the health leaflet",
+        "grouped the interview answers by theme",
+        "presented the survey limits",
+        "compared the cost and durability"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Mariama translated the health leaflet.",
+      "t": "Mariama translated the health leaflet with two bilingual volunteers before the clinic distributed it; readers had asked for simpler wording."
+    },
+    {
+      "q": "Where did Cheikh do it?",
+      "o": [
+        "using a clean container",
+        "in the research report",
+        "until the second measurement",
+        "before printing the notice"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action in the research report.",
+      "t": "Cheikh checked the source of each statistic in the research report before the presentation; he wanted to avoid repeating an unsupported claim."
+    },
+    {
+      "q": "When did Ndeye do it?",
+      "o": [
+        "before the public opening",
+        "after obtaining permission",
+        "for the transport study",
+        "during the second week"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : for the transport study.",
+      "t": "Ndeye compared bus arrival times at three stops for the transport study; the team was testing whether delays varied by location."
+    },
+    {
+      "q": "Why did Pape do it?",
+      "o": [
+        "the teacher wanted to compare the two reading formats",
+        "the municipality needed to plan repairs",
+        "the facilitator planned to address them later",
+        "some streets were missing from the survey"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : some streets were missing from the survey.",
+      "t": "Pape asked residents to review the map at the neighbourhood meeting after the first draft; some streets were missing from the survey."
+    },
+    {
+      "q": "What did Bineta do?",
+      "o": [
+        "grouped the interview answers by theme",
+        "presented the survey limits",
+        "compared the cost and durability",
+        "revised the poster after feedback"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Bineta grouped the interview answers by theme.",
+      "t": "Bineta grouped the interview answers by theme in the project notebook once the interviews were complete; the team needed to identify recurring ideas."
+    },
+    {
+      "q": "Where did Omar do it?",
+      "o": [
+        "until the second measurement",
+        "using a clean container",
+        "before printing the notice",
+        "rather than distance alone"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action using a clean container.",
+      "t": "Omar repeated the water test using a clean container the next morning; the first sample may have been contaminated."
+    },
+    {
+      "q": "When did Sokhna do it?",
+      "o": [
+        "after obtaining permission",
+        "during the second week",
+        "before the public opening",
+        "after checking every form"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : before the public opening.",
+      "t": "Sokhna added an audio description to the exhibition guide before the public opening; visitors with low vision had requested one."
+    },
+    {
+      "q": "Why did Lamine do it?",
+      "o": [
+        "the municipality needed to plan repairs",
+        "the facilitator planned to address them later",
+        "the team wanted to learn whether the advice had been useful",
+        "the teacher wanted to compare the two reading formats"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the teacher wanted to compare the two reading formats.",
+      "t": "Lamine calculated the average reading time from the class results after removing incomplete forms; the teacher wanted to compare the two reading formats."
+    },
+    {
+      "q": "What did Aminata do?",
+      "o": [
+        "presented the survey limits",
+        "compared the cost and durability",
+        "revised the poster after feedback",
+        "compared two irrigation methods"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Aminata presented the survey limits.",
+      "t": "Aminata presented the survey limits alongside the main findings at the student conference; the survey had included only two schools."
+    },
+    {
+      "q": "Where did Boubacar do it?",
+      "o": [
+        "before printing the notice",
+        "until the second measurement",
+        "rather than distance alone",
+        "along the main road"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action until the second measurement.",
+      "t": "Boubacar asked the team to delay its conclusion until the second measurement after the first set of readings; the weather had changed during the test."
+    },
+    {
+      "q": "When did Khady do it?",
+      "o": [
+        "during the second week",
+        "after checking every form",
+        "after obtaining permission",
+        "after the first trial"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after obtaining permission.",
+      "t": "Khady stored the interview recordings securely on the school computer after obtaining permission; participants had agreed to take part on that condition."
+    },
+    {
+      "q": "Why did Mamadou do it?",
+      "o": [
+        "the facilitator planned to address them later",
+        "the team wanted to learn whether the advice had been useful",
+        "the farming group needed a reliable record",
+        "the municipality needed to plan repairs"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the municipality needed to plan repairs.",
+      "t": "Mamadou mapped the flooded sections using reports from residents after the heavy rain; the municipality needed to plan repairs."
+    },
+    {
+      "q": "What did Rokhaya do?",
+      "o": [
+        "compared the cost and durability",
+        "revised the poster after feedback",
+        "compared two irrigation methods",
+        "translated the health leaflet"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Rokhaya compared the cost and durability.",
+      "t": "Rokhaya compared the cost and durability of three reusable containers before making a recommendation; the club wanted to reduce cafeteria waste."
+    },
+    {
+      "q": "Where did Alioune do it?",
+      "o": [
+        "rather than distance alone",
+        "before printing the notice",
+        "along the main road",
+        "in the research report"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action before printing the notice.",
+      "t": "Alioune checked the translation with local readers before printing the notice at the community centre; one phrase had a different meaning in daily use."
+    },
+    {
+      "q": "When did Coumba do it?",
+      "o": [
+        "after checking every form",
+        "after the first trial",
+        "during the second week",
+        "for the transport study"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : during the second week.",
+      "t": "Coumba recruited participants from several age groups for the reading study during the second week; the first group had mostly included younger pupils."
+    },
+    {
+      "q": "Why did Samba do it?",
+      "o": [
+        "the team wanted to learn whether the advice had been useful",
+        "the farming group needed a reliable record",
+        "some streets were missing from the survey",
+        "the facilitator planned to address them later"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the facilitator planned to address them later.",
+      "t": "Samba kept a record of unanswered questions during the workshop until the final discussion; the facilitator planned to address them later."
+    },
+    {
+      "q": "What did Adama do?",
+      "o": [
+        "revised the poster after feedback",
+        "compared two irrigation methods",
+        "translated the health leaflet",
+        "grouped the interview answers by theme"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Adama revised the poster after feedback.",
+      "t": "Adama revised the poster after feedback with the environmental club before displaying it; readers said the first version was difficult to follow."
+    },
+    {
+      "q": "Where did Diarra do it?",
+      "o": [
+        "along the main road",
+        "rather than distance alone",
+        "in the research report",
+        "using a clean container"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action rather than distance alone.",
+      "t": "Diarra compared the two routes by travel time rather than distance alone in the transport report; traffic made the shorter route slower."
+    },
+    {
+      "q": "When did Ibrahima do it?",
+      "o": [
+        "after the first trial",
+        "for the transport study",
+        "after checking every form",
+        "before the public opening"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after checking every form.",
+      "t": "Ibrahima reported the missing data clearly in the final summary after checking every form; he wanted readers to understand the limits."
+    },
+    {
+      "q": "Why did Aïssatou do it?",
+      "o": [
+        "the farming group needed a reliable record",
+        "some streets were missing from the survey",
+        "the teacher wanted to compare the two reading formats",
+        "the team wanted to learn whether the advice had been useful"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the team wanted to learn whether the advice had been useful.",
+      "t": "Aïssatou scheduled a follow-up interview with the project participants one month later; the team wanted to learn whether the advice had been useful."
+    }
+  ]
+}
