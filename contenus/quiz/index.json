@@ -58,11 +58,11 @@
     },
     "antonymes_intermediaire": {
       "fichier": "antonymes_intermediaire.json",
-      "nombre": 72
+      "nombre": 96
     },
     "antonymes_avance": {
       "fichier": "antonymes_avance.json",
-      "nombre": 72
+      "nombre": 96
     },
     "francais_anglais_intermediaire": {
       "fichier": "francais_anglais_intermediaire.json",
