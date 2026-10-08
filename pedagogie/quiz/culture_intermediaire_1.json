@@ -232,15 +232,15 @@
       "e": "National parks help conserve habitats and wildlife."
     },
     {
-      "q": "Which animal is a mammal that lays eggs and is native to Africa?",
+      "q": "Which animal is the largest land mammal in Africa?",
       "o": [
-        "The elephant",
-        "The platypus is not native to Africa.",
+        "The African elephant",
         "The giraffe",
-        "The lion"
+        "The hippopotamus",
+        "The rhinoceros"
       ],
-      "r": 1,
-      "e": "This is a trick question: African elephants, giraffes and lions are mammals that give birth to live young; the platypus lives in Australia."
+      "r": 0,
+      "e": "The African elephant is the largest land mammal on land."
     },
     {
       "q": "Which continent is directly north of Senegal across the Mediterranean Sea?",
