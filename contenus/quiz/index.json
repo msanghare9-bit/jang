@@ -47,6 +47,30 @@
     "francais_anglais_debutant": {
       "fichier": "francais_anglais_debutant.json",
       "nombre": 24
+    },
+    "synonymes_intermediaire": {
+      "fichier": "synonymes_intermediaire.json",
+      "nombre": 24
+    },
+    "synonymes_avance": {
+      "fichier": "synonymes_avance.json",
+      "nombre": 24
+    },
+    "antonymes_intermediaire": {
+      "fichier": "antonymes_intermediaire.json",
+      "nombre": 24
+    },
+    "antonymes_avance": {
+      "fichier": "antonymes_avance.json",
+      "nombre": 24
+    },
+    "francais_anglais_intermediaire": {
+      "fichier": "francais_anglais_intermediaire.json",
+      "nombre": 24
+    },
+    "francais_anglais_avance": {
+      "fichier": "francais_anglais_avance.json",
+      "nombre": 24
     }
   }
 }
