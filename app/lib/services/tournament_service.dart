@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 import '../models.dart';
 import 'match_service.dart';
@@ -79,14 +80,15 @@ class TournamentService {
     required List<BankQuestion> questions,
     int capacity=16,
   }) async {
-    final ref=_col.doc();
-    await ref.set({
-      'title':title.trim().isEmpty?'Tournoi de ${host.firstName}':title.trim(),
-      'hostUid':host.uid,'hostName':host.publicName,'status':'waiting',
-      'round':0,'capacity':capacity,'questions':[for(final q in questions) q.toMap()],
-      'createdAt':FieldValue.serverTimestamp(),
+    final result = await FirebaseFunctions.instance.httpsCallable('createTournament').call({
+      'title': title.trim().isEmpty ? 'Tournoi de ${host.firstName}' : title.trim(),
+      'hostName': host.publicName,
+      'capacity': capacity,
+      'questions': [for (final q in questions) q.toMap()],
     });
-    return Tournament.fromDoc(await ref.get());
+    final id = (result.data as Map)['id'] as String;
+    final doc = await _col.doc(id).get();
+    return Tournament.fromDoc(doc);
   }
 
   Stream<QuerySnapshot<Map<String,dynamic>>> participantStream(String id)=>_col.doc(id)
@@ -163,6 +165,14 @@ class TournamentService {
   }
 
   Future<void> _makeRound(Tournament t,UserProfile organizer,int round,List<TournamentParticipant> people) async {
+    final result = await FirebaseFunctions.instance.httpsCallable('getTournamentQuestions').call({
+      'tournamentId': t.id,
+    });
+    final data = Map<String, dynamic>.from(result.data as Map);
+    final questions = [
+      for (final raw in (data['questions'] as List? ?? const []))
+        if (raw is Map) BankQuestion.fromMap(raw),
+    ];
     final roundRef=_col.doc(t.id).collection('rounds').doc('$round');
     await roundRef.set({'number':round,'createdAt':FieldValue.serverTimestamp()});
     final games=roundRef.collection('games');
@@ -177,7 +187,7 @@ class TournamentService {
       }
       final p2=people[i+1];
       final match=await MatchService.instance.create(
-        host:organizer,questions:t.questions,hostPlays:false,seconds:20,
+        host:organizer,questions:questions,hostPlays:false,seconds:20,
         domain:'tournoi',level:'',title:'Tournoi · Manche $round',tournamentId:t.id,
       );
       await games.doc('game_${i.toString().padLeft(2,'0')}').set({
