@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Comment dit-on « Mon père est au travail » en anglais ?",
+      "o": [
+        "My father is at work.",
+        "My father is at home.",
+        "My brother is at work.",
+        "My father goes to school."
+      ],
+      "r": 0,
+      "e": "At work veut dire au travail."
+    },
+    {
+      "q": "Comment dit-on « Les enfants sont dans le jardin » en anglais ?",
+      "o": [
+        "The children are at the market.",
+        "The children are in the garden.",
+        "The children are in the classroom.",
+        "The children are near the river."
+      ],
+      "r": 1,
+      "e": "In the garden veut dire dans le jardin."
+    },
+    {
+      "q": "Comment dit-on « Elle a un vélo rouge » en anglais ?",
+      "o": [
+        "She has a blue bicycle.",
+        "He has a red bicycle.",
+        "She has a red bicycle.",
+        "She has a red bag."
+      ],
+      "r": 2,
+      "e": "A red bicycle veut dire un vélo rouge."
+    },
+    {
+      "q": "Comment dit-on « Nous mangeons du riz à midi » en anglais ?",
+      "o": [
+        "We cook rice at night.",
+        "We eat fish at noon.",
+        "We buy rice in the morning.",
+        "We eat rice at noon."
+      ],
+      "r": 3,
+      "e": "At noon veut dire à midi."
+    },
+    {
+      "q": "Comment dit-on « Ouvre ton cahier, s’il te plaît » en anglais ?",
+      "o": [
+        "Open your notebook, please.",
+        "Close your notebook, please.",
+        "Open your book, please.",
+        "Bring your notebook, please."
+      ],
+      "r": 0,
+      "e": "Open your notebook veut dire ouvre ton cahier."
+    },
+    {
+      "q": "Comment dit-on « Mon frère se lave les mains » en anglais ?",
+      "o": [
+        "My brother dries his hands.",
+        "My brother washes his hands.",
+        "My sister washes her hands.",
+        "My brother washes the dishes."
+      ],
+      "r": 1,
+      "e": "Washes his hands veut dire se lave les mains."
+    },
+    {
+      "q": "Comment dit-on « Le bus s’arrête près de l’école » en anglais ?",
+      "o": [
+        "The bus starts near the school.",
+        "The bus stops behind the shop.",
+        "The bus stops near the school.",
+        "The bus waits at home."
+      ],
+      "r": 2,
+      "e": "Stops near the school veut dire s’arrête près de l’école."
+    },
+    {
+      "q": "Comment dit-on « J’ai trois oranges dans mon sac » en anglais ?",
+      "o": [
+        "I have two apples in my bag.",
+        "I see three oranges on the table.",
+        "I have three oranges in my box.",
+        "I have three oranges in my bag."
+      ],
+      "r": 3,
+      "e": "Three oranges in my bag veut dire trois oranges dans mon sac."
+    },
+    {
+      "q": "Comment dit-on « Le soleil est derrière les nuages » en anglais ?",
+      "o": [
+        "The sun is behind the clouds.",
+        "The moon is behind the clouds.",
+        "The sun is above the trees.",
+        "The clouds are behind the sun."
+      ],
+      "r": 0,
+      "e": "Behind the clouds veut dire derrière les nuages."
+    },
+    {
+      "q": "Comment dit-on « Notre professeur parle lentement » en anglais ?",
+      "o": [
+        "Our teacher walks slowly.",
+        "Our teacher speaks slowly.",
+        "My teacher speaks loudly.",
+        "Our teacher writes slowly."
+      ],
+      "r": 1,
+      "e": "Speaks slowly veut dire parle lentement."
+    },
+    {
+      "q": "Comment dit-on « Ils habitent dans un petit village » en anglais ?",
+      "o": [
+        "They work in a small village.",
+        "They live in a big city.",
+        "They live in a small village.",
+        "We live in a small village."
+      ],
+      "r": 2,
+      "e": "They live in veut dire ils habitent dans."
+    },
+    {
+      "q": "Comment dit-on « Peux-tu porter cette boîte ? » en anglais ?",
+      "o": [
+        "Can you open this box?",
+        "Can you carry this bag?",
+        "Do you see that box?",
+        "Can you carry this box?"
+      ],
+      "r": 3,
+      "e": "Can you carry veut dire peux-tu porter."
+    },
+    {
+      "q": "Comment dit-on « Le magasin ouvre à sept heures » en anglais ?",
+      "o": [
+        "The shop opens at seven.",
+        "The shop closes at seven.",
+        "The school opens at seven.",
+        "The shop opens at six."
+      ],
+      "r": 0,
+      "e": "Opens at seven veut dire ouvre à sept heures."
+    },
+    {
+      "q": "Comment dit-on « Il pleut aujourd’hui » en anglais ?",
+      "o": [
+        "It is sunny today.",
+        "It is raining today.",
+        "It rained yesterday.",
+        "It is raining tonight."
+      ],
+      "r": 1,
+      "e": "It is raining today veut dire il pleut aujourd’hui."
+    },
+    {
+      "q": "Comment dit-on « J’ai besoin d’une nouvelle paire de chaussures » en anglais ?",
+      "o": [
+        "I need a new pair of socks.",
+        "I want a new school bag.",
+        "I need a new pair of shoes.",
+        "I need two new shirts."
+      ],
+      "r": 2,
+      "e": "A pair of shoes veut dire une paire de chaussures."
+    },
+    {
+      "q": "Comment dit-on « Mets la tasse sur la table » en anglais ?",
+      "o": [
+        "Put the cup under the table.",
+        "Put the plate on the table.",
+        "Put the cup in the bag.",
+        "Put the cup on the table."
+      ],
+      "r": 3,
+      "e": "On the table veut dire sur la table."
+    },
+    {
+      "q": "Comment dit-on « Le bébé dort maintenant » en anglais ?",
+      "o": [
+        "The baby is sleeping now.",
+        "The baby is eating now.",
+        "The baby slept yesterday.",
+        "The baby is sleeping outside."
+      ],
+      "r": 0,
+      "e": "Is sleeping now veut dire dort maintenant."
+    },
+    {
+      "q": "Comment dit-on « Nous attendons notre ami » en anglais ?",
+      "o": [
+        "We are looking for our friend.",
+        "We are waiting for our friend.",
+        "We are helping our friend.",
+        "We are waiting for our teacher."
+      ],
+      "r": 1,
+      "e": "Waiting for veut dire attendre quelqu’un."
+    },
+    {
+      "q": "Comment dit-on « Éteins la lumière, s’il te plaît » en anglais ?",
+      "o": [
+        "Turn on the light, please.",
+        "Open the window, please.",
+        "Turn off the light, please.",
+        "Close the door, please."
+      ],
+      "r": 2,
+      "e": "Turn off the light veut dire éteins la lumière."
+    },
+    {
+      "q": "Comment dit-on « Ma mère cuisine du poisson le vendredi » en anglais ?",
+      "o": [
+        "My mother buys fish on Friday.",
+        "My father cooks rice on Friday.",
+        "My mother cooks fish on Monday.",
+        "My mother cooks fish on Friday."
+      ],
+      "r": 3,
+      "e": "Cooks fish on Friday veut dire cuisine du poisson le vendredi."
+    },
+    {
+      "q": "Comment dit-on « Il y a deux chèvres près de l’arbre » en anglais ?",
+      "o": [
+        "There are two goats near the tree.",
+        "There are two goats under the tree.",
+        "There are two cows near the tree.",
+        "There is one goat near the house."
+      ],
+      "r": 0,
+      "e": "There are two goats near the tree veut dire il y a deux chèvres près de l’arbre."
+    },
+    {
+      "q": "Comment dit-on « Je sais faire du vélo » en anglais ?",
+      "o": [
+        "I can drive a car.",
+        "I can ride a bike.",
+        "I can repair a bike.",
+        "I can ride a horse."
+      ],
+      "r": 1,
+      "e": "I can ride a bike veut dire je sais faire du vélo."
+    },
+    {
+      "q": "Comment dit-on « Écris ton nom ici, s’il te plaît » en anglais ?",
+      "o": [
+        "Read your name here, please.",
+        "Write your name there, please.",
+        "Write your name here, please.",
+        "Say your name now, please."
+      ],
+      "r": 2,
+      "e": "Write your name here veut dire écris ton nom ici."
+    },
+    {
+      "q": "Comment dit-on « La chambre est propre » en anglais ?",
+      "o": [
+        "The room is quiet.",
+        "The house is clean.",
+        "The room is small.",
+        "The room is clean."
+      ],
+      "r": 3,
+      "e": "The room is clean veut dire la chambre est propre."
+    }
+  ]
+}
