@@ -8,6 +8,7 @@ import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../../widgets/jang_ui.dart';
 import '../home_screen.dart' show formatDate;
+import '../tutor_screen.dart';
 
 /// Devoir d'un prof : la consigne, la réponse de l'élève, puis la note du prof.
 class HomeworkScreen extends StatefulWidget {
@@ -175,6 +176,24 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
                         ? const Text('Ton prof t\'expliquera le devoir en classe.')
                         : LessonText(widget.item.body, accent: color),
                   ),
+                  if (!(AuthService.instance.profile.value?.isStaff ?? false)) ...[
+                    const SizedBox(height: 10),
+                    ChunkyButton(
+                      label: 'Demander un indice à Kocc Bàrma',
+                      icon: Icons.lightbulb_outline,
+                      outlined: true,
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => TutorScreen(
+                            lesson: widget.item.asLesson(widget.subject),
+                            subject: widget.subject,
+                            homeworkCoach: true,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                   if (widget.item.ownerName.isNotEmpty) ...[
                     const SizedBox(height: 6),
                     Text('Donné par ${widget.item.ownerName}', style: Theme.of(context).textTheme.bodySmall),
