@@ -865,34 +865,34 @@
     {
       "q": "The new library ___ since the beginning of the year.",
       "o": [
-        "has been built",
         "built",
         "is build",
+        "has been built",
         "has built"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Au present perfect passif, on dit has been + participe passé."
     },
     {
       "q": "The student ___ won the prize thanked her teacher.",
       "o": [
         "which",
-        "who",
         "where",
-        "whose"
+        "whose",
+        "who"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Who reprend une personne."
     },
     {
       "q": "By the time we arrived, the film ___.",
       "o": [
+        "had started",
         "started",
         "has started",
-        "had started",
         "will start"
       ],
-      "r": 2,
+      "r": 0,
       "e": "Had started marque l’action terminée avant une autre action passée."
     },
     {
@@ -920,23 +920,23 @@
     {
       "q": "Unless you ___ now, you will miss the bus.",
       "o": [
-        "leave",
         "left",
         "will leave",
-        "would leave"
+        "would leave",
+        "leave"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Après unless, on utilise le présent pour parler d’une condition future."
     },
     {
       "q": "The book, ___ was written in Senegal, is available online.",
       "o": [
+        "which",
         "who",
         "where",
-        "which",
         "whose"
       ],
-      "r": 2,
+      "r": 0,
       "e": "Which reprend un objet ou une chose."
     },
     {
@@ -954,44 +954,44 @@
       "q": "Not only ___ the speech, but she also answered questions.",
       "o": [
         "she gave",
-        "did she give",
         "she did give",
+        "did she give",
         "gave she"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Après Not only en tête, l’auxiliaire précède le sujet."
     },
     {
       "q": "The roads were flooded; ___, the school remained open.",
       "o": [
-        "however",
         "because",
         "therefore",
-        "unless"
+        "unless",
+        "however"
       ],
-      "r": 0,
+      "r": 3,
       "e": "However marque une opposition."
     },
     {
       "q": "The teacher recommended that each student ___ a dictionary.",
       "o": [
-        "brings",
         "bring",
+        "brings",
         "brought",
         "will bring"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Après recommend that, la forme de base bring est possible."
     },
     {
       "q": "The man ___ car was stolen reported it to the police.",
       "o": [
         "who",
-        "which",
         "whose",
+        "which",
         "whom"
       ],
-      "r": 2,
+      "r": 1,
       "e": "Whose indique la possession."
     },
     {
@@ -1009,99 +1009,99 @@
       "q": "If she had left earlier, she ___ the train.",
       "o": [
         "would catch",
-        "would have caught",
         "will catch",
-        "caught"
+        "caught",
+        "would have caught"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Pour une condition passée irréelle, on dit would have + participe passé."
     },
     {
       "q": "The message ___ before the meeting began.",
       "o": [
-        "had sent",
         "had been sent",
+        "had sent",
         "was sending",
         "has been send"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Au passif au past perfect, on dit had been + participe passé."
     },
     {
       "q": "He denied ___ the confidential file.",
       "o": [
         "to copy",
-        "copy",
         "copying",
+        "copy",
         "copied"
       ],
-      "r": 2,
+      "r": 1,
       "e": "Après deny, le verbe prend souvent la forme en -ing."
     },
     {
       "q": "The results were so unclear that they ___ a second study.",
       "o": [
-        "carried out",
         "put off",
         "turned down",
+        "carried out",
         "looked after"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Carry out veut dire mener une étude."
     },
     {
       "q": "Despite ___ the instructions, he made the same error.",
       "o": [
         "read",
-        "reading",
         "to read",
-        "was reading"
+        "was reading",
+        "reading"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Après despite, on peut utiliser un nom ou un verbe en -ing."
     },
     {
       "q": "The company reduced costs, ___ helped it remain competitive.",
       "o": [
-        "who",
         "which",
+        "who",
         "where",
         "what"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Which peut reprendre toute l’idée de la proposition précédente."
     },
     {
       "q": "She would rather ___ at home than travel in the storm.",
       "o": [
-        "stay",
         "stayed",
+        "stay",
         "to stay",
         "staying"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Après would rather, on utilise la forme de base du verbe."
     },
     {
       "q": "The more you practise, the ___ you become.",
       "o": [
         "confident",
-        "more confident",
         "most confident",
+        "more confident",
         "confidently"
       ],
-      "r": 1,
+      "r": 2,
       "e": "The more..., the more... sert à comparer deux évolutions."
     },
     {
       "q": "Only after the review ___ the error.",
       "o": [
         "we noticed",
-        "did we notice",
         "we did noticed",
-        "noticed we"
+        "noticed we",
+        "did we notice"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Après Only after en tête, l’auxiliaire précède le sujet."
     }
   ]
