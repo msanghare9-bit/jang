@@ -74,27 +74,27 @@
     },
     "vocabulaire_intermediaire": {
       "fichier": "vocabulaire_intermediaire.json",
-      "nombre": 48
+      "nombre": 72
     },
     "vocabulaire_avance": {
       "fichier": "vocabulaire_avance.json",
-      "nombre": 48
+      "nombre": 72
     },
     "grammaire_intermediaire": {
       "fichier": "grammaire_intermediaire.json",
-      "nombre": 48
+      "nombre": 72
     },
     "grammaire_avance": {
       "fichier": "grammaire_avance.json",
-      "nombre": 48
+      "nombre": 72
     },
     "expressions_intermediaire": {
       "fichier": "expressions_intermediaire.json",
-      "nombre": 48
+      "nombre": 72
     },
     "expressions_avance": {
       "fichier": "expressions_avance.json",
-      "nombre": 48
+      "nombre": 72
     },
     "comprehension_intermediaire": {
       "fichier": "comprehension_intermediaire.json",
