@@ -1,10 +1,10 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
 
@@ -108,40 +108,30 @@ class QuizBank {
 
   final Map<String, List<BankQuestion>> _mem = {};
 
-  Future<File> _file(String key) async {
-    final dir = await getApplicationSupportDirectory();
-    return File('${dir.path}/quiz_$key.json');
-  }
-
   /// Les questions d'un domaine et d'un niveau (liste vide si rien n'est disponible).
   Future<List<BankQuestion>> load(String domain, String level) async {
     final key = '${domain}_$level';
     final mem = _mem[key];
     if (mem != null) return mem;
     String? text;
-    File? f;
-    try {
-      f = await _file(key);
-    } catch (_) {}
+    final prefs = await SharedPreferences.getInstance();
+    final cacheKey = 'quiz_cache_$key';
+    final cachedAtKey = 'quiz_cache_at_$key';
     // Version locale récente (moins d'un jour) : pas besoin d'internet.
     try {
-      if (f != null && await f.exists() && DateTime.now().difference(await f.lastModified()).inHours < 24) {
-        text = await f.readAsString();
+      final cachedAt = prefs.getInt(cachedAtKey) ?? 0;
+      if (DateTime.now().millisecondsSinceEpoch - cachedAt < const Duration(hours: 24).inMilliseconds) {
+        text = prefs.getString(cacheKey);
       }
     } catch (_) {}
     if (text == null) {
       try {
-        final client = HttpClient()..connectionTimeout = const Duration(seconds: 8);
-        try {
-          final req = await client.getUrl(Uri.parse('$_base/$key.json'));
-          final res = await req.close().timeout(const Duration(seconds: 20));
-          if (res.statusCode == 200) {
-            text = await res.transform(utf8.decoder).join();
-            jsonDecode(text);
-            await f?.writeAsString(text);
-          }
-        } finally {
-          client.close();
+        final res = await http.get(Uri.parse('$_base/$key.json')).timeout(const Duration(seconds: 20));
+        if (res.statusCode == 200) {
+          text = res.body;
+          jsonDecode(text);
+          await prefs.setString(cacheKey, text);
+          await prefs.setInt(cachedAtKey, DateTime.now().millisecondsSinceEpoch);
         }
       } catch (e) {
         debugPrint('Banque de questions en ligne indisponible : $e');
@@ -150,7 +140,7 @@ class QuizBank {
     }
     // Sans internet : l'ancienne version du téléphone, même vieille.
     try {
-      if (text == null && f != null && await f.exists()) text = await f.readAsString();
+      if (text == null) text = prefs.getString(cacheKey);
     } catch (_) {}
     if (text == null) return const [];
     try {

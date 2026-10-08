@@ -3,7 +3,7 @@ name: Construire l'APK et Déployer le Web
 on:
   push:
     branches: [main]
-    paths: ['code.b64', 'app/**', '.github/workflows/apk.yml']
+    paths: ['code.b64', 'app/**', 'firebase.json', 'WEB.md', '.github/workflows/apk.yml']
   workflow_dispatch:
 
 permissions:
@@ -88,7 +88,10 @@ jobs:
 
       - name: Construire la version Web (PWA)
         working-directory: app
-        run: flutter build web --release
+        env:
+          JANG_FIREBASE_WEB_API_KEY: ${{ secrets.JANG_FIREBASE_WEB_API_KEY }}
+          JANG_FIREBASE_WEB_APP_ID: ${{ secrets.JANG_FIREBASE_WEB_APP_ID }}
+        run: flutter build web --release --dart-define=JANG_FIREBASE_WEB_API_KEY="$JANG_FIREBASE_WEB_API_KEY" --dart-define=JANG_FIREBASE_WEB_APP_ID="$JANG_FIREBASE_WEB_APP_ID"
 
       - name: Publier les APKs dans GitHub Releases
         if: env.SIGNED == '1'
@@ -103,8 +106,15 @@ jobs:
             ${{ runner.temp }}/jang-32.apk
           make_latest: true
 
-- name: Déployer la version Web sur Firebase Hosting
+      - name: Déployer la version Web sur Firebase Hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          JANG_FIREBASE_WEB_API_KEY: ${{ secrets.JANG_FIREBASE_WEB_API_KEY }}
+          JANG_FIREBASE_WEB_APP_ID: ${{ secrets.JANG_FIREBASE_WEB_APP_ID }}
         run: |
-          ENTRY_POINT=$(dirname $(find . -name firebase.json -not -path '*/.*' | head -n 1))
-          echo "Dossier firebase.json trouve : $ENTRY_POINT"
-          npx firebase-tools deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}" || true
+          if [ -z "$FIREBASE_TOKEN" ] || [ -z "$JANG_FIREBASE_WEB_API_KEY" ] || [ -z "$JANG_FIREBASE_WEB_APP_ID" ]; then
+            echo "Secrets Firebase manquants : déploiement ignoré. Voir WEB.md."
+            exit 0
+          fi
+          npm install --global firebase-tools
+          firebase deploy --only hosting --project jang-ea5f3 --token "$FIREBASE_TOKEN"

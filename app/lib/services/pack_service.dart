@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 
 import '../models.dart';
 import 'content_repo.dart';
@@ -106,13 +106,11 @@ class PackService {
       'https://raw.githubusercontent.com/msanghare9-bit/jang/main/contenus/lecons.json';
 
   Future<List<LessonPack>?> fetch() async {
-    final client = HttpClient()..connectionTimeout = const Duration(seconds: 15);
     try {
       final uri = Uri.parse('$_url?t=${DateTime.now().millisecondsSinceEpoch ~/ 60000}');
-      final req = await client.getUrl(uri);
-      final res = await req.close().timeout(const Duration(seconds: 30));
+      final res = await http.get(uri).timeout(const Duration(seconds: 30));
       if (res.statusCode != 200) return null;
-      final text = await res.transform(utf8.decoder).join();
+      final text = res.body;
       final data = jsonDecode(text);
       final list = data is Map && data['lecons'] is List ? data['lecons'] as List : const [];
       return list
@@ -123,8 +121,6 @@ class PackService {
     } catch (e) {
       debugPrint('Leçons prêtes indisponibles : $e');
       return null;
-    } finally {
-      client.close();
     }
   }
 

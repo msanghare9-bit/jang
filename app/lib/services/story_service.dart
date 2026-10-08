@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -125,17 +125,11 @@ class StoryService {
     final prefs = await SharedPreferences.getInstance();
     String? text;
     try {
-      final client = HttpClient()..connectionTimeout = const Duration(seconds: 8);
-      try {
-        final req = await client.getUrl(Uri.parse(_url));
-        final res = await req.close().timeout(const Duration(seconds: 12));
-        if (res.statusCode == 200) {
-          text = await res.transform(utf8.decoder).join();
-          _parse(text);
-          await prefs.setString('stories_cache', text);
-        }
-      } finally {
-        client.close();
+      final res = await http.get(Uri.parse(_url)).timeout(const Duration(seconds: 12));
+      if (res.statusCode == 200) {
+        text = res.body;
+        _parse(text);
+        await prefs.setString('stories_cache', text);
       }
     } catch (e) {
       debugPrint('Histoires en ligne indisponibles : $e');

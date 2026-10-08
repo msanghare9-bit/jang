@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
@@ -41,6 +41,7 @@ class PushService {
   final ValueNotifier<int> opened = ValueNotifier(0);
 
   Future<void> start(UserProfile profile) async {
+    if (kIsWeb) return;
     try {
       final fm = FirebaseMessaging.instance;
       await fm.requestPermission();
@@ -139,23 +140,18 @@ class PushService {
 
   /// Demande au serveur d'envoyer une notification. Renvoie vrai si c'est parti.
   Future<bool> send(Map<String, dynamic> payload, {String path = '/send'}) async {
+    if (kIsWeb) return false;
     final url = await _url();
     final token = await AuthService.instance.idToken();
     if (url == null || token == null) return false;
-    final client = HttpClient()..connectionTimeout = const Duration(seconds: 15);
     try {
-      final req = await client.postUrl(Uri.parse('$url$path'));
-      req.headers.set('Authorization', 'Bearer $token');
-      req.headers.contentType = ContentType.json;
-      req.write(jsonEncode(payload));
-      final res = await req.close().timeout(const Duration(seconds: 30));
-      await res.drain<void>();
+      final res = await http.post(Uri.parse('$url$path'),
+          headers: {'Authorization': 'Bearer $token', 'Content-Type': 'application/json'},
+          body: jsonEncode(payload)).timeout(const Duration(seconds: 30));
       return res.statusCode == 200;
     } catch (e) {
       debugPrint('Envoi de la notification impossible : $e');
       return false;
-    } finally {
-      client.close();
     }
   }
 }
