@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "You did not hear the teacher. What do you say?",
+      "o": [
+        "Could you repeat that, please?",
+        "I already know.",
+        "You are welcome.",
+        "Never mind."
+      ],
+      "r": 0,
+      "e": "This politely asks someone to say it again."
+    },
+    {
+      "q": "You want to borrow a classmate's ruler. What do you ask?",
+      "o": [
+        "Give me your ruler now.",
+        "Could I borrow your ruler?",
+        "I bought your ruler.",
+        "Where is my ruler yesterday?"
+      ],
+      "r": 1,
+      "e": "“Could I borrow…” is a polite request."
+    },
+    {
+      "q": "A friend says they passed an exam. What do you say?",
+      "o": [
+        "That's too bad.",
+        "Be careful!",
+        "Congratulations!",
+        "Never mind."
+      ],
+      "r": 2,
+      "e": "Use “Congratulations” to celebrate success."
+    },
+    {
+      "q": "You are not sure about the answer. What do you say?",
+      "o": [
+        "I completely agree.",
+        "That belongs to me.",
+        "See you tomorrow.",
+        "I'm not certain."
+      ],
+      "r": 3,
+      "e": "“I'm not certain” shows doubt politely."
+    },
+    {
+      "q": "You want to know the price in a shop. What do you ask?",
+      "o": [
+        "How much does it cost?",
+        "How many does it weigh?",
+        "How long is the shop?",
+        "Where does it cost?"
+      ],
+      "r": 0,
+      "e": "Ask “How much does it cost?” about a price."
+    },
+    {
+      "q": "Your friend offers you tea, but you do not want any. What do you say?",
+      "o": [
+        "Yes, please.",
+        "No, thank you.",
+        "I don't mind.",
+        "Here you are."
+      ],
+      "r": 1,
+      "e": "“No, thank you” refuses politely."
+    },
+    {
+      "q": "You arrive at a meeting late. What do you say?",
+      "o": [
+        "It is not my turn.",
+        "I have an appointment.",
+        "I'm sorry I'm late.",
+        "Good luck tomorrow."
+      ],
+      "r": 2,
+      "e": "Apologize with “I'm sorry I'm late.”"
+    },
+    {
+      "q": "You want to suggest studying together. What do you say?",
+      "o": [
+        "You must study now.",
+        "I studied yesterday.",
+        "Do you study alone?",
+        "Shall we study together?"
+      ],
+      "r": 3,
+      "e": "“Shall we…?” makes a suggestion."
+    },
+    {
+      "q": "You want to check that a friend is okay. What do you ask?",
+      "o": [
+        "Are you all right?",
+        "Do you have a right?",
+        "Are you at home?",
+        "What is your name?"
+      ],
+      "r": 0,
+      "e": "“Are you all right?” asks about someone's well-being."
+    },
+    {
+      "q": "You did not understand the directions. What do you say?",
+      "o": [
+        "I know where it is.",
+        "Could you explain the way again?",
+        "Turn off the light.",
+        "I arrived yesterday."
+      ],
+      "r": 1,
+      "e": "Ask the person to explain again."
+    },
+    {
+      "q": "A classmate thanks you for helping. What do you reply?",
+      "o": [
+        "I'm afraid not.",
+        "It doesn't matter.",
+        "You're welcome.",
+        "I disagree."
+      ],
+      "r": 2,
+      "e": "“You're welcome” is a common reply to thanks."
+    },
+    {
+      "q": "You need a little more time to finish. What do you ask?",
+      "o": [
+        "Could you lend me money?",
+        "Do you have a ticket?",
+        "What time did you leave?",
+        "Could you give me a moment?"
+      ],
+      "r": 3,
+      "e": "“Give me a moment” asks for a short delay."
+    },
+    {
+      "q": "You want to make sure someone received your message. What do you ask?",
+      "o": [
+        "Did you get my message?",
+        "Can I send a message?",
+        "Who sent the letter?",
+        "Where is your phone?"
+      ],
+      "r": 0,
+      "e": "This checks whether the message arrived."
+    },
+    {
+      "q": "You agree with your classmate's idea. What do you say?",
+      "o": [
+        "I don't think so.",
+        "I think so too.",
+        "I have no idea.",
+        "That is not allowed."
+      ],
+      "r": 1,
+      "e": "Use “I think so too” to agree."
+    },
+    {
+      "q": "You want to leave a phone call politely. What do you say?",
+      "o": [
+        "I am calling you yesterday.",
+        "You have to answer.",
+        "I have to go now. Speak to you later.",
+        "Can you hear the road?"
+      ],
+      "r": 2,
+      "e": "This politely ends a call."
+    },
+    {
+      "q": "A friend asks for your opinion. What can you say?",
+      "o": [
+        "At my opinion, it is useful.",
+        "For my opinion, it is useful.",
+        "My opinion is yesterday.",
+        "In my opinion, it is useful."
+      ],
+      "r": 3,
+      "e": "“In my opinion” introduces a view."
+    },
+    {
+      "q": "You want a person to wait briefly. What do you say?",
+      "o": [
+        "Please wait a moment.",
+        "Please wait last week.",
+        "Waited a moment, please.",
+        "You are waiting me."
+      ],
+      "r": 0,
+      "e": "This is a polite request to wait."
+    },
+    {
+      "q": "You want to ask whether a seat is free. What do you ask?",
+      "o": [
+        "Is this seat eating?",
+        "Is this seat taken?",
+        "Does this seat leave?",
+        "Who took the seat yesterday?"
+      ],
+      "r": 1,
+      "e": "“Is this seat taken?” asks if it is occupied."
+    },
+    {
+      "q": "You forgot someone's name. What do you say?",
+      "o": [
+        "I remember your name tomorrow.",
+        "Please name me.",
+        "I'm sorry, could you remind me of your name?",
+        "What is your name yesterday?"
+      ],
+      "r": 2,
+      "e": "This politely asks the person to say their name again."
+    },
+    {
+      "q": "You want to praise a friend's drawing. What do you say?",
+      "o": [
+        "You made a great noise.",
+        "You did a late job.",
+        "You are a great job.",
+        "You did a great job."
+      ],
+      "r": 3,
+      "e": "“You did a great job” gives praise."
+    },
+    {
+      "q": "You want to know when the bus leaves. What do you ask?",
+      "o": [
+        "What time does the bus leave?",
+        "How much is the bus leave?",
+        "Where does the bus time?",
+        "How often did the bus left?"
+      ],
+      "r": 0,
+      "e": "Ask “What time…” for a departure time."
+    },
+    {
+      "q": "Your friend is worried before a test. What do you say?",
+      "o": [
+        "You failed already.",
+        "You'll do your best. Good luck!",
+        "Don't take the test yesterday.",
+        "I don't care about it."
+      ],
+      "r": 1,
+      "e": "This encourages the friend and wishes success."
+    },
+    {
+      "q": "You want to invite a neighbour for lunch. What do you say?",
+      "o": [
+        "You must eat our lunch.",
+        "Where did you have lunch?",
+        "Would you like to have lunch with us?",
+        "I have lunch yesterday."
+      ],
+      "r": 2,
+      "e": "“Would you like…” makes a polite invitation."
+    },
+    {
+      "q": "You want to clarify a time. What do you ask?",
+      "o": [
+        "Do you mean two times?",
+        "Are you half past?",
+        "What do you mean yesterday?",
+        "Do you mean at half past two?"
+      ],
+      "r": 3,
+      "e": "This checks that you understood the time correctly."
+    }
+  ]
+}
