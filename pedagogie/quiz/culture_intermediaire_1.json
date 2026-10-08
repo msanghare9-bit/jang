@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What is the capital city of Senegal?",
+      "o": [
+        "Dakar",
+        "Bamako",
+        "Conakry",
+        "Banjul"
+      ],
+      "r": 0,
+      "e": "Dakar is the capital of Senegal."
+    },
+    {
+      "q": "Which ocean lies west of Senegal?",
+      "o": [
+        "The Indian Ocean",
+        "The Atlantic Ocean",
+        "The Arctic Ocean",
+        "The Pacific Ocean"
+      ],
+      "r": 1,
+      "e": "Senegal has a coastline on the Atlantic Ocean."
+    },
+    {
+      "q": "Which language is the official language of Senegal?",
+      "o": [
+        "Portuguese",
+        "Arabic",
+        "French",
+        "Spanish"
+      ],
+      "r": 2,
+      "e": "French is Senegal’s official language; many national languages are also spoken."
+    },
+    {
+      "q": "Gorée Island is located near which city?",
+      "o": [
+        "Saint-Louis",
+        "Ziguinchor",
+        "Kaolack",
+        "Dakar"
+      ],
+      "r": 3,
+      "e": "Gorée Island lies close to Dakar."
+    },
+    {
+      "q": "Which large river forms part of Senegal’s northern border?",
+      "o": [
+        "The Senegal River",
+        "The Niger River",
+        "The Congo River",
+        "The Gambia River"
+      ],
+      "r": 0,
+      "e": "The Senegal River runs along part of the border with Mauritania."
+    },
+    {
+      "q": "Which Senegalese national park is known for wildlife and lies in the southeast?",
+      "o": [
+        "Hortobágy National Park",
+        "Niokolo-Koba National Park",
+        "Kruger National Park",
+        "Yellowstone National Park"
+      ],
+      "r": 1,
+      "e": "Niokolo-Koba is a major national park in southeastern Senegal."
+    },
+    {
+      "q": "Which country is directly south of Senegal and is surrounded by Senegal on most sides?",
+      "o": [
+        "Mali",
+        "Niger",
+        "The Gambia",
+        "Burkina Faso"
+      ],
+      "r": 2,
+      "e": "The Gambia follows the Gambia River and is surrounded by Senegal except for its Atlantic coast."
+    },
+    {
+      "q": "What is the name of the westernmost point of mainland Africa, near Dakar?",
+      "o": [
+        "Cape Agulhas",
+        "Cape Guardafui",
+        "Ras ben Sakka",
+        "Pointe des Almadies"
+      ],
+      "r": 3,
+      "e": "Pointe des Almadies is near Dakar on the western edge of mainland Africa."
+    },
+    {
+      "q": "Which Senegalese region is especially known for its mangroves and river delta?",
+      "o": [
+        "Sine-Saloum",
+        "The Atlas Mountains",
+        "The Kalahari",
+        "The Great Lakes"
+      ],
+      "r": 0,
+      "e": "The Sine-Saloum area includes an important delta and mangrove ecosystem."
+    },
+    {
+      "q": "What is a baobab?",
+      "o": [
+        "A musical instrument",
+        "A tree",
+        "A desert river",
+        "A kind of boat"
+      ],
+      "r": 1,
+      "e": "The baobab is a large tree found in Africa."
+    },
+    {
+      "q": "Which country is famous for the ancient city of Timbuktu?",
+      "o": [
+        "Gabon",
+        "Lesotho",
+        "Mali",
+        "Tunisia"
+      ],
+      "r": 2,
+      "e": "Timbuktu is a historic city in Mali."
+    },
+    {
+      "q": "Which African country has the city of Mombasa on its Indian Ocean coast?",
+      "o": [
+        "Chad",
+        "Botswana",
+        "Guinea",
+        "Kenya"
+      ],
+      "r": 3,
+      "e": "Mombasa is a coastal city in Kenya."
+    },
+    {
+      "q": "Mount Kilimanjaro is in which country?",
+      "o": [
+        "Tanzania",
+        "Ethiopia",
+        "Morocco",
+        "Senegal"
+      ],
+      "r": 0,
+      "e": "Mount Kilimanjaro is in northeastern Tanzania."
+    },
+    {
+      "q": "Which waterfall lies on the border of Zambia and Zimbabwe?",
+      "o": [
+        "Tugela Falls",
+        "Victoria Falls",
+        "Blue Nile Falls",
+        "Ouzoud Falls"
+      ],
+      "r": 1,
+      "e": "Victoria Falls is on the Zambezi River at the Zambia–Zimbabwe border."
+    },
+    {
+      "q": "Which is the largest hot desert in the world?",
+      "o": [
+        "The Gobi",
+        "The Kalahari",
+        "The Sahara",
+        "The Atacama"
+      ],
+      "r": 2,
+      "e": "The Sahara is the world’s largest hot desert."
+    },
+    {
+      "q": "What is the capital of Kenya?",
+      "o": [
+        "Kampala",
+        "Kigali",
+        "Lusaka",
+        "Nairobi"
+      ],
+      "r": 3,
+      "e": "Nairobi is the capital of Kenya."
+    },
+    {
+      "q": "Which sea separates northeastern Africa from the Arabian Peninsula?",
+      "o": [
+        "The Red Sea",
+        "The Baltic Sea",
+        "The Caribbean Sea",
+        "The North Sea"
+      ],
+      "r": 0,
+      "e": "The Red Sea lies between northeastern Africa and the Arabian Peninsula."
+    },
+    {
+      "q": "Which country became independent from Britain in 1957 and was formerly called the Gold Coast?",
+      "o": [
+        "Uganda",
+        "Ghana",
+        "Namibia",
+        "Algeria"
+      ],
+      "r": 1,
+      "e": "The former Gold Coast became independent Ghana in 1957."
+    },
+    {
+      "q": "Lake Victoria borders Kenya, Uganda and which other country?",
+      "o": [
+        "Angola",
+        "Morocco",
+        "Tanzania",
+        "Senegal"
+      ],
+      "r": 2,
+      "e": "Lake Victoria is shared by Tanzania, Uganda and Kenya."
+    },
+    {
+      "q": "Which African country is home to the ancient rock-hewn churches of Lalibela?",
+      "o": [
+        "Benin",
+        "Somalia",
+        "Liberia",
+        "Ethiopia"
+      ],
+      "r": 3,
+      "e": "Lalibela’s rock-hewn churches are in Ethiopia."
+    },
+    {
+      "q": "What is the main purpose of a national park?",
+      "o": [
+        "To protect nature and wildlife",
+        "To replace all farms",
+        "To build a large airport",
+        "To stop people learning"
+      ],
+      "r": 0,
+      "e": "National parks help conserve habitats and wildlife."
+    },
+    {
+      "q": "Which animal is a mammal that lays eggs and is native to Africa?",
+      "o": [
+        "The elephant",
+        "The platypus is not native to Africa.",
+        "The giraffe",
+        "The lion"
+      ],
+      "r": 1,
+      "e": "This is a trick question: African elephants, giraffes and lions are mammals that give birth to live young; the platypus lives in Australia."
+    },
+    {
+      "q": "Which continent is directly north of Senegal across the Mediterranean Sea?",
+      "o": [
+        "South America",
+        "Australia",
+        "Europe",
+        "Antarctica"
+      ],
+      "r": 2,
+      "e": "Europe lies north of Africa across the Mediterranean Sea."
+    },
+    {
+      "q": "Which river flows through Egypt and empties into the Mediterranean Sea?",
+      "o": [
+        "The Congo",
+        "The Zambezi",
+        "The Limpopo",
+        "The Nile"
+      ],
+      "r": 3,
+      "e": "The Nile flows north through Egypt to the Mediterranean."
+    }
+  ]
+}
