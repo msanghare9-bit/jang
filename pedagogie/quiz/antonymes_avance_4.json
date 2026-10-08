@@ -14,34 +14,34 @@
     {
       "q": "The glass is transparent, while the painted panel is ___.",
       "o": [
-        "opaque",
         "fragile",
+        "opaque",
         "colourful",
         "smooth"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Opaque est le contraire de transparent."
     },
     {
       "q": "She was reluctant to speak at first, but later became ___ to share her view.",
       "o": [
-        "willing",
         "unable",
         "careful",
+        "willing",
         "silent"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Willing est le contraire de reluctant : disposé est le contraire d’hésitant."
     },
     {
       "q": "When the temperature rises, metal may expand; when it cools, it may ___.",
       "o": [
-        "contract",
         "melt",
         "stretch",
-        "disappear"
+        "disappear",
+        "contract"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Contract est le contraire de expand : se contracter est le contraire de se dilater."
     },
     {
@@ -58,34 +58,34 @@
     {
       "q": "He remained optimistic, while his colleague was ___.",
       "o": [
-        "pessimistic",
         "patient",
+        "pessimistic",
         "curious",
         "realistic"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Pessimistic est le contraire de optimistic."
     },
     {
       "q": "A rigid plan allows little change; a ___ plan can be adapted.",
       "o": [
-        "flexible",
         "detailed",
         "formal",
+        "flexible",
         "recent"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Flexible est le contraire de rigid : souple est le contraire de rigide."
     },
     {
       "q": "The reviewer praised the book rather than ___ it.",
       "o": [
-        "criticizing",
         "summarizing",
         "publishing",
-        "translating"
+        "translating",
+        "criticizing"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Criticize est le contraire de praise dans ce contexte."
     },
     {
@@ -102,34 +102,34 @@
     {
       "q": "The first instruction is explicit, whereas the second is ___.",
       "o": [
-        "implicit",
         "accurate",
+        "implicit",
         "brief",
         "direct"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Implicit est le contraire de explicit : sous-entendu est le contraire d’explicite."
     },
     {
       "q": "The vote was unanimous, but the earlier vote was ___.",
       "o": [
-        "divided",
         "secret",
         "delayed",
+        "divided",
         "invalid"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Divided s’oppose à unanimous : les avis n’étaient pas tous les mêmes."
     },
     {
       "q": "The agreement is temporary, not ___.",
       "o": [
-        "permanent",
         "official",
         "written",
-        "recent"
+        "recent",
+        "permanent"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Permanent est le contraire de temporary."
     },
     {
@@ -146,34 +146,34 @@
     {
       "q": "The group endorsed the proposal; another group chose to ___ it.",
       "o": [
-        "oppose",
         "repeat",
+        "oppose",
         "revise",
         "explain"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Oppose est le contraire d’endorse : s’opposer est le contraire de soutenir."
     },
     {
       "q": "The final score exceeded the target; the first score fell ___ it.",
       "o": [
-        "below",
         "within",
         "beside",
+        "below",
         "across"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Below exprime l’opposé d’exceeding the target dans cette phrase."
     },
     {
       "q": "The guide was friendly, although the guard seemed ___.",
       "o": [
-        "hostile",
         "helpful",
         "calm",
-        "neutral"
+        "neutral",
+        "hostile"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Hostile est le contraire de friendly."
     },
     {
@@ -190,34 +190,34 @@
     {
       "q": "The first result was valid, but the second was declared ___.",
       "o": [
-        "invalid",
         "unusual",
+        "invalid",
         "unclear",
         "incomplete"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Invalid est le contraire de valid."
     },
     {
       "q": "Her argument was coherent, unlike the earlier, ___ explanation.",
       "o": [
-        "incoherent",
         "convincing",
         "logical",
+        "incoherent",
         "brief"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Incoherent est le contraire de coherent."
     },
     {
       "q": "A judge should remain impartial, not ___.",
       "o": [
-        "biased",
         "careful",
         "silent",
-        "uncertain"
+        "uncertain",
+        "biased"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Biased est le contraire d’impartial : partial est le contraire d’impartial."
     },
     {
@@ -234,34 +234,34 @@
     {
       "q": "The explanation is plausible, but the second claim is ___.",
       "o": [
-        "implausible",
         "possible",
+        "implausible",
         "likely",
         "reasonable"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Implausible est le contraire de plausible."
     },
     {
       "q": "The path ascends the hill, then ___ toward the river.",
       "o": [
-        "descends",
         "continues",
         "turns",
+        "descends",
         "widens"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Descends est le contraire de ascends."
     },
     {
       "q": "The benevolent leader supported the families; a ___ ruler would harm them.",
       "o": [
-        "malevolent",
         "patient",
         "popular",
-        "cautious"
+        "cautious",
+        "malevolent"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Malevolent est le contraire de benevolent : malveillant s’oppose à bienveillant."
     }
   ]
