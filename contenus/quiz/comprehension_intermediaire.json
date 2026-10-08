@@ -575,6 +575,342 @@
       "r": 3,
       "e": "The teacher asked them to use it in their next talk.",
       "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "What did Awa do?",
+      "o": [
+        "bought rice and tomatoes",
+        "practised a short speech",
+        "visited her grandmother",
+        "made a poster about handwashing"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Awa bought rice and tomatoes.",
+      "t": "Awa bought rice and tomatoes at the market on Saturday morning, because her aunt was preparing lunch.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Moussa do it?",
+      "o": [
+        "from his English teacher",
+        "beside his house",
+        "to the community garden",
+        "at a shop near school"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action beside his house.",
+      "t": "Moussa repaired a bicycle tyre beside his house after school, because his friend needed to ride home.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Fatou do it?",
+      "o": [
+        "on Sunday evening",
+        "after the science fair",
+        "before the final bell",
+        "on Friday evening"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : before the final bell.",
+      "t": "Fatou returned two library books to the school library before the final bell, because the books were due that day.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Idrissa do it?",
+      "o": [
+        "his class was recycling plastic",
+        "the road was blocked by a delivery truck",
+        "his class was planning where to plant seeds",
+        "the school garden needed more shade"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the school garden needed more shade.",
+      "t": "Idrissa planted six young trees behind the classroom on Thursday afternoon, because the school garden needed more shade.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Mariama do?",
+      "o": [
+        "practised a short speech",
+        "visited her grandmother",
+        "made a poster about handwashing",
+        "prepared a fruit salad"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Mariama practised a short speech.",
+      "t": "Mariama practised a short speech in the assembly hall before classes began, because she was speaking at the school meeting.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Cheikh do it?",
+      "o": [
+        "to the community garden",
+        "from his English teacher",
+        "at a shop near school",
+        "under a bench"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action from his English teacher.",
+      "t": "Cheikh borrowed a dictionary from his English teacher during the reading lesson, because he wanted to check a new word.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Ndeye do it?",
+      "o": [
+        "after the science fair",
+        "on Friday evening",
+        "on Sunday evening",
+        "after lunch"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : on Sunday evening.",
+      "t": "Ndeye washed the football shirts at home on Sunday evening, because the team had a match the next day.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Pape do it?",
+      "o": [
+        "the road was blocked by a delivery truck",
+        "his class was planning where to plant seeds",
+        "he wanted to confirm their meeting time",
+        "his class was recycling plastic"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : his class was recycling plastic.",
+      "t": "Pape collected clean bottles near the sports field after the match, because his class was recycling plastic.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Bineta do?",
+      "o": [
+        "visited her grandmother",
+        "made a poster about handwashing",
+        "prepared a fruit salad",
+        "cleaned the classroom windows"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Bineta visited her grandmother.",
+      "t": "Bineta visited her grandmother in the next village during the school holiday, because she had not seen her for months.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Omar do it?",
+      "o": [
+        "at a shop near school",
+        "to the community garden",
+        "under a bench",
+        "at the bookshop"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action to the community garden.",
+      "t": "Omar helped carry the water cans to the community garden early on Tuesday, because the volunteers were watering vegetables.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Sokhna do it?",
+      "o": [
+        "on Friday evening",
+        "after lunch",
+        "after the science fair",
+        "at half past four"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after the science fair.",
+      "t": "Sokhna wrote a thank-you note in her classroom after the science fair, because her group had received help.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Lamine do it?",
+      "o": [
+        "his class was planning where to plant seeds",
+        "he wanted to confirm their meeting time",
+        "she wanted to know if it would rain",
+        "the road was blocked by a delivery truck"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the road was blocked by a delivery truck.",
+      "t": "Lamine missed the first bus at the bus stop just after six, because the road was blocked by a delivery truck.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Aminata do?",
+      "o": [
+        "made a poster about handwashing",
+        "prepared a fruit salad",
+        "cleaned the classroom windows",
+        "bought rice and tomatoes"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Aminata made a poster about handwashing.",
+      "t": "Aminata made a poster about handwashing for the health club on Wednesday afternoon, because the club was planning an awareness day.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Boubacar do it?",
+      "o": [
+        "under a bench",
+        "at a shop near school",
+        "at the bookshop",
+        "beside his house"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action at a shop near school.",
+      "t": "Boubacar bought a notebook and two pens at a shop near school during the lunch break, because he had used the last page of his notebook.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Khady do it?",
+      "o": [
+        "after lunch",
+        "at half past four",
+        "on Friday evening",
+        "before the final bell"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : on Friday evening.",
+      "t": "Khady read a story aloud to her younger cousins on Friday evening, because they wanted to hear a new story.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Mamadou do it?",
+      "o": [
+        "he wanted to confirm their meeting time",
+        "she wanted to know if it would rain",
+        "the school garden needed more shade",
+        "his class was planning where to plant seeds"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : his class was planning where to plant seeds.",
+      "t": "Mamadou measured the garden beds with a tape measure before the rain, because his class was planning where to plant seeds.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Rokhaya do?",
+      "o": [
+        "prepared a fruit salad",
+        "cleaned the classroom windows",
+        "bought rice and tomatoes",
+        "practised a short speech"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Rokhaya prepared a fruit salad.",
+      "t": "Rokhaya prepared a fruit salad in the school kitchen after the cooking lesson, because her group was sharing a healthy snack.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Alioune do it?",
+      "o": [
+        "at the bookshop",
+        "under a bench",
+        "beside his house",
+        "from his English teacher"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action under a bench.",
+      "t": "Alioune found a lost key under a bench during the football practice, because he wanted to return it to its owner.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Coumba do it?",
+      "o": [
+        "at half past four",
+        "before the final bell",
+        "after lunch",
+        "on Sunday evening"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after lunch.",
+      "t": "Coumba asked the librarian for help at the reading desk after lunch, because she could not find the history book.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Samba do it?",
+      "o": [
+        "she wanted to know if it would rain",
+        "the school garden needed more shade",
+        "his class was recycling plastic",
+        "he wanted to confirm their meeting time"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : he wanted to confirm their meeting time.",
+      "t": "Samba sent a message to his cousin from the family house in the evening, because he wanted to confirm their meeting time.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Adama do?",
+      "o": [
+        "cleaned the classroom windows",
+        "bought rice and tomatoes",
+        "practised a short speech",
+        "visited her grandmother"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Adama cleaned the classroom windows.",
+      "t": "Adama cleaned the classroom windows with two classmates on Friday afternoon, because their class was welcoming visitors.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Diarra do it?",
+      "o": [
+        "beside his house",
+        "at the bookshop",
+        "from his English teacher",
+        "to the community garden"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action at the bookshop.",
+      "t": "Diarra chose a blue folder at the bookshop before the new term, because she needed a place for her notes.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Ibrahima do it?",
+      "o": [
+        "before the final bell",
+        "on Sunday evening",
+        "at half past four",
+        "after the science fair"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : at half past four.",
+      "t": "Ibrahima waited for his sister outside the clinic at half past four, because they were going home together.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Aïssatou do it?",
+      "o": [
+        "the school garden needed more shade",
+        "his class was recycling plastic",
+        "the road was blocked by a delivery truck",
+        "she wanted to know if it would rain"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : she wanted to know if it would rain.",
+      "t": "Aïssatou checked the weather report on the radio before leaving home, because she wanted to know if it would rain.",
+      "d": "comprehension",
+      "n": "intermediaire"
     }
   ]
 }
