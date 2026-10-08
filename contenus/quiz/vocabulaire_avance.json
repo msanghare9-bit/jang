@@ -854,34 +854,34 @@
     {
       "q": "The plan is feasible with the available tools. What does feasible mean?",
       "o": [
-        "possible to do",
         "difficult to explain",
+        "possible to do",
         "already completed",
         "not worth discussing"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Feasible veut dire réalisable."
     },
     {
       "q": "The measurements must be accurate. What does accurate mean?",
       "o": [
-        "correct and precise",
         "quick and simple",
         "large and visible",
+        "correct and precise",
         "recent and useful"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Accurate veut dire exact et précis."
     },
     {
       "q": "The storm had a serious impact on transport. What does impact mean?",
       "o": [
-        "effect",
         "forecast",
         "route",
-        "warning"
+        "warning",
+        "effect"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Impact veut dire effet ou conséquence."
     },
     {
@@ -898,34 +898,34 @@
     {
       "q": "Fresh water is scarce in the region. What does scarce mean?",
       "o": [
-        "limited in amount",
         "easy to find",
+        "limited in amount",
         "unsafe to drink",
         "carefully stored"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Scarce veut dire rare ou en quantité limitée."
     },
     {
       "q": "A new problem emerged during the meeting. What does emerged mean?",
       "o": [
-        "appeared",
         "disappeared",
         "was solved",
+        "appeared",
         "was hidden"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Emerge veut dire apparaître."
     },
     {
       "q": "The archive retains copies of each letter. What does retains mean?",
       "o": [
-        "keeps",
         "sells",
         "changes",
-        "forgets"
+        "forgets",
+        "keeps"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Retain veut dire garder."
     },
     {
@@ -942,34 +942,34 @@
     {
       "q": "The outcome surprised the researchers. What does outcome mean?",
       "o": [
-        "result",
         "method",
+        "result",
         "question",
         "schedule"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Outcome veut dire résultat."
     },
     {
       "q": "The new rules require all visitors to register. What does require mean?",
       "o": [
-        "make necessary",
         "make easier",
         "make public",
+        "make necessary",
         "make optional"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Require veut dire exiger, rendre nécessaire."
     },
     {
       "q": "The exercise was beneficial to the learners. What does beneficial mean?",
       "o": [
-        "helpful",
         "expensive",
         "unexpected",
-        "unclear"
+        "unclear",
+        "helpful"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Beneficial veut dire bénéfique, qui aide."
     },
     {
@@ -986,34 +986,34 @@
     {
       "q": "The committee conducted interviews with families. What does conducted mean?",
       "o": [
-        "carried out",
         "cancelled",
+        "carried out",
         "prepared for",
         "reported on"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Conduct veut dire mener ou effectuer une activité."
     },
     {
       "q": "The number of errors declined after practice. What does declined mean?",
       "o": [
-        "decreased",
         "remained equal",
         "became unclear",
+        "decreased",
         "rose quickly"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Decline veut dire diminuer."
     },
     {
       "q": "Her account is consistent with the written record. What does consistent mean?",
       "o": [
-        "in agreement",
         "full of detail",
         "difficult to read",
-        "recently changed"
+        "recently changed",
+        "in agreement"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Consistent with veut dire en accord avec."
     },
     {
@@ -1030,34 +1030,34 @@
     {
       "q": "Readers must interpret the chart carefully. What does interpret mean?",
       "o": [
-        "explain its meaning",
         "copy its numbers",
+        "explain its meaning",
         "hide its title",
         "change its colours"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Interpret veut dire interpréter, expliquer le sens."
     },
     {
       "q": "A lack of transport is a major constraint. What does constraint mean?",
       "o": [
-        "limitation",
         "advantage",
         "suggestion",
+        "limitation",
         "permission"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Constraint veut dire limite ou contrainte."
     },
     {
       "q": "The school will evaluate the new programme. What does evaluate mean?",
       "o": [
-        "judge its value or success",
         "create it from nothing",
         "announce its arrival",
-        "translate its name"
+        "translate its name",
+        "judge its value or success"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Evaluate veut dire évaluer, juger le résultat."
     },
     {
@@ -1074,34 +1074,34 @@
     {
       "q": "The first route is shorter, whereas the second is safer. What does whereas mean?",
       "o": [
-        "while or in contrast",
         "because of",
+        "while or in contrast",
         "as soon as",
         "in order that"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Whereas sert à opposer deux faits."
     },
     {
       "q": "Eventually, the rain stopped. What does eventually mean?",
       "o": [
-        "in the end",
         "at once",
         "for a while",
+        "in the end",
         "by accident"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Eventually veut dire finalement, après un certain temps."
     },
     {
       "q": "Despite the delay, the lesson continued. What does despite mean?",
       "o": [
-        "in spite of",
         "because of",
         "instead of",
-        "according to"
+        "according to",
+        "in spite of"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Despite veut dire malgré."
     }
   ]
