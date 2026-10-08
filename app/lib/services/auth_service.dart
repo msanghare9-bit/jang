@@ -131,7 +131,22 @@ class AuthService {
     } catch (_) {
       // Hors connexion : on garde la version du téléphone.
     }
-    return profile.value;
+    final loaded = profile.value;
+    if (loaded != null) await _ensureUsernameIndex(loaded);
+    return loaded;
+  }
+
+  Future<void> _ensureUsernameIndex(UserProfile p) async {
+    if (p.username.isEmpty) return;
+    final ref = _db.collection('usernames').doc(normalizeUsername(p.username));
+    try {
+      final current = await ref.get();
+      if (!current.exists) {
+        await ref.set({'uid': p.uid, 'name': p.publicName, 'username': normalizeUsername(p.username)});
+      }
+    } catch (e) {
+      debugPrint('Index Xarit : $e');
+    }
   }
 
   Future<void> updateExam(String examId) async {
