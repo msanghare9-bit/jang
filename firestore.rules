@@ -172,6 +172,16 @@ service cloud.firestore {
                     || (signedIn() && onlyStudents() && onlyMe(request.resource.data.students, resource.data.students));
     }
 
+    // Journal administratif des exports de leçons officielles vers les classes.
+    match /courseExports/{id} {
+      allow read: if isAdmin();
+      allow create: if isStaff()
+                    && request.resource.data.exportedBy == request.auth.uid
+                    && request.resource.data.classId is string
+                    && (isAdmin() || classOf(request.resource.data.classId).profUid == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
     // Contenus des profs : privés (élèves de la classe) ou publics (tous).
     match /classItems/{id} {
       allow read: if isStaff()
