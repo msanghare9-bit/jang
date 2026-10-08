@@ -779,6 +779,318 @@
       "e": "UNESCO notes Aksum’s control of Red Sea trade through Adulis.",
       "d": "culture",
       "n": "avance"
+    },
+    {
+      "q": "What does the architecture of Stone Town illustrate about its history?",
+      "o": [
+        "Long-standing exchange between African and Asian shores",
+        "Isolation from maritime trade",
+        "A single European building tradition",
+        "The growth of inland cattle routes"
+      ],
+      "r": 0,
+      "e": "UNESCO connects its urban form with centuries of seaborne trade.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which plan feature is common in Stone Town houses?",
+      "o": [
+        "A central tower surrounded by moats",
+        "Rooms arranged around an open courtyard",
+        "One large room below ground",
+        "Circular rooms around a fireplace"
+      ],
+      "r": 1,
+      "e": "UNESCO describes houses organized around open courtyards.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What kind of doors distinguish many Stone Town houses?",
+      "o": [
+        "Sliding paper doors",
+        "Iron gates shaped like ships",
+        "Carved double doors",
+        "Round doors made of coral"
+      ],
+      "r": 2,
+      "e": "UNESCO notes elaborately carved double doors.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which three mosques are named in UNESCO’s description of Timbuktu?",
+      "o": [
+        "Kilwa, Lamu and Abomey",
+        "Gorée, Djoudj and Saloum",
+        "Aksum, Meroe and Naqa",
+        "Djingareyber, Sankore and Sidi Yahia"
+      ],
+      "r": 3,
+      "e": "These are the three mosques listed for Timbuktu.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What role did Timbuktu play in the 15th and 16th centuries?",
+      "o": [
+        "An intellectual and spiritual centre",
+        "A capital of the Asante kingdom",
+        "A centre of Swahili shipbuilding",
+        "A Roman military port"
+      ],
+      "r": 0,
+      "e": "UNESCO describes its intellectual and spiritual role.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What was one subject of trade in Timbuktu’s historic markets?",
+      "o": [
+        "Motor vehicles",
+        "Manuscripts",
+        "Frozen fish",
+        "Steam engines"
+      ],
+      "r": 1,
+      "e": "UNESCO notes that manuscripts were traded there.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "How many archaeological sites form part of the Old Towns of Djenné property?",
+      "o": [
+        "Two",
+        "Seven",
+        "Four",
+        "Ten"
+      ],
+      "r": 2,
+      "e": "UNESCO lists four archaeological sites in the property.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which sites are included in the Djenné archaeological group?",
+      "o": [
+        "Gorée, Djoudj, Niokolo-Koba and Saloum",
+        "Aksum, Meroe, Naqa and Lamu",
+        "Kumasi, Abomey, Kilwa and Songo Mnara",
+        "Djenné-Djeno, Hambarkétolo, Kaniana and Tonomba"
+      ],
+      "r": 3,
+      "e": "UNESCO names these four archaeological sites.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What did excavation at Djenné-Djeno reveal about the settlement?",
+      "o": [
+        "A pre-Islamic urban structure",
+        "A medieval European castle",
+        "A modern railway depot",
+        "A Roman amphitheatre"
+      ],
+      "r": 0,
+      "e": "UNESCO reports evidence of a pre-Islamic urban structure.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which local construction feature appears in Djenné’s civic buildings?",
+      "o": [
+        "Glass curtain walls",
+        "Vertical façades and buttresses",
+        "Steel suspension arches",
+        "Wooden roofs shaped like ships"
+      ],
+      "r": 1,
+      "e": "UNESCO describes verticality and buttresses in the architecture.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Robben Island’s prison buildings are associated with which historical system?",
+      "o": [
+        "The Mali Empire",
+        "The Aksumite kingdom",
+        "Apartheid",
+        "The Asante confederacy"
+      ],
+      "r": 2,
+      "e": "UNESCO links the prison to the Apartheid period.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which other roles did Robben Island serve besides being a prison?",
+      "o": [
+        "A university and a royal court",
+        "A trading port and a farm",
+        "A theatre and a museum",
+        "A hospital and a military base"
+      ],
+      "r": 3,
+      "e": "UNESCO lists hospital and military-base uses.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What did the buildings of Robben Island bear witness to?",
+      "o": [
+        "Oppression and the later triumph of freedom",
+        "The start of trans-Saharan trade",
+        "The building of the Great Enclosure",
+        "The spread of coral-stone architecture"
+      ],
+      "r": 0,
+      "e": "UNESCO describes this symbolic meaning.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "When did the maximum-security prison of the Apartheid period begin?",
+      "o": [
+        "In the 1600s",
+        "In the 1960s",
+        "In the 1820s",
+        "In the 1990s"
+      ],
+      "r": 1,
+      "e": "UNESCO dates the prison to the 1960s.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What was Mapungubwe’s position in southern African trade routes?",
+      "o": [
+        "At the mouth of the Nile",
+        "On the Atlantic coast of Senegal",
+        "At a crossing of north–south and east–west routes",
+        "At the entrance to the Red Sea"
+      ],
+      "r": 2,
+      "e": "UNESCO describes its location at these regional route crossings.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which imported objects provide evidence of Mapungubwe’s long-distance trade?",
+      "o": [
+        "Japanese paper and Roman coins",
+        "Greek statues and Viking tools",
+        "French books and Indian spices",
+        "Chinese porcelain and Persian glass beads"
+      ],
+      "r": 3,
+      "e": "UNESCO records Chinese porcelain and Persian beads.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What happened to Mapungubwe’s inhabitants when rainfall declined?",
+      "o": [
+        "They dispersed as farming could no longer support the population",
+        "They moved to the coast to build ships",
+        "They built a new city in the Sahara",
+        "They stopped trading with all neighbours"
+      ],
+      "r": 0,
+      "e": "UNESCO links reduced rainfall to the dispersal of inhabitants.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which settlement later became a regional power centre after Mapungubwe declined?",
+      "o": [
+        "Timbuktu",
+        "Great Zimbabwe",
+        "Stone Town",
+        "Djenné"
+      ],
+      "r": 1,
+      "e": "UNESCO notes that power shifted north to Great Zimbabwe.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What does the Mapungubwe landscape reveal about political organization?",
+      "o": [
+        "A city governed by elected guilds",
+        "A network of isolated fishing villages",
+        "A kingdom with an elite and sacred leadership",
+        "A Roman provincial system"
+      ],
+      "r": 2,
+      "e": "UNESCO describes an elite class and sacred kingship.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which natural setting helped support Mapungubwe’s population?",
+      "o": [
+        "A glacier beside the Indian Ocean",
+        "A rainforest on the Mediterranean coast",
+        "A desert oasis north of the Sahara",
+        "Fertile land near the Limpopo–Shashe confluence"
+      ],
+      "r": 3,
+      "e": "UNESCO notes the fertility of land near the two rivers.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What broad period does UNESCO associate with Mapungubwe’s rise and fall?",
+      "o": [
+        "900–1300 CE",
+        "100–400 CE",
+        "1500–1700 CE",
+        "1800–1950 CE"
+      ],
+      "r": 0,
+      "e": "UNESCO gives this period for the kingdom.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which statement about the old town of Djenné is supported by UNESCO?",
+      "o": [
+        "It was built entirely from coral",
+        "It includes an old town and four archaeological sites",
+        "It lies on an island in the Indian Ocean",
+        "It was founded as a Portuguese fort"
+      ],
+      "r": 1,
+      "e": "UNESCO describes this serial property and its four archaeological sites.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What does the physical structure of Stone Town reflect?",
+      "o": [
+        "A single isolated architectural tradition",
+        "Only modern industrial construction",
+        "A fusion of Swahili, Indian, Arab and European influences",
+        "A Roman and Greek military plan"
+      ],
+      "r": 2,
+      "e": "UNESCO describes this fusion of influences.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What was the historical role of Stone Town’s location on the Indian Ocean?",
+      "o": [
+        "It protected the city from all contact",
+        "It connected the city to the Sahara by camel only",
+        "It served as a route to the Arctic",
+        "It supported seaborne trade between Africa and Asia"
+      ],
+      "r": 3,
+      "e": "UNESCO links the town to extensive seaborne trade.",
+      "d": "culture",
+      "n": "avance"
     }
   ]
 }
