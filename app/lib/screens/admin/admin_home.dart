@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../classes/classes_admin_screen.dart';
+import 'teacher_applications_screen.dart';
 import '../classes/my_classes_screen.dart';
 import 'official_missions_screen.dart';
 import 'reports_screen.dart';
@@ -92,6 +93,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                 if (admin) _go('Questions de match signalées', Icons.flag_outlined, const ReportsScreen()),
                 if (admin) _go('Accueil de l\'app', Icons.home_outlined, const HomeConfigScreen()),
                 if (admin) _go('Les profs', Icons.badge_outlined, const ProfsScreen()),
+                if (admin) _go('Demandes de professeurs', Icons.person_add_alt_1, const TeacherApplicationsScreen()),
                 if (admin) _go('Statistiques d\'utilisation', Icons.bar_chart, const StatsScreen()),
                 _go('Questions des élèves', Icons.forum_outlined, const ModerationScreen()),
                 if (admin) _go('Questions posées à Kocc Barma', Icons.psychology_alt_outlined, const TutorLogsScreen()),
