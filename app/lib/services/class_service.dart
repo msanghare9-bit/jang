@@ -291,6 +291,46 @@ class ClassService {
     return ref.id;
   }
 
+  /// Copie une leçon officielle dans la classe et consigne qui l’a exportée.
+  Future<String> exportLesson(ClassRoom room, Lesson lesson, UserProfile prof) async {
+    final existing = await itemsOf(room.id);
+    if (existing.any((item) => item.sourceLessonId == lesson.id)) {
+      throw Exception('Cette leçon est déjà dans la classe.');
+    }
+    final item = ClassItem(
+      id: '',
+      classId: room.id,
+      ownerUid: prof.uid,
+      ownerName: prof.name,
+      examId: room.examId,
+      subject: room.subject,
+      type: ClassItem.lesson,
+      title: lesson.title,
+      sourceLessonId: lesson.id,
+      sourceOwnerName: 'Contenu officiel Jàng',
+      videos: lesson.videos,
+      body: lesson.body,
+      quiz: lesson.quiz,
+      visibility: 'prive',
+    );
+    final itemId = await saveItem(item);
+    await _db.collection('courseExports').add({
+      'exportedBy': prof.uid,
+      'exporterName': prof.publicName,
+      'classId': room.id,
+      'className': room.name,
+      'school': room.school,
+      'examId': room.examId,
+      'subject': room.subjectName,
+      'lessonId': lesson.id,
+      'lessonTitle': lesson.title,
+      'sourceOwnerName': 'Contenu officiel Jàng',
+      'classItemId': itemId,
+      'createdAt': FieldValue.serverTimestamp(),
+    });
+    return itemId;
+  }
+
   Future<void> _notifyClass(ClassItem item) async {
     try {
       final classDoc = await _classes.doc(item.classId).get();
