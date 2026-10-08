@@ -265,11 +265,11 @@ class MatchService {
     return list;
   }
 
-  Stream<List<MatchObserver>> observers(String matchId) => _col
-      .doc(matchId)
-      .collection('observateurs')
-      .snapshots()
-      .map((snap) => snap.docs.map(MatchObserver.fromDoc).toList());
+  Stream<List<MatchObserver>> observers(String matchId, {bool includePending = false}) {
+    var query = _col.doc(matchId).collection('observateurs');
+    if (!includePending) query = query.where('status', isEqualTo: 'accepted');
+    return query.snapshots().map((snap) => snap.docs.map(MatchObserver.fromDoc).toList());
+  }
 
   Stream<MatchObserver?> myObservation(String matchId, String uid) => _col
       .doc(matchId)
