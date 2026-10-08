@@ -213,16 +213,65 @@ service cloud.firestore {
               && get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
         }
         allow read: if isMe(uid) || host() || resource.data.get('status', '') == 'accepted';
+        function matchData() { return get(/databases/$(database)/documents/matchs/$(id)).data; }
         allow create: if isMe(uid)
-                      && request.resource.data.get('status', '') == 'pending'
-                      && get(/databases/$(database)/documents/matchs/$(id)).data.get('open', false) == true
-                      && get(/databases/$(database)/documents/matchs/$(id)).data.get('state', '') in ['question', 'correction']
+                      && request.resource.data.get('status', '') in ['pending', 'accepted']
+                      && (request.resource.data.get('status', '') == 'pending' || matchData().get('tournamentId', '') != '')
+                      && matchData().get('open', false) == true
+                      && matchData().get('state', '') in ['question', 'correction']
                       && !exists(/databases/$(database)/documents/matchs/$(id)/joueurs/$(uid));
         allow update: if host()
                       && resource.data.get('status', '') == 'pending'
                       && request.resource.data.get('status', '') in ['accepted', 'refused']
                       && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
         allow delete: if isMe(uid) || host();
+      }
+    }
+
+    // Tournois à élimination : lecture des tableaux par les comptes connectés.
+    match /tournaments/{tournamentId} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+                    && request.resource.data.hostUid == request.auth.uid
+                    && request.resource.data.status == 'waiting';
+      allow update: if signedIn()
+                    && resource.data.hostUid == request.auth.uid
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                       .hasOnly(['status','round','championUid','championName']);
+      allow delete: if signedIn() && resource.data.hostUid == request.auth.uid;
+
+      match /participants/{uid} {
+        function parentTournament() {
+          return get(/databases/$(database)/documents/tournaments/$(tournamentId)).data;
+        }
+        allow read: if signedIn();
+        allow create: if isMe(uid)
+                      && parentTournament().status == 'waiting'
+                      && request.resource.data.keys().hasOnly(['name','joinedAt']);
+        allow update: if isMe(uid)
+                      && parentTournament().status == 'waiting'
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name']);
+        allow delete: if (isMe(uid) && parentTournament().status == 'waiting')
+                      || (signedIn() && parentTournament().hostUid == request.auth.uid);
+      }
+
+      match /rounds/{roundId} {
+        function organizer() {
+          return signedIn()
+              && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+        }
+        allow read: if signedIn();
+        allow create, update, delete: if organizer();
+
+        match /games/{gameId} {
+          allow read: if signedIn();
+          allow create: if signedIn()
+                        && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+          allow update: if signedIn()
+                        && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+          allow delete: if signedIn()
+                        && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+        }
       }
     }
 
