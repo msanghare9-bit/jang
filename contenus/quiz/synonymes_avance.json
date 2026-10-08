@@ -263,6 +263,270 @@
       ],
       "r": 3,
       "e": "“resist” has a similar meaning to “withstand”."
+    },
+    {
+      "q": "Choose the closest meaning of “alleviate”.",
+      "o": [
+        "ease",
+        "worsen",
+        "ignore",
+        "delay"
+      ],
+      "r": 0,
+      "e": "“ease” is close in meaning to “alleviate”."
+    },
+    {
+      "q": "Choose the closest meaning of “arduous”.",
+      "o": [
+        "effortless",
+        "demanding",
+        "ordinary",
+        "brief"
+      ],
+      "r": 1,
+      "e": "“demanding” is close in meaning to “arduous”."
+    },
+    {
+      "q": "Choose the closest meaning of “astute”.",
+      "o": [
+        "careless",
+        "naive",
+        "shrewd",
+        "confused"
+      ],
+      "r": 2,
+      "e": "“shrewd” is close in meaning to “astute”."
+    },
+    {
+      "q": "Choose the closest meaning of “candid”.",
+      "o": [
+        "secretive",
+        "uncertain",
+        "formal",
+        "frank"
+      ],
+      "r": 3,
+      "e": "“frank” is close in meaning to “candid”."
+    },
+    {
+      "q": "Choose the closest meaning of “compel”.",
+      "o": [
+        "force",
+        "invite",
+        "allow",
+        "discourage"
+      ],
+      "r": 0,
+      "e": "“force” is close in meaning to “compel”."
+    },
+    {
+      "q": "Choose the closest meaning of “concise”.",
+      "o": [
+        "lengthy",
+        "brief",
+        "unclear",
+        "repetitive"
+      ],
+      "r": 1,
+      "e": "“brief” is close in meaning to “concise”."
+    },
+    {
+      "q": "Choose the closest meaning of “corroborate”.",
+      "o": [
+        "deny",
+        "weaken",
+        "confirm",
+        "hide"
+      ],
+      "r": 2,
+      "e": "“confirm” is close in meaning to “corroborate”."
+    },
+    {
+      "q": "Choose the closest meaning of “defer”.",
+      "o": [
+        "accelerate",
+        "complete",
+        "cancel",
+        "postpone"
+      ],
+      "r": 3,
+      "e": "“postpone” is close in meaning to “defer”."
+    },
+    {
+      "q": "Choose the closest meaning of “depict”.",
+      "o": [
+        "portray",
+        "erase",
+        "measure",
+        "predict"
+      ],
+      "r": 0,
+      "e": "“portray” is close in meaning to “depict”."
+    },
+    {
+      "q": "Choose the closest meaning of “deter”.",
+      "o": [
+        "encourage",
+        "discourage",
+        "permit",
+        "assist"
+      ],
+      "r": 1,
+      "e": "“discourage” is close in meaning to “deter”."
+    },
+    {
+      "q": "Choose the closest meaning of “diligent”.",
+      "o": [
+        "lazy",
+        "careless",
+        "hardworking",
+        "impatient"
+      ],
+      "r": 2,
+      "e": "“hardworking” is close in meaning to “diligent”."
+    },
+    {
+      "q": "Choose the closest meaning of “elusive”.",
+      "o": [
+        "obvious",
+        "nearby",
+        "ordinary",
+        "hard to find"
+      ],
+      "r": 3,
+      "e": "“hard to find” is close in meaning to “elusive”."
+    },
+    {
+      "q": "Choose the closest meaning of “feasible”.",
+      "o": [
+        "possible",
+        "impossible",
+        "unfair",
+        "unusual"
+      ],
+      "r": 0,
+      "e": "“possible” is close in meaning to “feasible”."
+    },
+    {
+      "q": "Choose the closest meaning of “hinder”.",
+      "o": [
+        "support",
+        "obstruct",
+        "speed",
+        "allow"
+      ],
+      "r": 1,
+      "e": "“obstruct” is close in meaning to “hinder”."
+    },
+    {
+      "q": "Choose the closest meaning of “impartial”.",
+      "o": [
+        "prejudiced",
+        "emotional",
+        "unbiased",
+        "uncertain"
+      ],
+      "r": 2,
+      "e": "“unbiased” is close in meaning to “impartial”."
+    },
+    {
+      "q": "Choose the closest meaning of “intricate”.",
+      "o": [
+        "simple",
+        "empty",
+        "obvious",
+        "complex"
+      ],
+      "r": 3,
+      "e": "“complex” is close in meaning to “intricate”."
+    },
+    {
+      "q": "Choose the closest meaning of “meticulous”.",
+      "o": [
+        "thorough",
+        "careless",
+        "quick",
+        "incomplete"
+      ],
+      "r": 0,
+      "e": "“thorough” is close in meaning to “meticulous”."
+    },
+    {
+      "q": "Choose the closest meaning of “obsolete”.",
+      "o": [
+        "modern",
+        "outdated",
+        "useful",
+        "popular"
+      ],
+      "r": 1,
+      "e": "“outdated” is close in meaning to “obsolete”."
+    },
+    {
+      "q": "Choose the closest meaning of “plausible”.",
+      "o": [
+        "absurd",
+        "false",
+        "believable",
+        "unclear"
+      ],
+      "r": 2,
+      "e": "“believable” is close in meaning to “plausible”."
+    },
+    {
+      "q": "Choose the closest meaning of “prudent”.",
+      "o": [
+        "reckless",
+        "wasteful",
+        "hurried",
+        "wise"
+      ],
+      "r": 3,
+      "e": "“wise” is close in meaning to “prudent”."
+    },
+    {
+      "q": "Choose the closest meaning of “scrutinize”.",
+      "o": [
+        "examine",
+        "neglect",
+        "guess",
+        "avoid"
+      ],
+      "r": 0,
+      "e": "“examine” is close in meaning to “scrutinize”."
+    },
+    {
+      "q": "Choose the closest meaning of “subtle”.",
+      "o": [
+        "obvious",
+        "delicate",
+        "loud",
+        "rough"
+      ],
+      "r": 1,
+      "e": "“delicate” is close in meaning to “subtle”."
+    },
+    {
+      "q": "Choose the closest meaning of “tangible”.",
+      "o": [
+        "imaginary",
+        "uncertain",
+        "concrete",
+        "distant"
+      ],
+      "r": 2,
+      "e": "“concrete” is close in meaning to “tangible”."
+    },
+    {
+      "q": "Choose the closest meaning of “undermine”.",
+      "o": [
+        "strengthen",
+        "repair",
+        "protect",
+        "weaken"
+      ],
+      "r": 3,
+      "e": "“weaken” is close in meaning to “undermine”."
     }
   ]
 }
