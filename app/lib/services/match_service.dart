@@ -27,6 +27,7 @@ class LiveMatch {
   final String domain;
   final String level;
   final String title;
+  final String tournamentId;
 
   /// Quiz du prof pour sa classe : la classe et le contenu (vide sinon).
   final String classId;
@@ -45,6 +46,7 @@ class LiveMatch {
     this.domain = '',
     this.level = '',
     this.title = '',
+    this.tournamentId = '',
     this.classId = '',
     this.itemId = '',
     this.createdAt,
@@ -72,6 +74,7 @@ class LiveMatch {
       domain: '${m['domaine'] ?? ''}',
       level: '${m['niveau'] ?? ''}',
       title: '${m['title'] ?? ''}',
+      tournamentId: '${m['tournamentId'] ?? ''}',
       classId: '${m['classId'] ?? ''}',
       itemId: '${m['itemId'] ?? ''}',
       createdAt: ts is Timestamp ? ts.toDate() : null,
@@ -145,6 +148,7 @@ class MatchService {
     String domain = '',
     String level = '',
     String title = '',
+    String tournamentId = '',
     String classId = '',
     String itemId = '',
   }) async {
@@ -169,6 +173,7 @@ class MatchService {
       'domaine': domain,
       'niveau': level,
       'title': title,
+      'tournamentId': tournamentId,
       'classId': classId,
       'itemId': itemId,
       'createdAt': FieldValue.serverTimestamp(),
@@ -209,6 +214,28 @@ class MatchService {
   /// Enregistre une réaction emoji du joueur connecté.
   Future<void> react(String matchId, String uid, String emoji) =>
       _col.doc(matchId).collection('joueurs').doc(uid).update({'reaction': emoji});
+
+  Future<LiveMatch?> getOnce(String id) async {
+    final doc = await _col.doc(id).get();
+    return doc.exists ? LiveMatch.fromDoc(doc) : null;
+  }
+
+  /// Les matchs d’un tournoi acceptent les spectateurs directement.
+  Future<void> requestTournamentObservation(String matchId, UserProfile p) async {
+    final match = await getOnce(matchId);
+    if (match == null || match.tournamentId.isEmpty ||
+        (match.state != LiveMatch.asking && match.state != LiveMatch.showing)) {
+      throw Exception('Ce match de tournoi n’est pas en cours.');
+    }
+    final player = await _col.doc(matchId).collection('joueurs').doc(p.uid).get();
+    if (player.exists) throw Exception('Tu joues déjà dans ce match.');
+    await _col.doc(matchId).collection('observateurs').doc(p.uid).set({
+      'name': p.publicName,
+      'status': 'accepted',
+      'tournament': true,
+      'requestedAt': FieldValue.serverTimestamp(),
+    });
+  }
 
   Stream<LiveMatch> watch(String id) => _col.doc(id).snapshots().where((d) => d.exists).map(LiveMatch.fromDoc);
 
