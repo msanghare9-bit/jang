@@ -263,6 +263,270 @@
       ],
       "r": 3,
       "e": "After “It is essential that”, formal English can use the base form “be”."
+    },
+    {
+      "q": "Which sentence correctly expresses an unreal past condition?",
+      "o": [
+        "If I had known, I would have called you.",
+        "If I knew, I would have called you yesterday.",
+        "If I had known, I will call you.",
+        "If I would have known, I called you."
+      ],
+      "r": 0,
+      "e": "Use past perfect in the if-clause and “would have” plus a participle in the result."
+    },
+    {
+      "q": "Which sentence uses inversion after “hardly”?",
+      "o": [
+        "Hardly we had arrived when the meeting began.",
+        "Hardly had we arrived when the meeting began.",
+        "Hardly did we arrived when the meeting began.",
+        "Hardly had we arrive than the meeting began."
+      ],
+      "r": 1,
+      "e": "“Hardly” at the beginning requires auxiliary inversion."
+    },
+    {
+      "q": "Which sentence has correct agreement with “neither…nor”?",
+      "o": [
+        "Neither the teachers nor the principal are available.",
+        "Neither teachers or the principal is available.",
+        "Neither the teachers nor the principal is available.",
+        "Neither the principal nor the teachers is available yesterday."
+      ],
+      "r": 2,
+      "e": "With “neither…nor,” the verb agrees with the nearer subject."
+    },
+    {
+      "q": "Which sentence correctly uses the passive voice?",
+      "o": [
+        "The results published last week by the team.",
+        "The results was published last week.",
+        "The team were published the results last week.",
+        "The results were published last week."
+      ],
+      "r": 3,
+      "e": "The passive uses “be” plus the past participle."
+    },
+    {
+      "q": "Which sentence correctly reports a question?",
+      "o": [
+        "He asked whether I had completed the report.",
+        "He asked whether had I completed the report.",
+        "He asked did I complete the report.",
+        "He asked whether I have complete the report."
+      ],
+      "r": 0,
+      "e": "Reported questions use statement word order and backshift when appropriate."
+    },
+    {
+      "q": "Which sentence correctly expresses regret about the past?",
+      "o": [
+        "I wish I listened to your advice yesterday.",
+        "I wish I had listened to your advice.",
+        "I wish I would listen to your advice yesterday.",
+        "I wish I have listened to your advice."
+      ],
+      "r": 1,
+      "e": "Use “wish” plus past perfect to regret a past action."
+    },
+    {
+      "q": "Which sentence correctly uses “despite”?",
+      "o": [
+        "Despite of the delay, the team finished the work.",
+        "Despite the team was delayed, they finished.",
+        "Despite the delay, the team finished the work.",
+        "Despite to the delay, the work was finished."
+      ],
+      "r": 2,
+      "e": "“Despite” is followed by a noun phrase, not “of”."
+    },
+    {
+      "q": "Which sentence correctly begins with “not only”?",
+      "o": [
+        "Not only she proposed an idea, but she also defended it.",
+        "Not only did she proposed an idea, but she defended it.",
+        "Not only she did propose an idea, but also defended it.",
+        "Not only did she propose an idea, but she also defended it."
+      ],
+      "r": 3,
+      "e": "An auxiliary comes before the subject after fronted “not only.”"
+    },
+    {
+      "q": "Which sentence correctly uses “no sooner”?",
+      "o": [
+        "No sooner had he left than the phone rang.",
+        "No sooner he had left than the phone rang.",
+        "No sooner had he left when the phone rang.",
+        "No sooner did he left than the phone rang."
+      ],
+      "r": 0,
+      "e": "Use inversion and pair “no sooner” with “than.”"
+    },
+    {
+      "q": "Which sentence correctly uses the subjunctive?",
+      "o": [
+        "It is essential that every applicant is present.",
+        "It is essential that every applicant be present.",
+        "It is essential that every applicant was present tomorrow.",
+        "It is essential for every applicant being present."
+      ],
+      "r": 1,
+      "e": "After “it is essential that,” formal English may use the base subjunctive “be.”"
+    },
+    {
+      "q": "Which sentence correctly uses a relative pronoun for a person?",
+      "o": [
+        "The teacher to which I spoke was helpful.",
+        "The teacher whom I spoke was helpful to.",
+        "The teacher to whom I spoke was helpful.",
+        "The teacher to who I spoke was helpful."
+      ],
+      "r": 2,
+      "e": "Use “whom” as the object of the preposition “to” in formal English."
+    },
+    {
+      "q": "Which sentence correctly expresses an unreal present condition?",
+      "o": [
+        "If she would have more time, she learned another language.",
+        "If she has more time, she would learned another language.",
+        "If she had more time, she will learn another language.",
+        "If she had more time, she would learn another language."
+      ],
+      "r": 3,
+      "e": "Use past simple in the if-clause and “would” plus base verb in the result."
+    },
+    {
+      "q": "Which sentence correctly expresses a past unreal result?",
+      "o": [
+        "If they had left earlier, they would have caught the train.",
+        "If they left earlier, they would have caught the train yesterday.",
+        "If they had left earlier, they would catch the train yesterday.",
+        "If they would have left earlier, they caught the train."
+      ],
+      "r": 0,
+      "e": "The third conditional uses past perfect and “would have” plus a participle."
+    },
+    {
+      "q": "Which sentence uses a participle clause correctly?",
+      "o": [
+        "Having finish the report, Mariama sent it to her manager.",
+        "Having finished the report, Mariama sent it to her manager.",
+        "Finished the report, Mariama having sent it.",
+        "Having finished the report, it was sent by Mariama."
+      ],
+      "r": 1,
+      "e": "The participle clause and main clause should have the same subject."
+    },
+    {
+      "q": "Which sentence correctly uses a gerund after “avoid”?",
+      "o": [
+        "They avoided to discuss the issue in public.",
+        "They avoided discuss the issue in public.",
+        "They avoided discussing the issue in public.",
+        "They avoided discussed the issue in public."
+      ],
+      "r": 2,
+      "e": "“Avoid” is followed by a gerund."
+    },
+    {
+      "q": "Which sentence correctly uses “unless”?",
+      "o": [
+        "Unless you will hurry, you miss the bus.",
+        "Unless you hurried, you will miss the bus tomorrow.",
+        "Unless you don't hurry, you will miss the bus.",
+        "Unless you hurry, you will miss the bus."
+      ],
+      "r": 3,
+      "e": "“Unless” means “if not”; use present simple for this future condition."
+    },
+    {
+      "q": "Which sentence expresses a past possibility?",
+      "o": [
+        "She might have taken the earlier train.",
+        "She might has taken the earlier train.",
+        "She might have take the earlier train.",
+        "She might took the earlier train."
+      ],
+      "r": 0,
+      "e": "Use a modal plus “have” and a past participle for a past possibility."
+    },
+    {
+      "q": "Which sentence correctly uses the future perfect?",
+      "o": [
+        "By June, they will completed the project.",
+        "By June, they will have completed the project.",
+        "By June, they have completed the project tomorrow.",
+        "By June, they will have complete the project."
+      ],
+      "r": 1,
+      "e": "The future perfect is “will have” plus a past participle."
+    },
+    {
+      "q": "Which sentence correctly uses “would rather”?",
+      "o": [
+        "I would rather you do not shared the document.",
+        "I would rather you not to share the document.",
+        "I would rather you did not share the document.",
+        "I would rather you had not share the document tomorrow."
+      ],
+      "r": 2,
+      "e": "“Would rather” can be followed by a past form for a preference about another person."
+    },
+    {
+      "q": "Which sentence correctly uses “so…that”?",
+      "o": [
+        "The road was so narrow than two cars could not pass.",
+        "The road was such narrow that two cars could not pass.",
+        "The road was so narrow for two cars could not pass.",
+        "The road was so narrow that two cars could not pass."
+      ],
+      "r": 3,
+      "e": "Use “so” plus an adjective and “that” before the result."
+    },
+    {
+      "q": "Which sentence correctly compares countable nouns?",
+      "o": [
+        "Fewer students chose the afternoon session this year.",
+        "Less students chose the afternoon session this year.",
+        "Fewer student chose the afternoon session this year.",
+        "Few students chose than the afternoon session this year."
+      ],
+      "r": 0,
+      "e": "Use “fewer” with plural countable nouns."
+    },
+    {
+      "q": "Which sentence uses “whom” as an object?",
+      "o": [
+        "Who did the committee invite to spoke?",
+        "Whom did the committee invite to speak?",
+        "Whom invited the committee to speak?",
+        "Whom did the committee invited to speak?"
+      ],
+      "r": 1,
+      "e": "“Whom” is the object of “invite”; use the base verb after “did.”"
+    },
+    {
+      "q": "Which sentence correctly uses “had it not been for”?",
+      "o": [
+        "Had it not been for her help, we will miss the deadline.",
+        "Had it not been her help, we would missed the deadline.",
+        "Had it not been for her help, we would have missed the deadline.",
+        "If had it not been for her help, we missed the deadline."
+      ],
+      "r": 2,
+      "e": "“Had it not been for” is an inverted form of a past conditional."
+    },
+    {
+      "q": "Which sentence uses “not until” with correct inversion?",
+      "o": [
+        "Not until the results arrived we made a decision.",
+        "Not until did the results arrive we make a decision.",
+        "Not until the results had arrived we did made a decision.",
+        "Not until the results arrived did we make a decision."
+      ],
+      "r": 3,
+      "e": "When “not until” begins the sentence, invert the auxiliary and subject in the main clause."
     }
   ]
 }
