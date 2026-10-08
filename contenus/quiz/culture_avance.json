@@ -9,7 +9,9 @@
         "Zanzibar Island"
       ],
       "r": 0,
-      "e": "Gorée Island is a UNESCO World Heritage Site near Dakar."
+      "e": "Gorée Island is a UNESCO World Heritage Site near Dakar.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "The Sine-Saloum Delta is important partly because it contains which habitats?",
@@ -20,7 +22,9 @@
         "Coral reefs in the open ocean"
       ],
       "r": 1,
-      "e": "The delta includes mangroves, islands and tidal channels."
+      "e": "The delta includes mangroves, islands and tidal channels.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which river is the main waterway of West Africa and passes through Mali and Niger?",
@@ -31,7 +35,9 @@
         "The Senegal River"
       ],
       "r": 2,
-      "e": "The Niger is a major West African river that flows through Mali and Niger."
+      "e": "The Niger is a major West African river that flows through Mali and Niger.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which mountain range runs across northwestern Africa?",
@@ -42,7 +48,9 @@
         "The Atlas Mountains"
       ],
       "r": 3,
-      "e": "The Atlas Mountains extend across Morocco, Algeria and Tunisia."
+      "e": "The Atlas Mountains extend across Morocco, Algeria and Tunisia.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which West African empire was ruled by Mansa Musa in the 14th century?",
@@ -53,7 +61,9 @@
         "The Kingdom of Kush"
       ],
       "r": 0,
-      "e": "Mansa Musa ruled the Mali Empire in the 14th century."
+      "e": "Mansa Musa ruled the Mali Empire in the 14th century.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What is the name of the sea passage between Europe and Africa at Spain and Morocco?",
@@ -64,7 +74,9 @@
         "The Mozambique Channel"
       ],
       "r": 1,
-      "e": "The Strait of Gibraltar separates Spain from Morocco."
+      "e": "The Strait of Gibraltar separates Spain from Morocco.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which African lake is the source region of the White Nile?",
@@ -75,7 +87,9 @@
         "Lake Malawi"
       ],
       "r": 2,
-      "e": "The White Nile’s source region is associated with Lake Victoria."
+      "e": "The White Nile’s source region is associated with Lake Victoria.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which country contains the ancient rock-hewn churches of Lalibela?",
@@ -86,7 +100,9 @@
         "Ethiopia"
       ],
       "r": 3,
-      "e": "The churches of Lalibela were carved from rock in Ethiopia."
+      "e": "The churches of Lalibela were carved from rock in Ethiopia.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What does biodiversity describe?",
@@ -97,7 +113,9 @@
         "The movement of ocean tides"
       ],
       "r": 0,
-      "e": "Biodiversity is the variety of life in a place or across Earth."
+      "e": "Biodiversity is the variety of life in a place or across Earth.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which process removes carbon dioxide from the air as plants grow?",
@@ -108,7 +126,9 @@
         "Erosion"
       ],
       "r": 1,
-      "e": "Plants use carbon dioxide in photosynthesis."
+      "e": "Plants use carbon dioxide in photosynthesis.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which African ecosystem is characterized by grasslands with scattered trees and seasonal rainfall?",
@@ -119,7 +139,9 @@
         "Temperate rainforest"
       ],
       "r": 2,
-      "e": "Savannas are tropical grasslands with scattered trees and seasonal rainfall."
+      "e": "Savannas are tropical grasslands with scattered trees and seasonal rainfall.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which country is home to the ancient city of Carthage, near modern Tunis?",
@@ -130,7 +152,9 @@
         "Tunisia"
       ],
       "r": 3,
-      "e": "Ancient Carthage was located in present-day Tunisia."
+      "e": "Ancient Carthage was located in present-day Tunisia.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which desert is found in southern Africa and extends across Botswana and Namibia?",
@@ -141,7 +165,9 @@
         "The Libyan Desert"
       ],
       "r": 0,
-      "e": "The Kalahari covers parts of Botswana, Namibia and South Africa."
+      "e": "The Kalahari covers parts of Botswana, Namibia and South Africa.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which African country is known for the rock-hewn churches of Lalibela and the ancient kingdom of Aksum?",
@@ -152,7 +178,9 @@
         "Malawi"
       ],
       "r": 1,
-      "e": "Both Lalibela and Aksum are associated with Ethiopia."
+      "e": "Both Lalibela and Aksum are associated with Ethiopia.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What is the main role of mangrove roots along tropical coasts?",
@@ -163,7 +191,9 @@
         "They turn seawater into oil"
       ],
       "r": 2,
-      "e": "Mangrove roots help protect coasts and support many species."
+      "e": "Mangrove roots help protect coasts and support many species.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which line of latitude passes through northern Africa and crosses the Sahara?",
@@ -174,7 +204,9 @@
         "The Tropic of Cancer"
       ],
       "r": 3,
-      "e": "The Tropic of Cancer crosses the Sahara in northern Africa."
+      "e": "The Tropic of Cancer crosses the Sahara in northern Africa.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What does “oral history” mainly preserve?",
@@ -185,7 +217,9 @@
         "Buildings made of stone"
       ],
       "r": 0,
-      "e": "Oral history carries memories and knowledge through spoken accounts."
+      "e": "Oral history carries memories and knowledge through spoken accounts.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which language family includes Wolof and Fula?",
@@ -196,7 +230,9 @@
         "Celtic"
       ],
       "r": 1,
-      "e": "Wolof and Fula are commonly classified within the Niger-Congo language family."
+      "e": "Wolof and Fula are commonly classified within the Niger-Congo language family.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which energy source uses moving air to generate electricity?",
@@ -207,7 +243,9 @@
         "Biomass only"
       ],
       "r": 2,
-      "e": "Wind turbines use moving air to generate electricity."
+      "e": "Wind turbines use moving air to generate electricity.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which geological feature formed as tectonic plates pulled apart in eastern Africa?",
@@ -218,7 +256,9 @@
         "The Great Rift Valley"
       ],
       "r": 3,
-      "e": "The Great Rift Valley formed as the crust stretched and separated."
+      "e": "The Great Rift Valley formed as the crust stretched and separated.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which African country has the city of Timbuktu and the historic Djinguereber Mosque?",
@@ -229,7 +269,9 @@
         "Eswatini"
       ],
       "r": 0,
-      "e": "Timbuktu and the Djinguereber Mosque are in Mali."
+      "e": "Timbuktu and the Djinguereber Mosque are in Mali.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What is a delta?",
@@ -240,7 +282,9 @@
         "A dry valley with no river"
       ],
       "r": 1,
-      "e": "A delta forms when a river deposits sediment near where it meets another body of water."
+      "e": "A delta forms when a river deposits sediment near where it meets another body of water.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which continent contains the Congo Basin rainforest?",
@@ -251,7 +295,9 @@
         "Antarctica"
       ],
       "r": 2,
-      "e": "The Congo Basin rainforest is in Central Africa."
+      "e": "The Congo Basin rainforest is in Central Africa.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Why are protected areas important for migratory animals?",
@@ -262,7 +308,9 @@
         "They can safeguard habitats used at different times of year"
       ],
       "r": 3,
-      "e": "Protected habitats can support animals as they move between seasonal areas."
+      "e": "Protected habitats can support animals as they move between seasonal areas.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What long-term practice do the Senegambian stone circles help document?",
@@ -273,7 +321,9 @@
         "Recent coastal tourism"
       ],
       "r": 0,
-      "e": "UNESCO links the stone circles and tumuli to funerary practices over a long period."
+      "e": "UNESCO links the stone circles and tumuli to funerary practices over a long period.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "About how many stone circles are included in the four inscribed groups?",
@@ -284,7 +334,9 @@
         "1,500"
       ],
       "r": 1,
-      "e": "UNESCO counts 93 circles across the four groups."
+      "e": "UNESCO counts 93 circles across the four groups.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which Senegalese complex is the largest among the Senegambian stone-circle sites?",
@@ -295,7 +347,9 @@
         "Kerbatch"
       ],
       "r": 2,
-      "e": "UNESCO identifies Sine Ngayène as the largest complex."
+      "e": "UNESCO identifies Sine Ngayène as the largest complex.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "How many circles does the Sine Ngayène complex contain?",
@@ -306,7 +360,9 @@
         "52"
       ],
       "r": 3,
-      "e": "UNESCO describes 52 circles at Sine Ngayène."
+      "e": "UNESCO describes 52 circles at Sine Ngayène.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "How many circles are in the Wanar complex?",
@@ -317,7 +373,9 @@
         "52"
       ],
       "r": 0,
-      "e": "UNESCO describes 21 circles at Wanar."
+      "e": "UNESCO describes 21 circles at Wanar.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What stone material is named in descriptions of the circles’ carved pillars?",
@@ -328,7 +386,9 @@
         "Limestone"
       ],
       "r": 1,
-      "e": "UNESCO describes the pillars as carved from laterite."
+      "e": "UNESCO describes the pillars as carved from laterite.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What do the associated tumuli mainly represent?",
@@ -339,7 +399,9 @@
         "Grain silos"
       ],
       "r": 2,
-      "e": "UNESCO identifies tumuli as burial mounds."
+      "e": "UNESCO identifies tumuli as burial mounds.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "How many standing stones are usually found in one circle?",
@@ -350,7 +412,9 @@
         "About eight to fourteen"
       ],
       "r": 3,
-      "e": "UNESCO gives a range of about eight to fourteen stones per circle."
+      "e": "UNESCO gives a range of about eight to fourteen stones per circle.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What is the approximate average height of the standing stones?",
@@ -361,7 +425,9 @@
         "About fifteen metres"
       ],
       "r": 0,
-      "e": "UNESCO describes the stones as averaging around two metres."
+      "e": "UNESCO describes the stones as averaging around two metres.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which three geo-cultural areas make up Bassari Country?",
@@ -372,7 +438,9 @@
         "Gorée, Saloum and Djoudj"
       ],
       "r": 1,
-      "e": "UNESCO identifies these three areas within the property."
+      "e": "UNESCO identifies these three areas within the property.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Between which centuries did Bassari, Fula and Bedik peoples settle in the area, according to UNESCO?",
@@ -383,7 +451,9 @@
         "From the 15th to the 16th centuries"
       ],
       "r": 2,
-      "e": "UNESCO dates settlement across the area from the 11th to the 19th centuries."
+      "e": "UNESCO dates settlement across the area from the 11th to the 19th centuries.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What agricultural landscape feature is associated with Bassari Country?",
@@ -394,7 +464,9 @@
         "Terraced fields and rice paddies"
       ],
       "r": 3,
-      "e": "UNESCO describes terraces and rice paddies in the Bassari landscape."
+      "e": "UNESCO describes terraces and rice paddies in the Bassari landscape.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Why is Bassari Country considered a cultural landscape?",
@@ -405,7 +477,9 @@
         "It has no connection to local practices."
       ],
       "r": 0,
-      "e": "UNESCO explains that land use, social rules and beliefs shaped the landscape."
+      "e": "UNESCO explains that land use, social rules and beliefs shaped the landscape.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What kind of practices are represented in Bassari Country?",
@@ -416,7 +490,9 @@
         "Only written legal codes"
       ],
       "r": 1,
-      "e": "UNESCO describes these linked cultural practices."
+      "e": "UNESCO describes these linked cultural practices.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What has the long cultural process of shell-mound building done in the Saloum Delta?",
@@ -427,7 +503,9 @@
         "Removed all brackish water"
       ],
       "r": 2,
-      "e": "UNESCO notes shell mounds helped form stable islets over time."
+      "e": "UNESCO notes shell mounds helped form stable islets over time.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What timescale does UNESCO associate with the Saloum shell-mound cultural process?",
@@ -438,7 +516,9 @@
         "About 2,000 years"
       ],
       "r": 3,
-      "e": "UNESCO describes a cultural process lasting around 2,000 years."
+      "e": "UNESCO describes a cultural process lasting around 2,000 years.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which combination best describes the Saloum Delta’s traditional coastal livelihood?",
@@ -449,7 +529,9 @@
         "Oil refining and aircraft building"
       ],
       "r": 0,
-      "e": "UNESCO highlights gathering, fishing and preservation of the harvest."
+      "e": "UNESCO highlights gathering, fishing and preservation of the harvest.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What makes parts of the Saloum Delta’s environment ecologically sensitive?",
@@ -460,7 +542,9 @@
         "It receives no water from rivers or tides."
       ],
       "r": 1,
-      "e": "UNESCO describes the delta's biodiversity as extensive and fragile."
+      "e": "UNESCO describes the delta's biodiversity as extensive and fragile.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What physical feature gives Saint-Louis its distinctive island setting?",
@@ -471,7 +555,9 @@
         "It stands on an artificial lake."
       ],
       "r": 2,
-      "e": "UNESCO describes Saint-Louis between two arms of the river mouth."
+      "e": "UNESCO describes Saint-Louis between two arms of the river mouth.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which urban features are noted in UNESCO’s description of Saint-Louis?",
@@ -482,7 +568,9 @@
         "A regular plan, quays and colonial architecture"
       ],
       "r": 3,
-      "e": "UNESCO cites the town plan, quays and architecture."
+      "e": "UNESCO cites the town plan, quays and architecture.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What role did Saint-Louis play in West Africa before Dakar became the capital?",
@@ -493,7 +581,9 @@
         "It was a new city built in the 21st century."
       ],
       "r": 0,
-      "e": "UNESCO describes Saint-Louis as an influential regional centre."
+      "e": "UNESCO describes Saint-Louis as an influential regional centre.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "What do the Stone Circles of Senegambia reveal about the society that built them?",
@@ -504,7 +594,9 @@
         "It avoided trade and settlement."
       ],
       "r": 1,
-      "e": "UNESCO describes a skilled and organized society behind the monuments."
+      "e": "UNESCO describes a skilled and organized society behind the monuments.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Why do UNESCO’s cultural-landscape descriptions consider traditional practices important?",
@@ -515,7 +607,9 @@
         "They describe only modern tourism."
       ],
       "r": 2,
-      "e": "The cultural landscape records adaptations to environmental constraints."
+      "e": "The cultural landscape records adaptations to environmental constraints.",
+      "d": "culture",
+      "n": "avance"
     },
     {
       "q": "Which statement about the Stone Circles of Senegambia is accurate?",
@@ -526,7 +620,165 @@
         "The inscribed groups are located in both Senegal and The Gambia."
       ],
       "r": 3,
-      "e": "UNESCO describes a shared, cross-border serial property."
+      "e": "UNESCO describes a shared, cross-border serial property.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which outside influences are reflected in Lamu Old Town’s architecture?",
+      "o": [
+        "Arab, Persian, Indian and European",
+        "Chinese, Japanese and Korean",
+        "Roman, Greek and Viking",
+        "Inca, Maya and Aztec"
+      ],
+      "r": 0,
+      "e": "UNESCO describes influences from Arabia, Persia, India and Europe.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What street pattern is characteristic of Lamu Old Town?",
+      "o": [
+        "Wide circular boulevards",
+        "Narrow, winding streets",
+        "A modern motorway grid",
+        "Raised roads over the sea"
+      ],
+      "r": 1,
+      "e": "UNESCO describes narrow winding streets.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What did the prosperity of Kilwa Kisiwani and Songo Mnara depend on?",
+      "o": [
+        "Trans-Saharan railways",
+        "Atlantic whaling",
+        "Indian Ocean trade",
+        "Arctic fishing"
+      ],
+      "r": 2,
+      "e": "UNESCO links the ports’ prosperity to Indian Ocean trade.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which mosque is part of the ruins at Kilwa Kisiwani?",
+      "o": [
+        "The Blue Mosque of Cairo",
+        "The Great Mosque of Djenné",
+        "The Mosque of Aksum",
+        "The Great Mosque"
+      ],
+      "r": 3,
+      "e": "UNESCO lists the Great Mosque among Kilwa’s ruins.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What did Kilwa Kisiwani mint during part of its history?",
+      "o": [
+        "Its own currency",
+        "Porcelain plates",
+        "Printed books",
+        "Iron ploughs"
+      ],
+      "r": 0,
+      "e": "UNESCO says Kilwa minted its own currency.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "The Meroe archaeological sites are linked to which ancient civilization?",
+      "o": [
+        "Phoenician",
+        "Kushite",
+        "Songhai",
+        "Zulu"
+      ],
+      "r": 1,
+      "e": "UNESCO associates Meroe with Kushite civilization.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What kind of tombs are found in Meroe’s burial grounds?",
+      "o": [
+        "Coral towers",
+        "Cave paintings",
+        "Pyramid tombs",
+        "Wooden stilt houses"
+      ],
+      "r": 2,
+      "e": "UNESCO describes extensive burial grounds of pyramid tombs.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which pair names hinterland centres included with Meroe in the UNESCO property?",
+      "o": [
+        "Aksum and Lalibela",
+        "Kilwa and Lamu",
+        "Gorée and Saint-Louis",
+        "Musawwarat es-Sufra and Naqa"
+      ],
+      "r": 3,
+      "e": "UNESCO names Musawwarat es-Sufra and Naqa.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which objects from China and Persia were found at Great Zimbabwe?",
+      "o": [
+        "Beads and porcelain",
+        "Paper and silk screens",
+        "Glass lamps and carpets",
+        "Bronze bells and tea bowls"
+      ],
+      "r": 0,
+      "e": "UNESCO reports beads and porcelain from China and Persia.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "What figure from Great Zimbabwe was adopted as Zimbabwe’s emblem?",
+      "o": [
+        "A bronze lion",
+        "The soapstone Zimbabwe Bird",
+        "A wooden elephant",
+        "A clay crocodile"
+      ],
+      "r": 1,
+      "e": "The Zimbabwe Bird is a soapstone figure and national emblem.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which languages appear together in some Aksumite inscriptions?",
+      "o": [
+        "Latin, Arabic and Swahili",
+        "French, Wolof and Fula",
+        "Greek, Sabaean and Ge’ez",
+        "Portuguese, Shona and Zulu"
+      ],
+      "r": 2,
+      "e": "UNESCO describes inscriptions in Greek, Sabaean and Ge’ez.",
+      "d": "culture",
+      "n": "avance"
+    },
+    {
+      "q": "Which trade route did Aksum control through the port of Adulis?",
+      "o": [
+        "Atlantic trade",
+        "Mediterranean canal trade",
+        "Indian Ocean spice trade",
+        "Red Sea trade"
+      ],
+      "r": 3,
+      "e": "UNESCO notes Aksum’s control of Red Sea trade through Adulis.",
+      "d": "culture",
+      "n": "avance"
     }
   ]
 }
