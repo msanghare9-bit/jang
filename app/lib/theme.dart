@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Couleurs de Jàng : vives et joyeuses (style Duolingo / Kahoot), sur fond blanc.
+/// Palette de Jàng : vert profond et blanc, avec des tons neutres pour la lisibilité.
 class JangColors {
   static const background = Colors.white;
   static const text = Color(0xFF3C3C3C);
