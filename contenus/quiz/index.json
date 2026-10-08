@@ -71,6 +71,22 @@
     "francais_anglais_avance": {
       "fichier": "francais_anglais_avance.json",
       "nombre": 24
+    },
+    "vocabulaire_intermediaire": {
+      "fichier": "vocabulaire_intermediaire.json",
+      "nombre": 24
+    },
+    "vocabulaire_avance": {
+      "fichier": "vocabulaire_avance.json",
+      "nombre": 24
+    },
+    "grammaire_intermediaire": {
+      "fichier": "grammaire_intermediaire.json",
+      "nombre": 24
+    },
+    "grammaire_avance": {
+      "fichier": "grammaire_avance.json",
+      "nombre": 24
     }
   }
 }
