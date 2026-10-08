@@ -26,3 +26,10 @@ Les questions de culture générale s’appuient sur les notices de référence 
 - [Villes anciennes de Djenné — UNESCO](https://whc.unesco.org/en/list/116/) : architecture en terre, sites archéologiques et échanges transsahariens.
 - [Robben Island — UNESCO](https://whc.unesco.org/en/list/916/) : prison, histoire de l’apartheid et symbole de liberté.
 - [Paysage culturel de Mapungubwe — UNESCO](https://whc.unesco.org/en/list/1099/) : royaume ancien, routes commerciales et confluence Limpopo–Shashe.
+
+## Patrimoine africain supplémentaire
+
+- [Great Zimbabwe National Monument — UNESCO](https://whc.unesco.org/en/list/364/) : civilisation shona, période du XIe au XVe siècle, superficie et rôle commercial.
+- [Églises creusées dans le roc de Lalibela — UNESCO](https://whc.unesco.org/en/list/18/) : onze églises monolithes, attribution au roi Lalibela, date et aménagement du site.
+- [Aksum — UNESCO](https://whc.unesco.org/en/list/15/) : chronologie du royaume, stèles, obélisque, commerce de l’ivoire et port d’Adulis.
+- [Fort Jesus, Mombasa — UNESCO](https://whc.unesco.org/en/list/1295/) : construction portugaise, fonction, plan, dimensions et échanges culturels.
