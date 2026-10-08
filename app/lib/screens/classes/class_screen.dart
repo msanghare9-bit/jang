@@ -13,6 +13,7 @@ import '../../widgets/common.dart';
 import '../admin/students_screen.dart';
 import 'class_widgets.dart';
 import 'item_editor.dart';
+import 'teacher_course_screen.dart';
 
 /// Tout ce qu'il faut pour afficher une classe.
 class _ClassData {
@@ -332,7 +333,16 @@ class _ClassScreenState extends State<ClassScreen> {
         FilledButton.icon(
           onPressed: () => _openEditor(null),
           icon: const Icon(Icons.add),
-          label: const Text('Créer'),
+          label: const Text('Créer un contenu'),
+        ),
+        const SizedBox(height: 8),
+        OutlinedButton.icon(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => TeacherCourseScreen(classRoom: _c)),
+          ),
+          icon: const Icon(Icons.auto_awesome),
+          label: const Text('Kocc : préparer un cours complet'),
         ),
         const SizedBox(height: 10),
         if (data.items.isEmpty)
