@@ -263,6 +263,270 @@
       ],
       "r": 3,
       "e": "“defeat” is the opposite of “victory”."
+    },
+    {
+      "q": "Choose the opposite of “absent”.",
+      "o": [
+        "present",
+        "missing",
+        "away",
+        "late"
+      ],
+      "r": 0,
+      "e": "“present” is the opposite of “absent”."
+    },
+    {
+      "q": "Choose the opposite of “calm”.",
+      "o": [
+        "peaceful",
+        "agitated",
+        "quiet",
+        "relaxed"
+      ],
+      "r": 1,
+      "e": "“agitated” is the opposite of “calm”."
+    },
+    {
+      "q": "Choose the opposite of “deep”.",
+      "o": [
+        "wide",
+        "dark",
+        "shallow",
+        "long"
+      ],
+      "r": 2,
+      "e": "“shallow” is the opposite of “deep”."
+    },
+    {
+      "q": "Choose the opposite of “difficult”.",
+      "o": [
+        "hard",
+        "complex",
+        "demanding",
+        "easy"
+      ],
+      "r": 3,
+      "e": "“easy” is the opposite of “difficult”."
+    },
+    {
+      "q": "Choose the opposite of “early”.",
+      "o": [
+        "late",
+        "soon",
+        "quick",
+        "first"
+      ],
+      "r": 0,
+      "e": "“late” is the opposite of “early”."
+    },
+    {
+      "q": "Choose the opposite of “entrance”.",
+      "o": [
+        "doorway",
+        "exit",
+        "arrival",
+        "opening"
+      ],
+      "r": 1,
+      "e": "“exit” is the opposite of “entrance”."
+    },
+    {
+      "q": "Choose the opposite of “enemy”.",
+      "o": [
+        "rival",
+        "stranger",
+        "friend",
+        "opponent"
+      ],
+      "r": 2,
+      "e": "“friend” is the opposite of “enemy”."
+    },
+    {
+      "q": "Choose the opposite of “failure”.",
+      "o": [
+        "mistake",
+        "problem",
+        "defeat",
+        "success"
+      ],
+      "r": 3,
+      "e": "“success” is the opposite of “failure”."
+    },
+    {
+      "q": "Choose the opposite of “false”.",
+      "o": [
+        "true",
+        "wrong",
+        "incorrect",
+        "unreal"
+      ],
+      "r": 0,
+      "e": "“true” is the opposite of “false”."
+    },
+    {
+      "q": "Choose the opposite of “fresh”.",
+      "o": [
+        "new",
+        "stale",
+        "clean",
+        "recent"
+      ],
+      "r": 1,
+      "e": "“stale” is the opposite of “fresh”."
+    },
+    {
+      "q": "Choose the opposite of “frequent”.",
+      "o": [
+        "regular",
+        "common",
+        "rare",
+        "usual"
+      ],
+      "r": 2,
+      "e": "“rare” is the opposite of “frequent”."
+    },
+    {
+      "q": "Choose the opposite of “front”.",
+      "o": [
+        "side",
+        "top",
+        "middle",
+        "back"
+      ],
+      "r": 3,
+      "e": "“back” is the opposite of “front”."
+    },
+    {
+      "q": "Choose the opposite of “healthy”.",
+      "o": [
+        "sick",
+        "strong",
+        "fit",
+        "well"
+      ],
+      "r": 0,
+      "e": "“sick” is the opposite of “healthy”."
+    },
+    {
+      "q": "Choose the opposite of “hopeful”.",
+      "o": [
+        "cheerful",
+        "hopeless",
+        "confident",
+        "positive"
+      ],
+      "r": 1,
+      "e": "“hopeless” is the opposite of “hopeful”."
+    },
+    {
+      "q": "Choose the opposite of “inside”.",
+      "o": [
+        "within",
+        "indoors",
+        "outside",
+        "interior"
+      ],
+      "r": 2,
+      "e": "“outside” is the opposite of “inside”."
+    },
+    {
+      "q": "Choose the opposite of “junior”.",
+      "o": [
+        "young",
+        "new",
+        "younger",
+        "senior"
+      ],
+      "r": 3,
+      "e": "“senior” is the opposite of “junior”."
+    },
+    {
+      "q": "Choose the opposite of “narrow”.",
+      "o": [
+        "wide",
+        "thin",
+        "small",
+        "tight"
+      ],
+      "r": 0,
+      "e": "“wide” is the opposite of “narrow”."
+    },
+    {
+      "q": "Choose the opposite of “positive”.",
+      "o": [
+        "hopeful",
+        "negative",
+        "certain",
+        "good"
+      ],
+      "r": 1,
+      "e": "“negative” is the opposite of “positive”."
+    },
+    {
+      "q": "Choose the opposite of “smooth”.",
+      "o": [
+        "soft",
+        "flat",
+        "rough",
+        "polished"
+      ],
+      "r": 2,
+      "e": "“rough” is the opposite of “smooth”."
+    },
+    {
+      "q": "Choose the opposite of “start”.",
+      "o": [
+        "begin",
+        "open",
+        "launch",
+        "finish"
+      ],
+      "r": 3,
+      "e": "“finish” is the opposite of “start”."
+    },
+    {
+      "q": "Choose the opposite of “strict”.",
+      "o": [
+        "lenient",
+        "firm",
+        "severe",
+        "tough"
+      ],
+      "r": 0,
+      "e": "“lenient” is the opposite of “strict”."
+    },
+    {
+      "q": "Choose the opposite of “support”.",
+      "o": [
+        "help",
+        "oppose",
+        "agree",
+        "back"
+      ],
+      "r": 1,
+      "e": "“oppose” is the opposite of “support”."
+    },
+    {
+      "q": "Choose the opposite of “urban”.",
+      "o": [
+        "city",
+        "busy",
+        "rural",
+        "modern"
+      ],
+      "r": 2,
+      "e": "“rural” is the opposite of “urban”."
+    },
+    {
+      "q": "Choose the opposite of “young”.",
+      "o": [
+        "small",
+        "new",
+        "early",
+        "old"
+      ],
+      "r": 3,
+      "e": "“old” is the opposite of “young”."
     }
   ]
 }
