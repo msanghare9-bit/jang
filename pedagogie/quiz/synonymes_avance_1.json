@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the closest meaning of “abundant”.",
+      "o": [
+        "plentiful",
+        "scarce",
+        "limited",
+        "empty"
+      ],
+      "r": 0,
+      "e": "“plentiful” has a similar meaning to “abundant”."
+    },
+    {
+      "q": "Choose the closest meaning of “accurate”.",
+      "o": [
+        "rough",
+        "precise",
+        "false",
+        "careless"
+      ],
+      "r": 1,
+      "e": "“precise” has a similar meaning to “accurate”."
+    },
+    {
+      "q": "Choose the closest meaning of “adapt”.",
+      "o": [
+        "resist",
+        "ignore",
+        "adjust",
+        "abandon"
+      ],
+      "r": 2,
+      "e": "“adjust” has a similar meaning to “adapt”."
+    },
+    {
+      "q": "Choose the closest meaning of “ambiguous”.",
+      "o": [
+        "obvious",
+        "exact",
+        "certain",
+        "unclear"
+      ],
+      "r": 3,
+      "e": "“unclear” has a similar meaning to “ambiguous”."
+    },
+    {
+      "q": "Choose the closest meaning of “cease”.",
+      "o": [
+        "stop",
+        "begin",
+        "continue",
+        "allow"
+      ],
+      "r": 0,
+      "e": "“stop” has a similar meaning to “cease”."
+    },
+    {
+      "q": "Choose the closest meaning of “conceal”.",
+      "o": [
+        "reveal",
+        "hide",
+        "display",
+        "explain"
+      ],
+      "r": 1,
+      "e": "“hide” has a similar meaning to “conceal”."
+    },
+    {
+      "q": "Choose the closest meaning of “decline”.",
+      "o": [
+        "rise",
+        "grow",
+        "decrease",
+        "expand"
+      ],
+      "r": 2,
+      "e": "“decrease” has a similar meaning to “decline”."
+    },
+    {
+      "q": "Choose the closest meaning of “evident”.",
+      "o": [
+        "doubtful",
+        "hidden",
+        "unclear",
+        "obvious"
+      ],
+      "r": 3,
+      "e": "“obvious” has a similar meaning to “evident”."
+    },
+    {
+      "q": "Choose the closest meaning of “fragile”.",
+      "o": [
+        "delicate",
+        "sturdy",
+        "solid",
+        "durable"
+      ],
+      "r": 0,
+      "e": "“delicate” has a similar meaning to “fragile”."
+    },
+    {
+      "q": "Choose the closest meaning of “hostile”.",
+      "o": [
+        "kind",
+        "unfriendly",
+        "welcoming",
+        "helpful"
+      ],
+      "r": 1,
+      "e": "“unfriendly” has a similar meaning to “hostile”."
+    },
+    {
+      "q": "Choose the closest meaning of “inevitable”.",
+      "o": [
+        "unlikely",
+        "optional",
+        "unavoidable",
+        "preventable"
+      ],
+      "r": 2,
+      "e": "“unavoidable” has a similar meaning to “inevitable”."
+    },
+    {
+      "q": "Choose the closest meaning of “maintain”.",
+      "o": [
+        "destroy",
+        "change",
+        "remove",
+        "preserve"
+      ],
+      "r": 3,
+      "e": "“preserve” has a similar meaning to “maintain”."
+    },
+    {
+      "q": "Choose the closest meaning of “modest”.",
+      "o": [
+        "humble",
+        "arrogant",
+        "proud",
+        "showy"
+      ],
+      "r": 0,
+      "e": "“humble” has a similar meaning to “modest”."
+    },
+    {
+      "q": "Choose the closest meaning of “obscure”.",
+      "o": [
+        "famous",
+        "unclear",
+        "bright",
+        "obvious"
+      ],
+      "r": 1,
+      "e": "“unclear” has a similar meaning to “obscure”."
+    },
+    {
+      "q": "Choose the closest meaning of “reluctant”.",
+      "o": [
+        "eager",
+        "ready",
+        "unwilling",
+        "keen"
+      ],
+      "r": 2,
+      "e": "“unwilling” has a similar meaning to “reluctant”."
+    },
+    {
+      "q": "Choose the closest meaning of “resilient”.",
+      "o": [
+        "weak",
+        "fragile",
+        "helpless",
+        "tough"
+      ],
+      "r": 3,
+      "e": "“tough” has a similar meaning to “resilient”."
+    },
+    {
+      "q": "Choose the closest meaning of “scarce”.",
+      "o": [
+        "rare",
+        "plentiful",
+        "common",
+        "abundant"
+      ],
+      "r": 0,
+      "e": "“rare” has a similar meaning to “scarce”."
+    },
+    {
+      "q": "Choose the closest meaning of “significant”.",
+      "o": [
+        "trivial",
+        "important",
+        "minor",
+        "ordinary"
+      ],
+      "r": 1,
+      "e": "“important” has a similar meaning to “significant”."
+    },
+    {
+      "q": "Choose the closest meaning of “subsequent”.",
+      "o": [
+        "previous",
+        "earlier",
+        "following",
+        "former"
+      ],
+      "r": 2,
+      "e": "“following” has a similar meaning to “subsequent”."
+    },
+    {
+      "q": "Choose the closest meaning of “temporary”.",
+      "o": [
+        "permanent",
+        "lasting",
+        "enduring",
+        "short-term"
+      ],
+      "r": 3,
+      "e": "“short-term” has a similar meaning to “temporary”."
+    },
+    {
+      "q": "Choose the closest meaning of “transform”.",
+      "o": [
+        "change",
+        "preserve",
+        "maintain",
+        "freeze"
+      ],
+      "r": 0,
+      "e": "“change” has a similar meaning to “transform”."
+    },
+    {
+      "q": "Choose the closest meaning of “vast”.",
+      "o": [
+        "tiny",
+        "immense",
+        "narrow",
+        "limited"
+      ],
+      "r": 1,
+      "e": "“immense” has a similar meaning to “vast”."
+    },
+    {
+      "q": "Choose the closest meaning of “weary”.",
+      "o": [
+        "alert",
+        "energetic",
+        "tired",
+        "rested"
+      ],
+      "r": 2,
+      "e": "“tired” has a similar meaning to “weary”."
+    },
+    {
+      "q": "Choose the closest meaning of “withstand”.",
+      "o": [
+        "surrender",
+        "accept",
+        "allow",
+        "resist"
+      ],
+      "r": 3,
+      "e": "“resist” has a similar meaning to “withstand”."
+    }
+  ]
+}
