@@ -173,9 +173,9 @@ class _XaritScreenState extends State<XaritScreen> {
     if (p == null) return;
     setState(() => _busy = true);
     try {
-      await XaritService.instance.markInvitation(invite.id, accept: true);
       final (match, error) = await MatchService.instance.joinByCode(invite.code, p);
       if (match == null) { _message(error); return; }
+      await XaritService.instance.markInvitation(invite.id, accept: true);
       if (!mounted) return;
       await Navigator.push(context, MaterialPageRoute(builder: (_) => MatchRoomScreen(matchId: match.id)));
     } catch (_) { _message('Impossible de rejoindre ce match. Vérifie ta connexion.'); }
