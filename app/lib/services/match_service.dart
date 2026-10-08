@@ -33,6 +33,7 @@ class LiveMatch {
   final String classId;
   final String itemId;
   final DateTime? createdAt;
+  final DateTime? askedAt;
   LiveMatch({
     required this.id,
     required this.code,
@@ -50,6 +51,7 @@ class LiveMatch {
     this.classId = '',
     this.itemId = '',
     this.createdAt,
+    this.askedAt,
   });
 
   BankQuestion? get current => index >= 0 && index < questions.length ? questions[index] : null;
@@ -58,6 +60,7 @@ class LiveMatch {
   factory LiveMatch.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
     final ts = m['createdAt'];
+    final asked = m['askedAt'];
     return LiveMatch(
       id: d.id,
       code: '${m['code'] ?? ''}',
@@ -78,6 +81,7 @@ class LiveMatch {
       classId: '${m['classId'] ?? ''}',
       itemId: '${m['itemId'] ?? ''}',
       createdAt: ts is Timestamp ? ts.toDate() : null,
+      askedAt: asked is Timestamp ? asked.toDate() : null,
     );
   }
 }
