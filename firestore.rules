@@ -216,9 +216,11 @@ service cloud.firestore {
         function matchData() { return get(/databases/$(database)/documents/matchs/$(id)).data; }
         allow create: if isMe(uid)
                       && request.resource.data.get('status', '') in ['pending', 'accepted']
-                      && (request.resource.data.get('status', '') == 'pending' || matchData().get('tournamentId', '') != '')
+                      && (request.resource.data.get('status', '') == 'pending'
+                          ? matchData().get('state', '') in ['question', 'correction']
+                          : matchData().get('tournamentId', '') != ''
+                            && matchData().get('state', '') in ['attente', 'question', 'correction'])
                       && matchData().get('open', false) == true
-                      && matchData().get('state', '') in ['question', 'correction']
                       && !exists(/databases/$(database)/documents/matchs/$(id)/joueurs/$(uid));
         allow update: if host()
                       && resource.data.get('status', '') == 'pending'
