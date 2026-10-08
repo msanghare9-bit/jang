@@ -47,6 +47,52 @@ service cloud.firestore {
       }
     }
 
+    // Index public minimal pour trouver un ami sans lire son profil complet.
+    match /usernames/{username} {
+      allow read: if signedIn();
+      allow create: if isMe(request.resource.data.uid)
+                    && request.resource.data.username == username
+                    && getAfter(/databases/$(database)/documents/users/$(request.auth.uid)).data.username == username;
+      allow update: if false;
+      allow delete: if isMe(resource.data.uid);
+    }
+
+    // Demandes Xarit : seuls l'expéditeur et le destinataire y ont accès.
+    match /friendRequests/{id} {
+      allow read: if signedIn()
+                  && (resource.data.fromUid == request.auth.uid || resource.data.toUid == request.auth.uid);
+      allow create: if signedIn()
+                    && request.resource.data.fromUid == request.auth.uid
+                    && request.resource.data.toUid != request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.keys().hasOnly(['fromUid','toUid','fromName','toName','status','createdAt']);
+      allow update: if signedIn()
+                    && resource.data.toUid == request.auth.uid
+                    && resource.data.status == 'pending'
+                    && request.resource.data.status in ['accepted','rejected']
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+      allow delete: if signedIn() && resource.data.fromUid == request.auth.uid;
+    }
+
+    // Invitations privées à rejoindre un match Xarit.
+    match /matchInvitations/{id} {
+      allow read: if signedIn()
+                  && (resource.data.fromUid == request.auth.uid || resource.data.toUid == request.auth.uid);
+      allow create: if signedIn()
+                    && request.resource.data.fromUid == request.auth.uid
+                    && request.resource.data.toUid != request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && get(/databases/$(database)/documents/matchs/$(request.resource.data.matchId)).data.hostUid == request.auth.uid
+                    && get(/databases/$(database)/documents/matchs/$(request.resource.data.matchId)).data.open == true
+                    && request.resource.data.keys().hasOnly(['fromUid','toUid','fromName','matchId','code','status','createdAt']);
+      allow update: if signedIn()
+                    && resource.data.toUid == request.auth.uid
+                    && resource.data.status == 'pending'
+                    && request.resource.data.status in ['accepted','declined']
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+      allow delete: if signedIn() && resource.data.fromUid == request.auth.uid;
+    }
+
     // ---------- Contenus ----------
     match /exams/{id} { allow read: if true; allow write: if isAdmin(); }
     match /subjects/{id} { allow read: if true; allow write: if canEdit(); }
