@@ -52,15 +52,20 @@ class XaritService {
   Future<void> requestFriend(UserProfile me, XaritUser other) async {
     if (me.uid == other.uid) throw Exception('Tu ne peux pas t’ajouter toi-même.');
     final outId = '${me.uid}__${other.uid}';
-    final inId = '${other.uid}__${me.uid}';
-    final prior = await Future.wait([_requests.doc(outId).get(), _requests.doc(inId).get()]);
-    if (prior.any((d) => d.exists && d.data()?['status'] == 'accepted')) {
+    final prior = await Future.wait([
+      _requests.where('fromUid', isEqualTo: me.uid).where('toUid', isEqualTo: other.uid).get(),
+      _requests.where('fromUid', isEqualTo: other.uid).where('toUid', isEqualTo: me.uid).get(),
+    ]);
+    final rows = prior.expand((s) => s.docs).toList();
+    if (rows.any((d) => d.data()['status'] == 'accepted')) {
       throw Exception('Cette personne est déjà dans tes Xarit.');
     }
-    if (prior.any((d) => d.exists && d.data()?['status'] == 'pending')) {
+    if (rows.any((d) => d.data()['status'] == 'pending')) {
       throw Exception('Une demande est déjà en attente.');
     }
-    if (prior[0].exists) await _requests.doc(outId).delete();
+    for (final doc in prior[0].docs) {
+      await doc.reference.delete();
+    }
     await _requests.doc(outId).set({
       'fromUid': me.uid, 'toUid': other.uid, 'fromName': me.publicName, 'toName': other.name,
       'status': 'pending', 'createdAt': FieldValue.serverTimestamp(),
