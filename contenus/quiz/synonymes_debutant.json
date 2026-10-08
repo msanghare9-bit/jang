@@ -1,0 +1,316 @@
+{
+  "questions": [
+    {
+      "q": "Quel est un synonyme de « joyeux » ?",
+      "o": [
+        "triste",
+        "heureux",
+        "fatigué",
+        "fâché"
+      ],
+      "r": 1,
+      "e": "« Heureux » exprime la joie.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « rapide » ?",
+      "o": [
+        "lent",
+        "vite",
+        "rapide",
+        "fragile"
+      ],
+      "r": 2,
+      "e": "« Rapide » signifie qui va vite.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « commencer » ?",
+      "o": [
+        "débuter",
+        "finir",
+        "cacher",
+        "attendre"
+      ],
+      "r": 0,
+      "e": "« Commencer » signifie débuter.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « joli » ?",
+      "o": [
+        "beau",
+        "sale",
+        "bruyant",
+        "vide"
+      ],
+      "r": 0,
+      "e": "« Beau » peut remplacer « joli ».",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « regarder » ?",
+      "o": [
+        "écouter",
+        "observer",
+        "courir",
+        "parler"
+      ],
+      "r": 1,
+      "e": "« Observer » signifie regarder attentivement.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « maison » ?",
+      "o": [
+        "demeure",
+        "route",
+        "école",
+        "rivière"
+      ],
+      "r": 0,
+      "e": "Une demeure est un lieu où l'on habite.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « terminer » ?",
+      "o": [
+        "ouvrir",
+        "achever",
+        "choisir",
+        "porter"
+      ],
+      "r": 1,
+      "e": "« Achever » signifie terminer.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « parler » ?",
+      "o": [
+        "marcher",
+        "dire",
+        "dormir",
+        "lire"
+      ],
+      "r": 1,
+      "e": "« Dire » signifie exprimer quelque chose avec des mots.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « peur » ?",
+      "o": [
+        "crainte",
+        "plaisir",
+        "colère",
+        "repos"
+      ],
+      "r": 0,
+      "e": "La crainte est un sentiment de peur.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « aider » ?",
+      "o": [
+        "secourir",
+        "gêner",
+        "oublier",
+        "perdre"
+      ],
+      "r": 0,
+      "e": "« Secourir » signifie aider quelqu'un.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « difficile » ?",
+      "o": [
+        "compliqué",
+        "simple",
+        "doux",
+        "léger"
+      ],
+      "r": 0,
+      "e": "« Compliqué » signifie difficile à faire ou comprendre.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « calme » ?",
+      "o": [
+        "paisible",
+        "agité",
+        "pressé",
+        "méchant"
+      ],
+      "r": 0,
+      "e": "« Paisible » décrit ce qui est calme.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « ami » ?",
+      "o": [
+        "camarade",
+        "ennemi",
+        "voisinage",
+        "maître"
+      ],
+      "r": 0,
+      "e": "Un camarade est une personne avec qui l'on partage des activités.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « fort » ?",
+      "o": [
+        "puissant",
+        "faible",
+        "mince",
+        "court"
+      ],
+      "r": 0,
+      "e": "« Puissant » peut signifier fort.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « choisir » ?",
+      "o": [
+        "sélectionner",
+        "jeter",
+        "plier",
+        "fermer"
+      ],
+      "r": 0,
+      "e": "« Sélectionner » signifie choisir.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « raconter » ?",
+      "o": [
+        "narrer",
+        "effacer",
+        "cuisiner",
+        "compter"
+      ],
+      "r": 0,
+      "e": "« Narrer » signifie raconter.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « content » ?",
+      "o": [
+        "satisfait",
+        "inquiet",
+        "malade",
+        "vide"
+      ],
+      "r": 0,
+      "e": "« Satisfait » exprime le contentement.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « finir » ?",
+      "o": [
+        "achever",
+        "allumer",
+        "ouvrir",
+        "commencer"
+      ],
+      "r": 0,
+      "e": "« Achever » signifie finir.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « demander » ?",
+      "o": [
+        "questionner",
+        "répondre",
+        "refuser",
+        "montrer"
+      ],
+      "r": 0,
+      "e": "« Questionner » signifie demander des renseignements.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « immense » ?",
+      "o": [
+        "gigantesque",
+        "minuscule",
+        "étroit",
+        "ordinaire"
+      ],
+      "r": 0,
+      "e": "« Gigantesque » signifie très grand.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « courageux » ?",
+      "o": [
+        "brave",
+        "peureux",
+        "paresseux",
+        "timide"
+      ],
+      "r": 0,
+      "e": "Une personne brave montre du courage.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « propre » ?",
+      "o": [
+        "net",
+        "sale",
+        "cassé",
+        "mouillé"
+      ],
+      "r": 0,
+      "e": "« Net » signifie propre.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « fabriquer » ?",
+      "o": [
+        "construire",
+        "détruire",
+        "vendre",
+        "perdre"
+      ],
+      "r": 0,
+      "e": "« Construire » signifie fabriquer ou bâtir.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de « silencieux » ?",
+      "o": [
+        "muet",
+        "bruyant",
+        "joyeux",
+        "rapide"
+      ],
+      "r": 0,
+      "e": "« Muet » ou « silencieux » décrit l'absence de bruit.",
+      "d": "synonymes",
+      "n": "debutant"
+    }
+  ]
+}
