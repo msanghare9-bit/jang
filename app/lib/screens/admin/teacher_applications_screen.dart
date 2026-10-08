@@ -105,7 +105,7 @@ class _TeacherApplicationsScreenState extends State<TeacherApplicationsScreen> {
                       Text('${d['name'] ?? 'Professeur'}', style: titleStyle(19, weight: 800)),
                       const SizedBox(height: 4),
                       Text('École : ${d['school'] ?? '—'}'),
-                      Text('Niveau : ${ContentRepo.instance.exams().then((e) => e.where((x) => x.id == d['examId']).firstOrNull?.name ?? '—')}'),
+                      Text('Niveau : ${d['examName'] ?? d['examId'] ?? '—'}'),
                       Text('Classes : $classes'),
                       Text('Matières : $subjects'),
                       const SizedBox(height: 10),
