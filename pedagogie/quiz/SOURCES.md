@@ -18,3 +18,11 @@ Les questions de culture générale s’appuient sur les notices de référence 
 - [Kilwa Kisiwani et Songo Mnara — UNESCO](https://whc.unesco.org/en/list/144/) : villes portuaires swahilies et commerce de l’océan Indien.
 - [Aksum — UNESCO](https://whc.unesco.org/en/list/15/) : royaume aksoumite, stèles, inscriptions et commerce de la mer Rouge.
 - [Sites archéologiques de l’île de Meroe — UNESCO](https://whc.unesco.org/en/list/1336/) : civilisation koushite, tombes pyramidales et centres associés.
+
+## Nouveaux sites culturels africains
+
+- [Stone Town de Zanzibar — UNESCO](https://whc.unesco.org/en/list/173/) : architecture swahilie, influences et commerce maritime.
+- [Timbuktu — UNESCO](https://whc.unesco.org/en/list/119/) : Sankore, mosquées et commerce des manuscrits, du sel et de l’or.
+- [Villes anciennes de Djenné — UNESCO](https://whc.unesco.org/en/list/116/) : architecture en terre, sites archéologiques et échanges transsahariens.
+- [Robben Island — UNESCO](https://whc.unesco.org/en/list/916/) : prison, histoire de l’apartheid et symbole de liberté.
+- [Paysage culturel de Mapungubwe — UNESCO](https://whc.unesco.org/en/list/1099/) : royaume ancien, routes commerciales et confluence Limpopo–Shashe.
