@@ -635,6 +635,7 @@ class ClassItem {
   final String visibility;
   final bool deleted;
   final DateTime? createdAt;
+  final DateTime? dueAt;
   ClassItem({
     required this.id,
     required this.classId,
@@ -651,6 +652,7 @@ class ClassItem {
     this.visibility = 'prive',
     this.deleted = false,
     this.createdAt,
+    this.dueAt,
   });
 
   bool get isPublic => visibility == 'public';
@@ -661,6 +663,7 @@ class ClassItem {
   factory ClassItem.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
     final ts = m['createdAt'];
+    final due = m['dueAt'];
     return ClassItem(
       id: d.id,
       classId: _str(m['classId']),
@@ -677,6 +680,7 @@ class ClassItem {
       visibility: _str(m['visibility'], 'prive'),
       deleted: _bool(m['deleted']),
       createdAt: ts is Timestamp ? ts.toDate() : null,
+      dueAt: due is Timestamp ? due.toDate() : null,
     );
   }
 
@@ -694,6 +698,7 @@ class ClassItem {
         'mission': missionData,
         'visibility': visibility,
         'deleted': deleted,
+        'dueAt': dueAt == null ? null : Timestamp.fromDate(dueAt!),
       };
 
   /// Leçon fabriquée pour réutiliser les écrans de leçon et de quiz (et la progression).
