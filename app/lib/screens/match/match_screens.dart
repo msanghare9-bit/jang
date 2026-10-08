@@ -706,9 +706,9 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         ),
         body: m == null
             ? const Center(child: CircularProgressIndicator(color: Colors.white))
-            : widget.spectator && (!_observationLoaded || _observation?.status == 'pending')
+            : widget.spectator && !widget.tournamentFree && (!_observationLoaded || _observation?.status == 'pending')
                 ? _observationWaiting()
-                : widget.spectator && _observation?.status != 'accepted'
+                : widget.spectator && !widget.tournamentFree && _observation?.status != 'accepted'
                     ? _observationRefused()
                     : Column(children: [
                         _ObserversPanel(matchId: widget.matchId, canManage: _isHost),
