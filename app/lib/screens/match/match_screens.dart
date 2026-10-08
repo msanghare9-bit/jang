@@ -623,6 +623,33 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
             ]),
           ),
           const SizedBox(height: 12),
+          const SizedBox(height: 12),
+          if (_players.any((p) => p.reaction.isNotEmpty))
+            Wrap(
+              spacing: 8,
+              runSpacing: 6,
+              children: [
+                for (final p in _players.where((p) => p.reaction.isNotEmpty))
+                  Chip(
+                    avatar: Text(p.reaction, style: const TextStyle(fontSize: 18)),
+                    label: Text(p.name),
+                    visualDensity: VisualDensity.compact,
+                  ),
+              ],
+            ),
+          if (_plays)
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8,
+              children: [
+                for (final emoji in ['👏', '😂', '🔥', '💪', '❤️'])
+                  IconButton(
+                    tooltip: 'Réagir $emoji',
+                    onPressed: () => _svc.react(widget.matchId, _uid, emoji),
+                    icon: Text(emoji, style: const TextStyle(fontSize: 24)),
+                  ),
+              ],
+            ),
           if (_plays) _tiles(q, reveal: false) else _hostWatch(m),
           if (_plays && _myChoice != null) ...[
             const SizedBox(height: 14),
