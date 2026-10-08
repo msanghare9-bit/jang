@@ -41,7 +41,7 @@ class XaritService {
   CollectionReference<Map<String, dynamic>> get _invites => _db.collection('matchInvitations');
 
   Future<XaritUser?> find(String rawUsername) async {
-    final username = AuthService.normalizeUsername(rawUsername).replaceAll('.', '').replaceAll('-', '');
+    final username = AuthService.normalizeUsername(rawUsername);
     if (username.isEmpty) return null;
     final doc = await _db.collection('usernames').doc(username).get();
     final d = doc.data();
@@ -60,6 +60,7 @@ class XaritService {
     if (prior.any((d) => d.exists && d.data()?['status'] == 'pending')) {
       throw Exception('Une demande est déjà en attente.');
     }
+    if (prior[0].exists) await _requests.doc(outId).delete();
     await _requests.doc(outId).set({
       'fromUid': me.uid, 'toUid': other.uid, 'fromName': me.publicName, 'toName': other.name,
       'status': 'pending', 'createdAt': FieldValue.serverTimestamp(),
@@ -94,8 +95,8 @@ class XaritService {
       _requests.doc(id).update({'status': accept ? 'accepted' : 'rejected'});
 
   Future<void> inviteToMatch(UserProfile from, String friendUid, LiveMatch match) async {
-    final id = '${match.id}_${friendUid}';
-    await _invites.doc(id).set({
+    final ref = _invites.doc();
+    await ref.set({
       'fromUid': from.uid, 'toUid': friendUid, 'fromName': from.publicName,
       'matchId': match.id, 'code': match.code, 'status': 'pending',
       'createdAt': FieldValue.serverTimestamp(),
