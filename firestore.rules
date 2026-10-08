@@ -231,22 +231,37 @@ service cloud.firestore {
     }
 
     // ---------- Matchs en direct ----------
+    // Le corrigé et les réponses individuelles sont accessibles uniquement aux Cloud Functions.
+    match /matchAnswers/{matchId} {
+      allow read, write: if false;
+    }
+
     match /matchs/{id} {
       allow read: if signedIn();
-      allow create: if signedIn() && request.resource.data.hostUid == request.auth.uid;
-      allow update: if signedIn() && resource.data.hostUid == request.auth.uid;
+      // Création, déroulement, corrigé et fin gérés par les Cloud Functions.
+      allow create, update, delete: if false;
+
       match /joueurs/{uid} {
         allow read: if signedIn();
-        allow create, update: if isMe(uid);
-        allow delete: if isMe(uid) || get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
+        allow create: if false;
+        allow update: if isMe(uid)
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reaction'])
+                      && request.resource.data.get('reaction', '') in ['', '👏', '😂', '🔥', '💪', '❤️'];
+        allow delete: if isMe(uid)
+                      && get(/databases/$(database)/documents/matchs/$(id)).data.get('state', '') == 'attente';
+
+        match /reponses/{questionId} {
+          allow read, write: if false;
+        }
       }
+
       match /observateurs/{uid} {
         function host() {
           return signedIn()
               && get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
         }
-        allow read: if isMe(uid) || host() || resource.data.get('status', '') == 'accepted';
         function matchData() { return get(/databases/$(database)/documents/matchs/$(id)).data; }
+        allow read: if isMe(uid) || host() || resource.data.get('status', '') == 'accepted';
         allow create: if isMe(uid)
                       && request.resource.data.get('status', '') in ['pending', 'accepted']
                       && (request.resource.data.get('status', '') == 'pending'
