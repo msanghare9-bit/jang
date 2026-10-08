@@ -40,11 +40,16 @@ service cloud.firestore {
       }
       // Messages des profs à un élève.
       match /messages/{id} {
-        allow read: if isMe(uid) || isStaff();
-        allow create: if isStaff();
-        allow update: if isStaff()
+        allow read: if isMe(uid) || isAdmin()
+                    || (isStaff() && resource.data.get('fromUid', '') == request.auth.uid);
+        allow create: if isStaff()
+                      && request.resource.data.get('fromUid', '') == request.auth.uid
+                      && request.resource.data.get('toUid', '') == uid
+                      && request.resource.data.get('text', '') is string;
+        allow update: if isAdmin()
                       || (isMe(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt', 'reply', 'replyAt']));
-        allow delete: if isStaff();
+        allow delete: if isAdmin() || isMe(uid)
+                      || (isStaff() && resource.data.get('fromUid', '') == request.auth.uid);
       }
     }
 
@@ -184,12 +189,15 @@ service cloud.firestore {
 
     // Contenus des profs : privés (élèves de la classe) ou publics (tous).
     match /classItems/{id} {
-      allow read: if isStaff()
+      allow read: if isAdmin()
+                  || (isStaff() && classOf(resource.data.classId).profUid == request.auth.uid)
                   || (signedIn() && resource.data.visibility == 'public')
                   || (signedIn() && request.auth.uid in classOf(resource.data.classId).students);
       allow create: if isStaff() && request.resource.data.ownerUid == request.auth.uid
                     && (isAdmin() || classOf(request.resource.data.classId).profUid == request.auth.uid);
-      allow update, delete: if isAdmin() || (isStaff() && resource.data.ownerUid == request.auth.uid);
+      allow update, delete: if isAdmin()
+                            || (isStaff() && resource.data.ownerUid == request.auth.uid
+                                && classOf(resource.data.classId).profUid == request.auth.uid);
 
       // Devoirs rendus : l'élève écrit avant la date limite, le prof met la note.
       match /rendus/{uid} {
