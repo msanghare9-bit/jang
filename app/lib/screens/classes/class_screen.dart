@@ -14,6 +14,7 @@ import '../admin/students_screen.dart';
 import 'class_widgets.dart';
 import 'item_editor.dart';
 import 'teacher_course_screen.dart';
+import 'teacher_lesson_export_screen.dart';
 
 /// Tout ce qu'il faut pour afficher une classe.
 class _ClassData {
@@ -99,6 +100,7 @@ class _ClassScreenState extends State<ClassScreen> {
         subjectName: _c.subjectName,
         profUid: _c.profUid,
         profName: _c.profName,
+        school: _c.school,
         code: code ?? _c.code,
         students: _c.students,
       );
@@ -343,6 +345,18 @@ class _ClassScreenState extends State<ClassScreen> {
           ),
           icon: const Icon(Icons.auto_awesome),
           label: const Text('Kocc : préparer un cours complet'),
+        ),
+        const SizedBox(height: 8),
+        OutlinedButton.icon(
+          onPressed: () async {
+            final profile = AuthService.instance.profile.value;
+            if (profile == null) return;
+            final added = await Navigator.push<bool>(context,
+              MaterialPageRoute(builder: (_) => TeacherLessonExportScreen(classRoom: _c, profile: profile)));
+            if (added == true) _reload();
+          },
+          icon: const Icon(Icons.library_add_outlined),
+          label: const Text('Ajouter une leçon officielle'),
         ),
         const SizedBox(height: 10),
         if (data.items.isEmpty)
