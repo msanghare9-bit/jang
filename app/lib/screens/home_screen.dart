@@ -398,7 +398,7 @@ class _SubjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = JangColors.fromHex(subject.color);
+    final color = JangColors.snGreen;
     final fg = JangColors.on(color);
     return ValueListenableBuilder(
       valueListenable: ProgressRepo.instance.revision,
@@ -511,20 +511,7 @@ class _SenegalHeader extends StatelessWidget {
           ]),
         ),
         Container(height: 3, color: Colors.white),
-        SizedBox(
-          height: 34,
-          child: Row(children: [
-            Expanded(child: Container(color: JangColors.snGreen)),
-            Expanded(
-              child: Container(
-                color: JangColors.snYellow,
-                alignment: Alignment.center,
-                child: const CustomPaint(size: Size(24, 24), painter: _StarPainter(JangColors.snGreen)),
-              ),
-            ),
-            Expanded(child: Container(color: JangColors.snRed)),
-          ]),
-        ),
+        Container(height: 4, color: Colors.white),
       ]),
     );
   }
@@ -550,11 +537,7 @@ class _FlagBar extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(height),
-        child: Row(children: [
-          Expanded(child: Container(color: JangColors.snGreen)),
-          Expanded(child: Container(color: JangColors.snYellow)),
-          Expanded(child: Container(color: JangColors.snRed)),
-        ]),
+        color: JangColors.snGreen,
       ),
     );
   }
