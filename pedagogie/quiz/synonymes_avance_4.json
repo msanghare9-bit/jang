@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "In “Please give a concise summary,” which word is closest to concise?",
+      "o": [
+        "brief",
+        "confusing",
+        "detailed",
+        "informal"
+      ],
+      "r": 0,
+      "e": "Concise veut dire brief : bref et précis."
+    },
+    {
+      "q": "In “The repair required a substantial amount of money,” which word is closest to substantial?",
+      "o": [
+        "tiny",
+        "considerable",
+        "unexpected",
+        "borrowed"
+      ],
+      "r": 1,
+      "e": "Substantial veut dire considerable : important, considérable."
+    },
+    {
+      "q": "In “She was reluctant to accept the offer,” which word is closest to reluctant?",
+      "o": [
+        "eager",
+        "unwilling",
+        "prepared",
+        "unable"
+      ],
+      "r": 1,
+      "e": "Reluctant veut dire unwilling : peu disposé."
+    },
+    {
+      "q": "In “The report provides accurate figures,” which word is closest to accurate?",
+      "o": [
+        "recent",
+        "precise",
+        "complete",
+        "rounded"
+      ],
+      "r": 1,
+      "e": "Accurate veut dire precise : exact."
+    },
+    {
+      "q": "In “The new law will abolish the old rule,” which verb is closest to abolish?",
+      "o": [
+        "put an end to",
+        "make a copy of",
+        "make stricter",
+        "write down"
+      ],
+      "r": 0,
+      "e": "Abolish veut dire supprimer ou mettre fin à."
+    },
+    {
+      "q": "In “The extra practice should strengthen her skills,” which verb is closest to strengthen?",
+      "o": [
+        "hide",
+        "reinforce",
+        "measure",
+        "replace"
+      ],
+      "r": 1,
+      "e": "Strengthen veut dire reinforce : renforcer."
+    },
+    {
+      "q": "In “The school had to postpone the meeting,” which verb is closest to postpone?",
+      "o": [
+        "cancel",
+        "announce",
+        "defer",
+        "attend"
+      ],
+      "r": 2,
+      "e": "Postpone veut dire defer : reporter."
+    },
+    {
+      "q": "In “The witness refused to disclose the address,” which verb is closest to disclose?",
+      "o": [
+        "reveal",
+        "change",
+        "confirm",
+        "forget"
+      ],
+      "r": 0,
+      "e": "Disclose veut dire reveal : révéler."
+    },
+    {
+      "q": "In “The medicine may diminish the pain,” which verb is closest to diminish?",
+      "o": [
+        "cause",
+        "lessen",
+        "describe",
+        "prevent"
+      ],
+      "r": 1,
+      "e": "Diminish veut dire lessen : réduire."
+    },
+    {
+      "q": "In “The team hopes to obtain permission,” which verb is closest to obtain?",
+      "o": [
+        "request",
+        "acquire",
+        "refuse",
+        "explain"
+      ],
+      "r": 1,
+      "e": "Obtain veut dire acquire : obtenir."
+    },
+    {
+      "q": "In “The athlete maintained a steady pace,” which verb is closest to maintained?",
+      "o": [
+        "kept",
+        "started",
+        "increased",
+        "forgot"
+      ],
+      "r": 0,
+      "e": "Maintained veut dire kept : a gardé."
+    },
+    {
+      "q": "In “Researchers assessed the impact of the programme,” which verb is closest to assessed?",
+      "o": [
+        "evaluated",
+        "predicted",
+        "limited",
+        "created"
+      ],
+      "r": 0,
+      "e": "Assessed veut dire evaluated : évalué."
+    },
+    {
+      "q": "In “The instructions were ambiguous,” which word is closest to ambiguous?",
+      "o": [
+        "unclear",
+        "incorrect",
+        "unusual",
+        "incomplete"
+      ],
+      "r": 0,
+      "e": "Ambiguous veut dire unclear : qui peut être compris de plusieurs façons."
+    },
+    {
+      "q": "In “Wearing a helmet is compulsory,” which word is closest to compulsory?",
+      "o": [
+        "optional",
+        "mandatory",
+        "recommended",
+        "unusual"
+      ],
+      "r": 1,
+      "e": "Compulsory veut dire mandatory : obligatoire."
+    },
+    {
+      "q": "In “Clean water is scarce during the dry season,” which word is closest to scarce?",
+      "o": [
+        "limited",
+        "polluted",
+        "expensive",
+        "distant"
+      ],
+      "r": 0,
+      "e": "Scarce veut dire limited : rare, en quantité limitée."
+    },
+    {
+      "q": "In “The judge remained impartial,” which word is closest to impartial?",
+      "o": [
+        "unbiased",
+        "unprepared",
+        "uncertain",
+        "unavailable"
+      ],
+      "r": 0,
+      "e": "Impartial veut dire unbiased : sans favoriser un côté."
+    },
+    {
+      "q": "In “The community proved resilient after the flood,” which phrase is closest to resilient?",
+      "o": [
+        "able to recover",
+        "ready to move",
+        "eager to argue",
+        "likely to disappear"
+      ],
+      "r": 0,
+      "e": "Resilient décrit une capacité à se relever après une difficulté."
+    },
+    {
+      "q": "In “The ceremony follows a conventional format,” which word is closest to conventional?",
+      "o": [
+        "traditional",
+        "secret",
+        "experimental",
+        "expensive"
+      ],
+      "r": 0,
+      "e": "Conventional veut dire traditional : traditionnel."
+    },
+    {
+      "q": "In “Young children are vulnerable to the disease,” which phrase is closest to vulnerable?",
+      "o": [
+        "at risk",
+        "well protected",
+        "fully trained",
+        "unaffected"
+      ],
+      "r": 0,
+      "e": "Vulnerable veut dire at risk : exposé à un risque."
+    },
+    {
+      "q": "In “Sales exceeded the target,” which verb is closest to exceeded?",
+      "o": [
+        "surpassed",
+        "approached",
+        "reached",
+        "missed"
+      ],
+      "r": 0,
+      "e": "Exceeded veut dire surpassed : dépassé."
+    },
+    {
+      "q": "In “During the journey, we encountered heavy rain,” which verb is closest to encountered?",
+      "o": [
+        "avoided",
+        "came across",
+        "caused",
+        "measured"
+      ],
+      "r": 1,
+      "e": "Encountered veut dire came across : rencontré."
+    },
+    {
+      "q": "In “The council allocated funds to the schools,” which verb is closest to allocated?",
+      "o": [
+        "assigned",
+        "borrowed",
+        "counted",
+        "withheld"
+      ],
+      "r": 0,
+      "e": "Allocated veut dire assigned : attribué."
+    },
+    {
+      "q": "In “Planting trees can mitigate heat in cities,” which verb is closest to mitigate?",
+      "o": [
+        "reduce",
+        "record",
+        "spread",
+        "predict"
+      ],
+      "r": 0,
+      "e": "Mitigate veut dire reduce : atténuer."
+    },
+    {
+      "q": "In “Her contribution was notable,” which word is closest to notable?",
+      "o": [
+        "remarkable",
+        "ordinary",
+        "private",
+        "temporary"
+      ],
+      "r": 0,
+      "e": "Notable veut dire remarkable : remarquable."
+    }
+  ]
+}
