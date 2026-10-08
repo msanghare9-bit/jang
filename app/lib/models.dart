@@ -534,6 +534,7 @@ class ClassRoom {
   final String subjectName;
   final String profUid;
   final String profName;
+  final String school;
 
   /// Code à donner aux élèves pour entrer dans la classe.
   final String code;
@@ -547,6 +548,7 @@ class ClassRoom {
     required this.subjectName,
     required this.profUid,
     required this.profName,
+    this.school = '',
     required this.code,
     this.students = const [],
     this.deleted = false,
@@ -562,6 +564,7 @@ class ClassRoom {
       subjectName: _str(m['subjectName']),
       profUid: _str(m['profUid']),
       profName: _str(m['profName']),
+      school: _str(m['school']),
       code: _str(m['code']),
       students: (m['students'] is List ? m['students'] as List : const []).whereType<String>().toList(),
       deleted: _bool(m['deleted']),
@@ -575,6 +578,7 @@ class ClassRoom {
         'subjectName': subjectName,
         'profUid': profUid,
         'profName': profName,
+        'school': school,
         'code': code,
         'students': students,
         'deleted': deleted,
