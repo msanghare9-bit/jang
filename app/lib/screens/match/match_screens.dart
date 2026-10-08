@@ -283,7 +283,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
           MaterialPageRoute(
             builder: (_) => QuizScreen(
               lesson: Lesson(
-                id: 'match_${_domain}_$_level',
+                id: 'match_${_domains.join('_')}_$_level',
                 examId: p.examId,
                 subjectId: '',
                 chapterId: '',
@@ -297,7 +297,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
         return;
       }
       final m = await MatchService.instance
-          .create(host: p, questions: qs, domain: _domain, level: _level, title: title);
+          .create(host: p, questions: qs, domain: _domains.join(','), level: _level, title: title);
       if (!mounted) return;
       await Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => MatchRoomScreen(matchId: m.id)));
     } catch (e) {
