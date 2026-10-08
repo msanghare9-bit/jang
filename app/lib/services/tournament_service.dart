@@ -7,13 +7,13 @@ import 'match_service.dart';
 import 'quiz_bank.dart';
 
 class Tournament {
-  final String id, title, hostUid, hostName, status, championUid;
+  final String id, title, hostUid, hostName, status, championUid, championName;
   final int round, capacity;
   final List<BankQuestion> questions;
   const Tournament({
     required this.id, required this.title, required this.hostUid, required this.hostName,
     required this.status, required this.round, required this.capacity, required this.questions,
-    this.championUid = '',
+    this.championUid = '', this.championName = '',
   });
   factory Tournament.fromDoc(DocumentSnapshot<Map<String,dynamic>> doc) {
     final d=doc.data()??{};
@@ -22,7 +22,7 @@ class Tournament {
       hostName:'${d['hostName']??'Organisateur'}',status:'${d['status']??'waiting'}',
       round:d['round'] is num?(d['round'] as num).toInt():0,
       capacity:d['capacity'] is num?(d['capacity'] as num).toInt():16,
-      championUid:'${d['championUid']??''}',
+      championUid:'${d['championUid']??''}',championName:'${d['championName']??''}',
       questions:[for(final q in (d['questions'] as List? ?? const [])) if(q is Map) BankQuestion.fromMap(q)],
     );
   }
@@ -64,7 +64,7 @@ class TournamentService {
   CollectionReference<Map<String,dynamic>> get _col=>_db.collection('tournaments');
 
   Stream<QuerySnapshot<Map<String,dynamic>>> openTournaments()=>_col
-      .where('status',whereIn:['waiting','running']).snapshots();
+      .where('status',whereIn:['waiting','running','finished']).snapshots();
 
   Future<Tournament?> byId(String id) async {
     final d=await _col.doc(id).get();
