@@ -527,6 +527,318 @@
       ],
       "r": 3,
       "e": "“This tradition is deeply rooted in the region.” is the best translation in this context."
+    },
+    {
+      "q": "Comment dit-on « mettre en évidence » en anglais ?",
+      "o": [
+        "highlight",
+        "over time",
+        "undermine",
+        "therefore"
+      ],
+      "r": 0,
+      "e": "« mettre en évidence » se traduit par « highlight ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “take into account” mean in French?",
+      "o": [
+        "tenir compte de",
+        "prendre en compte",
+        "mettre en place",
+        "dans le cadre de"
+      ],
+      "r": 1,
+      "e": "« take into account » signifie « prendre en compte ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « remettre en question » en anglais ?",
+      "o": [
+        "implement",
+        "be subject to",
+        "call into question",
+        "report"
+      ],
+      "r": 2,
+      "e": "« remettre en question » se traduit par « call into question ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “demonstrate” mean in French?",
+      "o": [
+        "aboutir à",
+        "prendre du recul",
+        "aller de pair avec",
+        "faire preuve de"
+      ],
+      "r": 3,
+      "e": "« demonstrate » signifie « faire preuve de ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « dans une certaine mesure » en anglais ?",
+      "o": [
+        "to some extent",
+        "be faced with",
+        "in light of",
+        "put an end to"
+      ],
+      "r": 0,
+      "e": "« dans une certaine mesure » se traduit par « to some extent ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “over time” mean in French?",
+      "o": [
+        "faire valoir",
+        "au fil du temps",
+        "en revanche",
+        "accorder la priorité à"
+      ],
+      "r": 1,
+      "e": "« over time » signifie « au fil du temps ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « tenir compte de » en anglais ?",
+      "o": [
+        "undermine",
+        "therefore",
+        "take into consideration",
+        "be likely to"
+      ],
+      "r": 2,
+      "e": "« tenir compte de » se traduit par « take into consideration ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “implement” mean in French?",
+      "o": [
+        "mettre en place",
+        "dans le cadre de",
+        "mettre en évidence",
+        "mettre en œuvre"
+      ],
+      "r": 3,
+      "e": "« implement » signifie « mettre en œuvre ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « aboutir à » en anglais ?",
+      "o": [
+        "lead to",
+        "be subject to",
+        "report",
+        "take into account"
+      ],
+      "r": 0,
+      "e": "« aboutir à » se traduit par « lead to ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “be faced with” mean in French?",
+      "o": [
+        "prendre du recul",
+        "être confronté à",
+        "aller de pair avec",
+        "remettre en question"
+      ],
+      "r": 1,
+      "e": "« be faced with » signifie « être confronté à ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « faire valoir » en anglais ?",
+      "o": [
+        "in light of",
+        "put an end to",
+        "assert",
+        "demonstrate"
+      ],
+      "r": 2,
+      "e": "« faire valoir » se traduit par « assert ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “undermine” mean in French?",
+      "o": [
+        "en revanche",
+        "accorder la priorité à",
+        "dans une certaine mesure",
+        "porter atteinte à"
+      ],
+      "r": 3,
+      "e": "« undermine » signifie « porter atteinte à ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « mettre en place » en anglais ?",
+      "o": [
+        "establish",
+        "therefore",
+        "be likely to",
+        "over time"
+      ],
+      "r": 0,
+      "e": "« mettre en place » se traduit par « establish ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “be subject to” mean in French?",
+      "o": [
+        "dans le cadre de",
+        "faire l'objet de",
+        "mettre en évidence",
+        "tenir compte de"
+      ],
+      "r": 1,
+      "e": "« be subject to » signifie « faire l'objet de ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « prendre du recul » en anglais ?",
+      "o": [
+        "report",
+        "take into account",
+        "step back",
+        "implement"
+      ],
+      "r": 2,
+      "e": "« prendre du recul » se traduit par « step back ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “in light of” mean in French?",
+      "o": [
+        "aller de pair avec",
+        "remettre en question",
+        "aboutir à",
+        "à la lumière de"
+      ],
+      "r": 3,
+      "e": "« in light of » signifie « à la lumière de ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « en revanche » en anglais ?",
+      "o": [
+        "on the other hand",
+        "put an end to",
+        "demonstrate",
+        "be faced with"
+      ],
+      "r": 0,
+      "e": "« en revanche » se traduit par « on the other hand ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “therefore” mean in French?",
+      "o": [
+        "accorder la priorité à",
+        "par conséquent",
+        "dans une certaine mesure",
+        "faire valoir"
+      ],
+      "r": 1,
+      "e": "« therefore » signifie « par conséquent ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « dans le cadre de » en anglais ?",
+      "o": [
+        "be likely to",
+        "over time",
+        "within the framework of",
+        "undermine"
+      ],
+      "r": 2,
+      "e": "« dans le cadre de » se traduit par « within the framework of ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “report” mean in French?",
+      "o": [
+        "mettre en évidence",
+        "tenir compte de",
+        "mettre en place",
+        "faire état de"
+      ],
+      "r": 3,
+      "e": "« report » signifie « faire état de ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « aller de pair avec » en anglais ?",
+      "o": [
+        "go hand in hand with",
+        "take into account",
+        "implement",
+        "be subject to"
+      ],
+      "r": 0,
+      "e": "« aller de pair avec » se traduit par « go hand in hand with ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “put an end to” mean in French?",
+      "o": [
+        "remettre en question",
+        "mettre un terme à",
+        "aboutir à",
+        "prendre du recul"
+      ],
+      "r": 1,
+      "e": "« put an end to » signifie « mettre un terme à ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "Comment dit-on « accorder la priorité à » en anglais ?",
+      "o": [
+        "demonstrate",
+        "be faced with",
+        "prioritize",
+        "in light of"
+      ],
+      "r": 2,
+      "e": "« accorder la priorité à » se traduit par « prioritize ».",
+      "d": "francais",
+      "n": "anglais_avance"
+    },
+    {
+      "q": "What does “be likely to” mean in French?",
+      "o": [
+        "dans une certaine mesure",
+        "faire valoir",
+        "en revanche",
+        "être susceptible de"
+      ],
+      "r": 3,
+      "e": "« be likely to » signifie « être susceptible de ».",
+      "d": "francais",
+      "n": "anglais_avance"
     }
   ]
 }
