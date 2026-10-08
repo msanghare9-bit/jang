@@ -25,23 +25,23 @@
     {
       "q": "Which verb means « rendre visite à quelqu’un »?",
       "o": [
-        "visit",
         "watch",
         "invite",
+        "visit",
         "return"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Visit someone veut dire rendre visite à quelqu’un."
     },
     {
       "q": "Which expression means « faire attention à »?",
       "o": [
         "look for",
-        "pay attention to",
         "take care of",
-        "wait for"
+        "wait for",
+        "pay attention to"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Pay attention to veut dire faire attention à."
     },
     {
@@ -58,34 +58,34 @@
     {
       "q": "Which verb means « se rendre compte »?",
       "o": [
-        "realize",
         "repeat",
+        "realize",
         "recognize",
         "remember"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Realize veut dire se rendre compte."
     },
     {
       "q": "Which expression means « garder le contact »?",
       "o": [
-        "keep in touch",
         "keep a secret",
         "keep a promise",
+        "keep in touch",
         "keep a record"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Keep in touch veut dire garder le contact."
     },
     {
       "q": "Which expression means « faire des progrès »?",
       "o": [
-        "make progress",
         "make a promise",
         "make a mistake",
-        "make a plan"
+        "make a plan",
+        "make progress"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Make progress veut dire faire des progrès."
     },
     {
@@ -113,12 +113,12 @@
     {
       "q": "Which expression means « avoir lieu »?",
       "o": [
-        "take place",
         "take part",
         "take care",
+        "take place",
         "take turns"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Take place veut dire avoir lieu."
     },
     {
@@ -126,10 +126,10 @@
       "o": [
         "get lost",
         "get ready",
-        "manage",
-        "get dressed"
+        "get dressed",
+        "manage"
       ],
-      "r": 2,
+      "r": 3,
       "e": "Manage peut vouloir dire se débrouiller."
     },
     {
@@ -146,34 +146,34 @@
     {
       "q": "Which expression means « faire la queue »?",
       "o": [
-        "stand in line",
         "stand up",
+        "stand in line",
         "stand still",
         "stand out"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Stand in line veut dire faire la queue."
     },
     {
       "q": "Which expression means « économiser de l’argent »?",
       "o": [
         "spend money",
-        "save money",
         "lend money",
+        "save money",
         "count money"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Save money veut dire économiser de l’argent."
     },
     {
       "q": "Which expression means « s’occuper de quelqu’un »?",
       "o": [
-        "take care of",
         "take part in",
         "take place in",
-        "take advantage of"
+        "take advantage of",
+        "take care of"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Take care of veut dire s’occuper de."
     },
     {
@@ -190,34 +190,34 @@
     {
       "q": "Which expression means « faire une pause »?",
       "o": [
-        "take a break",
         "take a seat",
+        "take a break",
         "take a photo",
         "take a walk"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Take a break veut dire faire une pause."
     },
     {
       "q": "Which expression means « avoir raison »?",
       "o": [
-        "be right",
         "be ready",
         "be polite",
+        "be right",
         "be careful"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Be right veut dire avoir raison."
     },
     {
       "q": "If the bus is « en panne », what has happened?",
       "o": [
-        "It has broken down.",
         "It has turned around.",
         "It has slowed down.",
-        "It has filled up."
+        "It has filled up.",
+        "It has broken down."
       ],
-      "r": 0,
+      "r": 3,
       "e": "A vehicle that has broken down est en panne."
     },
     {
@@ -234,34 +234,34 @@
     {
       "q": "Which expression means « au lieu de »?",
       "o": [
-        "instead of",
         "because of",
+        "instead of",
         "in front of",
         "apart from"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Instead of veut dire au lieu de."
     },
     {
       "q": "Which expression means « dès que »?",
       "o": [
-        "as soon as",
         "as long as",
         "even though",
+        "as soon as",
         "so that"
       ],
-      "r": 0,
+      "r": 2,
       "e": "As soon as veut dire dès que."
     },
     {
       "q": "Which expression means « faire les courses »?",
       "o": [
-        "do the shopping",
         "do the washing",
         "do the cooking",
-        "do the cleaning"
+        "do the cleaning",
+        "do the shopping"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Do the shopping veut dire faire les courses."
     }
   ]
