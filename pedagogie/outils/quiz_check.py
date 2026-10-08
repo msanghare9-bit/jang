@@ -18,7 +18,7 @@ import unicodedata
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 SRC = ROOT / "pedagogie" / "quiz"
 OUT = ROOT / "contenus" / "quiz"
-DOMAINES = ["vocabulaire", "grammaire", "expressions", "comprehension", "culture"]
+DOMAINES = ["vocabulaire", "grammaire", "expressions", "comprehension", "culture", "synonymes", "antonymes", "francais_anglais"]
 NIVEAUX = ["debutant", "intermediaire", "avance"]
 
 
@@ -61,7 +61,7 @@ def key(q):
 
 
 def parse_name(p):
-    m = re.fullmatch(r"([a-z]+)_([a-z]+)_(\d+)", p.stem)
+    m = re.fullmatch(r"(.+)_([a-z]+)_(\d+)", p.stem)
     if not m or m.group(1) not in DOMAINES or m.group(2) not in NIVEAUX:
         return None
     return m.group(1), m.group(2)
@@ -127,7 +127,7 @@ def main():
     if not write:
         return
     OUT.mkdir(parents=True, exist_ok=True)
-    index = {"version": 1, "domaines": DOMAINES, "niveaux": NIVEAUX, "fichiers": {}}
+    index = {"version": 2, "domaines": DOMAINES, "niveaux": NIVEAUX, "fichiers": {}}
     for (d, n), items in sorted(groups.items()):
         name = f"{d}_{n}.json"
         (OUT / name).write_text(json.dumps({"questions": [q for _, _, q in items]}, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
