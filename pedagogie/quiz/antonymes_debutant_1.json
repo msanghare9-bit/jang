@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Quel est le contraire de « grand » ?",
+      "o": [
+        "haut",
+        "petit",
+        "large",
+        "long"
+      ],
+      "r": 1,
+      "e": "Le contraire de « grand » est « petit »."
+    },
+    {
+      "q": "Quel est le contraire de « chaud » ?",
+      "o": [
+        "froid",
+        "tiède",
+        "brûlant",
+        "sec"
+      ],
+      "r": 0,
+      "e": "Le contraire de « chaud » est « froid »."
+    },
+    {
+      "q": "Quel est le contraire de « ouvrir » ?",
+      "o": [
+        "entrer",
+        "fermer",
+        "pousser",
+        "tirer"
+      ],
+      "r": 1,
+      "e": "Le contraire d'ouvrir est fermer."
+    },
+    {
+      "q": "Quel est le contraire de « rapide » ?",
+      "o": [
+        "pressé",
+        "lent",
+        "agile",
+        "vif"
+      ],
+      "r": 1,
+      "e": "Le contraire de rapide est lent."
+    },
+    {
+      "q": "Quel est le contraire de « heureux » ?",
+      "o": [
+        "joyeux",
+        "triste",
+        "content",
+        "souriant"
+      ],
+      "r": 1,
+      "e": "Le contraire de heureux est triste."
+    },
+    {
+      "q": "Quel est le contraire de « commencer » ?",
+      "o": [
+        "débuter",
+        "continuer",
+        "terminer",
+        "essayer"
+      ],
+      "r": 2,
+      "e": "Le contraire de commencer est terminer."
+    },
+    {
+      "q": "Quel est le contraire de « plein » ?",
+      "o": [
+        "vide",
+        "complet",
+        "rempli",
+        "entier"
+      ],
+      "r": 0,
+      "e": "Le contraire de plein est vide."
+    },
+    {
+      "q": "Quel est le contraire de « monter » ?",
+      "o": [
+        "grimper",
+        "descendre",
+        "sauter",
+        "avancer"
+      ],
+      "r": 1,
+      "e": "Le contraire de monter est descendre."
+    },
+    {
+      "q": "Quel est le contraire de « propre » ?",
+      "o": [
+        "net",
+        "rangé",
+        "sale",
+        "lavé"
+      ],
+      "r": 2,
+      "e": "Le contraire de propre est sale."
+    },
+    {
+      "q": "Quel est le contraire de « jour » ?",
+      "o": [
+        "matin",
+        "soir",
+        "nuit",
+        "midi"
+      ],
+      "r": 2,
+      "e": "L'opposé de jour est nuit."
+    },
+    {
+      "q": "Quel est le contraire de « facile » ?",
+      "o": [
+        "simple",
+        "difficile",
+        "clair",
+        "possible"
+      ],
+      "r": 1,
+      "e": "Le contraire de facile est difficile."
+    },
+    {
+      "q": "Quel est le contraire de « faible » ?",
+      "o": [
+        "fragile",
+        "fort",
+        "mince",
+        "petit"
+      ],
+      "r": 1,
+      "e": "Le contraire de faible est fort."
+    },
+    {
+      "q": "Quel est le contraire de « près » ?",
+      "o": [
+        "proche",
+        "loin",
+        "ici",
+        "auprès"
+      ],
+      "r": 1,
+      "e": "Le contraire de près est loin."
+    },
+    {
+      "q": "Quel est le contraire de « jeune » ?",
+      "o": [
+        "petit",
+        "âgé",
+        "neuf",
+        "vif"
+      ],
+      "r": 1,
+      "e": "Le contraire de jeune est âgé."
+    },
+    {
+      "q": "Quel est le contraire de « accepter » ?",
+      "o": [
+        "refuser",
+        "recevoir",
+        "prendre",
+        "garder"
+      ],
+      "r": 0,
+      "e": "Le contraire d'accepter est refuser."
+    },
+    {
+      "q": "Quel est le contraire de « entrer » ?",
+      "o": [
+        "venir",
+        "sortir",
+        "arriver",
+        "passer"
+      ],
+      "r": 1,
+      "e": "Le contraire d'entrer est sortir."
+    },
+    {
+      "q": "Quel est le contraire de « doux » ?",
+      "o": [
+        "sucré",
+        "dur",
+        "tendre",
+        "gentil"
+      ],
+      "r": 1,
+      "e": "Le contraire de doux peut être dur."
+    },
+    {
+      "q": "Quel est le contraire de « monter » ?",
+      "o": [
+        "lever",
+        "descendre",
+        "grandir",
+        "porter"
+      ],
+      "r": 1,
+      "e": "Descendre est l'action opposée à monter."
+    },
+    {
+      "q": "Quel est le contraire de « clair » ?",
+      "o": [
+        "lumineux",
+        "sombre",
+        "blanc",
+        "visible"
+      ],
+      "r": 1,
+      "e": "Le contraire de clair est sombre."
+    },
+    {
+      "q": "Quel est le contraire de « donner » ?",
+      "o": [
+        "offrir",
+        "recevoir",
+        "prêter",
+        "partager"
+      ],
+      "r": 1,
+      "e": "Donner et recevoir sont des actions opposées."
+    },
+    {
+      "q": "Quel est le contraire de « gagner » ?",
+      "o": [
+        "remporter",
+        "perdre",
+        "jouer",
+        "réussir"
+      ],
+      "r": 1,
+      "e": "Le contraire de gagner est perdre."
+    },
+    {
+      "q": "Quel est le contraire de « avant » ?",
+      "o": [
+        "devant",
+        "après",
+        "hier",
+        "maintenant"
+      ],
+      "r": 1,
+      "e": "Le contraire de avant est après."
+    },
+    {
+      "q": "Quel est le contraire de « toujours » ?",
+      "o": [
+        "souvent",
+        "jamais",
+        "parfois",
+        "encore"
+      ],
+      "r": 1,
+      "e": "Dans cet exercice, l'opposé de toujours est jamais."
+    },
+    {
+      "q": "Quel est le contraire de « vivant » ?",
+      "o": [
+        "actif",
+        "mort",
+        "présent",
+        "debout"
+      ],
+      "r": 1,
+      "e": "Le contraire de vivant est mort."
+    }
+  ]
+}
