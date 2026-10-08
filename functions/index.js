@@ -88,6 +88,19 @@ exports.createMatch = onCall({ region, secrets: [matchAnswerBank] }, async (requ
   return { id: ref.id, code };
 });
 
+
+exports.checkPracticeAnswer = onCall({ region, secrets: [matchAnswerBank] }, async (request) => {
+  requireAuth(request);
+  const id = cleanText(request.data && request.data.id, 40);
+  if (!id) throw new HttpsError('invalid-argument', 'Question introuvable.');
+  const bank = JSON.parse(matchAnswerBank.value());
+  const answer = Number(bank[id]);
+  if (!Number.isInteger(answer) || answer < 0 || answer > 3) {
+    throw new HttpsError('not-found', 'Corrigé introuvable.');
+  }
+  return { answer };
+});
+
 exports.joinMatch = onCall({ region }, async (request) => {
   const uid = requireAuth(request);
   const matchId = cleanText(request.data && request.data.matchId, 120);
