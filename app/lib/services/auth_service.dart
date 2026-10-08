@@ -65,6 +65,7 @@ class AuthService {
     List<String> teacherClasses = const [],
     List<String> teacherSubjects = const [],
     String teacherExamId = '',
+    String teacherExamName = '',
   }) async {
     UserCredential cred;
     try {
@@ -92,6 +93,7 @@ class AuthService {
         'classNames': teacherClasses,
         'subjects': teacherSubjects,
         'examId': teacherExamId,
+        'examName': teacherExamName,
         'status': 'pending',
         'createdAt': FieldValue.serverTimestamp(),
       });
