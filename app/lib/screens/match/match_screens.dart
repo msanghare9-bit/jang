@@ -574,7 +574,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
 
   String get _uid => AuthService.instance.profile.value?.uid ?? '';
   bool get _isHost => _m?.hostUid == _uid;
-  bool get _plays => !widget.spectator && _m != null && (!_isHost || _m!.hostPlays);
+  bool get _plays => !widget.spectator && _m != null && (!_isHost || _m!.hostPlays || (_m!.tournamentId.isNotEmpty && _players.any((p) => p.uid == _uid)));
 
   @override
   void initState() {
