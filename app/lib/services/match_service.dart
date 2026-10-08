@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 import '../models.dart';
 import 'quiz_bank.dart';
@@ -61,6 +62,7 @@ class LiveMatch {
     final m = d.data() ?? {};
     final ts = m['createdAt'];
     final asked = m['askedAt'];
+    final revealed = m['revealedAnswers'] is Map ? m['revealedAnswers'] as Map : const {};
     return LiveMatch(
       id: d.id,
       code: '${m['code'] ?? ''}',
@@ -71,8 +73,12 @@ class LiveMatch {
       index: m['index'] is num ? (m['index'] as num).toInt() : -1,
       seconds: m['seconds'] is num ? (m['seconds'] as num).toInt() : 20,
       questions: [
-        for (final q in (m['questions'] as List? ?? const []))
-          if (q is Map) BankQuestion.fromMap(q),
+        for (final (i, q) in (m['questions'] as List? ?? const []).indexed)
+          if (q is Map)
+            BankQuestion.fromMap({
+              ...q,
+              if (revealed['$i'] is Map) ...revealed['$i'] as Map,
+            }),
       ],
       domain: '${m['domaine'] ?? ''}',
       level: '${m['niveau'] ?? ''}',
@@ -105,11 +111,11 @@ class MatchPlayer {
       '${m['name'] ?? ''}',
       m['score'] is num ? (m['score'] as num).toInt() : 0,
       {
-        for (final e in a.entries)
-          if (int.tryParse('${e.key}') != null && e.value is Map)
-            int.parse('${e.key}'): (
-              ((e.value as Map)['c'] as num?)?.toInt() ?? -1,
-              (e.value as Map)['ok'] == true,
+        for (final rawIndex in (m['answeredIndices'] as List? ?? const []))
+          if (rawIndex is num)
+            rawIndex.toInt(): (
+              -1,
+              (m['correctIndices'] as List? ?? const []).contains(rawIndex),
             ),
       },
       '${m['reaction'] ?? ''}',
@@ -139,7 +145,13 @@ class MatchService {
   static final instance = MatchService._();
 
   final _db = FirebaseFirestore.instance;
+  final _functions = FirebaseFunctions.instance;
   CollectionReference<Map<String, dynamic>> get _col => _db.collection('matchs');
+
+  Future<Map<String, dynamic>> _call(String name, Map<String, dynamic> data) async {
+    final result = await _functions.httpsCallable(name).call(data);
+    return Map<String, dynamic>.from(result.data as Map);
+  }
 
   static const maxPlayers = 40;
 
@@ -156,35 +168,20 @@ class MatchService {
     String classId = '',
     String itemId = '',
   }) async {
-    final r = Random.secure();
-    var code = '';
-    for (var i = 0; i < 6; i++) {
-      code = List.generate(6, (_) => r.nextInt(10)).join();
-      final s = await _col.where('code', isEqualTo: code).where('open', isEqualTo: true).limit(1).get();
-      if (s.docs.isEmpty) break;
-    }
-    final ref = _col.doc();
-    await ref.set({
-      'code': code,
-      'open': true,
-      'hostUid': host.uid,
+    final created = await _call('createMatch', {
       'hostName': host.publicName,
       'hostPlays': hostPlays,
-      'state': LiveMatch.waiting,
-      'index': -1,
-      'seconds': seconds,
       'questions': [for (final q in questions) q.toMap()],
-      'domaine': domain,
-      'niveau': level,
+      'domain': domain,
+      'level': level,
       'title': title,
       'tournamentId': tournamentId,
       'classId': classId,
       'itemId': itemId,
-      'createdAt': FieldValue.serverTimestamp(),
     });
-    if (hostPlays) await _join(ref.id, host);
-    final d = await ref.get();
-    return LiveMatch.fromDoc(d);
+    final match = await getOnce('${created['id']}');
+    if (match == null) throw Exception('Le match n’a pas pu être créé.');
+    return match;
   }
 
   /// Rejoindre avec le code. Renvoie le match, ou un message d'erreur simple.
@@ -194,24 +191,21 @@ class MatchService {
     final s = await _col.where('code', isEqualTo: c).where('open', isEqualTo: true).limit(1).get();
     if (s.docs.isEmpty) return (null, 'Aucun match avec ce code. Vérifie le code avec ton ami.');
     final m = LiveMatch.fromDoc(s.docs.first);
-    if (m.state != LiveMatch.waiting) {
-      final me = await _col.doc(m.id).collection('joueurs').doc(p.uid).get();
-      if (!me.exists) return (null, 'Ce match a déjà commencé.');
-      return (m, '');
+    final me = await _col.doc(m.id).collection('joueurs').doc(p.uid).get();
+    if (!me.exists) {
+      if (m.state != LiveMatch.waiting) return (null, 'Ce match a déjà commencé.');
+      try {
+        await _call('joinMatch', {'matchId': m.id, 'name': p.publicName});
+      } on FirebaseFunctionsException catch (e) {
+        return (null, e.message ?? 'Impossible de rejoindre ce match.');
+      }
     }
-    final count = await _col.doc(m.id).collection('joueurs').count().get();
-    if ((count.count ?? 0) >= maxPlayers) return (null, 'Ce match est plein ($maxPlayers joueurs).');
-    await _join(m.id, p);
     return (m, '');
   }
 
-  Future<void> _join(String id, UserProfile p) => _col.doc(id).collection('joueurs').doc(p.uid).set({
-        'uid': p.uid,
-        'name': p.publicName,
-        'score': 0,
-        'answers': {},
-        'at': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));
+  Future<void> _join(String id, UserProfile p) async {
+    await _call('joinMatch', {'matchId': id, 'name': p.publicName});
+  }
 
   Future<void> leave(String id, String uid) => _col.doc(id).collection('joueurs').doc(uid).delete();
 
@@ -313,18 +307,22 @@ class MatchService {
 
   // ---------- L'hôte mène le match ----------
 
-  Future<void> ask(LiveMatch m, int index) => _col.doc(m.id).update({
-        'state': LiveMatch.asking,
-        'index': index,
-        'askedAt': FieldValue.serverTimestamp(),
-      });
+  Future<void> ask(LiveMatch m, int index) async {
+    await _call('advanceMatch', {'matchId': m.id});
+  }
 
-  Future<void> reveal(LiveMatch m) => _col.doc(m.id).update({'state': LiveMatch.showing});
+  Future<void> reveal(LiveMatch m) async {
+    await _call('revealMatchQuestion', {'matchId': m.id});
+  }
 
-  Future<void> finish(LiveMatch m) => _col.doc(m.id).update({'state': LiveMatch.over, 'open': false});
+  Future<void> finish(LiveMatch m) async {
+    await _call('finishMatch', {'matchId': m.id});
+  }
 
-  /// Passe à la suite : question suivante, ou fin du match.
-  Future<void> next(LiveMatch m) => m.isLast ? finish(m) : ask(m, m.index + 1);
+  /// Passe à la suite : le serveur fixe l'heure de départ et termine le match.
+  Future<void> next(LiveMatch m) async {
+    await _call('advanceMatch', {'matchId': m.id});
+  }
 
   // ---------- Le joueur répond ----------
 
@@ -337,15 +335,12 @@ class MatchService {
   }
 
   Future<int> answer(LiveMatch m, String uid, int choice, Duration took) async {
-    final q = m.current;
-    if (q == null) return 0;
-    final ok = choice == q.answer;
-    final pts = points(ok, took, m.seconds);
-    await _col.doc(m.id).collection('joueurs').doc(uid).update({
-      'answers.${m.index}': {'c': choice, 'ok': ok, 'ms': took.inMilliseconds},
-      'score': FieldValue.increment(pts),
+    final result = await _call('submitMatchAnswer', {
+      'matchId': m.id,
+      'index': m.index,
+      'choice': choice,
     });
-    return pts;
+    return (result['points'] as num?)?.toInt() ?? 0;
   }
 
   // ---------- Suivi du prof ----------
