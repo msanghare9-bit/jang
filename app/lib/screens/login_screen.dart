@@ -78,6 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
           teacherClasses: _classes.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
           teacherSubjects: _subjects.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
           teacherExamId: _examId ?? '',
+          teacherExamName: _exams.where((e) => e.id == _examId).firstOrNull?.name ?? '',
         );
       } else {
         await AuthService.instance.signIn(_user.text, _pass.text);
