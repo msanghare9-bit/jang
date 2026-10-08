@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "A teammate forgot a textbook. What is a kind response?",
+      "o": [
+        "No problem, we can share mine.",
+        "You should never come to class.",
+        "I don't know where the school is.",
+        "That book costs too much."
+      ],
+      "r": 0,
+      "e": "Offering to share is a helpful response."
+    },
+    {
+      "q": "You need to borrow a calculator. What should you ask?",
+      "o": [
+        "Can I buy your calculator without asking?",
+        "Could I borrow your calculator, please?",
+        "Why did you bring a calculator?",
+        "I borrowed your calculator yesterday."
+      ],
+      "r": 1,
+      "e": "“Could I borrow…?” is a polite request."
+    },
+    {
+      "q": "You hear an unfamiliar word in class. What can you ask?",
+      "o": [
+        "Why did you say that word?",
+        "Where can I write that word?",
+        "What does that word mean?",
+        "Who brought the word to class?"
+      ],
+      "r": 2,
+      "e": "Ask “What does…mean?” to learn a word's meaning."
+    },
+    {
+      "q": "You did not hear your classmate. What can you say?",
+      "o": [
+        "You never speak clearly.",
+        "I already know what you said.",
+        "Why are you speaking to me?",
+        "Could you say that again, please?"
+      ],
+      "r": 3,
+      "e": "Ask politely for repetition."
+    },
+    {
+      "q": "A friend invites you to study together. You agree. What can you say?",
+      "o": [
+        "That sounds like a good idea.",
+        "I cannot hear the idea.",
+        "I disagree with your invitation.",
+        "You should study without me."
+      ],
+      "r": 0,
+      "e": "“That sounds like a good idea” accepts a suggestion."
+    },
+    {
+      "q": "You cannot attend a party because you have plans. What is polite?",
+      "o": [
+        "Your party is not important.",
+        "Thanks for inviting me, but I already have plans.",
+        "I will come yesterday.",
+        "Don't invite me again."
+      ],
+      "r": 1,
+      "e": "Thank the person and explain that you cannot attend."
+    },
+    {
+      "q": "You want someone to open a window. What is polite?",
+      "o": [
+        "Open the window now, you must.",
+        "Why is the window still open?",
+        "Would you mind opening the window?",
+        "I opened your window yesterday."
+      ],
+      "r": 2,
+      "e": "“Would you mind…?” makes a polite request."
+    },
+    {
+      "q": "A friend lends you a book. What should you say?",
+      "o": [
+        "I will never give it back.",
+        "Why do you have this book?",
+        "You should lend it to someone else.",
+        "Thanks for lending it to me."
+      ],
+      "r": 3,
+      "e": "Thank the person for lending the book."
+    },
+    {
+      "q": "You missed a friend's call. What can you say?",
+      "o": [
+        "Sorry I missed your call.",
+        "I called you before you called me tomorrow.",
+        "You should not use a phone.",
+        "I have lost your call."
+      ],
+      "r": 0,
+      "e": "Apologize simply for not answering."
+    },
+    {
+      "q": "You want to know the spelling of a name. What should you ask?",
+      "o": [
+        "How do you speak your name?",
+        "How do you spell your name?",
+        "Where did you spell my name?",
+        "Why is your name written?"
+      ],
+      "r": 1,
+      "e": "Use “How do you spell…?” to ask for spelling."
+    },
+    {
+      "q": "You are ordering a drink at a café. What is polite?",
+      "o": [
+        "Give tea to me without a cup.",
+        "Do you have tea yesterday?",
+        "Could I have a cup of tea, please?",
+        "I will drink your tea later."
+      ],
+      "r": 2,
+      "e": "“Could I have…please?” is a polite way to order."
+    },
+    {
+      "q": "You need directions to the post office. What can you ask?",
+      "o": [
+        "Could you bring the post office here?",
+        "Why is the post office closed yesterday?",
+        "Do you know who posted a letter?",
+        "Could you tell me how to get to the post office?"
+      ],
+      "r": 3,
+      "e": "Ask someone politely to explain the route."
+    },
+    {
+      "q": "You want your group’s opinion. What should you ask?",
+      "o": [
+        "What do you think about this plan?",
+        "Who thought of this plan yesterday?",
+        "Why do you think without speaking?",
+        "What did the plan think about you?"
+      ],
+      "r": 0,
+      "e": "Ask “What do you think about…?” for opinions."
+    },
+    {
+      "q": "A classmate is carrying many books. What can you offer?",
+      "o": [
+        "You should carry all my books.",
+        "Would you like me to help you?",
+        "Why did you bring so many books?",
+        "I will leave these books here."
+      ],
+      "r": 1,
+      "e": "Offer help with “Would you like me to…?”"
+    },
+    {
+      "q": "Someone compliments your work. What is a natural reply?",
+      "o": [
+        "You must compliment me again.",
+        "I don't know who did the work.",
+        "Thank you, that's kind of you.",
+        "You are wrong to notice it."
+      ],
+      "r": 2,
+      "e": "A simple thank-you is an appropriate response."
+    },
+    {
+      "q": "A friend says, “See you tomorrow.” What can you reply?",
+      "o": [
+        "I saw you tomorrow already.",
+        "Where is tomorrow?",
+        "You should see someone else.",
+        "See you tomorrow!"
+      ],
+      "r": 3,
+      "e": "Repeat the friendly farewell."
+    },
+    {
+      "q": "You want to know the price of a jacket. What should you ask?",
+      "o": [
+        "How much does it cost?",
+        "How many does it cost?",
+        "How much do it cost?",
+        "What time does it cost?"
+      ],
+      "r": 0,
+      "e": "Use “How much does it cost?” to ask a price."
+    },
+    {
+      "q": "You disagree with a classmate’s suggestion. What is respectful?",
+      "o": [
+        "Your idea is stupid.",
+        "I see your point, but I have another idea.",
+        "I don't listen to anyone.",
+        "You must change your opinion now."
+      ],
+      "r": 1,
+      "e": "Acknowledge the other person's view before disagreeing."
+    },
+    {
+      "q": "You need to leave class a little early. What can you ask?",
+      "o": [
+        "I left class early tomorrow.",
+        "You must leave before me.",
+        "May I leave a little early, please?",
+        "Why may the class leave?"
+      ],
+      "r": 2,
+      "e": "Ask permission with “May I…?”"
+    },
+    {
+      "q": "You are lost near the bus station. What can you ask?",
+      "o": [
+        "Can you show the station to me yesterday?",
+        "Why did the bus lose the way?",
+        "I can show you how to lose.",
+        "Could you show me the way to the station?"
+      ],
+      "r": 3,
+      "e": "Ask for directions politely."
+    },
+    {
+      "q": "You need a moment to finish writing. What can you say?",
+      "o": [
+        "Could you wait a moment, please?",
+        "You waited for me last week.",
+        "Wait until I ask again tomorrow.",
+        "Why are you waiting here?"
+      ],
+      "r": 0,
+      "e": "Ask politely for a short wait."
+    },
+    {
+      "q": "Your friend is nervous before a test. What can you say?",
+      "o": [
+        "You will certainly fail.",
+        "Take your time; you have prepared well.",
+        "There is no reason to study.",
+        "Why did you take the test?"
+      ],
+      "r": 1,
+      "e": "Encourage your friend and recognize their preparation."
+    },
+    {
+      "q": "You would like to sit with a group. What can you ask?",
+      "o": [
+        "You must join me now.",
+        "Why did you join the table?",
+        "May I join you?",
+        "I joined you before asking."
+      ],
+      "r": 2,
+      "e": "Ask permission with “May I…?”"
+    },
+    {
+      "q": "You want to check a homework deadline. What should you ask?",
+      "o": [
+        "Did we finished it last Friday?",
+        "Why does Friday finish the homework?",
+        "We have finish it by Friday? ",
+        "Do we need to finish it by Friday?"
+      ],
+      "r": 3,
+      "e": "A clear question confirms the deadline."
+    }
+  ]
+}
