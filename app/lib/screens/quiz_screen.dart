@@ -18,7 +18,8 @@ import '../widgets/jang_ui.dart';
 class QuizScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
-  const QuizScreen({super.key, required this.lesson, required this.subject});
+  final String? opponentId;
+  const QuizScreen({super.key, required this.lesson, required this.subject, this.opponentId});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -38,6 +39,9 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _celebrate = false;
   String? _newEpisode;
   int _xp = 0;
+  int _opponentCorrect = 0;
+  bool _opponentPending = false;
+  bool? _opponentCorrectThisQuestion;
   static final _rand = Random();
   static const _rightTitles = ['Comprendre nga bou bax !', 'Diambar nga ! 🎉', 'Waaw, bravo ! 🎉'];
 
@@ -81,6 +85,34 @@ class _QuizScreenState extends State<QuizScreen> {
       }
     });
     if (ok) SoundService.instance.splash();
+    if (widget.opponentId != null) _opponentAnswer();
+  }
+
+  String get _opponentName => switch (widget.opponentId) {
+        'gainde' => 'Gaïndé',
+        'modou' => 'Modou',
+        'awa' => 'Awa',
+        'kocc' => 'Kocc',
+        _ => '',
+      };
+
+  Future<void> _opponentAnswer() async {
+    setState(() { _opponentPending = true; _opponentCorrectThisQuestion = null; });
+    await Future.delayed(Duration(milliseconds: 450 + _rand.nextInt(1100)));
+    if (!mounted || _finished) return;
+    final chance = switch (widget.opponentId) {
+      'gainde' => .30,
+      'modou' => .52,
+      'awa' => .75,
+      'kocc' => .92,
+      _ => 0.0,
+    };
+    final correct = _rand.nextDouble() < chance;
+    setState(() {
+      _opponentPending = false;
+      _opponentCorrectThisQuestion = correct;
+      if (correct) _opponentCorrect++;
+    });
   }
 
   void _next() {
@@ -115,6 +147,9 @@ class _QuizScreenState extends State<QuizScreen> {
       _index = 0;
       _finished = false;
       _wrongRow = 0;
+      _opponentCorrect = 0;
+      _opponentPending = false;
+      _opponentCorrectThisQuestion = null;
       _celebrate = false;
       _newEpisode = null;
     });
@@ -187,6 +222,24 @@ class _QuizScreenState extends State<QuizScreen> {
             children: [
               Text('Question ${_index + 1} sur ${_quiz.length}',
                   style: Theme.of(context).textTheme.bodySmall),
+              if (widget.opponentId != null) ...[
+                const SizedBox(height: 8),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    child: Row(children: [
+                      CharacterView.of(widget.opponentId!, size: 38, moves: Moves.bob),
+                      const SizedBox(width: 8),
+                      Expanded(child: Text('Toi $_correctCount  ·  $_opponentName $_opponentCorrect',
+                          style: const TextStyle(fontWeight: FontWeight.w800))),
+                      if (_opponentPending) const SizedBox(width: 16, height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2)),
+                      if (_opponentCorrectThisQuestion == true) const Icon(Icons.check_circle, color: JangColors.snGreen, size: 18),
+                      if (_opponentCorrectThisQuestion == false) const Icon(Icons.remove_circle_outline, color: JangColors.textSecondary, size: 18),
+                    ]),
+                  ),
+                ),
+              ],
               const SizedBox(height: 4),
               Text(q.question, style: titleStyle(24, weight: 800)),
               if (q.image.isNotEmpty) ...[
@@ -246,7 +299,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       ChunkyButton(
                         label: _index < _quiz.length - 1 ? 'CONTINUER' : 'VOIR MA NOTE',
                         color: correct ? JangColors.success : JangColors.error,
-                        onPressed: _next,
+                        onPressed: _opponentPending ? null : _next,
                       ),
                     ],
                   ),
@@ -346,6 +399,14 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         const SizedBox(height: 6),
         Text(_endMessage, textAlign: TextAlign.center, style: Theme.of(context).textTheme.titleMedium),
+        if (widget.opponentId != null) ...[
+          const SizedBox(height: 10),
+          Card(child: ListTile(
+            leading: CharacterView.of(widget.opponentId!, size: 48, moves: Moves.sway),
+            title: Text('$_opponentName : $_opponentCorrect / $total'),
+            subtitle: Text(_score == _opponentCorrect ? 'Match nul !' : _score > _opponentCorrect ? 'Tu as gagné cette manche !' : 'Cette fois, $_opponentName a gagné. Réessaie !'),
+          )),
+        ],
         if (_xp > 0)
           Padding(
             padding: const EdgeInsets.only(top: 8),
