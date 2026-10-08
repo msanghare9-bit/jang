@@ -263,6 +263,270 @@
       ],
       "r": 3,
       "e": "For an unreal present situation, use “if + past” and “would + base verb”."
+    },
+    {
+      "q": "Which sentence correctly describes yesterday?",
+      "o": [
+        "Awa went to the market yesterday.",
+        "Awa go to the market yesterday.",
+        "Awa has go to the market yesterday.",
+        "Awa going to the market yesterday."
+      ],
+      "r": 0,
+      "e": "Use the past form “went” for a finished action yesterday."
+    },
+    {
+      "q": "Which sentence correctly uses “since”?",
+      "o": [
+        "She has lived here for 2020.",
+        "She has lived here since 2020.",
+        "She lives here since 2020.",
+        "She lived here since 2020 and still does."
+      ],
+      "r": 1,
+      "e": "Use “since” with the starting point of an action that continues."
+    },
+    {
+      "q": "Which sentence describes an action in progress when rain began?",
+      "o": [
+        "They played when it was start to rain.",
+        "They were play when it started raining.",
+        "They were playing when it started to rain.",
+        "They are playing when it started to rain."
+      ],
+      "r": 2,
+      "e": "Use past continuous for the ongoing action and past simple for the event."
+    },
+    {
+      "q": "Which sentence correctly completes the conditional?",
+      "o": [
+        "If you will study, you pass the exam.",
+        "If you studied, you will passed the exam.",
+        "If you study, you passed the exam.",
+        "If you study, you will pass the exam."
+      ],
+      "r": 3,
+      "e": "Use present simple in the if-clause and “will” in the result."
+    },
+    {
+      "q": "Which sentence correctly uses “already”?",
+      "o": [
+        "We have already finished our work.",
+        "We already have finish our work.",
+        "We have finish already our work.",
+        "We has already finished our work."
+      ],
+      "r": 0,
+      "e": "“Already” commonly appears between “have” and the past participle."
+    },
+    {
+      "q": "Which sentence correctly compares two people?",
+      "o": [
+        "Moussa is more taller than his brother.",
+        "Moussa is taller than his brother.",
+        "Moussa is tallest than his brother.",
+        "Moussa is tall than his brother."
+      ],
+      "r": 1,
+      "e": "Use “taller than” for a comparison between two people."
+    },
+    {
+      "q": "Which sentence gives advice?",
+      "o": [
+        "You should to wear a helmet when you ride.",
+        "You should wearing a helmet when you ride.",
+        "You should wear a helmet when you ride.",
+        "You should wore a helmet when you ride."
+      ],
+      "r": 2,
+      "e": "Use the base form of a verb after “should”."
+    },
+    {
+      "q": "Which sentence uses “much” correctly?",
+      "o": [
+        "There isn't many sugar left.",
+        "There aren't much sugar left.",
+        "There isn't a few sugar left.",
+        "There isn't much sugar left."
+      ],
+      "r": 3,
+      "e": "Use “much” with an uncountable noun such as sugar."
+    },
+    {
+      "q": "Which sentence uses “each” correctly?",
+      "o": [
+        "Each student has a notebook.",
+        "Each students have a notebook.",
+        "Each student have a notebook.",
+        "Each of student has notebook."
+      ],
+      "r": 0,
+      "e": "“Each” takes a singular noun and a singular verb."
+    },
+    {
+      "q": "Which sentence completes “I look forward to…”?",
+      "o": [
+        "I look forward to see you.",
+        "I look forward to seeing you.",
+        "I look forward seeing you.",
+        "I look forward to saw you."
+      ],
+      "r": 1,
+      "e": "In this expression, “to” is a preposition followed by a gerund."
+    },
+    {
+      "q": "Which sentence correctly reports the question?",
+      "o": [
+        "She asked me where did I live.",
+        "She asked me where do I lived.",
+        "She asked me where I lived.",
+        "She asked me where was I live."
+      ],
+      "r": 2,
+      "e": "Reported questions use statement word order."
+    },
+    {
+      "q": "Which sentence correctly uses the present perfect?",
+      "o": [
+        "I never have be to Saint-Louis.",
+        "I have never went to Saint-Louis.",
+        "I has never been to Saint-Louis.",
+        "I have never been to Saint-Louis."
+      ],
+      "r": 3,
+      "e": "Use “have” plus the past participle “been”."
+    },
+    {
+      "q": "Which sentence uses the correct preposition for clock time?",
+      "o": [
+        "The bus arrives at eight o’clock.",
+        "The bus arrives in eight o’clock.",
+        "The bus arrives on eight o’clock.",
+        "The bus arrives by eight o’clock every day at."
+      ],
+      "r": 0,
+      "e": "Use “at” with a precise time."
+    },
+    {
+      "q": "Which sentence uses a countable expression correctly?",
+      "o": [
+        "There is a few apples in the basket.",
+        "There are a few apples in the basket.",
+        "There are much apples in the basket.",
+        "There are a little apples in the basket."
+      ],
+      "r": 1,
+      "e": "Use “a few” with plural countable nouns."
+    },
+    {
+      "q": "Which sentence correctly uses the present simple after “when”?",
+      "o": [
+        "Let me know when he will arrives.",
+        "Let me know when he arrive yesterday.",
+        "Let me know when he arrives.",
+        "Let me know when does he arrives."
+      ],
+      "r": 2,
+      "e": "Use the present simple for a future time clause."
+    },
+    {
+      "q": "Which sentence correctly compares speaking skills?",
+      "o": [
+        "She speaks English more better than I do.",
+        "She speaks English best than I do.",
+        "She speaks English gooder than I do.",
+        "She speaks English better than I do."
+      ],
+      "r": 3,
+      "e": "“Better” is the comparative form of “well”."
+    },
+    {
+      "q": "Which sentence makes a polite request?",
+      "o": [
+        "I would like some water, please.",
+        "I would like any water, please.",
+        "I like some water yesterday, please.",
+        "I would liking water, please."
+      ],
+      "r": 0,
+      "e": "Use “would like” plus a noun for a polite request."
+    },
+    {
+      "q": "Which sentence correctly states a possible result?",
+      "o": [
+        "If it will rain, we stay at home.",
+        "If it rains, we will stay at home.",
+        "If it rains, we stayed at home tomorrow.",
+        "If it raining, we will stay at home."
+      ],
+      "r": 1,
+      "e": "Use the first conditional for a possible future result."
+    },
+    {
+      "q": "Which sentence correctly describes last night?",
+      "o": [
+        "We do our homework last night.",
+        "We have do our homework last night.",
+        "We did our homework last night.",
+        "We were did our homework last night."
+      ],
+      "r": 2,
+      "e": "Use the past form “did” with a finished time."
+    },
+    {
+      "q": "Which sentence correctly uses a superlative?",
+      "o": [
+        "This is one of the better book in the library.",
+        "This is one of best books in the library.",
+        "This is one of the most best books in the library.",
+        "This is one of the best books in the library."
+      ],
+      "r": 3,
+      "e": "Use “one of the” plus a plural noun and superlative."
+    },
+    {
+      "q": "Which sentence correctly describes a place of birth?",
+      "o": [
+        "This is the village where I was born.",
+        "This is the village which I was born.",
+        "This is the village where I born.",
+        "This is the village when I was born."
+      ],
+      "r": 0,
+      "e": "Use “where” to refer to a place."
+    },
+    {
+      "q": "Which sentence correctly uses “for” with a duration?",
+      "o": [
+        "He has worked here since five years.",
+        "He has worked here for five years.",
+        "He works here for five years and still does.",
+        "He has work here for five years."
+      ],
+      "r": 1,
+      "e": "Use “for” with a length of time."
+    },
+    {
+      "q": "Which sentence agrees with “neither of the answers”?",
+      "o": [
+        "Neither of the answers are correct.",
+        "Neither answers is correct.",
+        "Neither of the answers is correct.",
+        "Neither of answer are correct."
+      ],
+      "r": 2,
+      "e": "“Neither” is singular in this construction."
+    },
+    {
+      "q": "Which sentence correctly uses a phrasal verb?",
+      "o": [
+        "Please fill the form up before you leave it in.",
+        "Please fill in to the form before you go.",
+        "Please fill the form with before leaving.",
+        "Please fill in the form before you leave."
+      ],
+      "r": 3,
+      "e": "“Fill in a form” means complete it."
     }
   ]
 }
