@@ -76,11 +76,11 @@ class _QuizScreenState extends State<QuizScreen> {
       _answers[_index] = option;
       if (ok) {
         _wrongRow = 0;
-        _cheer = Cheer.right();
+        _cheer = Cheer.fromCharacter('awa', true);
         _title = _rightTitles[_rand.nextInt(_rightTitles.length)];
       } else {
         _wrongRow++;
-        _cheer = _wrongRow >= 3 ? Cheer.streakWrong() : Cheer.wrong();
+        _cheer = _wrongRow >= 3 ? Cheer.streakWrong() : Cheer.fromCharacter('modou', false);
         _title = 'Boul bayi ! Dina bax !';
       }
     });
