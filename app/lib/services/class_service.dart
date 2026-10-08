@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 
 import '../models.dart';
 import 'stats_service.dart';
+import 'inbox_service.dart';
 
 /// Résumé du travail d'un élève, lu sur sa fiche (users/{uid}) : une seule lecture par élève.
 class StudentSummary {
@@ -278,14 +279,33 @@ class ClassService {
 
   /// Enregistre un contenu (nouveau si id est vide). Renvoie son identifiant.
   Future<String> saveItem(ClassItem item) async {
-    final ref = item.id.isEmpty ? _items.doc() : _items.doc(item.id);
+    final isNew = item.id.isEmpty;
+    final ref = isNew ? _items.doc() : _items.doc(item.id);
     await ref.set({
       ...item.toMap(),
-      if (item.id.isEmpty) 'createdAt': FieldValue.serverTimestamp(),
+      if (isNew) 'createdAt': FieldValue.serverTimestamp(),
       'updatedAt': FieldValue.serverTimestamp(),
     }, SetOptions(merge: true));
     revision.value++;
+    if (isNew) unawaited(_notifyClass(item));
     return ref.id;
+  }
+
+  Future<void> _notifyClass(ClassItem item) async {
+    try {
+      final classDoc = await _classes.doc(item.classId).get();
+      if (!classDoc.exists) return;
+      final room = ClassRoom.fromDoc(classDoc);
+      if (room.students.isEmpty) return;
+      final kind = ClassItem.label(item.type).toLowerCase();
+      await InboxService.instance.send(
+        room.students,
+        '${room.profName.isEmpty ? 'Ton professeur' : room.profName} a ajouté '
+        '« ${item.title} » ($kind) dans ${room.name}.',
+      );
+    } catch (e) {
+      debugPrint('Notification du nouveau contenu impossible : $e');
+    }
   }
 
   Future<void> deleteItem(ClassItem item) async {
