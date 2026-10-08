@@ -116,11 +116,17 @@ service cloud.firestore {
                     && (isAdmin() || classOf(request.resource.data.classId).profUid == request.auth.uid);
       allow update, delete: if isAdmin() || (isStaff() && resource.data.ownerUid == request.auth.uid);
 
-      // Devoirs rendus : l'élève écrit sa réponse, le prof met la note.
+      // Devoirs rendus : l'élève écrit avant la date limite, le prof met la note.
       match /rendus/{uid} {
+        function beforeDeadline() {
+          let due = get(/databases/$(database)/documents/classItems/$(id)).data.get('dueAt', null);
+          return due == null || request.time <= due;
+        }
         allow read: if isMe(uid) || isStaff();
-        allow create: if isMe(uid) && !request.resource.data.keys().hasAny(['grade', 'comment', 'gradedAt']);
-        allow update: if (isMe(uid) && resource.data.get('grade', '') == '' && resource.data.get('comment', '') == ''
+        allow create: if isMe(uid) && beforeDeadline()
+                      && !request.resource.data.keys().hasAny(['grade', 'comment', 'gradedAt']);
+        allow update: if (isMe(uid) && beforeDeadline()
+                          && resource.data.get('grade', '') == '' && resource.data.get('comment', '') == ''
                           && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'text', 'classId', 'at']))
                       || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['grade', 'comment', 'gradedAt']));
       }
