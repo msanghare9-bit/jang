@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the best English translation of: “Je n'ai pas encore fini.”",
+      "o": [
+        "I haven't finished yet.",
+        "I finished yesterday.",
+        "I don't finish often.",
+        "I will finish soon."
+      ],
+      "r": 0,
+      "e": "“I haven't finished yet.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Peux-tu me prêter ton stylo ?”",
+      "o": [
+        "Can you borrow my pen?",
+        "Can you lend me your pen?",
+        "May I buy your pen?",
+        "Can you find my book?"
+      ],
+      "r": 1,
+      "e": "“Can you lend me your pen?” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a l'habitude de se lever tôt.”",
+      "o": [
+        "She used to get up late.",
+        "She is afraid of waking up.",
+        "She is used to getting up early.",
+        "She wants to sleep early."
+      ],
+      "r": 2,
+      "e": "“She is used to getting up early.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous devons protéger l'environnement.”",
+      "o": [
+        "We can pollute the environment.",
+        "We should ignore the weather.",
+        "We have protected the village.",
+        "We must protect the environment."
+      ],
+      "r": 3,
+      "e": "“We must protect the environment.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il pleut depuis ce matin.”",
+      "o": [
+        "It has been raining since this morning.",
+        "It rained before this morning.",
+        "It will rain next month.",
+        "It is raining every year."
+      ],
+      "r": 0,
+      "e": "“It has been raining since this morning.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je préfère marcher plutôt que prendre le bus.”",
+      "o": [
+        "I prefer the bus than walking.",
+        "I prefer walking to taking the bus.",
+        "I would like to drive a bus.",
+        "I stopped walking to the bus."
+      ],
+      "r": 1,
+      "e": "“I prefer walking to taking the bus.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “À quelle heure le train part-il ?”",
+      "o": [
+        "Where did the train arrive?",
+        "How much is the train station?",
+        "What time does the train leave?",
+        "When do you build a train?"
+      ],
+      "r": 2,
+      "e": "“What time does the train leave?” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle m'a conseillé de me reposer.”",
+      "o": [
+        "She asked me to run.",
+        "She allowed me to leave.",
+        "She told me to worry.",
+        "She advised me to rest."
+      ],
+      "r": 3,
+      "e": "“She advised me to rest.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Si tu étudies, tu réussiras.”",
+      "o": [
+        "If you study, you will succeed.",
+        "If you studied, you succeed yesterday.",
+        "When you study, you failed.",
+        "You succeed if you had studied."
+      ],
+      "r": 0,
+      "e": "“If you study, you will succeed.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il est trop fatigué pour continuer.”",
+      "o": [
+        "He is tired enough to begin.",
+        "He is too tired to continue.",
+        "He is not tired but he stopped.",
+        "He is too busy to arrive."
+      ],
+      "r": 1,
+      "e": "“He is too tired to continue.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous cherchons une solution au problème.”",
+      "o": [
+        "We are looking at the answer sheet.",
+        "We found a problem yesterday.",
+        "We are looking for a solution to the problem.",
+        "We are solving a different question."
+      ],
+      "r": 2,
+      "e": "“We are looking for a solution to the problem.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “J'ai oublié d'apporter mon cahier.”",
+      "o": [
+        "I remember to buy a notebook.",
+        "I brought your book yesterday.",
+        "I forgot where I put the pen.",
+        "I forgot to bring my notebook."
+      ],
+      "r": 3,
+      "e": "“I forgot to bring my notebook.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Ce marché est moins cher que celui-là.”",
+      "o": [
+        "This market is less expensive than that one.",
+        "This market is more expensive than that one.",
+        "This shop is as far as the market.",
+        "That market is less busy today."
+      ],
+      "r": 0,
+      "e": "“This market is less expensive than that one.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Ils attendent le professeur devant la salle.”",
+      "o": [
+        "They are teaching the class in the room.",
+        "They are waiting for the teacher outside the classroom.",
+        "They left the teacher at school.",
+        "They are looking for a classroom."
+      ],
+      "r": 1,
+      "e": "“They are waiting for the teacher outside the classroom.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je ne suis pas d'accord avec cette idée.”",
+      "o": [
+        "I don't understand the question.",
+        "I agree with your teacher.",
+        "I don't agree with this idea.",
+        "I can't remember that lesson."
+      ],
+      "r": 2,
+      "e": "“I don't agree with this idea.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il faut traverser la route prudemment.”",
+      "o": [
+        "You should close the road quickly.",
+        "You can walk along the river.",
+        "You have to cross the street yesterday.",
+        "You must cross the road carefully."
+      ],
+      "r": 3,
+      "e": "“You must cross the road carefully.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a déjà visité Saint-Louis.”",
+      "o": [
+        "She has already visited Saint-Louis.",
+        "She will visit Saint-Louis tomorrow.",
+        "She visits her family every day.",
+        "She has never heard of Senegal."
+      ],
+      "r": 0,
+      "e": "“She has already visited Saint-Louis.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le repas sera prêt dans dix minutes.”",
+      "o": [
+        "The meal was ready ten minutes ago.",
+        "The meal will be ready in ten minutes.",
+        "The meal takes ten hours to cook.",
+        "The meal is not ready this morning."
+      ],
+      "r": 1,
+      "e": "“The meal will be ready in ten minutes.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Prends ton parapluie au cas où il pleuvrait.”",
+      "o": [
+        "Leave your umbrella because it is sunny.",
+        "Take your raincoat after the storm.",
+        "Take your umbrella in case it rains.",
+        "Use an umbrella to dry your clothes."
+      ],
+      "r": 2,
+      "e": "“Take your umbrella in case it rains.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je me suis renseigné sur les horaires.”",
+      "o": [
+        "I changed the classroom schedule.",
+        "I forgot the time of the meeting.",
+        "I wrote down the train station.",
+        "I asked about the timetable."
+      ],
+      "r": 3,
+      "e": "“I asked about the timetable.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Les élèves doivent rendre le devoir avant vendredi.”",
+      "o": [
+        "The students must hand in the homework before Friday.",
+        "The students handed out books on Friday.",
+        "The teacher will explain the lesson next week.",
+        "The pupils can start the test tomorrow."
+      ],
+      "r": 0,
+      "e": "“The students must hand in the homework before Friday.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle parle assez lentement pour que je comprenne.”",
+      "o": [
+        "She speaks too quickly for me to listen.",
+        "She speaks slowly enough for me to understand.",
+        "She is learning to speak tomorrow.",
+        "She understands because I speak loudly."
+      ],
+      "r": 1,
+      "e": "“She speaks slowly enough for me to understand.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous avons décidé de reporter la réunion.”",
+      "o": [
+        "We cancelled the class last week.",
+        "We prepared the room for the meeting.",
+        "We decided to postpone the meeting.",
+        "We will attend the meeting early."
+      ],
+      "r": 2,
+      "e": "“We decided to postpone the meeting.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “La pharmacie se trouve en face de la banque.”",
+      "o": [
+        "The bank is inside the pharmacy.",
+        "The pharmacy is behind the bus station.",
+        "The bank is next to the school.",
+        "The pharmacy is opposite the bank."
+      ],
+      "r": 3,
+      "e": "“The pharmacy is opposite the bank.” is the best translation in this context."
+    }
+  ]
+}
