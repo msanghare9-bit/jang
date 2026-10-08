@@ -178,6 +178,7 @@ class MatchService {
   }
 
   Future<void> _join(String id, UserProfile p) => _col.doc(id).collection('joueurs').doc(p.uid).set({
+        'uid': p.uid,
         'name': p.publicName,
         'score': 0,
         'answers': {},
@@ -244,5 +245,27 @@ class MatchService {
   Future<List<MatchPlayer>> playersOnce(String id) async {
     final s = await _col.doc(id).collection('joueurs').get();
     return [for (final d in s.docs) MatchPlayer.fromDoc(d)]..sort((a, b) => b.score.compareTo(a.score));
+  }
+
+  /// Historique des matchs terminés auxquels le joueur a participé.
+  Future<List<(LiveMatch, MatchPlayer, bool)>> historyFor(String uid) async {
+    final rows = await _db.collectionGroup('joueurs').where('uid', isEqualTo: uid).get();
+    final entries = <(LiveMatch, MatchPlayer, bool)>[];
+    for (final row in rows.docs) {
+      final matchRef = row.reference.parent.parent;
+      if (matchRef == null) continue;
+      final matchDoc = await matchRef.get();
+      if (!matchDoc.exists) continue;
+      final match = LiveMatch.fromDoc(matchDoc);
+      if (match.state != LiveMatch.over) continue;
+      final players = await playersOnce(match.id);
+      final me = players.where((p) => p.uid == uid).firstOrNull;
+      if (me == null) continue;
+      final won = players.isNotEmpty && me.score == players.first.score;
+      entries.add((match, me, won));
+    }
+    entries.sort((a, b) =>
+        (b.$1.createdAt ?? DateTime(1970)).compareTo(a.$1.createdAt ?? DateTime(1970)));
+    return entries;
   }
 }
