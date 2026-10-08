@@ -263,6 +263,318 @@
       ],
       "r": 3,
       "e": "“Take” veut dire prendre."
+    },
+    {
+      "q": "Quel est le contraire de “wide” ?",
+      "o": [
+        "narrow",
+        "long",
+        "high",
+        "deep"
+      ],
+      "r": 0,
+      "e": "“Narrow” veut dire étroit.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “push” ?",
+      "o": [
+        "lift",
+        "pull",
+        "carry",
+        "drop"
+      ],
+      "r": 1,
+      "e": "“Pull” veut dire tirer; c’est l’action opposée à pousser.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “sit” ?",
+      "o": [
+        "sleep",
+        "walk",
+        "stand",
+        "wait"
+      ],
+      "r": 2,
+      "e": "“Stand” veut dire être debout.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “laugh” ?",
+      "o": [
+        "smile",
+        "talk",
+        "sing",
+        "cry"
+      ],
+      "r": 3,
+      "e": "“Cry” veut dire pleurer.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “inside” ?",
+      "o": [
+        "outside",
+        "under",
+        "near",
+        "above"
+      ],
+      "r": 0,
+      "e": "“Outside” veut dire dehors.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “expensive” ?",
+      "o": [
+        "large",
+        "cheap",
+        "useful",
+        "beautiful"
+      ],
+      "r": 1,
+      "e": "“Cheap” veut dire peu cher.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “left” ?",
+      "o": [
+        "straight",
+        "north",
+        "right",
+        "behind"
+      ],
+      "r": 2,
+      "e": "“Right” veut dire droite.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “a dark room”, quel est le contraire de “dark” ?",
+      "o": [
+        "quiet",
+        "small",
+        "cold",
+        "bright"
+      ],
+      "r": 3,
+      "e": "Ici, “bright” veut dire lumineux.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “high” ?",
+      "o": [
+        "low",
+        "tall",
+        "wide",
+        "fast"
+      ],
+      "r": 0,
+      "e": "“Low” veut dire bas.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “thin” ?",
+      "o": [
+        "short",
+        "thick",
+        "light",
+        "soft"
+      ],
+      "r": 1,
+      "e": "“Thick” veut dire épais.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “soft” ?",
+      "o": [
+        "smooth",
+        "warm",
+        "hard",
+        "clean"
+      ],
+      "r": 2,
+      "e": "“Hard” veut dire dur.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “a heavy bag”, quel est le contraire de “heavy” ?",
+      "o": [
+        "big",
+        "full",
+        "strong",
+        "light"
+      ],
+      "r": 3,
+      "e": "Ici, “light” veut dire léger.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “young” ?",
+      "o": [
+        "old",
+        "new",
+        "small",
+        "early"
+      ],
+      "r": 0,
+      "e": "“Old” veut dire âgé.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “east” ?",
+      "o": [
+        "north",
+        "west",
+        "south",
+        "left"
+      ],
+      "r": 1,
+      "e": "“West” est la direction opposée à “east”.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “before” ?",
+      "o": [
+        "during",
+        "early",
+        "after",
+        "first"
+      ],
+      "r": 2,
+      "e": "“After” veut dire après.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “front” ?",
+      "o": [
+        "side",
+        "top",
+        "middle",
+        "back"
+      ],
+      "r": 3,
+      "e": "“Back” veut dire derrière.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “take” ?",
+      "o": [
+        "give",
+        "keep",
+        "bring",
+        "find"
+      ],
+      "r": 0,
+      "e": "“Give” veut dire donner; “take” veut dire prendre.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans un examen, quel est le contraire de “pass” ?",
+      "o": [
+        "win",
+        "fail",
+        "try",
+        "learn"
+      ],
+      "r": 1,
+      "e": "“Fail” veut dire échouer.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “rich” ?",
+      "o": [
+        "strong",
+        "famous",
+        "poor",
+        "healthy"
+      ],
+      "r": 2,
+      "e": "“Poor” veut dire pauvre.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “awake” ?",
+      "o": [
+        "alert",
+        "ready",
+        "alive",
+        "asleep"
+      ],
+      "r": 3,
+      "e": "“Asleep” veut dire endormi.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “deep” ?",
+      "o": [
+        "shallow",
+        "wide",
+        "dark",
+        "narrow"
+      ],
+      "r": 0,
+      "e": "“Shallow” veut dire peu profond.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “healthy” ?",
+      "o": [
+        "hungry",
+        "ill",
+        "tall",
+        "kind"
+      ],
+      "r": 1,
+      "e": "“Ill” veut dire malade.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “accept” ?",
+      "o": [
+        "choose",
+        "receive",
+        "reject",
+        "allow"
+      ],
+      "r": 2,
+      "e": "“Reject” veut dire refuser.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “increase” ?",
+      "o": [
+        "add",
+        "raise",
+        "grow",
+        "decrease"
+      ],
+      "r": 3,
+      "e": "“Decrease” veut dire diminuer.",
+      "d": "antonymes",
+      "n": "debutant"
     }
   ]
 }
