@@ -839,6 +839,270 @@
       "e": "Permission is approval to do something.",
       "d": "vocabulaire",
       "n": "intermediaire"
+    },
+    {
+      "q": "In “You can borrow my umbrella,” what does borrow mean?",
+      "o": [
+        "take it and return it later",
+        "give it away forever",
+        "buy it from me",
+        "repair it for me"
+      ],
+      "r": 0,
+      "e": "Borrow veut dire emprunter quelque chose puis le rendre."
+    },
+    {
+      "q": "In “Try to avoid the muddy path,” what does avoid mean?",
+      "o": [
+        "stay away from",
+        "walk across",
+        "look for",
+        "clean up"
+      ],
+      "r": 0,
+      "e": "Avoid veut dire éviter ou rester loin de."
+    },
+    {
+      "q": "In “They discovered a small lake,” what does discovered mean?",
+      "o": [
+        "found for the first time",
+        "crossed by boat",
+        "made deeper",
+        "visited again"
+      ],
+      "r": 0,
+      "e": "Discover veut dire découvrir, trouver pour la première fois."
+    },
+    {
+      "q": "In “Reading every day can improve your English,” what does improve mean?",
+      "o": [
+        "make better",
+        "make shorter",
+        "make louder",
+        "make slower"
+      ],
+      "r": 0,
+      "e": "Improve veut dire rendre meilleur ou s’améliorer."
+    },
+    {
+      "q": "In “It is likely to rain this evening,” what does likely mean?",
+      "o": [
+        "probable",
+        "impossible",
+        "finished",
+        "surprising"
+      ],
+      "r": 0,
+      "e": "Likely veut dire probable."
+    },
+    {
+      "q": "In “We need to reduce the noise,” what does reduce mean?",
+      "o": [
+        "make smaller or less",
+        "make stronger",
+        "make clearer",
+        "make again"
+      ],
+      "r": 0,
+      "e": "Reduce veut dire diminuer."
+    },
+    {
+      "q": "In “The purpose of the meeting is to plan a trip,” what does purpose mean?",
+      "o": [
+        "reason or aim",
+        "place to sit",
+        "time it ends",
+        "person who speaks"
+      ],
+      "r": 0,
+      "e": "Purpose veut dire but ou raison."
+    },
+    {
+      "q": "In “Please gather the books after class,” what does gather mean?",
+      "o": [
+        "bring together",
+        "give away",
+        "write on",
+        "look inside"
+      ],
+      "r": 0,
+      "e": "Gather veut dire rassembler."
+    },
+    {
+      "q": "In “He wears ordinary clothes to school,” what does ordinary mean?",
+      "o": [
+        "usual",
+        "expensive",
+        "colourful",
+        "formal"
+      ],
+      "r": 0,
+      "e": "Ordinary veut dire ordinaire ou habituel."
+    },
+    {
+      "q": "In “The walls protect the garden from wind,” what does protect mean?",
+      "o": [
+        "keep safe",
+        "make larger",
+        "cover with paint",
+        "take apart"
+      ],
+      "r": 0,
+      "e": "Protect veut dire protéger, garder en sécurité."
+    },
+    {
+      "q": "In “Please continue reading the story,” what does continue mean?",
+      "o": [
+        "keep doing it",
+        "stop doing it",
+        "read it backwards",
+        "begin it again"
+      ],
+      "r": 0,
+      "e": "Continue veut dire continuer, poursuivre."
+    },
+    {
+      "q": "In “We walked instead of taking the bus,” what does instead of mean?",
+      "o": [
+        "as an alternative to",
+        "at the same time as",
+        "because of",
+        "in front of"
+      ],
+      "r": 0,
+      "e": "Instead of veut dire au lieu de."
+    },
+    {
+      "q": "In “This is a local market,” what does local mean?",
+      "o": [
+        "from this area",
+        "far away",
+        "under the ground",
+        "very old"
+      ],
+      "r": 0,
+      "e": "Local veut dire du coin, de cette région."
+    },
+    {
+      "q": "In “I cannot afford a new phone,” what does afford mean?",
+      "o": [
+        "have enough money to buy",
+        "know how to repair",
+        "find a place for",
+        "remember how to use"
+      ],
+      "r": 0,
+      "e": "Afford veut dire avoir les moyens de payer."
+    },
+    {
+      "q": "In “She refused to open the door,” what does refused mean?",
+      "o": [
+        "said no",
+        "tried again",
+        "asked politely",
+        "forgot"
+      ],
+      "r": 0,
+      "e": "Refuse veut dire refuser, dire non."
+    },
+    {
+      "q": "In “The journey took three hours,” what does journey mean?",
+      "o": [
+        "trip",
+        "meal",
+        "lesson",
+        "meeting"
+      ],
+      "r": 0,
+      "e": "Journey veut dire voyage ou trajet."
+    },
+    {
+      "q": "In “Our neighbourhood has a new library,” what does neighbourhood mean?",
+      "o": [
+        "area around where people live",
+        "building for sports",
+        "road between towns",
+        "group at a school"
+      ],
+      "r": 0,
+      "e": "Neighbourhood veut dire quartier."
+    },
+    {
+      "q": "In “A crowd waited outside the stadium,” what does crowd mean?",
+      "o": [
+        "large group of people",
+        "team of players",
+        "quiet room",
+        "line of buses"
+      ],
+      "r": 0,
+      "e": "Crowd veut dire foule, grand groupe de personnes."
+    },
+    {
+      "q": "In “We should protect the environment,” what does environment mean?",
+      "o": [
+        "natural world around us",
+        "classroom rules",
+        "history of a town",
+        "language of a country"
+      ],
+      "r": 0,
+      "e": "Environment veut dire environnement, le monde naturel qui nous entoure."
+    },
+    {
+      "q": "In “Please be patient while I find your book,” what does patient mean?",
+      "o": [
+        "able to wait calmly",
+        "ready to leave",
+        "easy to teach",
+        "quick to learn"
+      ],
+      "r": 0,
+      "e": "Patient veut dire capable d’attendre calmement."
+    },
+    {
+      "q": "In “My aunt gave me useful advice,” what does advice mean?",
+      "o": [
+        "helpful suggestion",
+        "school subject",
+        "written exam",
+        "travel ticket"
+      ],
+      "r": 0,
+      "e": "Advice veut dire conseil."
+    },
+    {
+      "q": "In “This job is a good opportunity,” what does opportunity mean?",
+      "o": [
+        "chance",
+        "problem",
+        "rule",
+        "result"
+      ],
+      "r": 0,
+      "e": "Opportunity veut dire occasion, chance."
+    },
+    {
+      "q": "In “The team hopes to succeed,” what does succeed mean?",
+      "o": [
+        "reach its goal",
+        "change its name",
+        "leave the game",
+        "make a mistake"
+      ],
+      "r": 0,
+      "e": "Succeed veut dire réussir, atteindre son but."
+    },
+    {
+      "q": "In “We should check the information before sharing it,” what does check mean?",
+      "o": [
+        "make sure it is correct",
+        "hide it from everyone",
+        "translate it aloud",
+        "send it quickly"
+      ],
+      "r": 0,
+      "e": "Check veut dire vérifier."
     }
   ]
 }
