@@ -5,10 +5,10 @@ class JangColors {
   static const background = Colors.white;
   static const text = Color(0xFF3C3C3C);
   static const textSecondary = Color(0xFF777777);
-  static const primary = Color(0xFF1CB0F6); // bleu
-  static const primaryDark = Color(0xFF1899D6);
-  static const accent = Color(0xFF58CC02); // vert (boutons principaux)
-  static const accentDark = Color(0xFF58A700);
+  static const primary = Color(0xFF00853F); // vert Jàng
+  static const primaryDark = Color(0xFF00602D);
+  static const accent = Color(0xFF00853F); // vert Jàng
+  static const accentDark = Color(0xFF00602D);
   static const ocre = Color(0xFFFFC800); // jaune
   static const ocreDark = Color(0xFFE5A500);
   static const surface = Colors.white;
@@ -31,16 +31,8 @@ class JangColors {
 
   /// Couleurs proposées pour les matières (français, maths, anglais, SVT…).
   static const subjectPalette = <String>[
-    '#FF4B4B', // rouge
-    '#1CB0F6', // bleu
-    '#FFC800', // jaune
-    '#58CC02', // vert
-    '#CE82FF', // violet
-    '#FF9600', // orange
-    '#E21B3C', // rouge Kahoot
-    '#1368CE', // bleu Kahoot
-    '#26890C', // vert Kahoot
-    '#2B70C9', // bleu nuit
+    '#00853F',
+    '#00602D',
   ];
 
   /// Anciennes couleurs des matières : affichées avec la nouvelle palette.
