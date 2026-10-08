@@ -311,6 +311,318 @@
       "e": "« See you later » signifie à plus tard.",
       "d": "francais_anglais",
       "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « petit déjeuner » en anglais ?",
+      "o": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "snack"
+      ],
+      "r": 0,
+      "e": "“Breakfast” veut dire petit déjeuner.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Je suis en retard » en anglais ?",
+      "o": [
+        "I am early.",
+        "I am late.",
+        "I am hungry.",
+        "I am ready."
+      ],
+      "r": 1,
+      "e": "“I am late” veut dire je suis en retard.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Il fait froid » en anglais ?",
+      "o": [
+        "It is hot.",
+        "It is sunny.",
+        "It is cold.",
+        "It is late."
+      ],
+      "r": 2,
+      "e": "“It is cold” veut dire il fait froid.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Où est la gare ? » en anglais ?",
+      "o": [
+        "Who is at the station?",
+        "When is the station open?",
+        "Where is the school?",
+        "Where is the station?"
+      ],
+      "r": 3,
+      "e": "“Where is the station?” demande où se trouve la gare.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Je voudrais de l’eau » en anglais ?",
+      "o": [
+        "I would like some water.",
+        "I would like some bread.",
+        "I need a glass.",
+        "I drink the water yesterday."
+      ],
+      "r": 0,
+      "e": "“I would like some water” est une demande polie.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Bonne chance ! » en anglais ?",
+      "o": [
+        "Good night!",
+        "Good luck!",
+        "Well done!",
+        "See you soon!"
+      ],
+      "r": 1,
+      "e": "“Good luck!” veut dire bonne chance.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Puis-je entrer ? » en anglais ?",
+      "o": [
+        "Can I go home?",
+        "Must I sit down?",
+        "May I come in?",
+        "Where can I come?"
+      ],
+      "r": 2,
+      "e": "“May I come in?” demande la permission d’entrer.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Ferme la porte, s’il te plaît » en anglais ?",
+      "o": [
+        "Open the window, please.",
+        "Clean the floor, please.",
+        "Close the book, please.",
+        "Close the door, please."
+      ],
+      "r": 3,
+      "e": "“Close the door” veut dire ferme la porte.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Je suis malade » en anglais ?",
+      "o": [
+        "I am ill.",
+        "I am well.",
+        "I am late.",
+        "I am cold."
+      ],
+      "r": 0,
+      "e": "“I am ill” veut dire je suis malade.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Tournez à gauche » en anglais ?",
+      "o": [
+        "Turn right.",
+        "Turn left.",
+        "Go straight.",
+        "Come back."
+      ],
+      "r": 1,
+      "e": "“Turn left” veut dire tournez à gauche.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Quel est ton nom ? » en anglais ?",
+      "o": [
+        "Where is your name?",
+        "How old is your school?",
+        "What is your name?",
+        "Who is your teacher?"
+      ],
+      "r": 2,
+      "e": "“What is your name?” demande le nom d’une personne.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie “I need a doctor” ?",
+      "o": [
+        "Je suis médecin.",
+        "Où est l’école ?",
+        "J’ai besoin d’un livre.",
+        "J’ai besoin d’un médecin."
+      ],
+      "r": 3,
+      "e": "“I need a doctor” veut dire j’ai besoin d’un médecin.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « À quelle heure commence le cours ? » en anglais ?",
+      "o": [
+        "What time does the lesson start?",
+        "Where does the lesson start?",
+        "What is the lesson about?",
+        "When did the lesson end?"
+      ],
+      "r": 0,
+      "e": "Cette question demande l’heure de début du cours.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « J’habite près de l’école » en anglais ?",
+      "o": [
+        "I work at the school.",
+        "I live near the school.",
+        "I walk behind the school.",
+        "I live far from the school."
+      ],
+      "r": 1,
+      "e": "“Near” veut dire près de.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie “Please wait here” ?",
+      "o": [
+        "S’il te plaît, viens demain.",
+        "Attends dehors ce soir.",
+        "S’il te plaît, attends ici.",
+        "Je suis ici maintenant."
+      ],
+      "r": 2,
+      "e": "“Please wait here” demande d’attendre ici.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Mon frère est plus âgé que moi » en anglais ?",
+      "o": [
+        "My brother is younger than me.",
+        "My friend is older than me.",
+        "My brother is taller than me.",
+        "My brother is older than me."
+      ],
+      "r": 3,
+      "e": "“Older than me” veut dire plus âgé que moi.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Nous allons au marché » en anglais ?",
+      "o": [
+        "We are going to the market.",
+        "We came from the market.",
+        "They are going to school.",
+        "We are at home."
+      ],
+      "r": 0,
+      "e": "“We are going to the market” veut dire nous allons au marché.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie “The bus is full” ?",
+      "o": [
+        "Le bus est vide.",
+        "Le bus est plein.",
+        "Le bus est en retard.",
+        "Le bus est rapide."
+      ],
+      "r": 1,
+      "e": "“Full” veut dire plein.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Je n’ai pas compris la question » en anglais ?",
+      "o": [
+        "I did not ask the question.",
+        "I answered the question.",
+        "I did not understand the question.",
+        "I understood the lesson."
+      ],
+      "r": 2,
+      "e": "“I did not understand” veut dire je n’ai pas compris.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Peux-tu parler plus lentement ? » en anglais ?",
+      "o": [
+        "Can you walk more quickly?",
+        "Can you write more clearly?",
+        "Can you speak louder yesterday?",
+        "Can you speak more slowly?"
+      ],
+      "r": 3,
+      "e": "“More slowly” veut dire plus lentement.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie “The shop is closed today” ?",
+      "o": [
+        "Le magasin est fermé aujourd’hui.",
+        "Le magasin ouvre demain.",
+        "Le magasin est très grand.",
+        "Le marché est fermé hier."
+      ],
+      "r": 0,
+      "e": "“Closed today” veut dire fermé aujourd’hui.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « Il y a trois élèves dans la salle » en anglais ?",
+      "o": [
+        "There is one teacher in the room.",
+        "There are three pupils in the room.",
+        "There are three books on the desk.",
+        "The pupils are outside the room."
+      ],
+      "r": 1,
+      "e": "“There are three pupils” veut dire il y a trois élèves.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie “I forgot my keys” ?",
+      "o": [
+        "J’ai trouvé mes clés.",
+        "J’ai perdu mon livre.",
+        "J’ai oublié mes clés.",
+        "J’ai fermé la porte."
+      ],
+      "r": 2,
+      "e": "“Forgot” veut dire oublié.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « À demain ! » en anglais ?",
+      "o": [
+        "See you yesterday!",
+        "Good afternoon!",
+        "Have a nice meal!",
+        "See you tomorrow!"
+      ],
+      "r": 3,
+      "e": "“See you tomorrow” veut dire à demain.",
+      "d": "francais_anglais",
+      "n": "debutant"
     }
   ]
 }
