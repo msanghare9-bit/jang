@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "If I had known, I would have called you.",
+        "If I knew, I would have called you yesterday.",
+        "If I had knew, I would called you.",
+        "If I would have known, I called you."
+      ],
+      "r": 0,
+      "e": "For an unreal past condition, use “if + had + past participle” and “would have + past participle”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The report wrote by Amina.",
+        "The report was written by Amina.",
+        "The report was wrote by Amina.",
+        "The report has written by Amina yesterday."
+      ],
+      "r": 1,
+      "e": "The passive past uses “was + past participle”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Not until the bell rang the students did leave.",
+        "Not until rang the bell did the students leave.",
+        "Not until the bell rang did the students leave.",
+        "Not until the bell did rang the students leave."
+      ],
+      "r": 2,
+      "e": "After “Not until” at the beginning, use inversion: “did the students leave”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She suggested to go by bus.",
+        "She suggested us going by bus.",
+        "She suggested go by bus.",
+        "She suggested going by bus."
+      ],
+      "r": 3,
+      "e": "After “suggest”, use a noun or an “-ing” form."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Despite being tired, he finished the work.",
+        "Despite he was tired, he finished the work.",
+        "Despite of being tired, he finished the work.",
+        "Despite to be tired, he finished the work."
+      ],
+      "r": 0,
+      "e": "After “despite”, use a noun or an “-ing” form."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "He denied to take the money.",
+        "He denied taking the money.",
+        "He denied take the money.",
+        "He denied that taking the money."
+      ],
+      "r": 1,
+      "e": "After “deny”, use an “-ing” form."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Had we left earlier, we would catch the bus yesterday.",
+        "Had we leave earlier, we would have caught the bus.",
+        "Had we left earlier, we would have caught the bus.",
+        "Had we would left earlier, we caught the bus."
+      ],
+      "r": 2,
+      "e": "This inverted third conditional means “If we had left earlier…”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The more you practise, more confident you become.",
+        "More you practise, the more confident become you.",
+        "The most you practise, the confident you become.",
+        "The more you practise, the more confident you become."
+      ],
+      "r": 3,
+      "e": "Use “the + comparative, the + comparative” to show two linked changes."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "I wish I had studied harder for the exam.",
+        "I wish I studied harder yesterday for the exam.",
+        "I wish I would have studied harder for the exam.",
+        "I wish I have studied harder for the exam."
+      ],
+      "r": 0,
+      "e": "Use “wish + past perfect” to regret a past action."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Each of the players have received a medal.",
+        "Each of the players has received a medal.",
+        "Each players has received a medal.",
+        "Each of the player have received a medal."
+      ],
+      "r": 1,
+      "e": "“Each” is singular, so use “has”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The news were surprising.",
+        "The news are surprise.",
+        "The news was surprising.",
+        "The news have been surprise."
+      ],
+      "r": 2,
+      "e": "“News” takes a singular verb in English."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "No sooner we had arrived than it started raining.",
+        "No sooner had we arrived when it started raining.",
+        "No sooner did we arrived than it started raining.",
+        "No sooner had we arrived than it started raining."
+      ],
+      "r": 3,
+      "e": "Use inversion after “no sooner” and pair it with “than”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She would rather walk than wait for the bus.",
+        "She would rather to walk than wait for the bus.",
+        "She would rather walking than to wait for the bus.",
+        "She would rather walked than wait for the bus."
+      ],
+      "r": 0,
+      "e": "Use the base verb after “would rather” and “than”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "By next June, she will works here for ten years.",
+        "By next June, she will have worked here for ten years.",
+        "By next June, she has worked here for ten years.",
+        "By next June, she will have work here for ten years."
+      ],
+      "r": 1,
+      "e": "Use “will have + past participle” for a duration completed by a future time."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The teacher, along with her students, are attending the meeting.",
+        "The teacher along with her students attend the meeting yesterday.",
+        "The teacher, along with her students, is attending the meeting.",
+        "The teacher, with her students, were attending the meeting."
+      ],
+      "r": 2,
+      "e": "The main subject is singular “teacher”; the phrase after it does not change the verb."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "He is believed that he left the country.",
+        "He is believed to left the country.",
+        "He believed to have left the country.",
+        "He is believed to have left the country."
+      ],
+      "r": 3,
+      "e": "Use “is believed + to have + past participle” for a reported earlier action."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Unless you hurry, you will miss the bus.",
+        "Unless you will hurry, you miss the bus.",
+        "Unless you hurried, you will missed the bus.",
+        "Unless you don't hurry, you will miss the bus."
+      ],
+      "r": 0,
+      "e": "“Unless” already means “if not”; use the present after it for a future possibility."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She speaks as though she knows the answer yesterday.",
+        "She speaks as though she knew the answer.",
+        "She speaks as though she would knew the answer.",
+        "She speaks as though she know the answer."
+      ],
+      "r": 1,
+      "e": "Use a past form after “as though” to describe an unreal situation."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Having finish the assignment, he went outside.",
+        "Having finished the assignment, he has go outside.",
+        "Having finished the assignment, he went outside.",
+        "Having finishing the assignment, he went outside."
+      ],
+      "r": 2,
+      "e": "Use “having + past participle” for an action completed before another past action."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The book who you lent me is fascinating.",
+        "The book which you lent me it is fascinating.",
+        "The book whom you lent me is fascinating.",
+        "The book that you lent me is fascinating."
+      ],
+      "r": 3,
+      "e": "Use “that” or “which” for a thing, not “who” or “whom”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "I would have helped if you had asked me.",
+        "I would help if you had asked me yesterday.",
+        "I would have helped if you would ask me.",
+        "I had helped if you have asked me."
+      ],
+      "r": 0,
+      "e": "The past conditional uses “would have + past participle” with “if + had + past participle”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Little she knew that the road was closed.",
+        "Little did she know that the road was closed.",
+        "Little did she knew that the road was closed.",
+        "Little has she know that the road was closed."
+      ],
+      "r": 1,
+      "e": "After “little” at the beginning, use inversion with “did + base verb”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Neither the coach nor the players was ready.",
+        "Neither the coach or the players were ready.",
+        "Neither the coach nor the players were ready.",
+        "Neither the coach nor the players is ready yesterday."
+      ],
+      "r": 2,
+      "e": "With “neither…nor”, the verb agrees with the nearer subject, “players”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "It is essential that every applicant is present.",
+        "It is essential every applicant to be present.",
+        "It is essential that every applicant was present.",
+        "It is essential that every applicant be present."
+      ],
+      "r": 3,
+      "e": "After “It is essential that”, formal English can use the base form “be”."
+    }
+  ]
+}
