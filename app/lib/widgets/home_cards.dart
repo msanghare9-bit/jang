@@ -123,7 +123,8 @@ class MatchCard extends StatelessWidget {
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text('Match ⚡', style: titleStyle(19, color: Colors.white, weight: 800)),
-                  const Text('Joue contre tes amis avec un code.', style: TextStyle(color: Colors.white)),
+                  const Text('Joue et teste tes connaissances avec tes amis',
+                      style: TextStyle(color: Colors.white)),
                 ]),
               ),
               TextButton(
@@ -138,3 +139,4 @@ class MatchCard extends StatelessWidget {
     );
   }
 }
+

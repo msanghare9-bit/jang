@@ -9,6 +9,7 @@ import '../../services/match_service.dart';
 import 'xarit_screen.dart';
 import 'tournament_screen.dart';
 import '../../services/quiz_bank.dart';
+import '../../services/engagement_service.dart';
 import '../../theme.dart';
 import '../../widgets/characters.dart';
 import '../../widgets/cheer.dart';
@@ -21,8 +22,40 @@ const _shapes = ['A', 'B', 'C', 'D'];
 const _tileColors = [Colors.white, Colors.white, Colors.white, Colors.white];
 
 /// L'accueil des matchs : créer, rejoindre, ou jouer seul.
-class MatchHomeScreen extends StatelessWidget {
+class MatchHomeScreen extends StatefulWidget {
   const MatchHomeScreen({super.key});
+
+  @override
+  State<MatchHomeScreen> createState() => _MatchHomeScreenState();
+}
+
+class _MatchHomeScreenState extends State<MatchHomeScreen> {
+  late final Future<List<BankQuestion>> _dailyChallenge = QuizBank.instance.dailyChallenge(DateTime.now());
+  late final Future<BankQuestion?> _dailyQuestion = QuizBank.instance.dailyQuestion(DateTime.now());
+
+  Future<void> _playDaily(List<BankQuestion> questions, {String title = 'Défi du jour'}) async {
+    final profile = AuthService.instance.profile.value;
+    if (profile == null) return;
+    final slug = title == 'Question du jour' ? 'question_du_jour' : 'defi_du_jour';
+    final day = DateTime.now().toIso8601String().substring(0, 10);
+    final lesson = Lesson(
+      id: '${slug}_$day',
+      examId: profile.examId,
+      subjectId: '',
+      chapterId: '',
+      title: title,
+      quiz: [for (final q in questions) q.toQuiz()],
+    );
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => QuizScreen(
+          lesson: lesson,
+          subject: Subject(id: '', examId: profile.examId, name: title, color: '#00853F'),
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +72,8 @@ class MatchHomeScreen extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Joue contre tes amis !', style: titleStyle(22, color: Colors.white, weight: 800)),
+                  Text('Joue et teste tes connaissances avec tes amis',
+                      style: titleStyle(20, color: Colors.white, weight: 800)),
                   const SizedBox(height: 4),
                   const Text('Les mêmes questions, en même temps. Le plus rapide gagne plus de points.',
                       style: TextStyle(color: Colors.white)),
@@ -61,6 +95,59 @@ class MatchHomeScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (_) => const MatchHistoryScreen()),
               ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          FutureBuilder<List<BankQuestion>>(
+            future: _dailyChallenge,
+            builder: (context, snap) {
+              final questions = snap.data ?? const <BankQuestion>[];
+              final subtitle = snap.connectionState == ConnectionState.waiting
+                  ? 'Chargement du défi…'
+                  : questions.isEmpty
+                      ? 'Défi indisponible pour le moment.'
+                      : '5 questions · gagne des XP en le terminant';
+              return Card(
+                child: ListTile(
+                  leading: const CircleAvatar(child: Text('☀️')),
+                  title: const Text('Défi du jour', style: TextStyle(fontWeight: FontWeight.w800)),
+                  subtitle: Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: questions.isEmpty ? null : () => _playDaily(questions),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 8),
+          FutureBuilder<BankQuestion?>(
+            future: _dailyQuestion,
+            builder: (context, snap) {
+              final question = snap.data;
+              final subtitle = snap.connectionState == ConnectionState.waiting
+                  ? 'Chargement…'
+                  : question == null
+                      ? 'Question indisponible pour le moment.'
+                      : question.question;
+              return Card(
+                child: ListTile(
+                  leading: const CircleAvatar(child: Text('❓')),
+                  title: const Text('Question du jour', style: TextStyle(fontWeight: FontWeight.w800)),
+                  subtitle: Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: question == null ? null : () => _playDaily([question], title: 'Question du jour'),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 8),
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.local_fire_department, color: JangColors.snGreen),
+              title: Text(
+                'Ta série : ${EngagementService.instance.streak} jour${EngagementService.instance.streak == 1 ? '' : 's'}',
+                style: const TextStyle(fontWeight: FontWeight.w800),
+              ),
+              subtitle: const Text('Reviens apprendre chaque jour pour la faire grandir.'),
             ),
           ),
           Card(
@@ -1139,6 +1226,38 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         for (final (i, p) in _players.indexed) _rankRow(i, p),
       ],
       const SizedBox(height: 16),
+      if (_plays && m.tournamentId.isEmpty) ...[
+        ChunkyButton(
+          label: 'Proposer une revanche',
+          icon: Icons.replay_rounded,
+          color: JangColors.success,
+          onPressed: () async {
+            final profile = AuthService.instance.profile.value;
+            if (profile == null) return;
+            try {
+              final rematch = await _svc.create(
+                host: profile,
+                questions: m.questions,
+                domain: m.domain,
+                level: m.level,
+                title: m.title.isEmpty ? 'Revanche' : 'Revanche · ${m.title}',
+              );
+              if (!mounted) return;
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => MatchRoomScreen(matchId: rematch.id)),
+              );
+            } catch (_) {
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Impossible de créer la revanche. Réessaie avec internet.')),
+                );
+              }
+            }
+          },
+        ),
+        const SizedBox(height: 8),
+      ],
       ChunkyButton(label: 'Terminer', icon: Icons.check, onPressed: () => Navigator.pop(context)),
     ]);
   }
@@ -1212,3 +1331,4 @@ class _ObserversPanel extends StatelessWidget {
         },
       );
 }
+
