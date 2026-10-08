@@ -3,23 +3,23 @@
     {
       "q": "She ___ to the library yesterday.",
       "o": [
-        "goes",
         "went",
+        "goes",
         "has gone",
         "will go"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Yesterday indique le passé : on dit went."
     },
     {
       "q": "We ___ our homework already.",
       "o": [
         "finish",
-        "finished",
         "have finished",
+        "finished",
         "are finishing"
       ],
-      "r": 2,
+      "r": 1,
       "e": "Already peut accompagner have + participe passé."
     },
     {
@@ -37,11 +37,11 @@
       "q": "This road is ___ than the old one.",
       "o": [
         "wide",
-        "wider",
         "widest",
-        "more wide"
+        "more wide",
+        "wider"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Avec un adjectif court, on ajoute -er pour comparer."
     },
     {
@@ -70,110 +70,110 @@
       "q": "How ___ students are in your class?",
       "o": [
         "much",
-        "many",
         "little",
+        "many",
         "any"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Many accompagne un nom que l’on peut compter : students."
     },
     {
       "q": "He has lived in Dakar ___ 2022.",
       "o": [
         "for",
-        "since",
         "during",
-        "by"
+        "by",
+        "since"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Since indique le début d’une durée."
     },
     {
       "q": "They have waited ___ two hours.",
       "o": [
-        "since",
         "for",
+        "since",
         "at",
         "from"
       ],
-      "r": 1,
+      "r": 0,
       "e": "For indique une durée."
     },
     {
       "q": "My sister is interested ___ science.",
       "o": [
         "on",
-        "at",
         "in",
+        "at",
         "to"
       ],
-      "r": 2,
+      "r": 1,
       "e": "On dit be interested in something."
     },
     {
       "q": "The children ___ football when the bell rang.",
       "o": [
         "played",
-        "were playing",
         "have played",
+        "were playing",
         "will play"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Were playing décrit une action en cours dans le passé."
     },
     {
       "q": "I ___ call you when I arrive.",
       "o": [
-        "will",
         "did",
         "have",
-        "was"
+        "was",
+        "will"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Will exprime ici une action future."
     },
     {
       "q": "This is the ___ book in the series.",
       "o": [
+        "most interesting",
         "interesting",
         "more interesting",
-        "most interesting",
         "interestinger"
       ],
-      "r": 2,
+      "r": 0,
       "e": "Most interesting est le superlatif de cet adjectif long."
     },
     {
       "q": "You ___ smoke inside the hospital.",
       "o": [
-        "mustn't",
         "don't have",
+        "mustn't",
         "should",
         "may"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Mustn’t exprime une interdiction."
     },
     {
       "q": "We ___ bring food; the school will provide lunch.",
       "o": [
-        "don't have to",
         "mustn't",
         "shouldn't to",
+        "don't have to",
         "couldn't to"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Don’t have to veut dire que ce n’est pas nécessaire."
     },
     {
       "q": "There are ___ oranges in the basket, enough for everyone.",
       "o": [
         "a little",
-        "a few",
         "much",
-        "any"
+        "any",
+        "a few"
       ],
-      "r": 1,
+      "r": 3,
       "e": "A few accompagne un nom comptable au pluriel."
     },
     {
@@ -202,66 +202,66 @@
       "q": "While I ___ dinner, my brother washed the dishes.",
       "o": [
         "cook",
-        "was cooking",
         "have cooked",
+        "was cooking",
         "will cook"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Was cooking décrit l’action en cours pendant l’autre action passée."
     },
     {
       "q": "You look tired. You ___ get some rest.",
       "o": [
-        "should",
         "mustn't",
         "wouldn't",
-        "can't"
+        "can't",
+        "should"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Should donne un conseil."
     },
     {
       "q": "The letters ___ every Friday.",
       "o": [
-        "deliver",
         "are delivered",
+        "deliver",
         "delivered",
         "are delivering"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Au passif, on utilise be + participe passé."
     },
     {
       "q": "I have never ___ a camel.",
       "o": [
         "ride",
-        "rode",
         "ridden",
+        "rode",
         "riding"
       ],
-      "r": 2,
+      "r": 1,
       "e": "Après have, on utilise le participe passé ridden."
     },
     {
       "q": "She speaks English ___ than she did last year.",
       "o": [
         "well",
-        "better",
         "best",
+        "better",
         "good"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Better est le comparatif de well."
     },
     {
       "q": "We stayed inside ___ the weather was bad.",
       "o": [
-        "because",
         "although",
         "unless",
-        "while"
+        "while",
+        "because"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Because introduit la cause."
     }
   ]
