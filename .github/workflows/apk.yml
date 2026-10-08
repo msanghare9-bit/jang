@@ -42,6 +42,12 @@ jobs:
           flutter-version: '3.32.8'
           cache: true
 
+      - name: Vérifier les fonctions Firebase
+        working-directory: functions
+        run: |
+          npm install
+          npm run lint
+
       - name: Préparer le projet
         working-directory: app
         run: |
