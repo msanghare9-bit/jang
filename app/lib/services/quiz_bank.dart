@@ -156,21 +156,21 @@ class QuizBank {
     }
   }
 
-  /// Tire [count] questions au hasard (domaine « melange » : tous les domaines du niveau).
-  Future<List<BankQuestion>> draw(String domain, String level, int count) async {
-    final pools = domain == mixed
-        ? await Future.wait([for (final d in domains) load(d, level)])
-        : [await load(domain, level)];
-    final all = [for (final p in pools) ...p];
-    all.shuffle(Random());
-    if (domain != mixed) return all.take(count).toList();
-    // Mélange : on alterne les domaines pour qu'il y ait de tout.
+  /// Tire [count] questions au hasard dans le domaine demandé ou dans tous les domaines.
+  Future<List<BankQuestion>> draw(String domain, String level, int count) =>
+      drawDomains(domain == mixed ? domains : [domain], level, count);
+
+  /// Tire des questions en alternant les domaines choisis, pour garder une partie équilibrée.
+  Future<List<BankQuestion>> drawDomains(List<String> selectedDomains, String level, int count) async {
+    final selected = domains.where(selectedDomains.toSet().contains).toList();
+    if (selected.isEmpty || count <= 0) return const [];
+    final pools = await Future.wait([for (final d in selected) load(d, level)]);
     final byDomain = [for (final p in pools) (List.of(p)..shuffle(Random()))];
     final out = <BankQuestion>[];
     var i = 0;
-    while (out.length < count && byDomain.any((l) => l.isNotEmpty)) {
-      final l = byDomain[i % byDomain.length];
-      if (l.isNotEmpty) out.add(l.removeLast());
+    while (out.length < count && byDomain.any((items) => items.isNotEmpty)) {
+      final pool = byDomain[i % byDomain.length];
+      if (pool.isNotEmpty) out.add(pool.removeLast());
       i++;
     }
     return out..shuffle(Random());
