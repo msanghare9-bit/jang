@@ -866,66 +866,66 @@
       "q": "The bottle is empty; now it is ___.",
       "o": [
         "broken",
-        "full",
         "cold",
+        "full",
         "clean"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Full est le contraire de empty : plein est le contraire de vide."
     },
     {
       "q": "We arrived early, but our friends arrived ___.",
       "o": [
-        "late",
         "safely",
         "together",
-        "quietly"
+        "quietly",
+        "late"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Late est le contraire de early : en retard est le contraire d’en avance."
     },
     {
       "q": "The shop will increase its opening hours, not ___ them.",
       "o": [
-        "change",
         "decrease",
+        "change",
         "announce",
         "measure"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Decrease est le contraire de increase : diminuer est le contraire d’augmenter."
     },
     {
       "q": "I remembered the address, but my brother ___ it.",
       "o": [
-        "forgot",
         "copied",
+        "forgot",
         "found",
         "wrote"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Forgot est le contraire de remembered : oublier est le contraire de se souvenir."
     },
     {
       "q": "A generous person shares; a ___ person keeps everything.",
       "o": [
         "careful",
-        "selfish",
         "polite",
+        "selfish",
         "patient"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Selfish est le contraire de generous dans ce contexte."
     },
     {
       "q": "The teacher will include this chapter, not ___ it.",
       "o": [
         "explain",
-        "exclude",
         "repeat",
-        "study"
+        "study",
+        "exclude"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Exclude est le contraire de include : exclure est le contraire d’inclure."
     },
     {
@@ -942,34 +942,34 @@
     {
       "q": "The shallow end is safe for children; the other end is ___.",
       "o": [
-        "deep",
         "wide",
+        "deep",
         "warm",
         "clear"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Deep est le contraire de shallow : profond est le contraire de peu profond."
     },
     {
       "q": "This stone feels rough, but the table feels ___.",
       "o": [
         "hard",
-        "smooth",
         "heavy",
+        "smooth",
         "round"
       ],
-      "r": 1,
+      "r": 2,
       "e": "Smooth est le contraire de rough : lisse est le contraire de rugueux."
     },
     {
       "q": "The museum displays local art, not ___ art.",
       "o": [
         "modern",
-        "foreign",
         "ancient",
-        "popular"
+        "popular",
+        "foreign"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Foreign est le contraire de local dans ce contexte."
     },
     {
@@ -986,34 +986,34 @@
     {
       "q": "At the end of the trip, the bus will depart; at the start, it will ___.",
       "o": [
-        "arrive",
         "stop",
+        "arrive",
         "wait",
         "turn"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Arrive est le contraire de depart : arriver est le contraire de partir."
     },
     {
       "q": "The new bridge is modern, while the old fort is ___.",
       "o": [
-        "ancient",
         "strong",
         "nearby",
+        "ancient",
         "famous"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Ancient est le contraire de modern : ancien est le contraire de moderne."
     },
     {
       "q": "The first question is simple, but the last one is ___.",
       "o": [
         "easy",
-        "complicated",
         "short",
-        "clear"
+        "clear",
+        "complicated"
       ],
-      "r": 1,
+      "r": 3,
       "e": "Complicated est le contraire de simple dans ce contexte."
     },
     {
@@ -1030,34 +1030,34 @@
     {
       "q": "The school permit is temporary, but the house permit is ___.",
       "o": [
-        "permanent",
         "local",
+        "permanent",
         "private",
         "recent"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Permanent est le contraire de temporary."
     },
     {
       "q": "The meeting is public, but the staff room is ___.",
       "o": [
-        "private",
         "large",
         "open",
+        "private",
         "empty"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Private est le contraire de public."
     },
     {
       "q": "The water is fresh today, but it may become ___ if it is left out.",
       "o": [
-        "stale",
         "cold",
         "clear",
-        "deep"
+        "deep",
+        "stale"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Stale est le contraire de fresh pour la nourriture ou ce qui n’est plus frais."
     },
     {
@@ -1074,34 +1074,34 @@
     {
       "q": "This path is dangerous at night, but the main road is ___.",
       "o": [
-        "safe",
         "busy",
+        "safe",
         "wide",
         "dark"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Safe est le contraire de dangerous."
     },
     {
       "q": "The test was a success, but the first attempt was a ___.",
       "o": [
-        "failure",
         "surprise",
         "lesson",
+        "failure",
         "mistake"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Failure est le contraire de success : échec est le contraire de réussite."
     },
     {
       "q": "The instructions say to accept the offer, not ___ it.",
       "o": [
-        "reject",
         "read",
         "change",
-        "share"
+        "share",
+        "reject"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Reject est le contraire de accept : refuser est le contraire d’accepter."
     }
   ]
