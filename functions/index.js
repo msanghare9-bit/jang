@@ -143,17 +143,28 @@ exports.revealMatchQuestion = onCall({ region }, async (request) => {
   const matchRef = db.collection('matchs').doc(matchId);
   const keyRef = db.collection('matchAnswers').doc(matchId);
   await db.runTransaction(async (tx) => {
-    const [matchSnap, keySnap] = await Promise.all([tx.get(matchRef), tx.get(keyRef)]);
+    const [matchSnap, keySnap, playersSnap] = await Promise.all([
+      tx.get(matchRef), tx.get(keyRef), tx.get(matchRef.collection('joueurs')),
+    ]);
     if (!matchSnap.exists || !keySnap.exists) throw new HttpsError('not-found', 'Match introuvable.');
     const match = matchSnap.data();
     if (match.hostUid !== uid) throw new HttpsError('permission-denied', 'Seul l’hôte peut montrer la réponse.');
     if (match.state !== 'question' || !Number.isInteger(match.index)) throw new HttpsError('failed-precondition', 'Aucune question à corriger.');
     const answer = keySnap.data().answers[match.index];
     if (!answer) throw new HttpsError('not-found', 'Corrigé introuvable.');
+    const playerAnswers = await Promise.all(playersSnap.docs.map((player) =>
+      tx.get(player.ref.collection('reponses').doc(String(match.index)))));
     tx.update(matchRef, {
       state: 'correction',
       ['revealedAnswers.' + match.index]: { r: answer.r, e: answer.e || '' },
     });
+    for (let i = 0; i < playersSnap.docs.length; i++) {
+      if (playerAnswers[i].exists && playerAnswers[i].data().correct === true) {
+        tx.update(playersSnap.docs[i].ref, {
+          correctIndices: FieldValue.arrayUnion(match.index),
+        });
+      }
+    }
   });
   return { ok: true };
 });
