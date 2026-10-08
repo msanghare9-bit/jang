@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_functions/cloud_functions.dart';
 
@@ -105,7 +103,6 @@ class MatchPlayer {
 
   factory MatchPlayer.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
-    final a = m['answers'] is Map ? m['answers'] as Map : const {};
     return MatchPlayer(
       d.id,
       '${m['name'] ?? ''}',
@@ -153,8 +150,6 @@ class MatchService {
     return Map<String, dynamic>.from(result.data as Map);
   }
 
-  static const maxPlayers = 40;
-
   /// Crée un match et renvoie son identifiant. Le code a 6 chiffres.
   Future<LiveMatch> create({
     required UserProfile host,
@@ -201,10 +196,6 @@ class MatchService {
       }
     }
     return (m, '');
-  }
-
-  Future<void> _join(String id, UserProfile p) async {
-    await _call('joinMatch', {'matchId': id, 'name': p.publicName});
   }
 
   Future<void> leave(String id, String uid) => _col.doc(id).collection('joueurs').doc(uid).delete();
