@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the best English translation of: “Il ne faut pas vendre la peau de l'ours avant de l'avoir tué.”",
+      "o": [
+        "Don't count your chickens before they hatch.",
+        "Don't put all your eggs in one basket.",
+        "The early bird catches the worm.",
+        "Every cloud has a silver lining."
+      ],
+      "r": 0,
+      "e": "“Don't count your chickens before they hatch.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a pris son courage à deux mains.”",
+      "o": [
+        "She changed her mind at once.",
+        "She plucked up the courage.",
+        "She kept her fingers crossed.",
+        "She let the cat out of the bag."
+      ],
+      "r": 1,
+      "e": "“She plucked up the courage.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous devons remettre les choses en perspective.”",
+      "o": [
+        "We need to put things off indefinitely.",
+        "We need to get our act together.",
+        "We need to put things into perspective.",
+        "We need to take things for granted."
+      ],
+      "r": 2,
+      "e": "“We need to put things into perspective.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a fini par reconnaître son erreur.”",
+      "o": [
+        "He denied having made a choice.",
+        "He suddenly changed the subject.",
+        "He barely noticed the result.",
+        "He eventually admitted his mistake."
+      ],
+      "r": 3,
+      "e": "“He eventually admitted his mistake.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Cette décision a déclenché un débat animé.”",
+      "o": [
+        "This decision sparked a lively debate.",
+        "This decision put an end to debate.",
+        "This decision came under fire silently.",
+        "This decision fell through the cracks."
+      ],
+      "r": 0,
+      "e": "“This decision sparked a lively debate.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a mis le doigt sur le vrai problème.”",
+      "o": [
+        "She turned a blind eye to the problem.",
+        "She pinpointed the real problem.",
+        "She swept the problem under the rug.",
+        "She made a mountain out of a molehill."
+      ],
+      "r": 1,
+      "e": "“She pinpointed the real problem.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le projet a été reporté à la dernière minute.”",
+      "o": [
+        "The project was carried out ahead of schedule.",
+        "The project was called off for good.",
+        "The project was postponed at the last minute.",
+        "The project was brought forward by a month."
+      ],
+      "r": 2,
+      "e": "“The project was postponed at the last minute.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Ils ont trouvé un terrain d'entente.”",
+      "o": [
+        "They went their separate ways.",
+        "They took the matter for granted.",
+        "They left no stone unturned.",
+        "They found common ground."
+      ],
+      "r": 3,
+      "e": "“They found common ground.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il faut tenir compte des conséquences.”",
+      "o": [
+        "We must take the consequences into account.",
+        "We should take the matter for granted.",
+        "We can make up for the consequences.",
+        "We ought to get away with it."
+      ],
+      "r": 0,
+      "e": "“We must take the consequences into account.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Son explication ne tient pas la route.”",
+      "o": [
+        "Her explanation is right on the money.",
+        "Her explanation doesn't hold water.",
+        "Her explanation went down well.",
+        "Her explanation hit the nail on the head."
+      ],
+      "r": 1,
+      "e": "“Her explanation doesn't hold water.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a profité de l'occasion pour poser une question.”",
+      "o": [
+        "He missed the opportunity to answer.",
+        "He took the question with a grain of salt.",
+        "He seized the opportunity to ask a question.",
+        "He made the most of the delay."
+      ],
+      "r": 2,
+      "e": "“He seized the opportunity to ask a question.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Ce changement a eu un effet inattendu.”",
+      "o": [
+        "This change was taken into account.",
+        "This change was bound to happen.",
+        "This change made no difference at all.",
+        "This change had an unexpected effect."
+      ],
+      "r": 3,
+      "e": "“This change had an unexpected effect.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a dû faire face à plusieurs difficultés.”",
+      "o": [
+        "She had to cope with several difficulties.",
+        "She managed to get over the deadline.",
+        "She turned down several opportunities.",
+        "She made up several difficulties."
+      ],
+      "r": 0,
+      "e": "“She had to cope with several difficulties.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “L'entreprise cherche à réduire ses dépenses.”",
+      "o": [
+        "The company is expected to raise its prices.",
+        "The company is seeking to cut its expenses.",
+        "The company has run out of products.",
+        "The company is taking on new staff."
+      ],
+      "r": 1,
+      "e": "“The company is seeking to cut its expenses.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a beau s'entraîner, il reste nerveux avant les examens.”",
+      "o": [
+        "He is nervous because he never practises for exams.",
+        "He stopped practising before the final exam.",
+        "Although he practises, he still gets nervous before exams.",
+        "He practises so that he can avoid studying."
+      ],
+      "r": 2,
+      "e": "“Although he practises, he still gets nervous before exams.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “À moins d'un changement, le match aura lieu samedi.”",
+      "o": [
+        "Even if nothing changes, the match took place yesterday.",
+        "Provided it changes, the match is cancelled.",
+        "As soon as it changed, the game will begin.",
+        "Unless something changes, the match will take place on Saturday."
+      ],
+      "r": 3,
+      "e": "“Unless something changes, the match will take place on Saturday.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous sommes tombés sur une vieille photographie.”",
+      "o": [
+        "We came across an old photograph.",
+        "We came up with an old photograph.",
+        "We looked down on the old photograph.",
+        "We got away with the old photograph."
+      ],
+      "r": 0,
+      "e": "“We came across an old photograph.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le rapport met en évidence les progrès réalisés.”",
+      "o": [
+        "The report puts off the progress made.",
+        "The report highlights the progress made.",
+        "The report rules out any progress.",
+        "The report takes after the progress."
+      ],
+      "r": 1,
+      "e": "“The report highlights the progress made.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a refusé de tirer des conclusions hâtives.”",
+      "o": [
+        "She refused to make ends meet.",
+        "She decided to take a rain check.",
+        "She refused to jump to conclusions.",
+        "She agreed to face the music."
+      ],
+      "r": 2,
+      "e": "“She refused to jump to conclusions.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le candidat a répondu avec beaucoup d'assurance.”",
+      "o": [
+        "The candidate answered in a hurry.",
+        "The candidate spoke under pressure.",
+        "The candidate answered without a clue.",
+        "The candidate answered with great confidence."
+      ],
+      "r": 3,
+      "e": "“The candidate answered with great confidence.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il est peu probable que le prix baisse bientôt.”",
+      "o": [
+        "The price is unlikely to fall soon.",
+        "The price is bound to rise tomorrow.",
+        "The price has been falling for years.",
+        "The price cannot be predicted at all."
+      ],
+      "r": 0,
+      "e": "“The price is unlikely to fall soon.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a tenu parole malgré les difficultés.”",
+      "o": [
+        "She broke her promise because of the difficulties.",
+        "She kept her word despite the difficulties.",
+        "She took her time despite the difficulties.",
+        "She made her point without difficulty."
+      ],
+      "r": 1,
+      "e": "“She kept her word despite the difficulties.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le problème ne se limite pas au manque d'argent.”",
+      "o": [
+        "The problem is no longer worth the money.",
+        "The problem is being solved without money.",
+        "The problem is not limited to a lack of money.",
+        "The problem is caused by too much money."
+      ],
+      "r": 2,
+      "e": "“The problem is not limited to a lack of money.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Après mûre réflexion, ils ont changé d'avis.”",
+      "o": [
+        "Without any warning, they made up their minds.",
+        "After a brief discussion, they kept their word.",
+        "With hindsight, they missed the point.",
+        "After careful consideration, they changed their minds."
+      ],
+      "r": 3,
+      "e": "“After careful consideration, they changed their minds.” is the best translation in this context."
+    }
+  ]
+}
