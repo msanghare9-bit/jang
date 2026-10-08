@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the antonym of “accept”.",
+      "o": [
+        "refuse",
+        "shrink",
+        "loss",
+        "defeat"
+      ],
+      "r": 0,
+      "e": "« refuse » exprime le contraire de « accept »."
+    },
+    {
+      "q": "Choose the antonym of “arrive”.",
+      "o": [
+        "exclude",
+        "depart",
+        "harm",
+        "hidden"
+      ],
+      "r": 1,
+      "e": "« depart » exprime le contraire de « arrive »."
+    },
+    {
+      "q": "Choose the antonym of “borrow”.",
+      "o": [
+        "decrease",
+        "punish",
+        "lend",
+        "rigid"
+      ],
+      "r": 2,
+      "e": "« lend » exprime le contraire de « borrow »."
+    },
+    {
+      "q": "Choose the antonym of “build”.",
+      "o": [
+        "minor",
+        "smooth",
+        "pessimistic",
+        "destroy"
+      ],
+      "r": 3,
+      "e": "« destroy » exprime le contraire de « build »."
+    },
+    {
+      "q": "Choose the antonym of “create”.",
+      "o": [
+        "remove",
+        "ancient",
+        "abundant",
+        "selfish"
+      ],
+      "r": 0,
+      "e": "« remove » exprime le contraire de « create »."
+    },
+    {
+      "q": "Choose the antonym of “expand”.",
+      "o": [
+        "public",
+        "shrink",
+        "permanent",
+        "rude"
+      ],
+      "r": 1,
+      "e": "« shrink » exprime le contraire de « expand »."
+    },
+    {
+      "q": "Choose the antonym of “include”.",
+      "o": [
+        "loss",
+        "defeat",
+        "exclude",
+        "employee"
+      ],
+      "r": 2,
+      "e": "« exclude » exprime le contraire de « include »."
+    },
+    {
+      "q": "Choose the antonym of “increase”.",
+      "o": [
+        "harm",
+        "hidden",
+        "refuse",
+        "decrease"
+      ],
+      "r": 3,
+      "e": "« decrease » exprime le contraire de « increase »."
+    },
+    {
+      "q": "Choose the antonym of “major”.",
+      "o": [
+        "minor",
+        "punish",
+        "rigid",
+        "depart"
+      ],
+      "r": 0,
+      "e": "« minor » exprime le contraire de « major »."
+    },
+    {
+      "q": "Choose the antonym of “modern”.",
+      "o": [
+        "smooth",
+        "ancient",
+        "pessimistic",
+        "lend"
+      ],
+      "r": 1,
+      "e": "« ancient » exprime le contraire de « modern »."
+    },
+    {
+      "q": "Choose the antonym of “private”.",
+      "o": [
+        "abundant",
+        "selfish",
+        "public",
+        "destroy"
+      ],
+      "r": 2,
+      "e": "« public » exprime le contraire de « private »."
+    },
+    {
+      "q": "Choose the antonym of “profit”.",
+      "o": [
+        "permanent",
+        "rude",
+        "remove",
+        "loss"
+      ],
+      "r": 3,
+      "e": "« loss » exprime le contraire de « profit »."
+    },
+    {
+      "q": "Choose the antonym of “protect”.",
+      "o": [
+        "harm",
+        "defeat",
+        "employee",
+        "shrink"
+      ],
+      "r": 0,
+      "e": "« harm » exprime le contraire de « protect »."
+    },
+    {
+      "q": "Choose the antonym of “reward”.",
+      "o": [
+        "hidden",
+        "punish",
+        "refuse",
+        "exclude"
+      ],
+      "r": 1,
+      "e": "« punish » exprime le contraire de « reward »."
+    },
+    {
+      "q": "Choose the antonym of “rough”.",
+      "o": [
+        "rigid",
+        "depart",
+        "smooth",
+        "decrease"
+      ],
+      "r": 2,
+      "e": "« smooth » exprime le contraire de « rough »."
+    },
+    {
+      "q": "Choose the antonym of “scarce”.",
+      "o": [
+        "pessimistic",
+        "lend",
+        "minor",
+        "abundant"
+      ],
+      "r": 3,
+      "e": "« abundant » exprime le contraire de « scarce »."
+    },
+    {
+      "q": "Choose the antonym of “temporary”.",
+      "o": [
+        "permanent",
+        "selfish",
+        "destroy",
+        "ancient"
+      ],
+      "r": 0,
+      "e": "« permanent » exprime le contraire de « temporary »."
+    },
+    {
+      "q": "Choose the antonym of “victory”.",
+      "o": [
+        "rude",
+        "defeat",
+        "remove",
+        "public"
+      ],
+      "r": 1,
+      "e": "« defeat » exprime le contraire de « victory »."
+    },
+    {
+      "q": "Choose the antonym of “visible”.",
+      "o": [
+        "employee",
+        "shrink",
+        "hidden",
+        "loss"
+      ],
+      "r": 2,
+      "e": "« hidden » exprime le contraire de « visible »."
+    },
+    {
+      "q": "Choose the antonym of “flexible”.",
+      "o": [
+        "refuse",
+        "exclude",
+        "harm",
+        "rigid"
+      ],
+      "r": 3,
+      "e": "« rigid » exprime le contraire de « flexible »."
+    },
+    {
+      "q": "Choose the antonym of “optimistic”.",
+      "o": [
+        "pessimistic",
+        "depart",
+        "decrease",
+        "punish"
+      ],
+      "r": 0,
+      "e": "« pessimistic » exprime le contraire de « optimistic »."
+    },
+    {
+      "q": "Choose the antonym of “generous”.",
+      "o": [
+        "lend",
+        "selfish",
+        "minor",
+        "smooth"
+      ],
+      "r": 1,
+      "e": "« selfish » exprime le contraire de « generous »."
+    },
+    {
+      "q": "Choose the antonym of “polite”.",
+      "o": [
+        "destroy",
+        "ancient",
+        "rude",
+        "abundant"
+      ],
+      "r": 2,
+      "e": "« rude » exprime le contraire de « polite »."
+    },
+    {
+      "q": "Choose the antonym of “employer”.",
+      "o": [
+        "remove",
+        "public",
+        "permanent",
+        "employee"
+      ],
+      "r": 3,
+      "e": "« employee » exprime le contraire de « employer »."
+    }
+  ]
+}
