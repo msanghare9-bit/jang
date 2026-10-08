@@ -1,12 +1,25 @@
 const { onCall, HttpsError } = require('firebase-functions/v2/https');
 const { initializeApp } = require('firebase-admin/app');
 const { getFirestore, FieldValue, Timestamp } = require('firebase-admin/firestore');
+const { defineSecret } = require('firebase-functions/params');
 const { randomInt } = require('node:crypto');
 
 initializeApp();
 const db = getFirestore();
 const region = 'us-central1';
 const maxPlayers = 40;
+const matchAnswerBank = defineSecret('JANG_MATCH_ANSWER_BANK');
+
+function privateAnswer(question) {
+  const id = cleanText(question && question.id, 40);
+  let bank;
+  try { bank = JSON.parse(matchAnswerBank.value()); } catch (_) { bank = {}; }
+  const answer = Number(bank[id]);
+  if (!id || !Number.isInteger(answer) || answer < 0 || answer > 3) {
+    throw new HttpsError('failed-precondition', 'Le corrigé de cette question n’est pas disponible.');
+  }
+  return answer;
+}
 
 function requireAuth(request) {
   if (!request.auth) throw new HttpsError('unauthenticated', 'Connecte-toi pour continuer.');
@@ -17,7 +30,7 @@ function cleanText(value, max = 500) {
   return typeof value === 'string' ? value.trim().slice(0, max) : '';
 }
 
-exports.createMatch = onCall({ region }, async (request) => {
+exports.createMatch = onCall({ region, secrets: [matchAnswerBank] }, async (request) => {
   const uid = requireAuth(request);
   const data = request.data || {};
   const incoming = data.questions;
@@ -29,18 +42,18 @@ exports.createMatch = onCall({ region }, async (request) => {
   for (const item of incoming) {
     const q = cleanText(item && item.q, 1000);
     const options = Array.isArray(item && item.o) ? item.o.slice(0, 4).map((v) => cleanText(v, 500)) : [];
-    const answer = Number(item && item.r);
-    if (!q || options.length !== 4 || options.some((v) => !v) || !Number.isInteger(answer) || answer < 0 || answer > 3) {
+    if (!q || options.length !== 4 || options.some((v) => !v) || !cleanText(item && item.id, 40)) {
       throw new HttpsError('invalid-argument', 'Une question du match est invalide.');
     }
     publicQuestions.push({
+      id: cleanText(item.id, 40),
       q,
       o: options,
       ...(cleanText(item.t, 3000) ? { t: cleanText(item.t, 3000) } : {}),
       ...(cleanText(item.d, 100) ? { d: cleanText(item.d, 100) } : {}),
       ...(cleanText(item.n, 100) ? { n: cleanText(item.n, 100) } : {}),
     });
-    answers.push({ r: answer, e: cleanText(item.e, 1500) });
+    answers.push({ r: privateAnswer(item), e: '' });
   }
 
   const ref = db.collection('matchs').doc();
@@ -214,7 +227,7 @@ exports.finishMatch = onCall({ region }, async (request) => {
   return { ok: true };
 });
 
-exports.createTournament = onCall({ region }, async (request) => {
+exports.createTournament = onCall({ region, secrets: [matchAnswerBank] }, async (request) => {
   const uid = requireAuth(request);
   const data = request.data || {};
   const incoming = data.questions;
@@ -226,17 +239,17 @@ exports.createTournament = onCall({ region }, async (request) => {
   for (const item of incoming) {
     const q = cleanText(item && item.q, 1000);
     const options = Array.isArray(item && item.o) ? item.o.slice(0, 4).map((v) => cleanText(v, 500)) : [];
-    const answer = Number(item && item.r);
-    if (!q || options.length !== 4 || options.some((v) => !v) || !Number.isInteger(answer) || answer < 0 || answer > 3) {
+    if (!q || options.length !== 4 || options.some((v) => !v) || !cleanText(item && item.id, 40)) {
       throw new HttpsError('invalid-argument', 'Une question du tournoi est invalide.');
     }
     publicQuestions.push({
+      id: cleanText(item.id, 40),
       q, o: options,
       ...(cleanText(item.t, 3000) ? { t: cleanText(item.t, 3000) } : {}),
       ...(cleanText(item.d, 100) ? { d: cleanText(item.d, 100) } : {}),
       ...(cleanText(item.n, 100) ? { n: cleanText(item.n, 100) } : {}),
     });
-    answers.push({ r: answer, e: cleanText(item.e, 1500) });
+    answers.push({ r: privateAnswer(item), e: '' });
   }
   const ref = db.collection('tournaments').doc();
   const hostName = cleanText(data.hostName, 80) || cleanText(request.auth.token.name, 80) || 'Organisateur';
@@ -264,10 +277,5 @@ exports.getTournamentQuestions = onCall({ region }, async (request) => {
   if (tournamentSnap.data().hostUid !== uid) {
     throw new HttpsError('permission-denied', 'Seul l’organisateur peut préparer les matchs.');
   }
-  return {
-    questions: tournamentSnap.data().questions.map((q, i) => ({
-      ...q,
-      ...answersSnap.data().answers[i],
-    })),
-  };
+  return { questions: tournamentSnap.data().questions };
 });
