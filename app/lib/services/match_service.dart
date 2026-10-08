@@ -110,6 +110,23 @@ class MatchPlayer {
   }
 }
 
+class MatchObserver {
+  final String uid;
+  final String name;
+  final String status;
+
+  const MatchObserver({required this.uid, required this.name, required this.status});
+
+  factory MatchObserver.fromDoc(DocumentSnapshot<Map<String, dynamic>> doc) {
+    final data = doc.data() ?? {};
+    return MatchObserver(
+      uid: doc.id,
+      name: '${data['name'] ?? 'Joueur'}',
+      status: '${data['status'] ?? 'pending'}',
+    );
+  }
+}
+
 class MatchService {
   MatchService._();
   static final instance = MatchService._();
@@ -200,6 +217,43 @@ class MatchService {
       .collection('joueurs')
       .snapshots()
       .map((s) => [for (final d in s.docs) MatchPlayer.fromDoc(d)]..sort((a, b) => b.score.compareTo(a.score)));
+
+  /// Matchs qui ont commencé et restent ouverts à l’observation.
+  Future<List<LiveMatch>> activeMatches() async {
+    final snap = await _col.where('open', isEqualTo: true).get();
+    final list = [
+      for (final doc in snap.docs)
+        if (doc.data()['state'] == LiveMatch.asking || doc.data()['state'] == LiveMatch.showing)
+          LiveMatch.fromDoc(doc),
+    ];
+    list.sort((a, b) => (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0)));
+    return list;
+  }
+
+  Stream<List<MatchObserver>> observers(String matchId) => _col
+      .doc(matchId)
+      .collection('observateurs')
+      .snapshots()
+      .map((snap) => snap.docs.map(MatchObserver.fromDoc).toList());
+
+  Stream<MatchObserver?> myObservation(String matchId, String uid) => _col
+      .doc(matchId)
+      .collection('observateurs')
+      .doc(uid)
+      .snapshots()
+      .map((doc) => doc.exists ? MatchObserver.fromDoc(doc) : null);
+
+  Future<void> requestObservation(String matchId, UserProfile p) =>
+      _col.doc(matchId).collection('observateurs').doc(p.uid).set({
+        'name': p.publicName,
+        'status': 'pending',
+        'requestedAt': FieldValue.serverTimestamp(),
+      });
+
+  Future<void> decideObservation(String matchId, String uid, {required bool accept}) =>
+      _col.doc(matchId).collection('observateurs').doc(uid).update({
+        'status': accept ? 'accepted' : 'refused',
+      });
 
   // ---------- L'hôte mène le match ----------
 
