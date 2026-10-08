@@ -10,6 +10,7 @@ import 'xarit_screen.dart';
 import '../../services/quiz_bank.dart';
 import '../../theme.dart';
 import '../../widgets/characters.dart';
+import '../../widgets/cheer.dart';
 import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../quiz_screen.dart';
@@ -976,7 +977,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
             const SizedBox(width: 10),
             Expanded(
               child: Text(
-                ok ? 'Juste ! +$_myPoints' : (_myChoice == null ? 'Trop tard !' : 'Raté…'),
+                ok ? "${Cheer.fromCharacter('gainde', true)} +$_myPoints" : (_myChoice == null ? Cheer.fromCharacter('kocc', false) : Cheer.fromCharacter('kocc', false)),
                 style: titleStyle(24, color: Colors.white, weight: 800),
               ),
             ),
