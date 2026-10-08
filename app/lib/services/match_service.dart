@@ -224,12 +224,15 @@ class MatchService {
   Future<void> requestTournamentObservation(String matchId, UserProfile p) async {
     final match = await getOnce(matchId);
     if (match == null || match.tournamentId.isEmpty ||
-        (match.state != LiveMatch.asking && match.state != LiveMatch.showing)) {
-      throw Exception('Ce match de tournoi n’est pas en cours.');
+        ![LiveMatch.waiting, LiveMatch.asking, LiveMatch.showing].contains(match.state)) {
+      throw Exception('Ce match de tournoi n’est pas disponible.');
     }
     final player = await _col.doc(matchId).collection('joueurs').doc(p.uid).get();
     if (player.exists) throw Exception('Tu joues déjà dans ce match.');
-    await _col.doc(matchId).collection('observateurs').doc(p.uid).set({
+    final ref = _col.doc(matchId).collection('observateurs').doc(p.uid);
+    final existing = await ref.get();
+    if (existing.exists && existing.data()?['status'] == 'accepted') return;
+    await ref.set({
       'name': p.publicName,
       'status': 'accepted',
       'tournament': true,
