@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the closest synonym for “abundant”.",
+      "o": [
+        "plentiful",
+        "terminate",
+        "practicable",
+        "acquire"
+      ],
+      "r": 0,
+      "e": "« plentiful » est proche de « abundant » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “accurate”.",
+      "o": [
+        "hide",
+        "precise",
+        "lucky",
+        "forecast"
+      ],
+      "r": 1,
+      "e": "« precise » est proche de « accurate » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “admit”.",
+      "o": [
+        "dispute",
+        "common",
+        "acknowledge",
+        "unwilling"
+      ],
+      "r": 2,
+      "e": "« acknowledge » est proche de « admit » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “assist”.",
+      "o": [
+        "diminish",
+        "unfriendly",
+        "notable",
+        "facilitate"
+      ],
+      "r": 3,
+      "e": "« facilitate » est proche de « assist » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “brief”.",
+      "o": [
+        "concise",
+        "require",
+        "mimic",
+        "convert"
+      ],
+      "r": 0,
+      "e": "« concise » est proche de « brief » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “cease”.",
+      "o": [
+        "crucial",
+        "terminate",
+        "unavoidable",
+        "clear"
+      ],
+      "r": 1,
+      "e": "« terminate » est proche de « cease » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “conceal”.",
+      "o": [
+        "practicable",
+        "acquire",
+        "hide",
+        "essential"
+      ],
+      "r": 2,
+      "e": "« hide » est proche de « conceal » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “conflict”.",
+      "o": [
+        "lucky",
+        "forecast",
+        "plentiful",
+        "dispute"
+      ],
+      "r": 3,
+      "e": "« dispute » est proche de « conflict » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “decline”.",
+      "o": [
+        "diminish",
+        "common",
+        "unwilling",
+        "precise"
+      ],
+      "r": 0,
+      "e": "« diminish » est proche de « decline » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “demand”.",
+      "o": [
+        "unfriendly",
+        "require",
+        "notable",
+        "acknowledge"
+      ],
+      "r": 1,
+      "e": "« require » est proche de « demand » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “essential”.",
+      "o": [
+        "mimic",
+        "convert",
+        "crucial",
+        "facilitate"
+      ],
+      "r": 2,
+      "e": "« crucial » est proche de « essential » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “feasible”.",
+      "o": [
+        "unavoidable",
+        "clear",
+        "concise",
+        "practicable"
+      ],
+      "r": 3,
+      "e": "« practicable » est proche de « feasible » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “fortunate”.",
+      "o": [
+        "lucky",
+        "acquire",
+        "essential",
+        "terminate"
+      ],
+      "r": 0,
+      "e": "« lucky » est proche de « fortunate » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “frequent”.",
+      "o": [
+        "forecast",
+        "common",
+        "plentiful",
+        "hide"
+      ],
+      "r": 1,
+      "e": "« common » est proche de « frequent » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “hostile”.",
+      "o": [
+        "unwilling",
+        "precise",
+        "unfriendly",
+        "dispute"
+      ],
+      "r": 2,
+      "e": "« unfriendly » est proche de « hostile » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “imitate”.",
+      "o": [
+        "notable",
+        "acknowledge",
+        "diminish",
+        "mimic"
+      ],
+      "r": 3,
+      "e": "« mimic » est proche de « imitate » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “inevitable”.",
+      "o": [
+        "unavoidable",
+        "convert",
+        "facilitate",
+        "require"
+      ],
+      "r": 0,
+      "e": "« unavoidable » est proche de « inevitable » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “obtain”.",
+      "o": [
+        "clear",
+        "acquire",
+        "concise",
+        "crucial"
+      ],
+      "r": 1,
+      "e": "« acquire » est proche de « obtain » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “predict”.",
+      "o": [
+        "essential",
+        "terminate",
+        "forecast",
+        "practicable"
+      ],
+      "r": 2,
+      "e": "« forecast » est proche de « predict » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “reluctant”.",
+      "o": [
+        "plentiful",
+        "hide",
+        "lucky",
+        "unwilling"
+      ],
+      "r": 3,
+      "e": "« unwilling » est proche de « reluctant » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “remarkable”.",
+      "o": [
+        "notable",
+        "precise",
+        "dispute",
+        "common"
+      ],
+      "r": 0,
+      "e": "« notable » est proche de « remarkable » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “transform”.",
+      "o": [
+        "acknowledge",
+        "convert",
+        "diminish",
+        "unfriendly"
+      ],
+      "r": 1,
+      "e": "« convert » est proche de « transform » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “transparent”.",
+      "o": [
+        "facilitate",
+        "require",
+        "clear",
+        "mimic"
+      ],
+      "r": 2,
+      "e": "« clear » est proche de « transparent » dans ce sens."
+    },
+    {
+      "q": "Choose the closest synonym for “vital”.",
+      "o": [
+        "concise",
+        "crucial",
+        "unavoidable",
+        "essential"
+      ],
+      "r": 3,
+      "e": "« essential » est proche de « vital » dans ce sens."
+    }
+  ]
+}
