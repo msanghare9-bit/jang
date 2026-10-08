@@ -199,19 +199,34 @@ service cloud.firestore {
                             || (isStaff() && resource.data.ownerUid == request.auth.uid
                                 && classOf(resource.data.classId).profUid == request.auth.uid);
 
-      // Devoirs rendus : l'élève écrit avant la date limite, le prof met la note.
+      // Devoirs rendus : seul l'élève de la classe ou son professeur peut les consulter.
       match /rendus/{uid} {
+        function parentItem() {
+          return get(/databases/$(database)/documents/classItems/$(id)).data;
+        }
+        function classRoom() {
+          return get(/databases/$(database)/documents/classes/$(parentItem().classId)).data;
+        }
+        function ownsClass() {
+          return isAdmin() || (isStaff() && classRoom().profUid == request.auth.uid);
+        }
+        function isEnrolled() {
+          return request.auth.uid in classRoom().get('students', []);
+        }
         function beforeDeadline() {
-          let due = get(/databases/$(database)/documents/classItems/$(id)).data.get('dueAt', null);
+          let due = parentItem().get('dueAt', null);
           return due == null || request.time <= due;
         }
-        allow read: if isMe(uid) || isStaff();
-        allow create: if isMe(uid) && beforeDeadline()
+        allow read: if isMe(uid) || ownsClass();
+        allow create: if isMe(uid) && isEnrolled()
+                      && request.resource.data.get('classId', '') == parentItem().classId
+                      && beforeDeadline()
                       && !request.resource.data.keys().hasAny(['grade', 'comment', 'gradedAt']);
-        allow update: if (isMe(uid) && beforeDeadline()
+        allow update: if (isMe(uid) && isEnrolled() && beforeDeadline()
                           && resource.data.get('grade', '') == '' && resource.data.get('comment', '') == ''
                           && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'text', 'classId', 'at']))
-                      || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['grade', 'comment', 'gradedAt']));
+                      || (ownsClass()
+                          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['grade', 'comment', 'gradedAt']));
       }
     }
 
