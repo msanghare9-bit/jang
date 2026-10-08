@@ -38,7 +38,7 @@
     },
     "synonymes_debutant": {
       "fichier": "synonymes_debutant.json",
-      "nombre": 72
+      "nombre": 96
     },
     "antonymes_debutant": {
       "fichier": "antonymes_debutant.json",
@@ -98,11 +98,11 @@
     },
     "comprehension_intermediaire": {
       "fichier": "comprehension_intermediaire.json",
-      "nombre": 72
+      "nombre": 96
     },
     "comprehension_avance": {
       "fichier": "comprehension_avance.json",
-      "nombre": 72
+      "nombre": 96
     },
     "culture_intermediaire": {
       "fichier": "culture_intermediaire.json",
