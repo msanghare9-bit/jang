@@ -194,6 +194,7 @@ class _AuthGateState extends State<AuthGate> {
               _loadedFor = null;
               setState(() {});
             });
+            if (profile.role == 'pending_prof') return const _TeacherReviewPending();
             if (profile.disabled) return const _Disabled();
             return const HomeScreen();
           },
@@ -276,4 +277,29 @@ class _ProfileMissing extends StatelessWidget {
       ),
     );
   }
+}
+
+
+/// Un compte professeur attend la validation du responsable.
+class _TeacherReviewPending extends StatelessWidget {
+  const _TeacherReviewPending();
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(28),
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                const Icon(Icons.school_outlined, size: 64, color: JangColors.snGreen),
+                const SizedBox(height: 16),
+                Text('Demande reçue', style: titleStyle(26, weight: 800)),
+                const SizedBox(height: 8),
+                const Text('Le responsable va vérifier les informations de ton école et préparer tes classes. Tu pourras te reconnecter après validation.', textAlign: TextAlign.center),
+                const SizedBox(height: 20),
+                OutlinedButton(onPressed: () => AuthService.instance.signOut(), child: const Text('Se déconnecter')),
+              ]),
+            ),
+          ),
+        ),
+      );
 }
