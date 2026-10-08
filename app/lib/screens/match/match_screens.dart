@@ -238,7 +238,8 @@ class MatchFinderScreen extends StatefulWidget {
 }
 
 class _MatchFinderScreenState extends State<MatchFinderScreen> {
-  late Future<List<LiveMatch>> _future = MatchService.instance.activeMatches();
+  late final Stream<List<LiveMatch>> _matches = MatchService.instance.watchActiveMatches();
+  late final Future<int> _completed = MatchService.instance.completedMatchCount();
   final Set<String> _busy = {};
 
   Future<void> _observe(LiveMatch match) async {
@@ -269,42 +270,38 @@ class _MatchFinderScreenState extends State<MatchFinderScreen> {
     final uid = AuthService.instance.profile.value?.uid ?? '';
     return Scaffold(
       appBar: AppBar(title: const Text('Matchs en direct')),
-      body: FutureBuilder<List<LiveMatch>>(
-        future: _future,
+      body: StreamBuilder<List<LiveMatch>>(
+        stream: _matches,
         builder: (context, snap) {
           if (snap.hasError) {
             return const Center(
               child: Padding(
                 padding: EdgeInsets.all(24),
-                child: Text('Impossible de charger les matchs. Vérifie ta connexion puis actualise.'),
+                child: Text('Impossible de charger les matchs. Vérifie ta connexion puis réessaie.'),
               ),
             );
           }
           if (!snap.hasData) return const Center(child: CircularProgressIndicator());
           final matches = snap.data!.where((m) => m.hostUid != uid).toList();
-          if (matches.isEmpty) {
-            return const Center(
-              child: Padding(
-                padding: EdgeInsets.all(24),
-                child: Text('Aucun match en cours pour le moment. Réessaie plus tard.'),
-              ),
-            );
-          }
-          return RefreshIndicator(
-            onRefresh: () async => setState(() => _future = MatchService.instance.activeMatches()),
-            child: ListView(
-              padding: const EdgeInsets.all(16),
-              children: [
-                const Text('Choisis un match. Son hôte devra accepter ta demande.'),
-                const SizedBox(height: 8),
-                FutureBuilder<int>(
-                  future: MatchService.instance.completedMatchCount(),
-                  builder: (context, count) => Text(
-                    '${count.data ?? '…'} matchs joués au total · ${matches.length} en cours',
-                    style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.snGreen),
-                  ),
+          return ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              const Text('Choisis un match. Son hôte devra accepter ta demande.'),
+              const SizedBox(height: 8),
+              FutureBuilder<int>(
+                future: _completed,
+                builder: (context, count) => Text(
+                  '${count.data ?? '…'} matchs joués au total · ${matches.length} en cours',
+                  style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.snGreen),
                 ),
-                const SizedBox(height: 10),
+              ),
+              const SizedBox(height: 10),
+              if (matches.isEmpty)
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 36),
+                  child: Center(child: Text('Aucun match en cours pour le moment.')),
+                )
+              else
                 for (final match in matches)
                   Card(
                     child: ListTile(
@@ -331,8 +328,7 @@ class _MatchFinderScreenState extends State<MatchFinderScreen> {
                       ),
                     ),
                   ),
-              ],
-            ),
+            ],
           );
         },
       ),
