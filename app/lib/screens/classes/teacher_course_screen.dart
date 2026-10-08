@@ -51,11 +51,15 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     final prompt = 'Kocc Bàrma, aide-moi à préparer un cours complet sur « ${_topic.text.trim()} » '
         'pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
         'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'propose des objectifs adaptés' : _objectives.text.trim()}. '
-        'Propose un cours communicatif et centré sur les apprenants, avec une durée indicative de 45 minutes. '
-        'Donne le titre, les objectifs mesurables, le matériel, les étapes avec durées, '
-        'les consignes du professeur, les tâches où les élèves parlent et travaillent ensemble, '
-        'une vérification des acquis, une différenciation pour ceux qui ont besoin d’aide et un devoir. '
-        'Rédige les consignes du professeur en français simple. Fais un document clair que je peux donner à ma classe.';
+        'Commence par trois conseils concrets au professeur pour rendre la séance communicative et centrée sur les apprenants. '
+        'Puis propose un cours complet de 45 minutes. Les élèves doivent parler, réfléchir et travailler ensemble; '
+        'le professeur facilite et guide au lieu de parler tout le temps. '
+        'Donne le titre, des objectifs mesurables, le matériel, les étapes avec durées, '
+        'les consignes simples du professeur, les tâches des élèves, une vérification des acquis, '
+        'une adaptation pour les élèves qui ont besoin d’aide et un devoir. '
+        'Utilise des exemples adaptés au contexte des élèves sénégalais quand c’est pertinent. '
+        'Rédige les consignes du professeur en français simple. Sépare clairement les conseils et le cours complet, '
+        'dans un document que je peux relire, modifier et partager avec ma classe.';
     final result = await TutorService.instance.ask(lesson, prompt);
     if (!mounted) return;
     setState(() {
