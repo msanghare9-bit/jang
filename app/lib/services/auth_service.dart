@@ -60,6 +60,11 @@ class AuthService {
     required String password,
     required String examId,
     bool parentConsent = false,
+    bool teacher = false,
+    String school = '',
+    List<String> teacherClasses = const [],
+    List<String> teacherSubjects = const [],
+    String teacherExamId = '',
   }) async {
     UserCredential cred;
     try {
@@ -74,11 +79,23 @@ class AuthService {
     batch.set(_db.collection('users').doc(uid), {
       'name': name.trim(),
       'username': normalized,
-      'role': 'student',
+      'role': teacher ? 'pending_prof' : 'student',
       'examId': examId,
       'parentConsent': parentConsent,
       'createdAt': FieldValue.serverTimestamp(),
     });
+    if (teacher) {
+      batch.set(_db.collection('teacherApplications').doc(uid), {
+        'uid': uid,
+        'name': UserProfile.publicNameOf(name),
+        'school': school,
+        'classNames': teacherClasses,
+        'subjects': teacherSubjects,
+        'examId': teacherExamId,
+        'status': 'pending',
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+    }
     batch.set(_db.collection('usernames').doc(normalized), {
       'uid': uid,
       'name': UserProfile.publicNameOf(name),
