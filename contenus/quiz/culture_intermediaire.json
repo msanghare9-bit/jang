@@ -1095,12 +1095,12 @@
     {
       "q": "Which country is home to the Great Zimbabwe National Monument?",
       "o": [
-        "Zambia",
         "Zimbabwe",
+        "Zambia",
         "Botswana",
         "Mozambique"
       ],
-      "r": 1,
+      "r": 0,
       "e": "UNESCO locates the monument in Zimbabwe.",
       "d": "culture",
       "n": "intermediaire"
@@ -1108,12 +1108,12 @@
     {
       "q": "Which people built the civilization represented at Great Zimbabwe?",
       "o": [
-        "The Shona",
         "The Wolof",
+        "The Shona",
         "The Tuareg",
         "The Asante"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO describes Great Zimbabwe as a testimony to Shona civilization.",
       "d": "culture",
       "n": "intermediaire"
@@ -1122,11 +1122,11 @@
       "q": "Between which centuries did the Shona civilization at Great Zimbabwe flourish?",
       "o": [
         "The 5th and 9th",
-        "The 11th and 15th",
         "The 16th and 18th",
+        "The 11th and 15th",
         "The 19th and 20th"
       ],
-      "r": 1,
+      "r": 2,
       "e": "UNESCO dates this civilization from the 11th to the 15th century.",
       "d": "culture",
       "n": "intermediaire"
@@ -1135,11 +1135,11 @@
       "q": "What was Great Zimbabwe during the Middle Ages?",
       "o": [
         "A fishing village",
-        "A major trading centre",
         "A Roman colony",
-        "A mining camp"
+        "A mining camp",
+        "A major trading centre"
       ],
-      "r": 1,
+      "r": 3,
       "e": "UNESCO describes it as an important trading centre.",
       "d": "culture",
       "n": "intermediaire"
@@ -1161,11 +1161,11 @@
       "q": "How many medieval monolithic churches are at Lalibela?",
       "o": [
         "Seven",
-        "Nine",
         "Eleven",
+        "Nine",
         "Fourteen"
       ],
-      "r": 2,
+      "r": 1,
       "e": "UNESCO identifies eleven churches carved from rock.",
       "d": "culture",
       "n": "intermediaire"
@@ -1174,11 +1174,11 @@
       "q": "What makes Lalibela’s churches especially distinctive?",
       "o": [
         "They were built from glass",
-        "They were carved from rock",
         "They float on a lake",
+        "They were carved from rock",
         "They are made of coral"
       ],
-      "r": 1,
+      "r": 2,
       "e": "The churches were carved directly out of rock.",
       "d": "culture",
       "n": "intermediaire"
@@ -1186,12 +1186,12 @@
     {
       "q": "Lalibela is still an important place for what?",
       "o": [
-        "Pilgrimage and devotion",
         "Gold mining",
         "Ocean trade",
-        "Desert farming"
+        "Desert farming",
+        "Pilgrimage and devotion"
       ],
-      "r": 0,
+      "r": 3,
       "e": "UNESCO describes Lalibela as a place of pilgrimage and devotion.",
       "d": "culture",
       "n": "intermediaire"
@@ -1199,12 +1199,12 @@
     {
       "q": "Aksum is an ancient archaeological site in which country?",
       "o": [
-        "Eritrea",
         "Ethiopia",
+        "Eritrea",
         "Somalia",
         "Sudan"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Aksum is in northern Ethiopia.",
       "d": "culture",
       "n": "intermediaire"
@@ -1238,12 +1238,12 @@
     {
       "q": "Which historic port is associated with Aksum’s maritime trade?",
       "o": [
-        "Adulis",
         "Mombasa",
         "Dakar",
-        "Lamu"
+        "Lamu",
+        "Adulis"
       ],
-      "r": 0,
+      "r": 3,
       "e": "UNESCO names Adulis as the port connected to Aksumite trade.",
       "d": "culture",
       "n": "intermediaire"
@@ -1251,12 +1251,12 @@
     {
       "q": "Fort Jesus is in which Kenyan coastal city?",
       "o": [
-        "Nairobi",
         "Mombasa",
+        "Nairobi",
         "Kisumu",
         "Eldoret"
       ],
-      "r": 1,
+      "r": 0,
       "e": "Fort Jesus stands in Mombasa.",
       "d": "culture",
       "n": "intermediaire"
@@ -1264,12 +1264,12 @@
     {
       "q": "Who built Fort Jesus at the end of the 16th century?",
       "o": [
-        "The Portuguese",
         "The Dutch",
+        "The Portuguese",
         "The British",
         "The Omani"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO says the Portuguese built the fort in 1593–1596.",
       "d": "culture",
       "n": "intermediaire"
@@ -1277,12 +1277,12 @@
     {
       "q": "What was the main purpose of Fort Jesus when it was built?",
       "o": [
-        "To protect Mombasa’s port",
         "To store grain inland",
         "To house a university",
+        "To protect Mombasa’s port",
         "To guard a mountain pass"
       ],
-      "r": 0,
+      "r": 2,
       "e": "It was built to protect the port of Mombasa.",
       "d": "culture",
       "n": "intermediaire"
@@ -1290,12 +1290,12 @@
     {
       "q": "On what kind of natural feature was Fort Jesus built?",
       "o": [
-        "A coral-rock spur",
         "A volcanic crater",
         "A sand dune",
-        "A river island"
+        "A river island",
+        "A coral-rock spur"
       ],
-      "r": 0,
+      "r": 3,
       "e": "UNESCO places the fort on a spur of coral rock.",
       "d": "culture",
       "n": "intermediaire"
@@ -1316,12 +1316,12 @@
     {
       "q": "Which type of architecture is Fort Jesus an example of?",
       "o": [
-        "16th-century Portuguese military fortification",
         "Ancient Egyptian temple design",
+        "16th-century Portuguese military fortification",
         "Medieval Norse wooden construction",
         "Romanesque church architecture"
       ],
-      "r": 0,
+      "r": 1,
       "e": "UNESCO calls it an outstanding example of 16th-century Portuguese fortification.",
       "d": "culture",
       "n": "intermediaire"
@@ -1329,12 +1329,12 @@
     {
       "q": "Which groups’ cultural influences are visible in Fort Jesus’s history?",
       "o": [
-        "African, Arab, Turkish, Persian and European",
         "Only Roman and Greek",
         "Only Chinese and Japanese",
+        "African, Arab, Turkish, Persian and European",
         "Mayan, Inca and Aztec"
       ],
-      "r": 0,
+      "r": 2,
       "e": "UNESCO describes exchanges among these peoples around the port.",
       "d": "culture",
       "n": "intermediaire"
@@ -1342,12 +1342,12 @@
     {
       "q": "Which city was the powerful ancient Kingdom of Aksum’s heart?",
       "o": [
-        "Aksum",
         "Timbuktu",
         "Djenné",
-        "Mapungubwe"
+        "Mapungubwe",
+        "Aksum"
       ],
-      "r": 0,
+      "r": 3,
       "e": "The ruins of Aksum mark the heart of the ancient kingdom.",
       "d": "culture",
       "n": "intermediaire"
@@ -1355,12 +1355,12 @@
     {
       "q": "Lalibela is described as a ‘New Jerusalem’ from which century?",
       "o": [
+        "The 13th",
         "The 9th",
         "The 11th",
-        "The 13th",
         "The 16th"
       ],
-      "r": 2,
+      "r": 0,
       "e": "UNESCO describes the churches as a 13th-century ‘New Jerusalem’.",
       "d": "culture",
       "n": "intermediaire"
@@ -1369,11 +1369,11 @@
       "q": "The Great Zimbabwe site covers nearly how much land?",
       "o": [
         "8 hectares",
-        "30 hectares",
         "80 hectares",
+        "30 hectares",
         "800 hectares"
       ],
-      "r": 2,
+      "r": 1,
       "e": "UNESCO gives an area of nearly 80 hectares.",
       "d": "culture",
       "n": "intermediaire"
@@ -1381,12 +1381,12 @@
     {
       "q": "What kind of cultural landscape surrounds Lalibela’s churches?",
       "o": [
-        "A mountainous region near a traditional village",
         "A tropical island reef",
         "A desert salt flat",
+        "A mountainous region near a traditional village",
         "A modern port district"
       ],
-      "r": 0,
+      "r": 2,
       "e": "UNESCO places the churches in a mountain region near a traditional village.",
       "d": "culture",
       "n": "intermediaire"
@@ -1394,12 +1394,12 @@
     {
       "q": "Which building tradition is represented by the monumental ruins of Great Zimbabwe?",
       "o": [
-        "Shona",
         "Swahili",
         "Serer",
-        "Manding"
+        "Manding",
+        "Shona"
       ],
-      "r": 0,
+      "r": 3,
       "e": "The monument is a testimony to Shona civilization.",
       "d": "culture",
       "n": "intermediaire"
