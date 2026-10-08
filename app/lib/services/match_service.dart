@@ -211,11 +211,12 @@ class MatchService {
 
   // ---------- Le joueur répond ----------
 
-  /// Points : 500 pour une bonne réponse, plus jusqu'à 500 selon la vitesse.
+  /// Score sur 20 : les points correspondent à la part du temps restant.
+  /// Exemple : réponse à 7 s sur 20 s = 13 points.
   static int points(bool ok, Duration took, int seconds) {
-    if (!ok) return 0;
-    final left = 1 - (took.inMilliseconds / (seconds * 1000)).clamp(0.0, 1.0);
-    return 500 + (500 * left).round();
+    if (!ok || seconds <= 0) return 0;
+    final remaining = 1 - (took.inMilliseconds / (seconds * 1000)).clamp(0.0, 1.0);
+    return (20 * remaining).round();
   }
 
   Future<int> answer(LiveMatch m, String uid, int choice, Duration took) async {
