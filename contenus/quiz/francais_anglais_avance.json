@@ -263,6 +263,270 @@
       ],
       "r": 3,
       "e": "“After careful consideration, they changed their minds.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Même si le délai est court, nous terminerons à temps.”",
+      "o": [
+        "Even though the deadline is tight, we will finish on time.",
+        "As soon as the deadline ends, we will stop.",
+        "The deadline was extended after we finished.",
+        "We finished long before the deadline was set."
+      ],
+      "r": 0,
+      "e": "“Even though the deadline is tight, we will finish on time.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “À condition que tout le monde soit d'accord, nous commencerons.”",
+      "o": [
+        "Unless anyone agrees, we will start now.",
+        "Provided that everyone agrees, we will begin.",
+        "Everyone agreed after we had begun.",
+        "We will begin whether or not anyone is there."
+      ],
+      "r": 1,
+      "e": "“Provided that everyone agrees, we will begin.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a gardé à l'esprit les conseils de sa mère.”",
+      "o": [
+        "He wrote his mother's advice on his hand.",
+        "He forgot the advice his mother gave him.",
+        "He kept his mother's advice in mind.",
+        "He kept his mother waiting for advice."
+      ],
+      "r": 2,
+      "e": "“He kept his mother's advice in mind.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Cette mesure vise à sensibiliser le public.”",
+      "o": [
+        "This measure aims to lower public interest.",
+        "The public raised a measure yesterday.",
+        "This measure was made aware of the public.",
+        "This measure aims to raise public awareness."
+      ],
+      "r": 3,
+      "e": "“This measure aims to raise public awareness.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il ne faut en aucun cas partager ce code.”",
+      "o": [
+        "Under no circumstances should this code be shared.",
+        "This code may be shared in some cases.",
+        "The code should be shared as soon as possible.",
+        "No one knows which code should be used."
+      ],
+      "r": 0,
+      "e": "“Under no circumstances should this code be shared.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Au nom de l'équipe, je vous remercie.”",
+      "o": [
+        "The team thanked me on my behalf.",
+        "On behalf of the team, I thank you.",
+        "I will thank the team when I arrive.",
+        "The team is responsible for the decision."
+      ],
+      "r": 1,
+      "e": "“On behalf of the team, I thank you.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Cette explication est compatible avec les données.”",
+      "o": [
+        "The data was collected to explain the problem.",
+        "This explanation contradicts the available data.",
+        "This explanation is consistent with the data.",
+        "The data is consistent but the explanation is missing."
+      ],
+      "r": 2,
+      "e": "“This explanation is consistent with the data.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Les résultats doivent être interprétés avec prudence.”",
+      "o": [
+        "The results should be ignored with care.",
+        "The results prove that caution is unnecessary.",
+        "The results were interpreted before the study began.",
+        "The results should be interpreted with caution."
+      ],
+      "r": 3,
+      "e": "“The results should be interpreted with caution.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le comité n'a pas encore pris de décision.”",
+      "o": [
+        "The committee has yet to make a decision.",
+        "The committee made its decision last week.",
+        "The committee asked me to make a decision.",
+        "The committee has rejected every decision."
+      ],
+      "r": 0,
+      "e": "“The committee has yet to make a decision.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Si j'avais su, j'aurais pris un parapluie.”",
+      "o": [
+        "If I know, I take an umbrella every day.",
+        "If I had known, I would have taken an umbrella.",
+        "I knew I had taken the wrong umbrella.",
+        "I would take an umbrella if it stopped raining."
+      ],
+      "r": 1,
+      "e": "“If I had known, I would have taken an umbrella.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “À peine était-il parti que le téléphone a sonné.”",
+      "o": [
+        "He left after the phone had stopped ringing.",
+        "The phone rang before he decided to leave.",
+        "No sooner had he left than the phone rang.",
+        "He did not leave until the phone rang again."
+      ],
+      "r": 2,
+      "e": "“No sooner had he left than the phone rang.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Non seulement elle a proposé une idée, mais elle l'a aussi défendue.”",
+      "o": [
+        "She defended an idea without proposing it.",
+        "She proposed several ideas but defended none.",
+        "She only defended the idea after it was rejected.",
+        "Not only did she put forward an idea, but she also defended it."
+      ],
+      "r": 3,
+      "e": "“Not only did she put forward an idea, but she also defended it.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le rapport souligne plusieurs limites.”",
+      "o": [
+        "The report points out several limitations.",
+        "The report removes all limits.",
+        "The report was limited to one point.",
+        "Several reports point to the same location."
+      ],
+      "r": 0,
+      "e": "“The report points out several limitations.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Pour autant que je sache, le train est à l'heure.”",
+      "o": [
+        "I know for sure that the train is early.",
+        "As far as I know, the train is on time.",
+        "The train is as far away as I can see.",
+        "The train was on time as far as the station."
+      ],
+      "r": 1,
+      "e": "“As far as I know, the train is on time.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Cette décision s'applique à tous les participants.”",
+      "o": [
+        "All participants made the decision together.",
+        "The decision was applied to the organizer only.",
+        "This decision applies to all participants.",
+        "Participants can decide whether to apply."
+      ],
+      "r": 2,
+      "e": "“This decision applies to all participants.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Les deux témoignages se contredisent.”",
+      "o": [
+        "Both accounts support the same conclusion.",
+        "The two witnesses refused to speak.",
+        "The accounts were written at different times.",
+        "The two accounts contradict each other."
+      ],
+      "r": 3,
+      "e": "“The two accounts contradict each other.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “La mise en œuvre prendra plus de temps que prévu.”",
+      "o": [
+        "The implementation will take longer than expected.",
+        "The plan was implemented earlier than expected.",
+        "The expected time was longer than the project.",
+        "The implementation has already been completed."
+      ],
+      "r": 0,
+      "e": "“The implementation will take longer than expected.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Ce choix pourrait aggraver la situation.”",
+      "o": [
+        "This choice could improve the situation quickly.",
+        "This choice could make the situation worse.",
+        "The situation made this choice impossible.",
+        "The choice was made after the situation changed."
+      ],
+      "r": 1,
+      "e": "“This choice could make the situation worse.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous avons pris des mesures pour prévenir les accidents.”",
+      "o": [
+        "We measured the accidents after they happened.",
+        "We prevented people from taking any steps.",
+        "We took steps to prevent accidents.",
+        "We took steps after the accidents were reported."
+      ],
+      "r": 2,
+      "e": "“We took steps to prevent accidents.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le projet est financé par un partenariat public-privé.”",
+      "o": [
+        "The project funds private companies only.",
+        "The partnership has ended the project.",
+        "The project is privately owned by the public.",
+        "The project is funded by a public-private partnership."
+      ],
+      "r": 3,
+      "e": "“The project is funded by a public-private partnership.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Malgré les obstacles, les bénévoles ont poursuivi leurs efforts.”",
+      "o": [
+        "Despite the obstacles, the volunteers continued their efforts.",
+        "The volunteers stopped because there were no obstacles.",
+        "The effort was made despite the volunteers.",
+        "Obstacles continued after the volunteers left."
+      ],
+      "r": 0,
+      "e": "“Despite the obstacles, the volunteers continued their efforts.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Les données ont été recueillies sur plusieurs années.”",
+      "o": [
+        "The data collected the years over again.",
+        "The data was collected over several years.",
+        "The results were published several years ago.",
+        "The data will be collected for one day."
+      ],
+      "r": 1,
+      "e": "“The data was collected over several years.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “La hausse des prix pèse sur les ménages modestes.”",
+      "o": [
+        "Low-income households caused prices to rise.",
+        "Prices are stable for every household.",
+        "Rising prices put pressure on low-income households.",
+        "Rising prices help households save money."
+      ],
+      "r": 2,
+      "e": "“Rising prices put pressure on low-income households.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Cette tradition est profondément ancrée dans la région.”",
+      "o": [
+        "The region was created by a recent tradition.",
+        "The tradition has just been removed from the region.",
+        "This region is deeply traditional and remote.",
+        "This tradition is deeply rooted in the region."
+      ],
+      "r": 3,
+      "e": "“This tradition is deeply rooted in the region.” is the best translation in this context."
     }
   ]
 }
