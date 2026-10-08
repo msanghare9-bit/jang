@@ -622,6 +622,9 @@ class ClassItem {
   final String subject;
   final String type;
   final String title;
+  final String sourceLessonId;
+  final String sourceOwnerName;
+  final List<Video> videos;
 
   /// Leçon : le texte (même format que les leçons) ; devoir : la consigne.
   final String body;
@@ -645,6 +648,9 @@ class ClassItem {
     required this.subject,
     required this.type,
     required this.title,
+    this.sourceLessonId = '',
+    this.sourceOwnerName = '',
+    this.videos = const [],
     this.body = '',
     this.quiz = const [],
     this.gapItems = const [],
@@ -673,6 +679,9 @@ class ClassItem {
       subject: _str(m['subject']),
       type: _str(m['type'], lesson),
       title: _str(m['title']),
+      sourceLessonId: _str(m['sourceLessonId']),
+      sourceOwnerName: _str(m['sourceOwnerName']),
+      videos: (m['videos'] is List ? m['videos'] as List : const []).whereType<Map>().map(Video.fromMap).toList(),
       body: _str(m['body']),
       quiz: (m['quiz'] is List ? m['quiz'] as List : const []).whereType<Map>().map(QuizQuestion.fromMap).toList(),
       gapItems: (m['gaps'] is List ? m['gaps'] as List : const []).whereType<Map>().map(GapItem.fromMap).toList(),
@@ -692,6 +701,9 @@ class ClassItem {
         'subject': subject,
         'type': type,
         'title': title,
+        'sourceLessonId': sourceLessonId,
+        'sourceOwnerName': sourceOwnerName,
+        'videos': videos.map((v) => v.toMap()).toList(),
         'body': body,
         'quiz': quiz.map((q) => q.toMap()).toList(),
         'gaps': gapItems.map((g) => g.toMap()).toList(),
@@ -708,6 +720,7 @@ class ClassItem {
         subjectId: s.id,
         chapterId: '',
         title: title,
+        videos: videos,
         body: body,
         quiz: quiz,
       );
