@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Quel est un synonyme anglais de « dirty » ?",
+      "o": [
+        "soiled",
+        "start",
+        "close",
+        "reply"
+      ],
+      "r": 0,
+      "e": "« soiled » est proche de « dirty » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « warm » ?",
+      "o": [
+        "finish",
+        "mild",
+        "present",
+        "pretty"
+      ],
+      "r": 1,
+      "e": "« mild » est proche de « warm » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « wet » ?",
+      "o": [
+        "ill",
+        "kid",
+        "damp",
+        "amusing"
+      ],
+      "r": 2,
+      "e": "« damp » est proche de « wet » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « weak » ?",
+      "o": [
+        "simple",
+        "store",
+        "work",
+        "feeble"
+      ],
+      "r": 3,
+      "e": "« feeble » est proche de « weak » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « safe » ?",
+      "o": [
+        "secure",
+        "mad",
+        "purchase",
+        "select"
+      ],
+      "r": 0,
+      "e": "« secure » est proche de « safe » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « kind » ?",
+      "o": [
+        "silent",
+        "caring",
+        "talk",
+        "assist"
+      ],
+      "r": 1,
+      "e": "« caring » est proche de « kind » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « loud » ?",
+      "o": [
+        "close",
+        "reply",
+        "noisy",
+        "house"
+      ],
+      "r": 2,
+      "e": "« noisy » est proche de « loud » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « tired » ?",
+      "o": [
+        "present",
+        "pretty",
+        "glad",
+        "weary"
+      ],
+      "r": 3,
+      "e": "« weary » est proche de « tired » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « nice » ?",
+      "o": [
+        "pleasant",
+        "kid",
+        "amusing",
+        "little"
+      ],
+      "r": 0,
+      "e": "« pleasant » est proche de « nice » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « rich » ?",
+      "o": [
+        "store",
+        "wealthy",
+        "work",
+        "large"
+      ],
+      "r": 1,
+      "e": "« wealthy » est proche de « rich » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « poor » ?",
+      "o": [
+        "purchase",
+        "select",
+        "needy",
+        "quick"
+      ],
+      "r": 2,
+      "e": "« needy » est proche de « poor » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « sad » ?",
+      "o": [
+        "talk",
+        "assist",
+        "clever",
+        "unhappy"
+      ],
+      "r": 3,
+      "e": "« unhappy » est proche de « sad » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « huge » ?",
+      "o": [
+        "enormous",
+        "reply",
+        "house",
+        "start"
+      ],
+      "r": 0,
+      "e": "« enormous » est proche de « huge » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « careful » ?",
+      "o": [
+        "pretty",
+        "cautious",
+        "glad",
+        "finish"
+      ],
+      "r": 1,
+      "e": "« cautious » est proche de « careful » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « finish » ?",
+      "o": [
+        "amusing",
+        "little",
+        "complete",
+        "ill"
+      ],
+      "r": 2,
+      "e": "« complete » est proche de « finish » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « difficult » ?",
+      "o": [
+        "work",
+        "large",
+        "simple",
+        "challenging"
+      ],
+      "r": 3,
+      "e": "« challenging » est proche de « difficult » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « important » ?",
+      "o": [
+        "significant",
+        "select",
+        "quick",
+        "mad"
+      ],
+      "r": 0,
+      "e": "« significant » est proche de « important » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « strong » ?",
+      "o": [
+        "assist",
+        "powerful",
+        "clever",
+        "silent"
+      ],
+      "r": 1,
+      "e": "« powerful » est proche de « strong » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « empty » ?",
+      "o": [
+        "house",
+        "start",
+        "vacant",
+        "close"
+      ],
+      "r": 2,
+      "e": "« vacant » est proche de « empty » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « sleepy » ?",
+      "o": [
+        "glad",
+        "finish",
+        "present",
+        "drowsy"
+      ],
+      "r": 3,
+      "e": "« drowsy » est proche de « sleepy » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « busy » ?",
+      "o": [
+        "occupied",
+        "little",
+        "ill",
+        "kid"
+      ],
+      "r": 0,
+      "e": "« occupied » est proche de « busy » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « thin » ?",
+      "o": [
+        "large",
+        "slim",
+        "simple",
+        "store"
+      ],
+      "r": 1,
+      "e": "« slim » est proche de « thin » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « worried » ?",
+      "o": [
+        "quick",
+        "mad",
+        "anxious",
+        "purchase"
+      ],
+      "r": 2,
+      "e": "« anxious » est proche de « worried » dans ce sens."
+    },
+    {
+      "q": "Quel est un synonyme anglais de « lucky » ?",
+      "o": [
+        "clever",
+        "silent",
+        "talk",
+        "fortunate"
+      ],
+      "r": 3,
+      "e": "« fortunate » est proche de « lucky » dans ce sens."
+    }
+  ]
+}
