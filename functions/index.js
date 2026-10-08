@@ -213,3 +213,61 @@ exports.finishMatch = onCall({ region }, async (request) => {
   });
   return { ok: true };
 });
+
+exports.createTournament = onCall({ region }, async (request) => {
+  const uid = requireAuth(request);
+  const data = request.data || {};
+  const incoming = data.questions;
+  if (!Array.isArray(incoming) || incoming.length < 1 || incoming.length > 200) {
+    throw new HttpsError('invalid-argument', 'Le tournoi doit contenir des questions.');
+  }
+  const publicQuestions = [];
+  const answers = [];
+  for (const item of incoming) {
+    const q = cleanText(item && item.q, 1000);
+    const options = Array.isArray(item && item.o) ? item.o.slice(0, 4).map((v) => cleanText(v, 500)) : [];
+    const answer = Number(item && item.r);
+    if (!q || options.length !== 4 || options.some((v) => !v) || !Number.isInteger(answer) || answer < 0 || answer > 3) {
+      throw new HttpsError('invalid-argument', 'Une question du tournoi est invalide.');
+    }
+    publicQuestions.push({
+      q, o: options,
+      ...(cleanText(item.t, 3000) ? { t: cleanText(item.t, 3000) } : {}),
+      ...(cleanText(item.d, 100) ? { d: cleanText(item.d, 100) } : {}),
+      ...(cleanText(item.n, 100) ? { n: cleanText(item.n, 100) } : {}),
+    });
+    answers.push({ r: answer, e: cleanText(item.e, 1500) });
+  }
+  const ref = db.collection('tournaments').doc();
+  const hostName = cleanText(data.hostName, 80) || cleanText(request.auth.token.name, 80) || 'Organisateur';
+  const title = cleanText(data.title, 120) || 'Tournoi de ' + hostName;
+  const capacity = Math.min(16, Math.max(2, Number(data.capacity) || 16));
+  const batch = db.batch();
+  batch.set(ref, {
+    title, hostUid: uid, hostName, status: 'waiting', round: 0, capacity,
+    questions: publicQuestions, createdAt: FieldValue.serverTimestamp(),
+  });
+  batch.create(db.collection('tournamentAnswers').doc(ref.id), { answers });
+  await batch.commit();
+  return { id: ref.id };
+});
+
+exports.getTournamentQuestions = onCall({ region }, async (request) => {
+  const uid = requireAuth(request);
+  const tournamentId = cleanText(request.data && request.data.tournamentId, 120);
+  if (!tournamentId) throw new HttpsError('invalid-argument', 'Tournoi introuvable.');
+  const [tournamentSnap, answersSnap] = await Promise.all([
+    db.collection('tournaments').doc(tournamentId).get(),
+    db.collection('tournamentAnswers').doc(tournamentId).get(),
+  ]);
+  if (!tournamentSnap.exists || !answersSnap.exists) throw new HttpsError('not-found', 'Tournoi introuvable.');
+  if (tournamentSnap.data().hostUid !== uid) {
+    throw new HttpsError('permission-denied', 'Seul l’organisateur peut préparer les matchs.');
+  }
+  return {
+    questions: tournamentSnap.data().questions.map((q, i) => ({
+      ...q,
+      ...answersSnap.data().answers[i],
+    })),
+  };
+});
