@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "A colleague says, “I’m afraid I may have misunderstood your point.” What is a constructive reply?",
+      "o": [
+        "Let me explain what I meant another way.",
+        "You should have listened the first time.",
+        "That is your problem, not mine.",
+        "I will misunderstand you later."
+      ],
+      "r": 0,
+      "e": "Offer a clearer explanation instead of blaming the listener."
+    },
+    {
+      "q": "You want to disagree during a formal discussion without sounding rude. What can you say?",
+      "o": [
+        "That argument is ridiculous.",
+        "I understand the argument; however, I see the evidence differently.",
+        "I don't care about the evidence.",
+        "You must accept my opinion."
+      ],
+      "r": 1,
+      "e": "Acknowledge the other view, then state your disagreement respectfully."
+    },
+    {
+      "q": "You cannot attend a meeting and need to suggest another time. What is appropriate?",
+      "o": [
+        "The meeting is Thursday yesterday.",
+        "I will not attend any meeting.",
+        "Could we reschedule for Thursday afternoon?",
+        "Can you reschedule me Thursday?"
+      ],
+      "r": 2,
+      "e": "“Could we reschedule…?” is a polite request to choose a new time."
+    },
+    {
+      "q": "A teammate has done most of the work. How can you offer help?",
+      "o": [
+        "You should have done everything alone.",
+        "I will take care of your credit.",
+        "The final section is not my work.",
+        "Would you like me to take care of the final section?"
+      ],
+      "r": 3,
+      "e": "Offer a specific task and let your teammate decide."
+    },
+    {
+      "q": "You need to interrupt briefly during a presentation. What should you say?",
+      "o": [
+        "Sorry to interrupt, but could I clarify one point?",
+        "Stop speaking; I have a point.",
+        "I interrupt because you are unclear.",
+        "You can clarify me now."
+      ],
+      "r": 0,
+      "e": "Briefly apologize and explain why you need to speak."
+    },
+    {
+      "q": "A customer is upset about a delayed order. What is the best response?",
+      "o": [
+        "The delay is not my concern.",
+        "I’m sorry for the delay. I’ll check the status and update you today.",
+        "You should have ordered earlier.",
+        "Your order is delayed forever."
+      ],
+      "r": 1,
+      "e": "Acknowledge the issue and say what action you will take."
+    },
+    {
+      "q": "You want to ask whether a report is ready without pressuring a colleague. What can you say?",
+      "o": [
+        "Why have you not finished the report?",
+        "Finish the report while I wait.",
+        "When you have a moment, could you let me know how the report is coming along?",
+        "The report is probably useless."
+      ],
+      "r": 2,
+      "e": "This phrasing is courteous and gives the colleague room to respond."
+    },
+    {
+      "q": "A friend tells you difficult news. What is a thoughtful response?",
+      "o": [
+        "At least it is not my problem.",
+        "You should forget it immediately.",
+        "I knew this would happen to you.",
+        "I’m sorry you’re going through this. Would you like to talk?"
+      ],
+      "r": 3,
+      "e": "Show sympathy and offer to listen without forcing advice."
+    },
+    {
+      "q": "You want to make clear that your suggestion is optional. What phrase helps?",
+      "o": [
+        "This is only a suggestion; please use what works for you.",
+        "You must follow my suggestion.",
+        "I refuse to suggest anything.",
+        "This suggestion cannot be changed."
+      ],
+      "r": 0,
+      "e": "This phrase makes it clear that the other person can choose."
+    },
+    {
+      "q": "You need to correct a small factual error in a meeting. What is tactful?",
+      "o": [
+        "You are completely wrong about the date.",
+        "I may be mistaken, but I think the date was changed to Friday.",
+        "The date is wrong and everyone knows it.",
+        "I will correct you after the meeting."
+      ],
+      "r": 1,
+      "e": "Use a gentle lead-in and state the correction clearly."
+    },
+    {
+      "q": "You want to end a phone call politely because another meeting is starting. What can you say?",
+      "o": [
+        "I am leaving the phone here.",
+        "Stop calling; I have a meeting.",
+        "I’m afraid I have to go now, but I’ll call you back this afternoon.",
+        "The phone must go this afternoon."
+      ],
+      "r": 2,
+      "e": "Explain briefly, then say when you will reconnect."
+    },
+    {
+      "q": "A team has reached a decision. You want to summarize next steps. What can you say?",
+      "o": [
+        "To repeat, nobody has work to do.",
+        "I will recap the meeting yesterday.",
+        "The draft reviewed me by Monday.",
+        "Just to recap, I’ll send the draft and you’ll review it by Monday."
+      ],
+      "r": 3,
+      "e": "“Just to recap” introduces a brief summary of agreed actions."
+    },
+    {
+      "q": "You want a speaker to define an unfamiliar term. What should you ask?",
+      "o": [
+        "Could you clarify what you mean by “resilience” in this context?",
+        "Could you make resilience more louder?",
+        "Why is resilience speaking here?",
+        "I clarify you after this context."
+      ],
+      "r": 0,
+      "e": "Ask for clarification and name the term that is unclear."
+    },
+    {
+      "q": "You must decline an invitation but want to show appreciation. What is suitable?",
+      "o": [
+        "I have no interest in your event.",
+        "Thank you for thinking of me. Unfortunately, I’m already committed that evening.",
+        "You invited me at the wrong time.",
+        "I will come even though I cannot."
+      ],
+      "r": 1,
+      "e": "Thank the host and give a concise reason for declining."
+    },
+    {
+      "q": "A colleague has made a useful contribution. What can you say?",
+      "o": [
+        "Your point is too valuable to discuss.",
+        "I would rather ignore that contribution.",
+        "That’s a valuable point; it helps us see another side of the issue.",
+        "The issue has another colleague."
+      ],
+      "r": 2,
+      "e": "Recognize the contribution and explain why it is useful."
+    },
+    {
+      "q": "You want to challenge an assumption in a report professionally. What is best?",
+      "o": [
+        "This estimate is obviously foolish.",
+        "Who made this assumption? I blame them.",
+        "We should remove every estimate.",
+        "Could we revisit the assumption behind this estimate?"
+      ],
+      "r": 3,
+      "e": "Invite the group to examine the assumption without assigning blame."
+    },
+    {
+      "q": "You need more time to complete a task. What is a responsible request?",
+      "o": [
+        "Could I have until Wednesday to complete it properly?",
+        "I will finish it sometime next week, perhaps.",
+        "The task is impossible, so cancel it.",
+        "You should give me extra time without asking."
+      ],
+      "r": 0,
+      "e": "Ask clearly for a new deadline and explain the need."
+    },
+    {
+      "q": "Someone thanks you for your help. What is a natural reply?",
+      "o": [
+        "Please thank me again tomorrow.",
+        "You’re very welcome. I’m glad it was useful.",
+        "I am welcome to your help.",
+        "You should not have thanked me."
+      ],
+      "r": 1,
+      "e": "This is a warm and natural way to accept thanks."
+    },
+    {
+      "q": "You want to make sure a proposal includes everyone's concerns. What should you say?",
+      "o": [
+        "We have decided; no more concerns matter.",
+        "Students should not raise concerns.",
+        "Before we decide, have we considered the concerns raised by the students?",
+        "I will consider the decision yesterday."
+      ],
+      "r": 2,
+      "e": "This question invites the group to review concerns before deciding."
+    },
+    {
+      "q": "A friend keeps postponing a meeting. You need a definite answer. What can you say?",
+      "o": [
+        "You are always unreliable.",
+        "I will cancel Friday without telling you.",
+        "Why do you keep changing time?",
+        "Could you let me know by tonight whether Friday still works for you?"
+      ],
+      "r": 3,
+      "e": "Set a clear and reasonable time to confirm."
+    },
+    {
+      "q": "You want to soften a direct recommendation. What phrase is appropriate?",
+      "o": [
+        "You might want to check the figures once more before sending the report.",
+        "You must check everything because you are careless.",
+        "The figures are certainly all wrong.",
+        "I checked your figures without asking."
+      ],
+      "r": 0,
+      "e": "“You might want to…” makes the recommendation less forceful."
+    },
+    {
+      "q": "A presenter finishes. You want to ask a question related to the main idea. What is a good opening?",
+      "o": [
+        "Your presentation did not answer anything.",
+        "Thanks for presenting. Could you explain the final recommendation?",
+        "Why was the presentation so long?",
+        "I will ask a different speaker instead."
+      ],
+      "r": 1,
+      "e": "Thank the presenter and ask a focused follow-up question."
+    },
+    {
+      "q": "You want to acknowledge that a plan has both advantages and disadvantages. What can you say?",
+      "o": [
+        "There are only benefits and no costs.",
+        "The costs are benefits for everyone.",
+        "There are clear benefits, although we should also consider the costs.",
+        "We should consider nothing before planning."
+      ],
+      "r": 2,
+      "e": "This phrase recognizes both sides of the plan."
+    },
+    {
+      "q": "You have made a mistake in a shared document. What is a responsible response?",
+      "o": [
+        "Someone changed the figure, not me.",
+        "The figure is wrong, but it does not matter.",
+        "I will delete the document instead.",
+        "I entered the wrong figure. I’ve corrected it and checked the other totals."
+      ],
+      "r": 3,
+      "e": "Take responsibility, fix the error, and check related information."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Stone Town is a historic settlement in which country?",
+      "o": [
+        "Tanzania",
+        "Ghana",
+        "Senegal",
+        "Namibia"
+      ],
+      "r": 0,
+      "e": "Stone Town is on Zanzibar, part of Tanzania."
+    },
+    {
+      "q": "Which coastal culture is represented by Stone Town?",
+      "o": [
+        "Shona",
+        "Swahili",
+        "Manding",
+        "Asante"
+      ],
+      "r": 1,
+      "e": "UNESCO describes it as a Swahili coastal trading town."
+    },
+    {
+      "q": "Which materials are named in the construction of Stone Town buildings?",
+      "o": [
+        "Granite and pine",
+        "Brick and cedar",
+        "Coral stone and mangrove timber",
+        "Marble and bamboo"
+      ],
+      "r": 2,
+      "e": "UNESCO names coral stone and mangrove timber."
+    },
+    {
+      "q": "Which set of cultural influences is reflected in Stone Town?",
+      "o": [
+        "Chinese, Japanese, Korean and Thai",
+        "Roman, Greek, Norse and Celtic",
+        "Mayan, Inca, Aztec and Olmec",
+        "African, Arab, Indian and European"
+      ],
+      "r": 3,
+      "e": "UNESCO describes these influences in the town’s architecture."
+    },
+    {
+      "q": "Timbuktu is in which West African country?",
+      "o": [
+        "Mali",
+        "Niger",
+        "Ghana",
+        "Benin"
+      ],
+      "r": 0,
+      "e": "Timbuktu is a historic city in Mali."
+    },
+    {
+      "q": "What was Sankore in Timbuktu?",
+      "o": [
+        "A fishing harbour",
+        "A centre of learning",
+        "A royal palace",
+        "A mountain pass"
+      ],
+      "r": 1,
+      "e": "UNESCO describes Sankore as a university and learning centre."
+    },
+    {
+      "q": "Which goods were traded in Timbuktu’s historic markets?",
+      "o": [
+        "Tea, silk and coal",
+        "Coffee, rubber and tin",
+        "Manuscripts, salt and gold",
+        "Wool, timber and ice"
+      ],
+      "r": 2,
+      "e": "UNESCO notes manuscript, salt and gold trade."
+    },
+    {
+      "q": "Which mosque is one of Timbuktu’s three historic great mosques?",
+      "o": [
+        "Great Mosque of Kilwa",
+        "Great Mosque of Djenné",
+        "Mosque of Abomey",
+        "Sankore"
+      ],
+      "r": 3,
+      "e": "Sankore is one of the three mosques listed by UNESCO."
+    },
+    {
+      "q": "The Old Towns of Djenné are in which country?",
+      "o": [
+        "Mali",
+        "Burkina Faso",
+        "Guinea",
+        "Cameroon"
+      ],
+      "r": 0,
+      "e": "Djenné is in Mali."
+    },
+    {
+      "q": "Which building material is especially important in Djenné’s historic architecture?",
+      "o": [
+        "Steel",
+        "Earth",
+        "Glass",
+        "Marble"
+      ],
+      "r": 1,
+      "e": "UNESCO highlights the use of earth in its architecture."
+    },
+    {
+      "q": "Why were many traditional houses in Djenné built on raised mounds?",
+      "o": [
+        "To be closer to the sea",
+        "To protect them from snow",
+        "To reduce the effect of seasonal floods",
+        "To store gold underground"
+      ],
+      "r": 2,
+      "e": "UNESCO notes that the mounds protect houses from seasonal floods."
+    },
+    {
+      "q": "Which historic trade helped Djenné grow as a market centre?",
+      "o": [
+        "Atlantic whaling",
+        "Silk Road tea trade",
+        "Indian spice trade",
+        "Trans-Saharan gold trade"
+      ],
+      "r": 3,
+      "e": "UNESCO describes Djenné as an important link in the trans-Saharan gold trade."
+    },
+    {
+      "q": "Robben Island is off the coast of which country?",
+      "o": [
+        "South Africa",
+        "Kenya",
+        "Morocco",
+        "Tanzania"
+      ],
+      "r": 0,
+      "e": "Robben Island is a South African heritage site."
+    },
+    {
+      "q": "What were some historic uses of Robben Island?",
+      "o": [
+        "University, market and port",
+        "Prison, hospital and military base",
+        "Mine, palace and railway station",
+        "Farm, theatre and library"
+      ],
+      "r": 1,
+      "e": "UNESCO lists these uses across different periods."
+    },
+    {
+      "q": "What does Robben Island’s heritage symbolize?",
+      "o": [
+        "The growth of desert trade",
+        "The start of the Swahili language",
+        "Freedom and democracy overcoming oppression",
+        "The invention of stone walls"
+      ],
+      "r": 2,
+      "e": "UNESCO links the site to this symbolic history."
+    },
+    {
+      "q": "What type of prison building is prominent on Robben Island?",
+      "o": [
+        "A medieval castle prison",
+        "An open-air market",
+        "A military school",
+        "A maximum-security prison for political prisoners"
+      ],
+      "r": 3,
+      "e": "UNESCO identifies the maximum-security political prison."
+    },
+    {
+      "q": "Mapungubwe Cultural Landscape is in which country?",
+      "o": [
+        "South Africa",
+        "Ethiopia",
+        "Gambia",
+        "Algeria"
+      ],
+      "r": 0,
+      "e": "UNESCO identifies Mapungubwe as a South African site."
+    },
+    {
+      "q": "Which two rivers meet at the Mapungubwe landscape?",
+      "o": [
+        "Nile and Congo",
+        "Limpopo and Shashe",
+        "Senegal and Gambia",
+        "Niger and Volta"
+      ],
+      "r": 1,
+      "e": "UNESCO locates it at the Limpopo–Shashe confluence."
+    },
+    {
+      "q": "Mapungubwe is described as an early kingdom in which region?",
+      "o": [
+        "North Africa",
+        "West Asia",
+        "Southern Africa",
+        "Central Europe"
+      ],
+      "r": 2,
+      "e": "UNESCO calls it the first indigenous kingdom in Southern Africa."
+    },
+    {
+      "q": "Which valuable resources supported Mapungubwe’s trade?",
+      "o": [
+        "Tea and cotton",
+        "Salt and paper",
+        "Oil and diamonds",
+        "Gold and ivory"
+      ],
+      "r": 3,
+      "e": "UNESCO says its hinterland supplied gold and ivory."
+    },
+    {
+      "q": "Which climate change contributed to Mapungubwe’s decline?",
+      "o": [
+        "Reduced rainfall and drier conditions",
+        "More frequent snowfall",
+        "A rise in sea ice",
+        "A change in monsoon winds in Asia"
+      ],
+      "r": 0,
+      "e": "UNESCO connects the kingdom’s decline to drier conditions."
+    },
+    {
+      "q": "Which historic settlement is near the borders of South Africa, Zimbabwe and Botswana?",
+      "o": [
+        "Timbuktu",
+        "Mapungubwe",
+        "Djenné",
+        "Stone Town"
+      ],
+      "r": 1,
+      "e": "UNESCO places Mapungubwe where those three countries meet."
+    },
+    {
+      "q": "Which kind of town is Stone Town described as?",
+      "o": [
+        "A desert caravan camp",
+        "A mountain mining town",
+        "A Swahili coastal trading town",
+        "A Roman frontier fort"
+      ],
+      "r": 2,
+      "e": "UNESCO describes this settlement as a Swahili trading town."
+    },
+    {
+      "q": "What feature is found on some Stone Town buildings?",
+      "o": [
+        "Glass pyramids",
+        "Stone wheels",
+        "Painted domes made of ice",
+        "Carved wooden doors"
+      ],
+      "r": 3,
+      "e": "UNESCO describes elaborately carved doors."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What does “apologize” mean?",
+      "o": [
+        "Say that you are sorry",
+        "Ask for permission",
+        "Give advice",
+        "Make a promise"
+      ],
+      "r": 0,
+      "e": "To apologize is to say that you are sorry."
+    },
+    {
+      "q": "What is an “appointment”?",
+      "o": [
+        "A place to buy medicine",
+        "A planned meeting at a set time",
+        "A written school rule",
+        "A journey by bus"
+      ],
+      "r": 1,
+      "e": "An appointment is an arrangement to meet at a particular time."
+    },
+    {
+      "q": "What does “available” mean?",
+      "o": [
+        "Difficult to find",
+        "Already broken",
+        "Free to be used or to meet",
+        "Very expensive"
+      ],
+      "r": 2,
+      "e": "Available means ready or free for use."
+    },
+    {
+      "q": "What does “complain” mean?",
+      "o": [
+        "Give someone a compliment",
+        "Ask for directions",
+        "Agree with a plan",
+        "Say that something is wrong or unsatisfactory"
+      ],
+      "r": 3,
+      "e": "To complain is to express dissatisfaction."
+    },
+    {
+      "q": "What does “delay” mean as a verb?",
+      "o": [
+        "Make something happen later",
+        "Finish something early",
+        "Make something cheaper",
+        "Explain something clearly"
+      ],
+      "r": 0,
+      "e": "To delay is to make something late or postpone it."
+    },
+    {
+      "q": "What is “equipment”?",
+      "o": [
+        "A list of school subjects",
+        "Tools or objects needed for an activity",
+        "A type of food",
+        "A public announcement"
+      ],
+      "r": 1,
+      "e": "Equipment is the set of tools needed for a task."
+    },
+    {
+      "q": "What is a weather “forecast”?",
+      "o": [
+        "A record of past payments",
+        "A map of a school",
+        "A report about expected weather",
+        "A list of bus passengers"
+      ],
+      "r": 2,
+      "e": "A forecast says what the weather may be like."
+    },
+    {
+      "q": "What does “independent” mean?",
+      "o": [
+        "Unable to make a choice",
+        "Always working in a group",
+        "Ready to be repaired",
+        "Able to act or work without help"
+      ],
+      "r": 3,
+      "e": "An independent person can do things without relying on others."
+    },
+    {
+      "q": "What is a “neighbourhood”?",
+      "o": [
+        "The area around where people live",
+        "A room inside a hospital",
+        "A national border",
+        "A group of school subjects"
+      ],
+      "r": 0,
+      "e": "A neighbourhood is a local area where people live."
+    },
+    {
+      "q": "What is an “opportunity”?",
+      "o": [
+        "A problem with no solution",
+        "A good chance to do something",
+        "A rule against an action",
+        "A payment for a service"
+      ],
+      "r": 1,
+      "e": "An opportunity is a favourable chance."
+    },
+    {
+      "q": "What does “ordinary” mean?",
+      "o": [
+        "Rare and difficult to find",
+        "Dangerous to use",
+        "Usual and not special",
+        "Very important"
+      ],
+      "r": 2,
+      "e": "Ordinary means common or normal."
+    },
+    {
+      "q": "What is “permission”?",
+      "o": [
+        "A reason for being late",
+        "A plan for the future",
+        "A record of a meeting",
+        "Approval to do something"
+      ],
+      "r": 3,
+      "e": "Permission means that someone allows an action."
+    },
+    {
+      "q": "What does “prepare” mean?",
+      "o": [
+        "Get ready for something",
+        "Forget to bring something",
+        "Change a past event",
+        "Stop a person from leaving"
+      ],
+      "r": 0,
+      "e": "To prepare is to make ready."
+    },
+    {
+      "q": "What does “receipt” mean in a shop?",
+      "o": [
+        "A list of future prices",
+        "A paper or message proving payment",
+        "A request to borrow money",
+        "A note about a lesson"
+      ],
+      "r": 1,
+      "e": "A receipt is proof that payment was made."
+    },
+    {
+      "q": "What does “recommend” mean?",
+      "o": [
+        "Refuse to explain something",
+        "Make something less safe",
+        "Suggest something as a good choice",
+        "Ask someone to wait"
+      ],
+      "r": 2,
+      "e": "To recommend is to advise someone to choose or do something."
+    },
+    {
+      "q": "What does “reliable” mean?",
+      "o": [
+        "Likely to change without warning",
+        "Hard to understand",
+        "Available only once",
+        "Able to be trusted"
+      ],
+      "r": 3,
+      "e": "A reliable person or thing can be trusted."
+    },
+    {
+      "q": "What does “responsible” mean?",
+      "o": [
+        "Expected to take care of a duty",
+        "Unable to make a decision",
+        "Not connected to a task",
+        "Willing to waste time"
+      ],
+      "r": 0,
+      "e": "A responsible person can be trusted with a duty."
+    },
+    {
+      "q": "What does “similar” mean?",
+      "o": [
+        "Completely unrelated",
+        "Almost the same",
+        "Much more expensive",
+        "Easy to break"
+      ],
+      "r": 1,
+      "e": "Similar things have features that are alike."
+    },
+    {
+      "q": "What is a “solution” to a problem?",
+      "o": [
+        "A new problem",
+        "A list of instructions",
+        "A way to solve it",
+        "A reason to stop"
+      ],
+      "r": 2,
+      "e": "A solution is an answer or way of dealing with a problem."
+    },
+    {
+      "q": "What does “survive” mean?",
+      "o": [
+        "Leave a place permanently",
+        "Become more expensive",
+        "Stop an activity briefly",
+        "Stay alive or continue to exist"
+      ],
+      "r": 3,
+      "e": "To survive is to remain alive or continue."
+    },
+    {
+      "q": "What does “valuable” mean?",
+      "o": [
+        "Worth a lot or very useful",
+        "Easy to replace",
+        "Unimportant to everyone",
+        "Too old to use"
+      ],
+      "r": 0,
+      "e": "Valuable means worth a lot or having great use."
+    },
+    {
+      "q": "Who is a “volunteer”?",
+      "o": [
+        "A person who buys every ticket",
+        "A person who offers to help without pay",
+        "A worker who sets the price",
+        "A visitor who asks for a refund"
+      ],
+      "r": 1,
+      "e": "A volunteer chooses to help, often without payment."
+    },
+    {
+      "q": "What does “fortunately” mean?",
+      "o": [
+        "For a short time",
+        "By mistake",
+        "In a lucky or positive way",
+        "Without permission"
+      ],
+      "r": 2,
+      "e": "Fortunately means that something good happened by luck."
+    },
+    {
+      "q": "What does “environment” mean?",
+      "o": [
+        "A school timetable",
+        "A kind of transport",
+        "A household bill",
+        "The natural world around us"
+      ],
+      "r": 3,
+      "e": "The environment includes the natural world and our surroundings."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the opposite of “benign”.",
+      "o": [
+        "malignant",
+        "harmless",
+        "gentle",
+        "mild"
+      ],
+      "r": 0,
+      "e": "“malignant” is the opposite of “benign”."
+    },
+    {
+      "q": "Choose the opposite of “chaotic”.",
+      "o": [
+        "disorganized",
+        "orderly",
+        "confused",
+        "wild"
+      ],
+      "r": 1,
+      "e": "“orderly” is the opposite of “chaotic”."
+    },
+    {
+      "q": "Choose the opposite of “conspicuous”.",
+      "o": [
+        "noticeable",
+        "visible",
+        "inconspicuous",
+        "obvious"
+      ],
+      "r": 2,
+      "e": "“inconspicuous” is the opposite of “conspicuous”."
+    },
+    {
+      "q": "Choose the opposite of “credible”.",
+      "o": [
+        "reliable",
+        "plausible",
+        "convincing",
+        "unbelievable"
+      ],
+      "r": 3,
+      "e": "“unbelievable” is the opposite of “credible”."
+    },
+    {
+      "q": "Choose the opposite of “deficient”.",
+      "o": [
+        "sufficient",
+        "inadequate",
+        "lacking",
+        "incomplete"
+      ],
+      "r": 0,
+      "e": "“sufficient” is the opposite of “deficient”."
+    },
+    {
+      "q": "Choose the opposite of “discourage”.",
+      "o": [
+        "dissuade",
+        "encourage",
+        "prevent",
+        "deter"
+      ],
+      "r": 1,
+      "e": "“encourage” is the opposite of “discourage”."
+    },
+    {
+      "q": "Choose the opposite of “emerge”.",
+      "o": [
+        "appear",
+        "surface",
+        "disappear",
+        "arise"
+      ],
+      "r": 2,
+      "e": "“disappear” is the opposite of “emerge”."
+    },
+    {
+      "q": "Choose the opposite of “exaggerate”.",
+      "o": [
+        "overstate",
+        "magnify",
+        "inflate",
+        "understate"
+      ],
+      "r": 3,
+      "e": "“understate” is the opposite of “exaggerate”."
+    },
+    {
+      "q": "Choose the opposite of “explicit”.",
+      "o": [
+        "implicit",
+        "direct",
+        "clear",
+        "stated"
+      ],
+      "r": 0,
+      "e": "“implicit” is the opposite of “explicit”."
+    },
+    {
+      "q": "Choose the opposite of “frugal”.",
+      "o": [
+        "thrifty",
+        "wasteful",
+        "careful",
+        "economical"
+      ],
+      "r": 1,
+      "e": "“wasteful” is the opposite of “frugal”."
+    },
+    {
+      "q": "Choose the opposite of “identical”.",
+      "o": [
+        "equal",
+        "matching",
+        "different",
+        "alike"
+      ],
+      "r": 2,
+      "e": "“different” is the opposite of “identical”."
+    },
+    {
+      "q": "Choose the opposite of “lenient”.",
+      "o": [
+        "tolerant",
+        "forgiving",
+        "mild",
+        "strict"
+      ],
+      "r": 3,
+      "e": "“strict” is the opposite of “lenient”."
+    },
+    {
+      "q": "Choose the opposite of “mandatory”.",
+      "o": [
+        "optional",
+        "required",
+        "compulsory",
+        "necessary"
+      ],
+      "r": 0,
+      "e": "“optional” is the opposite of “mandatory”."
+    },
+    {
+      "q": "Choose the opposite of “perilous”.",
+      "o": [
+        "dangerous",
+        "safe",
+        "risky",
+        "hazardous"
+      ],
+      "r": 1,
+      "e": "“safe” is the opposite of “perilous”."
+    },
+    {
+      "q": "Choose the opposite of “scarcity”.",
+      "o": [
+        "shortage",
+        "lack",
+        "abundance",
+        "deficit"
+      ],
+      "r": 2,
+      "e": "“abundance” is the opposite of “scarcity”."
+    },
+    {
+      "q": "Choose the opposite of “static”.",
+      "o": [
+        "unchanging",
+        "still",
+        "fixed",
+        "dynamic"
+      ],
+      "r": 3,
+      "e": "“dynamic” is the opposite of “static”."
+    },
+    {
+      "q": "Choose the opposite of “subordinate”.",
+      "o": [
+        "superior",
+        "lower-ranking",
+        "junior",
+        "lesser"
+      ],
+      "r": 0,
+      "e": "“superior” is the opposite of “subordinate”."
+    },
+    {
+      "q": "Choose the opposite of “triumph”.",
+      "o": [
+        "victory",
+        "defeat",
+        "success",
+        "achievement"
+      ],
+      "r": 1,
+      "e": "“defeat” is the opposite of “triumph”."
+    },
+    {
+      "q": "Choose the opposite of “valid”.",
+      "o": [
+        "sound",
+        "legitimate",
+        "invalid",
+        "acceptable"
+      ],
+      "r": 2,
+      "e": "“invalid” is the opposite of “valid”."
+    },
+    {
+      "q": "Choose the opposite of “volatile”.",
+      "o": [
+        "changeable",
+        "unpredictable",
+        "unstable",
+        "stable"
+      ],
+      "r": 3,
+      "e": "“stable” is the opposite of “volatile”."
+    },
+    {
+      "q": "Choose the opposite of “widen”.",
+      "o": [
+        "narrow",
+        "broaden",
+        "expand",
+        "enlarge"
+      ],
+      "r": 0,
+      "e": "“narrow” is the opposite of “widen”."
+    },
+    {
+      "q": "Choose the opposite of “withhold”.",
+      "o": [
+        "keep",
+        "provide",
+        "retain",
+        "refuse"
+      ],
+      "r": 1,
+      "e": "“provide” is the opposite of “withhold”."
+    },
+    {
+      "q": "Choose the opposite of “zenith”.",
+      "o": [
+        "peak",
+        "highest point",
+        "nadir",
+        "summit"
+      ],
+      "r": 2,
+      "e": "“nadir” is the opposite of “zenith”."
+    },
+    {
+      "q": "Choose the opposite of “dormant”.",
+      "o": [
+        "sleeping",
+        "inactive",
+        "hidden",
+        "active"
+      ],
+      "r": 3,
+      "e": "“active” is the opposite of “dormant”."
+    }
+  ]
+}

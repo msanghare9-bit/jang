@@ -1,0 +1,1156 @@
+{
+  "questions": [
+    {
+      "q": "Quel est le contraire de “hot” ?",
+      "o": [
+        "cold",
+        "warm",
+        "dry",
+        "bright"
+      ],
+      "r": 0,
+      "e": "“Cold” veut dire froid."
+    },
+    {
+      "q": "Quel est le contraire de “tall” ?",
+      "o": [
+        "high",
+        "short",
+        "long",
+        "wide"
+      ],
+      "r": 1,
+      "e": "“Short” veut dire petit en hauteur."
+    },
+    {
+      "q": "Quel est le contraire de “old” ?",
+      "o": [
+        "young",
+        "late",
+        "new",
+        "slow"
+      ],
+      "r": 2,
+      "e": "“New” veut dire neuf ou nouveau."
+    },
+    {
+      "q": "Quel est le contraire de “open” ?",
+      "o": [
+        "wide",
+        "free",
+        "ready",
+        "closed"
+      ],
+      "r": 3,
+      "e": "“Closed” veut dire fermé."
+    },
+    {
+      "q": "Quel est le contraire de “early” ?",
+      "o": [
+        "late",
+        "quick",
+        "soon",
+        "first"
+      ],
+      "r": 0,
+      "e": "“Late” veut dire en retard ou tard."
+    },
+    {
+      "q": "Quel est le contraire de “happy” ?",
+      "o": [
+        "glad",
+        "sad",
+        "kind",
+        "funny"
+      ],
+      "r": 1,
+      "e": "“Sad” veut dire triste."
+    },
+    {
+      "q": "Quel est le contraire de “fast” ?",
+      "o": [
+        "quick",
+        "strong",
+        "slow",
+        "easy"
+      ],
+      "r": 2,
+      "e": "“Slow” veut dire lent."
+    },
+    {
+      "q": "Quel est le contraire de “clean” ?",
+      "o": [
+        "clear",
+        "fresh",
+        "empty",
+        "dirty"
+      ],
+      "r": 3,
+      "e": "“Dirty” veut dire sale."
+    },
+    {
+      "q": "Quel est le contraire de “full” ?",
+      "o": [
+        "empty",
+        "heavy",
+        "wide",
+        "ready"
+      ],
+      "r": 0,
+      "e": "“Empty” veut dire vide."
+    },
+    {
+      "q": "Quel est le contraire de “easy” ?",
+      "o": [
+        "simple",
+        "difficult",
+        "quick",
+        "safe"
+      ],
+      "r": 1,
+      "e": "“Difficult” veut dire difficile."
+    },
+    {
+      "q": "Quel est le contraire de “wet” ?",
+      "o": [
+        "cold",
+        "soft",
+        "dry",
+        "dark"
+      ],
+      "r": 2,
+      "e": "“Dry” veut dire sec."
+    },
+    {
+      "q": "Quel est le contraire de “strong” ?",
+      "o": [
+        "brave",
+        "heavy",
+        "healthy",
+        "weak"
+      ],
+      "r": 3,
+      "e": "“Weak” veut dire faible."
+    },
+    {
+      "q": "Dans “a light bag”, quel est le contraire de “light” ?",
+      "o": [
+        "heavy",
+        "bright",
+        "small",
+        "empty"
+      ],
+      "r": 0,
+      "e": "Ici, “light” veut dire léger; son contraire est “heavy”."
+    },
+    {
+      "q": "Quel est le contraire de “start” ?",
+      "o": [
+        "begin",
+        "stop",
+        "move",
+        "stay"
+      ],
+      "r": 1,
+      "e": "“Stop” veut dire arrêter."
+    },
+    {
+      "q": "Quel est le contraire de “above” ?",
+      "o": [
+        "over",
+        "high",
+        "below",
+        "inside"
+      ],
+      "r": 2,
+      "e": "“Below” veut dire en dessous."
+    },
+    {
+      "q": "Quel est le contraire de “near” ?",
+      "o": [
+        "close",
+        "next",
+        "beside",
+        "far"
+      ],
+      "r": 3,
+      "e": "“Far” veut dire loin."
+    },
+    {
+      "q": "Dans un échange, quel est le contraire de “buy” ?",
+      "o": [
+        "sell",
+        "pay",
+        "keep",
+        "choose"
+      ],
+      "r": 0,
+      "e": "Acheter et vendre sont des actions opposées dans un échange."
+    },
+    {
+      "q": "Quel est le contraire de “win” ?",
+      "o": [
+        "play",
+        "lose",
+        "score",
+        "try"
+      ],
+      "r": 1,
+      "e": "“Lose” veut dire perdre."
+    },
+    {
+      "q": "Quel est le contraire de “remember” ?",
+      "o": [
+        "learn",
+        "know",
+        "forget",
+        "repeat"
+      ],
+      "r": 2,
+      "e": "“Forget” veut dire oublier."
+    },
+    {
+      "q": "Quel est le contraire de “noisy” ?",
+      "o": [
+        "loud",
+        "busy",
+        "crowded",
+        "quiet"
+      ],
+      "r": 3,
+      "e": "“Quiet” veut dire calme ou silencieux."
+    },
+    {
+      "q": "Quel est le contraire de “safe” ?",
+      "o": [
+        "dangerous",
+        "careful",
+        "healthy",
+        "strong"
+      ],
+      "r": 0,
+      "e": "“Dangerous” veut dire dangereux."
+    },
+    {
+      "q": "Quel est le contraire de “kind” ?",
+      "o": [
+        "polite",
+        "cruel",
+        "helpful",
+        "friendly"
+      ],
+      "r": 1,
+      "e": "“Cruel” veut dire cruel."
+    },
+    {
+      "q": "Quel est le contraire de “arrive” ?",
+      "o": [
+        "reach",
+        "enter",
+        "leave",
+        "come"
+      ],
+      "r": 2,
+      "e": "“Leave” veut dire partir."
+    },
+    {
+      "q": "Quel est le contraire de “give” ?",
+      "o": [
+        "share",
+        "bring",
+        "send",
+        "take"
+      ],
+      "r": 3,
+      "e": "“Take” veut dire prendre."
+    },
+    {
+      "q": "Quel est le contraire de “wide” ?",
+      "o": [
+        "narrow",
+        "long",
+        "high",
+        "deep"
+      ],
+      "r": 0,
+      "e": "“Narrow” veut dire étroit.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “push” ?",
+      "o": [
+        "lift",
+        "pull",
+        "carry",
+        "drop"
+      ],
+      "r": 1,
+      "e": "“Pull” veut dire tirer; c’est l’action opposée à pousser.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “sit” ?",
+      "o": [
+        "sleep",
+        "walk",
+        "stand",
+        "wait"
+      ],
+      "r": 2,
+      "e": "“Stand” veut dire être debout.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “laugh” ?",
+      "o": [
+        "smile",
+        "talk",
+        "sing",
+        "cry"
+      ],
+      "r": 3,
+      "e": "“Cry” veut dire pleurer.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “inside” ?",
+      "o": [
+        "outside",
+        "under",
+        "near",
+        "above"
+      ],
+      "r": 0,
+      "e": "“Outside” veut dire dehors.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “expensive” ?",
+      "o": [
+        "large",
+        "cheap",
+        "useful",
+        "beautiful"
+      ],
+      "r": 1,
+      "e": "“Cheap” veut dire peu cher.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “left” ?",
+      "o": [
+        "straight",
+        "north",
+        "right",
+        "behind"
+      ],
+      "r": 2,
+      "e": "“Right” veut dire droite.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “a dark room”, quel est le contraire de “dark” ?",
+      "o": [
+        "quiet",
+        "small",
+        "cold",
+        "bright"
+      ],
+      "r": 3,
+      "e": "Ici, “bright” veut dire lumineux.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “high” ?",
+      "o": [
+        "low",
+        "tall",
+        "wide",
+        "fast"
+      ],
+      "r": 0,
+      "e": "“Low” veut dire bas.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “thin” ?",
+      "o": [
+        "short",
+        "thick",
+        "light",
+        "soft"
+      ],
+      "r": 1,
+      "e": "“Thick” veut dire épais.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “soft” ?",
+      "o": [
+        "smooth",
+        "warm",
+        "hard",
+        "clean"
+      ],
+      "r": 2,
+      "e": "“Hard” veut dire dur.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “a heavy bag”, quel est le contraire de “heavy” ?",
+      "o": [
+        "big",
+        "full",
+        "strong",
+        "light"
+      ],
+      "r": 3,
+      "e": "Ici, “light” veut dire léger.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “young” ?",
+      "o": [
+        "old",
+        "new",
+        "small",
+        "early"
+      ],
+      "r": 0,
+      "e": "“Old” veut dire âgé.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “east” ?",
+      "o": [
+        "north",
+        "west",
+        "south",
+        "left"
+      ],
+      "r": 1,
+      "e": "“West” est la direction opposée à “east”.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “before” ?",
+      "o": [
+        "during",
+        "early",
+        "after",
+        "first"
+      ],
+      "r": 2,
+      "e": "“After” veut dire après.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “front” ?",
+      "o": [
+        "side",
+        "top",
+        "middle",
+        "back"
+      ],
+      "r": 3,
+      "e": "“Back” veut dire derrière.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “take” ?",
+      "o": [
+        "give",
+        "keep",
+        "bring",
+        "find"
+      ],
+      "r": 0,
+      "e": "“Give” veut dire donner; “take” veut dire prendre.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans un examen, quel est le contraire de “pass” ?",
+      "o": [
+        "win",
+        "fail",
+        "try",
+        "learn"
+      ],
+      "r": 1,
+      "e": "“Fail” veut dire échouer.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “rich” ?",
+      "o": [
+        "strong",
+        "famous",
+        "poor",
+        "healthy"
+      ],
+      "r": 2,
+      "e": "“Poor” veut dire pauvre.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “awake” ?",
+      "o": [
+        "alert",
+        "ready",
+        "alive",
+        "asleep"
+      ],
+      "r": 3,
+      "e": "“Asleep” veut dire endormi.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “deep” ?",
+      "o": [
+        "shallow",
+        "wide",
+        "dark",
+        "narrow"
+      ],
+      "r": 0,
+      "e": "“Shallow” veut dire peu profond.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “healthy” ?",
+      "o": [
+        "hungry",
+        "ill",
+        "tall",
+        "kind"
+      ],
+      "r": 1,
+      "e": "“Ill” veut dire malade.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “accept” ?",
+      "o": [
+        "choose",
+        "receive",
+        "reject",
+        "allow"
+      ],
+      "r": 2,
+      "e": "“Reject” veut dire refuser.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de “increase” ?",
+      "o": [
+        "add",
+        "raise",
+        "grow",
+        "decrease"
+      ],
+      "r": 3,
+      "e": "“Decrease” veut dire diminuer.",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « hot » ?",
+      "o": [
+        "cold",
+        "slow",
+        "far",
+        "dry"
+      ],
+      "r": 0,
+      "e": "« cold » exprime le contraire de « hot ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « tall » ?",
+      "o": [
+        "small",
+        "short",
+        "dark",
+        "down"
+      ],
+      "r": 1,
+      "e": "« short » exprime le contraire de « tall ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « old » ?",
+      "o": [
+        "sad",
+        "weak",
+        "young",
+        "outside"
+      ],
+      "r": 2,
+      "e": "« young » exprime le contraire de « old ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « open » ?",
+      "o": [
+        "dirty",
+        "wrong",
+        "unkind",
+        "closed"
+      ],
+      "r": 3,
+      "e": "« closed » exprime le contraire de « open ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « early » ?",
+      "o": [
+        "late",
+        "empty",
+        "old",
+        "quiet"
+      ],
+      "r": 0,
+      "e": "« late » exprime le contraire de « early ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « fast » ?",
+      "o": [
+        "hard",
+        "slow",
+        "poor",
+        "short"
+      ],
+      "r": 1,
+      "e": "« slow » exprime le contraire de « fast ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « big » ?",
+      "o": [
+        "far",
+        "dry",
+        "small",
+        "dangerous"
+      ],
+      "r": 2,
+      "e": "« small » exprime le contraire de « big ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « happy » ?",
+      "o": [
+        "dark",
+        "down",
+        "cold",
+        "sad"
+      ],
+      "r": 3,
+      "e": "« sad » exprime le contraire de « happy ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « clean » ?",
+      "o": [
+        "dirty",
+        "weak",
+        "outside",
+        "short"
+      ],
+      "r": 0,
+      "e": "« dirty » exprime le contraire de « clean ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « full » ?",
+      "o": [
+        "wrong",
+        "empty",
+        "unkind",
+        "young"
+      ],
+      "r": 1,
+      "e": "« empty » exprime le contraire de « full ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « easy » ?",
+      "o": [
+        "old",
+        "quiet",
+        "hard",
+        "closed"
+      ],
+      "r": 2,
+      "e": "« hard » exprime le contraire de « easy ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « near » ?",
+      "o": [
+        "poor",
+        "short",
+        "late",
+        "far"
+      ],
+      "r": 3,
+      "e": "« far » exprime le contraire de « near ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « light » ?",
+      "o": [
+        "dark",
+        "dry",
+        "dangerous",
+        "slow"
+      ],
+      "r": 0,
+      "e": "« dark » exprime le contraire de « light ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « strong » ?",
+      "o": [
+        "down",
+        "weak",
+        "cold",
+        "small"
+      ],
+      "r": 1,
+      "e": "« weak » exprime le contraire de « strong ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « right » ?",
+      "o": [
+        "outside",
+        "short",
+        "wrong",
+        "sad"
+      ],
+      "r": 2,
+      "e": "« wrong » exprime le contraire de « right ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « new » ?",
+      "o": [
+        "unkind",
+        "young",
+        "dirty",
+        "old"
+      ],
+      "r": 3,
+      "e": "« old » exprime le contraire de « new ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « rich » ?",
+      "o": [
+        "poor",
+        "quiet",
+        "closed",
+        "empty"
+      ],
+      "r": 0,
+      "e": "« poor » exprime le contraire de « rich ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « wet » ?",
+      "o": [
+        "short",
+        "dry",
+        "late",
+        "hard"
+      ],
+      "r": 1,
+      "e": "« dry » exprime le contraire de « wet ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « up » ?",
+      "o": [
+        "dangerous",
+        "slow",
+        "down",
+        "far"
+      ],
+      "r": 2,
+      "e": "« down » exprime le contraire de « up ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « inside » ?",
+      "o": [
+        "cold",
+        "small",
+        "dark",
+        "outside"
+      ],
+      "r": 3,
+      "e": "« outside » exprime le contraire de « inside ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « kind » ?",
+      "o": [
+        "unkind",
+        "short",
+        "sad",
+        "weak"
+      ],
+      "r": 0,
+      "e": "« unkind » exprime le contraire de « kind ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « noisy » ?",
+      "o": [
+        "young",
+        "quiet",
+        "dirty",
+        "wrong"
+      ],
+      "r": 1,
+      "e": "« quiet » exprime le contraire de « noisy ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « long » ?",
+      "o": [
+        "closed",
+        "empty",
+        "short",
+        "old"
+      ],
+      "r": 2,
+      "e": "« short » exprime le contraire de « long ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire anglais de « safe » ?",
+      "o": [
+        "late",
+        "hard",
+        "poor",
+        "dangerous"
+      ],
+      "r": 3,
+      "e": "« dangerous » exprime le contraire de « safe ».",
+      "d": "antonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est le contraire de « polite » en anglais ?",
+      "o": [
+        "rude",
+        "careful",
+        "friendly",
+        "quiet"
+      ],
+      "r": 0,
+      "e": "Rude est le contraire de polite : impoli est le contraire de poli."
+    },
+    {
+      "q": "Quel est le contraire de « same » en anglais ?",
+      "o": [
+        "similar",
+        "different",
+        "usual",
+        "simple"
+      ],
+      "r": 1,
+      "e": "Different est le contraire de same."
+    },
+    {
+      "q": "Quel est le contraire de « true » en anglais ?",
+      "o": [
+        "right",
+        "real",
+        "false",
+        "clear"
+      ],
+      "r": 2,
+      "e": "False est le contraire de true : faux est le contraire de vrai."
+    },
+    {
+      "q": "Quel est le contraire de « useful » en anglais ?",
+      "o": [
+        "helpful",
+        "careful",
+        "ready",
+        "useless"
+      ],
+      "r": 3,
+      "e": "Useless est le contraire de useful."
+    },
+    {
+      "q": "Quel est le contraire de « alive » en anglais ?",
+      "o": [
+        "dead",
+        "awake",
+        "young",
+        "sick"
+      ],
+      "r": 0,
+      "e": "Dead est le contraire de alive."
+    },
+    {
+      "q": "Quel est le contraire de « possible » en anglais ?",
+      "o": [
+        "important",
+        "impossible",
+        "popular",
+        "careful"
+      ],
+      "r": 1,
+      "e": "Impossible est le contraire de possible."
+    },
+    {
+      "q": "Quel est le contraire de « patient » en anglais ?",
+      "o": [
+        "polite",
+        "honest",
+        "impatient",
+        "gentle"
+      ],
+      "r": 2,
+      "e": "Impatient est le contraire de patient."
+    },
+    {
+      "q": "Quel est le contraire de « tidy » en anglais ?",
+      "o": [
+        "clean",
+        "quiet",
+        "empty",
+        "messy"
+      ],
+      "r": 3,
+      "e": "Messy est le contraire de tidy : en désordre est le contraire de rangé."
+    },
+    {
+      "q": "Quel est le contraire de « friendly » en anglais ?",
+      "o": [
+        "unfriendly",
+        "helpful",
+        "funny",
+        "lucky"
+      ],
+      "r": 0,
+      "e": "Unfriendly est le contraire de friendly."
+    },
+    {
+      "q": "Quel est le contraire de « honest » en anglais ?",
+      "o": [
+        "careless",
+        "dishonest",
+        "unhappy",
+        "unkind"
+      ],
+      "r": 1,
+      "e": "Dishonest est le contraire de honest : malhonnête est le contraire d’honnête."
+    },
+    {
+      "q": "Quel est le contraire de « usual » en anglais ?",
+      "o": [
+        "useful",
+        "uniform",
+        "unusual",
+        "unclear"
+      ],
+      "r": 2,
+      "e": "Unusual est le contraire de usual."
+    },
+    {
+      "q": "Quel est le contraire de « careful » en anglais ?",
+      "o": [
+        "fearful",
+        "helpful",
+        "colourful",
+        "careless"
+      ],
+      "r": 3,
+      "e": "Careless est le contraire de careful."
+    },
+    {
+      "q": "Quel est le contraire de « sweet » en anglais ?",
+      "o": [
+        "sour",
+        "fresh",
+        "soft",
+        "warm"
+      ],
+      "r": 0,
+      "e": "Sour est le contraire de sweet pour un goût."
+    },
+    {
+      "q": "Quel est le contraire de « smooth » en anglais ?",
+      "o": [
+        "round",
+        "rough",
+        "soft",
+        "wide"
+      ],
+      "r": 1,
+      "e": "Rough est le contraire de smooth : rugueux est le contraire de lisse."
+    },
+    {
+      "q": "Quel est le contraire de « together » en anglais ?",
+      "o": [
+        "near",
+        "around",
+        "apart",
+        "between"
+      ],
+      "r": 2,
+      "e": "Apart est le contraire de together."
+    },
+    {
+      "q": "Quel est le contraire de « first » en anglais ?",
+      "o": [
+        "next",
+        "early",
+        "main",
+        "last"
+      ],
+      "r": 3,
+      "e": "Last est le contraire de first dans un ordre."
+    },
+    {
+      "q": "Quel est le contraire de « best » en anglais ?",
+      "o": [
+        "worst",
+        "better",
+        "good",
+        "least"
+      ],
+      "r": 0,
+      "e": "Worst est le contraire de best."
+    },
+    {
+      "q": "Quel est le contraire de « comfortable » en anglais ?",
+      "o": [
+        "impossible",
+        "uncomfortable",
+        "unusual",
+        "unfriendly"
+      ],
+      "r": 1,
+      "e": "Uncomfortable est le contraire de comfortable."
+    },
+    {
+      "q": "Quel est le contraire de « regular » en anglais ?",
+      "o": [
+        "incomplete",
+        "unavailable",
+        "irregular",
+        "uncertain"
+      ],
+      "r": 2,
+      "e": "Irregular est le contraire de regular."
+    },
+    {
+      "q": "Quel est le contraire de « available » en anglais ?",
+      "o": [
+        "unfriendly",
+        "unusual",
+        "unfair",
+        "unavailable"
+      ],
+      "r": 3,
+      "e": "Unavailable est le contraire de available."
+    },
+    {
+      "q": "Quel est le contraire de « complete » en anglais ?",
+      "o": [
+        "incomplete",
+        "impatient",
+        "impossible",
+        "irregular"
+      ],
+      "r": 0,
+      "e": "Incomplete est le contraire de complete."
+    },
+    {
+      "q": "Quel est le contraire de « fair » en anglais ?",
+      "o": [
+        "unclean",
+        "unfair",
+        "untrue",
+        "unready"
+      ],
+      "r": 1,
+      "e": "Unfair est le contraire de fair."
+    },
+    {
+      "q": "Quel est le contraire de « certain » en anglais ?",
+      "o": [
+        "unusual",
+        "unhelpful",
+        "uncertain",
+        "uncomfortable"
+      ],
+      "r": 2,
+      "e": "Uncertain est le contraire de certain."
+    },
+    {
+      "q": "Quel est le contraire de « employed » en anglais ?",
+      "o": [
+        "unprepared",
+        "unhappy",
+        "unhealthy",
+        "unemployed"
+      ],
+      "r": 3,
+      "e": "Unemployed décrit une personne qui n’a pas d’emploi."
+    }
+  ]
+}

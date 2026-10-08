@@ -1,37 +1,116 @@
 {
- "version": 1,
- "domaines": [
-  "vocabulaire",
-  "grammaire",
-  "expressions",
-  "comprehension",
-  "culture"
- ],
- "niveaux": [
-  "debutant",
-  "intermediaire",
-  "avance"
- ],
- "fichiers": {
-  "comprehension_debutant": {
-   "fichier": "comprehension_debutant.json",
-   "nombre": 400
-  },
-  "culture_debutant": {
-   "fichier": "culture_debutant.json",
-   "nombre": 200
-  },
-  "expressions_debutant": {
-   "fichier": "expressions_debutant.json",
-   "nombre": 200
-  },
-  "grammaire_debutant": {
-   "fichier": "grammaire_debutant.json",
-   "nombre": 400
-  },
-  "vocabulaire_debutant": {
-   "fichier": "vocabulaire_debutant.json",
-   "nombre": 400
+  "version": 2,
+  "domaines": [
+    "vocabulaire",
+    "grammaire",
+    "expressions",
+    "comprehension",
+    "culture",
+    "synonymes",
+    "antonymes",
+    "francais_anglais"
+  ],
+  "niveaux": [
+    "debutant",
+    "intermediaire",
+    "avance"
+  ],
+  "fichiers": {
+    "comprehension_debutant": {
+      "fichier": "comprehension_debutant.json",
+      "nombre": 400
+    },
+    "culture_debutant": {
+      "fichier": "culture_debutant.json",
+      "nombre": 200
+    },
+    "expressions_debutant": {
+      "fichier": "expressions_debutant.json",
+      "nombre": 200
+    },
+    "grammaire_debutant": {
+      "fichier": "grammaire_debutant.json",
+      "nombre": 400
+    },
+    "vocabulaire_debutant": {
+      "fichier": "vocabulaire_debutant.json",
+      "nombre": 400
+    },
+    "synonymes_debutant": {
+      "fichier": "synonymes_debutant.json",
+      "nombre": 96
+    },
+    "antonymes_debutant": {
+      "fichier": "antonymes_debutant.json",
+      "nombre": 96
+    },
+    "francais_anglais_debutant": {
+      "fichier": "francais_anglais_debutant.json",
+      "nombre": 120
+    },
+    "synonymes_intermediaire": {
+      "fichier": "synonymes_intermediaire.json",
+      "nombre": 120
+    },
+    "synonymes_avance": {
+      "fichier": "synonymes_avance.json",
+      "nombre": 96
+    },
+    "antonymes_intermediaire": {
+      "fichier": "antonymes_intermediaire.json",
+      "nombre": 96
+    },
+    "antonymes_avance": {
+      "fichier": "antonymes_avance.json",
+      "nombre": 96
+    },
+    "francais_anglais_intermediaire": {
+      "fichier": "francais_anglais_intermediaire.json",
+      "nombre": 96
+    },
+    "francais_anglais_avance": {
+      "fichier": "francais_anglais_avance.json",
+      "nombre": 96
+    },
+    "vocabulaire_intermediaire": {
+      "fichier": "vocabulaire_intermediaire.json",
+      "nombre": 96
+    },
+    "vocabulaire_avance": {
+      "fichier": "vocabulaire_avance.json",
+      "nombre": 96
+    },
+    "grammaire_intermediaire": {
+      "fichier": "grammaire_intermediaire.json",
+      "nombre": 96
+    },
+    "grammaire_avance": {
+      "fichier": "grammaire_avance.json",
+      "nombre": 96
+    },
+    "expressions_intermediaire": {
+      "fichier": "expressions_intermediaire.json",
+      "nombre": 96
+    },
+    "expressions_avance": {
+      "fichier": "expressions_avance.json",
+      "nombre": 96
+    },
+    "comprehension_intermediaire": {
+      "fichier": "comprehension_intermediaire.json",
+      "nombre": 96
+    },
+    "comprehension_avance": {
+      "fichier": "comprehension_avance.json",
+      "nombre": 96
+    },
+    "culture_intermediaire": {
+      "fichier": "culture_intermediaire.json",
+      "nombre": 108
+    },
+    "culture_avance": {
+      "fichier": "culture_avance.json",
+      "nombre": 108
+    }
   }
- }
 }

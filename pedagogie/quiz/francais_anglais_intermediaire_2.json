@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the best English translation of: “Je vais m'occuper des enfants ce soir.”",
+      "o": [
+        "I'm going to look after the children tonight.",
+        "I'm going to look for the children tonight.",
+        "I looked at the children last night.",
+        "I'm going to leave the children tomorrow."
+      ],
+      "r": 0,
+      "e": "“I'm going to look after the children tonight.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a annulé le rendez-vous.”",
+      "o": [
+        "She called the office after the appointment.",
+        "She called off the appointment.",
+        "She made an appointment yesterday.",
+        "She put off calling her friend."
+      ],
+      "r": 1,
+      "e": "“She called off the appointment.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous avons découvert la vérité.”",
+      "o": [
+        "We looked for the truth.",
+        "We made the truth up.",
+        "We found out the truth.",
+        "We forgot to tell the truth."
+      ],
+      "r": 2,
+      "e": "“We found out the truth.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Peux-tu continuer sans moi ?”",
+      "o": [
+        "Can you carry me home?",
+        "Can you call me later?",
+        "Can you wait for me?",
+        "Can you carry on without me?"
+      ],
+      "r": 3,
+      "e": "“Can you carry on without me?” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a refusé notre offre.”",
+      "o": [
+        "He turned down our offer.",
+        "He turned our offer around.",
+        "He accepted our offer.",
+        "He wrote down our offer."
+      ],
+      "r": 0,
+      "e": "“He turned down our offer.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “J'ai hâte de te revoir.”",
+      "o": [
+        "I'm looking for you again.",
+        "I'm looking forward to seeing you again.",
+        "I saw you a long time ago.",
+        "I'm worried about seeing you."
+      ],
+      "r": 1,
+      "e": "“I'm looking forward to seeing you again.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle s'entend bien avec ses collègues.”",
+      "o": [
+        "She works far away from her colleagues.",
+        "She argues with her colleagues every day.",
+        "She gets along well with her colleagues.",
+        "She gets her colleagues to leave."
+      ],
+      "r": 2,
+      "e": "“She gets along well with her colleagues.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a abandonné son projet.”",
+      "o": [
+        "He gave his project away.",
+        "He started a new project.",
+        "He looked up his project.",
+        "He gave up on his project."
+      ],
+      "r": 3,
+      "e": "“He gave up on his project.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je dois ramasser les papiers par terre.”",
+      "o": [
+        "I need to pick up the papers from the floor.",
+        "I need to put the papers on the floor.",
+        "I need to write on these papers.",
+        "I need to throw the floor away."
+      ],
+      "r": 0,
+      "e": "“I need to pick up the papers from the floor.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous avons créé un nouveau club.”",
+      "o": [
+        "We sat in a new club.",
+        "We set up a new club.",
+        "We closed the club for the day.",
+        "We joined the club last year."
+      ],
+      "r": 1,
+      "e": "“We set up a new club.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le magasin n'a plus de lait.”",
+      "o": [
+        "The shop has ordered more milk.",
+        "The shop has run the milk out.",
+        "The shop has run out of milk.",
+        "The shop sells milk every day."
+      ],
+      "r": 2,
+      "e": "“The shop has run out of milk.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je n'arrive pas à me décider.”",
+      "o": [
+        "I can't make my mind up early.",
+        "I changed my mind yesterday.",
+        "I can't remember my name.",
+        "I can't make up my mind."
+      ],
+      "r": 3,
+      "e": "“I can't make up my mind.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Prends soin de ton petit frère.”",
+      "o": [
+        "Take care of your younger brother.",
+        "Look for your younger brother.",
+        "Take your brother to school tomorrow.",
+        "Tell your brother to be careful."
+      ],
+      "r": 0,
+      "e": "“Take care of your younger brother.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je viens de recevoir ton message.”",
+      "o": [
+        "I will send you a message soon.",
+        "I've just received your message.",
+        "I received your message last week.",
+        "I have just written your message."
+      ],
+      "r": 1,
+      "e": "“I've just received your message.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle était si fatiguée qu'elle s'est endormie.”",
+      "o": [
+        "She was too tired to go to sleep.",
+        "She woke up because she was tired.",
+        "She was so tired that she fell asleep.",
+        "She felt asleep after the lesson."
+      ],
+      "r": 2,
+      "e": "“She was so tired that she fell asleep.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il faut éviter de gaspiller l'eau.”",
+      "o": [
+        "We must use more water.",
+        "We should waste time carefully.",
+        "We must wait for the water.",
+        "We must avoid wasting water."
+      ],
+      "r": 3,
+      "e": "“We must avoid wasting water.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Nous sommes en route vers le marché.”",
+      "o": [
+        "We are on our way to the market.",
+        "We are in the market today.",
+        "We found a road near the market.",
+        "We are waiting for the market to open."
+      ],
+      "r": 0,
+      "e": "“We are on our way to the market.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Plus il pratique, plus il progresse.”",
+      "o": [
+        "He practices less as he improves.",
+        "The more he practices, the more he improves.",
+        "He improves before he practices.",
+        "The more he practices, the less he learns."
+      ],
+      "r": 1,
+      "e": "“The more he practices, the more he improves.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle m'a demandé de garder le silence.”",
+      "o": [
+        "She asked me to speak louder.",
+        "She told me to leave quietly.",
+        "She asked me to keep quiet.",
+        "She asked me to stay awake."
+      ],
+      "r": 2,
+      "e": "“She asked me to keep quiet.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Je n'ai pas l'habitude de manger épicé.”",
+      "o": [
+        "I don't like cooking spicy food.",
+        "I used to eat spicy food every day.",
+        "I'm not ready to buy spicy food.",
+        "I'm not used to eating spicy food."
+      ],
+      "r": 3,
+      "e": "“I'm not used to eating spicy food.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “À moins qu'il pleuve, nous jouerons dehors.”",
+      "o": [
+        "Unless it rains, we will play outside.",
+        "We will play outside because it is raining.",
+        "We will stay inside unless it stops raining.",
+        "It will rain after we play outside."
+      ],
+      "r": 0,
+      "e": "“Unless it rains, we will play outside.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Il a réussi à résoudre le problème.”",
+      "o": [
+        "He failed to explain the problem.",
+        "He managed to solve the problem.",
+        "He asked someone to create a problem.",
+        "He managed to avoid the solution."
+      ],
+      "r": 1,
+      "e": "“He managed to solve the problem.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Le bus s'arrête devant le lycée.”",
+      "o": [
+        "The bus leaves the high school early.",
+        "The bus is waiting behind the school.",
+        "The bus stops in front of the high school.",
+        "The school bus stops at every house."
+      ],
+      "r": 2,
+      "e": "“The bus stops in front of the high school.” is the best translation in this context."
+    },
+    {
+      "q": "Choose the best English translation of: “Elle a rendu son devoir avant vendredi.”",
+      "o": [
+        "She handed out homework on Friday.",
+        "She will start her homework next Friday.",
+        "She forgot her homework at school.",
+        "She handed in her homework before Friday."
+      ],
+      "r": 3,
+      "e": "“She handed in her homework before Friday.” is the best translation in this context."
+    }
+  ]
+}

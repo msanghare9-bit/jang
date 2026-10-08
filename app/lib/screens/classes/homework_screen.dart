@@ -8,6 +8,7 @@ import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../../widgets/jang_ui.dart';
 import '../home_screen.dart' show formatDate;
+import '../tutor_screen.dart';
 
 /// Devoir d'un prof : la consigne, la réponse de l'élève, puis la note du prof.
 class HomeworkScreen extends StatefulWidget {
@@ -31,6 +32,8 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
   bool _mic = false;
   bool _listening = false;
   String _before = '';
+
+  bool get _late => widget.item.dueAt != null && DateTime.now().isAfter(widget.item.dueAt!);
 
   @override
   void initState() {
@@ -104,6 +107,10 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
   Future<void> _send() async {
     final p = AuthService.instance.profile.value;
     if (p == null || _sending) return;
+    if (_late) {
+      showMessage(context, 'Le délai de ce devoir est dépassé.');
+      return;
+    }
     if (_ctl.text.trim().isEmpty) {
       showMessage(context, 'Écris ta réponse avant de rendre ton devoir.');
       return;
@@ -139,6 +146,25 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
                 children: [
                   Text('La consigne', style: titleStyle(19, weight: 800)),
                   const SizedBox(height: 8),
+                  if (widget.item.dueAt != null) ...[
+                    Row(children: [
+                      Icon(_late ? Icons.event_busy : Icons.event,
+                          color: _late ? JangColors.errorDark : JangColors.primary),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          _late
+                              ? 'Délai dépassé'
+                              : 'À rendre avant le ${widget.item.dueAt!.day.toString().padLeft(2, '0')}/${widget.item.dueAt!.month.toString().padLeft(2, '0')}/${widget.item.dueAt!.year} à ${widget.item.dueAt!.hour.toString().padLeft(2, '0')}:${widget.item.dueAt!.minute.toString().padLeft(2, '0')}',
+                          style: TextStyle(
+                            color: _late ? JangColors.errorDark : JangColors.textSecondary,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ]),
+                    const SizedBox(height: 10),
+                  ],
                   Container(
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
@@ -150,6 +176,24 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
                         ? const Text('Ton prof t\'expliquera le devoir en classe.')
                         : LessonText(widget.item.body, accent: color),
                   ),
+                  if (!(AuthService.instance.profile.value?.isStaff ?? false)) ...[
+                    const SizedBox(height: 10),
+                    ChunkyButton(
+                      label: 'Demander un indice à Kocc Bàrma',
+                      icon: Icons.lightbulb_outline,
+                      outlined: true,
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => TutorScreen(
+                            lesson: widget.item.asLesson(widget.subject),
+                            subject: widget.subject,
+                            homeworkCoach: true,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                   if (widget.item.ownerName.isNotEmpty) ...[
                     const SizedBox(height: 6),
                     Text('Donné par ${widget.item.ownerName}', style: Theme.of(context).textTheme.bodySmall),
@@ -206,14 +250,16 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
           ]),
         )
       else ...[
-        Text('Ton prof n\'a pas encore corrigé. Tu peux encore changer ta réponse.', style: t.bodyMedium),
+        Text(_late
+            ? 'Le délai est dépassé. Ton prof peut encore consulter ta réponse.'
+            : 'Ton prof n\'a pas encore corrigé. Tu peux encore changer ta réponse.', style: t.bodyMedium),
         const SizedBox(height: 12),
         ChunkyButton(
           label: 'Modifier ma réponse',
           icon: Icons.edit_rounded,
           outlined: true,
           color: JangColors.primary,
-          onPressed: () => setState(() => _editing = true),
+          onPressed: _late ? null : () => setState(() => _editing = true),
         ),
       ],
     ];
@@ -246,9 +292,9 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
       ],
       const SizedBox(height: 16),
       ChunkyButton(
-        label: _sending ? 'Envoi…' : 'Rendre mon devoir',
+        label: _late ? 'Délai dépassé' : (_sending ? 'Envoi…' : 'Rendre mon devoir'),
         icon: Icons.send_rounded,
-        onPressed: _sending ? null : _send,
+        onPressed: _sending || _late ? null : _send,
       ),
       if (_sub != null) ...[
         const SizedBox(height: 8),

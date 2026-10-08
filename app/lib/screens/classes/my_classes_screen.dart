@@ -59,7 +59,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
               child: EmptyState(
                 icon: Icons.school_outlined,
                 title: 'Pas encore de classe',
-                message: 'C\'est l\'admin qui crée les classes. Demande-lui de t\'en donner une.',
+                message: 'Tes classes renseignées à l\'inscription apparaîtront après validation de ton compte. Contacte le responsable pour les modifier.',
               ),
             );
           }

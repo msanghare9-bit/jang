@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Comment dit-on « chaise » en anglais ?",
+      "o": [
+        "chair",
+        "table",
+        "window",
+        "bed"
+      ],
+      "r": 0,
+      "e": "« Chair » veut dire chaise."
+    },
+    {
+      "q": "Comment dit-on « fenêtre » en anglais ?",
+      "o": [
+        "wall",
+        "window",
+        "door",
+        "roof"
+      ],
+      "r": 1,
+      "e": "« Window » veut dire fenêtre."
+    },
+    {
+      "q": "Comment dit-on « porte » en anglais ?",
+      "o": [
+        "window",
+        "chair",
+        "door",
+        "road"
+      ],
+      "r": 2,
+      "e": "« Door » veut dire porte."
+    },
+    {
+      "q": "Comment dit-on « table » en anglais ?",
+      "o": [
+        "chair",
+        "bag",
+        "bed",
+        "table"
+      ],
+      "r": 3,
+      "e": "« Table » veut dire table."
+    },
+    {
+      "q": "Comment dit-on « sac » en anglais ?",
+      "o": [
+        "bag",
+        "shoe",
+        "box",
+        "cup"
+      ],
+      "r": 0,
+      "e": "« Bag » veut dire sac."
+    },
+    {
+      "q": "Comment dit-on « chaussure » en anglais ?",
+      "o": [
+        "sock",
+        "shoe",
+        "shirt",
+        "hat"
+      ],
+      "r": 1,
+      "e": "« Shoe » veut dire chaussure."
+    },
+    {
+      "q": "Comment dit-on « pain » en anglais ?",
+      "o": [
+        "rice",
+        "milk",
+        "bread",
+        "egg"
+      ],
+      "r": 2,
+      "e": "« Bread » veut dire pain."
+    },
+    {
+      "q": "Comment dit-on « lait » en anglais ?",
+      "o": [
+        "water",
+        "juice",
+        "tea",
+        "milk"
+      ],
+      "r": 3,
+      "e": "« Milk » veut dire lait."
+    },
+    {
+      "q": "Comment dit-on « œuf » en anglais ?",
+      "o": [
+        "egg",
+        "fish",
+        "bread",
+        "cheese"
+      ],
+      "r": 0,
+      "e": "« Egg » veut dire œuf."
+    },
+    {
+      "q": "Comment dit-on « sucre » en anglais ?",
+      "o": [
+        "salt",
+        "sugar",
+        "rice",
+        "flour"
+      ],
+      "r": 1,
+      "e": "« Sugar » veut dire sucre."
+    },
+    {
+      "q": "Comment dit-on « sel » en anglais ?",
+      "o": [
+        "sugar",
+        "oil",
+        "salt",
+        "water"
+      ],
+      "r": 2,
+      "e": "« Salt » veut dire sel."
+    },
+    {
+      "q": "Comment dit-on « poulet » en anglais ?",
+      "o": [
+        "sheep",
+        "goat",
+        "horse",
+        "chicken"
+      ],
+      "r": 3,
+      "e": "« Chicken » veut dire poulet."
+    },
+    {
+      "q": "Comment dit-on « mouton » en anglais ?",
+      "o": [
+        "sheep",
+        "cow",
+        "horse",
+        "goat"
+      ],
+      "r": 0,
+      "e": "« Sheep » veut dire mouton."
+    },
+    {
+      "q": "Comment dit-on « cheval » en anglais ?",
+      "o": [
+        "goat",
+        "horse",
+        "donkey",
+        "cow"
+      ],
+      "r": 1,
+      "e": "« Horse » veut dire cheval."
+    },
+    {
+      "q": "Comment dit-on « matin » en anglais ?",
+      "o": [
+        "night",
+        "evening",
+        "morning",
+        "afternoon"
+      ],
+      "r": 2,
+      "e": "« Morning » veut dire matin."
+    },
+    {
+      "q": "Comment dit-on « soir » en anglais ?",
+      "o": [
+        "day",
+        "morning",
+        "night",
+        "evening"
+      ],
+      "r": 3,
+      "e": "« Evening » veut dire soir."
+    },
+    {
+      "q": "Comment dit-on « hier » en anglais ?",
+      "o": [
+        "yesterday",
+        "today",
+        "tomorrow",
+        "morning"
+      ],
+      "r": 0,
+      "e": "« Yesterday » veut dire hier."
+    },
+    {
+      "q": "Comment dit-on « demain » en anglais ?",
+      "o": [
+        "yesterday",
+        "tomorrow",
+        "morning",
+        "today"
+      ],
+      "r": 1,
+      "e": "« Tomorrow » veut dire demain."
+    },
+    {
+      "q": "Comment dit-on « rivière » en anglais ?",
+      "o": [
+        "mountain",
+        "road",
+        "river",
+        "lake"
+      ],
+      "r": 2,
+      "e": "« River » veut dire rivière."
+    },
+    {
+      "q": "Comment dit-on « montagne » en anglais ?",
+      "o": [
+        "river",
+        "tree",
+        "village",
+        "mountain"
+      ],
+      "r": 3,
+      "e": "« Mountain » veut dire montagne."
+    },
+    {
+      "q": "Comment dit-on « ville » en anglais ?",
+      "o": [
+        "town",
+        "village",
+        "house",
+        "market"
+      ],
+      "r": 0,
+      "e": "« Town » veut dire ville."
+    },
+    {
+      "q": "Comment dit-on « jardin » en anglais ?",
+      "o": [
+        "field",
+        "garden",
+        "road",
+        "room"
+      ],
+      "r": 1,
+      "e": "« Garden » veut dire jardin."
+    },
+    {
+      "q": "Comment dit-on « pluie » en anglais ?",
+      "o": [
+        "cloud",
+        "wind",
+        "rain",
+        "sun"
+      ],
+      "r": 2,
+      "e": "« Rain » veut dire pluie."
+    },
+    {
+      "q": "Comment dit-on « vent » en anglais ?",
+      "o": [
+        "rain",
+        "sun",
+        "cloud",
+        "wind"
+      ],
+      "r": 3,
+      "e": "« Wind » veut dire vent."
+    }
+  ]
+}

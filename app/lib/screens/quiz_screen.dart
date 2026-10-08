@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 import '../models.dart';
 import '../services/engagement_service.dart';
@@ -18,16 +19,16 @@ import '../widgets/jang_ui.dart';
 class QuizScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
-  const QuizScreen({super.key, required this.lesson, required this.subject});
+  final String? opponentId;
+  const QuizScreen({super.key, required this.lesson, required this.subject, this.opponentId});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  // Tuiles façon Kahoot : rouge ▲, bleu ◆, jaune ●, vert ■.
-  static const _shapes = ['▲', '◆', '●', '■'];
-  static const _colors = [Color(0xFFE21B3C), Color(0xFF1368CE), Color(0xFFD89E00), Color(0xFF26890C)];
+  // Choix sobres : lettres et cartes claires au style Jàng.
+  static const _shapes = ['A', 'B', 'C', 'D'];
 
   late List<int?> _answers;
   int _index = 0;
@@ -39,6 +40,10 @@ class _QuizScreenState extends State<QuizScreen> {
   bool _celebrate = false;
   String? _newEpisode;
   int _xp = 0;
+  int _opponentCorrect = 0;
+  bool _opponentPending = false;
+  bool _checking = false;
+  bool? _opponentCorrectThisQuestion;
   static final _rand = Random();
   static const _rightTitles = ['Comprendre nga bou bax !', 'Diambar nga ! 🎉', 'Waaw, bravo ! 🎉'];
 
@@ -66,22 +71,70 @@ class _QuizScreenState extends State<QuizScreen> {
     return s;
   }
 
-  void _choose(int option) {
-    if (_answers[_index] != null) return;
-    final ok = option == _quiz[_index].answer;
+  Future<void> _choose(int option) async {
+    if (_answers[_index] != null || _checking) return;
+    final question = _quiz[_index];
+    if (question.bankId.isNotEmpty) {
+      setState(() => _checking = true);
+      try {
+        final result = await FirebaseFunctions.instance.httpsCallable('checkPracticeAnswer').call({
+          'id': question.bankId,
+        });
+        question.answer = (result.data['answer'] as num).toInt().clamp(0, 3).toInt();
+      } catch (_) {
+        if (mounted) {
+          setState(() => _checking = false);
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Impossible de corriger cette question. Vérifie ta connexion.')),
+          );
+        }
+        return;
+      }
+      if (!mounted) return;
+      setState(() => _checking = false);
+    }
+    final ok = option == question.answer;
     setState(() {
       _answers[_index] = option;
       if (ok) {
         _wrongRow = 0;
-        _cheer = Cheer.right();
+        _cheer = Cheer.fromCharacter('awa', true);
         _title = _rightTitles[_rand.nextInt(_rightTitles.length)];
       } else {
         _wrongRow++;
-        _cheer = _wrongRow >= 3 ? Cheer.streakWrong() : Cheer.wrong();
+        _cheer = _wrongRow >= 3 ? Cheer.streakWrong() : Cheer.fromCharacter('modou', false);
         _title = 'Boul bayi ! Dina bax !';
       }
     });
     if (ok) SoundService.instance.splash();
+    if (widget.opponentId != null) _opponentAnswer();
+  }
+
+  String get _opponentName => switch (widget.opponentId) {
+        'gainde' => 'Gaïndé',
+        'modou' => 'Modou',
+        'awa' => 'Awa',
+        'kocc' => 'Kocc',
+        _ => '',
+      };
+
+  Future<void> _opponentAnswer() async {
+    setState(() { _opponentPending = true; _opponentCorrectThisQuestion = null; });
+    await Future.delayed(Duration(milliseconds: 450 + _rand.nextInt(1100)));
+    if (!mounted || _finished) return;
+    final chance = switch (widget.opponentId) {
+      'gainde' => .30,
+      'modou' => .52,
+      'awa' => .75,
+      'kocc' => .92,
+      _ => 0.0,
+    };
+    final correct = _rand.nextDouble() < chance;
+    setState(() {
+      _opponentPending = false;
+      _opponentCorrectThisQuestion = correct;
+      if (correct) _opponentCorrect++;
+    });
   }
 
   void _next() {
@@ -116,6 +169,9 @@ class _QuizScreenState extends State<QuizScreen> {
       _index = 0;
       _finished = false;
       _wrongRow = 0;
+      _opponentCorrect = 0;
+      _opponentPending = false;
+      _opponentCorrectThisQuestion = null;
       _celebrate = false;
       _newEpisode = null;
     });
@@ -188,6 +244,24 @@ class _QuizScreenState extends State<QuizScreen> {
             children: [
               Text('Question ${_index + 1} sur ${_quiz.length}',
                   style: Theme.of(context).textTheme.bodySmall),
+              if (widget.opponentId != null) ...[
+                const SizedBox(height: 8),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    child: Row(children: [
+                      CharacterView.of(widget.opponentId!, size: 38, moves: Moves.bob),
+                      const SizedBox(width: 8),
+                      Expanded(child: Text('Toi $_correctCount  ·  $_opponentName $_opponentCorrect',
+                          style: const TextStyle(fontWeight: FontWeight.w800))),
+                      if (_opponentPending) const SizedBox(width: 16, height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2)),
+                      if (_opponentCorrectThisQuestion == true) const Icon(Icons.check_circle, color: JangColors.snGreen, size: 18),
+                      if (_opponentCorrectThisQuestion == false) const Icon(Icons.remove_circle_outline, color: JangColors.textSecondary, size: 18),
+                    ]),
+                  ),
+                ),
+              ],
               const SizedBox(height: 4),
               Text(q.question, style: titleStyle(24, weight: 800)),
               if (q.image.isNotEmpty) ...[
@@ -247,7 +321,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       ChunkyButton(
                         label: _index < _quiz.length - 1 ? 'CONTINUER' : 'VOIR MA NOTE',
                         color: correct ? JangColors.success : JangColors.error,
-                        onPressed: _next,
+                        onPressed: _opponentPending ? null : _next,
                       ),
                     ],
                   ),
@@ -257,20 +331,14 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  /// Grandes tuiles colorées façon Kahoot, deux par ligne.
+  /// Choix en grandes cartes empilées, avec un repère lettré.
   Widget _grid(QuizQuestion q, int? chosen) {
     final idx = [for (var o = 0; o < q.options.length && o < 4; o++) if (q.options[o].trim().isNotEmpty) o];
     return Column(children: [
-      for (var r = 0; r < idx.length; r += 2)
+      for (final option in idx)
         Padding(
-          padding: const EdgeInsets.only(bottom: 12),
-          child: IntrinsicHeight(
-            child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-              Expanded(child: _option(idx[r], q, chosen)),
-              const SizedBox(width: 12),
-              Expanded(child: r + 1 < idx.length ? _option(idx[r + 1], q, chosen) : const SizedBox()),
-            ]),
-          ),
+          padding: const EdgeInsets.only(bottom: 10),
+          child: _option(option, q, chosen),
         ),
     ]);
   }
@@ -279,35 +347,50 @@ class _QuizScreenState extends State<QuizScreen> {
     final answered = chosen != null;
     final isAnswer = o == q.answer;
     final isChosen = o == chosen;
-    final color = _colors[o];
-    final dim = answered && !isAnswer;
-    return Opacity(
-      opacity: dim ? (isChosen ? 0.75 : 0.35) : 1,
-      child: GestureDetector(
+    final Color fill = !answered
+        ? Colors.white
+        : isAnswer
+            ? JangColors.successBg
+            : isChosen
+                ? JangColors.errorBg
+                : Colors.white;
+    final Color edge = !answered
+        ? JangColors.border
+        : isAnswer
+            ? JangColors.success
+            : isChosen
+                ? JangColors.error
+                : JangColors.border;
+    return Material(
+      color: fill,
+      borderRadius: BorderRadius.circular(16),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
         onTap: answered ? null : () => _choose(o),
         child: Container(
-          constraints: const BoxConstraints(minHeight: 120),
-          padding: const EdgeInsets.fromLTRB(12, 10, 12, 14),
+          constraints: const BoxConstraints(minHeight: 72),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
           decoration: BoxDecoration(
-            color: color,
             borderRadius: BorderRadius.circular(16),
-            boxShadow: [BoxShadow(color: JangColors.darker(color, 0.12), offset: const Offset(0, 6))],
+            border: Border.all(color: edge, width: isAnswer && answered || isChosen ? 2 : 1.5),
           ),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: answered && (isAnswer || isChosen)
-                  ? Icon(isAnswer ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                      color: Colors.white, size: 30)
-                  : Text(_shapes[o], style: const TextStyle(color: Colors.white, fontSize: 26, height: 1)),
-            ),
-            Expanded(
-              child: Center(
-                child: Text(q.options[o],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w800)),
+          child: Row(children: [
+            Container(
+              width: 38,
+              height: 38,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: isChosen && answered && !isAnswer ? JangColors.error : JangColors.snGreen,
+                borderRadius: BorderRadius.circular(12),
               ),
+              child: Text(_shapes[o],
+                  style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w900)),
             ),
+            const SizedBox(width: 12),
+            Expanded(child: Text(q.options[o],
+                style: const TextStyle(color: JangColors.text, fontSize: 16, fontWeight: FontWeight.w700))),
+            if (answered && isAnswer) const Icon(Icons.check_circle, color: JangColors.snGreen),
+            if (answered && isChosen && !isAnswer) const Icon(Icons.cancel, color: JangColors.error),
           ]),
         ),
       ),
@@ -338,6 +421,14 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         const SizedBox(height: 6),
         Text(_endMessage, textAlign: TextAlign.center, style: Theme.of(context).textTheme.titleMedium),
+        if (widget.opponentId != null) ...[
+          const SizedBox(height: 10),
+          Card(child: ListTile(
+            leading: CharacterView.of(widget.opponentId!, size: 48, moves: Moves.sway),
+            title: Text('$_opponentName : $_opponentCorrect / $total'),
+            subtitle: Text(_score == _opponentCorrect ? 'Match nul !' : _score > _opponentCorrect ? 'Tu as gagné cette manche !' : 'Cette fois, $_opponentName a gagné. Réessaie !'),
+          )),
+        ],
         if (_xp > 0)
           Padding(
             padding: const EdgeInsets.only(top: 8),

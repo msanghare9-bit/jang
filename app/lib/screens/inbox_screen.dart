@@ -86,6 +86,10 @@ class _InboxScreenState extends State<InboxScreen> {
               else if (messages.isEmpty)
                 Text('Pas encore de message.', style: t.bodyMedium),
               for (final m in messages) _messageCard(context, p.uid, m),
+              if (p.isStaff) ...[
+                const SectionTitle('Messages envoyés'),
+                _SentMessages(uid: p.uid),
+              ],
               const SectionTitle('Annonces'),
               FutureBuilder<(List<Announcement>, Set<String>)>(
                 future: _ann,
@@ -136,8 +140,8 @@ class _InboxScreenState extends State<InboxScreen> {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFF1EBFF),
-        border: Border.all(color: const Color(0xFF8B5CF6), width: 2),
+        color: JangColors.successBg,
+        border: Border.all(color: JangColors.snGreen, width: 2),
         borderRadius: BorderRadius.circular(18),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -169,6 +173,50 @@ class _InboxScreenState extends State<InboxScreen> {
   }
 }
 
+/// Carte des messages envoyés par un professeur, avec les réponses des élèves.
+class _SentMessages extends StatelessWidget {
+  final String uid;
+  const _SentMessages({required this.uid});
+
+  @override
+  Widget build(BuildContext context) => StreamBuilder<List<InboxMessage>>(
+        stream: InboxService.instance.sentMessages(uid),
+        builder: (context, snap) {
+          if (snap.hasError) return const Text('Impossible de charger les messages envoyés.');
+          if (snap.connectionState == ConnectionState.waiting && !snap.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          final messages = snap.data ?? const <InboxMessage>[];
+          if (messages.isEmpty) return const Text('Pas encore de message envoyé.');
+          return Column(children: [
+            for (final m in messages)
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Row(children: [
+                      const Icon(Icons.send_outlined, color: JangColors.primary),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text('À ${m.toName.isEmpty ? 'un élève' : m.toName}',
+                            style: const TextStyle(fontWeight: FontWeight.w800)),
+                      ),
+                    ]),
+                    const SizedBox(height: 8),
+                    Text(m.text),
+                    if (m.reply.isNotEmpty) ...[
+                      const Divider(),
+                      const Text('Réponse reçue', style: TextStyle(fontWeight: FontWeight.w800)),
+                      Text(m.reply),
+                    ],
+                  ]),
+                ),
+              ),
+          ]);
+        },
+      );
+}
+
 /// Carte « Message de ton prof » sur l'accueil (seulement s'il y a un message non lu).
 class InboxCard extends StatelessWidget {
   const InboxCard({super.key});
@@ -180,33 +228,42 @@ class InboxCard extends StatelessWidget {
     return StreamBuilder<List<InboxMessage>>(
       stream: InboxService.instance.myMessages(p.uid),
       builder: (context, snap) {
-        final unread = (snap.data ?? const <InboxMessage>[]).where((m) => !m.read).toList();
-        if (unread.isEmpty) return const SizedBox.shrink();
-        final m = unread.first;
+        final unread = (snap.data ?? const <InboxMessage>[]).where((m) => !m.read).length;
+        final subtitle = p.isStaff
+            ? 'Messages reçus et envoyés'
+            : unread > 0
+                ? '$unread message${unread > 1 ? 's' : ''} non lu${unread > 1 ? 's' : ''} · Messages et annonces'
+                : 'Messages de tes profs et annonces';
         return GestureDetector(
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
           child: Container(
             margin: const EdgeInsets.only(bottom: 10),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFF1EBFF),
-              border: Border.all(color: const Color(0xFF8B5CF6), width: 2),
+              color: JangColors.successBg,
+              border: Border.all(color: JangColors.snGreen, width: 2),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(children: [
-              const CharacterView(Chars.kocc, size: 52, moves: Moves.sway),
+              const CircleAvatar(
+                backgroundColor: JangColors.snGreen,
+                child: Icon(Icons.forum_outlined, color: Colors.white),
+              ),
               const SizedBox(width: 10),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(
-                      unread.length > 1
-                          ? '${unread.length} messages de ton prof'
-                          : 'Un message de ${m.fromName}',
-                      style: titleStyle(17, weight: 800)),
-                  Text(m.text, maxLines: 2, overflow: TextOverflow.ellipsis),
+                  Text('Messagerie', style: titleStyle(17, weight: 800)),
+                  Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
                 ]),
               ),
-              const Icon(Icons.chevron_right),
+              if (unread > 0)
+                CircleAvatar(
+                  radius: 14,
+                  backgroundColor: JangColors.snGreen,
+                  child: Text('$unread', style: const TextStyle(color: Colors.white, fontSize: 12)),
+                )
+              else
+                const Icon(Icons.chevron_right),
             ]),
           ),
         );

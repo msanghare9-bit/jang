@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Comment dit-on « prendre une décision » en anglais ?",
+      "o": [
+        "make a decision",
+        "break down",
+        "save time",
+        "catch the bus"
+      ],
+      "r": 0,
+      "e": "« prendre une décision » se traduit par « make a decision »."
+    },
+    {
+      "q": "What does “keep a promise” mean in French?",
+      "o": [
+        "mettre en place",
+        "tenir une promesse",
+        "perdre patience",
+        "rater le train"
+      ],
+      "r": 1,
+      "e": "« keep a promise » signifie « tenir une promesse »."
+    },
+    {
+      "q": "Comment dit-on « faire attention » en anglais ?",
+      "o": [
+        "deal with",
+        "make progress",
+        "pay attention",
+        "feel better"
+      ],
+      "r": 2,
+      "e": "« faire attention » se traduit par « pay attention »."
+    },
+    {
+      "q": "What does “look forward to” mean in French?",
+      "o": [
+        "prendre soin de",
+        "être d'accord",
+        "réussir un examen",
+        "avoir hâte de"
+      ],
+      "r": 3,
+      "e": "« look forward to » signifie « avoir hâte de »."
+    },
+    {
+      "q": "Comment dit-on « se rendre compte » en anglais ?",
+      "o": [
+        "realize",
+        "take place",
+        "change one's mind",
+        "fail a test"
+      ],
+      "r": 0,
+      "e": "« se rendre compte » se traduit par « realize »."
+    },
+    {
+      "q": "What does “break down” mean in French?",
+      "o": [
+        "chercher un emploi",
+        "tomber en panne",
+        "poser une question",
+        "garder le contact"
+      ],
+      "r": 1,
+      "e": "« break down » signifie « tomber en panne »."
+    },
+    {
+      "q": "Comment dit-on « mettre en place » en anglais ?",
+      "o": [
+        "save time",
+        "catch the bus",
+        "set up",
+        "take a break"
+      ],
+      "r": 2,
+      "e": "« mettre en place » se traduit par « set up »."
+    },
+    {
+      "q": "What does “deal with” mean in French?",
+      "o": [
+        "perdre patience",
+        "rater le train",
+        "prendre une décision",
+        "faire face à"
+      ],
+      "r": 3,
+      "e": "« deal with » signifie « faire face à »."
+    },
+    {
+      "q": "Comment dit-on « prendre soin de » en anglais ?",
+      "o": [
+        "take care of",
+        "make progress",
+        "feel better",
+        "keep a promise"
+      ],
+      "r": 0,
+      "e": "« prendre soin de » se traduit par « take care of »."
+    },
+    {
+      "q": "What does “take place” mean in French?",
+      "o": [
+        "être d'accord",
+        "avoir lieu",
+        "réussir un examen",
+        "faire attention"
+      ],
+      "r": 1,
+      "e": "« take place » signifie « avoir lieu »."
+    },
+    {
+      "q": "Comment dit-on « chercher un emploi » en anglais ?",
+      "o": [
+        "change one's mind",
+        "fail a test",
+        "look for a job",
+        "look forward to"
+      ],
+      "r": 2,
+      "e": "« chercher un emploi » se traduit par « look for a job »."
+    },
+    {
+      "q": "What does “save time” mean in French?",
+      "o": [
+        "poser une question",
+        "garder le contact",
+        "se rendre compte",
+        "gagner du temps"
+      ],
+      "r": 3,
+      "e": "« save time » signifie « gagner du temps »."
+    },
+    {
+      "q": "Comment dit-on « perdre patience » en anglais ?",
+      "o": [
+        "lose patience",
+        "catch the bus",
+        "take a break",
+        "break down"
+      ],
+      "r": 0,
+      "e": "« perdre patience » se traduit par « lose patience »."
+    },
+    {
+      "q": "What does “make progress” mean in French?",
+      "o": [
+        "rater le train",
+        "faire des progrès",
+        "prendre une décision",
+        "mettre en place"
+      ],
+      "r": 1,
+      "e": "« make progress » signifie « faire des progrès »."
+    },
+    {
+      "q": "Comment dit-on « être d'accord » en anglais ?",
+      "o": [
+        "feel better",
+        "keep a promise",
+        "agree",
+        "deal with"
+      ],
+      "r": 2,
+      "e": "« être d'accord » se traduit par « agree »."
+    },
+    {
+      "q": "What does “change one's mind” mean in French?",
+      "o": [
+        "réussir un examen",
+        "faire attention",
+        "prendre soin de",
+        "changer d'avis"
+      ],
+      "r": 3,
+      "e": "« change one's mind » signifie « changer d'avis »."
+    },
+    {
+      "q": "Comment dit-on « poser une question » en anglais ?",
+      "o": [
+        "ask a question",
+        "fail a test",
+        "look forward to",
+        "take place"
+      ],
+      "r": 0,
+      "e": "« poser une question » se traduit par « ask a question »."
+    },
+    {
+      "q": "What does “catch the bus” mean in French?",
+      "o": [
+        "garder le contact",
+        "prendre le bus",
+        "se rendre compte",
+        "chercher un emploi"
+      ],
+      "r": 1,
+      "e": "« catch the bus » signifie « prendre le bus »."
+    },
+    {
+      "q": "Comment dit-on « rater le train » en anglais ?",
+      "o": [
+        "take a break",
+        "break down",
+        "miss the train",
+        "save time"
+      ],
+      "r": 2,
+      "e": "« rater le train » se traduit par « miss the train »."
+    },
+    {
+      "q": "What does “feel better” mean in French?",
+      "o": [
+        "prendre une décision",
+        "mettre en place",
+        "perdre patience",
+        "se sentir mieux"
+      ],
+      "r": 3,
+      "e": "« feel better » signifie « se sentir mieux »."
+    },
+    {
+      "q": "Comment dit-on « réussir un examen » en anglais ?",
+      "o": [
+        "pass an exam",
+        "keep a promise",
+        "deal with",
+        "make progress"
+      ],
+      "r": 0,
+      "e": "« réussir un examen » se traduit par « pass an exam »."
+    },
+    {
+      "q": "What does “fail a test” mean in French?",
+      "o": [
+        "faire attention",
+        "échouer à un test",
+        "prendre soin de",
+        "être d'accord"
+      ],
+      "r": 1,
+      "e": "« fail a test » signifie « échouer à un test »."
+    },
+    {
+      "q": "Comment dit-on « garder le contact » en anglais ?",
+      "o": [
+        "look forward to",
+        "take place",
+        "keep in touch",
+        "change one's mind"
+      ],
+      "r": 2,
+      "e": "« garder le contact » se traduit par « keep in touch »."
+    },
+    {
+      "q": "What does “take a break” mean in French?",
+      "o": [
+        "se rendre compte",
+        "chercher un emploi",
+        "poser une question",
+        "faire une pause"
+      ],
+      "r": 3,
+      "e": "« take a break » signifie « faire une pause »."
+    }
+  ]
+}

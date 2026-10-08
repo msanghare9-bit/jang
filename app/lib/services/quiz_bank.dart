@@ -10,6 +10,7 @@ import '../models.dart';
 
 /// Une question de la banque des matchs (contenus/quiz/DOMAINE_NIVEAU.json).
 class BankQuestion {
+  final String id;
   final String question;
   final List<String> options;
   final int answer;
@@ -22,6 +23,7 @@ class BankQuestion {
   final String domain;
   final String level;
   BankQuestion({
+    this.id = '',
     required this.question,
     required this.options,
     required this.answer,
@@ -37,6 +39,7 @@ class BankQuestion {
       o.add('');
     }
     return BankQuestion(
+      id: '${m['id'] ?? ''}',
       question: '${m['q'] ?? ''}',
       options: o.take(4).toList(),
       answer: (m['r'] is num ? (m['r'] as num).toInt() : 0).clamp(0, 3).toInt(),
@@ -48,6 +51,7 @@ class BankQuestion {
   }
 
   Map<String, dynamic> toMap() => {
+        if (id.isNotEmpty) 'id': id,
         'q': question,
         'o': options,
         'r': answer,
@@ -63,6 +67,7 @@ class BankQuestion {
         options: options,
         answer: answer,
         explanation: explanation,
+        bankId: id,
       );
 
   factory BankQuestion.fromQuiz(QuizQuestion q) =>
@@ -76,7 +81,7 @@ class QuizBank {
 
   static const _base = 'https://raw.githubusercontent.com/msanghare9-bit/jang/main/contenus/quiz';
 
-  static const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture'];
+  static const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais'];
   static const mixed = 'melange';
   static const levels = ['debutant', 'intermediaire', 'avance'];
 
@@ -86,6 +91,9 @@ class QuizBank {
         'expressions' => 'Expressions',
         'comprehension' => 'Compréhension',
         'culture' => 'Culture générale',
+        'synonymes' => 'Synonymes',
+        'antonymes' => 'Antonymes',
+        'francais_anglais' => 'Français → anglais',
         mixed => 'Mélange',
         _ => d,
       };
@@ -96,6 +104,9 @@ class QuizBank {
         'expressions' => '💬',
         'comprehension' => '📖',
         'culture' => '🌍',
+        'synonymes' => '🔁',
+        'antonymes' => '↔️',
+        'francais_anglais' => '🇫🇷',
         _ => '🎲',
       };
 
@@ -115,7 +126,7 @@ class QuizBank {
     if (mem != null) return mem;
     String? text;
     final prefs = await SharedPreferences.getInstance();
-    final cacheKey = 'quiz_cache_$key';
+    final cacheKey = 'quiz_cache_v2_$key';
     final cachedAtKey = 'quiz_cache_at_$key';
     // Version locale récente (moins d'un jour) : pas besoin d'internet.
     try {
@@ -156,21 +167,21 @@ class QuizBank {
     }
   }
 
-  /// Tire [count] questions au hasard (domaine « melange » : tous les domaines du niveau).
-  Future<List<BankQuestion>> draw(String domain, String level, int count) async {
-    final pools = domain == mixed
-        ? await Future.wait([for (final d in domains) load(d, level)])
-        : [await load(domain, level)];
-    final all = [for (final p in pools) ...p];
-    all.shuffle(Random());
-    if (domain != mixed) return all.take(count).toList();
-    // Mélange : on alterne les domaines pour qu'il y ait de tout.
+  /// Tire [count] questions au hasard dans le domaine demandé ou dans tous les domaines.
+  Future<List<BankQuestion>> draw(String domain, String level, int count) =>
+      drawDomains(domain == mixed ? domains : [domain], level, count);
+
+  /// Tire des questions en alternant les domaines choisis, pour garder une partie équilibrée.
+  Future<List<BankQuestion>> drawDomains(List<String> selectedDomains, String level, int count) async {
+    final selected = domains.where(selectedDomains.toSet().contains).toList();
+    if (selected.isEmpty || count <= 0) return const [];
+    final pools = await Future.wait([for (final d in selected) load(d, level)]);
     final byDomain = [for (final p in pools) (List.of(p)..shuffle(Random()))];
     final out = <BankQuestion>[];
     var i = 0;
-    while (out.length < count && byDomain.any((l) => l.isNotEmpty)) {
-      final l = byDomain[i % byDomain.length];
-      if (l.isNotEmpty) out.add(l.removeLast());
+    while (out.length < count && byDomain.any((items) => items.isNotEmpty)) {
+      final pool = byDomain[i % byDomain.length];
+      if (pool.isNotEmpty) out.add(pool.removeLast());
       i++;
     }
     return out..shuffle(Random());

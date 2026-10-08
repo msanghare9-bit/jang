@@ -1,10 +1,11 @@
-# Banque de questions des matchs (façon Kahoot)
+# Banque de questions des matchs
 
 Public : élèves sénégalais du collège et du lycée, francophones, qui apprennent l'anglais.
 Ils lisent mal le français : les explications sont en **français très simple**, courtes, on tutoie.
 
-## Format (un fichier = 200 questions)
-`pedagogie/quiz/<domaine>_<niveau>_<n>.json` (n = 1 à 5) :
+## Format (objectif : 2 000 questions par domaine et par niveau)
+Chaque fichier contient jusqu’à 200 questions; réunir 10 fichiers numérotés pour atteindre l’objectif de 2 000 questions. Les banques plus petites restent utilisables pendant leur préparation.
+`pedagogie/quiz/<domaine>_<niveau>_<n>.json` (n = 1 à 10, soit 2 000 questions quand les 10 fichiers contiennent chacun 200 questions) :
 ```json
 {"questions": [
   {"q": "What colour is a banana?", "o": ["Blue", "Yellow", "Black", "Pink"], "r": 1,
@@ -48,6 +49,9 @@ Ils lisent mal le français : les explications sont en **français très simple*
   l'avancé : SMS, annonce, petite histoire, lettre, article, dialogue) ; `q` = une question sur le
   texte. Plusieurs questions peuvent porter sur des textes différents ; ne réutilise pas le même
   texte plus de 2 fois.
+- **synonymes** : synonymes de mots anglais adaptés au niveau. Les consignes peuvent être en français simple au débutant; les mots à comparer et les réponses restent en anglais. Choisis des mots dont le sens est réellement proche dans la phrase.
+- **antonymes** : contraires de mots anglais adaptés au niveau. Les consignes peuvent être en français simple au débutant; les mots à comparer et les réponses restent en anglais. Vérifie qu’il s’agit bien de contraires dans le contexte donné.
+- **francais_anglais** : traduction d’un mot ou d’une expression française vers l’anglais, avec une phrase d’exemple courte quand le niveau le permet. Une seule traduction doit convenir au contexte.
 - **culture** : culture générale **en anglais**, au moins **60 % sur l'Afrique** (Sénégal en
   priorité : régions, villes, fleuves, histoire, Gorée, figures connues, fêtes, plats, musique,
   sport, faune ; puis toute l'Afrique : pays, capitales, géographie, histoire, inventions,

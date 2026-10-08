@@ -27,8 +27,28 @@ class Cheer {
       ]);
 
   /// Après plusieurs erreurs de suite.
-  static String streakWrong() =>
-      'Prends ton temps. Relis la leçon, tu vas y arriver.';
+  static String streakWrong() => _pick(const [
+        'Prends ton temps. Relis la leçon, tu vas y arriver.',
+        'Une pause, une relecture, et tu repartiras plus fort.',
+        'Chaque erreur t’apprend quelque chose. On continue doucement.',
+        'Respire, relis la consigne, puis essaie encore.',
+      ]);
+
+  /// Paroles propres à chaque personnage, choisies au hasard pour éviter les répétitions.
+  static String fromCharacter(String character, bool correct) {
+    final lines = switch ((character, correct)) {
+      ('gainde', true) => const ['Miaou… euh, bravo ! Tu as trouvé !', 'Ma crinière frétille : bonne réponse !', 'Waaw, tu as été plus rapide que moi !'],
+      ('gainde', false) => const ['Oups, je me suis trompé aussi. On regarde la bonne réponse ?', 'Même un lionceau apprend en essayant !', 'Pas grave, on rugit et on retente !'],
+      ('modou', true) => const ['Bien joué, ta réponse est juste.', 'Tu avances bien, continue comme ça.', 'Yes, tu as trouvé la bonne réponse !'],
+      ('modou', false) => const ['On reprend tranquillement, tu vas comprendre.', 'Pas cette fois, mais tu progresses.', 'Regarde l’indice et essaie encore.'],
+      ('awa', true) => const ['Excellent ! Tu as bien réfléchi.', 'Bravo, ta persévérance paie !', 'Tu as trouvé, je suis fière de toi !'],
+      ('awa', false) => const ['Tu peux y arriver, relis bien la question.', 'Une erreur ne t’empêche pas de réussir.', 'Courage, on apprend pas à pas.'],
+      ('kocc', true) => const ['Belle démonstration ! Explique-moi ton raisonnement.', 'Tu as trouvé : quelle bonne stratégie !', 'Excellent travail, jeune savant.'],
+      ('kocc', false) => const ['Quel indice pourrait t’aider à trouver ?', 'Reprenons la question étape par étape.', 'Ta démarche compte ; essayons une autre piste.'],
+      _ => correct ? const ['Bravo !'] : const ['Continue, tu progresses.'],
+    };
+    return _pick(lines);
+  }
 
   /// Message de fin de QCM selon la note. [improved] : meilleure note que la fois précédente.
   static String quizEnd(int score, int total, {bool improved = false}) {

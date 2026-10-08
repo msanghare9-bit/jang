@@ -1,0 +1,1108 @@
+{
+  "questions": [
+    {
+      "q": "What does “afford” mean?",
+      "o": [
+        "Have enough money to buy something",
+        "Borrow something for a short time",
+        "Sell something at a low price",
+        "Save money in a safe place"
+      ],
+      "r": 0,
+      "e": "If you can afford it, you have enough money to pay for it."
+    },
+    {
+      "q": "What does “borrow” mean?",
+      "o": [
+        "Give something for a short time",
+        "Take something and return it later",
+        "Buy something for someone",
+        "Repair something that is broken"
+      ],
+      "r": 1,
+      "e": "You borrow something from someone and return it."
+    },
+    {
+      "q": "What does “crowded” mean?",
+      "o": [
+        "Very quiet and empty",
+        "Far from the town",
+        "Full of people",
+        "Difficult to find"
+      ],
+      "r": 2,
+      "e": "A crowded place has many people in it."
+    },
+    {
+      "q": "What does “deliver” mean?",
+      "o": [
+        "Choose something from a list",
+        "Make something by hand",
+        "Pay for something online",
+        "Take something to a person or place"
+      ],
+      "r": 3,
+      "e": "To deliver is to bring something to its destination."
+    },
+    {
+      "q": "What does “earn” mean?",
+      "o": [
+        "Receive money for work",
+        "Spend money on food",
+        "Lend money to a friend",
+        "Find money in the street"
+      ],
+      "r": 0,
+      "e": "People earn money by working."
+    },
+    {
+      "q": "What does “lend” mean?",
+      "o": [
+        "Take something and return it later",
+        "Give something for a short time",
+        "Sell something to a customer",
+        "Keep something forever"
+      ],
+      "r": 1,
+      "e": "You lend something to a person who will return it."
+    },
+    {
+      "q": "What does “protect” mean?",
+      "o": [
+        "Make something larger",
+        "Show something to everyone",
+        "Keep someone or something safe",
+        "Leave something behind"
+      ],
+      "r": 2,
+      "e": "To protect is to keep safe from harm."
+    },
+    {
+      "q": "What does “save” mean in “save money”?",
+      "o": [
+        "Spend all the money quickly",
+        "Borrow money from a bank",
+        "Give money to a shop",
+        "Keep money for later"
+      ],
+      "r": 3,
+      "e": "To save money is to keep it for future use."
+    },
+    {
+      "q": "What does “repair” mean?",
+      "o": [
+        "Fix something that is broken",
+        "Break something into pieces",
+        "Clean something carefully",
+        "Move something to another room"
+      ],
+      "r": 0,
+      "e": "To repair is to make something work again."
+    },
+    {
+      "q": "What does “waste” mean?",
+      "o": [
+        "Keep something safe for later",
+        "Use carelessly or without good reason",
+        "Share something with a friend",
+        "Use something carefully"
+      ],
+      "r": 1,
+      "e": "To waste is to use more than needed or use badly."
+    },
+    {
+      "q": "What does “reach” mean in “reach the village”?",
+      "o": [
+        "Leave the village",
+        "Look for the village",
+        "Arrive at the village",
+        "Build a road in the village"
+      ],
+      "r": 2,
+      "e": "To reach a place is to arrive there."
+    },
+    {
+      "q": "What does “improve” mean?",
+      "o": [
+        "Make something disappear",
+        "Make something worse",
+        "Make something smaller only",
+        "Make something better"
+      ],
+      "r": 3,
+      "e": "To improve is to make better."
+    },
+    {
+      "q": "What does “avoid” mean?",
+      "o": [
+        "Stay away from something",
+        "Look after something",
+        "Wait for something",
+        "Ask for something"
+      ],
+      "r": 0,
+      "e": "To avoid a thing is to stay away from it."
+    },
+    {
+      "q": "What does “choose” mean?",
+      "o": [
+        "Return something to its owner",
+        "Select one or more things",
+        "Explain a difficult idea",
+        "Carry something upstairs"
+      ],
+      "r": 1,
+      "e": "To choose is to select."
+    },
+    {
+      "q": "What does “journey” mean?",
+      "o": [
+        "A lesson at school",
+        "A meal with friends",
+        "A trip from one place to another",
+        "A place to sleep"
+      ],
+      "r": 2,
+      "e": "A journey is a trip."
+    },
+    {
+      "q": "Who is a “customer”?",
+      "o": [
+        "A person who teaches a class",
+        "A person who repairs roads",
+        "A person who grows rice",
+        "A person who buys something"
+      ],
+      "r": 3,
+      "e": "A customer buys goods or services."
+    },
+    {
+      "q": "What is “medicine”?",
+      "o": [
+        "Something used to treat illness",
+        "A tool used to build a house",
+        "A subject taught at school",
+        "A place where people buy food"
+      ],
+      "r": 0,
+      "e": "Medicine helps treat or prevent illness."
+    },
+    {
+      "q": "What is a “schedule”?",
+      "o": [
+        "A list of things to buy",
+        "A plan that shows times and activities",
+        "A map of a town",
+        "A story about the past"
+      ],
+      "r": 1,
+      "e": "A schedule organizes activities by time."
+    },
+    {
+      "q": "What does “reduce” mean?",
+      "o": [
+        "Make something larger",
+        "Move something closer",
+        "Make something smaller or less",
+        "Keep something unchanged"
+      ],
+      "r": 2,
+      "e": "To reduce is to make less or smaller."
+    },
+    {
+      "q": "What does “raise” mean in “raise the price”?",
+      "o": [
+        "Pay the price",
+        "Forget the price",
+        "Compare two prices",
+        "Increase the price"
+      ],
+      "r": 3,
+      "e": "To raise a price is to make it higher."
+    },
+    {
+      "q": "What does “peaceful” mean?",
+      "o": [
+        "Calm, with little or no violence",
+        "Full of noise and danger",
+        "Very expensive",
+        "Hard to understand"
+      ],
+      "r": 0,
+      "e": "A peaceful place is calm and safe."
+    },
+    {
+      "q": "What does “honest” mean?",
+      "o": [
+        "Always in a hurry",
+        "Truthful and not cheating",
+        "Unable to speak clearly",
+        "Not interested in others"
+      ],
+      "r": 1,
+      "e": "An honest person tells the truth."
+    },
+    {
+      "q": "What is “advice”?",
+      "o": [
+        "A rule that must be obeyed",
+        "A story about a journey",
+        "A suggestion about what to do",
+        "A question with no answer"
+      ],
+      "r": 2,
+      "e": "Advice is a suggestion or recommendation."
+    },
+    {
+      "q": "What does “confident” mean?",
+      "o": [
+        "Afraid to meet anyone",
+        "Not able to understand",
+        "Angry about a mistake",
+        "Sure about your ability or decision"
+      ],
+      "r": 3,
+      "e": "A confident person believes they can do something."
+    },
+    {
+      "q": "What does “apologize” mean?",
+      "o": [
+        "Say that you are sorry",
+        "Ask for permission",
+        "Give advice",
+        "Make a promise"
+      ],
+      "r": 0,
+      "e": "To apologize is to say that you are sorry."
+    },
+    {
+      "q": "What is an “appointment”?",
+      "o": [
+        "A place to buy medicine",
+        "A planned meeting at a set time",
+        "A written school rule",
+        "A journey by bus"
+      ],
+      "r": 1,
+      "e": "An appointment is an arrangement to meet at a particular time."
+    },
+    {
+      "q": "What does “available” mean?",
+      "o": [
+        "Difficult to find",
+        "Already broken",
+        "Free to be used or to meet",
+        "Very expensive"
+      ],
+      "r": 2,
+      "e": "Available means ready or free for use."
+    },
+    {
+      "q": "What does “complain” mean?",
+      "o": [
+        "Give someone a compliment",
+        "Ask for directions",
+        "Agree with a plan",
+        "Say that something is wrong or unsatisfactory"
+      ],
+      "r": 3,
+      "e": "To complain is to express dissatisfaction."
+    },
+    {
+      "q": "What does “delay” mean as a verb?",
+      "o": [
+        "Make something happen later",
+        "Finish something early",
+        "Make something cheaper",
+        "Explain something clearly"
+      ],
+      "r": 0,
+      "e": "To delay is to make something late or postpone it."
+    },
+    {
+      "q": "What is “equipment”?",
+      "o": [
+        "A list of school subjects",
+        "Tools or objects needed for an activity",
+        "A type of food",
+        "A public announcement"
+      ],
+      "r": 1,
+      "e": "Equipment is the set of tools needed for a task."
+    },
+    {
+      "q": "What is a weather “forecast”?",
+      "o": [
+        "A record of past payments",
+        "A map of a school",
+        "A report about expected weather",
+        "A list of bus passengers"
+      ],
+      "r": 2,
+      "e": "A forecast says what the weather may be like."
+    },
+    {
+      "q": "What does “independent” mean?",
+      "o": [
+        "Unable to make a choice",
+        "Always working in a group",
+        "Ready to be repaired",
+        "Able to act or work without help"
+      ],
+      "r": 3,
+      "e": "An independent person can do things without relying on others."
+    },
+    {
+      "q": "What is a “neighbourhood”?",
+      "o": [
+        "The area around where people live",
+        "A room inside a hospital",
+        "A national border",
+        "A group of school subjects"
+      ],
+      "r": 0,
+      "e": "A neighbourhood is a local area where people live."
+    },
+    {
+      "q": "What is an “opportunity”?",
+      "o": [
+        "A problem with no solution",
+        "A good chance to do something",
+        "A rule against an action",
+        "A payment for a service"
+      ],
+      "r": 1,
+      "e": "An opportunity is a favourable chance."
+    },
+    {
+      "q": "What does “ordinary” mean?",
+      "o": [
+        "Rare and difficult to find",
+        "Dangerous to use",
+        "Usual and not special",
+        "Very important"
+      ],
+      "r": 2,
+      "e": "Ordinary means common or normal."
+    },
+    {
+      "q": "What is “permission”?",
+      "o": [
+        "A reason for being late",
+        "A plan for the future",
+        "A record of a meeting",
+        "Approval to do something"
+      ],
+      "r": 3,
+      "e": "Permission means that someone allows an action."
+    },
+    {
+      "q": "What does “prepare” mean?",
+      "o": [
+        "Get ready for something",
+        "Forget to bring something",
+        "Change a past event",
+        "Stop a person from leaving"
+      ],
+      "r": 0,
+      "e": "To prepare is to make ready."
+    },
+    {
+      "q": "What does “receipt” mean in a shop?",
+      "o": [
+        "A list of future prices",
+        "A paper or message proving payment",
+        "A request to borrow money",
+        "A note about a lesson"
+      ],
+      "r": 1,
+      "e": "A receipt is proof that payment was made."
+    },
+    {
+      "q": "What does “recommend” mean?",
+      "o": [
+        "Refuse to explain something",
+        "Make something less safe",
+        "Suggest something as a good choice",
+        "Ask someone to wait"
+      ],
+      "r": 2,
+      "e": "To recommend is to advise someone to choose or do something."
+    },
+    {
+      "q": "What does “reliable” mean?",
+      "o": [
+        "Likely to change without warning",
+        "Hard to understand",
+        "Available only once",
+        "Able to be trusted"
+      ],
+      "r": 3,
+      "e": "A reliable person or thing can be trusted."
+    },
+    {
+      "q": "What does “responsible” mean?",
+      "o": [
+        "Expected to take care of a duty",
+        "Unable to make a decision",
+        "Not connected to a task",
+        "Willing to waste time"
+      ],
+      "r": 0,
+      "e": "A responsible person can be trusted with a duty."
+    },
+    {
+      "q": "What does “similar” mean?",
+      "o": [
+        "Completely unrelated",
+        "Almost the same",
+        "Much more expensive",
+        "Easy to break"
+      ],
+      "r": 1,
+      "e": "Similar things have features that are alike."
+    },
+    {
+      "q": "What is a “solution” to a problem?",
+      "o": [
+        "A new problem",
+        "A list of instructions",
+        "A way to solve it",
+        "A reason to stop"
+      ],
+      "r": 2,
+      "e": "A solution is an answer or way of dealing with a problem."
+    },
+    {
+      "q": "What does “survive” mean?",
+      "o": [
+        "Leave a place permanently",
+        "Become more expensive",
+        "Stop an activity briefly",
+        "Stay alive or continue to exist"
+      ],
+      "r": 3,
+      "e": "To survive is to remain alive or continue."
+    },
+    {
+      "q": "What does “valuable” mean?",
+      "o": [
+        "Worth a lot or very useful",
+        "Easy to replace",
+        "Unimportant to everyone",
+        "Too old to use"
+      ],
+      "r": 0,
+      "e": "Valuable means worth a lot or having great use."
+    },
+    {
+      "q": "Who is a “volunteer”?",
+      "o": [
+        "A person who buys every ticket",
+        "A person who offers to help without pay",
+        "A worker who sets the price",
+        "A visitor who asks for a refund"
+      ],
+      "r": 1,
+      "e": "A volunteer chooses to help, often without payment."
+    },
+    {
+      "q": "What does “fortunately” mean?",
+      "o": [
+        "For a short time",
+        "By mistake",
+        "In a lucky or positive way",
+        "Without permission"
+      ],
+      "r": 2,
+      "e": "Fortunately means that something good happened by luck."
+    },
+    {
+      "q": "What does “environment” mean?",
+      "o": [
+        "A school timetable",
+        "A kind of transport",
+        "A household bill",
+        "The natural world around us"
+      ],
+      "r": 3,
+      "e": "The environment includes the natural world and our surroundings."
+    },
+    {
+      "q": "What does “borrow” mean?",
+      "o": [
+        "emprunter",
+        "prêter",
+        "acheter",
+        "vendre"
+      ],
+      "r": 0,
+      "e": "Borrow means to take something and return it later.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “lend” mean?",
+      "o": [
+        "emprunter",
+        "prêter",
+        "garder",
+        "perdre"
+      ],
+      "r": 1,
+      "e": "Lend means to give something for a short time.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “appointment” mean?",
+      "o": [
+        "adresse",
+        "retard",
+        "rendez-vous",
+        "congé"
+      ],
+      "r": 2,
+      "e": "An appointment is a planned meeting.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “crowded” mean?",
+      "o": [
+        "vide",
+        "calme",
+        "propre",
+        "bondé"
+      ],
+      "r": 3,
+      "e": "Crowded describes a place with many people.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “improve” mean?",
+      "o": [
+        "améliorer",
+        "empirer",
+        "oublier",
+        "mesurer"
+      ],
+      "r": 0,
+      "e": "To improve is to become or make better.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “avoid” mean?",
+      "o": [
+        "inviter",
+        "éviter",
+        "rejoindre",
+        "prévenir"
+      ],
+      "r": 1,
+      "e": "To avoid something is to stay away from it.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “advice” mean?",
+      "o": [
+        "promesse",
+        "permission",
+        "conseil",
+        "excuse"
+      ],
+      "r": 2,
+      "e": "Advice is an idea that may help someone.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “journey” mean?",
+      "o": [
+        "emploi",
+        "réunion",
+        "bagage",
+        "voyage"
+      ],
+      "r": 3,
+      "e": "A journey is a trip from one place to another.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “healthy” mean?",
+      "o": [
+        "en bonne santé",
+        "fatigué",
+        "affamé",
+        "en retard"
+      ],
+      "r": 0,
+      "e": "Healthy describes a body that is well.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “careful” mean?",
+      "o": [
+        "bruyant",
+        "prudent",
+        "pressé",
+        "curieux"
+      ],
+      "r": 1,
+      "e": "A careful person tries not to make mistakes.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “instead” mean?",
+      "o": [
+        "tout à l’heure",
+        "en dessous",
+        "à la place",
+        "ensemble"
+      ],
+      "r": 2,
+      "e": "Instead introduces a replacement choice.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “repair” mean?",
+      "o": [
+        "remplacer",
+        "emprunter",
+        "casser",
+        "réparer"
+      ],
+      "r": 3,
+      "e": "To repair is to make something work again.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “share” mean?",
+      "o": [
+        "partager",
+        "cacher",
+        "choisir",
+        "vendre"
+      ],
+      "r": 0,
+      "e": "To share is to use or give something with others.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “available” mean?",
+      "o": [
+        "occupé",
+        "disponible",
+        "absent",
+        "interdit"
+      ],
+      "r": 1,
+      "e": "Available means ready to be used or met.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “quietly” mean?",
+      "o": [
+        "avec soin",
+        "rapidement",
+        "sans bruit",
+        "en public"
+      ],
+      "r": 2,
+      "e": "The adverb describes doing something in silence.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “return” mean in “Please return the book”?",
+      "o": [
+        "lire",
+        "acheter",
+        "ouvrir",
+        "rendre"
+      ],
+      "r": 3,
+      "e": "Return means to give something back.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “succeed” mean?",
+      "o": [
+        "réussir",
+        "essayer",
+        "échouer",
+        "continuer"
+      ],
+      "r": 0,
+      "e": "To succeed is to reach a good result.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “waste” mean in “Don't waste water”?",
+      "o": [
+        "filtrer",
+        "gaspiller",
+        "partager",
+        "chauffer"
+      ],
+      "r": 1,
+      "e": "To waste is to use more than needed.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “reliable” mean?",
+      "o": [
+        "fragile",
+        "bruyant",
+        "fiable",
+        "inutile"
+      ],
+      "r": 2,
+      "e": "A reliable person or thing can be trusted.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “remind” mean?",
+      "o": [
+        "répondre",
+        "refuser",
+        "répéter",
+        "rappeler"
+      ],
+      "r": 3,
+      "e": "To remind someone is to help them remember.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “promise” mean?",
+      "o": [
+        "promesse",
+        "conseil",
+        "demande",
+        "réponse"
+      ],
+      "r": 0,
+      "e": "A promise is a statement that you will do something.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “neighbourhood” mean?",
+      "o": [
+        "frontière",
+        "quartier",
+        "villageois",
+        "immeuble"
+      ],
+      "r": 1,
+      "e": "A neighbourhood is an area in a town.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “reduce” mean?",
+      "o": [
+        "augmenter",
+        "réparer",
+        "réduire",
+        "déplacer"
+      ],
+      "r": 2,
+      "e": "To reduce is to make something smaller.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What does “permission” mean?",
+      "o": [
+        "préparation",
+        "explication",
+        "invitation",
+        "autorisation"
+      ],
+      "r": 3,
+      "e": "Permission is approval to do something.",
+      "d": "vocabulaire",
+      "n": "intermediaire"
+    },
+    {
+      "q": "In “You can borrow my umbrella,” what does borrow mean?",
+      "o": [
+        "take it and return it later",
+        "give it away forever",
+        "buy it from me",
+        "repair it for me"
+      ],
+      "r": 0,
+      "e": "Borrow veut dire emprunter quelque chose puis le rendre."
+    },
+    {
+      "q": "In “Try to avoid the muddy path,” what does avoid mean?",
+      "o": [
+        "walk across",
+        "stay away from",
+        "look for",
+        "clean up"
+      ],
+      "r": 1,
+      "e": "Avoid veut dire éviter ou rester loin de."
+    },
+    {
+      "q": "In “They discovered a small lake,” what does discovered mean?",
+      "o": [
+        "crossed by boat",
+        "made deeper",
+        "found for the first time",
+        "visited again"
+      ],
+      "r": 2,
+      "e": "Discover veut dire découvrir, trouver pour la première fois."
+    },
+    {
+      "q": "In “Reading every day can improve your English,” what does improve mean?",
+      "o": [
+        "make shorter",
+        "make louder",
+        "make slower",
+        "make better"
+      ],
+      "r": 3,
+      "e": "Improve veut dire rendre meilleur ou s’améliorer."
+    },
+    {
+      "q": "In “It is likely to rain this evening,” what does likely mean?",
+      "o": [
+        "probable",
+        "impossible",
+        "finished",
+        "surprising"
+      ],
+      "r": 0,
+      "e": "Likely veut dire probable."
+    },
+    {
+      "q": "In “We need to reduce the noise,” what does reduce mean?",
+      "o": [
+        "make stronger",
+        "make smaller or less",
+        "make clearer",
+        "make again"
+      ],
+      "r": 1,
+      "e": "Reduce veut dire diminuer."
+    },
+    {
+      "q": "In “The purpose of the meeting is to plan a trip,” what does purpose mean?",
+      "o": [
+        "place to sit",
+        "time it ends",
+        "reason or aim",
+        "person who speaks"
+      ],
+      "r": 2,
+      "e": "Purpose veut dire but ou raison."
+    },
+    {
+      "q": "In “Please gather the books after class,” what does gather mean?",
+      "o": [
+        "give away",
+        "write on",
+        "look inside",
+        "bring together"
+      ],
+      "r": 3,
+      "e": "Gather veut dire rassembler."
+    },
+    {
+      "q": "In “He wears ordinary clothes to school,” what does ordinary mean?",
+      "o": [
+        "usual",
+        "expensive",
+        "colourful",
+        "formal"
+      ],
+      "r": 0,
+      "e": "Ordinary veut dire ordinaire ou habituel."
+    },
+    {
+      "q": "In “The walls protect the garden from wind,” what does protect mean?",
+      "o": [
+        "make larger",
+        "keep safe",
+        "cover with paint",
+        "take apart"
+      ],
+      "r": 1,
+      "e": "Protect veut dire protéger, garder en sécurité."
+    },
+    {
+      "q": "In “Please continue reading the story,” what does continue mean?",
+      "o": [
+        "stop doing it",
+        "read it backwards",
+        "keep doing it",
+        "begin it again"
+      ],
+      "r": 2,
+      "e": "Continue veut dire continuer, poursuivre."
+    },
+    {
+      "q": "In “We walked instead of taking the bus,” what does instead of mean?",
+      "o": [
+        "at the same time as",
+        "because of",
+        "in front of",
+        "as an alternative to"
+      ],
+      "r": 3,
+      "e": "Instead of veut dire au lieu de."
+    },
+    {
+      "q": "In “This is a local market,” what does local mean?",
+      "o": [
+        "from this area",
+        "far away",
+        "under the ground",
+        "very old"
+      ],
+      "r": 0,
+      "e": "Local veut dire du coin, de cette région."
+    },
+    {
+      "q": "In “I cannot afford a new phone,” what does afford mean?",
+      "o": [
+        "know how to repair",
+        "have enough money to buy",
+        "find a place for",
+        "remember how to use"
+      ],
+      "r": 1,
+      "e": "Afford veut dire avoir les moyens de payer."
+    },
+    {
+      "q": "In “She refused to open the door,” what does refused mean?",
+      "o": [
+        "tried again",
+        "asked politely",
+        "said no",
+        "forgot"
+      ],
+      "r": 2,
+      "e": "Refuse veut dire refuser, dire non."
+    },
+    {
+      "q": "In “The journey took three hours,” what does journey mean?",
+      "o": [
+        "meal",
+        "lesson",
+        "meeting",
+        "trip"
+      ],
+      "r": 3,
+      "e": "Journey veut dire voyage ou trajet."
+    },
+    {
+      "q": "In “Our neighbourhood has a new library,” what does neighbourhood mean?",
+      "o": [
+        "area around where people live",
+        "building for sports",
+        "road between towns",
+        "group at a school"
+      ],
+      "r": 0,
+      "e": "Neighbourhood veut dire quartier."
+    },
+    {
+      "q": "In “A crowd waited outside the stadium,” what does crowd mean?",
+      "o": [
+        "team of players",
+        "large group of people",
+        "quiet room",
+        "line of buses"
+      ],
+      "r": 1,
+      "e": "Crowd veut dire foule, grand groupe de personnes."
+    },
+    {
+      "q": "In “We should protect the environment,” what does environment mean?",
+      "o": [
+        "classroom rules",
+        "history of a town",
+        "natural world around us",
+        "language of a country"
+      ],
+      "r": 2,
+      "e": "Environment veut dire environnement, le monde naturel qui nous entoure."
+    },
+    {
+      "q": "In “Please be patient while I find your book,” what does patient mean?",
+      "o": [
+        "ready to leave",
+        "easy to teach",
+        "quick to learn",
+        "able to wait calmly"
+      ],
+      "r": 3,
+      "e": "Patient veut dire capable d’attendre calmement."
+    },
+    {
+      "q": "In “My aunt gave me useful advice,” what does advice mean?",
+      "o": [
+        "helpful suggestion",
+        "school subject",
+        "written exam",
+        "travel ticket"
+      ],
+      "r": 0,
+      "e": "Advice veut dire conseil."
+    },
+    {
+      "q": "In “This job is a good opportunity,” what does opportunity mean?",
+      "o": [
+        "problem",
+        "chance",
+        "rule",
+        "result"
+      ],
+      "r": 1,
+      "e": "Opportunity veut dire occasion, chance."
+    },
+    {
+      "q": "In “The team hopes to succeed,” what does succeed mean?",
+      "o": [
+        "change its name",
+        "leave the game",
+        "reach its goal",
+        "make a mistake"
+      ],
+      "r": 2,
+      "e": "Succeed veut dire réussir, atteindre son but."
+    },
+    {
+      "q": "In “We should check the information before sharing it,” what does check mean?",
+      "o": [
+        "hide it from everyone",
+        "translate it aloud",
+        "send it quickly",
+        "make sure it is correct"
+      ],
+      "r": 3,
+      "e": "Check veut dire vérifier."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the closest meaning of “alert”.",
+      "o": [
+        "vigilant",
+        "sleepy",
+        "careless",
+        "late"
+      ],
+      "r": 0,
+      "e": "“vigilant” has a similar meaning to “alert”."
+    },
+    {
+      "q": "Choose the closest meaning of “ancient”.",
+      "o": [
+        "modern",
+        "old",
+        "recent",
+        "new"
+      ],
+      "r": 1,
+      "e": "“old” has a similar meaning to “ancient”."
+    },
+    {
+      "q": "Choose the closest meaning of “brief”.",
+      "o": [
+        "wide",
+        "deep",
+        "short",
+        "long"
+      ],
+      "r": 2,
+      "e": "“short” has a similar meaning to “brief”."
+    },
+    {
+      "q": "Choose the closest meaning of “cautious”.",
+      "o": [
+        "reckless",
+        "hurried",
+        "careless",
+        "careful"
+      ],
+      "r": 3,
+      "e": "“careful” has a similar meaning to “cautious”."
+    },
+    {
+      "q": "Choose the closest meaning of “confident”.",
+      "o": [
+        "sure",
+        "doubtful",
+        "uncertain",
+        "afraid"
+      ],
+      "r": 0,
+      "e": "“sure” has a similar meaning to “confident”."
+    },
+    {
+      "q": "Choose the closest meaning of “difficult”.",
+      "o": [
+        "simple",
+        "hard",
+        "easy",
+        "smooth"
+      ],
+      "r": 1,
+      "e": "“hard” has a similar meaning to “difficult”."
+    },
+    {
+      "q": "Choose the closest meaning of “eager”.",
+      "o": [
+        "reluctant",
+        "bored",
+        "keen",
+        "unwilling"
+      ],
+      "r": 2,
+      "e": "“keen” has a similar meaning to “eager”."
+    },
+    {
+      "q": "Choose the closest meaning of “enormous”.",
+      "o": [
+        "tiny",
+        "narrow",
+        "ordinary",
+        "huge"
+      ],
+      "r": 3,
+      "e": "“huge” has a similar meaning to “enormous”."
+    },
+    {
+      "q": "Choose the closest meaning of “famous”.",
+      "o": [
+        "well-known",
+        "unknown",
+        "hidden",
+        "private"
+      ],
+      "r": 0,
+      "e": "“well-known” has a similar meaning to “famous”."
+    },
+    {
+      "q": "Choose the closest meaning of “frequent”.",
+      "o": [
+        "rare",
+        "common",
+        "occasional",
+        "unusual"
+      ],
+      "r": 1,
+      "e": "“common” has a similar meaning to “frequent”."
+    },
+    {
+      "q": "Choose the closest meaning of “genuine”.",
+      "o": [
+        "fake",
+        "broken",
+        "authentic",
+        "borrowed"
+      ],
+      "r": 2,
+      "e": "“authentic” has a similar meaning to “genuine”."
+    },
+    {
+      "q": "Choose the closest meaning of “hesitate”.",
+      "o": [
+        "rush",
+        "continue",
+        "decide",
+        "pause"
+      ],
+      "r": 3,
+      "e": "“pause” has a similar meaning to “hesitate”."
+    },
+    {
+      "q": "Choose the closest meaning of “improve”.",
+      "o": [
+        "enhance",
+        "damage",
+        "reduce",
+        "worsen"
+      ],
+      "r": 0,
+      "e": "“enhance” has a similar meaning to “improve”."
+    },
+    {
+      "q": "Choose the closest meaning of “journey”.",
+      "o": [
+        "routine",
+        "trip",
+        "home",
+        "stop"
+      ],
+      "r": 1,
+      "e": "“trip” has a similar meaning to “journey”."
+    },
+    {
+      "q": "Choose the closest meaning of “liberty”.",
+      "o": [
+        "prison",
+        "duty",
+        "freedom",
+        "rule"
+      ],
+      "r": 2,
+      "e": "“freedom” has a similar meaning to “liberty”."
+    },
+    {
+      "q": "Choose the closest meaning of “notice”.",
+      "o": [
+        "ignore",
+        "hide",
+        "forget",
+        "observe"
+      ],
+      "r": 3,
+      "e": "“observe” has a similar meaning to “notice”."
+    },
+    {
+      "q": "Choose the closest meaning of “obtain”.",
+      "o": [
+        "acquire",
+        "lose",
+        "refuse",
+        "lend"
+      ],
+      "r": 0,
+      "e": "“acquire” has a similar meaning to “obtain”."
+    },
+    {
+      "q": "Choose the closest meaning of “polite”.",
+      "o": [
+        "rude",
+        "courteous",
+        "noisy",
+        "angry"
+      ],
+      "r": 1,
+      "e": "“courteous” has a similar meaning to “polite”."
+    },
+    {
+      "q": "Choose the closest meaning of “quiet”.",
+      "o": [
+        "loud",
+        "busy",
+        "silent",
+        "harsh"
+      ],
+      "r": 2,
+      "e": "“silent” has a similar meaning to “quiet”."
+    },
+    {
+      "q": "Choose the closest meaning of “rapid”.",
+      "o": [
+        "slow",
+        "weak",
+        "calm",
+        "swift"
+      ],
+      "r": 3,
+      "e": "“swift” has a similar meaning to “rapid”."
+    },
+    {
+      "q": "Choose the closest meaning of “reduce”.",
+      "o": [
+        "decrease",
+        "increase",
+        "expand",
+        "add"
+      ],
+      "r": 0,
+      "e": "“decrease” has a similar meaning to “reduce”."
+    },
+    {
+      "q": "Choose the closest meaning of “select”.",
+      "o": [
+        "reject",
+        "choose",
+        "leave",
+        "create"
+      ],
+      "r": 1,
+      "e": "“choose” has a similar meaning to “select”."
+    },
+    {
+      "q": "Choose the closest meaning of “tiny”.",
+      "o": [
+        "huge",
+        "broad",
+        "minute",
+        "common"
+      ],
+      "r": 2,
+      "e": "“minute” has a similar meaning to “tiny”."
+    },
+    {
+      "q": "Choose the closest meaning of “vacant”.",
+      "o": [
+        "full",
+        "busy",
+        "ready",
+        "empty"
+      ],
+      "r": 3,
+      "e": "“empty” has a similar meaning to “vacant”."
+    }
+  ]
+}

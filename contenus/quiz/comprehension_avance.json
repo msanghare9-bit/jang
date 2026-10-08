@@ -1,0 +1,1204 @@
+{
+  "questions": [
+    {
+      "q": "Why did the library keep the study room open later?",
+      "o": [
+        "Students needed a quiet place after evening classes",
+        "Students wanted the library to move",
+        "Book returns had stopped",
+        "Staff needed more time to borrow books"
+      ],
+      "r": 0,
+      "t": "When the coastal library extended its hours during exam season, attendance increased after evening classes. Staff noticed that students needed quiet places more than extra borrowing time, so they kept the study room open later while leaving the book-return schedule unchanged.",
+      "e": "The staff observed a need for quiet study after classes."
+    },
+    {
+      "q": "Which schedule stayed unchanged?",
+      "o": [
+        "The study room closing time",
+        "The book-return schedule",
+        "The evening classes",
+        "The library’s location"
+      ],
+      "r": 1,
+      "t": "When the coastal library extended its hours during exam season, attendance increased after evening classes. Staff noticed that students needed quiet places more than extra borrowing time, so they kept the study room open later while leaving the book-return schedule unchanged.",
+      "e": "Only the study room hours changed."
+    },
+    {
+      "q": "What benefit did members notice?",
+      "o": [
+        "Every harvest became larger",
+        "The wet season disappeared",
+        "Shared storage reduced losses in wet months",
+        "Records replaced the storage room"
+      ],
+      "r": 2,
+      "t": "A farmers’ cooperative recorded harvest totals for three seasons. The figures varied, but members found that sharing storage reduced losses during the wettest months. They decided to keep collecting data before making claims about long-term productivity.",
+      "e": "The text links shared storage to fewer losses during wet months."
+    },
+    {
+      "q": "Why did members continue collecting data?",
+      "o": [
+        "They planned to stop farming",
+        "They had forgotten the harvest",
+        "They wanted to remove the storage",
+        "They wanted more evidence before judging long-term productivity"
+      ],
+      "r": 3,
+      "t": "A farmers’ cooperative recorded harvest totals for three seasons. The figures varied, but members found that sharing storage reduced losses during the wettest months. They decided to keep collecting data before making claims about long-term productivity.",
+      "e": "They avoided broad conclusions from only three seasons."
+    },
+    {
+      "q": "What caused confusion during the first month?",
+      "o": [
+        "Some stop signs had not been moved",
+        "The hospital was closed",
+        "Passengers refused to use buses",
+        "The route had no market"
+      ],
+      "r": 0,
+      "t": "A town bus route was redesigned to connect the hospital and the market. The first month brought confusion because some stop signs had not been moved. After signs were updated, passengers reported fewer wrong turns, although the journey was not shorter for everyone.",
+      "e": "The text identifies the outdated stop signs."
+    },
+    {
+      "q": "What improved after the signs were updated?",
+      "o": [
+        "Every journey became shorter",
+        "Passengers made fewer wrong turns",
+        "The route stopped serving the hospital",
+        "The buses became free"
+      ],
+      "r": 1,
+      "t": "A town bus route was redesigned to connect the hospital and the market. The first month brought confusion because some stop signs had not been moved. After signs were updated, passengers reported fewer wrong turns, although the journey was not shorter for everyone.",
+      "e": "Passengers reported fewer wrong turns."
+    },
+    {
+      "q": "What advantage did the covered dryer offer?",
+      "o": [
+        "It required no initial cost",
+        "It worked without sunlight or heat",
+        "It protected fruit from dust and gave consistent results",
+        "It made every batch identical in size"
+      ],
+      "r": 2,
+      "t": "A student project compared open-air and covered drying of mango slices. The covered dryer required an initial cost, yet it protected the fruit from dust and produced more consistent batches. The team recommended it for groups that could share the equipment.",
+      "e": "The text names protection from dust and consistent batches."
+    },
+    {
+      "q": "For whom did the team recommend the dryer?",
+      "o": [
+        "A person drying one slice once",
+        "People who do not grow fruit",
+        "Groups without a place to store it",
+        "Groups able to share the equipment"
+      ],
+      "r": 3,
+      "t": "A student project compared open-air and covered drying of mango slices. The covered dryer required an initial cost, yet it protected the fruit from dust and produced more consistent batches. The team recommended it for groups that could share the equipment.",
+      "e": "Sharing helps address the initial cost."
+    },
+    {
+      "q": "Why were some patients late?",
+      "o": [
+        "Transport from distant villages was unpredictable",
+        "They forgot the clinic’s address",
+        "The clinic had moved every day",
+        "They did not receive any care"
+      ],
+      "r": 0,
+      "t": "A clinic’s appointment system reduced average waiting time. However, patients from distant villages sometimes arrived late because transport was unpredictable. The clinic reserved a few flexible slots, improving planning without excluding people whose journeys were uncertain.",
+      "e": "The text explains that transport was unpredictable."
+    },
+    {
+      "q": "Why did the clinic keep flexible slots?",
+      "o": [
+        "To prevent all appointments",
+        "To include patients with uncertain travel times",
+        "To shorten every journey",
+        "To replace the appointment system"
+      ],
+      "r": 1,
+      "t": "A clinic’s appointment system reduced average waiting time. However, patients from distant villages sometimes arrived late because transport was unpredictable. The clinic reserved a few flexible slots, improving planning without excluding people whose journeys were uncertain.",
+      "e": "Flexible slots helped patients whose journeys were uncertain."
+    },
+    {
+      "q": "What pattern did the measurements show?",
+      "o": [
+        "The river fell quickly before rain",
+        "The water level never changed",
+        "The river rose quickly and fell more slowly",
+        "The river rose only in dry weather"
+      ],
+      "r": 2,
+      "t": "Researchers measured water levels weekly during the rainy season. The river rose rapidly after several days of heavy rain and receded more slowly. They shared the pattern with residents but warned that past measurements could not predict every flood.",
+      "e": "The recorded pattern was a fast rise and slower fall."
+    },
+    {
+      "q": "Why did the researchers avoid promising a precise flood forecast?",
+      "o": [
+        "They had never measured water",
+        "Residents did not want information",
+        "Rain cannot affect rivers",
+        "Past measurements cannot predict every future event"
+      ],
+      "r": 3,
+      "t": "Researchers measured water levels weekly during the rainy season. The river rose rapidly after several days of heavy rain and receded more slowly. They shared the pattern with residents but warned that past measurements could not predict every flood.",
+      "e": "The researchers cautioned against treating a past pattern as a certain forecast."
+    },
+    {
+      "q": "What did the demonstration help visitors understand?",
+      "o": [
+        "How tools connect to farming practice",
+        "How to buy the museum",
+        "Why the room was closed",
+        "How to build a bus"
+      ],
+      "r": 0,
+      "t": "A museum added short descriptions to a room of farming tools and invited an experienced farmer to demonstrate one technique. Visitors then asked how tools had changed over time. The curator concluded that practical demonstrations helped connect objects to everyday knowledge.",
+      "e": "The demonstration connected objects with practical use."
+    },
+    {
+      "q": "What conclusion did the curator draw?",
+      "o": [
+        "Labels should be removed",
+        "Practical demonstrations make objects easier to relate to",
+        "Visitors dislike farming history",
+        "The tools should be sold"
+      ],
+      "r": 1,
+      "t": "A museum added short descriptions to a room of farming tools and invited an experienced farmer to demonstrate one technique. Visitors then asked how tools had changed over time. The curator concluded that practical demonstrations helped connect objects to everyday knowledge.",
+      "e": "The curator said demonstrations connected objects to everyday knowledge."
+    },
+    {
+      "q": "What were peer tutors trained to do?",
+      "o": [
+        "Complete pupils’ work",
+        "Give answers immediately",
+        "Ask questions that help pupils reason",
+        "Replace the classroom teacher"
+      ],
+      "r": 2,
+      "t": "Peer tutors were trained to ask questions instead of supplying answers. At first, some younger pupils expected quick solutions. Over time, they began explaining their reasoning, and the older tutors reported becoming more patient.",
+      "e": "Tutors were trained to guide reasoning with questions."
+    },
+    {
+      "q": "What change did younger pupils show?",
+      "o": [
+        "They stopped asking questions",
+        "They left the school",
+        "They asked tutors to do the work",
+        "They began explaining their reasoning"
+      ],
+      "r": 3,
+      "t": "Peer tutors were trained to ask questions instead of supplying answers. At first, some younger pupils expected quick solutions. Over time, they began explaining their reasoning, and the older tutors reported becoming more patient.",
+      "e": "The text says pupils began explaining their thinking."
+    },
+    {
+      "q": "Why did members plan to monitor survival rates?",
+      "o": [
+        "To learn whether the planting was successful before expanding",
+        "To stop the trees from growing",
+        "To measure every storm",
+        "To remove the shoreline"
+      ],
+      "r": 0,
+      "t": "A shoreline association planted mangroves in a sheltered area. Members knew the trees could not prevent every storm, but their roots could hold soil and create habitat. They also agreed to monitor survival rates before extending the project.",
+      "e": "Monitoring helps them judge results before expansion."
+    },
+    {
+      "q": "What could mangrove roots do?",
+      "o": [
+        "Prevent every storm",
+        "Hold soil and create habitat",
+        "Turn salt water into fresh water",
+        "Move the coastline overnight"
+      ],
+      "r": 1,
+      "t": "A shoreline association planted mangroves in a sheltered area. Members knew the trees could not prevent every storm, but their roots could hold soil and create habitat. They also agreed to monitor survival rates before extending the project.",
+      "e": "The passage names soil retention and habitat as benefits."
+    },
+    {
+      "q": "Why did some pupils prefer the old test?",
+      "o": [
+        "It covered several topics in a project",
+        "It revealed misunderstandings sooner",
+        "It was familiar",
+        "It was held every week"
+      ],
+      "r": 2,
+      "t": "A teacher replaced one final test with shorter quizzes and a project. Some pupils preferred the familiar test, while others said smaller quizzes revealed misunderstandings sooner. The project remained because it asked pupils to combine ideas from several topics.",
+      "e": "The passage says some preferred the familiar format."
+    },
+    {
+      "q": "Why did the project remain?",
+      "o": [
+        "It replaced every lesson",
+        "It was easier than all quizzes",
+        "Pupils refused to take it",
+        "It required pupils to combine ideas from different topics"
+      ],
+      "r": 3,
+      "t": "A teacher replaced one final test with shorter quizzes and a project. Some pupils preferred the familiar test, while others said smaller quizzes revealed misunderstandings sooner. The project remained because it asked pupils to combine ideas from several topics.",
+      "e": "The teacher kept it for cross-topic application."
+    },
+    {
+      "q": "Why did the community avoid using one week as proof?",
+      "o": [
+        "Weather and season affected the catches",
+        "The records contained no dates",
+        "Researchers could not read them",
+        "Fish do not change over time"
+      ],
+      "r": 0,
+      "t": "A fishing community logged catch sizes over several months. Weather and season affected the totals, so the group avoided drawing conclusions from a single week. Researchers planned to compare the records with longer-term observations.",
+      "e": "Short-term totals varied with weather and season."
+    },
+    {
+      "q": "What would researchers compare the records with?",
+      "o": [
+        "School exam scores",
+        "Longer-term observations",
+        "Bus schedules",
+        "A single market price"
+      ],
+      "r": 1,
+      "t": "A fishing community logged catch sizes over several months. Weather and season affected the totals, so the group avoided drawing conclusions from a single week. Researchers planned to compare the records with longer-term observations.",
+      "e": "The passage says researchers planned a longer comparison."
+    },
+    {
+      "q": "What reduced household spending over the year?",
+      "o": [
+        "A lower initial lamp price",
+        "A decrease in electricity use only",
+        "Lower spending on replacement batteries",
+        "The sale of the lamps"
+      ],
+      "r": 2,
+      "t": "A solar-lamp project showed lower battery spending over one year, despite the lamps’ higher initial price. The team noted that the result depended on usage and access to replacement parts. They scheduled another review after the rainy season.",
+      "e": "The text says battery spending was lower despite the initial cost."
+    },
+    {
+      "q": "Which factor could affect the result?",
+      "o": [
+        "The colour of the lamp",
+        "The number of school lessons",
+        "The library opening time",
+        "Access to replacement parts"
+      ],
+      "r": 3,
+      "t": "A solar-lamp project showed lower battery spending over one year, despite the lamps’ higher initial price. The team noted that the result depended on usage and access to replacement parts. They scheduled another review after the rainy season.",
+      "e": "The team specifically mentioned parts availability."
+    },
+    {
+      "q": "What changed during the trial?",
+      "o": [
+        "More customers borrowed bags by Friday.",
+        "Every stall stopped selling produce.",
+        "Fewer visitors came to the market.",
+        "The association ended the trial on Monday."
+      ],
+      "r": 0,
+      "e": "The records showed an increase in borrowed bags by Friday.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "Why is the association cautious about the result?",
+      "o": [
+        "The bags were never used.",
+        "A local event may also have affected visitor numbers.",
+        "The sales records were lost.",
+        "The trial lasted for a whole year."
+      ],
+      "r": 1,
+      "e": "The event brought extra visitors, so it may have influenced the result.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "What will the association do next?",
+      "o": [
+        "Close all six stalls",
+        "Stop keeping any sales records",
+        "Run a longer test",
+        "Replace the bags with boxes immediately"
+      ],
+      "r": 2,
+      "e": "The association plans a longer test before deciding.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "What can be concluded from this one-week trial?",
+      "o": [
+        "It proves reusable bags always increase sales.",
+        "It proves local events reduce borrowing.",
+        "It shows that records are unnecessary.",
+        "It shows a pattern, but not a definite cause."
+      ],
+      "r": 3,
+      "e": "The passage says the association has not established the cause.",
+      "t": "A market association tested reusable produce bags at six stalls for one week. Sales records showed that more customers borrowed a bag by Friday than on Monday. However, the trial coincided with a local event that brought extra visitors. The association plans a longer test before deciding whether the bags caused the increase."
+    },
+    {
+      "q": "What happened after the reminders were introduced?",
+      "o": [
+        "Attendance rose during the first three months.",
+        "All appointments were cancelled.",
+        "Attendance fell in both neighbourhoods.",
+        "The clinic stopped sending messages."
+      ],
+      "r": 0,
+      "e": "The passage reports that attendance rose.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "Why should the result be interpreted carefully?",
+      "o": [
+        "The clinic had no appointments.",
+        "There was no comparison group and participation was voluntary.",
+        "The reminders were sent for several years.",
+        "Every patient received a paper letter."
+      ],
+      "r": 1,
+      "e": "The pilot lacked a comparison group and patients opted in.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "What will the clinic do before expanding?",
+      "o": [
+        "Stop recording appointments",
+        "Open a new hospital immediately",
+        "Compare later records",
+        "Remove the text reminders"
+      ],
+      "r": 2,
+      "e": "The clinic plans to compare later records.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "Who showed a particularly notable change?",
+      "o": [
+        "Patients who never had appointments",
+        "Only the clinic staff",
+        "People living outside the country",
+        "Patients who had previously missed visits"
+      ],
+      "r": 3,
+      "e": "Attendance rose especially among patients who had missed visits before.",
+      "t": "A clinic introduced text reminders for appointments in two neighbourhoods. Attendance rose during the first three months, especially among patients who had previously missed visits. Yet the pilot did not include a comparison group, and some patients had chosen to receive messages. The clinic will compare later records before expanding the service."
+    },
+    {
+      "q": "What did the team count first?",
+      "o": [
+        "Newly planted seedlings",
+        "The number of fishing boats",
+        "The rainfall in every country",
+        "The number of houses along the coast"
+      ],
+      "r": 0,
+      "e": "The team counted the seedlings it planted.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "What factor was linked to lower survival?",
+      "o": [
+        "More school lessons",
+        "Stronger tides",
+        "Higher market prices",
+        "Longer daylight hours"
+      ],
+      "r": 1,
+      "e": "Sites with stronger tides lost more young plants.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "Why report survival rates as well as planting totals?",
+      "o": [
+        "The team did not plant any seedlings.",
+        "The tides were measured incorrectly.",
+        "Planting totals alone do not show long-term recovery.",
+        "The number planted is always the same as the number surviving."
+      ],
+      "r": 2,
+      "e": "The passage distinguishes planted seedlings from long-term survival.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "When did the survey take place?",
+      "o": [
+        "Before the project began",
+        "After ten years",
+        "During the planting ceremony",
+        "After one rainy season"
+      ],
+      "r": 3,
+      "e": "The survey followed one rainy season.",
+      "t": "A coastal village restored mangroves along a creek. The team counted newly planted seedlings, but a survey after one rainy season found that survival varied between sites. Areas with stronger tides lost more young plants. The project therefore reports both planting totals and survival rates, rather than treating the number planted as proof of long-term recovery."
+    },
+    {
+      "q": "What increased after the library extended its hours?",
+      "o": [
+        "Evening attendance",
+        "The number of book loans",
+        "The number of library branches",
+        "The book-return period"
+      ],
+      "r": 0,
+      "e": "More people attended after classes.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "What did students seem to value most?",
+      "o": [
+        "A longer loan period",
+        "Quiet study space",
+        "New books each evening",
+        "A different return desk"
+      ],
+      "r": 1,
+      "e": "Staff observed that quiet desks mattered more than borrowing.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "What stayed unchanged?",
+      "o": [
+        "The study room closing time",
+        "The number of evening visitors",
+        "The book-return schedule",
+        "The exam timetable"
+      ],
+      "r": 2,
+      "e": "The passage says the return schedule did not change.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "When would staff review the arrangement?",
+      "o": [
+        "Before the library opened",
+        "Every hour",
+        "At the start of the next school year",
+        "After exams"
+      ],
+      "r": 3,
+      "e": "They planned a review after exams.",
+      "t": "A library extended evening study hours during exam season. Attendance rose after classes, while book loans remained almost unchanged. Staff noticed that students valued quiet desks more than extra borrowing time. They kept the study room open later but left the book-return schedule unchanged, then planned to review the arrangement after exams."
+    },
+    {
+      "q": "What two kinds of data did the project record?",
+      "o": [
+        "Crop yields and maintenance costs",
+        "School attendance and exam scores",
+        "Rainfall and bus fares",
+        "Market prices and library loans"
+      ],
+      "r": 0,
+      "e": "The project recorded yields and maintenance costs.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "Why did repair costs differ?",
+      "o": [
+        "Every farm grew a different crop.",
+        "Access to spare parts varied by location.",
+        "The report did not include any pumps.",
+        "All farms stopped using irrigation."
+      ],
+      "r": 1,
+      "e": "The report points to differences in repair and parts access.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "What did the team recommend?",
+      "o": [
+        "Use one cost estimate for every farm.",
+        "Stop tracking maintenance costs.",
+        "Share the results with nearby communities.",
+        "Replace all crops with solar panels."
+      ],
+      "r": 2,
+      "e": "The team recommended sharing results.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "Why avoid one cost estimate for all farms?",
+      "o": [
+        "Every farm has identical equipment.",
+        "The crop yields were not recorded.",
+        "The project lasted for too many seasons.",
+        "Local conditions and repair access differ."
+      ],
+      "r": 3,
+      "e": "Different access to repairs makes a single estimate unreliable.",
+      "t": "A solar irrigation project recorded crop yields and maintenance costs over two dry seasons. Yields improved for participating farms, but the report noted that pump repairs and access to spare parts differed by location. The team recommended sharing the results with nearby communities while avoiding a single cost estimate for every farm."
+    },
+    {
+      "q": "What did the school add?",
+      "o": [
+        "A supervised crossing point",
+        "A new bus station",
+        "A second school library",
+        "A road beside the classroom"
+      ],
+      "r": 0,
+      "e": "The school changed the route by adding a supervised crossing.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "What else changed during the same period?",
+      "o": [
+        "The school subjects",
+        "Bus schedules",
+        "The number of teachers",
+        "The pupils’ uniforms"
+      ],
+      "r": 1,
+      "e": "Bus schedules also changed.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "Why will the school compare several months of records?",
+      "o": [
+        "To avoid asking families for information.",
+        "To prove the crossing caused every change.",
+        "To understand whether the pattern continues and what affects it.",
+        "To remove the attendance records."
+      ],
+      "r": 2,
+      "e": "A longer comparison can help separate possible influences.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "What will families be asked about?",
+      "o": [
+        "Whether the road should be painted blue",
+        "Whether lessons should be shorter",
+        "Whether the library should close",
+        "Whether transport changes affected punctuality"
+      ],
+      "r": 3,
+      "e": "The school will ask about transport and punctuality.",
+      "t": "A school changed the route used by pupils crossing a busy road. Teachers recorded attendance before and after adding a supervised crossing point. Attendance improved, but the same period also brought a change in bus schedules. The school plans to compare several months of records and ask families whether transport changes affected punctuality."
+    },
+    {
+      "q": "What did Awa do?",
+      "o": [
+        "compared two irrigation methods",
+        "translated the health leaflet",
+        "grouped the interview answers by theme",
+        "presented the survey limits"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Awa compared two irrigation methods.",
+      "t": "Awa compared two irrigation methods on the school garden plots over four weeks; the science club wanted to use less water.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Where did Moussa do it?",
+      "o": [
+        "in the research report",
+        "along the main road",
+        "using a clean container",
+        "until the second measurement"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action along the main road.",
+      "t": "Moussa interviewed local shopkeepers along the main road during the community survey; the group was studying changes in shopping habits.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "When did Fatou do it?",
+      "o": [
+        "for the transport study",
+        "before the public opening",
+        "after the first trial",
+        "after obtaining permission"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after the first trial.",
+      "t": "Fatou revised the project schedule with her classmates after the first trial; their original plan required more time.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Why did Idrissa do it?",
+      "o": [
+        "some streets were missing from the survey",
+        "the teacher wanted to compare the two reading formats",
+        "the municipality needed to plan repairs",
+        "the farming group needed a reliable record"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the farming group needed a reliable record.",
+      "t": "Idrissa recorded the monthly rainfall at the village weather station throughout the rainy season; the farming group needed a reliable record.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "What did Mariama do?",
+      "o": [
+        "translated the health leaflet",
+        "grouped the interview answers by theme",
+        "presented the survey limits",
+        "compared the cost and durability"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Mariama translated the health leaflet.",
+      "t": "Mariama translated the health leaflet with two bilingual volunteers before the clinic distributed it; readers had asked for simpler wording.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Where did Cheikh do it?",
+      "o": [
+        "using a clean container",
+        "in the research report",
+        "until the second measurement",
+        "before printing the notice"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action in the research report.",
+      "t": "Cheikh checked the source of each statistic in the research report before the presentation; he wanted to avoid repeating an unsupported claim.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "When did Ndeye do it?",
+      "o": [
+        "before the public opening",
+        "after obtaining permission",
+        "for the transport study",
+        "during the second week"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : for the transport study.",
+      "t": "Ndeye compared bus arrival times at three stops for the transport study; the team was testing whether delays varied by location.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Why did Pape do it?",
+      "o": [
+        "the teacher wanted to compare the two reading formats",
+        "the municipality needed to plan repairs",
+        "the facilitator planned to address them later",
+        "some streets were missing from the survey"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : some streets were missing from the survey.",
+      "t": "Pape asked residents to review the map at the neighbourhood meeting after the first draft; some streets were missing from the survey.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "What did Bineta do?",
+      "o": [
+        "grouped the interview answers by theme",
+        "presented the survey limits",
+        "compared the cost and durability",
+        "revised the poster after feedback"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Bineta grouped the interview answers by theme.",
+      "t": "Bineta grouped the interview answers by theme in the project notebook once the interviews were complete; the team needed to identify recurring ideas.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Where did Omar do it?",
+      "o": [
+        "until the second measurement",
+        "using a clean container",
+        "before printing the notice",
+        "rather than distance alone"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action using a clean container.",
+      "t": "Omar repeated the water test using a clean container the next morning; the first sample may have been contaminated.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "When did Sokhna do it?",
+      "o": [
+        "after obtaining permission",
+        "during the second week",
+        "before the public opening",
+        "after checking every form"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : before the public opening.",
+      "t": "Sokhna added an audio description to the exhibition guide before the public opening; visitors with low vision had requested one.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Why did Lamine do it?",
+      "o": [
+        "the municipality needed to plan repairs",
+        "the facilitator planned to address them later",
+        "the team wanted to learn whether the advice had been useful",
+        "the teacher wanted to compare the two reading formats"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the teacher wanted to compare the two reading formats.",
+      "t": "Lamine calculated the average reading time from the class results after removing incomplete forms; the teacher wanted to compare the two reading formats.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "What did Aminata do?",
+      "o": [
+        "presented the survey limits",
+        "compared the cost and durability",
+        "revised the poster after feedback",
+        "compared two irrigation methods"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Aminata presented the survey limits.",
+      "t": "Aminata presented the survey limits alongside the main findings at the student conference; the survey had included only two schools.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Where did Boubacar do it?",
+      "o": [
+        "before printing the notice",
+        "until the second measurement",
+        "rather than distance alone",
+        "along the main road"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action until the second measurement.",
+      "t": "Boubacar asked the team to delay its conclusion until the second measurement after the first set of readings; the weather had changed during the test.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "When did Khady do it?",
+      "o": [
+        "during the second week",
+        "after checking every form",
+        "after obtaining permission",
+        "after the first trial"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after obtaining permission.",
+      "t": "Khady stored the interview recordings securely on the school computer after obtaining permission; participants had agreed to take part on that condition.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Why did Mamadou do it?",
+      "o": [
+        "the facilitator planned to address them later",
+        "the team wanted to learn whether the advice had been useful",
+        "the farming group needed a reliable record",
+        "the municipality needed to plan repairs"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the municipality needed to plan repairs.",
+      "t": "Mamadou mapped the flooded sections using reports from residents after the heavy rain; the municipality needed to plan repairs.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "What did Rokhaya do?",
+      "o": [
+        "compared the cost and durability",
+        "revised the poster after feedback",
+        "compared two irrigation methods",
+        "translated the health leaflet"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Rokhaya compared the cost and durability.",
+      "t": "Rokhaya compared the cost and durability of three reusable containers before making a recommendation; the club wanted to reduce cafeteria waste.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Where did Alioune do it?",
+      "o": [
+        "rather than distance alone",
+        "before printing the notice",
+        "along the main road",
+        "in the research report"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action before printing the notice.",
+      "t": "Alioune checked the translation with local readers before printing the notice at the community centre; one phrase had a different meaning in daily use.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "When did Coumba do it?",
+      "o": [
+        "after checking every form",
+        "after the first trial",
+        "during the second week",
+        "for the transport study"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : during the second week.",
+      "t": "Coumba recruited participants from several age groups for the reading study during the second week; the first group had mostly included younger pupils.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Why did Samba do it?",
+      "o": [
+        "the team wanted to learn whether the advice had been useful",
+        "the farming group needed a reliable record",
+        "some streets were missing from the survey",
+        "the facilitator planned to address them later"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the facilitator planned to address them later.",
+      "t": "Samba kept a record of unanswered questions during the workshop until the final discussion; the facilitator planned to address them later.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "What did Adama do?",
+      "o": [
+        "revised the poster after feedback",
+        "compared two irrigation methods",
+        "translated the health leaflet",
+        "grouped the interview answers by theme"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Adama revised the poster after feedback.",
+      "t": "Adama revised the poster after feedback with the environmental club before displaying it; readers said the first version was difficult to follow.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Where did Diarra do it?",
+      "o": [
+        "along the main road",
+        "rather than distance alone",
+        "in the research report",
+        "using a clean container"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action rather than distance alone.",
+      "t": "Diarra compared the two routes by travel time rather than distance alone in the transport report; traffic made the shorter route slower.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "When did Ibrahima do it?",
+      "o": [
+        "after the first trial",
+        "for the transport study",
+        "after checking every form",
+        "before the public opening"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after checking every form.",
+      "t": "Ibrahima reported the missing data clearly in the final summary after checking every form; he wanted readers to understand the limits.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "Why did Aïssatou do it?",
+      "o": [
+        "the farming group needed a reliable record",
+        "some streets were missing from the survey",
+        "the teacher wanted to compare the two reading formats",
+        "the team wanted to learn whether the advice had been useful"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the team wanted to learn whether the advice had been useful.",
+      "t": "Aïssatou scheduled a follow-up interview with the project participants one month later; the team wanted to learn whether the advice had been useful.",
+      "d": "comprehension",
+      "n": "avance"
+    },
+    {
+      "q": "What was the main reason the cooperative rented a cart?",
+      "o": [
+        "To transport more produce despite rising costs",
+        "To replace the shared sales notebook",
+        "To sell vegetables only on Fridays",
+        "To avoid discussing how to share earnings"
+      ],
+      "r": 0,
+      "e": "Elles ont loué un chariot pour transporter davantage de produits malgré les coûts.",
+      "t": "The cooperative began with six women who sold vegetables near the river. They kept a shared notebook of purchases and sales, and met every Friday to discuss prices. When transport costs rose, they pooled money to rent a cart. The new arrangement let them carry more produce to the market, though they still had to agree on a fair way to divide the earnings."
+    },
+    {
+      "q": "Which challenge remained after they rented the cart?",
+      "o": [
+        "Finding a place near the river",
+        "Agreeing how to divide the earnings",
+        "Keeping a record of sales",
+        "Meeting every Friday"
+      ],
+      "r": 1,
+      "e": "Elles devaient encore décider comment répartir équitablement les gains.",
+      "t": "The cooperative began with six women who sold vegetables near the river. They kept a shared notebook of purchases and sales, and met every Friday to discuss prices. When transport costs rose, they pooled money to rent a cart. The new arrangement let them carry more produce to the market, though they still had to agree on a fair way to divide the earnings."
+    },
+    {
+      "q": "Why did the clinic keep using paper cards?",
+      "o": [
+        "Text messages were always incorrect",
+        "The cards improved attendance by themselves",
+        "Some patients shared phones",
+        "Patients requested fewer appointments"
+      ],
+      "r": 2,
+      "e": "Certaines personnes partageaient un téléphone, donc les cartes restaient utiles.",
+      "t": "A local clinic noticed that many patients missed appointments because they did not know the date. The staff began giving each patient a small card and asking permission to send a reminder by text message. Attendance improved, but some people shared one phone with several relatives. The clinic therefore continued using paper cards as well as messages."
+    },
+    {
+      "q": "What did the clinic do before sending reminders?",
+      "o": [
+        "Removed all paper records",
+        "Changed every appointment date",
+        "Required patients to buy a phone",
+        "Asked patients for permission"
+      ],
+      "r": 3,
+      "e": "Le personnel demandait l’autorisation d’envoyer un SMS.",
+      "t": "A local clinic noticed that many patients missed appointments because they did not know the date. The staff began giving each patient a small card and asking permission to send a reminder by text message. Attendance improved, but some people shared one phone with several relatives. The clinic therefore continued using paper cards as well as messages."
+    },
+    {
+      "q": "What lesson did the team learn during practice?",
+      "o": [
+        "Claims need clear supporting evidence",
+        "Every speaker should use the same role",
+        "Strong claims need no examples",
+        "The opposing side should be ignored"
+      ],
+      "r": 0,
+      "e": "Ils ont compris qu’une affirmation doit être appuyée clairement.",
+      "t": "The school debate team prepared for a competition by assigning each speaker a different role. One student gathered evidence, another anticipated opposing arguments, and a third checked that the examples were understandable. During practice, they discovered that a strong claim was not enough; each point also needed clear support."
+    },
+    {
+      "q": "What did the second student do?",
+      "o": [
+        "Gathered all the evidence",
+        "Anticipated opposing arguments",
+        "Checked every speaker’s pronunciation",
+        "Chose the competition venue"
+      ],
+      "r": 1,
+      "e": "Le deuxième élève anticipait les arguments opposés.",
+      "t": "The school debate team prepared for a competition by assigning each speaker a different role. One student gathered evidence, another anticipated opposing arguments, and a third checked that the examples were understandable. During practice, they discovered that a strong claim was not enough; each point also needed clear support."
+    },
+    {
+      "q": "Why did the volunteers choose a shorter section?",
+      "o": [
+        "The school asked them to stop",
+        "The river had no rubbish elsewhere",
+        "They lacked enough equipment for the whole bank",
+        "They wanted to avoid sorting waste"
+      ],
+      "r": 2,
+      "e": "Ils n’avaient pas assez de gants ni de sacs pour toute la rive.",
+      "t": "A river clean-up group first planned to collect rubbish along the entire bank. After measuring the area, the volunteers realized they did not have enough gloves or bags. They chose a shorter section near the school and sorted the waste there. The group recorded the amount collected to help plan a larger event later."
+    },
+    {
+      "q": "Why did the group record the amount of waste?",
+      "o": [
+        "To decide who would leave the group",
+        "To compare river water colours",
+        "To replace the sorting process",
+        "To plan a larger future event"
+      ],
+      "r": 3,
+      "e": "La quantité aidera à organiser une action plus grande.",
+      "t": "A river clean-up group first planned to collect rubbish along the entire bank. After measuring the area, the volunteers realized they did not have enough gloves or bags. They chose a shorter section near the school and sorted the waste there. The group recorded the amount collected to help plan a larger event later."
+    },
+    {
+      "q": "How did Mariama begin to connect with people?",
+      "o": [
+        "She joined a reading club",
+        "She organized a football match",
+        "She moved back to her old home",
+        "She stopped reading aloud"
+      ],
+      "r": 0,
+      "e": "Elle a rejoint un club de lecture au centre communautaire.",
+      "t": "When Mariama’s family moved to a new neighbourhood, she worried about making friends. She joined a reading club at the community centre and offered to read aloud. At first she spoke softly, but the other members encouraged her. By the end of the month, she was helping a younger child choose books."
+    },
+    {
+      "q": "What change happened by the end of the month?",
+      "o": [
+        "She stopped attending the club",
+        "She helped a younger child choose books",
+        "She became the community centre manager",
+        "She moved to another neighbourhood"
+      ],
+      "r": 1,
+      "e": "À la fin du mois, elle aidait un plus jeune à choisir des livres.",
+      "t": "When Mariama’s family moved to a new neighbourhood, she worried about making friends. She joined a reading club at the community centre and offered to read aloud. At first she spoke softly, but the other members encouraged her. By the end of the month, she was helping a younger child choose books."
+    },
+    {
+      "q": "Why did the association decide to keep weekly records?",
+      "o": [
+        "To prove immediately that boats caused the change",
+        "To stop all fishing near the shore",
+        "To look for a pattern before choosing an action",
+        "To compare the price of different boats"
+      ],
+      "r": 2,
+      "e": "Des relevés réguliers peuvent faire apparaître une tendance.",
+      "t": "A fisherman noticed that the catch near the shore had become smaller. The village association discussed several possible causes, including weather and the number of boats. They agreed to record each week’s catch before deciding what to do. The chairperson said that one observation could not prove the cause, but regular records might reveal a pattern."
+    },
+    {
+      "q": "What caution did the chairperson express?",
+      "o": [
+        "Weather never affects the catch",
+        "Records are unnecessary",
+        "The boats must be sold",
+        "One observation cannot prove the cause"
+      ],
+      "r": 3,
+      "e": "Une seule observation ne suffit pas pour prouver la cause.",
+      "t": "A fisherman noticed that the catch near the shore had become smaller. The village association discussed several possible causes, including weather and the number of boats. They agreed to record each week’s catch before deciding what to do. The chairperson said that one observation could not prove the cause, but regular records might reveal a pattern."
+    },
+    {
+      "q": "Why did the students ask musicians to approve recordings?",
+      "o": [
+        "To get permission before using their words",
+        "To teach them how to play",
+        "To choose which instruments to lend",
+        "To shorten the exhibition"
+      ],
+      "r": 0,
+      "e": "Ils demandaient l’accord des personnes avant d’utiliser leurs propos.",
+      "t": "The museum planned an exhibition about local music. Organizers invited musicians to lend instruments and explain how they were made. A student team recorded short interviews, but they asked each person to approve the recording before using it. The exhibition included the musicians’ words alongside photographs of the instruments."
+    },
+    {
+      "q": "What appeared beside the musicians’ words?",
+      "o": [
+        "Maps of the river",
+        "Photographs of the instruments",
+        "Copies of the students’ exams",
+        "A list of ticket prices"
+      ],
+      "r": 1,
+      "e": "L’exposition associait les paroles à des photos d’instruments.",
+      "t": "The museum planned an exhibition about local music. Organizers invited musicians to lend instruments and explain how they were made. A student team recorded short interviews, but they asked each person to approve the recording before using it. The exhibition included the musicians’ words alongside photographs of the instruments."
+    },
+    {
+      "q": "What did students do at the start of the study period?",
+      "o": [
+        "Choose a teacher",
+        "Take an examination",
+        "Set a goal",
+        "Write a full report"
+      ],
+      "r": 2,
+      "e": "Chaque élève définissait un objectif pour l’heure.",
+      "t": "The school introduced a quiet study period before examinations. Students could choose any subject, but they had to set a goal for the hour. At the end, they wrote down what they had completed and what remained difficult. Teachers used these notes to suggest which lessons might need more review."
+    },
+    {
+      "q": "How did teachers use the students’ notes?",
+      "o": [
+        "To change the examination date",
+        "To decide who could study",
+        "To select a new subject",
+        "To suggest topics for more review"
+      ],
+      "r": 3,
+      "e": "Les notes aidaient à choisir les leçons à revoir.",
+      "t": "The school introduced a quiet study period before examinations. Students could choose any subject, but they had to set a goal for the hour. At the end, they wrote down what they had completed and what remained difficult. Teachers used these notes to suggest which lessons might need more review."
+    },
+    {
+      "q": "What did the bakery do with safe leftover bread?",
+      "o": [
+        "Sold it at a lower price",
+        "Threw it away immediately",
+        "Used it to make new ovens",
+        "Kept it for a full month"
+      ],
+      "r": 0,
+      "e": "Le pain encore consommable était vendu moins cher.",
+      "t": "A small bakery tested a new way to reduce food waste. At closing time, workers listed bread that was still safe to eat and offered it at a lower price. They tracked how much was sold and how much remained. After a month, the owner changed the baking schedule so fewer loaves were left unsold."
+    },
+    {
+      "q": "What change followed the month-long trial?",
+      "o": [
+        "The bakery stopped making bread",
+        "The baking schedule was adjusted",
+        "Workers stopped tracking leftovers",
+        "Prices were raised every evening"
+      ],
+      "r": 1,
+      "e": "Le propriétaire a ajusté les heures ou quantités de cuisson.",
+      "t": "A small bakery tested a new way to reduce food waste. At closing time, workers listed bread that was still safe to eat and offered it at a lower price. They tracked how much was sold and how much remained. After a month, the owner changed the baking schedule so fewer loaves were left unsold."
+    },
+    {
+      "q": "What weakness did the group identify in its arrangement?",
+      "o": [
+        "It had too many weekly meetings",
+        "Members refused to share photographs",
+        "It depended on only two account managers",
+        "Online buyers could not order baskets"
+      ],
+      "r": 2,
+      "e": "Le système dépendait fortement de deux personnes.",
+      "t": "A women’s group wanted to sell woven baskets online, but not every member had internet access. They chose two members to manage the account and agreed to share photographs and orders at weekly meetings. The arrangement worked until one manager became ill, so the group trained a third member as backup."
+    },
+    {
+      "q": "Why did the group train a third member?",
+      "o": [
+        "To replace the weekly meetings",
+        "To stop selling baskets online",
+        "To take photographs from buyers",
+        "To provide backup if a manager was unavailable"
+      ],
+      "r": 3,
+      "e": "La troisième personne peut remplacer une responsable absente.",
+      "t": "A women’s group wanted to sell woven baskets online, but not every member had internet access. They chose two members to manage the account and agreed to share photographs and orders at weekly meetings. The arrangement worked until one manager became ill, so the group trained a third member as backup."
+    },
+    {
+      "q": "What did the journalist do when sources disagreed?",
+      "o": [
+        "She reported that the date was uncertain",
+        "She selected the newest source automatically",
+        "She removed the whole article",
+        "She changed the photograph"
+      ],
+      "r": 0,
+      "e": "Elle n’a pas prétendu connaître une date sans preuve.",
+      "t": "A student journalist interviewed a retired teacher about the history of the school. She checked the dates in old notebooks and compared them with a photograph that showed the original classroom. When two sources disagreed, she wrote that the date was uncertain instead of choosing one without evidence."
+    },
+    {
+      "q": "Why did she compare different sources?",
+      "o": [
+        "To find a new classroom",
+        "To check the reliability of the dates",
+        "To make the interview shorter",
+        "To prove the teacher was wrong"
+      ],
+      "r": 1,
+      "e": "Elle comparait les sources pour vérifier les dates.",
+      "t": "A student journalist interviewed a retired teacher about the history of the school. She checked the dates in old notebooks and compared them with a photograph that showed the original classroom. When two sources disagreed, she wrote that the date was uncertain instead of choosing one without evidence."
+    },
+    {
+      "q": "Who was allowed to open the pump?",
+      "o": [
+        "Anyone who used the well",
+        "Only children",
+        "Trained workers",
+        "The first person to report a problem"
+      ],
+      "r": 2,
+      "e": "Seuls les travailleurs formés pouvaient ouvrir la pompe.",
+      "t": "The village water committee set a rule for repairing the pump: anyone who noticed a problem should report it quickly, but only trained workers could open the machine. This reduced damage caused by untrained repairs. The committee also posted the repair contact near the well."
+    },
+    {
+      "q": "What was the purpose of posting the repair contact?",
+      "o": [
+        "Teach children to open the machine",
+        "Replace the trained workers",
+        "Advertise the well",
+        "Help people report problems quickly"
+      ],
+      "r": 3,
+      "e": "Le contact affiché permet de signaler rapidement une panne.",
+      "t": "The village water committee set a rule for repairing the pump: anyone who noticed a problem should report it quickly, but only trained workers could open the machine. This reduced damage caused by untrained repairs. The committee also posted the repair contact near the well."
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "questions": [
+    {
+      "q": "What does the shared list help members do?",
+      "o": [
+        "Check which bags arrive and leave",
+        "Choose a school subject",
+        "Repair the storage roof",
+        "Find a bus timetable"
+      ],
+      "r": 0,
+      "t": "A cooperative in Kaolack began sharing a storage room for millet. Members record each bag when it arrives and check the list before taking grain home. The arrangement has reduced confusion during the busy harvest period.",
+      "e": "Members record bags and check the list."
+    },
+    {
+      "q": "When is the arrangement especially useful?",
+      "o": [
+        "During the school holidays only",
+        "During the harvest period",
+        "At the end of every lesson",
+        "When the market is closed"
+      ],
+      "r": 1,
+      "t": "A cooperative in Kaolack began sharing a storage room for millet. Members record each bag when it arrives and check the list before taking grain home. The arrangement has reduced confusion during the busy harvest period.",
+      "e": "The text says it helps during the busy harvest period."
+    },
+    {
+      "q": "Why was another bus trip added?",
+      "o": [
+        "The school moved to another town",
+        "Students asked for a later exam",
+        "The first bus was often full",
+        "The road was closed every morning"
+      ],
+      "r": 2,
+      "t": "The morning bus from Rufisque was often full, so the transport office added another trip at half past seven. Students who used the later bus were asked to show their school cards. After a month, fewer students arrived after the first lesson.",
+      "e": "The first bus did not have enough space."
+    },
+    {
+      "q": "What happened after a month?",
+      "o": [
+        "The school cancelled its first lesson",
+        "The bus stopped running",
+        "More students missed the bus",
+        "Fewer students arrived late"
+      ],
+      "r": 3,
+      "t": "The morning bus from Rufisque was often full, so the transport office added another trip at half past seven. Students who used the later bus were asked to show their school cards. After a month, fewer students arrived after the first lesson.",
+      "e": "The text says fewer students arrived after the first lesson."
+    },
+    {
+      "q": "What was the main purpose of appointment cards?",
+      "o": [
+        "To reduce waiting",
+        "To replace the nurses",
+        "To close the clinic earlier",
+        "To give patients medicine at home"
+      ],
+      "r": 0,
+      "t": "A clinic introduced appointment cards to reduce waiting. Patients could still come without a card, but they might have to wait longer. Nurses asked people to arrive ten minutes before their appointment.",
+      "e": "The cards were introduced to reduce waiting."
+    },
+    {
+      "q": "When should patients arrive?",
+      "o": [
+        "An hour after the appointment",
+        "Ten minutes early",
+        "At the end of the day",
+        "Only when the nurse calls"
+      ],
+      "r": 1,
+      "t": "A clinic introduced appointment cards to reduce waiting. Patients could still come without a card, but they might have to wait longer. Nurses asked people to arrive ten minutes before their appointment.",
+      "e": "The notice asks patients to arrive ten minutes before."
+    },
+    {
+      "q": "Where will the club meet?",
+      "o": [
+        "In the library",
+        "In the school yard",
+        "In Room 12",
+        "At the clinic"
+      ],
+      "r": 2,
+      "t": "The science club will meet in Room 12 on Thursday. Members will build simple water filters using sand, stones and cloth. They should bring a clean plastic bottle, but the club will provide the other materials.",
+      "e": "The notice says the meeting is in Room 12."
+    },
+    {
+      "q": "What should members bring?",
+      "o": [
+        "Sand and stones from home",
+        "A new water filter",
+        "A glass of water",
+        "A clean plastic bottle"
+      ],
+      "r": 3,
+      "t": "The science club will meet in Room 12 on Thursday. Members will build simple water filters using sand, stones and cloth. They should bring a clean plastic bottle, but the club will provide the other materials.",
+      "e": "The club asks each member to bring a clean bottle."
+    },
+    {
+      "q": "Why did the farmers delay planting?",
+      "o": [
+        "The soil was too dry",
+        "They had no seeds at all",
+        "The fields were under water",
+        "They were waiting for a market"
+      ],
+      "r": 0,
+      "t": "After two weeks without rain, the farmers delayed planting their groundnuts. They waited for the soil to become wet enough. When the rain finally came, they planted together and shared the work.",
+      "e": "They waited until the soil was wet enough."
+    },
+    {
+      "q": "How did they plant after the rain?",
+      "o": [
+        "Each farmer planted in a different country",
+        "They worked together",
+        "They asked the school to do it",
+        "They planted only at night"
+      ],
+      "r": 1,
+      "t": "After two weeks without rain, the farmers delayed planting their groundnuts. They waited for the soil to become wet enough. When the rain finally came, they planted together and shared the work.",
+      "e": "The text says they planted together and shared the work."
+    },
+    {
+      "q": "What did the team practise on Tuesday?",
+      "o": [
+        "Shooting",
+        "Running a market",
+        "Passing",
+        "Keeping score"
+      ],
+      "r": 2,
+      "t": "The team practised passing on Tuesday and shooting on Thursday. Their coach recorded each player’s progress. On Saturday, they played a match, but the coach reminded them that teamwork mattered more than the score.",
+      "e": "Passing was Tuesday’s focus."
+    },
+    {
+      "q": "What did the coach say mattered most?",
+      "o": [
+        "The final score",
+        "New uniforms",
+        "The length of practice",
+        "Teamwork"
+      ],
+      "r": 3,
+      "t": "The team practised passing on Tuesday and shooting on Thursday. Their coach recorded each player’s progress. On Saturday, they played a match, but the coach reminded them that teamwork mattered more than the score.",
+      "e": "The coach said teamwork mattered more than the score."
+    },
+    {
+      "q": "How long may a member first keep a book?",
+      "o": [
+        "Fourteen days",
+        "Seven days",
+        "One month",
+        "One year"
+      ],
+      "r": 0,
+      "t": "A library member may keep a book for fourteen days. If nobody else has requested it, the member can renew it once. Books must be returned during opening hours, even when the front door is busy.",
+      "e": "The rule allows fourteen days."
+    },
+    {
+      "q": "When can a member renew a book?",
+      "o": [
+        "Only after losing it",
+        "When nobody else has requested it",
+        "Every day",
+        "When the library is closed"
+      ],
+      "r": 1,
+      "t": "A library member may keep a book for fourteen days. If nobody else has requested it, the member can renew it once. Books must be returned during opening hours, even when the front door is busy.",
+      "e": "Renewal is allowed if there is no other request."
+    },
+    {
+      "q": "Why could the tomato price change?",
+      "o": [
+        "The baskets changed colour",
+        "The market opened only once",
+        "The supply changed from day to day",
+        "Awa changed the sign"
+      ],
+      "r": 2,
+      "t": "At the market, a sign showed the price of tomatoes per basket. The seller explained that the price could change during the week because the supply was different each day. Awa compared two stalls before buying.",
+      "e": "The seller linked changing prices to changing supply."
+    },
+    {
+      "q": "What did Awa do before buying?",
+      "o": [
+        "Changed the tomatoes herself",
+        "Went home without looking",
+        "Asked the bus driver",
+        "Compared two stalls"
+      ],
+      "r": 3,
+      "t": "At the market, a sign showed the price of tomatoes per basket. The seller explained that the price could change during the week because the supply was different each day. Awa compared two stalls before buying.",
+      "e": "She compared two stalls."
+    },
+    {
+      "q": "Why did pupils use different boxes?",
+      "o": [
+        "To sort materials for recycling",
+        "To store their homework",
+        "To keep the classroom dark",
+        "To hide the school books"
+      ],
+      "r": 0,
+      "t": "Pupils placed paper, metal and plastic in different boxes. Their teacher said this makes recycling easier because each material can be sorted separately. They agreed to empty the boxes every Friday.",
+      "e": "Separate boxes make sorting easier."
+    },
+    {
+      "q": "When will they empty the boxes?",
+      "o": [
+        "Every morning",
+        "Every Friday",
+        "At the end of the year",
+        "Only when it rains"
+      ],
+      "r": 1,
+      "t": "Pupils placed paper, metal and plastic in different boxes. Their teacher said this makes recycling easier because each material can be sorted separately. They agreed to empty the boxes every Friday.",
+      "e": "They agreed to empty them each Friday."
+    },
+    {
+      "q": "Where does the tank water come from?",
+      "o": [
+        "A nearby ocean",
+        "Bottles from the market",
+        "Rainwater from the roof",
+        "A river under the school"
+      ],
+      "r": 2,
+      "t": "The school garden has a small tank that collects rainwater from the roof. Pupils use this water for young plants when the weather is dry. A teacher checks the tank each week to make sure it is clean.",
+      "e": "The tank collects rainwater from the roof."
+    },
+    {
+      "q": "Who checks the tank?",
+      "o": [
+        "The bus driver",
+        "A shopkeeper",
+        "A visitor",
+        "A teacher"
+      ],
+      "r": 3,
+      "t": "The school garden has a small tank that collects rainwater from the roof. Pupils use this water for young plants when the weather is dry. A teacher checks the tank each week to make sure it is clean.",
+      "e": "A teacher checks it each week."
+    },
+    {
+      "q": "When did the group need to charge the lamps?",
+      "o": [
+        "During the day",
+        "Only at midnight",
+        "Under water",
+        "Inside a closed cupboard"
+      ],
+      "r": 0,
+      "t": "A group tested solar lamps at home for one month. They found the lamps useful during power cuts, but they needed to charge them in sunlight during the day. The group shared its notes with other families.",
+      "e": "The lamps charge in sunlight during the day."
+    },
+    {
+      "q": "Why did families find the lamps useful?",
+      "o": [
+        "They replaced every household tool",
+        "They worked during power cuts",
+        "They produced rain",
+        "They made the rooms colder"
+      ],
+      "r": 1,
+      "t": "A group tested solar lamps at home for one month. They found the lamps useful during power cuts, but they needed to charge them in sunlight during the day. The group shared its notes with other families.",
+      "e": "The text says they were useful during power cuts."
+    },
+    {
+      "q": "How long did the group review vocabulary?",
+      "o": [
+        "Ten minutes",
+        "One hour",
+        "Twenty minutes",
+        "Two days"
+      ],
+      "r": 2,
+      "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
+      "e": "The text gives twenty minutes."
+    },
+    {
+      "q": "How did learners help each other?",
+      "o": [
+        "They copied every answer",
+        "They cancelled the test",
+        "They left the room",
+        "They explained difficult words"
+      ],
+      "r": 3,
+      "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
+      "e": "Each learner explained one difficult word."
+    }
+  ]
+}

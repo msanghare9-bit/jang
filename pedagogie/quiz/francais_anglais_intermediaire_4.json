@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Which English expression means « prendre une décision »?",
+      "o": [
+        "make a decision",
+        "do a decision",
+        "take a choice",
+        "make a conclusion"
+      ],
+      "r": 0,
+      "e": "On dit make a decision en anglais."
+    },
+    {
+      "q": "Which English expression means « avoir hâte de »?",
+      "o": [
+        "look after",
+        "look forward to",
+        "look around",
+        "look up to"
+      ],
+      "r": 1,
+      "e": "Look forward to veut dire avoir hâte de."
+    },
+    {
+      "q": "Which verb means « rendre visite à quelqu’un »?",
+      "o": [
+        "watch",
+        "invite",
+        "visit",
+        "return"
+      ],
+      "r": 2,
+      "e": "Visit someone veut dire rendre visite à quelqu’un."
+    },
+    {
+      "q": "Which expression means « faire attention à »?",
+      "o": [
+        "look for",
+        "take care of",
+        "wait for",
+        "pay attention to"
+      ],
+      "r": 3,
+      "e": "Pay attention to veut dire faire attention à."
+    },
+    {
+      "q": "Which expression means « tomber malade »?",
+      "o": [
+        "fall ill",
+        "fall asleep",
+        "fall behind",
+        "fall down"
+      ],
+      "r": 0,
+      "e": "Fall ill veut dire tomber malade."
+    },
+    {
+      "q": "Which verb means « se rendre compte »?",
+      "o": [
+        "repeat",
+        "realize",
+        "recognize",
+        "remember"
+      ],
+      "r": 1,
+      "e": "Realize veut dire se rendre compte."
+    },
+    {
+      "q": "Which expression means « garder le contact »?",
+      "o": [
+        "keep a secret",
+        "keep a promise",
+        "keep in touch",
+        "keep a record"
+      ],
+      "r": 2,
+      "e": "Keep in touch veut dire garder le contact."
+    },
+    {
+      "q": "Which expression means « faire des progrès »?",
+      "o": [
+        "make a promise",
+        "make a mistake",
+        "make a plan",
+        "make progress"
+      ],
+      "r": 3,
+      "e": "Make progress veut dire faire des progrès."
+    },
+    {
+      "q": "Which verb means « être d’accord »?",
+      "o": [
+        "agree",
+        "argue",
+        "avoid",
+        "allow"
+      ],
+      "r": 0,
+      "e": "Agree veut dire être d’accord."
+    },
+    {
+      "q": "Which expression means « changer d’avis »?",
+      "o": [
+        "change places",
+        "change one's mind",
+        "change the subject",
+        "change the date"
+      ],
+      "r": 1,
+      "e": "Change one’s mind veut dire changer d’avis."
+    },
+    {
+      "q": "Which expression means « avoir lieu »?",
+      "o": [
+        "take part",
+        "take care",
+        "take place",
+        "take turns"
+      ],
+      "r": 2,
+      "e": "Take place veut dire avoir lieu."
+    },
+    {
+      "q": "Which expression means « se débrouiller »?",
+      "o": [
+        "get lost",
+        "get ready",
+        "get dressed",
+        "manage"
+      ],
+      "r": 3,
+      "e": "Manage peut vouloir dire se débrouiller."
+    },
+    {
+      "q": "Which verb means « se dépêcher »?",
+      "o": [
+        "hurry",
+        "worry",
+        "gather",
+        "travel"
+      ],
+      "r": 0,
+      "e": "Hurry veut dire se dépêcher."
+    },
+    {
+      "q": "Which expression means « faire la queue »?",
+      "o": [
+        "stand up",
+        "stand in line",
+        "stand still",
+        "stand out"
+      ],
+      "r": 1,
+      "e": "Stand in line veut dire faire la queue."
+    },
+    {
+      "q": "Which expression means « économiser de l’argent »?",
+      "o": [
+        "spend money",
+        "lend money",
+        "save money",
+        "count money"
+      ],
+      "r": 2,
+      "e": "Save money veut dire économiser de l’argent."
+    },
+    {
+      "q": "Which expression means « s’occuper de quelqu’un »?",
+      "o": [
+        "take part in",
+        "take place in",
+        "take advantage of",
+        "take care of"
+      ],
+      "r": 3,
+      "e": "Take care of veut dire s’occuper de."
+    },
+    {
+      "q": "Which expression means « rester en forme »?",
+      "o": [
+        "stay fit",
+        "stay calm",
+        "stay awake",
+        "stay safe"
+      ],
+      "r": 0,
+      "e": "Stay fit veut dire rester en forme."
+    },
+    {
+      "q": "Which expression means « faire une pause »?",
+      "o": [
+        "take a seat",
+        "take a break",
+        "take a photo",
+        "take a walk"
+      ],
+      "r": 1,
+      "e": "Take a break veut dire faire une pause."
+    },
+    {
+      "q": "Which expression means « avoir raison »?",
+      "o": [
+        "be ready",
+        "be polite",
+        "be right",
+        "be careful"
+      ],
+      "r": 2,
+      "e": "Be right veut dire avoir raison."
+    },
+    {
+      "q": "If the bus is « en panne », what has happened?",
+      "o": [
+        "It has turned around.",
+        "It has slowed down.",
+        "It has filled up.",
+        "It has broken down."
+      ],
+      "r": 3,
+      "e": "A vehicle that has broken down est en panne."
+    },
+    {
+      "q": "Which expression means « le lendemain »?",
+      "o": [
+        "the next day",
+        "the previous day",
+        "every day",
+        "one day"
+      ],
+      "r": 0,
+      "e": "The next day veut dire le lendemain."
+    },
+    {
+      "q": "Which expression means « au lieu de »?",
+      "o": [
+        "because of",
+        "instead of",
+        "in front of",
+        "apart from"
+      ],
+      "r": 1,
+      "e": "Instead of veut dire au lieu de."
+    },
+    {
+      "q": "Which expression means « dès que »?",
+      "o": [
+        "as long as",
+        "even though",
+        "as soon as",
+        "so that"
+      ],
+      "r": 2,
+      "e": "As soon as veut dire dès que."
+    },
+    {
+      "q": "Which expression means « faire les courses »?",
+      "o": [
+        "do the washing",
+        "do the cooking",
+        "do the cleaning",
+        "do the shopping"
+      ],
+      "r": 3,
+      "e": "Do the shopping veut dire faire les courses."
+    }
+  ]
+}

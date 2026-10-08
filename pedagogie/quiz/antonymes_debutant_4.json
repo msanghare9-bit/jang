@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Quel est le contraire de « polite » en anglais ?",
+      "o": [
+        "rude",
+        "careful",
+        "friendly",
+        "quiet"
+      ],
+      "r": 0,
+      "e": "Rude est le contraire de polite : impoli est le contraire de poli."
+    },
+    {
+      "q": "Quel est le contraire de « same » en anglais ?",
+      "o": [
+        "similar",
+        "different",
+        "usual",
+        "simple"
+      ],
+      "r": 1,
+      "e": "Different est le contraire de same."
+    },
+    {
+      "q": "Quel est le contraire de « true » en anglais ?",
+      "o": [
+        "right",
+        "real",
+        "false",
+        "clear"
+      ],
+      "r": 2,
+      "e": "False est le contraire de true : faux est le contraire de vrai."
+    },
+    {
+      "q": "Quel est le contraire de « useful » en anglais ?",
+      "o": [
+        "helpful",
+        "careful",
+        "ready",
+        "useless"
+      ],
+      "r": 3,
+      "e": "Useless est le contraire de useful."
+    },
+    {
+      "q": "Quel est le contraire de « alive » en anglais ?",
+      "o": [
+        "dead",
+        "awake",
+        "young",
+        "sick"
+      ],
+      "r": 0,
+      "e": "Dead est le contraire de alive."
+    },
+    {
+      "q": "Quel est le contraire de « possible » en anglais ?",
+      "o": [
+        "important",
+        "impossible",
+        "popular",
+        "careful"
+      ],
+      "r": 1,
+      "e": "Impossible est le contraire de possible."
+    },
+    {
+      "q": "Quel est le contraire de « patient » en anglais ?",
+      "o": [
+        "polite",
+        "honest",
+        "impatient",
+        "gentle"
+      ],
+      "r": 2,
+      "e": "Impatient est le contraire de patient."
+    },
+    {
+      "q": "Quel est le contraire de « tidy » en anglais ?",
+      "o": [
+        "clean",
+        "quiet",
+        "empty",
+        "messy"
+      ],
+      "r": 3,
+      "e": "Messy est le contraire de tidy : en désordre est le contraire de rangé."
+    },
+    {
+      "q": "Quel est le contraire de « friendly » en anglais ?",
+      "o": [
+        "unfriendly",
+        "helpful",
+        "funny",
+        "lucky"
+      ],
+      "r": 0,
+      "e": "Unfriendly est le contraire de friendly."
+    },
+    {
+      "q": "Quel est le contraire de « honest » en anglais ?",
+      "o": [
+        "careless",
+        "dishonest",
+        "unhappy",
+        "unkind"
+      ],
+      "r": 1,
+      "e": "Dishonest est le contraire de honest : malhonnête est le contraire d’honnête."
+    },
+    {
+      "q": "Quel est le contraire de « usual » en anglais ?",
+      "o": [
+        "useful",
+        "uniform",
+        "unusual",
+        "unclear"
+      ],
+      "r": 2,
+      "e": "Unusual est le contraire de usual."
+    },
+    {
+      "q": "Quel est le contraire de « careful » en anglais ?",
+      "o": [
+        "fearful",
+        "helpful",
+        "colourful",
+        "careless"
+      ],
+      "r": 3,
+      "e": "Careless est le contraire de careful."
+    },
+    {
+      "q": "Quel est le contraire de « sweet » en anglais ?",
+      "o": [
+        "sour",
+        "fresh",
+        "soft",
+        "warm"
+      ],
+      "r": 0,
+      "e": "Sour est le contraire de sweet pour un goût."
+    },
+    {
+      "q": "Quel est le contraire de « smooth » en anglais ?",
+      "o": [
+        "round",
+        "rough",
+        "soft",
+        "wide"
+      ],
+      "r": 1,
+      "e": "Rough est le contraire de smooth : rugueux est le contraire de lisse."
+    },
+    {
+      "q": "Quel est le contraire de « together » en anglais ?",
+      "o": [
+        "near",
+        "around",
+        "apart",
+        "between"
+      ],
+      "r": 2,
+      "e": "Apart est le contraire de together."
+    },
+    {
+      "q": "Quel est le contraire de « first » en anglais ?",
+      "o": [
+        "next",
+        "early",
+        "main",
+        "last"
+      ],
+      "r": 3,
+      "e": "Last est le contraire de first dans un ordre."
+    },
+    {
+      "q": "Quel est le contraire de « best » en anglais ?",
+      "o": [
+        "worst",
+        "better",
+        "good",
+        "least"
+      ],
+      "r": 0,
+      "e": "Worst est le contraire de best."
+    },
+    {
+      "q": "Quel est le contraire de « comfortable » en anglais ?",
+      "o": [
+        "impossible",
+        "uncomfortable",
+        "unusual",
+        "unfriendly"
+      ],
+      "r": 1,
+      "e": "Uncomfortable est le contraire de comfortable."
+    },
+    {
+      "q": "Quel est le contraire de « regular » en anglais ?",
+      "o": [
+        "incomplete",
+        "unavailable",
+        "irregular",
+        "uncertain"
+      ],
+      "r": 2,
+      "e": "Irregular est le contraire de regular."
+    },
+    {
+      "q": "Quel est le contraire de « available » en anglais ?",
+      "o": [
+        "unfriendly",
+        "unusual",
+        "unfair",
+        "unavailable"
+      ],
+      "r": 3,
+      "e": "Unavailable est le contraire de available."
+    },
+    {
+      "q": "Quel est le contraire de « complete » en anglais ?",
+      "o": [
+        "incomplete",
+        "impatient",
+        "impossible",
+        "irregular"
+      ],
+      "r": 0,
+      "e": "Incomplete est le contraire de complete."
+    },
+    {
+      "q": "Quel est le contraire de « fair » en anglais ?",
+      "o": [
+        "unclean",
+        "unfair",
+        "untrue",
+        "unready"
+      ],
+      "r": 1,
+      "e": "Unfair est le contraire de fair."
+    },
+    {
+      "q": "Quel est le contraire de « certain » en anglais ?",
+      "o": [
+        "unusual",
+        "unhelpful",
+        "uncertain",
+        "uncomfortable"
+      ],
+      "r": 2,
+      "e": "Uncertain est le contraire de certain."
+    },
+    {
+      "q": "Quel est le contraire de « employed » en anglais ?",
+      "o": [
+        "unprepared",
+        "unhappy",
+        "unhealthy",
+        "unemployed"
+      ],
+      "r": 3,
+      "e": "Unemployed décrit une personne qui n’a pas d’emploi."
+    }
+  ]
+}

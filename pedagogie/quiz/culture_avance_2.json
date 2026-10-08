@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What long-term practice do the Senegambian stone circles help document?",
+      "o": [
+        "Funerary and monument-building traditions",
+        "Modern railway construction",
+        "Colonial plantation farming only",
+        "Recent coastal tourism"
+      ],
+      "r": 0,
+      "e": "UNESCO links the stone circles and tumuli to funerary practices over a long period."
+    },
+    {
+      "q": "About how many stone circles are included in the four inscribed groups?",
+      "o": [
+        "21",
+        "93",
+        "52",
+        "1,500"
+      ],
+      "r": 1,
+      "e": "UNESCO counts 93 circles across the four groups."
+    },
+    {
+      "q": "Which Senegalese complex is the largest among the Senegambian stone-circle sites?",
+      "o": [
+        "Wanar",
+        "Wassu",
+        "Sine Ngayène",
+        "Kerbatch"
+      ],
+      "r": 2,
+      "e": "UNESCO identifies Sine Ngayène as the largest complex."
+    },
+    {
+      "q": "How many circles does the Sine Ngayène complex contain?",
+      "o": [
+        "9",
+        "21",
+        "93",
+        "52"
+      ],
+      "r": 3,
+      "e": "UNESCO describes 52 circles at Sine Ngayène."
+    },
+    {
+      "q": "How many circles are in the Wanar complex?",
+      "o": [
+        "21",
+        "9",
+        "14",
+        "52"
+      ],
+      "r": 0,
+      "e": "UNESCO describes 21 circles at Wanar."
+    },
+    {
+      "q": "What stone material is named in descriptions of the circles’ carved pillars?",
+      "o": [
+        "Marble",
+        "Laterite",
+        "Obsidian",
+        "Limestone"
+      ],
+      "r": 1,
+      "e": "UNESCO describes the pillars as carved from laterite."
+    },
+    {
+      "q": "What do the associated tumuli mainly represent?",
+      "o": [
+        "Water storage tanks",
+        "Defensive towers",
+        "Burial mounds",
+        "Grain silos"
+      ],
+      "r": 2,
+      "e": "UNESCO identifies tumuli as burial mounds."
+    },
+    {
+      "q": "How many standing stones are usually found in one circle?",
+      "o": [
+        "Two to four",
+        "Twenty-five to forty",
+        "More than one hundred",
+        "About eight to fourteen"
+      ],
+      "r": 3,
+      "e": "UNESCO gives a range of about eight to fourteen stones per circle."
+    },
+    {
+      "q": "What is the approximate average height of the standing stones?",
+      "o": [
+        "About two metres",
+        "About twenty centimetres",
+        "About eight metres",
+        "About fifteen metres"
+      ],
+      "r": 0,
+      "e": "UNESCO describes the stones as averaging around two metres."
+    },
+    {
+      "q": "Which three geo-cultural areas make up Bassari Country?",
+      "o": [
+        "Dakar, Thiès and Saint-Louis",
+        "Bassari–Salémata, Bedik–Bandafassi and Fula–Dindéfello",
+        "Wassu, Kerbatch and Wanar",
+        "Gorée, Saloum and Djoudj"
+      ],
+      "r": 1,
+      "e": "UNESCO identifies these three areas within the property."
+    },
+    {
+      "q": "Between which centuries did Bassari, Fula and Bedik peoples settle in the area, according to UNESCO?",
+      "o": [
+        "From the 1st to the 3rd centuries",
+        "Only during the 20th century",
+        "From the 11th to the 19th centuries",
+        "From the 15th to the 16th centuries"
+      ],
+      "r": 2,
+      "e": "UNESCO dates settlement across the area from the 11th to the 19th centuries."
+    },
+    {
+      "q": "What agricultural landscape feature is associated with Bassari Country?",
+      "o": [
+        "Vineyards on snowy slopes",
+        "Large wheat fields in a desert",
+        "Rice paddies under city towers",
+        "Terraced fields and rice paddies"
+      ],
+      "r": 3,
+      "e": "UNESCO describes terraces and rice paddies in the Bassari landscape."
+    },
+    {
+      "q": "Why is Bassari Country considered a cultural landscape?",
+      "o": [
+        "It reflects long interaction between communities and their environment.",
+        "It contains only recently built roads.",
+        "It is a single modern city.",
+        "It has no connection to local practices."
+      ],
+      "r": 0,
+      "e": "UNESCO explains that land use, social rules and beliefs shaped the landscape."
+    },
+    {
+      "q": "What kind of practices are represented in Bassari Country?",
+      "o": [
+        "Only maritime trade practices",
+        "Agro-pastoral, social, ritual and spiritual practices",
+        "Only industrial manufacturing",
+        "Only written legal codes"
+      ],
+      "r": 1,
+      "e": "UNESCO describes these linked cultural practices."
+    },
+    {
+      "q": "What has the long cultural process of shell-mound building done in the Saloum Delta?",
+      "o": [
+        "Created a mountain range",
+        "Moved the river mouth to Dakar",
+        "Helped form stable islets and reclaimed land",
+        "Removed all brackish water"
+      ],
+      "r": 2,
+      "e": "UNESCO notes shell mounds helped form stable islets over time."
+    },
+    {
+      "q": "What timescale does UNESCO associate with the Saloum shell-mound cultural process?",
+      "o": [
+        "About two years",
+        "About 20 years",
+        "About 20,000 years",
+        "About 2,000 years"
+      ],
+      "r": 3,
+      "e": "UNESCO describes a cultural process lasting around 2,000 years."
+    },
+    {
+      "q": "Which combination best describes the Saloum Delta’s traditional coastal livelihood?",
+      "o": [
+        "Shellfish gathering, fishing and processing the harvest",
+        "Mining, logging and snow farming",
+        "Silk production and mountain hunting",
+        "Oil refining and aircraft building"
+      ],
+      "r": 0,
+      "e": "UNESCO highlights gathering, fishing and preservation of the harvest."
+    },
+    {
+      "q": "What makes parts of the Saloum Delta’s environment ecologically sensitive?",
+      "o": [
+        "It has no living species.",
+        "Its biodiversity is extensive but fragile.",
+        "It is entirely covered by buildings.",
+        "It receives no water from rivers or tides."
+      ],
+      "r": 1,
+      "e": "UNESCO describes the delta's biodiversity as extensive and fragile."
+    },
+    {
+      "q": "What physical feature gives Saint-Louis its distinctive island setting?",
+      "o": [
+        "It sits inside a mountain crater.",
+        "It is surrounded by the Niger River.",
+        "It lies between two arms at the Senegal River mouth.",
+        "It stands on an artificial lake."
+      ],
+      "r": 2,
+      "e": "UNESCO describes Saint-Louis between two arms of the river mouth."
+    },
+    {
+      "q": "Which urban features are noted in UNESCO’s description of Saint-Louis?",
+      "o": [
+        "Circular huts and rice terraces",
+        "Stone circles and tumuli",
+        "High-rise towers and underground railways",
+        "A regular plan, quays and colonial architecture"
+      ],
+      "r": 3,
+      "e": "UNESCO cites the town plan, quays and architecture."
+    },
+    {
+      "q": "What role did Saint-Louis play in West Africa before Dakar became the capital?",
+      "o": [
+        "It was an important political, cultural and economic centre.",
+        "It was the capital of Ethiopia.",
+        "It was a major centre for stone quarrying only.",
+        "It was a new city built in the 21st century."
+      ],
+      "r": 0,
+      "e": "UNESCO describes Saint-Louis as an influential regional centre."
+    },
+    {
+      "q": "What do the Stone Circles of Senegambia reveal about the society that built them?",
+      "o": [
+        "It had no knowledge of stone tools.",
+        "It was organized enough to sustain skilled construction over centuries.",
+        "It used only temporary wooden structures.",
+        "It avoided trade and settlement."
+      ],
+      "r": 1,
+      "e": "UNESCO describes a skilled and organized society behind the monuments."
+    },
+    {
+      "q": "Why do UNESCO’s cultural-landscape descriptions consider traditional practices important?",
+      "o": [
+        "They replace all environmental processes.",
+        "They prove that communities never changed.",
+        "They show how communities adapted land use to local conditions.",
+        "They describe only modern tourism."
+      ],
+      "r": 2,
+      "e": "The cultural landscape records adaptations to environmental constraints."
+    },
+    {
+      "q": "Which statement about the Stone Circles of Senegambia is accurate?",
+      "o": [
+        "All four groups are on Gorée Island.",
+        "The groups are all inside Saint-Louis.",
+        "The site is limited to one modern city.",
+        "The inscribed groups are located in both Senegal and The Gambia."
+      ],
+      "r": 3,
+      "e": "UNESCO describes a shared, cross-border serial property."
+    }
+  ]
+}

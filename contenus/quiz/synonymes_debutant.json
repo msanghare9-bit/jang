@@ -1,0 +1,1156 @@
+{
+  "questions": [
+    {
+      "q": "Quel est un synonyme anglais de “happy” ?",
+      "o": [
+        "glad",
+        "sad",
+        "angry",
+        "tired"
+      ],
+      "r": 0,
+      "e": "“Glad” veut aussi dire heureux."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “small” ?",
+      "o": [
+        "tall",
+        "little",
+        "wide",
+        "heavy"
+      ],
+      "r": 1,
+      "e": "“Little” veut dire petit."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “big” ?",
+      "o": [
+        "tiny",
+        "short",
+        "large",
+        "weak"
+      ],
+      "r": 2,
+      "e": "“Large” veut dire grand ou large."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “fast” ?",
+      "o": [
+        "slow",
+        "late",
+        "careful",
+        "quick"
+      ],
+      "r": 3,
+      "e": "“Quick” veut dire rapide."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “smart” ?",
+      "o": [
+        "clever",
+        "lazy",
+        "quiet",
+        "young"
+      ],
+      "r": 0,
+      "e": "“Clever” veut dire intelligent."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “begin” ?",
+      "o": [
+        "stop",
+        "start",
+        "wait",
+        "close"
+      ],
+      "r": 1,
+      "e": "“Start” veut dire commencer."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “end” ?",
+      "o": [
+        "open",
+        "break",
+        "finish",
+        "follow"
+      ],
+      "r": 2,
+      "e": "“Finish” veut dire terminer."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “sick” ?",
+      "o": [
+        "well",
+        "safe",
+        "full",
+        "ill"
+      ],
+      "r": 3,
+      "e": "“Ill” veut dire malade."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “easy” ?",
+      "o": [
+        "simple",
+        "difficult",
+        "expensive",
+        "early"
+      ],
+      "r": 0,
+      "e": "“Simple” veut dire facile ici."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “angry” ?",
+      "o": [
+        "glad",
+        "mad",
+        "shy",
+        "hungry"
+      ],
+      "r": 1,
+      "e": "“Mad” peut vouloir dire fâché."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “quiet” ?",
+      "o": [
+        "noisy",
+        "busy",
+        "silent",
+        "bright"
+      ],
+      "r": 2,
+      "e": "“Silent” veut dire silencieux."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “near” ?",
+      "o": [
+        "far",
+        "behind",
+        "across",
+        "close"
+      ],
+      "r": 3,
+      "e": "“Close” peut vouloir dire proche."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “gift” ?",
+      "o": [
+        "present",
+        "letter",
+        "price",
+        "shop"
+      ],
+      "r": 0,
+      "e": "“Present” veut aussi dire cadeau."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “child” ?",
+      "o": [
+        "parent",
+        "kid",
+        "friend",
+        "teacher"
+      ],
+      "r": 1,
+      "e": "“Kid” veut dire enfant."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “shop” ?",
+      "o": [
+        "school",
+        "street",
+        "store",
+        "station"
+      ],
+      "r": 2,
+      "e": "“Store” veut aussi dire magasin."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “buy” ?",
+      "o": [
+        "sell",
+        "borrow",
+        "lend",
+        "purchase"
+      ],
+      "r": 3,
+      "e": "“Purchase” veut dire acheter."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “speak” ?",
+      "o": [
+        "talk",
+        "listen",
+        "write",
+        "read"
+      ],
+      "r": 0,
+      "e": "“Talk” veut dire parler."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “answer” ?",
+      "o": [
+        "question",
+        "reply",
+        "story",
+        "lesson"
+      ],
+      "r": 1,
+      "e": "“Reply” veut dire répondre ou réponse."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “beautiful” ?",
+      "o": [
+        "ugly",
+        "noisy",
+        "pretty",
+        "empty"
+      ],
+      "r": 2,
+      "e": "“Pretty” veut dire joli."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “funny” ?",
+      "o": [
+        "serious",
+        "sad",
+        "slow",
+        "amusing"
+      ],
+      "r": 3,
+      "e": "“Amusing” veut dire amusant."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “job” ?",
+      "o": [
+        "work",
+        "rest",
+        "game",
+        "meal"
+      ],
+      "r": 0,
+      "e": "“Work” peut vouloir dire travail ou emploi."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “choose” ?",
+      "o": [
+        "refuse",
+        "select",
+        "forget",
+        "carry"
+      ],
+      "r": 1,
+      "e": "“Select” veut dire choisir."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “help” ?",
+      "o": [
+        "hurt",
+        "hide",
+        "assist",
+        "leave"
+      ],
+      "r": 2,
+      "e": "“Assist” veut dire aider."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “home” ?",
+      "o": [
+        "road",
+        "market",
+        "class",
+        "house"
+      ],
+      "r": 3,
+      "e": "“House” peut désigner la maison où l’on vit."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “scared” ?",
+      "o": [
+        "afraid",
+        "brave",
+        "calm",
+        "proud"
+      ],
+      "r": 0,
+      "e": "“Afraid” veut dire qui a peur.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “correct” ?",
+      "o": [
+        "wrong",
+        "right",
+        "late",
+        "weak"
+      ],
+      "r": 1,
+      "e": "“Right” peut vouloir dire correct.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “wrong” ?",
+      "o": [
+        "ready",
+        "kind",
+        "incorrect",
+        "quiet"
+      ],
+      "r": 2,
+      "e": "“Incorrect” veut dire faux ou incorrect.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “a tiny house”, quel mot est proche de “tiny” ?",
+      "o": [
+        "very old",
+        "very noisy",
+        "very strong",
+        "very small"
+      ],
+      "r": 3,
+      "e": "“Tiny” veut dire très petit.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “a bright lamp”, quel mot est proche de “bright” ?",
+      "o": [
+        "shining",
+        "broken",
+        "heavy",
+        "empty"
+      ],
+      "r": 0,
+      "e": "Ici, “bright” veut dire qui brille.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans “Close the door”, quel mot est proche de “close” ?",
+      "o": [
+        "open",
+        "shut",
+        "carry",
+        "paint"
+      ],
+      "r": 1,
+      "e": "“Shut” veut dire fermer.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “road” ?",
+      "o": [
+        "river",
+        "field",
+        "street",
+        "bridge"
+      ],
+      "r": 2,
+      "e": "“Street” veut dire rue.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “tale” ?",
+      "o": [
+        "question",
+        "answer",
+        "lesson",
+        "story"
+      ],
+      "r": 3,
+      "e": "“Story” veut dire histoire.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel mot est proche de “thought” dans “That is a good thought” ?",
+      "o": [
+        "idea",
+        "noise",
+        "colour",
+        "price"
+      ],
+      "r": 0,
+      "e": "“Idea” veut dire idée.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme familier de “father” ?",
+      "o": [
+        "son",
+        "dad",
+        "uncle",
+        "friend"
+      ],
+      "r": 1,
+      "e": "“Dad” est un mot familier pour dire père.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme familier de “mother” ?",
+      "o": [
+        "daughter",
+        "aunt",
+        "mum",
+        "cousin"
+      ],
+      "r": 2,
+      "e": "“Mum” est un mot familier pour dire mère.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de “bicycle” ?",
+      "o": [
+        "bus",
+        "boat",
+        "train",
+        "bike"
+      ],
+      "r": 3,
+      "e": "“Bike” est une forme courte de “bicycle”.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de “picture” ?",
+      "o": [
+        "photo",
+        "letter",
+        "map",
+        "ticket"
+      ],
+      "r": 0,
+      "e": "“Photo” peut remplacer “picture” pour une image prise avec un appareil.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de “movie” ?",
+      "o": [
+        "song",
+        "film",
+        "game",
+        "book"
+      ],
+      "r": 1,
+      "e": "“Film” veut aussi dire film.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “neat” ?",
+      "o": [
+        "dirty",
+        "crowded",
+        "tidy",
+        "late"
+      ],
+      "r": 2,
+      "e": "“Tidy” veut dire bien rangé.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme de “tasty” ?",
+      "o": [
+        "bitter",
+        "cold",
+        "empty",
+        "delicious"
+      ],
+      "r": 3,
+      "e": "“Delicious” veut dire délicieux.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “lovely” ?",
+      "o": [
+        "beautiful",
+        "dangerous",
+        "boring",
+        "difficult"
+      ],
+      "r": 0,
+      "e": "“Beautiful” veut dire beau ou joli.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “leap” ?",
+      "o": [
+        "fall",
+        "jump",
+        "sit",
+        "sleep"
+      ],
+      "r": 1,
+      "e": "“Jump” veut dire sauter.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “rapid” ?",
+      "o": [
+        "slow",
+        "careful",
+        "quick",
+        "weak"
+      ],
+      "r": 2,
+      "e": "“Quick” veut dire rapide.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “cold” ?",
+      "o": [
+        "hot",
+        "dry",
+        "bright",
+        "chilly"
+      ],
+      "r": 3,
+      "e": "“Chilly” veut dire un peu froid.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “brave” ?",
+      "o": [
+        "courageous",
+        "afraid",
+        "lazy",
+        "quiet"
+      ],
+      "r": 0,
+      "e": "“Courageous” veut dire courageux.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “famous” ?",
+      "o": [
+        "unknown",
+        "well-known",
+        "private",
+        "ordinary"
+      ],
+      "r": 1,
+      "e": "“Well-known” veut dire connu.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “ill” ?",
+      "o": [
+        "healthy",
+        "strong",
+        "unwell",
+        "ready"
+      ],
+      "r": 2,
+      "e": "“Unwell” veut dire malade.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de “shout” ?",
+      "o": [
+        "whisper",
+        "listen",
+        "smile",
+        "yell"
+      ],
+      "r": 3,
+      "e": "“Yell” veut dire crier.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « dirty » ?",
+      "o": [
+        "soiled",
+        "start",
+        "close",
+        "reply"
+      ],
+      "r": 0,
+      "e": "« soiled » est proche de « dirty » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « warm » ?",
+      "o": [
+        "finish",
+        "mild",
+        "present",
+        "pretty"
+      ],
+      "r": 1,
+      "e": "« mild » est proche de « warm » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « wet » ?",
+      "o": [
+        "ill",
+        "kid",
+        "damp",
+        "amusing"
+      ],
+      "r": 2,
+      "e": "« damp » est proche de « wet » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « weak » ?",
+      "o": [
+        "simple",
+        "store",
+        "work",
+        "feeble"
+      ],
+      "r": 3,
+      "e": "« feeble » est proche de « weak » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « safe » ?",
+      "o": [
+        "secure",
+        "mad",
+        "purchase",
+        "select"
+      ],
+      "r": 0,
+      "e": "« secure » est proche de « safe » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « kind » ?",
+      "o": [
+        "silent",
+        "caring",
+        "talk",
+        "assist"
+      ],
+      "r": 1,
+      "e": "« caring » est proche de « kind » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « loud » ?",
+      "o": [
+        "close",
+        "reply",
+        "noisy",
+        "house"
+      ],
+      "r": 2,
+      "e": "« noisy » est proche de « loud » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « tired » ?",
+      "o": [
+        "present",
+        "pretty",
+        "glad",
+        "weary"
+      ],
+      "r": 3,
+      "e": "« weary » est proche de « tired » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « nice » ?",
+      "o": [
+        "pleasant",
+        "kid",
+        "amusing",
+        "little"
+      ],
+      "r": 0,
+      "e": "« pleasant » est proche de « nice » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « rich » ?",
+      "o": [
+        "store",
+        "wealthy",
+        "work",
+        "large"
+      ],
+      "r": 1,
+      "e": "« wealthy » est proche de « rich » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « poor » ?",
+      "o": [
+        "purchase",
+        "select",
+        "needy",
+        "quick"
+      ],
+      "r": 2,
+      "e": "« needy » est proche de « poor » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « sad » ?",
+      "o": [
+        "talk",
+        "assist",
+        "clever",
+        "unhappy"
+      ],
+      "r": 3,
+      "e": "« unhappy » est proche de « sad » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « huge » ?",
+      "o": [
+        "enormous",
+        "reply",
+        "house",
+        "start"
+      ],
+      "r": 0,
+      "e": "« enormous » est proche de « huge » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « careful » ?",
+      "o": [
+        "pretty",
+        "cautious",
+        "glad",
+        "finish"
+      ],
+      "r": 1,
+      "e": "« cautious » est proche de « careful » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « finish » ?",
+      "o": [
+        "amusing",
+        "little",
+        "complete",
+        "ill"
+      ],
+      "r": 2,
+      "e": "« complete » est proche de « finish » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « difficult » ?",
+      "o": [
+        "work",
+        "large",
+        "simple",
+        "challenging"
+      ],
+      "r": 3,
+      "e": "« challenging » est proche de « difficult » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « important » ?",
+      "o": [
+        "significant",
+        "select",
+        "quick",
+        "mad"
+      ],
+      "r": 0,
+      "e": "« significant » est proche de « important » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « strong » ?",
+      "o": [
+        "assist",
+        "powerful",
+        "clever",
+        "silent"
+      ],
+      "r": 1,
+      "e": "« powerful » est proche de « strong » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « empty » ?",
+      "o": [
+        "house",
+        "start",
+        "vacant",
+        "close"
+      ],
+      "r": 2,
+      "e": "« vacant » est proche de « empty » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « sleepy » ?",
+      "o": [
+        "glad",
+        "finish",
+        "present",
+        "drowsy"
+      ],
+      "r": 3,
+      "e": "« drowsy » est proche de « sleepy » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « busy » ?",
+      "o": [
+        "occupied",
+        "little",
+        "ill",
+        "kid"
+      ],
+      "r": 0,
+      "e": "« occupied » est proche de « busy » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « thin » ?",
+      "o": [
+        "large",
+        "slim",
+        "simple",
+        "store"
+      ],
+      "r": 1,
+      "e": "« slim » est proche de « thin » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « worried » ?",
+      "o": [
+        "quick",
+        "mad",
+        "anxious",
+        "purchase"
+      ],
+      "r": 2,
+      "e": "« anxious » est proche de « worried » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Quel est un synonyme anglais de « lucky » ?",
+      "o": [
+        "clever",
+        "silent",
+        "talk",
+        "fortunate"
+      ],
+      "r": 3,
+      "e": "« fortunate » est proche de « lucky » dans ce sens.",
+      "d": "synonymes",
+      "n": "debutant"
+    },
+    {
+      "q": "Dans « Awa looks after her little brother », que veut dire « looks after »?",
+      "o": [
+        "takes care of",
+        "looks for",
+        "speaks to",
+        "waits for"
+      ],
+      "r": 0,
+      "e": "Look after veut dire s’occuper de quelqu’un."
+    },
+    {
+      "q": "Dans « We found out the answer », que veut dire « found out »?",
+      "o": [
+        "forgot",
+        "discovered",
+        "changed",
+        "copied"
+      ],
+      "r": 1,
+      "e": "Find out veut dire découvrir ou apprendre une information."
+    },
+    {
+      "q": "Dans « Please give back my book », que veut dire « give back »?",
+      "o": [
+        "borrow",
+        "open",
+        "return",
+        "carry"
+      ],
+      "r": 2,
+      "e": "Give back veut dire rendre quelque chose."
+    },
+    {
+      "q": "Dans « Turn off the radio », que veut dire « turn off »?",
+      "o": [
+        "turn around",
+        "listen to",
+        "turn up",
+        "switch off"
+      ],
+      "r": 3,
+      "e": "Turn off veut dire éteindre."
+    },
+    {
+      "q": "Dans « Turn on the light », que veut dire « turn on »?",
+      "o": [
+        "switch on",
+        "switch off",
+        "look at",
+        "clean up"
+      ],
+      "r": 0,
+      "e": "Turn on veut dire allumer."
+    },
+    {
+      "q": "Dans « I get up at six », que veut dire « get up »?",
+      "o": [
+        "go to sleep",
+        "leave the bed",
+        "eat breakfast",
+        "arrive at school"
+      ],
+      "r": 1,
+      "e": "Get up veut dire se lever."
+    },
+    {
+      "q": "Dans « The baby woke up », que veut dire « woke up »?",
+      "o": [
+        "started crying",
+        "went outside",
+        "stopped sleeping",
+        "fell down"
+      ],
+      "r": 2,
+      "e": "Wake up veut dire se réveiller."
+    },
+    {
+      "q": "Dans « Put on your jacket », que veut dire « put on »?",
+      "o": [
+        "wash",
+        "buy",
+        "remove",
+        "wear"
+      ],
+      "r": 3,
+      "e": "Put on veut dire mettre un vêtement."
+    },
+    {
+      "q": "Dans « Take off your shoes », que veut dire « take off »?",
+      "o": [
+        "remove",
+        "clean",
+        "find",
+        "tie"
+      ],
+      "r": 0,
+      "e": "Take off veut dire enlever."
+    },
+    {
+      "q": "Dans « We went back to the classroom », que veut dire « went back »?",
+      "o": [
+        "ran away",
+        "returned",
+        "looked around",
+        "sat down"
+      ],
+      "r": 1,
+      "e": "Go back veut dire retourner à un lieu."
+    },
+    {
+      "q": "Dans « Please come in », que veut dire « come in »?",
+      "o": [
+        "leave",
+        "wait",
+        "enter",
+        "sit"
+      ],
+      "r": 2,
+      "e": "Come in veut dire entrer."
+    },
+    {
+      "q": "Dans « The children went out after lunch », que veut dire « went out »?",
+      "o": [
+        "came inside",
+        "went to bed",
+        "sat quietly",
+        "left the house or room"
+      ],
+      "r": 3,
+      "e": "Go out veut dire sortir."
+    },
+    {
+      "q": "Dans « Carry on reading », que veut dire « carry on »?",
+      "o": [
+        "continue",
+        "stop",
+        "begin again",
+        "read aloud"
+      ],
+      "r": 0,
+      "e": "Carry on veut dire continuer."
+    },
+    {
+      "q": "Dans « Pick up the pencil », que veut dire « pick up »?",
+      "o": [
+        "drop",
+        "lift",
+        "hide",
+        "draw"
+      ],
+      "r": 1,
+      "e": "Pick up veut dire ramasser ou prendre."
+    },
+    {
+      "q": "Dans « Throw away the empty bottle », que veut dire « throw away »?",
+      "o": [
+        "fill",
+        "wash",
+        "discard",
+        "sell"
+      ],
+      "r": 2,
+      "e": "Throw away veut dire jeter."
+    },
+    {
+      "q": "Dans « Can you help me out? », que veut dire « help out »?",
+      "o": [
+        "call",
+        "wait",
+        "visit",
+        "assist"
+      ],
+      "r": 3,
+      "e": "Help out veut dire aider."
+    },
+    {
+      "q": "Dans « He was in a hurry », que veut dire « in a hurry »?",
+      "o": [
+        "moving quickly",
+        "feeling sleepy",
+        "being careful",
+        "feeling hungry"
+      ],
+      "r": 0,
+      "e": "In a hurry veut dire pressé."
+    },
+    {
+      "q": "Dans « Come here at once », que veut dire « at once »?",
+      "o": [
+        "tomorrow",
+        "immediately",
+        "quietly",
+        "together"
+      ],
+      "r": 1,
+      "e": "At once veut dire tout de suite."
+    },
+    {
+      "q": "Dans « I did the exercise by myself », que veut dire « by myself »?",
+      "o": [
+        "with a friend",
+        "very quickly",
+        "alone",
+        "at school"
+      ],
+      "r": 2,
+      "e": "By myself veut dire seul, sans aide."
+    },
+    {
+      "q": "Dans « There are a lot of books », que veut dire « a lot of »?",
+      "o": [
+        "few",
+        "old",
+        "new",
+        "many"
+      ],
+      "r": 3,
+      "e": "A lot of veut dire beaucoup de."
+    },
+    {
+      "q": "Dans « The shop is nearby », que veut dire « nearby »?",
+      "o": [
+        "close to here",
+        "far away",
+        "closed today",
+        "very large"
+      ],
+      "r": 0,
+      "e": "Nearby veut dire proche d’ici."
+    },
+    {
+      "q": "Dans « Perhaps we can play tomorrow », que veut dire « perhaps »?",
+      "o": [
+        "always",
+        "maybe",
+        "never",
+        "already"
+      ],
+      "r": 1,
+      "e": "Perhaps veut dire peut-être."
+    },
+    {
+      "q": "Dans « We often visit our grandmother », que veut dire « often »?",
+      "o": [
+        "rarely",
+        "never",
+        "frequently",
+        "once"
+      ],
+      "r": 2,
+      "e": "Often veut dire souvent."
+    },
+    {
+      "q": "Dans « See you soon », que veut dire « soon »?",
+      "o": [
+        "yesterday",
+        "late",
+        "sometimes",
+        "shortly"
+      ],
+      "r": 3,
+      "e": "Soon veut dire bientôt."
+    }
+  ]
+}

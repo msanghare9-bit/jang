@@ -60,6 +60,12 @@ class AuthService {
     required String password,
     required String examId,
     bool parentConsent = false,
+    bool teacher = false,
+    String school = '',
+    List<String> teacherClasses = const [],
+    List<String> teacherSubjects = const [],
+    String teacherExamId = '',
+    String teacherExamName = '',
   }) async {
     UserCredential cred;
     try {
@@ -69,14 +75,35 @@ class AuthService {
       throw AuthError(_message(e));
     }
     final uid = cred.user!.uid;
-    await _db.collection('users').doc(uid).set({
+    final normalized = normalizeUsername(username);
+    final batch = _db.batch();
+    batch.set(_db.collection('users').doc(uid), {
       'name': name.trim(),
-      'username': normalizeUsername(username),
-      'role': 'student',
+      'username': normalized,
+      'role': teacher ? 'pending_prof' : 'student',
       'examId': examId,
       'parentConsent': parentConsent,
       'createdAt': FieldValue.serverTimestamp(),
     });
+    if (teacher) {
+      batch.set(_db.collection('teacherApplications').doc(uid), {
+        'uid': uid,
+        'name': UserProfile.publicNameOf(name),
+        'school': school,
+        'classNames': teacherClasses,
+        'subjects': teacherSubjects,
+        'examId': teacherExamId,
+        'examName': teacherExamName,
+        'status': 'pending',
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+    }
+    batch.set(_db.collection('usernames').doc(normalized), {
+      'uid': uid,
+      'name': UserProfile.publicNameOf(name),
+      'username': normalized,
+    });
+    await batch.commit();
     StatsService.instance.recordNewUser();
     await loadProfile();
   }
@@ -104,7 +131,22 @@ class AuthService {
     } catch (_) {
       // Hors connexion : on garde la version du téléphone.
     }
-    return profile.value;
+    final loaded = profile.value;
+    if (loaded != null) await _ensureUsernameIndex(loaded);
+    return loaded;
+  }
+
+  Future<void> _ensureUsernameIndex(UserProfile p) async {
+    if (p.username.isEmpty) return;
+    final ref = _db.collection('usernames').doc(normalizeUsername(p.username));
+    try {
+      final current = await ref.get();
+      if (!current.exists) {
+        await ref.set({'uid': p.uid, 'name': p.publicName, 'username': normalizeUsername(p.username)});
+      }
+    } catch (e) {
+      debugPrint('Index Xarit : $e');
+    }
   }
 
   Future<void> updateExam(String examId) async {

@@ -13,7 +13,7 @@ service cloud.firestore {
     function canEdit() { return isAdmin() || (isStaff() && me().get('canEdit', false) == true); }
     function isMe(uid) { return signedIn() && request.auth.uid == uid; }
     // Champs qu'un élève ne peut pas changer lui-même.
-    function protectedFields() { return ['role', 'disabled', 'blocked', 'profSubjects', 'profExams', 'canEdit', 'deleted']; }
+    function protectedFields() { return ['role', 'disabled', 'blocked', 'profSubjects', 'profExams', 'canEdit', 'deleted', 'school']; }
     function keepsProtected() {
       return !request.resource.data.diff(resource.data).affectedKeys().hasAny(protectedFields());
     }
@@ -21,8 +21,9 @@ service cloud.firestore {
     // ---------- Comptes ----------
     match /users/{uid} {
       allow read: if isMe(uid) || isStaff();
-      allow create: if isMe(uid) && request.resource.data.get('role', 'student') == 'student'
-                    && !request.resource.data.keys().hasAny(['disabled', 'canEdit', 'profSubjects', 'profExams']);
+      allow create: if isMe(uid)
+                    && request.resource.data.get('role', 'student') in ['student', 'pending_prof']
+                    && !request.resource.data.keys().hasAny(['disabled', 'canEdit', 'profSubjects', 'profExams', 'school']);
       allow update: if (isMe(uid) && keepsProtected()) || isAdmin()
                     || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['disabled', 'blocked']));
       allow delete: if isAdmin();
@@ -39,12 +40,81 @@ service cloud.firestore {
       }
       // Messages des profs à un élève.
       match /messages/{id} {
-        allow read: if isMe(uid) || isStaff();
-        allow create: if isStaff();
-        allow update: if isStaff()
+        allow read: if isMe(uid) || isAdmin()
+                    || (isStaff() && resource.data.get('fromUid', '') == request.auth.uid);
+        allow create: if isStaff()
+                      && request.resource.data.get('fromUid', '') == request.auth.uid
+                      && request.resource.data.get('toUid', '') == uid
+                      && request.resource.data.get('text', '') is string;
+        allow update: if isAdmin()
                       || (isMe(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt', 'reply', 'replyAt']));
-        allow delete: if isStaff();
+        allow delete: if isAdmin() || isMe(uid)
+                      || (isStaff() && resource.data.get('fromUid', '') == request.auth.uid);
       }
+    }
+
+    // Candidatures professeur : le profil reste sans privilèges avant validation admin.
+    match /teacherApplications/{uid} {
+      allow read: if isMe(uid) || isAdmin();
+      allow create: if isMe(uid)
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.classNames is list
+                    && request.resource.data.classNames.size() > 0
+                    && request.resource.data.subjects is list
+                    && request.resource.data.subjects.size() > 0
+                    && request.resource.data.keys().hasOnly(['uid','name','school','classNames','subjects','examId','examName','status','createdAt']);
+      allow update: if isAdmin()
+                    && resource.data.status == 'pending'
+                    && request.resource.data.status in ['approved','rejected']
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','reviewedAt']);
+      allow delete: if isAdmin();
+    }
+
+    // Index public minimal pour trouver un ami sans lire son profil complet.
+    match /usernames/{username} {
+      allow read: if signedIn();
+      allow create: if isMe(request.resource.data.uid)
+                    && request.resource.data.username == username
+                    && getAfter(/databases/$(database)/documents/users/$(request.auth.uid)).data.username == username;
+      allow update: if false;
+      allow delete: if isMe(resource.data.uid);
+    }
+
+    // Demandes Xarit : seuls l'expéditeur et le destinataire y ont accès.
+    match /friendRequests/{id} {
+      allow read: if signedIn()
+                  && (resource.data.fromUid == request.auth.uid || resource.data.toUid == request.auth.uid);
+      allow create: if signedIn()
+                    && request.resource.data.fromUid == request.auth.uid
+                    && request.resource.data.toUid != request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.keys().hasOnly(['fromUid','toUid','fromName','toName','status','createdAt']);
+      allow update: if signedIn()
+                    && resource.data.toUid == request.auth.uid
+                    && resource.data.status == 'pending'
+                    && request.resource.data.status in ['accepted','rejected']
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+      allow delete: if signedIn() && resource.data.fromUid == request.auth.uid;
+    }
+
+    // Invitations privées à rejoindre un match Xarit.
+    match /matchInvitations/{id} {
+      allow read: if signedIn()
+                  && (resource.data.fromUid == request.auth.uid || resource.data.toUid == request.auth.uid);
+      allow create: if signedIn()
+                    && request.resource.data.fromUid == request.auth.uid
+                    && request.resource.data.toUid != request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && get(/databases/$(database)/documents/matchs/$(request.resource.data.matchId)).data.hostUid == request.auth.uid
+                    && get(/databases/$(database)/documents/matchs/$(request.resource.data.matchId)).data.open == true
+                    && request.resource.data.keys().hasOnly(['fromUid','toUid','fromName','matchId','code','status','createdAt']);
+      allow update: if signedIn()
+                    && resource.data.toUid == request.auth.uid
+                    && resource.data.status == 'pending'
+                    && request.resource.data.status in ['accepted','declined']
+                    && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+      allow delete: if signedIn() && resource.data.fromUid == request.auth.uid;
     }
 
     // ---------- Contenus ----------
@@ -107,34 +177,154 @@ service cloud.firestore {
                     || (signedIn() && onlyStudents() && onlyMe(request.resource.data.students, resource.data.students));
     }
 
+    // Journal administratif des exports de leçons officielles vers les classes.
+    match /courseExports/{id} {
+      allow read: if isAdmin();
+      allow create: if isStaff()
+                    && request.resource.data.exportedBy == request.auth.uid
+                    && request.resource.data.classId is string
+                    && (isAdmin() || classOf(request.resource.data.classId).profUid == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
     // Contenus des profs : privés (élèves de la classe) ou publics (tous).
     match /classItems/{id} {
-      allow read: if isStaff()
+      allow read: if isAdmin()
+                  || (isStaff() && classOf(resource.data.classId).profUid == request.auth.uid)
                   || (signedIn() && resource.data.visibility == 'public')
                   || (signedIn() && request.auth.uid in classOf(resource.data.classId).students);
       allow create: if isStaff() && request.resource.data.ownerUid == request.auth.uid
                     && (isAdmin() || classOf(request.resource.data.classId).profUid == request.auth.uid);
-      allow update, delete: if isAdmin() || (isStaff() && resource.data.ownerUid == request.auth.uid);
+      allow update, delete: if isAdmin()
+                            || (isStaff() && resource.data.ownerUid == request.auth.uid
+                                && classOf(resource.data.classId).profUid == request.auth.uid);
 
-      // Devoirs rendus : l'élève écrit sa réponse, le prof met la note.
+      // Devoirs rendus : seul l'élève de la classe ou son professeur peut les consulter.
       match /rendus/{uid} {
-        allow read: if isMe(uid) || isStaff();
-        allow create: if isMe(uid) && !request.resource.data.keys().hasAny(['grade', 'comment', 'gradedAt']);
-        allow update: if (isMe(uid) && resource.data.get('grade', '') == '' && resource.data.get('comment', '') == ''
+        function parentItem() {
+          return get(/databases/$(database)/documents/classItems/$(id)).data;
+        }
+        function classRoom() {
+          return get(/databases/$(database)/documents/classes/$(parentItem().classId)).data;
+        }
+        function ownsClass() {
+          return isAdmin() || (isStaff() && classRoom().profUid == request.auth.uid);
+        }
+        function isEnrolled() {
+          return request.auth.uid in classRoom().get('students', []);
+        }
+        function beforeDeadline() {
+          let due = parentItem().get('dueAt', null);
+          return due == null || request.time <= due;
+        }
+        allow read: if isMe(uid) || ownsClass();
+        allow create: if isMe(uid) && isEnrolled()
+                      && request.resource.data.get('classId', '') == parentItem().classId
+                      && beforeDeadline()
+                      && !request.resource.data.keys().hasAny(['grade', 'comment', 'gradedAt']);
+        allow update: if (isMe(uid) && isEnrolled() && beforeDeadline()
+                          && resource.data.get('grade', '') == '' && resource.data.get('comment', '') == ''
                           && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'text', 'classId', 'at']))
-                      || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['grade', 'comment', 'gradedAt']));
+                      || (ownsClass()
+                          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['grade', 'comment', 'gradedAt']));
       }
     }
 
     // ---------- Matchs en direct ----------
+    // Le corrigé et les réponses individuelles sont accessibles uniquement aux Cloud Functions.
+    match /matchAnswers/{matchId} {
+      allow read, write: if false;
+    }
+
     match /matchs/{id} {
       allow read: if signedIn();
-      allow create: if signedIn() && request.resource.data.hostUid == request.auth.uid;
-      allow update: if signedIn() && resource.data.hostUid == request.auth.uid;
+      // Création, déroulement, corrigé et fin gérés par les Cloud Functions.
+      allow create, update, delete: if false;
+
       match /joueurs/{uid} {
         allow read: if signedIn();
-        allow create, update: if isMe(uid);
-        allow delete: if isMe(uid) || get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
+        allow create: if false;
+        allow update: if isMe(uid)
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reaction'])
+                      && request.resource.data.get('reaction', '') in ['', '👏', '😂', '🔥', '💪', '❤️'];
+        allow delete: if isMe(uid)
+                      && get(/databases/$(database)/documents/matchs/$(id)).data.get('state', '') == 'attente';
+
+        match /reponses/{questionId} {
+          allow read, write: if false;
+        }
+      }
+
+      match /observateurs/{uid} {
+        function host() {
+          return signedIn()
+              && get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
+        }
+        function matchData() { return get(/databases/$(database)/documents/matchs/$(id)).data; }
+        allow read: if isMe(uid) || host() || resource.data.get('status', '') == 'accepted';
+        allow create: if isMe(uid)
+                      && request.resource.data.get('status', '') in ['pending', 'accepted']
+                      && (request.resource.data.get('status', '') == 'pending'
+                          ? matchData().get('state', '') in ['question', 'correction']
+                          : matchData().get('tournamentId', '') != ''
+                            && matchData().get('state', '') in ['attente', 'question', 'correction'])
+                      && matchData().get('open', false) == true
+                      && !exists(/databases/$(database)/documents/matchs/$(id)/joueurs/$(uid));
+        allow update: if host()
+                      && resource.data.get('status', '') == 'pending'
+                      && request.resource.data.get('status', '') in ['accepted', 'refused']
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+        allow delete: if isMe(uid) || host();
+      }
+    }
+
+    // Les corrigés des tournois sont privés aux fonctions serveur.
+    match /tournamentAnswers/{tournamentId} {
+      allow read, write: if false;
+    }
+
+    // Tournois à élimination : seuls les champs publics du tableau sont lisibles.
+    match /tournaments/{tournamentId} {
+      allow read: if signedIn();
+      allow create: if false;
+      allow update: if signedIn()
+                    && resource.data.hostUid == request.auth.uid
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                       .hasOnly(['status','round','championUid','championName']);
+      allow delete: if signedIn() && resource.data.hostUid == request.auth.uid;
+
+      match /participants/{uid} {
+        function parentTournament() {
+          return get(/databases/$(database)/documents/tournaments/$(tournamentId)).data;
+        }
+        allow read: if signedIn();
+        allow create: if isMe(uid)
+                      && parentTournament().status == 'waiting'
+                      && request.resource.data.keys().hasOnly(['name','joinedAt']);
+        allow update: if isMe(uid)
+                      && parentTournament().status == 'waiting'
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name']);
+        allow delete: if (isMe(uid) && parentTournament().status == 'waiting')
+                      || (signedIn() && parentTournament().hostUid == request.auth.uid);
+      }
+
+      match /rounds/{roundId} {
+        function organizer() {
+          return signedIn()
+              && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+        }
+        allow read: if signedIn();
+        allow create, update, delete: if organizer();
+
+        match /games/{gameId} {
+          allow read: if signedIn();
+          allow create: if signedIn()
+                        && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+          allow update: if signedIn()
+                        && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+          allow delete: if signedIn()
+                        && get(/databases/$(database)/documents/tournaments/$(tournamentId)).data.hostUid == request.auth.uid;
+        }
       }
     }
 

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "If she ___ earlier, she will catch the bus.",
+      "o": [
+        "leaves",
+        "leave",
+        "left",
+        "leaving"
+      ],
+      "r": 0,
+      "e": "Use the present after “if” for a real future possibility."
+    },
+    {
+      "q": "They have ___ their homework already.",
+      "o": [
+        "finish",
+        "finished",
+        "finishing",
+        "finishes"
+      ],
+      "r": 1,
+      "e": "After “have”, use the past participle."
+    },
+    {
+      "q": "You ___ wear a helmet when riding a motorcycle.",
+      "o": [
+        "would",
+        "might to",
+        "should",
+        "can to"
+      ],
+      "r": 2,
+      "e": "Use “should” to give advice."
+    },
+    {
+      "q": "We ___ at the station when the train arrived.",
+      "o": [
+        "wait",
+        "are waiting",
+        "have waited",
+        "were waiting"
+      ],
+      "r": 3,
+      "e": "Use “were waiting” for an action in progress in the past."
+    },
+    {
+      "q": "He is taller ___ his brother.",
+      "o": [
+        "than",
+        "then",
+        "that",
+        "as"
+      ],
+      "r": 0,
+      "e": "Use “than” after a comparative adjective."
+    },
+    {
+      "q": "There isn't ___ sugar left in the jar.",
+      "o": [
+        "many",
+        "much",
+        "few",
+        "several"
+      ],
+      "r": 1,
+      "e": "Use “much” with uncountable nouns like sugar."
+    },
+    {
+      "q": "She has lived here ___ 2022.",
+      "o": [
+        "for",
+        "during",
+        "since",
+        "from"
+      ],
+      "r": 2,
+      "e": "Use “since” with the starting point in time."
+    },
+    {
+      "q": "I have known him ___ three years.",
+      "o": [
+        "since",
+        "at",
+        "during",
+        "for"
+      ],
+      "r": 3,
+      "e": "Use “for” with a length of time."
+    },
+    {
+      "q": "The match was ___ because of the rain.",
+      "o": [
+        "cancelled",
+        "cancelling",
+        "cancel",
+        "cancels"
+      ],
+      "r": 0,
+      "e": "The passive uses “was” and a past participle."
+    },
+    {
+      "q": "My sister enjoys ___ novels.",
+      "o": [
+        "read",
+        "reading",
+        "to reading",
+        "reads"
+      ],
+      "r": 1,
+      "e": "After “enjoy”, use a verb ending in -ing."
+    },
+    {
+      "q": "We ___ visit our grandparents next weekend.",
+      "o": [
+        "did",
+        "have",
+        "are going to",
+        "were"
+      ],
+      "r": 2,
+      "e": "Use “be going to” for a planned future action."
+    },
+    {
+      "q": "You don't have to ___ the whole book today.",
+      "o": [
+        "reading",
+        "reads",
+        "to read",
+        "read"
+      ],
+      "r": 3,
+      "e": "After “have to”, use the base verb."
+    },
+    {
+      "q": "The parcel ___ yesterday afternoon.",
+      "o": [
+        "arrived",
+        "has arrive",
+        "arrives",
+        "was arrive"
+      ],
+      "r": 0,
+      "e": "Use the simple past for a finished time yesterday."
+    },
+    {
+      "q": "He asked me where I ___.",
+      "o": [
+        "live",
+        "lived",
+        "am living",
+        "will live"
+      ],
+      "r": 1,
+      "e": "In reported speech, “live” often moves back to “lived”."
+    },
+    {
+      "q": "This exercise is ___ than the last one.",
+      "o": [
+        "easy",
+        "more easy",
+        "easier",
+        "easiest"
+      ],
+      "r": 2,
+      "e": "Short adjectives usually take -er in a comparison."
+    },
+    {
+      "q": "We should leave now, ___ we will miss the bus.",
+      "o": [
+        "because",
+        "although",
+        "unless",
+        "or"
+      ],
+      "r": 3,
+      "e": "“Or” introduces the bad result of not acting."
+    },
+    {
+      "q": "I haven't seen Awa ___ Monday.",
+      "o": [
+        "since",
+        "for",
+        "by",
+        "until"
+      ],
+      "r": 0,
+      "e": "Use “since” with a named starting day."
+    },
+    {
+      "q": "The children were tired, ___ they finished the race.",
+      "o": [
+        "so",
+        "but",
+        "because",
+        "unless"
+      ],
+      "r": 1,
+      "e": "“But” joins contrasting ideas."
+    },
+    {
+      "q": "There are ___ chairs for everyone.",
+      "o": [
+        "too",
+        "much",
+        "enough",
+        "little"
+      ],
+      "r": 2,
+      "e": "Use “enough” before a plural noun."
+    },
+    {
+      "q": "He speaks English ___ than he did last year.",
+      "o": [
+        "good",
+        "best",
+        "well",
+        "better"
+      ],
+      "r": 3,
+      "e": "Use the comparative form “better”."
+    },
+    {
+      "q": "The room is too dark ___ read in.",
+      "o": [
+        "to",
+        "for",
+        "that",
+        "with"
+      ],
+      "r": 0,
+      "e": "Use “too + adjective + to” for something not possible."
+    },
+    {
+      "q": "If it rains, we ___ indoors.",
+      "o": [
+        "stayed",
+        "will stay",
+        "would stayed",
+        "are stay"
+      ],
+      "r": 1,
+      "e": "Use “will” in the result of a real future condition."
+    },
+    {
+      "q": "She was cooking while I ___ the table.",
+      "o": [
+        "sets",
+        "am setting",
+        "set",
+        "have set"
+      ],
+      "r": 2,
+      "e": "Use the simple past for the shorter action in the past."
+    },
+    {
+      "q": "They have never ___ to Saint-Louis.",
+      "o": [
+        "went",
+        "go",
+        "being",
+        "been"
+      ],
+      "r": 3,
+      "e": "After “have”, use the past participle “been”."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Quel est un synonyme anglais de “scared” ?",
+      "o": [
+        "afraid",
+        "brave",
+        "calm",
+        "proud"
+      ],
+      "r": 0,
+      "e": "“Afraid” veut dire qui a peur."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “correct” ?",
+      "o": [
+        "wrong",
+        "right",
+        "late",
+        "weak"
+      ],
+      "r": 1,
+      "e": "“Right” peut vouloir dire correct."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “wrong” ?",
+      "o": [
+        "ready",
+        "kind",
+        "incorrect",
+        "quiet"
+      ],
+      "r": 2,
+      "e": "“Incorrect” veut dire faux ou incorrect."
+    },
+    {
+      "q": "Dans “a tiny house”, quel mot est proche de “tiny” ?",
+      "o": [
+        "very old",
+        "very noisy",
+        "very strong",
+        "very small"
+      ],
+      "r": 3,
+      "e": "“Tiny” veut dire très petit."
+    },
+    {
+      "q": "Dans “a bright lamp”, quel mot est proche de “bright” ?",
+      "o": [
+        "shining",
+        "broken",
+        "heavy",
+        "empty"
+      ],
+      "r": 0,
+      "e": "Ici, “bright” veut dire qui brille."
+    },
+    {
+      "q": "Dans “Close the door”, quel mot est proche de “close” ?",
+      "o": [
+        "open",
+        "shut",
+        "carry",
+        "paint"
+      ],
+      "r": 1,
+      "e": "“Shut” veut dire fermer."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “road” ?",
+      "o": [
+        "river",
+        "field",
+        "street",
+        "bridge"
+      ],
+      "r": 2,
+      "e": "“Street” veut dire rue."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “tale” ?",
+      "o": [
+        "question",
+        "answer",
+        "lesson",
+        "story"
+      ],
+      "r": 3,
+      "e": "“Story” veut dire histoire."
+    },
+    {
+      "q": "Quel mot est proche de “thought” dans “That is a good thought” ?",
+      "o": [
+        "idea",
+        "noise",
+        "colour",
+        "price"
+      ],
+      "r": 0,
+      "e": "“Idea” veut dire idée."
+    },
+    {
+      "q": "Quel est un synonyme familier de “father” ?",
+      "o": [
+        "son",
+        "dad",
+        "uncle",
+        "friend"
+      ],
+      "r": 1,
+      "e": "“Dad” est un mot familier pour dire père."
+    },
+    {
+      "q": "Quel est un synonyme familier de “mother” ?",
+      "o": [
+        "daughter",
+        "aunt",
+        "mum",
+        "cousin"
+      ],
+      "r": 2,
+      "e": "“Mum” est un mot familier pour dire mère."
+    },
+    {
+      "q": "Quel est un synonyme de “bicycle” ?",
+      "o": [
+        "bus",
+        "boat",
+        "train",
+        "bike"
+      ],
+      "r": 3,
+      "e": "“Bike” est une forme courte de “bicycle”."
+    },
+    {
+      "q": "Quel est un synonyme de “picture” ?",
+      "o": [
+        "photo",
+        "letter",
+        "map",
+        "ticket"
+      ],
+      "r": 0,
+      "e": "“Photo” peut remplacer “picture” pour une image prise avec un appareil."
+    },
+    {
+      "q": "Quel est un synonyme de “movie” ?",
+      "o": [
+        "song",
+        "film",
+        "game",
+        "book"
+      ],
+      "r": 1,
+      "e": "“Film” veut aussi dire film."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “neat” ?",
+      "o": [
+        "dirty",
+        "crowded",
+        "tidy",
+        "late"
+      ],
+      "r": 2,
+      "e": "“Tidy” veut dire bien rangé."
+    },
+    {
+      "q": "Quel est un synonyme de “tasty” ?",
+      "o": [
+        "bitter",
+        "cold",
+        "empty",
+        "delicious"
+      ],
+      "r": 3,
+      "e": "“Delicious” veut dire délicieux."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “lovely” ?",
+      "o": [
+        "beautiful",
+        "dangerous",
+        "boring",
+        "difficult"
+      ],
+      "r": 0,
+      "e": "“Beautiful” veut dire beau ou joli."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “leap” ?",
+      "o": [
+        "fall",
+        "jump",
+        "sit",
+        "sleep"
+      ],
+      "r": 1,
+      "e": "“Jump” veut dire sauter."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “rapid” ?",
+      "o": [
+        "slow",
+        "careful",
+        "quick",
+        "weak"
+      ],
+      "r": 2,
+      "e": "“Quick” veut dire rapide."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “cold” ?",
+      "o": [
+        "hot",
+        "dry",
+        "bright",
+        "chilly"
+      ],
+      "r": 3,
+      "e": "“Chilly” veut dire un peu froid."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “brave” ?",
+      "o": [
+        "courageous",
+        "afraid",
+        "lazy",
+        "quiet"
+      ],
+      "r": 0,
+      "e": "“Courageous” veut dire courageux."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “famous” ?",
+      "o": [
+        "unknown",
+        "well-known",
+        "private",
+        "ordinary"
+      ],
+      "r": 1,
+      "e": "“Well-known” veut dire connu."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “ill” ?",
+      "o": [
+        "healthy",
+        "strong",
+        "unwell",
+        "ready"
+      ],
+      "r": 2,
+      "e": "“Unwell” veut dire malade."
+    },
+    {
+      "q": "Quel est un synonyme anglais de “shout” ?",
+      "o": [
+        "whisper",
+        "listen",
+        "smile",
+        "yell"
+      ],
+      "r": 3,
+      "e": "“Yell” veut dire crier."
+    }
+  ]
+}

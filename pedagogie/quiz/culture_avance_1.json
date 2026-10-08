@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Which Senegalese island is a UNESCO World Heritage Site known for its history and architecture?",
+      "o": [
+        "Gorée Island",
+        "Robben Island",
+        "Lamu Island",
+        "Zanzibar Island"
+      ],
+      "r": 0,
+      "e": "Gorée Island is a UNESCO World Heritage Site near Dakar."
+    },
+    {
+      "q": "The Sine-Saloum Delta is important partly because it contains which habitats?",
+      "o": [
+        "Glaciers and fjords",
+        "Mangrove forests and tidal channels",
+        "Alpine meadows",
+        "Coral reefs in the open ocean"
+      ],
+      "r": 1,
+      "e": "The delta includes mangroves, islands and tidal channels."
+    },
+    {
+      "q": "Which river is the main waterway of West Africa and passes through Mali and Niger?",
+      "o": [
+        "The Orange River",
+        "The Limpopo River",
+        "The Niger River",
+        "The Senegal River"
+      ],
+      "r": 2,
+      "e": "The Niger is a major West African river that flows through Mali and Niger."
+    },
+    {
+      "q": "Which mountain range runs across northwestern Africa?",
+      "o": [
+        "The Drakensberg",
+        "The Rwenzori Mountains",
+        "The Ethiopian Highlands",
+        "The Atlas Mountains"
+      ],
+      "r": 3,
+      "e": "The Atlas Mountains extend across Morocco, Algeria and Tunisia."
+    },
+    {
+      "q": "Which West African empire was ruled by Mansa Musa in the 14th century?",
+      "o": [
+        "The Mali Empire",
+        "The Roman Empire",
+        "The Songhai Empire",
+        "The Kingdom of Kush"
+      ],
+      "r": 0,
+      "e": "Mansa Musa ruled the Mali Empire in the 14th century."
+    },
+    {
+      "q": "What is the name of the sea passage between Europe and Africa at Spain and Morocco?",
+      "o": [
+        "The Strait of Hormuz",
+        "The Strait of Gibraltar",
+        "The English Channel",
+        "The Mozambique Channel"
+      ],
+      "r": 1,
+      "e": "The Strait of Gibraltar separates Spain from Morocco."
+    },
+    {
+      "q": "Which African lake is the source region of the White Nile?",
+      "o": [
+        "Lake Chad",
+        "Lake Tanganyika",
+        "Lake Victoria",
+        "Lake Malawi"
+      ],
+      "r": 2,
+      "e": "The White Nile’s source region is associated with Lake Victoria."
+    },
+    {
+      "q": "Which country contains the ancient rock-hewn churches of Lalibela?",
+      "o": [
+        "Eritrea",
+        "Sudan",
+        "Ghana",
+        "Ethiopia"
+      ],
+      "r": 3,
+      "e": "The churches of Lalibela were carved from rock in Ethiopia."
+    },
+    {
+      "q": "What does biodiversity describe?",
+      "o": [
+        "The variety of living things in an area",
+        "The number of roads in a region",
+        "The age of a mountain range",
+        "The movement of ocean tides"
+      ],
+      "r": 0,
+      "e": "Biodiversity is the variety of life in a place or across Earth."
+    },
+    {
+      "q": "Which process removes carbon dioxide from the air as plants grow?",
+      "o": [
+        "Evaporation",
+        "Photosynthesis",
+        "Condensation",
+        "Erosion"
+      ],
+      "r": 1,
+      "e": "Plants use carbon dioxide in photosynthesis."
+    },
+    {
+      "q": "Which African ecosystem is characterized by grasslands with scattered trees and seasonal rainfall?",
+      "o": [
+        "Tundra",
+        "Taiga",
+        "Savanna",
+        "Temperate rainforest"
+      ],
+      "r": 2,
+      "e": "Savannas are tropical grasslands with scattered trees and seasonal rainfall."
+    },
+    {
+      "q": "Which country is home to the ancient city of Carthage, near modern Tunis?",
+      "o": [
+        "Ghana",
+        "Senegal",
+        "Rwanda",
+        "Tunisia"
+      ],
+      "r": 3,
+      "e": "Ancient Carthage was located in present-day Tunisia."
+    },
+    {
+      "q": "Which desert is found in southern Africa and extends across Botswana and Namibia?",
+      "o": [
+        "The Kalahari",
+        "The Sahara",
+        "The Danakil Desert",
+        "The Libyan Desert"
+      ],
+      "r": 0,
+      "e": "The Kalahari covers parts of Botswana, Namibia and South Africa."
+    },
+    {
+      "q": "Which African country is known for the rock-hewn churches of Lalibela and the ancient kingdom of Aksum?",
+      "o": [
+        "Gabon",
+        "Ethiopia",
+        "Côte d’Ivoire",
+        "Malawi"
+      ],
+      "r": 1,
+      "e": "Both Lalibela and Aksum are associated with Ethiopia."
+    },
+    {
+      "q": "What is the main role of mangrove roots along tropical coasts?",
+      "o": [
+        "They create freshwater glaciers",
+        "They prevent all tides",
+        "They help stabilize shorelines and provide habitat",
+        "They turn seawater into oil"
+      ],
+      "r": 2,
+      "e": "Mangrove roots help protect coasts and support many species."
+    },
+    {
+      "q": "Which line of latitude passes through northern Africa and crosses the Sahara?",
+      "o": [
+        "The Arctic Circle",
+        "The Antarctic Circle",
+        "The Tropic of Capricorn",
+        "The Tropic of Cancer"
+      ],
+      "r": 3,
+      "e": "The Tropic of Cancer crosses the Sahara in northern Africa."
+    },
+    {
+      "q": "What does “oral history” mainly preserve?",
+      "o": [
+        "Accounts and knowledge passed on by speaking",
+        "Only maps made by explorers",
+        "Weather records from satellites",
+        "Buildings made of stone"
+      ],
+      "r": 0,
+      "e": "Oral history carries memories and knowledge through spoken accounts."
+    },
+    {
+      "q": "Which language family includes Wolof and Fula?",
+      "o": [
+        "Uralic",
+        "Niger-Congo",
+        "Sino-Tibetan",
+        "Celtic"
+      ],
+      "r": 1,
+      "e": "Wolof and Fula are commonly classified within the Niger-Congo language family."
+    },
+    {
+      "q": "Which energy source uses moving air to generate electricity?",
+      "o": [
+        "Geothermal power",
+        "Tidal power",
+        "Wind power",
+        "Biomass only"
+      ],
+      "r": 2,
+      "e": "Wind turbines use moving air to generate electricity."
+    },
+    {
+      "q": "Which geological feature formed as tectonic plates pulled apart in eastern Africa?",
+      "o": [
+        "The Atlas Plateau",
+        "The Congo Basin",
+        "The Cape Fold Belt",
+        "The Great Rift Valley"
+      ],
+      "r": 3,
+      "e": "The Great Rift Valley formed as the crust stretched and separated."
+    },
+    {
+      "q": "Which African country has the city of Timbuktu and the historic Djinguereber Mosque?",
+      "o": [
+        "Mali",
+        "Kenya",
+        "Angola",
+        "Eswatini"
+      ],
+      "r": 0,
+      "e": "Timbuktu and the Djinguereber Mosque are in Mali."
+    },
+    {
+      "q": "What is a delta?",
+      "o": [
+        "A mountain peak formed by ice",
+        "Land formed where a river deposits sediment near its mouth",
+        "A deep ocean trench",
+        "A dry valley with no river"
+      ],
+      "r": 1,
+      "e": "A delta forms when a river deposits sediment near where it meets another body of water."
+    },
+    {
+      "q": "Which continent contains the Congo Basin rainforest?",
+      "o": [
+        "Europe",
+        "South America",
+        "Africa",
+        "Antarctica"
+      ],
+      "r": 2,
+      "e": "The Congo Basin rainforest is in Central Africa."
+    },
+    {
+      "q": "Why are protected areas important for migratory animals?",
+      "o": [
+        "They force animals to stay in one place",
+        "They remove all seasonal changes",
+        "They stop animals crossing borders",
+        "They can safeguard habitats used at different times of year"
+      ],
+      "r": 3,
+      "e": "Protected habitats can support animals as they move between seasonal areas."
+    }
+  ]
+}

@@ -1,0 +1,1108 @@
+{
+  "questions": [
+    {
+      "q": "Choose the opposite of “abundant”.",
+      "o": [
+        "scarce",
+        "plentiful",
+        "ample",
+        "numerous"
+      ],
+      "r": 0,
+      "e": "“scarce” is the opposite of “abundant”."
+    },
+    {
+      "q": "Choose the opposite of “accurate”.",
+      "o": [
+        "precise",
+        "inaccurate",
+        "exact",
+        "correct"
+      ],
+      "r": 1,
+      "e": "“inaccurate” is the opposite of “accurate”."
+    },
+    {
+      "q": "Choose the opposite of “advance”.",
+      "o": [
+        "progress",
+        "approach",
+        "retreat",
+        "continue"
+      ],
+      "r": 2,
+      "e": "“retreat” is the opposite of “advance”."
+    },
+    {
+      "q": "Choose the opposite of “artificial”.",
+      "o": [
+        "synthetic",
+        "false",
+        "man-made",
+        "natural"
+      ],
+      "r": 3,
+      "e": "“natural” is the opposite of “artificial”."
+    },
+    {
+      "q": "Choose the opposite of “bold”.",
+      "o": [
+        "timid",
+        "brave",
+        "confident",
+        "daring"
+      ],
+      "r": 0,
+      "e": "“timid” is the opposite of “bold”."
+    },
+    {
+      "q": "Choose the opposite of “complex”.",
+      "o": [
+        "complicated",
+        "simple",
+        "detailed",
+        "difficult"
+      ],
+      "r": 1,
+      "e": "“simple” is the opposite of “complex”."
+    },
+    {
+      "q": "Choose the opposite of “compulsory”.",
+      "o": [
+        "required",
+        "necessary",
+        "optional",
+        "mandatory"
+      ],
+      "r": 2,
+      "e": "“optional” is the opposite of “compulsory”."
+    },
+    {
+      "q": "Choose the opposite of “conceal”.",
+      "o": [
+        "hide",
+        "cover",
+        "disguise",
+        "reveal"
+      ],
+      "r": 3,
+      "e": "“reveal” is the opposite of “conceal”."
+    },
+    {
+      "q": "Choose the opposite of “diminish”.",
+      "o": [
+        "increase",
+        "reduce",
+        "lessen",
+        "decrease"
+      ],
+      "r": 0,
+      "e": "“increase” is the opposite of “diminish”."
+    },
+    {
+      "q": "Choose the opposite of “domestic”.",
+      "o": [
+        "local",
+        "foreign",
+        "household",
+        "national"
+      ],
+      "r": 1,
+      "e": "“foreign” is the opposite of “domestic”."
+    },
+    {
+      "q": "Choose the opposite of “frequent”.",
+      "o": [
+        "regular",
+        "common",
+        "rare",
+        "usual"
+      ],
+      "r": 2,
+      "e": "“rare” is the opposite of “frequent”."
+    },
+    {
+      "q": "Choose the opposite of “generous”.",
+      "o": [
+        "giving",
+        "kind",
+        "charitable",
+        "stingy"
+      ],
+      "r": 3,
+      "e": "“stingy” is the opposite of “generous”."
+    },
+    {
+      "q": "Choose the opposite of “genuine”.",
+      "o": [
+        "fake",
+        "authentic",
+        "real",
+        "true"
+      ],
+      "r": 0,
+      "e": "“fake” is the opposite of “genuine”."
+    },
+    {
+      "q": "Choose the opposite of “humble”.",
+      "o": [
+        "modest",
+        "arrogant",
+        "respectful",
+        "unassuming"
+      ],
+      "r": 1,
+      "e": "“arrogant” is the opposite of “humble”."
+    },
+    {
+      "q": "Choose the opposite of “optimistic”.",
+      "o": [
+        "hopeful",
+        "positive",
+        "pessimistic",
+        "confident"
+      ],
+      "r": 2,
+      "e": "“pessimistic” is the opposite of “optimistic”."
+    },
+    {
+      "q": "Choose the opposite of “permanent”.",
+      "o": [
+        "lasting",
+        "constant",
+        "enduring",
+        "temporary"
+      ],
+      "r": 3,
+      "e": "“temporary” is the opposite of “permanent”."
+    },
+    {
+      "q": "Choose the opposite of “permit”.",
+      "o": [
+        "forbid",
+        "allow",
+        "authorize",
+        "approve"
+      ],
+      "r": 0,
+      "e": "“forbid” is the opposite of “permit”."
+    },
+    {
+      "q": "Choose the opposite of “prosperity”.",
+      "o": [
+        "wealth",
+        "poverty",
+        "success",
+        "fortune"
+      ],
+      "r": 1,
+      "e": "“poverty” is the opposite of “prosperity”."
+    },
+    {
+      "q": "Choose the opposite of “rigid”.",
+      "o": [
+        "stiff",
+        "strict",
+        "flexible",
+        "firm"
+      ],
+      "r": 2,
+      "e": "“flexible” is the opposite of “rigid”."
+    },
+    {
+      "q": "Choose the opposite of “rural”.",
+      "o": [
+        "countryside",
+        "agricultural",
+        "village",
+        "urban"
+      ],
+      "r": 3,
+      "e": "“urban” is the opposite of “rural”."
+    },
+    {
+      "q": "Choose the opposite of “transparent”.",
+      "o": [
+        "opaque",
+        "clear",
+        "glassy",
+        "visible"
+      ],
+      "r": 0,
+      "e": "“opaque” is the opposite of “transparent”."
+    },
+    {
+      "q": "Choose the opposite of “unanimous”.",
+      "o": [
+        "united",
+        "divided",
+        "agreed",
+        "collective"
+      ],
+      "r": 1,
+      "e": "“divided” is the opposite of “unanimous”."
+    },
+    {
+      "q": "Choose the opposite of “vacant”.",
+      "o": [
+        "empty",
+        "available",
+        "occupied",
+        "free"
+      ],
+      "r": 2,
+      "e": "“occupied” is the opposite of “vacant”."
+    },
+    {
+      "q": "Choose the opposite of “voluntary”.",
+      "o": [
+        "optional",
+        "willing",
+        "chosen",
+        "compulsory"
+      ],
+      "r": 3,
+      "e": "“compulsory” is the opposite of “voluntary”."
+    },
+    {
+      "q": "Choose the opposite of “benign”.",
+      "o": [
+        "malignant",
+        "harmless",
+        "gentle",
+        "mild"
+      ],
+      "r": 0,
+      "e": "“malignant” is the opposite of “benign”."
+    },
+    {
+      "q": "Choose the opposite of “chaotic”.",
+      "o": [
+        "disorganized",
+        "orderly",
+        "confused",
+        "wild"
+      ],
+      "r": 1,
+      "e": "“orderly” is the opposite of “chaotic”."
+    },
+    {
+      "q": "Choose the opposite of “conspicuous”.",
+      "o": [
+        "noticeable",
+        "visible",
+        "inconspicuous",
+        "obvious"
+      ],
+      "r": 2,
+      "e": "“inconspicuous” is the opposite of “conspicuous”."
+    },
+    {
+      "q": "Choose the opposite of “credible”.",
+      "o": [
+        "reliable",
+        "plausible",
+        "convincing",
+        "unbelievable"
+      ],
+      "r": 3,
+      "e": "“unbelievable” is the opposite of “credible”."
+    },
+    {
+      "q": "Choose the opposite of “deficient”.",
+      "o": [
+        "sufficient",
+        "inadequate",
+        "lacking",
+        "incomplete"
+      ],
+      "r": 0,
+      "e": "“sufficient” is the opposite of “deficient”."
+    },
+    {
+      "q": "Choose the opposite of “discourage”.",
+      "o": [
+        "dissuade",
+        "encourage",
+        "prevent",
+        "deter"
+      ],
+      "r": 1,
+      "e": "“encourage” is the opposite of “discourage”."
+    },
+    {
+      "q": "Choose the opposite of “emerge”.",
+      "o": [
+        "appear",
+        "surface",
+        "disappear",
+        "arise"
+      ],
+      "r": 2,
+      "e": "“disappear” is the opposite of “emerge”."
+    },
+    {
+      "q": "Choose the opposite of “exaggerate”.",
+      "o": [
+        "overstate",
+        "magnify",
+        "inflate",
+        "understate"
+      ],
+      "r": 3,
+      "e": "“understate” is the opposite of “exaggerate”."
+    },
+    {
+      "q": "Choose the opposite of “explicit”.",
+      "o": [
+        "implicit",
+        "direct",
+        "clear",
+        "stated"
+      ],
+      "r": 0,
+      "e": "“implicit” is the opposite of “explicit”."
+    },
+    {
+      "q": "Choose the opposite of “frugal”.",
+      "o": [
+        "thrifty",
+        "wasteful",
+        "careful",
+        "economical"
+      ],
+      "r": 1,
+      "e": "“wasteful” is the opposite of “frugal”."
+    },
+    {
+      "q": "Choose the opposite of “identical”.",
+      "o": [
+        "equal",
+        "matching",
+        "different",
+        "alike"
+      ],
+      "r": 2,
+      "e": "“different” is the opposite of “identical”."
+    },
+    {
+      "q": "Choose the opposite of “lenient”.",
+      "o": [
+        "tolerant",
+        "forgiving",
+        "mild",
+        "strict"
+      ],
+      "r": 3,
+      "e": "“strict” is the opposite of “lenient”."
+    },
+    {
+      "q": "Choose the opposite of “mandatory”.",
+      "o": [
+        "optional",
+        "required",
+        "compulsory",
+        "necessary"
+      ],
+      "r": 0,
+      "e": "“optional” is the opposite of “mandatory”."
+    },
+    {
+      "q": "Choose the opposite of “perilous”.",
+      "o": [
+        "dangerous",
+        "safe",
+        "risky",
+        "hazardous"
+      ],
+      "r": 1,
+      "e": "“safe” is the opposite of “perilous”."
+    },
+    {
+      "q": "Choose the opposite of “scarcity”.",
+      "o": [
+        "shortage",
+        "lack",
+        "abundance",
+        "deficit"
+      ],
+      "r": 2,
+      "e": "“abundance” is the opposite of “scarcity”."
+    },
+    {
+      "q": "Choose the opposite of “static”.",
+      "o": [
+        "unchanging",
+        "still",
+        "fixed",
+        "dynamic"
+      ],
+      "r": 3,
+      "e": "“dynamic” is the opposite of “static”."
+    },
+    {
+      "q": "Choose the opposite of “subordinate”.",
+      "o": [
+        "superior",
+        "lower-ranking",
+        "junior",
+        "lesser"
+      ],
+      "r": 0,
+      "e": "“superior” is the opposite of “subordinate”."
+    },
+    {
+      "q": "Choose the opposite of “triumph”.",
+      "o": [
+        "victory",
+        "defeat",
+        "success",
+        "achievement"
+      ],
+      "r": 1,
+      "e": "“defeat” is the opposite of “triumph”."
+    },
+    {
+      "q": "Choose the opposite of “valid”.",
+      "o": [
+        "sound",
+        "legitimate",
+        "invalid",
+        "acceptable"
+      ],
+      "r": 2,
+      "e": "“invalid” is the opposite of “valid”."
+    },
+    {
+      "q": "Choose the opposite of “volatile”.",
+      "o": [
+        "changeable",
+        "unpredictable",
+        "unstable",
+        "stable"
+      ],
+      "r": 3,
+      "e": "“stable” is the opposite of “volatile”."
+    },
+    {
+      "q": "Choose the opposite of “widen”.",
+      "o": [
+        "narrow",
+        "broaden",
+        "expand",
+        "enlarge"
+      ],
+      "r": 0,
+      "e": "“narrow” is the opposite of “widen”."
+    },
+    {
+      "q": "Choose the opposite of “withhold”.",
+      "o": [
+        "keep",
+        "provide",
+        "retain",
+        "refuse"
+      ],
+      "r": 1,
+      "e": "“provide” is the opposite of “withhold”."
+    },
+    {
+      "q": "Choose the opposite of “zenith”.",
+      "o": [
+        "peak",
+        "highest point",
+        "nadir",
+        "summit"
+      ],
+      "r": 2,
+      "e": "“nadir” is the opposite of “zenith”."
+    },
+    {
+      "q": "Choose the opposite of “dormant”.",
+      "o": [
+        "sleeping",
+        "inactive",
+        "hidden",
+        "active"
+      ],
+      "r": 3,
+      "e": "“active” is the opposite of “dormant”."
+    },
+    {
+      "q": "Choose the antonym of “abundant”.",
+      "o": [
+        "scarce",
+        "harmful",
+        "implicit",
+        "pessimistic"
+      ],
+      "r": 0,
+      "e": "« scarce » exprime le contraire de « abundant ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “accurate”.",
+      "o": [
+        "voluntary",
+        "inaccurate",
+        "counterfeit",
+        "transitory"
+      ],
+      "r": 1,
+      "e": "« inaccurate » exprime le contraire de « accurate ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “ancient”.",
+      "o": [
+        "reveal",
+        "friendly",
+        "contemporary",
+        "irrelevant"
+      ],
+      "r": 2,
+      "e": "« contemporary » exprime le contraire de « ancient ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “approve”.",
+      "o": [
+        "demolish",
+        "arrogant",
+        "flexible",
+        "oppose"
+      ],
+      "r": 3,
+      "e": "« oppose » exprime le contraire de « approve ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “artificial”.",
+      "o": [
+        "natural",
+        "improve",
+        "external",
+        "opaque"
+      ],
+      "r": 0,
+      "e": "« natural » exprime le contraire de « artificial ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “beneficial”.",
+      "o": [
+        "contract",
+        "harmful",
+        "captivity",
+        "divided"
+      ],
+      "r": 1,
+      "e": "« harmful » exprime le contraire de « beneficial ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “compulsory”.",
+      "o": [
+        "implicit",
+        "pessimistic",
+        "voluntary",
+        "defeat"
+      ],
+      "r": 2,
+      "e": "« voluntary » exprime le contraire de « compulsory ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “conceal”.",
+      "o": [
+        "counterfeit",
+        "transitory",
+        "scarce",
+        "reveal"
+      ],
+      "r": 3,
+      "e": "« reveal » exprime le contraire de « conceal ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “construct”.",
+      "o": [
+        "demolish",
+        "friendly",
+        "irrelevant",
+        "inaccurate"
+      ],
+      "r": 0,
+      "e": "« demolish » exprime le contraire de « construct ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “deteriorate”.",
+      "o": [
+        "arrogant",
+        "improve",
+        "flexible",
+        "contemporary"
+      ],
+      "r": 1,
+      "e": "« improve » exprime le contraire de « deteriorate ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “expand”.",
+      "o": [
+        "external",
+        "opaque",
+        "contract",
+        "oppose"
+      ],
+      "r": 2,
+      "e": "« contract » exprime le contraire de « expand ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “explicit”.",
+      "o": [
+        "captivity",
+        "divided",
+        "natural",
+        "implicit"
+      ],
+      "r": 3,
+      "e": "« implicit » exprime le contraire de « explicit ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “genuine”.",
+      "o": [
+        "counterfeit",
+        "pessimistic",
+        "defeat",
+        "harmful"
+      ],
+      "r": 0,
+      "e": "« counterfeit » exprime le contraire de « genuine ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “hostile”.",
+      "o": [
+        "transitory",
+        "friendly",
+        "scarce",
+        "voluntary"
+      ],
+      "r": 1,
+      "e": "« friendly » exprime le contraire de « hostile ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “humble”.",
+      "o": [
+        "irrelevant",
+        "inaccurate",
+        "arrogant",
+        "reveal"
+      ],
+      "r": 2,
+      "e": "« arrogant » exprime le contraire de « humble ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “internal”.",
+      "o": [
+        "flexible",
+        "contemporary",
+        "demolish",
+        "external"
+      ],
+      "r": 3,
+      "e": "« external » exprime le contraire de « internal ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “liberty”.",
+      "o": [
+        "captivity",
+        "opaque",
+        "oppose",
+        "improve"
+      ],
+      "r": 0,
+      "e": "« captivity » exprime le contraire de « liberty ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “optimistic”.",
+      "o": [
+        "divided",
+        "pessimistic",
+        "natural",
+        "contract"
+      ],
+      "r": 1,
+      "e": "« pessimistic » exprime le contraire de « optimistic ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “permanent”.",
+      "o": [
+        "defeat",
+        "harmful",
+        "transitory",
+        "implicit"
+      ],
+      "r": 2,
+      "e": "« transitory » exprime le contraire de « permanent ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “relevant”.",
+      "o": [
+        "scarce",
+        "voluntary",
+        "counterfeit",
+        "irrelevant"
+      ],
+      "r": 3,
+      "e": "« irrelevant » exprime le contraire de « relevant ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “rigid”.",
+      "o": [
+        "flexible",
+        "inaccurate",
+        "reveal",
+        "friendly"
+      ],
+      "r": 0,
+      "e": "« flexible » exprime le contraire de « rigid ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “transparent”.",
+      "o": [
+        "contemporary",
+        "opaque",
+        "demolish",
+        "arrogant"
+      ],
+      "r": 1,
+      "e": "« opaque » exprime le contraire de « transparent ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “unanimous”.",
+      "o": [
+        "oppose",
+        "improve",
+        "divided",
+        "external"
+      ],
+      "r": 2,
+      "e": "« divided » exprime le contraire de « unanimous ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the antonym of “victory”.",
+      "o": [
+        "natural",
+        "contract",
+        "captivity",
+        "defeat"
+      ],
+      "r": 3,
+      "e": "« defeat » exprime le contraire de « victory ».",
+      "d": "antonymes",
+      "n": "avance"
+    },
+    {
+      "q": "The region has abundant rain in July but ___ rain in March.",
+      "o": [
+        "scarce",
+        "regular",
+        "heavy",
+        "steady"
+      ],
+      "r": 0,
+      "e": "Scarce est le contraire d’abundant : rare est le contraire d’abondant."
+    },
+    {
+      "q": "The glass is transparent, while the painted panel is ___.",
+      "o": [
+        "fragile",
+        "opaque",
+        "colourful",
+        "smooth"
+      ],
+      "r": 1,
+      "e": "Opaque est le contraire de transparent."
+    },
+    {
+      "q": "She was reluctant to speak at first, but later became ___ to share her view.",
+      "o": [
+        "unable",
+        "careful",
+        "willing",
+        "silent"
+      ],
+      "r": 2,
+      "e": "Willing est le contraire de reluctant : disposé est le contraire d’hésitant."
+    },
+    {
+      "q": "When the temperature rises, metal may expand; when it cools, it may ___.",
+      "o": [
+        "melt",
+        "stretch",
+        "disappear",
+        "contract"
+      ],
+      "r": 3,
+      "e": "Contract est le contraire de expand : se contracter est le contraire de se dilater."
+    },
+    {
+      "q": "The museum works to preserve old documents, not ___ them.",
+      "o": [
+        "destroy",
+        "copy",
+        "translate",
+        "display"
+      ],
+      "r": 0,
+      "e": "Destroy est le contraire de preserve."
+    },
+    {
+      "q": "He remained optimistic, while his colleague was ___.",
+      "o": [
+        "patient",
+        "pessimistic",
+        "curious",
+        "realistic"
+      ],
+      "r": 1,
+      "e": "Pessimistic est le contraire de optimistic."
+    },
+    {
+      "q": "A rigid plan allows little change; a ___ plan can be adapted.",
+      "o": [
+        "detailed",
+        "formal",
+        "flexible",
+        "recent"
+      ],
+      "r": 2,
+      "e": "Flexible est le contraire de rigid : souple est le contraire de rigide."
+    },
+    {
+      "q": "The reviewer praised the book rather than ___ it.",
+      "o": [
+        "summarizing",
+        "publishing",
+        "translating",
+        "criticizing"
+      ],
+      "r": 3,
+      "e": "Criticize est le contraire de praise dans ce contexte."
+    },
+    {
+      "q": "Keep the records you need and ___ the duplicates.",
+      "o": [
+        "discard",
+        "organize",
+        "protect",
+        "review"
+      ],
+      "r": 0,
+      "e": "Discard est le contraire de retain : jeter est le contraire de garder."
+    },
+    {
+      "q": "The first instruction is explicit, whereas the second is ___.",
+      "o": [
+        "accurate",
+        "implicit",
+        "brief",
+        "direct"
+      ],
+      "r": 1,
+      "e": "Implicit est le contraire de explicit : sous-entendu est le contraire d’explicite."
+    },
+    {
+      "q": "The vote was unanimous, but the earlier vote was ___.",
+      "o": [
+        "secret",
+        "delayed",
+        "divided",
+        "invalid"
+      ],
+      "r": 2,
+      "e": "Divided s’oppose à unanimous : les avis n’étaient pas tous les mêmes."
+    },
+    {
+      "q": "The agreement is temporary, not ___.",
+      "o": [
+        "official",
+        "written",
+        "recent",
+        "permanent"
+      ],
+      "r": 3,
+      "e": "Permanent est le contraire de temporary."
+    },
+    {
+      "q": "Attendance is mandatory for this meeting, but optional for the next one.",
+      "o": [
+        "optional",
+        "recorded",
+        "important",
+        "limited"
+      ],
+      "r": 0,
+      "e": "Optional est le contraire de mandatory : facultatif est le contraire d’obligatoire."
+    },
+    {
+      "q": "The group endorsed the proposal; another group chose to ___ it.",
+      "o": [
+        "repeat",
+        "oppose",
+        "revise",
+        "explain"
+      ],
+      "r": 1,
+      "e": "Oppose est le contraire d’endorse : s’opposer est le contraire de soutenir."
+    },
+    {
+      "q": "The final score exceeded the target; the first score fell ___ it.",
+      "o": [
+        "within",
+        "beside",
+        "below",
+        "across"
+      ],
+      "r": 2,
+      "e": "Below exprime l’opposé d’exceeding the target dans cette phrase."
+    },
+    {
+      "q": "The guide was friendly, although the guard seemed ___.",
+      "o": [
+        "helpful",
+        "calm",
+        "neutral",
+        "hostile"
+      ],
+      "r": 3,
+      "e": "Hostile est le contraire de friendly."
+    },
+    {
+      "q": "The noise diminished after the doors closed, then began to ___.",
+      "o": [
+        "increase",
+        "stop",
+        "travel",
+        "change"
+      ],
+      "r": 0,
+      "e": "Increase est le contraire de diminish."
+    },
+    {
+      "q": "The first result was valid, but the second was declared ___.",
+      "o": [
+        "unusual",
+        "invalid",
+        "unclear",
+        "incomplete"
+      ],
+      "r": 1,
+      "e": "Invalid est le contraire de valid."
+    },
+    {
+      "q": "Her argument was coherent, unlike the earlier, ___ explanation.",
+      "o": [
+        "convincing",
+        "logical",
+        "incoherent",
+        "brief"
+      ],
+      "r": 2,
+      "e": "Incoherent est le contraire de coherent."
+    },
+    {
+      "q": "A judge should remain impartial, not ___.",
+      "o": [
+        "careful",
+        "silent",
+        "uncertain",
+        "biased"
+      ],
+      "r": 3,
+      "e": "Biased est le contraire d’impartial : partial est le contraire d’impartial."
+    },
+    {
+      "q": "The policy may inhibit discussion, while a safe space can ___ it.",
+      "o": [
+        "encourage",
+        "limit",
+        "delay",
+        "measure"
+      ],
+      "r": 0,
+      "e": "Encourage est le contraire d’inhibit dans ce contexte."
+    },
+    {
+      "q": "The explanation is plausible, but the second claim is ___.",
+      "o": [
+        "possible",
+        "implausible",
+        "likely",
+        "reasonable"
+      ],
+      "r": 1,
+      "e": "Implausible est le contraire de plausible."
+    },
+    {
+      "q": "The path ascends the hill, then ___ toward the river.",
+      "o": [
+        "continues",
+        "turns",
+        "descends",
+        "widens"
+      ],
+      "r": 2,
+      "e": "Descends est le contraire de ascends."
+    },
+    {
+      "q": "The benevolent leader supported the families; a ___ ruler would harm them.",
+      "o": [
+        "patient",
+        "popular",
+        "cautious",
+        "malevolent"
+      ],
+      "r": 3,
+      "e": "Malevolent est le contraire de benevolent : malveillant s’oppose à bienveillant."
+    }
+  ]
+}

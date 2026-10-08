@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the closest meaning of “accurate”.",
+      "o": [
+        "exact",
+        "careless",
+        "uncertain",
+        "approximate"
+      ],
+      "r": 0,
+      "e": "“Exact” is close in meaning to “accurate”."
+    },
+    {
+      "q": "Choose the closest meaning of “anxious”.",
+      "o": [
+        "relaxed",
+        "worried",
+        "certain",
+        "amused"
+      ],
+      "r": 1,
+      "e": "“Worried” is close in meaning to “anxious”."
+    },
+    {
+      "q": "Choose the closest meaning of “connect”.",
+      "o": [
+        "separate",
+        "remove",
+        "link",
+        "hide"
+      ],
+      "r": 2,
+      "e": "To connect things is to link them."
+    },
+    {
+      "q": "Choose the closest meaning of “damaged”.",
+      "o": [
+        "clean",
+        "useful",
+        "careful",
+        "broken"
+      ],
+      "r": 3,
+      "e": "Something damaged is partly broken."
+    },
+    {
+      "q": "Choose the closest meaning of “depart”.",
+      "o": [
+        "leave",
+        "arrive",
+        "wait",
+        "remain"
+      ],
+      "r": 0,
+      "e": "To depart is to leave."
+    },
+    {
+      "q": "Choose the closest meaning of “discover”.",
+      "o": [
+        "lose",
+        "find",
+        "cover",
+        "forget"
+      ],
+      "r": 1,
+      "e": "To discover something is to find it."
+    },
+    {
+      "q": "Choose the closest meaning of “essential”.",
+      "o": [
+        "optional",
+        "ordinary",
+        "necessary",
+        "distant"
+      ],
+      "r": 2,
+      "e": "Essential means necessary."
+    },
+    {
+      "q": "Choose the closest meaning of “examine”.",
+      "o": [
+        "ignore",
+        "borrow",
+        "repair",
+        "inspect"
+      ],
+      "r": 3,
+      "e": "To examine is to inspect carefully."
+    },
+    {
+      "q": "Choose the closest meaning of “gather”.",
+      "o": [
+        "collect",
+        "scatter",
+        "drop",
+        "refuse"
+      ],
+      "r": 0,
+      "e": "To gather is to collect things together."
+    },
+    {
+      "q": "Choose the closest meaning of “generous”.",
+      "o": [
+        "selfish",
+        "giving",
+        "careless",
+        "angry"
+      ],
+      "r": 1,
+      "e": "A generous person is willing to give."
+    },
+    {
+      "q": "Choose the closest meaning of “grateful”.",
+      "o": [
+        "jealous",
+        "worried",
+        "thankful",
+        "surprised"
+      ],
+      "r": 2,
+      "e": "Grateful means thankful."
+    },
+    {
+      "q": "Choose the closest meaning of “hurry”.",
+      "o": [
+        "rest",
+        "wait",
+        "hide",
+        "rush"
+      ],
+      "r": 3,
+      "e": "To hurry is to move or act quickly."
+    },
+    {
+      "q": "Choose the closest meaning of “include”.",
+      "o": [
+        "contain",
+        "exclude",
+        "remove",
+        "divide"
+      ],
+      "r": 0,
+      "e": "To include is to contain as a part."
+    },
+    {
+      "q": "Choose the closest meaning of “mend”.",
+      "o": [
+        "damage",
+        "repair",
+        "borrow",
+        "measure"
+      ],
+      "r": 1,
+      "e": "To mend is to repair."
+    },
+    {
+      "q": "Choose the closest meaning of “permit”.",
+      "o": [
+        "forbid",
+        "refuse",
+        "allow",
+        "delay"
+      ],
+      "r": 2,
+      "e": "To permit is to allow."
+    },
+    {
+      "q": "Choose the closest meaning of “select”.",
+      "o": [
+        "reject",
+        "lose",
+        "explain",
+        "pick"
+      ],
+      "r": 3,
+      "e": "To select is to pick."
+    },
+    {
+      "q": "Choose the closest meaning of “request”.",
+      "o": [
+        "ask for",
+        "give away",
+        "look after",
+        "turn down"
+      ],
+      "r": 0,
+      "e": "A request is something you ask for."
+    },
+    {
+      "q": "Choose the closest meaning of “secure”.",
+      "o": [
+        "dangerous",
+        "safe",
+        "broken",
+        "crowded"
+      ],
+      "r": 1,
+      "e": "Secure can mean safe from danger."
+    },
+    {
+      "q": "Choose the closest meaning of “unoccupied”.",
+      "o": [
+        "occupied",
+        "busy",
+        "empty",
+        "noisy"
+      ],
+      "r": 2,
+      "e": "“Unoccupied” means empty or not being used."
+    },
+    {
+      "q": "Choose the closest meaning of “refuse”.",
+      "o": [
+        "accept",
+        "invite",
+        "collect",
+        "reject"
+      ],
+      "r": 3,
+      "e": "To refuse is to reject."
+    },
+    {
+      "q": "Choose the closest meaning of “search”.",
+      "o": [
+        "look for",
+        "give up",
+        "put away",
+        "take off"
+      ],
+      "r": 0,
+      "e": "To search is to look for something."
+    },
+    {
+      "q": "Choose the closest meaning of “strange”.",
+      "o": [
+        "familiar",
+        "unusual",
+        "ordinary",
+        "simple"
+      ],
+      "r": 1,
+      "e": "Strange means unusual."
+    },
+    {
+      "q": "Choose the closest meaning of “true”.",
+      "o": [
+        "false",
+        "unclear",
+        "correct",
+        "missing"
+      ],
+      "r": 2,
+      "e": "A true statement is correct."
+    },
+    {
+      "q": "Choose the closest meaning of “wealthy”.",
+      "o": [
+        "poor",
+        "careful",
+        "hungry",
+        "rich"
+      ],
+      "r": 3,
+      "e": "Wealthy means rich."
+    }
+  ]
+}

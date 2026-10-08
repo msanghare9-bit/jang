@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She has lived here since 2020.",
+        "She lives here since 2020.",
+        "She is living here since 2020.",
+        "She have lived here since 2020."
+      ],
+      "r": 0,
+      "e": "Use “has lived” with “since” for an action that began in the past and continues."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "If it will rain, we stay inside.",
+        "If it rains, we will stay inside.",
+        "If it rains, we stayed inside.",
+        "If it rained, we will stay inside."
+      ],
+      "r": 1,
+      "e": "After “if” for a real future possibility, use the present: “if it rains”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "They played when the bell was ringing yesterday.",
+        "They were play when the bell rang.",
+        "They were playing when the bell rang.",
+        "They was playing when the bell rang."
+      ],
+      "r": 2,
+      "e": "Use the past continuous for the ongoing action and the past simple for the event."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "He use to walked to school.",
+        "He was used walk to school.",
+        "He used walking to school.",
+        "He used to walk to school."
+      ],
+      "r": 3,
+      "e": "Use “used to” plus the base form for a past habit."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "We have already eaten lunch.",
+        "We has already ate lunch.",
+        "We already have eat lunch.",
+        "We have already eat lunch."
+      ],
+      "r": 0,
+      "e": "After “have”, use the past participle: “eaten”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Awa is more tall than Mariama.",
+        "Awa is taller than Mariama.",
+        "Awa is tallest than Mariama.",
+        "Awa is as taller than Mariama."
+      ],
+      "r": 1,
+      "e": "For a short adjective, use “-er than”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "You should to drink more water.",
+        "You should drinking more water.",
+        "You should drink more water.",
+        "You should drank more water."
+      ],
+      "r": 2,
+      "e": "After “should”, use the base verb without “to”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "There is too many people in the room.",
+        "There are too much people in the room.",
+        "There be too many people in the room.",
+        "There are too many people in the room."
+      ],
+      "r": 3,
+      "e": "Use “are” with plural “people” and “many” with countable nouns."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "I have never visited Dakar.",
+        "I never have visit Dakar.",
+        "I has never visited Dakar.",
+        "I have never visit Dakar."
+      ],
+      "r": 0,
+      "e": "Use “have + past participle” for the present perfect."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The letters was sent yesterday.",
+        "The letters were sent yesterday.",
+        "The letters sent yesterday by him.",
+        "The letters were send yesterday."
+      ],
+      "r": 1,
+      "e": "In the passive past, use “were + past participle” for plural “letters”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She enjoys to read after class.",
+        "She enjoy reading after class.",
+        "She enjoys reading after class.",
+        "She enjoys read after class."
+      ],
+      "r": 2,
+      "e": "After “enjoy”, use a verb ending in “-ing”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "We arrived to the station on time.",
+        "We arrive at the station last night.",
+        "We arrived in the station on time.",
+        "We arrived at the station on time."
+      ],
+      "r": 3,
+      "e": "Use “arrive at” for a specific place such as a station."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "I was cooking while my brother was studying.",
+        "I cooked while my brother study.",
+        "I was cooking while my brother studying.",
+        "I were cooking while my brother was studying."
+      ],
+      "r": 0,
+      "e": "Use “was/were + -ing” for two actions happening at the same time."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She works here since three years.",
+        "She has worked here for three years.",
+        "She have worked here for three years.",
+        "She has work here for three years."
+      ],
+      "r": 1,
+      "e": "Use “for” with a length of time and “has worked”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "This is the more interesting book in the library.",
+        "This is the interestingest book in the library.",
+        "This is the most interesting book in the library.",
+        "This is most the interesting book in the library."
+      ],
+      "r": 2,
+      "e": "For a long adjective, use “the most” to form the superlative."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "You must to wear a helmet when you ride.",
+        "You must wearing a helmet when you ride.",
+        "You must wore a helmet when you ride.",
+        "You must wear a helmet when you ride."
+      ],
+      "r": 3,
+      "e": "After “must”, use the base form of the verb."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Although it was late, they continued working.",
+        "Although it was late, but they continued working.",
+        "Although it late, they continued working.",
+        "Despite it was late, they continued working."
+      ],
+      "r": 0,
+      "e": "Use “although” without adding “but” in the same clause."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "He asked me where did I live.",
+        "He asked me where I lived.",
+        "He asked me where I live yesterday.",
+        "He asked me where do I lived."
+      ],
+      "r": 1,
+      "e": "In a reported question, use statement word order: “where I lived”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "The food is prepared now by them being.",
+        "The food are being prepared now.",
+        "The food is being prepared now.",
+        "The food is been prepared now."
+      ],
+      "r": 2,
+      "e": "For an action happening now in the passive, use “is being + past participle”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "Neither answer are correct.",
+        "Neither answers is correct.",
+        "Neither answer be correct.",
+        "Neither answer is correct."
+      ],
+      "r": 3,
+      "e": "“Neither” is singular here, so use “is”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "She is interested in learning English.",
+        "She is interested to learn English.",
+        "She is interested for learning English.",
+        "She interested in learn English."
+      ],
+      "r": 0,
+      "e": "After “interested in”, use a noun or an “-ing” form."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "We will meet after the lesson will end.",
+        "We will meet after the lesson ends.",
+        "We meet after the lesson ended tomorrow.",
+        "We will meet after the lesson ending."
+      ],
+      "r": 1,
+      "e": "After “after” for a future event, use the present simple."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "There were a lot of noise outside.",
+        "There was many noise outside.",
+        "There was a lot of noise outside.",
+        "There be a lot noise outside."
+      ],
+      "r": 2,
+      "e": "“Noise” is uncountable, so use “a lot of” and singular “was”."
+    },
+    {
+      "q": "Choose the correct sentence.",
+      "o": [
+        "If I have more time, I would learned Wolof.",
+        "If I had more time, I will learned Wolof.",
+        "If I would have more time, I learned Wolof.",
+        "If I had more time, I would learn Wolof."
+      ],
+      "r": 3,
+      "e": "For an unreal present situation, use “if + past” and “would + base verb”."
+    }
+  ]
+}

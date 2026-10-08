@@ -1,0 +1,1108 @@
+{
+  "questions": [
+    {
+      "q": "Choose the closest meaning of “abundant”.",
+      "o": [
+        "plentiful",
+        "scarce",
+        "limited",
+        "empty"
+      ],
+      "r": 0,
+      "e": "“plentiful” has a similar meaning to “abundant”."
+    },
+    {
+      "q": "Choose the closest meaning of “accurate”.",
+      "o": [
+        "rough",
+        "precise",
+        "false",
+        "careless"
+      ],
+      "r": 1,
+      "e": "“precise” has a similar meaning to “accurate”."
+    },
+    {
+      "q": "Choose the closest meaning of “adapt”.",
+      "o": [
+        "resist",
+        "ignore",
+        "adjust",
+        "abandon"
+      ],
+      "r": 2,
+      "e": "“adjust” has a similar meaning to “adapt”."
+    },
+    {
+      "q": "Choose the closest meaning of “ambiguous”.",
+      "o": [
+        "obvious",
+        "exact",
+        "certain",
+        "unclear"
+      ],
+      "r": 3,
+      "e": "“unclear” has a similar meaning to “ambiguous”."
+    },
+    {
+      "q": "Choose the closest meaning of “cease”.",
+      "o": [
+        "stop",
+        "begin",
+        "continue",
+        "allow"
+      ],
+      "r": 0,
+      "e": "“stop” has a similar meaning to “cease”."
+    },
+    {
+      "q": "Choose the closest meaning of “conceal”.",
+      "o": [
+        "reveal",
+        "hide",
+        "display",
+        "explain"
+      ],
+      "r": 1,
+      "e": "“hide” has a similar meaning to “conceal”."
+    },
+    {
+      "q": "Choose the closest meaning of “decline”.",
+      "o": [
+        "rise",
+        "grow",
+        "decrease",
+        "expand"
+      ],
+      "r": 2,
+      "e": "“decrease” has a similar meaning to “decline”."
+    },
+    {
+      "q": "Choose the closest meaning of “evident”.",
+      "o": [
+        "doubtful",
+        "hidden",
+        "unclear",
+        "obvious"
+      ],
+      "r": 3,
+      "e": "“obvious” has a similar meaning to “evident”."
+    },
+    {
+      "q": "Choose the closest meaning of “fragile”.",
+      "o": [
+        "delicate",
+        "sturdy",
+        "solid",
+        "durable"
+      ],
+      "r": 0,
+      "e": "“delicate” has a similar meaning to “fragile”."
+    },
+    {
+      "q": "Choose the closest meaning of “hostile”.",
+      "o": [
+        "kind",
+        "unfriendly",
+        "welcoming",
+        "helpful"
+      ],
+      "r": 1,
+      "e": "“unfriendly” has a similar meaning to “hostile”."
+    },
+    {
+      "q": "Choose the closest meaning of “inevitable”.",
+      "o": [
+        "unlikely",
+        "optional",
+        "unavoidable",
+        "preventable"
+      ],
+      "r": 2,
+      "e": "“unavoidable” has a similar meaning to “inevitable”."
+    },
+    {
+      "q": "Choose the closest meaning of “maintain”.",
+      "o": [
+        "destroy",
+        "change",
+        "remove",
+        "preserve"
+      ],
+      "r": 3,
+      "e": "“preserve” has a similar meaning to “maintain”."
+    },
+    {
+      "q": "Choose the closest meaning of “modest”.",
+      "o": [
+        "humble",
+        "arrogant",
+        "proud",
+        "showy"
+      ],
+      "r": 0,
+      "e": "“humble” has a similar meaning to “modest”."
+    },
+    {
+      "q": "Choose the closest meaning of “obscure”.",
+      "o": [
+        "famous",
+        "unclear",
+        "bright",
+        "obvious"
+      ],
+      "r": 1,
+      "e": "“unclear” has a similar meaning to “obscure”."
+    },
+    {
+      "q": "Choose the closest meaning of “reluctant”.",
+      "o": [
+        "eager",
+        "ready",
+        "unwilling",
+        "keen"
+      ],
+      "r": 2,
+      "e": "“unwilling” has a similar meaning to “reluctant”."
+    },
+    {
+      "q": "Choose the closest meaning of “resilient”.",
+      "o": [
+        "weak",
+        "fragile",
+        "helpless",
+        "tough"
+      ],
+      "r": 3,
+      "e": "“tough” has a similar meaning to “resilient”."
+    },
+    {
+      "q": "Choose the closest meaning of “scarce”.",
+      "o": [
+        "rare",
+        "plentiful",
+        "common",
+        "abundant"
+      ],
+      "r": 0,
+      "e": "“rare” has a similar meaning to “scarce”."
+    },
+    {
+      "q": "Choose the closest meaning of “significant”.",
+      "o": [
+        "trivial",
+        "important",
+        "minor",
+        "ordinary"
+      ],
+      "r": 1,
+      "e": "“important” has a similar meaning to “significant”."
+    },
+    {
+      "q": "Choose the closest meaning of “subsequent”.",
+      "o": [
+        "previous",
+        "earlier",
+        "following",
+        "former"
+      ],
+      "r": 2,
+      "e": "“following” has a similar meaning to “subsequent”."
+    },
+    {
+      "q": "Choose the closest meaning of “temporary”.",
+      "o": [
+        "permanent",
+        "lasting",
+        "enduring",
+        "short-term"
+      ],
+      "r": 3,
+      "e": "“short-term” has a similar meaning to “temporary”."
+    },
+    {
+      "q": "Choose the closest meaning of “transform”.",
+      "o": [
+        "change",
+        "preserve",
+        "maintain",
+        "freeze"
+      ],
+      "r": 0,
+      "e": "“change” has a similar meaning to “transform”."
+    },
+    {
+      "q": "Choose the closest meaning of “vast”.",
+      "o": [
+        "tiny",
+        "immense",
+        "narrow",
+        "limited"
+      ],
+      "r": 1,
+      "e": "“immense” has a similar meaning to “vast”."
+    },
+    {
+      "q": "Choose the closest meaning of “weary”.",
+      "o": [
+        "alert",
+        "energetic",
+        "tired",
+        "rested"
+      ],
+      "r": 2,
+      "e": "“tired” has a similar meaning to “weary”."
+    },
+    {
+      "q": "Choose the closest meaning of “withstand”.",
+      "o": [
+        "surrender",
+        "accept",
+        "allow",
+        "resist"
+      ],
+      "r": 3,
+      "e": "“resist” has a similar meaning to “withstand”."
+    },
+    {
+      "q": "Choose the closest meaning of “alleviate”.",
+      "o": [
+        "ease",
+        "worsen",
+        "ignore",
+        "delay"
+      ],
+      "r": 0,
+      "e": "“ease” is close in meaning to “alleviate”."
+    },
+    {
+      "q": "Choose the closest meaning of “arduous”.",
+      "o": [
+        "effortless",
+        "demanding",
+        "ordinary",
+        "brief"
+      ],
+      "r": 1,
+      "e": "“demanding” is close in meaning to “arduous”."
+    },
+    {
+      "q": "Choose the closest meaning of “astute”.",
+      "o": [
+        "careless",
+        "naive",
+        "shrewd",
+        "confused"
+      ],
+      "r": 2,
+      "e": "“shrewd” is close in meaning to “astute”."
+    },
+    {
+      "q": "Choose the closest meaning of “candid”.",
+      "o": [
+        "secretive",
+        "uncertain",
+        "formal",
+        "frank"
+      ],
+      "r": 3,
+      "e": "“frank” is close in meaning to “candid”."
+    },
+    {
+      "q": "Choose the closest meaning of “compel”.",
+      "o": [
+        "force",
+        "invite",
+        "allow",
+        "discourage"
+      ],
+      "r": 0,
+      "e": "“force” is close in meaning to “compel”."
+    },
+    {
+      "q": "Choose the closest meaning of “concise”.",
+      "o": [
+        "lengthy",
+        "brief",
+        "unclear",
+        "repetitive"
+      ],
+      "r": 1,
+      "e": "“brief” is close in meaning to “concise”."
+    },
+    {
+      "q": "Choose the closest meaning of “corroborate”.",
+      "o": [
+        "deny",
+        "weaken",
+        "confirm",
+        "hide"
+      ],
+      "r": 2,
+      "e": "“confirm” is close in meaning to “corroborate”."
+    },
+    {
+      "q": "Choose the closest meaning of “defer”.",
+      "o": [
+        "accelerate",
+        "complete",
+        "cancel",
+        "postpone"
+      ],
+      "r": 3,
+      "e": "“postpone” is close in meaning to “defer”."
+    },
+    {
+      "q": "Choose the closest meaning of “depict”.",
+      "o": [
+        "portray",
+        "erase",
+        "measure",
+        "predict"
+      ],
+      "r": 0,
+      "e": "“portray” is close in meaning to “depict”."
+    },
+    {
+      "q": "Choose the closest meaning of “deter”.",
+      "o": [
+        "encourage",
+        "discourage",
+        "permit",
+        "assist"
+      ],
+      "r": 1,
+      "e": "“discourage” is close in meaning to “deter”."
+    },
+    {
+      "q": "Choose the closest meaning of “diligent”.",
+      "o": [
+        "lazy",
+        "careless",
+        "hardworking",
+        "impatient"
+      ],
+      "r": 2,
+      "e": "“hardworking” is close in meaning to “diligent”."
+    },
+    {
+      "q": "Choose the closest meaning of “elusive”.",
+      "o": [
+        "obvious",
+        "nearby",
+        "ordinary",
+        "hard to find"
+      ],
+      "r": 3,
+      "e": "“hard to find” is close in meaning to “elusive”."
+    },
+    {
+      "q": "Choose the closest meaning of “feasible”.",
+      "o": [
+        "possible",
+        "impossible",
+        "unfair",
+        "unusual"
+      ],
+      "r": 0,
+      "e": "“possible” is close in meaning to “feasible”."
+    },
+    {
+      "q": "Choose the closest meaning of “hinder”.",
+      "o": [
+        "support",
+        "obstruct",
+        "speed",
+        "allow"
+      ],
+      "r": 1,
+      "e": "“obstruct” is close in meaning to “hinder”."
+    },
+    {
+      "q": "Choose the closest meaning of “impartial”.",
+      "o": [
+        "prejudiced",
+        "emotional",
+        "unbiased",
+        "uncertain"
+      ],
+      "r": 2,
+      "e": "“unbiased” is close in meaning to “impartial”."
+    },
+    {
+      "q": "Choose the closest meaning of “intricate”.",
+      "o": [
+        "simple",
+        "empty",
+        "obvious",
+        "complex"
+      ],
+      "r": 3,
+      "e": "“complex” is close in meaning to “intricate”."
+    },
+    {
+      "q": "Choose the closest meaning of “meticulous”.",
+      "o": [
+        "thorough",
+        "careless",
+        "quick",
+        "incomplete"
+      ],
+      "r": 0,
+      "e": "“thorough” is close in meaning to “meticulous”."
+    },
+    {
+      "q": "Choose the closest meaning of “obsolete”.",
+      "o": [
+        "modern",
+        "outdated",
+        "useful",
+        "popular"
+      ],
+      "r": 1,
+      "e": "“outdated” is close in meaning to “obsolete”."
+    },
+    {
+      "q": "Choose the closest meaning of “plausible”.",
+      "o": [
+        "absurd",
+        "false",
+        "believable",
+        "unclear"
+      ],
+      "r": 2,
+      "e": "“believable” is close in meaning to “plausible”."
+    },
+    {
+      "q": "Choose the closest meaning of “prudent”.",
+      "o": [
+        "reckless",
+        "wasteful",
+        "hurried",
+        "wise"
+      ],
+      "r": 3,
+      "e": "“wise” is close in meaning to “prudent”."
+    },
+    {
+      "q": "Choose the closest meaning of “scrutinize”.",
+      "o": [
+        "examine",
+        "neglect",
+        "guess",
+        "avoid"
+      ],
+      "r": 0,
+      "e": "“examine” is close in meaning to “scrutinize”."
+    },
+    {
+      "q": "Choose the closest meaning of “subtle”.",
+      "o": [
+        "obvious",
+        "delicate",
+        "loud",
+        "rough"
+      ],
+      "r": 1,
+      "e": "“delicate” is close in meaning to “subtle”."
+    },
+    {
+      "q": "Choose the closest meaning of “tangible”.",
+      "o": [
+        "imaginary",
+        "uncertain",
+        "concrete",
+        "distant"
+      ],
+      "r": 2,
+      "e": "“concrete” is close in meaning to “tangible”."
+    },
+    {
+      "q": "Choose the closest meaning of “undermine”.",
+      "o": [
+        "strengthen",
+        "repair",
+        "protect",
+        "weaken"
+      ],
+      "r": 3,
+      "e": "“weaken” is close in meaning to “undermine”."
+    },
+    {
+      "q": "Choose the closest synonym for “abundant”.",
+      "o": [
+        "plentiful",
+        "terminate",
+        "practicable",
+        "acquire"
+      ],
+      "r": 0,
+      "e": "« plentiful » est proche de « abundant » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “accurate”.",
+      "o": [
+        "hide",
+        "precise",
+        "lucky",
+        "forecast"
+      ],
+      "r": 1,
+      "e": "« precise » est proche de « accurate » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “admit”.",
+      "o": [
+        "dispute",
+        "common",
+        "acknowledge",
+        "unwilling"
+      ],
+      "r": 2,
+      "e": "« acknowledge » est proche de « admit » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “assist”.",
+      "o": [
+        "diminish",
+        "unfriendly",
+        "notable",
+        "facilitate"
+      ],
+      "r": 3,
+      "e": "« facilitate » est proche de « assist » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “brief”.",
+      "o": [
+        "concise",
+        "require",
+        "mimic",
+        "convert"
+      ],
+      "r": 0,
+      "e": "« concise » est proche de « brief » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “cease”.",
+      "o": [
+        "crucial",
+        "terminate",
+        "unavoidable",
+        "clear"
+      ],
+      "r": 1,
+      "e": "« terminate » est proche de « cease » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “conceal”.",
+      "o": [
+        "practicable",
+        "acquire",
+        "hide",
+        "essential"
+      ],
+      "r": 2,
+      "e": "« hide » est proche de « conceal » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “conflict”.",
+      "o": [
+        "lucky",
+        "forecast",
+        "plentiful",
+        "dispute"
+      ],
+      "r": 3,
+      "e": "« dispute » est proche de « conflict » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “decline”.",
+      "o": [
+        "diminish",
+        "common",
+        "unwilling",
+        "precise"
+      ],
+      "r": 0,
+      "e": "« diminish » est proche de « decline » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “demand”.",
+      "o": [
+        "unfriendly",
+        "require",
+        "notable",
+        "acknowledge"
+      ],
+      "r": 1,
+      "e": "« require » est proche de « demand » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “essential”.",
+      "o": [
+        "mimic",
+        "convert",
+        "crucial",
+        "facilitate"
+      ],
+      "r": 2,
+      "e": "« crucial » est proche de « essential » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “feasible”.",
+      "o": [
+        "unavoidable",
+        "clear",
+        "concise",
+        "practicable"
+      ],
+      "r": 3,
+      "e": "« practicable » est proche de « feasible » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “fortunate”.",
+      "o": [
+        "lucky",
+        "acquire",
+        "essential",
+        "terminate"
+      ],
+      "r": 0,
+      "e": "« lucky » est proche de « fortunate » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “frequent”.",
+      "o": [
+        "forecast",
+        "common",
+        "plentiful",
+        "hide"
+      ],
+      "r": 1,
+      "e": "« common » est proche de « frequent » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “hostile”.",
+      "o": [
+        "unwilling",
+        "precise",
+        "unfriendly",
+        "dispute"
+      ],
+      "r": 2,
+      "e": "« unfriendly » est proche de « hostile » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “imitate”.",
+      "o": [
+        "notable",
+        "acknowledge",
+        "diminish",
+        "mimic"
+      ],
+      "r": 3,
+      "e": "« mimic » est proche de « imitate » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “inevitable”.",
+      "o": [
+        "unavoidable",
+        "convert",
+        "facilitate",
+        "require"
+      ],
+      "r": 0,
+      "e": "« unavoidable » est proche de « inevitable » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “obtain”.",
+      "o": [
+        "clear",
+        "acquire",
+        "concise",
+        "crucial"
+      ],
+      "r": 1,
+      "e": "« acquire » est proche de « obtain » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “predict”.",
+      "o": [
+        "essential",
+        "terminate",
+        "forecast",
+        "practicable"
+      ],
+      "r": 2,
+      "e": "« forecast » est proche de « predict » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “reluctant”.",
+      "o": [
+        "plentiful",
+        "hide",
+        "lucky",
+        "unwilling"
+      ],
+      "r": 3,
+      "e": "« unwilling » est proche de « reluctant » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “remarkable”.",
+      "o": [
+        "notable",
+        "precise",
+        "dispute",
+        "common"
+      ],
+      "r": 0,
+      "e": "« notable » est proche de « remarkable » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “transform”.",
+      "o": [
+        "acknowledge",
+        "convert",
+        "diminish",
+        "unfriendly"
+      ],
+      "r": 1,
+      "e": "« convert » est proche de « transform » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “transparent”.",
+      "o": [
+        "facilitate",
+        "require",
+        "clear",
+        "mimic"
+      ],
+      "r": 2,
+      "e": "« clear » est proche de « transparent » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "Choose the closest synonym for “vital”.",
+      "o": [
+        "concise",
+        "crucial",
+        "unavoidable",
+        "essential"
+      ],
+      "r": 3,
+      "e": "« essential » est proche de « vital » dans ce sens.",
+      "d": "synonymes",
+      "n": "avance"
+    },
+    {
+      "q": "In “Please give a concise summary,” which word is closest to concise?",
+      "o": [
+        "brief",
+        "confusing",
+        "detailed",
+        "informal"
+      ],
+      "r": 0,
+      "e": "Concise veut dire brief : bref et précis."
+    },
+    {
+      "q": "In “The repair required a substantial amount of money,” which word is closest to substantial?",
+      "o": [
+        "tiny",
+        "considerable",
+        "unexpected",
+        "borrowed"
+      ],
+      "r": 1,
+      "e": "Substantial veut dire considerable : important, considérable."
+    },
+    {
+      "q": "In “She was reluctant to accept the offer,” which word is closest to reluctant?",
+      "o": [
+        "eager",
+        "prepared",
+        "unwilling",
+        "unable"
+      ],
+      "r": 2,
+      "e": "Reluctant veut dire unwilling : peu disposé."
+    },
+    {
+      "q": "In “The report provides accurate figures,” which word is closest to accurate?",
+      "o": [
+        "recent",
+        "complete",
+        "rounded",
+        "precise"
+      ],
+      "r": 3,
+      "e": "Accurate veut dire precise : exact."
+    },
+    {
+      "q": "In “The new law will abolish the old rule,” which verb is closest to abolish?",
+      "o": [
+        "put an end to",
+        "make a copy of",
+        "make stricter",
+        "write down"
+      ],
+      "r": 0,
+      "e": "Abolish veut dire supprimer ou mettre fin à."
+    },
+    {
+      "q": "In “The extra practice should strengthen her skills,” which verb is closest to strengthen?",
+      "o": [
+        "hide",
+        "reinforce",
+        "measure",
+        "replace"
+      ],
+      "r": 1,
+      "e": "Strengthen veut dire reinforce : renforcer."
+    },
+    {
+      "q": "In “The school had to postpone the meeting,” which verb is closest to postpone?",
+      "o": [
+        "cancel",
+        "announce",
+        "defer",
+        "attend"
+      ],
+      "r": 2,
+      "e": "Postpone veut dire defer : reporter."
+    },
+    {
+      "q": "In “The witness refused to disclose the address,” which verb is closest to disclose?",
+      "o": [
+        "change",
+        "confirm",
+        "forget",
+        "reveal"
+      ],
+      "r": 3,
+      "e": "Disclose veut dire reveal : révéler."
+    },
+    {
+      "q": "In “The medicine may diminish the pain,” which verb is closest to diminish?",
+      "o": [
+        "lessen",
+        "cause",
+        "describe",
+        "prevent"
+      ],
+      "r": 0,
+      "e": "Diminish veut dire lessen : réduire."
+    },
+    {
+      "q": "In “The team hopes to obtain permission,” which verb is closest to obtain?",
+      "o": [
+        "request",
+        "acquire",
+        "refuse",
+        "explain"
+      ],
+      "r": 1,
+      "e": "Obtain veut dire acquire : obtenir."
+    },
+    {
+      "q": "In “The athlete maintained a steady pace,” which verb is closest to maintained?",
+      "o": [
+        "started",
+        "increased",
+        "kept",
+        "forgot"
+      ],
+      "r": 2,
+      "e": "Maintained veut dire kept : a gardé."
+    },
+    {
+      "q": "In “Researchers assessed the impact of the programme,” which verb is closest to assessed?",
+      "o": [
+        "predicted",
+        "limited",
+        "created",
+        "evaluated"
+      ],
+      "r": 3,
+      "e": "Assessed veut dire evaluated : évalué."
+    },
+    {
+      "q": "In “The instructions were ambiguous,” which word is closest to ambiguous?",
+      "o": [
+        "unclear",
+        "incorrect",
+        "unusual",
+        "incomplete"
+      ],
+      "r": 0,
+      "e": "Ambiguous veut dire unclear : qui peut être compris de plusieurs façons."
+    },
+    {
+      "q": "In “Wearing a helmet is compulsory,” which word is closest to compulsory?",
+      "o": [
+        "optional",
+        "mandatory",
+        "recommended",
+        "unusual"
+      ],
+      "r": 1,
+      "e": "Compulsory veut dire mandatory : obligatoire."
+    },
+    {
+      "q": "In “Clean water is scarce during the dry season,” which word is closest to scarce?",
+      "o": [
+        "polluted",
+        "expensive",
+        "limited",
+        "distant"
+      ],
+      "r": 2,
+      "e": "Scarce veut dire limited : rare, en quantité limitée."
+    },
+    {
+      "q": "In “The judge remained impartial,” which word is closest to impartial?",
+      "o": [
+        "unprepared",
+        "uncertain",
+        "unavailable",
+        "unbiased"
+      ],
+      "r": 3,
+      "e": "Impartial veut dire unbiased : sans favoriser un côté."
+    },
+    {
+      "q": "In “The community proved resilient after the flood,” which phrase is closest to resilient?",
+      "o": [
+        "able to recover",
+        "ready to move",
+        "eager to argue",
+        "likely to disappear"
+      ],
+      "r": 0,
+      "e": "Resilient décrit une capacité à se relever après une difficulté."
+    },
+    {
+      "q": "In “The ceremony follows a conventional format,” which word is closest to conventional?",
+      "o": [
+        "secret",
+        "traditional",
+        "experimental",
+        "expensive"
+      ],
+      "r": 1,
+      "e": "Conventional veut dire traditional : traditionnel."
+    },
+    {
+      "q": "In “Young children are vulnerable to the disease,” which phrase is closest to vulnerable?",
+      "o": [
+        "well protected",
+        "fully trained",
+        "at risk",
+        "unaffected"
+      ],
+      "r": 2,
+      "e": "Vulnerable veut dire at risk : exposé à un risque."
+    },
+    {
+      "q": "In “Sales exceeded the target,” which verb is closest to exceeded?",
+      "o": [
+        "approached",
+        "reached",
+        "missed",
+        "surpassed"
+      ],
+      "r": 3,
+      "e": "Exceeded veut dire surpassed : dépassé."
+    },
+    {
+      "q": "In “During the journey, we encountered heavy rain,” which verb is closest to encountered?",
+      "o": [
+        "came across",
+        "avoided",
+        "caused",
+        "measured"
+      ],
+      "r": 0,
+      "e": "Encountered veut dire came across : rencontré."
+    },
+    {
+      "q": "In “The council allocated funds to the schools,” which verb is closest to allocated?",
+      "o": [
+        "borrowed",
+        "assigned",
+        "counted",
+        "withheld"
+      ],
+      "r": 1,
+      "e": "Allocated veut dire assigned : attribué."
+    },
+    {
+      "q": "In “Planting trees can mitigate heat in cities,” which verb is closest to mitigate?",
+      "o": [
+        "record",
+        "spread",
+        "reduce",
+        "predict"
+      ],
+      "r": 2,
+      "e": "Mitigate veut dire reduce : atténuer."
+    },
+    {
+      "q": "In “Her contribution was notable,” which word is closest to notable?",
+      "o": [
+        "ordinary",
+        "private",
+        "temporary",
+        "remarkable"
+      ],
+      "r": 3,
+      "e": "Notable veut dire remarkable : remarquable."
+    }
+  ]
+}

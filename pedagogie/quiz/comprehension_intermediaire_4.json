@@ -1,0 +1,292 @@
+{
+  "questions": [
+    {
+      "q": "Which trees did the pupils choose?",
+      "o": [
+        "Local trees",
+        "Fruit trees from Europe",
+        "Very tall palm trees",
+        "Trees that need daily water"
+      ],
+      "r": 0,
+      "e": "Le texte précise qu’ils ont choisi des arbres locaux.",
+      "t": "Awa’s school club planted trees near the football field. The pupils chose local trees because they need less water. They made a watering schedule for the first month. Awa’s group waters the trees every Tuesday."
+    },
+    {
+      "q": "When does Awa’s group water the trees?",
+      "o": [
+        "Every morning",
+        "Every Tuesday",
+        "Only on Sunday",
+        "Once a month"
+      ],
+      "r": 1,
+      "e": "Le groupe d’Awa arrose les arbres chaque mardi.",
+      "t": "Awa’s school club planted trees near the football field. The pupils chose local trees because they need less water. They made a watering schedule for the first month. Awa’s group waters the trees every Tuesday."
+    },
+    {
+      "q": "Why was Mamadou’s bus delayed?",
+      "o": [
+        "A broken bridge",
+        "A school meeting",
+        "Heavy rain",
+        "A missing ticket"
+      ],
+      "r": 2,
+      "e": "La pluie forte a retardé le bus.",
+      "t": "Mamadou’s bus to Saint-Louis was delayed by heavy rain. He sent a message to his aunt and waited inside the station. When the bus arrived, he checked the number before getting on. He reached his aunt’s house before dinner."
+    },
+    {
+      "q": "What did Mamadou check before boarding?",
+      "o": [
+        "The weather report",
+        "His aunt’s address",
+        "The station clock",
+        "The bus number"
+      ],
+      "r": 3,
+      "e": "Il a vérifié le numéro du bus.",
+      "t": "Mamadou’s bus to Saint-Louis was delayed by heavy rain. He sent a message to his aunt and waited inside the station. When the bus arrived, he checked the number before getting on. He reached his aunt’s house before dinner."
+    },
+    {
+      "q": "Why did Fatou choose the more expensive basket?",
+      "o": [
+        "The oranges were fresh",
+        "It was the largest basket",
+        "The seller was her friend",
+        "It had fewer oranges"
+      ],
+      "r": 0,
+      "e": "Elle a choisi les fruits frais.",
+      "t": "At the market, Fatou compared the prices of two baskets of oranges. One basket was cheaper, but several oranges were damaged. She chose the other basket because the fruit was fresh. The seller gave her a small discount."
+    },
+    {
+      "q": "What does “damaged” mean in this text?",
+      "o": [
+        "Very sweet",
+        "Hurt or spoiled",
+        "Newly picked",
+        "Difficult to carry"
+      ],
+      "r": 1,
+      "e": "Damaged veut dire abîmé.",
+      "t": "At the market, Fatou compared the prices of two baskets of oranges. One basket was cheaper, but several oranges were damaged. She chose the other basket because the fruit was fresh. The seller gave her a small discount."
+    },
+    {
+      "q": "Until what day may students borrow books?",
+      "o": [
+        "Monday",
+        "Wednesday",
+        "Friday",
+        "Sunday"
+      ],
+      "r": 2,
+      "e": "Les élèves peuvent emprunter des livres jusqu’à vendredi.",
+      "t": "The school library closes at five, but students may borrow books until Friday. They write their names and the book title in a notebook. A student who returns a book late must speak to the librarian. Mariama borrowed a story about the sea."
+    },
+    {
+      "q": "What must a student do after returning a book late?",
+      "o": [
+        "Buy another book",
+        "Write a new story",
+        "Stay after school",
+        "Speak to the librarian"
+      ],
+      "r": 3,
+      "e": "Le texte dit qu’il faut parler à la bibliothécaire.",
+      "t": "The school library closes at five, but students may borrow books until Friday. They write their names and the book title in a notebook. A student who returns a book late must speak to the librarian. Mariama borrowed a story about the sea."
+    },
+    {
+      "q": "Why should people close the well cover?",
+      "o": [
+        "To keep dust and insects out",
+        "To make the water warmer",
+        "To stop the well from getting deeper",
+        "To help the well dry"
+      ],
+      "r": 0,
+      "e": "Le couvercle protège l’eau de la poussière et des insectes.",
+      "t": "During the dry season, a village committee repaired a well. The work took three days, and families brought water in clean containers. The committee asked everyone to close the well cover after use. This helps keep dust and insects out."
+    },
+    {
+      "q": "How long did the repair work take?",
+      "o": [
+        "One week",
+        "Three days",
+        "One morning",
+        "Two months"
+      ],
+      "r": 1,
+      "e": "Les réparations ont duré trois jours.",
+      "t": "During the dry season, a village committee repaired a well. The work took three days, and families brought water in clean containers. The committee asked everyone to close the well cover after use. This helps keep dust and insects out."
+    },
+    {
+      "q": "What did Aminata do with new words?",
+      "o": [
+        "She translated the whole programme",
+        "She taught them on the radio",
+        "She used them in sentences",
+        "She forgot them after listening"
+      ],
+      "r": 2,
+      "e": "Elle écrivait les mots puis les utilisait dans des phrases.",
+      "t": "Aminata wanted to practise English, so she listened to a short radio programme each evening. She wrote down three new words and used them in sentences. After two weeks, she could understand more of the programme. She still asked her teacher about difficult words."
+    },
+    {
+      "q": "How did her listening change after two weeks?",
+      "o": [
+        "She stopped listening",
+        "She understood less",
+        "She changed the radio station",
+        "She understood more"
+      ],
+      "r": 3,
+      "e": "Après deux semaines, elle comprenait davantage.",
+      "t": "Aminata wanted to practise English, so she listened to a short radio programme each evening. She wrote down three new words and used them in sentences. After two weeks, she could understand more of the programme. She still asked her teacher about difficult words."
+    },
+    {
+      "q": "What did the players do before warming up?",
+      "o": [
+        "They drank water and stretched",
+        "They ate a large meal",
+        "They changed the referee",
+        "They watched another match"
+      ],
+      "r": 0,
+      "e": "Le coach leur a demandé de boire et de s’étirer.",
+      "t": "A football team arrived early for its match. The coach asked the players to drink water and stretch before warming up. The match began at four o’clock. Their goalkeeper saved a penalty in the second half."
+    },
+    {
+      "q": "When did the goalkeeper save a penalty?",
+      "o": [
+        "Before the match",
+        "In the second half",
+        "At half past four",
+        "After the final whistle"
+      ],
+      "r": 1,
+      "e": "Le texte dit que c’était pendant la deuxième mi-temps.",
+      "t": "A football team arrived early for its match. The coach asked the players to drink water and stretch before warming up. The match began at four o’clock. Their goalkeeper saved a penalty in the second half."
+    },
+    {
+      "q": "What did the health worker demonstrate?",
+      "o": [
+        "How to prepare lunch",
+        "How to clean the classroom",
+        "How to wash hands",
+        "How to write a poster"
+      ],
+      "r": 2,
+      "e": "Elle a montré comment se laver les mains.",
+      "t": "The health worker visited the school to talk about handwashing. She showed the pupils how to use soap and clean water. A poster near the classroom sink reminds them to wash before eating. The pupils made a song to remember the steps."
+    },
+    {
+      "q": "When does the poster remind pupils to wash?",
+      "o": [
+        "After sleeping",
+        "Before playing football",
+        "After reading",
+        "Before eating"
+      ],
+      "r": 3,
+      "e": "L’affiche rappelle de se laver avant de manger.",
+      "t": "The health worker visited the school to talk about handwashing. She showed the pupils how to use soap and clean water. A poster near the classroom sink reminds them to wash before eating. The pupils made a song to remember the steps."
+    },
+    {
+      "q": "What did the farmer plant?",
+      "o": [
+        "Millet",
+        "Rice",
+        "Onions",
+        "Cotton"
+      ],
+      "r": 0,
+      "e": "Le texte indique qu’il a planté du millet.",
+      "t": "A farmer planted millet after the first good rain. He removed weeds by hand and checked the field each week. His daughter helped count the rows. They planned to store the harvest in dry bags."
+    },
+    {
+      "q": "How often did he check the field?",
+      "o": [
+        "Every day",
+        "Each week",
+        "Once a season",
+        "Only after harvest"
+      ],
+      "r": 1,
+      "e": "Il vérifiait le champ chaque semaine.",
+      "t": "A farmer planted millet after the first good rain. He removed weeds by hand and checked the field each week. His daughter helped count the rows. They planned to store the harvest in dry bags."
+    },
+    {
+      "q": "Where did Ousmane take the wallet?",
+      "o": [
+        "To the bus driver",
+        "To his home",
+        "To the information desk",
+        "To the market"
+      ],
+      "r": 2,
+      "e": "Il a apporté le portefeuille au bureau d’information.",
+      "t": "At the bus station, Ousmane saw a wallet on a bench. He took it to the information desk instead of keeping it. The worker checked for an identification card and called the owner. The owner returned later to thank Ousmane."
+    },
+    {
+      "q": "Why could the worker call the owner?",
+      "o": [
+        "Ousmane knew the owner",
+        "The wallet had a phone",
+        "The owner was on the bus",
+        "There was an identification card"
+      ],
+      "r": 3,
+      "e": "La carte d’identité permettait de contacter le propriétaire.",
+      "t": "At the bus station, Ousmane saw a wallet on a bench. He took it to the information desk instead of keeping it. The worker checked for an identification card and called the owner. The owner returned later to thank Ousmane."
+    },
+    {
+      "q": "What difference did the class test?",
+      "o": [
+        "How often the plants received water",
+        "How much sunlight the room received",
+        "Which plant had larger leaves",
+        "Which soil was darker"
+      ],
+      "r": 0,
+      "e": "La fréquence de l’arrosage changeait.",
+      "t": "The science class placed two plants near a window. One plant received water every day, while the other received water only once a week. After several weeks, the daily-water plant was taller. The class recorded the changes in a table."
+    },
+    {
+      "q": "Which plant became taller?",
+      "o": [
+        "The one watered weekly",
+        "The one watered every day",
+        "Both stayed the same height",
+        "The one kept outside"
+      ],
+      "r": 1,
+      "e": "La plante arrosée chaque jour était plus haute.",
+      "t": "The science class placed two plants near a window. One plant received water every day, while the other received water only once a week. After several weeks, the daily-water plant was taller. The class recorded the changes in a table."
+    },
+    {
+      "q": "Why did Binta pack a notebook?",
+      "o": [
+        "To draw a bus map",
+        "To give it to the museum",
+        "To write down interesting objects",
+        "To record the weather"
+      ],
+      "r": 2,
+      "e": "Elle voulait noter les objets intéressants.",
+      "t": "Before the school trip, Binta packed a hat, a water bottle and a notebook. Her teacher asked everyone to stay with a partner at the museum. Binta wrote down the names of three objects she found interesting. She shared her notes with the class the next day."
+    },
+    {
+      "q": "What rule did the teacher give at the museum?",
+      "o": [
+        "Do not bring water",
+        "Write on the objects",
+        "Leave before the group",
+        "Stay with a partner"
+      ],
+      "r": 3,
+      "e": "La consigne était de rester avec un camarade.",
+      "t": "Before the school trip, Binta packed a hat, a water bottle and a notebook. Her teacher asked everyone to stay with a partner at the museum. Binta wrote down the names of three objects she found interesting. She shared her notes with the class the next day."
+    }
+  ]
+}

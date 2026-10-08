@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models.dart';
 import '../../services/content_repo.dart';
+import '../../services/auth_service.dart';
 import '../../services/media_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
@@ -299,6 +300,8 @@ class _LessonEditorState extends State<LessonEditor> {
                   image: q.image,
                 ))
             .toList(),
+        createdByUid: widget.lesson?.createdByUid ?? '',
+        createdByName: widget.lesson?.createdByName ?? '',
         hiddenIn: widget.lesson?.hiddenIn ?? widget.hiddenIn,
       );
 
@@ -310,7 +313,15 @@ class _LessonEditorState extends State<LessonEditor> {
     }
     final repo = ContentRepo.instance;
     final id = widget.lesson?.id ?? repo.newId('lessons');
-    repo.save('lessons', id, {..._current(id).toMap(), 'status': 'published'});
+    final profile = AuthService.instance.profile.value;
+    repo.save('lessons', id, {
+      ..._current(id).toMap(),
+      if (widget.lesson == null && profile != null) ...{
+        'createdByUid': profile.uid,
+        'createdByName': profile.publicName,
+      },
+      'status': 'published',
+    });
     final cards = [
       for (final c in _cards)
         if ((c.front.text.trim().isNotEmpty || c.image.isNotEmpty) && c.back.text.trim().isNotEmpty)

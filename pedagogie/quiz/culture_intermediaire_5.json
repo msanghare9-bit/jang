@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Which country is home to the Great Zimbabwe National Monument?",
+      "o": [
+        "Zimbabwe",
+        "Zambia",
+        "Botswana",
+        "Mozambique"
+      ],
+      "r": 0,
+      "e": "UNESCO locates the monument in Zimbabwe."
+    },
+    {
+      "q": "Which people built the civilization represented at Great Zimbabwe?",
+      "o": [
+        "The Wolof",
+        "The Shona",
+        "The Tuareg",
+        "The Asante"
+      ],
+      "r": 1,
+      "e": "UNESCO describes Great Zimbabwe as a testimony to Shona civilization."
+    },
+    {
+      "q": "Between which centuries did the Shona civilization at Great Zimbabwe flourish?",
+      "o": [
+        "The 5th and 9th",
+        "The 16th and 18th",
+        "The 11th and 15th",
+        "The 19th and 20th"
+      ],
+      "r": 2,
+      "e": "UNESCO dates this civilization from the 11th to the 15th century."
+    },
+    {
+      "q": "What was Great Zimbabwe during the Middle Ages?",
+      "o": [
+        "A fishing village",
+        "A Roman colony",
+        "A mining camp",
+        "A major trading centre"
+      ],
+      "r": 3,
+      "e": "UNESCO describes it as an important trading centre."
+    },
+    {
+      "q": "Lalibela’s rock-hewn churches are in which country?",
+      "o": [
+        "Ethiopia",
+        "Kenya",
+        "Sudan",
+        "Tanzania"
+      ],
+      "r": 0,
+      "e": "Lalibela is in the heart of Ethiopia."
+    },
+    {
+      "q": "How many medieval monolithic churches are at Lalibela?",
+      "o": [
+        "Seven",
+        "Eleven",
+        "Nine",
+        "Fourteen"
+      ],
+      "r": 1,
+      "e": "UNESCO identifies eleven churches carved from rock."
+    },
+    {
+      "q": "What makes Lalibela’s churches especially distinctive?",
+      "o": [
+        "They were built from glass",
+        "They float on a lake",
+        "They were carved from rock",
+        "They are made of coral"
+      ],
+      "r": 2,
+      "e": "The churches were carved directly out of rock."
+    },
+    {
+      "q": "Lalibela is still an important place for what?",
+      "o": [
+        "Gold mining",
+        "Ocean trade",
+        "Desert farming",
+        "Pilgrimage and devotion"
+      ],
+      "r": 3,
+      "e": "UNESCO describes Lalibela as a place of pilgrimage and devotion."
+    },
+    {
+      "q": "Aksum is an ancient archaeological site in which country?",
+      "o": [
+        "Ethiopia",
+        "Eritrea",
+        "Somalia",
+        "Sudan"
+      ],
+      "r": 0,
+      "e": "Aksum is in northern Ethiopia."
+    },
+    {
+      "q": "Which monuments are among the ruins at Aksum?",
+      "o": [
+        "Wooden pagodas",
+        "Monolithic obelisks and stelae",
+        "Roman aqueducts",
+        "Stone circles by the sea"
+      ],
+      "r": 1,
+      "e": "UNESCO lists obelisks and giant stelae among its monuments."
+    },
+    {
+      "q": "The ancient Kingdom of Aksum controlled trade connected to which sea?",
+      "o": [
+        "The Baltic Sea",
+        "The Caribbean Sea",
+        "The Red Sea",
+        "The North Sea"
+      ],
+      "r": 2,
+      "e": "Aksumite fleets controlled trade through the Red Sea."
+    },
+    {
+      "q": "Which historic port is associated with Aksum’s maritime trade?",
+      "o": [
+        "Mombasa",
+        "Dakar",
+        "Lamu",
+        "Adulis"
+      ],
+      "r": 3,
+      "e": "UNESCO names Adulis as the port connected to Aksumite trade."
+    },
+    {
+      "q": "Fort Jesus is in which Kenyan coastal city?",
+      "o": [
+        "Mombasa",
+        "Nairobi",
+        "Kisumu",
+        "Eldoret"
+      ],
+      "r": 0,
+      "e": "Fort Jesus stands in Mombasa."
+    },
+    {
+      "q": "Who built Fort Jesus at the end of the 16th century?",
+      "o": [
+        "The Dutch",
+        "The Portuguese",
+        "The British",
+        "The Omani"
+      ],
+      "r": 1,
+      "e": "UNESCO says the Portuguese built the fort in 1593–1596."
+    },
+    {
+      "q": "What was the main purpose of Fort Jesus when it was built?",
+      "o": [
+        "To store grain inland",
+        "To house a university",
+        "To protect Mombasa’s port",
+        "To guard a mountain pass"
+      ],
+      "r": 2,
+      "e": "It was built to protect the port of Mombasa."
+    },
+    {
+      "q": "On what kind of natural feature was Fort Jesus built?",
+      "o": [
+        "A volcanic crater",
+        "A sand dune",
+        "A river island",
+        "A coral-rock spur"
+      ],
+      "r": 3,
+      "e": "UNESCO places the fort on a spur of coral rock."
+    },
+    {
+      "q": "Which architect designed Fort Jesus?",
+      "o": [
+        "Giovanni Battista Cairati",
+        "Andrea Palladio",
+        "Leonardo da Vinci",
+        "Filippo Brunelleschi"
+      ],
+      "r": 0,
+      "e": "UNESCO attributes its design to Giovanni Battista Cairati."
+    },
+    {
+      "q": "Which type of architecture is Fort Jesus an example of?",
+      "o": [
+        "Ancient Egyptian temple design",
+        "16th-century Portuguese military fortification",
+        "Medieval Norse wooden construction",
+        "Romanesque church architecture"
+      ],
+      "r": 1,
+      "e": "UNESCO calls it an outstanding example of 16th-century Portuguese fortification."
+    },
+    {
+      "q": "Which groups’ cultural influences are visible in Fort Jesus’s history?",
+      "o": [
+        "Only Roman and Greek",
+        "Only Chinese and Japanese",
+        "African, Arab, Turkish, Persian and European",
+        "Mayan, Inca and Aztec"
+      ],
+      "r": 2,
+      "e": "UNESCO describes exchanges among these peoples around the port."
+    },
+    {
+      "q": "Which city was the powerful ancient Kingdom of Aksum’s heart?",
+      "o": [
+        "Timbuktu",
+        "Djenné",
+        "Mapungubwe",
+        "Aksum"
+      ],
+      "r": 3,
+      "e": "The ruins of Aksum mark the heart of the ancient kingdom."
+    },
+    {
+      "q": "Lalibela is described as a ‘New Jerusalem’ from which century?",
+      "o": [
+        "The 13th",
+        "The 9th",
+        "The 11th",
+        "The 16th"
+      ],
+      "r": 0,
+      "e": "UNESCO describes the churches as a 13th-century ‘New Jerusalem’."
+    },
+    {
+      "q": "The Great Zimbabwe site covers nearly how much land?",
+      "o": [
+        "8 hectares",
+        "80 hectares",
+        "30 hectares",
+        "800 hectares"
+      ],
+      "r": 1,
+      "e": "UNESCO gives an area of nearly 80 hectares."
+    },
+    {
+      "q": "What kind of cultural landscape surrounds Lalibela’s churches?",
+      "o": [
+        "A tropical island reef",
+        "A desert salt flat",
+        "A mountainous region near a traditional village",
+        "A modern port district"
+      ],
+      "r": 2,
+      "e": "UNESCO places the churches in a mountain region near a traditional village."
+    },
+    {
+      "q": "Which building tradition is represented by the monumental ruins of Great Zimbabwe?",
+      "o": [
+        "Swahili",
+        "Serer",
+        "Manding",
+        "Shona"
+      ],
+      "r": 3,
+      "e": "The monument is a testimony to Shona civilization."
+    }
+  ]
+}

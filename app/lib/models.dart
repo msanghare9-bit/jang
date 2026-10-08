@@ -113,6 +113,7 @@ class QuizQuestion {
   List<String> options;
   int answer;
   String explanation;
+  String bankId;
 
   /// Photo de la question (identifiant dans media/), vide s'il n'y en a pas.
   String image;
@@ -122,6 +123,7 @@ class QuizQuestion {
     required this.answer,
     this.explanation = '',
     this.image = '',
+    this.bankId = '',
   });
 
   factory QuizQuestion.empty() =>
@@ -140,6 +142,7 @@ class QuizQuestion {
       answer: _int(m['answer']).clamp(0, 3).toInt(),
       explanation: _str(m['explanation']),
       image: _str(m['image']),
+      bankId: _str(m['bankId']),
     );
   }
 
@@ -149,6 +152,7 @@ class QuizQuestion {
         'answer': answer,
         'explanation': explanation,
         if (image.isNotEmpty) 'image': image,
+        if (bankId.isNotEmpty) 'bankId': bankId,
       };
 
   QuizQuestion copy() => QuizQuestion(
@@ -156,7 +160,8 @@ class QuizQuestion {
       options: List.of(options),
       answer: answer,
       explanation: explanation,
-      image: image);
+      image: image,
+      bankId: bankId);
 }
 
 class Lesson {
@@ -169,6 +174,8 @@ class Lesson {
   final List<Video> videos;
   final String body;
   final List<QuizQuestion> quiz;
+  final String createdByUid;
+  final String createdByName;
 
   /// Classes (niveaux) où la leçon est retirée, quand la matière est partagée.
   final List<String> hiddenIn;
@@ -183,6 +190,8 @@ class Lesson {
     this.videos = const [],
     this.body = '',
     this.quiz = const [],
+    this.createdByUid = '',
+    this.createdByName = '',
     this.hiddenIn = const [],
     this.deleted = false,
   });
@@ -204,6 +213,8 @@ class Lesson {
       videos: vids.whereType<Map>().map(Video.fromMap).toList(),
       body: _str(m['body']),
       quiz: qz.whereType<Map>().map(QuizQuestion.fromMap).toList(),
+      createdByUid: _str(m['createdByUid']),
+      createdByName: _str(m['createdByName']),
       hiddenIn: (m['hiddenIn'] is List ? m['hiddenIn'] as List : const []).whereType<String>().toList(),
       deleted: _bool(m['deleted']),
     );
@@ -218,6 +229,8 @@ class Lesson {
         'videos': videos.map((v) => v.toMap()).toList(),
         'body': body,
         'quiz': quiz.map((q) => q.toMap()).toList(),
+        'createdByUid': createdByUid,
+        'createdByName': createdByName,
         'hiddenIn': hiddenIn,
         'deleted': deleted,
       };
@@ -534,6 +547,7 @@ class ClassRoom {
   final String subjectName;
   final String profUid;
   final String profName;
+  final String school;
 
   /// Code à donner aux élèves pour entrer dans la classe.
   final String code;
@@ -547,6 +561,7 @@ class ClassRoom {
     required this.subjectName,
     required this.profUid,
     required this.profName,
+    this.school = '',
     required this.code,
     this.students = const [],
     this.deleted = false,
@@ -562,6 +577,7 @@ class ClassRoom {
       subjectName: _str(m['subjectName']),
       profUid: _str(m['profUid']),
       profName: _str(m['profName']),
+      school: _str(m['school']),
       code: _str(m['code']),
       students: (m['students'] is List ? m['students'] as List : const []).whereType<String>().toList(),
       deleted: _bool(m['deleted']),
@@ -575,6 +591,7 @@ class ClassRoom {
         'subjectName': subjectName,
         'profUid': profUid,
         'profName': profName,
+        'school': school,
         'code': code,
         'students': students,
         'deleted': deleted,
@@ -622,6 +639,9 @@ class ClassItem {
   final String subject;
   final String type;
   final String title;
+  final String sourceLessonId;
+  final String sourceOwnerName;
+  final List<Video> videos;
 
   /// Leçon : le texte (même format que les leçons) ; devoir : la consigne.
   final String body;
@@ -635,6 +655,7 @@ class ClassItem {
   final String visibility;
   final bool deleted;
   final DateTime? createdAt;
+  final DateTime? dueAt;
   ClassItem({
     required this.id,
     required this.classId,
@@ -644,6 +665,9 @@ class ClassItem {
     required this.subject,
     required this.type,
     required this.title,
+    this.sourceLessonId = '',
+    this.sourceOwnerName = '',
+    this.videos = const [],
     this.body = '',
     this.quiz = const [],
     this.gapItems = const [],
@@ -651,6 +675,7 @@ class ClassItem {
     this.visibility = 'prive',
     this.deleted = false,
     this.createdAt,
+    this.dueAt,
   });
 
   bool get isPublic => visibility == 'public';
@@ -661,6 +686,7 @@ class ClassItem {
   factory ClassItem.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
     final ts = m['createdAt'];
+    final due = m['dueAt'];
     return ClassItem(
       id: d.id,
       classId: _str(m['classId']),
@@ -670,6 +696,9 @@ class ClassItem {
       subject: _str(m['subject']),
       type: _str(m['type'], lesson),
       title: _str(m['title']),
+      sourceLessonId: _str(m['sourceLessonId']),
+      sourceOwnerName: _str(m['sourceOwnerName']),
+      videos: (m['videos'] is List ? m['videos'] as List : const []).whereType<Map>().map(Video.fromMap).toList(),
       body: _str(m['body']),
       quiz: (m['quiz'] is List ? m['quiz'] as List : const []).whereType<Map>().map(QuizQuestion.fromMap).toList(),
       gapItems: (m['gaps'] is List ? m['gaps'] as List : const []).whereType<Map>().map(GapItem.fromMap).toList(),
@@ -677,6 +706,7 @@ class ClassItem {
       visibility: _str(m['visibility'], 'prive'),
       deleted: _bool(m['deleted']),
       createdAt: ts is Timestamp ? ts.toDate() : null,
+      dueAt: due is Timestamp ? due.toDate() : null,
     );
   }
 
@@ -688,12 +718,16 @@ class ClassItem {
         'subject': subject,
         'type': type,
         'title': title,
+        'sourceLessonId': sourceLessonId,
+        'sourceOwnerName': sourceOwnerName,
+        'videos': videos.map((v) => v.toMap()).toList(),
         'body': body,
         'quiz': quiz.map((q) => q.toMap()).toList(),
         'gaps': gapItems.map((g) => g.toMap()).toList(),
         'mission': missionData,
         'visibility': visibility,
         'deleted': deleted,
+        'dueAt': dueAt == null ? null : Timestamp.fromDate(dueAt!),
       };
 
   /// Leçon fabriquée pour réutiliser les écrans de leçon et de quiz (et la progression).
@@ -703,6 +737,7 @@ class ClassItem {
         subjectId: s.id,
         chapterId: '',
         title: title,
+        videos: videos,
         body: body,
         quiz: quiz,
       );

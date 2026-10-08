@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "You disagree with a proposal but want to remain respectful. What do you say?",
+      "o": [
+        "I see your point, although I have a different view.",
+        "That is completely foolish.",
+        "You are wrong, end of story.",
+        "I refuse to hear your idea."
+      ],
+      "r": 0,
+      "e": "This acknowledges the other view before disagreeing."
+    },
+    {
+      "q": "You want to qualify a claim because the evidence is limited. What do you say?",
+      "o": [
+        "This is certainly true in every case.",
+        "The evidence suggests this may be the case.",
+        "Nobody can ever know anything.",
+        "The evidence was a suggestion."
+      ],
+      "r": 1,
+      "e": "“Suggests” presents a cautious conclusion."
+    },
+    {
+      "q": "A colleague proposes a useful revision. How do you respond?",
+      "o": [
+        "That suggestion is constructed.",
+        "I suggest you are useful.",
+        "That is a constructive suggestion.",
+        "It is useful yesterday."
+      ],
+      "r": 2,
+      "e": "“Constructive suggestion” means helpful proposal."
+    },
+    {
+      "q": "You want to return to the main topic of a discussion. What do you say?",
+      "o": [
+        "Let us return the discussion point.",
+        "We returned from the topic.",
+        "The point has returned us.",
+        "Let us return to the point under discussion."
+      ],
+      "r": 3,
+      "e": "This phrase brings a discussion back on topic."
+    },
+    {
+      "q": "You need to interrupt politely during a presentation. What do you say?",
+      "o": [
+        "May I add something here?",
+        "I will stop your presentation.",
+        "You add something yesterday.",
+        "May I interrupt you forever?"
+      ],
+      "r": 0,
+      "e": "This is a courteous way to contribute."
+    },
+    {
+      "q": "You want to emphasize that a plan is still uncertain. What do you say?",
+      "o": [
+        "The plan is still a subject change.",
+        "The plan is still subject to change.",
+        "The subject is planning still.",
+        "The plan changed the subject."
+      ],
+      "r": 1,
+      "e": "“Subject to change” means it may change later."
+    },
+    {
+      "q": "You are presenting a conclusion that follows from earlier evidence. What do you say?",
+      "o": [
+        "Taken separately, these findings forget that…",
+        "These findings take us together.",
+        "Taken together, these findings indicate that…",
+        "The conclusion is taking evidence."
+      ],
+      "r": 2,
+      "e": "This signals a conclusion based on combined findings."
+    },
+    {
+      "q": "You want to propose a compromise. What do you say?",
+      "o": [
+        "Could we meet at the halfway?",
+        "We met half yesterday.",
+        "This is halfway to meet.",
+        "Could we meet halfway on this?"
+      ],
+      "r": 3,
+      "e": "“Meet halfway” means each side makes a concession."
+    },
+    {
+      "q": "A speaker made a valid point you had not considered. What do you say?",
+      "o": [
+        "That is a fair point; I had not considered it.",
+        "That is a point of fairness yesterday.",
+        "I considered your point unfairly.",
+        "Your point is not considered."
+      ],
+      "r": 0,
+      "e": "This acknowledges a reasonable argument."
+    },
+    {
+      "q": "You want to politely ask for clarification of a term. What do you say?",
+      "o": [
+        "Can you clear what equity means?",
+        "Could you clarify what you mean by “equity”?",
+        "Could you clarify equity yesterday?",
+        "What does you mean by clear?"
+      ],
+      "r": 1,
+      "e": "“Clarify” asks someone to make an idea clearer."
+    },
+    {
+      "q": "You want to postpone a decision until more information is available. What do you say?",
+      "o": [
+        "We should reserve the information from judgment.",
+        "We judged the reservation yesterday.",
+        "We should reserve judgment until we have more information.",
+        "We should decide without the facts."
+      ],
+      "r": 2,
+      "e": "“Reserve judgment” means wait before deciding."
+    },
+    {
+      "q": "You want to describe a result that was unexpected but understandable. What do you say?",
+      "o": [
+        "In prospect, the outcome makes past.",
+        "The outcome retrospects us.",
+        "It makes sense before it happened.",
+        "In retrospect, the outcome makes sense."
+      ],
+      "r": 3,
+      "e": "“In retrospect” looks back with later understanding."
+    },
+    {
+      "q": "You want to show that a concern is important but not the only one. What do you say?",
+      "o": [
+        "That is a valid concern, but it is not the whole picture.",
+        "That concern is the whole picture validly.",
+        "There is no concern in the picture.",
+        "The picture is concerned."
+      ],
+      "r": 0,
+      "e": "This recognizes the concern while adding perspective."
+    },
+    {
+      "q": "You want to state a limitation in your research. What do you say?",
+      "o": [
+        "One limit is this studying small.",
+        "One limitation of this study is its small sample.",
+        "The study is limited small sample yesterday.",
+        "The sample studies its limitation."
+      ],
+      "r": 1,
+      "e": "This clearly introduces a research limitation."
+    },
+    {
+      "q": "You want to draw attention to an important difference. What do you say?",
+      "o": [
+        "It is important to distinct the cases between.",
+        "The cases are importantly differented.",
+        "It is important to distinguish between the two cases.",
+        "We distinguish importance from cases."
+      ],
+      "r": 2,
+      "e": "“Distinguish between” means identify how things differ."
+    },
+    {
+      "q": "You want to make a recommendation based on evidence. What do you say?",
+      "o": [
+        "At the basis of these results, we recommend…",
+        "By the base results, we are recommend…",
+        "These results are the recommendation basis to.",
+        "On the basis of these results, we recommend…"
+      ],
+      "r": 3,
+      "e": "“On the basis of” introduces supporting evidence."
+    },
+    {
+      "q": "You want to correct a misunderstanding without blaming anyone. What do you say?",
+      "o": [
+        "Perhaps I was unclear; what I meant was…",
+        "You misunderstood me, obviously.",
+        "You are unclear what I meant.",
+        "Perhaps the meaning was me."
+      ],
+      "r": 0,
+      "e": "This gently takes responsibility and explains again."
+    },
+    {
+      "q": "You want to say two developments happened together. What do you say?",
+      "o": [
+        "These changes walk in one hand.",
+        "These changes go hand in hand.",
+        "These changes give hands.",
+        "We hand the changes together yesterday."
+      ],
+      "r": 1,
+      "e": "“Go hand in hand” means happen together or are connected."
+    },
+    {
+      "q": "You want to make your claim less absolute. What do you say?",
+      "o": [
+        "This depends surely on every context.",
+        "The context likely depends it.",
+        "This is likely to depend on the context.",
+        "It is unlikely to contextualize."
+      ],
+      "r": 2,
+      "e": "“Likely to” expresses probability, not certainty."
+    },
+    {
+      "q": "You want to introduce a counterargument. What do you say?",
+      "o": [
+        "Some may say the policy argued them.",
+        "The policy may argue the cost.",
+        "Some argue to costly.",
+        "Some may argue that the policy is too costly."
+      ],
+      "r": 3,
+      "e": "“Some may argue” introduces another viewpoint."
+    },
+    {
+      "q": "You want to explain that a measure had an unintended effect. What do you say?",
+      "o": [
+        "The measure had the unintended consequence of delaying access.",
+        "The measure intended the consequence access.",
+        "The access measured the intention.",
+        "The consequence was measuring access."
+      ],
+      "r": 0,
+      "e": "“Unintended consequence” describes an effect not planned."
+    },
+    {
+      "q": "You want to stress that the issue needs further study. What do you say?",
+      "o": [
+        "Further research was needed after the conclusion.",
+        "Further research is needed before we reach a conclusion.",
+        "We concluded before further research is needed.",
+        "The conclusion researches further."
+      ],
+      "r": 1,
+      "e": "This states that evidence is not yet sufficient."
+    },
+    {
+      "q": "You want to acknowledge a mistake in a formal discussion. What do you say?",
+      "o": [
+        "I am standing correct yesterday.",
+        "You are corrected by me.",
+        "I stand corrected; thank you for pointing that out.",
+        "I point out your thank you."
+      ],
+      "r": 2,
+      "e": "“I stand corrected” accepts that your earlier statement was wrong."
+    },
+    {
+      "q": "You want to end your presentation and invite questions. What do you say?",
+      "o": [
+        "That concludes your question presentation.",
+        "My questions conclude you.",
+        "I welcome my presentation yesterday.",
+        "That concludes my presentation. I welcome your questions."
+      ],
+      "r": 3,
+      "e": "This is a clear and polite closing."
+    }
+  ]
+}

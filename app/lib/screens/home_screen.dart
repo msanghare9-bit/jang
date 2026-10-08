@@ -19,6 +19,7 @@ import '../widgets/jang_ui.dart';
 import '../services/engagement_service.dart';
 import 'admin/admin_home.dart';
 import 'profile_screen.dart';
+import 'teacher_home_screen.dart';
 import 'progress_screen.dart';
 import 'sheep_screen.dart';
 import 'inbox_screen.dart';
@@ -87,16 +88,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final profile = AuthService.instance.profile.value!;
     final admin = profile.isStaff;
     final pages = <Widget>[
-      const SubjectsTab(),
-      const ProgressScreen(),
+      if (profile.isProf) const TeacherHomeScreen() else const SubjectsTab(),
+      if (!profile.isProf) const ProgressScreen(),
       if (admin) const AdminHome(),
       const ProfileScreen(),
     ];
     final destinations = <NavigationDestination>[
       const NavigationDestination(
-          icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded), label: 'Accueil'),
-      const NavigationDestination(
-          icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: 'Progrès'),
+          icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded),
+          label: 'Accueil'),
+      if (!profile.isProf)
+        const NavigationDestination(
+            icon: Icon(Icons.insights_outlined), selectedIcon: Icon(Icons.insights), label: 'Progrès'),
       if (admin)
         const NavigationDestination(
             icon: Icon(Icons.edit_note_outlined), selectedIcon: Icon(Icons.edit_note), label: 'Gestion'),
@@ -126,7 +129,7 @@ class SubjectsTab extends StatefulWidget {
 class _SubjectsTabState extends State<SubjectsTab> {
   late Future<_SubjectsData> _future;
   late String _welcome = Cheer.welcome(_firstName(), EngagementService.instance.streak);
-  late (String, String, bool) _tip = _tips[DateTime.now().hour % _tips.length];
+  late (String, String, bool) _tip = _tips[math.Random().nextInt(_tips.length)];
   HomeConfig _config = HomeConfig();
 
   static const _tips = <(String, String, bool)>[
@@ -398,7 +401,7 @@ class _SubjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = JangColors.fromHex(subject.color);
+    final color = JangColors.snGreen;
     final fg = JangColors.on(color);
     return ValueListenableBuilder(
       valueListenable: ProgressRepo.instance.revision,
@@ -511,20 +514,7 @@ class _SenegalHeader extends StatelessWidget {
           ]),
         ),
         Container(height: 3, color: Colors.white),
-        SizedBox(
-          height: 34,
-          child: Row(children: [
-            Expanded(child: Container(color: JangColors.snGreen)),
-            Expanded(
-              child: Container(
-                color: JangColors.snYellow,
-                alignment: Alignment.center,
-                child: const CustomPaint(size: Size(24, 24), painter: _StarPainter(JangColors.snGreen)),
-              ),
-            ),
-            Expanded(child: Container(color: JangColors.snRed)),
-          ]),
-        ),
+        Container(height: 4, color: Colors.white),
       ]),
     );
   }
@@ -550,11 +540,7 @@ class _FlagBar extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(height),
-        child: Row(children: [
-          Expanded(child: Container(color: JangColors.snGreen)),
-          Expanded(child: Container(color: JangColors.snYellow)),
-          Expanded(child: Container(color: JangColors.snRed)),
-        ]),
+        child: Container(color: JangColors.snGreen),
       ),
     );
   }

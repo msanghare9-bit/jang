@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "You arrive ten minutes late to class. What is a polite thing to say?",
+      "o": [
+        "I'm sorry I'm late.",
+        "I am late yesterday.",
+        "You are late for me.",
+        "I don't care about time."
+      ],
+      "r": 0,
+      "e": "I’m sorry I’m late est une excuse polie."
+    },
+    {
+      "q": "You are on a bus and want to know when it reaches the market. What do you ask?",
+      "o": [
+        "Where did the market go?",
+        "Could you tell me when we reach the market?",
+        "You must stop at market.",
+        "Do you know the bus driver?"
+      ],
+      "r": 1,
+      "e": "Could you tell me…? sert à demander poliment."
+    },
+    {
+      "q": "At a market, you want to know the price of a bag. What do you ask?",
+      "o": [
+        "How many does this cost?",
+        "How much do you cost?",
+        "How much does this cost?",
+        "What time does this cost?"
+      ],
+      "r": 2,
+      "e": "How much does this cost? demande le prix."
+    },
+    {
+      "q": "You are lost and need directions to the station. What do you say?",
+      "o": [
+        "Could you close the station?",
+        "How long is the station?",
+        "Can I buy the station?",
+        "Could you show me the way to the station?"
+      ],
+      "r": 3,
+      "e": "Show me the way demande le chemin."
+    },
+    {
+      "q": "You forgot a pencil and want to use your friend's pencil. What do you ask?",
+      "o": [
+        "May I borrow your pencil?",
+        "May I lend you a pencil?",
+        "Can I break your pencil?",
+        "Will you buy my pencil?"
+      ],
+      "r": 0,
+      "e": "May I borrow…? demande à emprunter quelque chose."
+    },
+    {
+      "q": "You did not hear the teacher. What do you say?",
+      "o": [
+        "Could you go away, please?",
+        "Could you say that again, please?",
+        "I said that again.",
+        "Will you answer me again?"
+      ],
+      "r": 1,
+      "e": "Could you say that again? demande de répéter poliment."
+    },
+    {
+      "q": "You missed a call and want to speak later. What do you say?",
+      "o": [
+        "Can I call you down?",
+        "Can I call you off?",
+        "Can I call you back?",
+        "Can I call you out?"
+      ],
+      "r": 2,
+      "e": "Call you back veut dire rappeler."
+    },
+    {
+      "q": "Your friend suggests studying together, and you agree. What do you say?",
+      "o": [
+        "That sounds too loud.",
+        "I have no sound.",
+        "It looks like an idea.",
+        "That sounds like a good idea."
+      ],
+      "r": 3,
+      "e": "That sounds like a good idea exprime son accord."
+    },
+    {
+      "q": "You cannot attend a party. Which is a polite reply?",
+      "o": [
+        "I'm afraid I can't make it.",
+        "I refuse to see you.",
+        "No party is good.",
+        "You cannot make it."
+      ],
+      "r": 0,
+      "e": "I’m afraid I can’t make it est une manière polie de refuser."
+    },
+    {
+      "q": "Your friend passed an exam. What do you say?",
+      "o": [
+        "Good luck next time!",
+        "Congratulations on passing!",
+        "I'm sorry you passed.",
+        "Please pass the book."
+      ],
+      "r": 1,
+      "e": "Congratulations félicite quelqu’un pour une réussite."
+    },
+    {
+      "q": "You offer a visitor some tea. What do you ask?",
+      "o": [
+        "Do you like my tea yesterday?",
+        "Are you tea?",
+        "Would you like some tea?",
+        "You must take tea."
+      ],
+      "r": 2,
+      "e": "Would you like…? sert à offrir quelque chose."
+    },
+    {
+      "q": "You suggest going for a walk. What do you say?",
+      "o": [
+        "Why we don't walk?",
+        "We don't go for walk yesterday.",
+        "Why not you walking?",
+        "Why don't we go for a walk?"
+      ],
+      "r": 3,
+      "e": "Why don’t we…? sert à proposer une activité."
+    },
+    {
+      "q": "Your friend has a headache. What is a kind suggestion?",
+      "o": [
+        "You should get some rest.",
+        "You must be a headache.",
+        "You should to sleep.",
+        "You can headache."
+      ],
+      "r": 0,
+      "e": "You should donne un conseil."
+    },
+    {
+      "q": "You cannot find your notebook. What do you ask your classmate?",
+      "o": [
+        "Did you see my notebook tomorrow?",
+        "Have you seen my notebook?",
+        "Are you my notebook?",
+        "Have you notebook?"
+      ],
+      "r": 1,
+      "e": "Have you seen…? sert à demander si quelqu’un a vu un objet."
+    },
+    {
+      "q": "You need permission to leave class early. What do you ask?",
+      "o": [
+        "I leave early yesterday.",
+        "You may leave me.",
+        "May I leave early?",
+        "Do I leave early?"
+      ],
+      "r": 2,
+      "e": "May I…? sert à demander la permission."
+    },
+    {
+      "q": "The bus is late. What can you tell your friend?",
+      "o": [
+        "The bus is walking late.",
+        "The bus is making late.",
+        "The bus has late.",
+        "The bus is running late."
+      ],
+      "r": 3,
+      "e": "Is running late veut dire est en retard."
+    },
+    {
+      "q": "You do not know the meaning of a word. What do you ask?",
+      "o": [
+        "What does this word mean?",
+        "How much does this word cost?",
+        "Where does this word live?",
+        "When does this word mean?"
+      ],
+      "r": 0,
+      "e": "What does… mean? demande le sens d’un mot."
+    },
+    {
+      "q": "A classmate helped you carry your books. What do you say?",
+      "o": [
+        "Thanks for your book.",
+        "Thanks for your help.",
+        "I help you thanks.",
+        "You are welcome me."
+      ],
+      "r": 1,
+      "e": "Thanks for your help remercie pour l’aide."
+    },
+    {
+      "q": "You introduce your friend to your teacher. What do you say?",
+      "o": [
+        "I am my friend, Awa.",
+        "That is your friend, Awa.",
+        "This is my friend, Awa.",
+        "My friend is this?"
+      ],
+      "r": 2,
+      "e": "This is… sert à présenter quelqu’un."
+    },
+    {
+      "q": "You want your friend's opinion about a film. What do you ask?",
+      "o": [
+        "How do you think the film?",
+        "What do you feel the film?",
+        "When do you think the film?",
+        "What do you think of the film?"
+      ],
+      "r": 3,
+      "e": "What do you think of…? demande une opinion."
+    },
+    {
+      "q": "You need your teacher to wait briefly. What do you say?",
+      "o": [
+        "Could you wait a moment, please?",
+        "Could you wait an hour yesterday?",
+        "Can I wait you?",
+        "You wait me a moment."
+      ],
+      "r": 0,
+      "e": "Could you…? formule une demande polie."
+    },
+    {
+      "q": "You invite a friend to join your group. What do you say?",
+      "o": [
+        "Do you want us to come you?",
+        "Would you like to come with us?",
+        "You come us yesterday?",
+        "Would you like us?"
+      ],
+      "r": 1,
+      "e": "Would you like to…? sert à inviter poliment."
+    },
+    {
+      "q": "Your little brother is crossing a busy street. What do you say?",
+      "o": [
+        "Be carefulness!",
+        "Have a careful!",
+        "Be careful!",
+        "Make carefully!"
+      ],
+      "r": 2,
+      "e": "Be careful! veut dire fais attention."
+    },
+    {
+      "q": "Your cousin has a football match tomorrow. What do you say?",
+      "o": [
+        "Good chance!",
+        "Good game you!",
+        "Lucky good!",
+        "Good luck!"
+      ],
+      "r": 3,
+      "e": "Good luck! souhaite bonne chance."
+    }
+  ]
+}

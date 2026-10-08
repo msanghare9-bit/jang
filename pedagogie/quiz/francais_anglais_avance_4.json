@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Which English expression means « joindre les deux bouts »?",
+      "o": [
+        "make ends meet",
+        "meet halfway",
+        "break even",
+        "keep one's word"
+      ],
+      "r": 0,
+      "e": "Make ends meet veut dire réussir à payer les dépenses essentielles."
+    },
+    {
+      "q": "What does « take something for granted » mean?",
+      "o": [
+        "prendre quelque chose en location",
+        "tenir quelque chose pour acquis",
+        "offrir quelque chose gratuitement",
+        "considérer quelque chose comme faux"
+      ],
+      "r": 1,
+      "e": "Take for granted veut dire tenir pour acquis."
+    },
+    {
+      "q": "Which expression means « trouver une idée ou une solution »?",
+      "o": [
+        "come across",
+        "come down with",
+        "come up with",
+        "come along"
+      ],
+      "r": 2,
+      "e": "Come up with an idea veut dire trouver une idée."
+    },
+    {
+      "q": "Which verb means « provoquer un changement »?",
+      "o": [
+        "bring along",
+        "bring up",
+        "bring back",
+        "bring about"
+      ],
+      "r": 3,
+      "e": "Bring about veut dire provoquer ou entraîner."
+    },
+    {
+      "q": "Which expression means « écarter une possibilité »?",
+      "o": [
+        "rule out",
+        "carry out",
+        "point out",
+        "work out"
+      ],
+      "r": 0,
+      "e": "Rule out veut dire écarter ou exclure une possibilité."
+    },
+    {
+      "q": "Which expression means « mener une enquête »?",
+      "o": [
+        "put off an investigation",
+        "carry out an investigation",
+        "look into an investigation",
+        "turn down an investigation"
+      ],
+      "r": 1,
+      "e": "Carry out veut dire mener ou effectuer."
+    },
+    {
+      "q": "Which expression means « expliquer les résultats »?",
+      "o": [
+        "take after the results",
+        "look forward to the results",
+        "account for the results",
+        "set aside the results"
+      ],
+      "r": 2,
+      "e": "Account for veut dire expliquer ou rendre compte de."
+    },
+    {
+      "q": "What does « be bound to happen » mean?",
+      "o": [
+        "être autorisé à arriver",
+        "être sur le point de partir",
+        "être empêché d’arriver",
+        "être certain d’arriver"
+      ],
+      "r": 3,
+      "e": "Be bound to exprime une forte certitude."
+    },
+    {
+      "q": "Which expression means « prendre en compte »?",
+      "o": [
+        "take into account",
+        "take after",
+        "take over",
+        "take apart"
+      ],
+      "r": 0,
+      "e": "Take into account veut dire prendre en compte."
+    },
+    {
+      "q": "Which expression means « ne pas atteindre un objectif »?",
+      "o": [
+        "fall in with a group",
+        "fall short of a goal",
+        "fall back on a plan",
+        "fall out with a friend"
+      ],
+      "r": 1,
+      "e": "Fall short of veut dire ne pas atteindre le niveau ou l’objectif attendu."
+    },
+    {
+      "q": "Which expression means « supporter un bruit »?",
+      "o": [
+        "put out the noise",
+        "put off the noise",
+        "put up with the noise",
+        "put through the noise"
+      ],
+      "r": 2,
+      "e": "Put up with veut dire supporter ou tolérer."
+    },
+    {
+      "q": "What does « get away with a mistake » mean?",
+      "o": [
+        "corriger une faute immédiatement",
+        "avouer une faute à quelqu’un",
+        "répéter la même faute",
+        "s’en tirer sans être puni pour une faute"
+      ],
+      "r": 3,
+      "e": "Get away with signifie ne pas être puni pour quelque chose."
+    },
+    {
+      "q": "Which expression means « mépriser quelqu’un »?",
+      "o": [
+        "look down on someone",
+        "look up to someone",
+        "look after someone",
+        "look into someone"
+      ],
+      "r": 0,
+      "e": "Look down on veut dire mépriser."
+    },
+    {
+      "q": "Which expression means « suivre le rythme d’une classe »?",
+      "o": [
+        "keep away from the class",
+        "keep up with the class",
+        "keep on with the class",
+        "keep out of the class"
+      ],
+      "r": 1,
+      "e": "Keep up with veut dire suivre le rythme de."
+    },
+    {
+      "q": "Which verb means « refuser une offre »?",
+      "o": [
+        "turn up",
+        "turn into",
+        "turn down",
+        "turn over"
+      ],
+      "r": 2,
+      "e": "Turn down une offre veut dire la refuser."
+    },
+    {
+      "q": "What does « set out to improve the service » mean?",
+      "o": [
+        "renoncer à améliorer le service",
+        "empêcher le service de fonctionner",
+        "décrire le service en détail",
+        "entreprendre d’améliorer le service"
+      ],
+      "r": 3,
+      "e": "Set out to veut dire commencer avec l’intention de faire quelque chose."
+    },
+    {
+      "q": "Which verb means « souligner un détail »?",
+      "o": [
+        "point out",
+        "point to",
+        "point at",
+        "point off"
+      ],
+      "r": 0,
+      "e": "Point out veut dire signaler ou souligner."
+    },
+    {
+      "q": "Which expression means « étayer une affirmation avec des faits »?",
+      "o": [
+        "break up a claim",
+        "back up a claim",
+        "bring up a claim",
+        "take up a claim"
+      ],
+      "r": 1,
+      "e": "Back up a claim veut dire appuyer une affirmation avec des preuves."
+    },
+    {
+      "q": "Which expression means « à long terme »?",
+      "o": [
+        "at the last minute",
+        "for the time being",
+        "in the long run",
+        "once in a while"
+      ],
+      "r": 2,
+      "e": "In the long run veut dire à long terme."
+    },
+    {
+      "q": "Which expression means « nullement »?",
+      "o": [
+        "by all means",
+        "in no time",
+        "at any rate",
+        "by no means"
+      ],
+      "r": 3,
+      "e": "By no means veut dire nullement."
+    },
+    {
+      "q": "Which expression means « au nom de l’association »?",
+      "o": [
+        "on behalf of the association",
+        "in charge of the association",
+        "in spite of the association",
+        "in search of the association"
+      ],
+      "r": 0,
+      "e": "On behalf of veut dire au nom de."
+    },
+    {
+      "q": "Which expression means « compenser une perte »?",
+      "o": [
+        "make do with a loss",
+        "make up for a loss",
+        "make off with a loss",
+        "make out a loss"
+      ],
+      "r": 1,
+      "e": "Make up for veut dire compenser."
+    },
+    {
+      "q": "Which expression means « aller jusqu’au bout d’un projet »?",
+      "o": [
+        "go over a project",
+        "go along with a project",
+        "go through with a project",
+        "go out of a project"
+      ],
+      "r": 2,
+      "e": "Go through with veut dire accomplir ce qu’on avait décidé de faire."
+    },
+    {
+      "q": "Which expression means « réduire les options à trois »?",
+      "o": [
+        "write down the options to three",
+        "turn down the options to three",
+        "break down the options to three",
+        "narrow down the options to three"
+      ],
+      "r": 3,
+      "e": "Narrow down veut dire réduire le nombre de possibilités."
+    }
+  ]
+}

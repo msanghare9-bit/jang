@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What is the closest meaning of “abundant”?",
+      "o": [
+        "narrow",
+        "plentiful",
+        "careful",
+        "weak"
+      ],
+      "r": 1,
+      "e": "Abundant means there is a lot of something; plentiful has the same meaning."
+    },
+    {
+      "q": "What is the closest meaning of “accomplish”?",
+      "o": [
+        "achieve",
+        "postpone",
+        "examine",
+        "borrow"
+      ],
+      "r": 0,
+      "e": "To accomplish something is to achieve it."
+    },
+    {
+      "q": "What is the closest meaning of “adapt”?",
+      "o": [
+        "repeat",
+        "refuse",
+        "adjust",
+        "collect"
+      ],
+      "r": 2,
+      "e": "To adapt is to adjust to a new situation."
+    },
+    {
+      "q": "What is the closest meaning of “admire”?",
+      "o": [
+        "repair",
+        "ignore",
+        "count",
+        "respect"
+      ],
+      "r": 3,
+      "e": "To admire someone is to respect them."
+    },
+    {
+      "q": "What is the closest meaning of “annual”?",
+      "o": [
+        "yearly",
+        "rare",
+        "modern",
+        "serious"
+      ],
+      "r": 0,
+      "e": "Annual means happening once every year."
+    },
+    {
+      "q": "What is the closest meaning of “apparent”?",
+      "o": [
+        "final",
+        "obvious",
+        "quiet",
+        "exact"
+      ],
+      "r": 1,
+      "e": "Apparent means easy to see or understand; obvious is close in meaning."
+    },
+    {
+      "q": "What is the closest meaning of “attempt”?",
+      "o": [
+        "delay",
+        "warn",
+        "try",
+        "rest"
+      ],
+      "r": 2,
+      "e": "An attempt is an effort to do something; to attempt is to try."
+    },
+    {
+      "q": "What is the closest meaning of “benefit”?",
+      "o": [
+        "journey",
+        "mistake",
+        "habit",
+        "advantage"
+      ],
+      "r": 3,
+      "e": "A benefit is a helpful result or an advantage."
+    },
+    {
+      "q": "What is the closest meaning of “challenge” in “Learning a new language is a challenge”?",
+      "o": [
+        "difficulty",
+        "message",
+        "building",
+        "season"
+      ],
+      "r": 0,
+      "e": "Here, a challenge is something difficult to do."
+    },
+    {
+      "q": "What is the closest meaning of “consequence”?",
+      "o": [
+        "effort",
+        "result",
+        "purpose",
+        "choice"
+      ],
+      "r": 1,
+      "e": "A consequence is a result of an action."
+    },
+    {
+      "q": "What is the closest meaning of “conserve water”?",
+      "o": [
+        "spend",
+        "divide",
+        "save",
+        "destroy"
+      ],
+      "r": 2,
+      "e": "To conserve water is to use it carefully and save it."
+    },
+    {
+      "q": "What is the closest meaning of “demonstrate”?",
+      "o": [
+        "hide",
+        "forget",
+        "borrow",
+        "show"
+      ],
+      "r": 3,
+      "e": "To demonstrate something is to show how it works."
+    },
+    {
+      "q": "What is the closest meaning of “determine”?",
+      "o": [
+        "decide",
+        "carry",
+        "return",
+        "compare"
+      ],
+      "r": 0,
+      "e": "To determine something is to decide or find it out."
+    },
+    {
+      "q": "What is the closest meaning of “encourage”?",
+      "o": [
+        "interrupt",
+        "motivate",
+        "confuse",
+        "punish"
+      ],
+      "r": 1,
+      "e": "To encourage someone is to give them confidence or motivation."
+    },
+    {
+      "q": "What is the closest meaning of “evaluate”?",
+      "o": [
+        "remove",
+        "connect",
+        "assess",
+        "borrow"
+      ],
+      "r": 2,
+      "e": "To evaluate something is to assess its quality or value."
+    },
+    {
+      "q": "What is the closest meaning of “fortunate”?",
+      "o": [
+        "patient",
+        "noisy",
+        "calm",
+        "lucky"
+      ],
+      "r": 3,
+      "e": "A fortunate person is lucky."
+    },
+    {
+      "q": "What is the closest meaning of “maintain” in “maintain a clean classroom”?",
+      "o": [
+        "keep",
+        "lose",
+        "mix",
+        "find"
+      ],
+      "r": 0,
+      "e": "Here, maintain means to keep something in good condition."
+    },
+    {
+      "q": "What is the closest meaning of “prevent”?",
+      "o": [
+        "allow",
+        "stop",
+        "repeat",
+        "mention"
+      ],
+      "r": 1,
+      "e": "To prevent something is to stop it from happening."
+    },
+    {
+      "q": "What is the closest meaning of “reliable”?",
+      "o": [
+        "distant",
+        "careless",
+        "dependable",
+        "ancient"
+      ],
+      "r": 2,
+      "e": "A reliable person or thing can be depended on."
+    },
+    {
+      "q": "What is the closest meaning of “similar”?",
+      "o": [
+        "separate",
+        "certain",
+        "narrow",
+        "alike"
+      ],
+      "r": 3,
+      "e": "Similar things are alike, but not always exactly the same."
+    },
+    {
+      "q": "What is the closest meaning of “sufficient”?",
+      "o": [
+        "enough",
+        "empty",
+        "famous",
+        "absent"
+      ],
+      "r": 0,
+      "e": "Sufficient means as much as is needed; enough means the same."
+    },
+    {
+      "q": "What is the closest meaning of “transform”?",
+      "o": [
+        "repair",
+        "change",
+        "arrive",
+        "borrow"
+      ],
+      "r": 1,
+      "e": "To transform something is to change it."
+    },
+    {
+      "q": "What is the closest meaning of “valuable”?",
+      "o": [
+        "difficult",
+        "heavy",
+        "precious",
+        "regular"
+      ],
+      "r": 2,
+      "e": "Something valuable is worth a lot or is precious."
+    },
+    {
+      "q": "What is the closest meaning of “willing” in “She is willing to help”?",
+      "o": [
+        "hidden",
+        "sudden",
+        "unfair",
+        "ready"
+      ],
+      "r": 3,
+      "e": "If she is willing, she is ready to help."
+    }
+  ]
+}

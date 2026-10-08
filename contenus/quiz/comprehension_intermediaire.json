@@ -1,0 +1,1204 @@
+{
+  "questions": [
+    {
+      "q": "What does the shared list help members do?",
+      "o": [
+        "Check which bags arrive and leave",
+        "Choose a school subject",
+        "Repair the storage roof",
+        "Find a bus timetable"
+      ],
+      "r": 0,
+      "t": "A cooperative in Kaolack began sharing a storage room for millet. Members record each bag when it arrives and check the list before taking grain home. The arrangement has reduced confusion during the busy harvest period.",
+      "e": "Members record bags and check the list."
+    },
+    {
+      "q": "When is the arrangement especially useful?",
+      "o": [
+        "During the school holidays only",
+        "During the harvest period",
+        "At the end of every lesson",
+        "When the market is closed"
+      ],
+      "r": 1,
+      "t": "A cooperative in Kaolack began sharing a storage room for millet. Members record each bag when it arrives and check the list before taking grain home. The arrangement has reduced confusion during the busy harvest period.",
+      "e": "The text says it helps during the busy harvest period."
+    },
+    {
+      "q": "Why was another bus trip added?",
+      "o": [
+        "The school moved to another town",
+        "Students asked for a later exam",
+        "The first bus was often full",
+        "The road was closed every morning"
+      ],
+      "r": 2,
+      "t": "The morning bus from Rufisque was often full, so the transport office added another trip at half past seven. Students who used the later bus were asked to show their school cards. After a month, fewer students arrived after the first lesson.",
+      "e": "The first bus did not have enough space."
+    },
+    {
+      "q": "What happened after a month?",
+      "o": [
+        "The school cancelled its first lesson",
+        "The bus stopped running",
+        "More students missed the bus",
+        "Fewer students arrived late"
+      ],
+      "r": 3,
+      "t": "The morning bus from Rufisque was often full, so the transport office added another trip at half past seven. Students who used the later bus were asked to show their school cards. After a month, fewer students arrived after the first lesson.",
+      "e": "The text says fewer students arrived after the first lesson."
+    },
+    {
+      "q": "What was the main purpose of appointment cards?",
+      "o": [
+        "To reduce waiting",
+        "To replace the nurses",
+        "To close the clinic earlier",
+        "To give patients medicine at home"
+      ],
+      "r": 0,
+      "t": "A clinic introduced appointment cards to reduce waiting. Patients could still come without a card, but they might have to wait longer. Nurses asked people to arrive ten minutes before their appointment.",
+      "e": "The cards were introduced to reduce waiting."
+    },
+    {
+      "q": "When should patients arrive?",
+      "o": [
+        "An hour after the appointment",
+        "Ten minutes early",
+        "At the end of the day",
+        "Only when the nurse calls"
+      ],
+      "r": 1,
+      "t": "A clinic introduced appointment cards to reduce waiting. Patients could still come without a card, but they might have to wait longer. Nurses asked people to arrive ten minutes before their appointment.",
+      "e": "The notice asks patients to arrive ten minutes before."
+    },
+    {
+      "q": "Where will the club meet?",
+      "o": [
+        "In the library",
+        "In the school yard",
+        "In Room 12",
+        "At the clinic"
+      ],
+      "r": 2,
+      "t": "The science club will meet in Room 12 on Thursday. Members will build simple water filters using sand, stones and cloth. They should bring a clean plastic bottle, but the club will provide the other materials.",
+      "e": "The notice says the meeting is in Room 12."
+    },
+    {
+      "q": "What should members bring?",
+      "o": [
+        "Sand and stones from home",
+        "A new water filter",
+        "A glass of water",
+        "A clean plastic bottle"
+      ],
+      "r": 3,
+      "t": "The science club will meet in Room 12 on Thursday. Members will build simple water filters using sand, stones and cloth. They should bring a clean plastic bottle, but the club will provide the other materials.",
+      "e": "The club asks each member to bring a clean bottle."
+    },
+    {
+      "q": "Why did the farmers delay planting?",
+      "o": [
+        "The soil was too dry",
+        "They had no seeds at all",
+        "The fields were under water",
+        "They were waiting for a market"
+      ],
+      "r": 0,
+      "t": "After two weeks without rain, the farmers delayed planting their groundnuts. They waited for the soil to become wet enough. When the rain finally came, they planted together and shared the work.",
+      "e": "They waited until the soil was wet enough."
+    },
+    {
+      "q": "How did they plant after the rain?",
+      "o": [
+        "Each farmer planted in a different country",
+        "They worked together",
+        "They asked the school to do it",
+        "They planted only at night"
+      ],
+      "r": 1,
+      "t": "After two weeks without rain, the farmers delayed planting their groundnuts. They waited for the soil to become wet enough. When the rain finally came, they planted together and shared the work.",
+      "e": "The text says they planted together and shared the work."
+    },
+    {
+      "q": "What did the team practise on Tuesday?",
+      "o": [
+        "Shooting",
+        "Running a market",
+        "Passing",
+        "Keeping score"
+      ],
+      "r": 2,
+      "t": "The team practised passing on Tuesday and shooting on Thursday. Their coach recorded each player’s progress. On Saturday, they played a match, but the coach reminded them that teamwork mattered more than the score.",
+      "e": "Passing was Tuesday’s focus."
+    },
+    {
+      "q": "What did the coach say mattered most?",
+      "o": [
+        "The final score",
+        "New uniforms",
+        "The length of practice",
+        "Teamwork"
+      ],
+      "r": 3,
+      "t": "The team practised passing on Tuesday and shooting on Thursday. Their coach recorded each player’s progress. On Saturday, they played a match, but the coach reminded them that teamwork mattered more than the score.",
+      "e": "The coach said teamwork mattered more than the score."
+    },
+    {
+      "q": "How long may a member first keep a book?",
+      "o": [
+        "Fourteen days",
+        "Seven days",
+        "One month",
+        "One year"
+      ],
+      "r": 0,
+      "t": "A library member may keep a book for fourteen days. If nobody else has requested it, the member can renew it once. Books must be returned during opening hours, even when the front door is busy.",
+      "e": "The rule allows fourteen days."
+    },
+    {
+      "q": "When can a member renew a book?",
+      "o": [
+        "Only after losing it",
+        "When nobody else has requested it",
+        "Every day",
+        "When the library is closed"
+      ],
+      "r": 1,
+      "t": "A library member may keep a book for fourteen days. If nobody else has requested it, the member can renew it once. Books must be returned during opening hours, even when the front door is busy.",
+      "e": "Renewal is allowed if there is no other request."
+    },
+    {
+      "q": "Why could the tomato price change?",
+      "o": [
+        "The baskets changed colour",
+        "The market opened only once",
+        "The supply changed from day to day",
+        "Awa changed the sign"
+      ],
+      "r": 2,
+      "t": "At the market, a sign showed the price of tomatoes per basket. The seller explained that the price could change during the week because the supply was different each day. Awa compared two stalls before buying.",
+      "e": "The seller linked changing prices to changing supply."
+    },
+    {
+      "q": "What did Awa do before buying?",
+      "o": [
+        "Changed the tomatoes herself",
+        "Went home without looking",
+        "Asked the bus driver",
+        "Compared two stalls"
+      ],
+      "r": 3,
+      "t": "At the market, a sign showed the price of tomatoes per basket. The seller explained that the price could change during the week because the supply was different each day. Awa compared two stalls before buying.",
+      "e": "She compared two stalls."
+    },
+    {
+      "q": "Why did pupils use different boxes?",
+      "o": [
+        "To sort materials for recycling",
+        "To store their homework",
+        "To keep the classroom dark",
+        "To hide the school books"
+      ],
+      "r": 0,
+      "t": "Pupils placed paper, metal and plastic in different boxes. Their teacher said this makes recycling easier because each material can be sorted separately. They agreed to empty the boxes every Friday.",
+      "e": "Separate boxes make sorting easier."
+    },
+    {
+      "q": "When will they empty the boxes?",
+      "o": [
+        "Every morning",
+        "Every Friday",
+        "At the end of the year",
+        "Only when it rains"
+      ],
+      "r": 1,
+      "t": "Pupils placed paper, metal and plastic in different boxes. Their teacher said this makes recycling easier because each material can be sorted separately. They agreed to empty the boxes every Friday.",
+      "e": "They agreed to empty them each Friday."
+    },
+    {
+      "q": "Where does the tank water come from?",
+      "o": [
+        "A nearby ocean",
+        "Bottles from the market",
+        "Rainwater from the roof",
+        "A river under the school"
+      ],
+      "r": 2,
+      "t": "The school garden has a small tank that collects rainwater from the roof. Pupils use this water for young plants when the weather is dry. A teacher checks the tank each week to make sure it is clean.",
+      "e": "The tank collects rainwater from the roof."
+    },
+    {
+      "q": "Who checks the tank?",
+      "o": [
+        "The bus driver",
+        "A shopkeeper",
+        "A visitor",
+        "A teacher"
+      ],
+      "r": 3,
+      "t": "The school garden has a small tank that collects rainwater from the roof. Pupils use this water for young plants when the weather is dry. A teacher checks the tank each week to make sure it is clean.",
+      "e": "A teacher checks it each week."
+    },
+    {
+      "q": "When did the group need to charge the lamps?",
+      "o": [
+        "During the day",
+        "Only at midnight",
+        "Under water",
+        "Inside a closed cupboard"
+      ],
+      "r": 0,
+      "t": "A group tested solar lamps at home for one month. They found the lamps useful during power cuts, but they needed to charge them in sunlight during the day. The group shared its notes with other families.",
+      "e": "The lamps charge in sunlight during the day."
+    },
+    {
+      "q": "Why did families find the lamps useful?",
+      "o": [
+        "They replaced every household tool",
+        "They worked during power cuts",
+        "They produced rain",
+        "They made the rooms colder"
+      ],
+      "r": 1,
+      "t": "A group tested solar lamps at home for one month. They found the lamps useful during power cuts, but they needed to charge them in sunlight during the day. The group shared its notes with other families.",
+      "e": "The text says they were useful during power cuts."
+    },
+    {
+      "q": "How long did the group review vocabulary?",
+      "o": [
+        "Ten minutes",
+        "One hour",
+        "Twenty minutes",
+        "Two days"
+      ],
+      "r": 2,
+      "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
+      "e": "The text gives twenty minutes."
+    },
+    {
+      "q": "How did learners help each other?",
+      "o": [
+        "They copied every answer",
+        "They cancelled the test",
+        "They left the room",
+        "They explained difficult words"
+      ],
+      "r": 3,
+      "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
+      "e": "Each learner explained one difficult word."
+    },
+    {
+      "q": "Where did the group start the library?",
+      "o": [
+        "In a room at the community centre",
+        "At the bus station",
+        "Inside a hospital",
+        "On a school roof"
+      ],
+      "r": 0,
+      "e": "The passage says the library uses an unused community-centre room.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "How do volunteers record each loan?",
+      "o": [
+        "They send a radio message.",
+        "They write it in a notebook.",
+        "They paint a mark on each book.",
+        "They keep the information in a box."
+      ],
+      "r": 1,
+      "e": "The volunteers write each loan in a notebook.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "How long may a reader first keep a book?",
+      "o": [
+        "One day",
+        "One month",
+        "Two weeks",
+        "One year"
+      ],
+      "r": 2,
+      "e": "A reader may keep a book for two weeks.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "When does the library open?",
+      "o": [
+        "Every Monday morning",
+        "On Friday nights",
+        "Only during holidays",
+        "Every Saturday afternoon"
+      ],
+      "r": 3,
+      "e": "The group opens every Saturday afternoon.",
+      "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon."
+    },
+    {
+      "q": "Why did pupils and parents lay stones on the path?",
+      "o": [
+        "To make the muddy path easier to use",
+        "To build a wall around the school",
+        "To stop pupils from walking",
+        "To mark a football field"
+      ],
+      "r": 0,
+      "e": "They laid stones to improve the muddy footpath.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "Who helped collect the stones?",
+      "o": [
+        "Only visitors",
+        "Pupils and parents",
+        "Bus drivers and shopkeepers",
+        "The school cooks"
+      ],
+      "r": 1,
+      "e": "The passage says pupils and parents collected stones.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "Why did they leave a gap near the tree?",
+      "o": [
+        "So a bus could pass",
+        "So they could plant a new tree",
+        "So rainwater could flow",
+        "So the path would become longer"
+      ],
+      "r": 2,
+      "e": "The gap allowed rainwater to flow.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "When was the route easier to use?",
+      "o": [
+        "Before the rain",
+        "The same morning",
+        "One year later",
+        "The following week"
+      ],
+      "r": 3,
+      "e": "The passage says the route was easier the following week.",
+      "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week."
+    },
+    {
+      "q": "Where did members put the notice?",
+      "o": [
+        "Beside the weighing scale",
+        "At the school gate",
+        "Inside a fishing boat",
+        "Near the bus station"
+      ],
+      "r": 0,
+      "e": "The notice was placed beside the scale.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "What information did the notice show?",
+      "o": [
+        "The names of every visitor",
+        "Prices and the checker’s name",
+        "The weather for the month",
+        "A list of school lessons"
+      ],
+      "r": 1,
+      "e": "It showed the day's prices and who checked each catch.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "When did the group discuss the notice?",
+      "o": [
+        "Before opening the cooperative",
+        "Every morning at sunrise",
+        "At the end of the week",
+        "After the next fishing season"
+      ],
+      "r": 2,
+      "e": "They discussed it at the end of the week.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "What could new members do before selling?",
+      "o": [
+        "Change every price themselves",
+        "Take the weighing scale home",
+        "Choose a different cooperative",
+        "Ask questions"
+      ],
+      "r": 3,
+      "e": "New members could ask questions before selling.",
+      "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read."
+    },
+    {
+      "q": "Why did Awa take a raincoat?",
+      "o": [
+        "She heard that rain might come.",
+        "She wanted to lend it to a teacher.",
+        "The sky was very hot.",
+        "Her brother asked her to buy one."
+      ],
+      "r": 0,
+      "e": "The forecast warned that rain was possible.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "What did Awa check?",
+      "o": [
+        "A school timetable",
+        "A radio weather report",
+        "A list of bus tickets",
+        "A message about a football match"
+      ],
+      "r": 1,
+      "e": "She checked a weather report on the radio.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "What happened before noon?",
+      "o": [
+        "The sun became very hot.",
+        "Awa lost her raincoat.",
+        "It rained.",
+        "The class was cancelled."
+      ],
+      "r": 2,
+      "e": "The passage says it rained before noon.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "How did her brother stay dry?",
+      "o": [
+        "He stayed at home all day.",
+        "He wore Awa’s shoes.",
+        "He listened to a lesson on the radio.",
+        "He borrowed an umbrella from a neighbour."
+      ],
+      "r": 3,
+      "e": "He borrowed an umbrella from a neighbour.",
+      "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour."
+    },
+    {
+      "q": "Why did the garden use two containers?",
+      "o": [
+        "To compare rainwater and tap water",
+        "To store two kinds of seeds",
+        "To keep the plants in the dark",
+        "To collect water for cooking"
+      ],
+      "r": 0,
+      "e": "One container held rainwater and the other tap water.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "What did learners measure?",
+      "o": [
+        "The height of the school wall",
+        "The amount of water used",
+        "The number of school books",
+        "The price of each plant"
+      ],
+      "r": 1,
+      "e": "They measured water use each Friday.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "When did learners measure the water?",
+      "o": [
+        "Every Monday evening",
+        "At the start of the year only",
+        "Each Friday",
+        "After each school holiday"
+      ],
+      "r": 2,
+      "e": "The passage says they measured it each Friday.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "How did the results help the learners?",
+      "o": [
+        "They could stop growing plants.",
+        "They could change the school calendar.",
+        "They could sell the containers.",
+        "They could plan for the dry months."
+      ],
+      "r": 3,
+      "e": "The results helped with planning for the dry months.",
+      "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months."
+    },
+    {
+      "q": "How long did each group practise speaking?",
+      "o": [
+        "Three minutes",
+        "One minute",
+        "Ten minutes",
+        "Half an hour"
+      ],
+      "r": 0,
+      "e": "Each group practised for three minutes.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "What did one student do during practice?",
+      "o": [
+        "Marked the classroom floor",
+        "Watched the clock",
+        "Read the next chapter",
+        "Collected lunch money"
+      ],
+      "r": 1,
+      "e": "One student watched the clock.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "What were the two suggestions about?",
+      "o": [
+        "Clothing and handwriting",
+        "Travel and transport",
+        "Voice and clear examples",
+        "Food and exercise"
+      ],
+      "r": 2,
+      "e": "The feedback concerned voice and examples.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "When should learners use the feedback?",
+      "o": [
+        "Only at the end of the year",
+        "Before choosing a group",
+        "During the lunch break",
+        "In their next presentation"
+      ],
+      "r": 3,
+      "e": "The teacher asked them to use it in their next talk.",
+      "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk."
+    },
+    {
+      "q": "What did Awa do?",
+      "o": [
+        "bought rice and tomatoes",
+        "practised a short speech",
+        "visited her grandmother",
+        "made a poster about handwashing"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Awa bought rice and tomatoes.",
+      "t": "Awa bought rice and tomatoes at the market on Saturday morning, because her aunt was preparing lunch.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Moussa do it?",
+      "o": [
+        "from his English teacher",
+        "beside his house",
+        "to the community garden",
+        "at a shop near school"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action beside his house.",
+      "t": "Moussa repaired a bicycle tyre beside his house after school, because his friend needed to ride home.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Fatou do it?",
+      "o": [
+        "on Sunday evening",
+        "after the science fair",
+        "before the final bell",
+        "on Friday evening"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : before the final bell.",
+      "t": "Fatou returned two library books to the school library before the final bell, because the books were due that day.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Idrissa do it?",
+      "o": [
+        "his class was recycling plastic",
+        "the road was blocked by a delivery truck",
+        "his class was planning where to plant seeds",
+        "the school garden needed more shade"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the school garden needed more shade.",
+      "t": "Idrissa planted six young trees behind the classroom on Thursday afternoon, because the school garden needed more shade.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Mariama do?",
+      "o": [
+        "practised a short speech",
+        "visited her grandmother",
+        "made a poster about handwashing",
+        "prepared a fruit salad"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Mariama practised a short speech.",
+      "t": "Mariama practised a short speech in the assembly hall before classes began, because she was speaking at the school meeting.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Cheikh do it?",
+      "o": [
+        "to the community garden",
+        "from his English teacher",
+        "at a shop near school",
+        "under a bench"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action from his English teacher.",
+      "t": "Cheikh borrowed a dictionary from his English teacher during the reading lesson, because he wanted to check a new word.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Ndeye do it?",
+      "o": [
+        "after the science fair",
+        "on Friday evening",
+        "on Sunday evening",
+        "after lunch"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : on Sunday evening.",
+      "t": "Ndeye washed the football shirts at home on Sunday evening, because the team had a match the next day.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Pape do it?",
+      "o": [
+        "the road was blocked by a delivery truck",
+        "his class was planning where to plant seeds",
+        "he wanted to confirm their meeting time",
+        "his class was recycling plastic"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : his class was recycling plastic.",
+      "t": "Pape collected clean bottles near the sports field after the match, because his class was recycling plastic.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Bineta do?",
+      "o": [
+        "visited her grandmother",
+        "made a poster about handwashing",
+        "prepared a fruit salad",
+        "cleaned the classroom windows"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Bineta visited her grandmother.",
+      "t": "Bineta visited her grandmother in the next village during the school holiday, because she had not seen her for months.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Omar do it?",
+      "o": [
+        "at a shop near school",
+        "to the community garden",
+        "under a bench",
+        "at the bookshop"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action to the community garden.",
+      "t": "Omar helped carry the water cans to the community garden early on Tuesday, because the volunteers were watering vegetables.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Sokhna do it?",
+      "o": [
+        "on Friday evening",
+        "after lunch",
+        "after the science fair",
+        "at half past four"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after the science fair.",
+      "t": "Sokhna wrote a thank-you note in her classroom after the science fair, because her group had received help.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Lamine do it?",
+      "o": [
+        "his class was planning where to plant seeds",
+        "he wanted to confirm their meeting time",
+        "she wanted to know if it would rain",
+        "the road was blocked by a delivery truck"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : the road was blocked by a delivery truck.",
+      "t": "Lamine missed the first bus at the bus stop just after six, because the road was blocked by a delivery truck.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Aminata do?",
+      "o": [
+        "made a poster about handwashing",
+        "prepared a fruit salad",
+        "cleaned the classroom windows",
+        "bought rice and tomatoes"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Aminata made a poster about handwashing.",
+      "t": "Aminata made a poster about handwashing for the health club on Wednesday afternoon, because the club was planning an awareness day.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Boubacar do it?",
+      "o": [
+        "under a bench",
+        "at a shop near school",
+        "at the bookshop",
+        "beside his house"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action at a shop near school.",
+      "t": "Boubacar bought a notebook and two pens at a shop near school during the lunch break, because he had used the last page of his notebook.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Khady do it?",
+      "o": [
+        "after lunch",
+        "at half past four",
+        "on Friday evening",
+        "before the final bell"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : on Friday evening.",
+      "t": "Khady read a story aloud to her younger cousins on Friday evening, because they wanted to hear a new story.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Mamadou do it?",
+      "o": [
+        "he wanted to confirm their meeting time",
+        "she wanted to know if it would rain",
+        "the school garden needed more shade",
+        "his class was planning where to plant seeds"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : his class was planning where to plant seeds.",
+      "t": "Mamadou measured the garden beds with a tape measure before the rain, because his class was planning where to plant seeds.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Rokhaya do?",
+      "o": [
+        "prepared a fruit salad",
+        "cleaned the classroom windows",
+        "bought rice and tomatoes",
+        "practised a short speech"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Rokhaya prepared a fruit salad.",
+      "t": "Rokhaya prepared a fruit salad in the school kitchen after the cooking lesson, because her group was sharing a healthy snack.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Alioune do it?",
+      "o": [
+        "at the bookshop",
+        "under a bench",
+        "beside his house",
+        "from his English teacher"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action under a bench.",
+      "t": "Alioune found a lost key under a bench during the football practice, because he wanted to return it to its owner.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Coumba do it?",
+      "o": [
+        "at half past four",
+        "before the final bell",
+        "after lunch",
+        "on Sunday evening"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : after lunch.",
+      "t": "Coumba asked the librarian for help at the reading desk after lunch, because she could not find the history book.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Samba do it?",
+      "o": [
+        "she wanted to know if it would rain",
+        "the school garden needed more shade",
+        "his class was recycling plastic",
+        "he wanted to confirm their meeting time"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : he wanted to confirm their meeting time.",
+      "t": "Samba sent a message to his cousin from the family house in the evening, because he wanted to confirm their meeting time.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "What did Adama do?",
+      "o": [
+        "cleaned the classroom windows",
+        "bought rice and tomatoes",
+        "practised a short speech",
+        "visited her grandmother"
+      ],
+      "r": 0,
+      "e": "Le passage dit que Adama cleaned the classroom windows.",
+      "t": "Adama cleaned the classroom windows with two classmates on Friday afternoon, because their class was welcoming visitors.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Where did Diarra do it?",
+      "o": [
+        "beside his house",
+        "at the bookshop",
+        "from his English teacher",
+        "to the community garden"
+      ],
+      "r": 1,
+      "e": "Le passage situe l’action at the bookshop.",
+      "t": "Diarra chose a blue folder at the bookshop before the new term, because she needed a place for her notes.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "When did Ibrahima do it?",
+      "o": [
+        "before the final bell",
+        "on Sunday evening",
+        "at half past four",
+        "after the science fair"
+      ],
+      "r": 2,
+      "e": "Le passage précise le moment : at half past four.",
+      "t": "Ibrahima waited for his sister outside the clinic at half past four, because they were going home together.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Why did Aïssatou do it?",
+      "o": [
+        "the school garden needed more shade",
+        "his class was recycling plastic",
+        "the road was blocked by a delivery truck",
+        "she wanted to know if it would rain"
+      ],
+      "r": 3,
+      "e": "Le passage donne cette raison : she wanted to know if it would rain.",
+      "t": "Aïssatou checked the weather report on the radio before leaving home, because she wanted to know if it would rain.",
+      "d": "comprehension",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Which trees did the pupils choose?",
+      "o": [
+        "Local trees",
+        "Fruit trees from Europe",
+        "Very tall palm trees",
+        "Trees that need daily water"
+      ],
+      "r": 0,
+      "e": "Le texte précise qu’ils ont choisi des arbres locaux.",
+      "t": "Awa’s school club planted trees near the football field. The pupils chose local trees because they need less water. They made a watering schedule for the first month. Awa’s group waters the trees every Tuesday."
+    },
+    {
+      "q": "When does Awa’s group water the trees?",
+      "o": [
+        "Every morning",
+        "Every Tuesday",
+        "Only on Sunday",
+        "Once a month"
+      ],
+      "r": 1,
+      "e": "Le groupe d’Awa arrose les arbres chaque mardi.",
+      "t": "Awa’s school club planted trees near the football field. The pupils chose local trees because they need less water. They made a watering schedule for the first month. Awa’s group waters the trees every Tuesday."
+    },
+    {
+      "q": "Why was Mamadou’s bus delayed?",
+      "o": [
+        "A broken bridge",
+        "A school meeting",
+        "Heavy rain",
+        "A missing ticket"
+      ],
+      "r": 2,
+      "e": "La pluie forte a retardé le bus.",
+      "t": "Mamadou’s bus to Saint-Louis was delayed by heavy rain. He sent a message to his aunt and waited inside the station. When the bus arrived, he checked the number before getting on. He reached his aunt’s house before dinner."
+    },
+    {
+      "q": "What did Mamadou check before boarding?",
+      "o": [
+        "The weather report",
+        "His aunt’s address",
+        "The station clock",
+        "The bus number"
+      ],
+      "r": 3,
+      "e": "Il a vérifié le numéro du bus.",
+      "t": "Mamadou’s bus to Saint-Louis was delayed by heavy rain. He sent a message to his aunt and waited inside the station. When the bus arrived, he checked the number before getting on. He reached his aunt’s house before dinner."
+    },
+    {
+      "q": "Why did Fatou choose the more expensive basket?",
+      "o": [
+        "The oranges were fresh",
+        "It was the largest basket",
+        "The seller was her friend",
+        "It had fewer oranges"
+      ],
+      "r": 0,
+      "e": "Elle a choisi les fruits frais.",
+      "t": "At the market, Fatou compared the prices of two baskets of oranges. One basket was cheaper, but several oranges were damaged. She chose the other basket because the fruit was fresh. The seller gave her a small discount."
+    },
+    {
+      "q": "What does “damaged” mean in this text?",
+      "o": [
+        "Very sweet",
+        "Hurt or spoiled",
+        "Newly picked",
+        "Difficult to carry"
+      ],
+      "r": 1,
+      "e": "Damaged veut dire abîmé.",
+      "t": "At the market, Fatou compared the prices of two baskets of oranges. One basket was cheaper, but several oranges were damaged. She chose the other basket because the fruit was fresh. The seller gave her a small discount."
+    },
+    {
+      "q": "Until what day may students borrow books?",
+      "o": [
+        "Monday",
+        "Wednesday",
+        "Friday",
+        "Sunday"
+      ],
+      "r": 2,
+      "e": "Les élèves peuvent emprunter des livres jusqu’à vendredi.",
+      "t": "The school library closes at five, but students may borrow books until Friday. They write their names and the book title in a notebook. A student who returns a book late must speak to the librarian. Mariama borrowed a story about the sea."
+    },
+    {
+      "q": "What must a student do after returning a book late?",
+      "o": [
+        "Buy another book",
+        "Write a new story",
+        "Stay after school",
+        "Speak to the librarian"
+      ],
+      "r": 3,
+      "e": "Le texte dit qu’il faut parler à la bibliothécaire.",
+      "t": "The school library closes at five, but students may borrow books until Friday. They write their names and the book title in a notebook. A student who returns a book late must speak to the librarian. Mariama borrowed a story about the sea."
+    },
+    {
+      "q": "Why should people close the well cover?",
+      "o": [
+        "To keep dust and insects out",
+        "To make the water warmer",
+        "To stop the well from getting deeper",
+        "To help the well dry"
+      ],
+      "r": 0,
+      "e": "Le couvercle protège l’eau de la poussière et des insectes.",
+      "t": "During the dry season, a village committee repaired a well. The work took three days, and families brought water in clean containers. The committee asked everyone to close the well cover after use. This helps keep dust and insects out."
+    },
+    {
+      "q": "How long did the repair work take?",
+      "o": [
+        "One week",
+        "Three days",
+        "One morning",
+        "Two months"
+      ],
+      "r": 1,
+      "e": "Les réparations ont duré trois jours.",
+      "t": "During the dry season, a village committee repaired a well. The work took three days, and families brought water in clean containers. The committee asked everyone to close the well cover after use. This helps keep dust and insects out."
+    },
+    {
+      "q": "What did Aminata do with new words?",
+      "o": [
+        "She translated the whole programme",
+        "She taught them on the radio",
+        "She used them in sentences",
+        "She forgot them after listening"
+      ],
+      "r": 2,
+      "e": "Elle écrivait les mots puis les utilisait dans des phrases.",
+      "t": "Aminata wanted to practise English, so she listened to a short radio programme each evening. She wrote down three new words and used them in sentences. After two weeks, she could understand more of the programme. She still asked her teacher about difficult words."
+    },
+    {
+      "q": "How did her listening change after two weeks?",
+      "o": [
+        "She stopped listening",
+        "She understood less",
+        "She changed the radio station",
+        "She understood more"
+      ],
+      "r": 3,
+      "e": "Après deux semaines, elle comprenait davantage.",
+      "t": "Aminata wanted to practise English, so she listened to a short radio programme each evening. She wrote down three new words and used them in sentences. After two weeks, she could understand more of the programme. She still asked her teacher about difficult words."
+    },
+    {
+      "q": "What did the players do before warming up?",
+      "o": [
+        "They drank water and stretched",
+        "They ate a large meal",
+        "They changed the referee",
+        "They watched another match"
+      ],
+      "r": 0,
+      "e": "Le coach leur a demandé de boire et de s’étirer.",
+      "t": "A football team arrived early for its match. The coach asked the players to drink water and stretch before warming up. The match began at four o’clock. Their goalkeeper saved a penalty in the second half."
+    },
+    {
+      "q": "When did the goalkeeper save a penalty?",
+      "o": [
+        "Before the match",
+        "In the second half",
+        "At half past four",
+        "After the final whistle"
+      ],
+      "r": 1,
+      "e": "Le texte dit que c’était pendant la deuxième mi-temps.",
+      "t": "A football team arrived early for its match. The coach asked the players to drink water and stretch before warming up. The match began at four o’clock. Their goalkeeper saved a penalty in the second half."
+    },
+    {
+      "q": "What did the health worker demonstrate?",
+      "o": [
+        "How to prepare lunch",
+        "How to clean the classroom",
+        "How to wash hands",
+        "How to write a poster"
+      ],
+      "r": 2,
+      "e": "Elle a montré comment se laver les mains.",
+      "t": "The health worker visited the school to talk about handwashing. She showed the pupils how to use soap and clean water. A poster near the classroom sink reminds them to wash before eating. The pupils made a song to remember the steps."
+    },
+    {
+      "q": "When does the poster remind pupils to wash?",
+      "o": [
+        "After sleeping",
+        "Before playing football",
+        "After reading",
+        "Before eating"
+      ],
+      "r": 3,
+      "e": "L’affiche rappelle de se laver avant de manger.",
+      "t": "The health worker visited the school to talk about handwashing. She showed the pupils how to use soap and clean water. A poster near the classroom sink reminds them to wash before eating. The pupils made a song to remember the steps."
+    },
+    {
+      "q": "What did the farmer plant?",
+      "o": [
+        "Millet",
+        "Rice",
+        "Onions",
+        "Cotton"
+      ],
+      "r": 0,
+      "e": "Le texte indique qu’il a planté du millet.",
+      "t": "A farmer planted millet after the first good rain. He removed weeds by hand and checked the field each week. His daughter helped count the rows. They planned to store the harvest in dry bags."
+    },
+    {
+      "q": "How often did he check the field?",
+      "o": [
+        "Every day",
+        "Each week",
+        "Once a season",
+        "Only after harvest"
+      ],
+      "r": 1,
+      "e": "Il vérifiait le champ chaque semaine.",
+      "t": "A farmer planted millet after the first good rain. He removed weeds by hand and checked the field each week. His daughter helped count the rows. They planned to store the harvest in dry bags."
+    },
+    {
+      "q": "Where did Ousmane take the wallet?",
+      "o": [
+        "To the bus driver",
+        "To his home",
+        "To the information desk",
+        "To the market"
+      ],
+      "r": 2,
+      "e": "Il a apporté le portefeuille au bureau d’information.",
+      "t": "At the bus station, Ousmane saw a wallet on a bench. He took it to the information desk instead of keeping it. The worker checked for an identification card and called the owner. The owner returned later to thank Ousmane."
+    },
+    {
+      "q": "Why could the worker call the owner?",
+      "o": [
+        "Ousmane knew the owner",
+        "The wallet had a phone",
+        "The owner was on the bus",
+        "There was an identification card"
+      ],
+      "r": 3,
+      "e": "La carte d’identité permettait de contacter le propriétaire.",
+      "t": "At the bus station, Ousmane saw a wallet on a bench. He took it to the information desk instead of keeping it. The worker checked for an identification card and called the owner. The owner returned later to thank Ousmane."
+    },
+    {
+      "q": "What difference did the class test?",
+      "o": [
+        "How often the plants received water",
+        "How much sunlight the room received",
+        "Which plant had larger leaves",
+        "Which soil was darker"
+      ],
+      "r": 0,
+      "e": "La fréquence de l’arrosage changeait.",
+      "t": "The science class placed two plants near a window. One plant received water every day, while the other received water only once a week. After several weeks, the daily-water plant was taller. The class recorded the changes in a table."
+    },
+    {
+      "q": "Which plant became taller?",
+      "o": [
+        "The one watered weekly",
+        "The one watered every day",
+        "Both stayed the same height",
+        "The one kept outside"
+      ],
+      "r": 1,
+      "e": "La plante arrosée chaque jour était plus haute.",
+      "t": "The science class placed two plants near a window. One plant received water every day, while the other received water only once a week. After several weeks, the daily-water plant was taller. The class recorded the changes in a table."
+    },
+    {
+      "q": "Why did Binta pack a notebook?",
+      "o": [
+        "To draw a bus map",
+        "To give it to the museum",
+        "To write down interesting objects",
+        "To record the weather"
+      ],
+      "r": 2,
+      "e": "Elle voulait noter les objets intéressants.",
+      "t": "Before the school trip, Binta packed a hat, a water bottle and a notebook. Her teacher asked everyone to stay with a partner at the museum. Binta wrote down the names of three objects she found interesting. She shared her notes with the class the next day."
+    },
+    {
+      "q": "What rule did the teacher give at the museum?",
+      "o": [
+        "Do not bring water",
+        "Write on the objects",
+        "Leave before the group",
+        "Stay with a partner"
+      ],
+      "r": 3,
+      "e": "La consigne était de rester avec un camarade.",
+      "t": "Before the school trip, Binta packed a hat, a water bottle and a notebook. Her teacher asked everyone to stay with a partner at the museum. Binta wrote down the names of three objects she found interesting. She shared her notes with the class the next day."
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "In “Moussa gave a quick answer,” which word is closest to quick?",
+      "o": [
+        "fast",
+        "slow",
+        "careful",
+        "late"
+      ],
+      "r": 0,
+      "e": "Quick veut dire fast : rapide."
+    },
+    {
+      "q": "In “Awa felt glad after the good news,” which word is closest to glad?",
+      "o": [
+        "worried",
+        "happy",
+        "angry",
+        "tired"
+      ],
+      "r": 1,
+      "e": "Glad veut dire happy : contente."
+    },
+    {
+      "q": "In “They live in a tiny house,” which phrase is closest to tiny?",
+      "o": [
+        "very old",
+        "very clean",
+        "very small",
+        "very tall"
+      ],
+      "r": 2,
+      "e": "Tiny veut dire very small : très petit."
+    },
+    {
+      "q": "In “We begin the lesson at eight,” which word can replace begin?",
+      "o": [
+        "repeat",
+        "leave",
+        "forget",
+        "start"
+      ],
+      "r": 3,
+      "e": "Begin et start veulent dire commencer."
+    },
+    {
+      "q": "In “Please finish your work before lunch,” which word is closest to finish?",
+      "o": [
+        "complete",
+        "copy",
+        "check",
+        "continue"
+      ],
+      "r": 0,
+      "e": "Finish veut dire complete : terminer."
+    },
+    {
+      "q": "In “This exercise is easy,” which word is closest to easy?",
+      "o": [
+        "long",
+        "simple",
+        "useful",
+        "difficult"
+      ],
+      "r": 1,
+      "e": "Easy veut dire simple : facile."
+    },
+    {
+      "q": "In “Can you help me carry this bag?”, which word is closest to help?",
+      "o": [
+        "ask",
+        "watch",
+        "assist",
+        "follow"
+      ],
+      "r": 2,
+      "e": "Help veut dire assist : aider."
+    },
+    {
+      "q": "In “The mechanic will repair the bike,” which word is closest to repair?",
+      "o": [
+        "borrow",
+        "break",
+        "sell",
+        "fix"
+      ],
+      "r": 3,
+      "e": "Repair veut dire fix : réparer."
+    },
+    {
+      "q": "In “Our school is near the market,” which word is closest to near?",
+      "o": [
+        "close",
+        "behind",
+        "above",
+        "outside"
+      ],
+      "r": 0,
+      "e": "Near veut dire close : proche."
+    },
+    {
+      "q": "In “He was angry about the broken phone,” which word is closest to angry?",
+      "o": [
+        "calm",
+        "mad",
+        "proud",
+        "shy"
+      ],
+      "r": 1,
+      "e": "Angry veut dire mad : en colère."
+    },
+    {
+      "q": "In “Fatou is a clever student,” which word is closest to clever?",
+      "o": [
+        "lazy",
+        "quiet",
+        "smart",
+        "honest"
+      ],
+      "r": 2,
+      "e": "Clever veut dire smart : intelligent."
+    },
+    {
+      "q": "In “The library is quiet in the morning,” which word is closest to quiet?",
+      "o": [
+        "crowded",
+        "bright",
+        "empty",
+        "silent"
+      ],
+      "r": 3,
+      "e": "Quiet veut dire silent : calme, silencieux."
+    },
+    {
+      "q": "In “That is a beautiful dress,” which word is closest to beautiful?",
+      "o": [
+        "pretty",
+        "expensive",
+        "comfortable",
+        "modern"
+      ],
+      "r": 0,
+      "e": "Beautiful veut dire pretty : beau ou joli."
+    },
+    {
+      "q": "In “Choose one book for the trip,” which word is closest to choose?",
+      "o": [
+        "carry",
+        "select",
+        "read",
+        "return"
+      ],
+      "r": 1,
+      "e": "Choose veut dire select : choisir."
+    },
+    {
+      "q": "In “Her job is to teach English,” which word is closest to job?",
+      "o": [
+        "holiday",
+        "hobby",
+        "work",
+        "lesson"
+      ],
+      "r": 2,
+      "e": "Job veut dire work : travail."
+    },
+    {
+      "q": "In “The bus will leave at noon,” which word is closest to leave?",
+      "o": [
+        "arrive",
+        "wait",
+        "turn",
+        "depart"
+      ],
+      "r": 3,
+      "e": "Leave veut dire depart : partir."
+    },
+    {
+      "q": "In “I need to look for my keys,” which phrase is closest to look for?",
+      "o": [
+        "search for",
+        "take care of",
+        "put away",
+        "give back"
+      ],
+      "r": 0,
+      "e": "Look for veut dire search for : chercher."
+    },
+    {
+      "q": "In “My brother is ill today,” which word is closest to ill?",
+      "o": [
+        "busy",
+        "sick",
+        "late",
+        "weak"
+      ],
+      "r": 1,
+      "e": "Ill veut dire sick : malade."
+    },
+    {
+      "q": "In “The brave girl helped her neighbour,” which word is closest to brave?",
+      "o": [
+        "careful",
+        "polite",
+        "courageous",
+        "curious"
+      ],
+      "r": 2,
+      "e": "Brave veut dire courageous : courageux."
+    },
+    {
+      "q": "In “That road is dangerous at night,” which word is closest to dangerous?",
+      "o": [
+        "empty",
+        "narrow",
+        "dark",
+        "risky"
+      ],
+      "r": 3,
+      "e": "Dangerous veut dire risky : dangereux."
+    },
+    {
+      "q": "In “The singer is famous across the country,” which phrase is closest to famous?",
+      "o": [
+        "well-known",
+        "well-dressed",
+        "hard-working",
+        "newly married"
+      ],
+      "r": 0,
+      "e": "Famous veut dire well-known : connu."
+    },
+    {
+      "q": "In “Please reply to my message,” which word is closest to reply?",
+      "o": [
+        "send",
+        "answer",
+        "delete",
+        "read"
+      ],
+      "r": 1,
+      "e": "Reply veut dire answer : répondre."
+    },
+    {
+      "q": "In “We will purchase some fruit at the market,” which word is closest to purchase?",
+      "o": [
+        "sell",
+        "share",
+        "buy",
+        "grow"
+      ],
+      "r": 2,
+      "e": "Purchase veut dire buy : acheter."
+    },
+    {
+      "q": "In “Your answer is correct,” which word is closest to correct?",
+      "o": [
+        "wrong",
+        "short",
+        "complete",
+        "right"
+      ],
+      "r": 3,
+      "e": "Correct veut dire right : juste."
+    }
+  ]
+}
