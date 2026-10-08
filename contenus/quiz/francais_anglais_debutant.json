@@ -623,6 +623,318 @@
       "e": "“See you tomorrow” veut dire à demain.",
       "d": "francais_anglais",
       "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « bonjour » en anglais ?",
+      "o": [
+        "hello",
+        "book",
+        "I am tired",
+        "have a nice day"
+      ],
+      "r": 0,
+      "e": "« bonjour » se traduit par « hello ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “thank you” mean in French?",
+      "o": [
+        "eau",
+        "merci",
+        "peux-tu m'aider",
+        "bienvenue"
+      ],
+      "r": 1,
+      "e": "« thank you » signifie « merci ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « s'il vous plaît » en anglais ?",
+      "o": [
+        "friend",
+        "on the left",
+        "please",
+        "what time is it"
+      ],
+      "r": 2,
+      "e": "« s'il vous plaît » se traduit par « please ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “goodbye” mean in French?",
+      "o": [
+        "bonne nuit",
+        "à droite",
+        "prends soin de toi",
+        "au revoir"
+      ],
+      "r": 3,
+      "e": "« goodbye » signifie « au revoir ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « école » en anglais ?",
+      "o": [
+        "school",
+        "see you soon",
+        "I am hungry",
+        "see you later"
+      ],
+      "r": 0,
+      "e": "« école » se traduit par « school ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “book” mean in French?",
+      "o": [
+        "je ne comprends pas",
+        "livre",
+        "je ne sais pas",
+        "petit déjeuner"
+      ],
+      "r": 1,
+      "e": "« book » signifie « livre ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « eau » en anglais ?",
+      "o": [
+        "I am tired",
+        "have a nice day",
+        "water",
+        "I am late"
+      ],
+      "r": 2,
+      "e": "« eau » se traduit par « water ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “friend” mean in French?",
+      "o": [
+        "peux-tu m'aider",
+        "bienvenue",
+        "bonjour",
+        "ami"
+      ],
+      "r": 3,
+      "e": "« friend » signifie « ami ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « bonne nuit » en anglais ?",
+      "o": [
+        "good night",
+        "on the left",
+        "what time is it",
+        "thank you"
+      ],
+      "r": 0,
+      "e": "« bonne nuit » se traduit par « good night ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “see you soon” mean in French?",
+      "o": [
+        "à droite",
+        "à bientôt",
+        "prends soin de toi",
+        "s'il vous plaît"
+      ],
+      "r": 1,
+      "e": "« see you soon » signifie « à bientôt ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « je ne comprends pas » en anglais ?",
+      "o": [
+        "I am hungry",
+        "see you later",
+        "I don't understand",
+        "goodbye"
+      ],
+      "r": 2,
+      "e": "« je ne comprends pas » se traduit par « I don't understand ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “I am tired” mean in French?",
+      "o": [
+        "je ne sais pas",
+        "petit déjeuner",
+        "école",
+        "je suis fatigué"
+      ],
+      "r": 3,
+      "e": "« I am tired » signifie « je suis fatigué ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « peux-tu m'aider » en anglais ?",
+      "o": [
+        "can you help me",
+        "have a nice day",
+        "I am late",
+        "book"
+      ],
+      "r": 0,
+      "e": "« peux-tu m'aider » se traduit par « can you help me ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “on the left” mean in French?",
+      "o": [
+        "bienvenue",
+        "à gauche",
+        "bonjour",
+        "eau"
+      ],
+      "r": 1,
+      "e": "« on the left » signifie « à gauche ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « à droite » en anglais ?",
+      "o": [
+        "what time is it",
+        "thank you",
+        "on the right",
+        "friend"
+      ],
+      "r": 2,
+      "e": "« à droite » se traduit par « on the right ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “I am hungry” mean in French?",
+      "o": [
+        "prends soin de toi",
+        "s'il vous plaît",
+        "bonne nuit",
+        "j'ai faim"
+      ],
+      "r": 3,
+      "e": "« I am hungry » signifie « j'ai faim ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « je ne sais pas » en anglais ?",
+      "o": [
+        "I don't know",
+        "see you later",
+        "goodbye",
+        "see you soon"
+      ],
+      "r": 0,
+      "e": "« je ne sais pas » se traduit par « I don't know ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “have a nice day” mean in French?",
+      "o": [
+        "petit déjeuner",
+        "bonne journée",
+        "école",
+        "je ne comprends pas"
+      ],
+      "r": 1,
+      "e": "« have a nice day » signifie « bonne journée ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « bienvenue » en anglais ?",
+      "o": [
+        "I am late",
+        "book",
+        "welcome",
+        "I am tired"
+      ],
+      "r": 2,
+      "e": "« bienvenue » se traduit par « welcome ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “what time is it” mean in French?",
+      "o": [
+        "bonjour",
+        "eau",
+        "peux-tu m'aider",
+        "quelle heure est-il"
+      ],
+      "r": 3,
+      "e": "« what time is it » signifie « quelle heure est-il ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « prends soin de toi » en anglais ?",
+      "o": [
+        "take care",
+        "thank you",
+        "friend",
+        "on the left"
+      ],
+      "r": 0,
+      "e": "« prends soin de toi » se traduit par « take care ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “see you later” mean in French?",
+      "o": [
+        "s'il vous plaît",
+        "à plus tard",
+        "bonne nuit",
+        "à droite"
+      ],
+      "r": 1,
+      "e": "« see you later » signifie « à plus tard ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "Comment dit-on « petit déjeuner » en anglais ?",
+      "o": [
+        "goodbye",
+        "see you soon",
+        "breakfast",
+        "I am hungry"
+      ],
+      "r": 2,
+      "e": "« petit déjeuner » se traduit par « breakfast ».",
+      "d": "francais",
+      "n": "anglais_debutant"
+    },
+    {
+      "q": "What does “I am late” mean in French?",
+      "o": [
+        "école",
+        "je ne comprends pas",
+        "je ne sais pas",
+        "je suis en retard"
+      ],
+      "r": 3,
+      "e": "« I am late » signifie « je suis en retard ».",
+      "d": "francais",
+      "n": "anglais_debutant"
     }
   ]
 }
