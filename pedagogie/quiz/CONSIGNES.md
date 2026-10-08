@@ -1,4 +1,4 @@
-# Banque de questions des matchs (façon Kahoot)
+# Banque de questions des matchs
 
 Public : élèves sénégalais du collège et du lycée, francophones, qui apprennent l'anglais.
 Ils lisent mal le français : les explications sont en **français très simple**, courtes, on tutoie.
