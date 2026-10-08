@@ -76,7 +76,7 @@ class QuizBank {
 
   static const _base = 'https://raw.githubusercontent.com/msanghare9-bit/jang/main/contenus/quiz';
 
-  static const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture'];
+  static const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais'];
   static const mixed = 'melange';
   static const levels = ['debutant', 'intermediaire', 'avance'];
 
@@ -86,6 +86,9 @@ class QuizBank {
         'expressions' => 'Expressions',
         'comprehension' => 'Compréhension',
         'culture' => 'Culture générale',
+        'synonymes' => 'Synonymes',
+        'antonymes' => 'Antonymes',
+        'francais_anglais' => 'Français → anglais',
         mixed => 'Mélange',
         _ => d,
       };
@@ -96,6 +99,9 @@ class QuizBank {
         'expressions' => '💬',
         'comprehension' => '📖',
         'culture' => '🌍',
+        'synonymes' => '🔁',
+        'antonymes' => '↔️',
+        'francais_anglais' => '🇫🇷',
         _ => '🎲',
       };
 
