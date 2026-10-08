@@ -3,7 +3,7 @@ name: Construire l'APK et Déployer le Web
 on:
   push:
     branches: [main]
-    paths: ['code.b64', 'app/**', 'firebase.json', 'WEB.md', '.github/workflows/apk.yml']
+    paths: ['code.b64', 'app/**', 'firebase.json', 'firestore.rules', 'WEB.md', '.github/workflows/apk.yml']
   workflow_dispatch:
 
 permissions:
@@ -117,4 +117,4 @@ jobs:
             exit 0
           fi
           npm install --global firebase-tools
-          firebase deploy --only hosting --project jang-ea5f3 --token "$FIREBASE_TOKEN"
+          firebase deploy --only hosting,firestore:rules --project jang-ea5f3 --token "$FIREBASE_TOKEN"
