@@ -499,7 +499,7 @@
       "n": "intermediaire"
     },
     {
-      "q": "Choose the closest meaning of “vacant”.",
+      "q": "Choose the closest meaning of “unoccupied”.",
       "o": [
         "occupied",
         "busy",
@@ -507,7 +507,7 @@
         "noisy"
       ],
       "r": 2,
-      "e": "A vacant room is empty.",
+      "e": "“Unoccupied” means empty or not being used.",
       "d": "synonymes",
       "n": "intermediaire"
     },
