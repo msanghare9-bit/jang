@@ -230,7 +230,10 @@ class _MatchFinderScreenState extends State<MatchFinderScreen> {
         ),
       );
     } catch (_) {
-      if (mounted) showMessage(context, 'Impossible d’envoyer la demande. Réessaie.');
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Impossible d’envoyer la demande. Réessaie.')));
+      }
     } finally {
       if (mounted) setState(() => _busy.remove(match.id));
     }
@@ -244,7 +247,14 @@ class _MatchFinderScreenState extends State<MatchFinderScreen> {
       body: FutureBuilder<List<LiveMatch>>(
         future: _future,
         builder: (context, snap) {
-          if (snap.hasError) return loadError(() => setState(() => _future = MatchService.instance.activeMatches()));
+          if (snap.hasError) {
+            return const Center(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Text('Impossible de charger les matchs. Vérifie ta connexion puis actualise.'),
+              ),
+            );
+          }
           if (!snap.hasData) return const Center(child: CircularProgressIndicator());
           final matches = snap.data!.where((m) => m.hostUid != uid).toList();
           if (matches.isEmpty) {
