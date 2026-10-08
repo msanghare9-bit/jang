@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the opposite of “accept”.",
+      "o": [
+        "refuse",
+        "receive",
+        "allow",
+        "agree"
+      ],
+      "r": 0,
+      "e": "“refuse” is the opposite of “accept”."
+    },
+    {
+      "q": "Choose the opposite of “active”.",
+      "o": [
+        "busy",
+        "inactive",
+        "quick",
+        "energetic"
+      ],
+      "r": 1,
+      "e": "“inactive” is the opposite of “active”."
+    },
+    {
+      "q": "Choose the opposite of “ancient”.",
+      "o": [
+        "old",
+        "historic",
+        "modern",
+        "former"
+      ],
+      "r": 2,
+      "e": "“modern” is the opposite of “ancient”."
+    },
+    {
+      "q": "Choose the opposite of “arrive”.",
+      "o": [
+        "come",
+        "reach",
+        "enter",
+        "depart"
+      ],
+      "r": 3,
+      "e": "“depart” is the opposite of “arrive”."
+    },
+    {
+      "q": "Choose the opposite of “borrow”.",
+      "o": [
+        "lend",
+        "take",
+        "keep",
+        "receive"
+      ],
+      "r": 0,
+      "e": "“lend” is the opposite of “borrow”."
+    },
+    {
+      "q": "Choose the opposite of “build”.",
+      "o": [
+        "create",
+        "destroy",
+        "repair",
+        "raise"
+      ],
+      "r": 1,
+      "e": "“destroy” is the opposite of “build”."
+    },
+    {
+      "q": "Choose the opposite of “careful”.",
+      "o": [
+        "cautious",
+        "patient",
+        "careless",
+        "attentive"
+      ],
+      "r": 2,
+      "e": "“careless” is the opposite of “careful”."
+    },
+    {
+      "q": "Choose the opposite of “cheap”.",
+      "o": [
+        "low-cost",
+        "small",
+        "simple",
+        "expensive"
+      ],
+      "r": 3,
+      "e": "“expensive” is the opposite of “cheap”."
+    },
+    {
+      "q": "Choose the opposite of “combine”.",
+      "o": [
+        "separate",
+        "join",
+        "mix",
+        "connect"
+      ],
+      "r": 0,
+      "e": "“separate” is the opposite of “combine”."
+    },
+    {
+      "q": "Choose the opposite of “convenient”.",
+      "o": [
+        "useful",
+        "inconvenient",
+        "easy",
+        "practical"
+      ],
+      "r": 1,
+      "e": "“inconvenient” is the opposite of “convenient”."
+    },
+    {
+      "q": "Choose the opposite of “courageous”.",
+      "o": [
+        "brave",
+        "bold",
+        "cowardly",
+        "fearless"
+      ],
+      "r": 2,
+      "e": "“cowardly” is the opposite of “courageous”."
+    },
+    {
+      "q": "Choose the opposite of “expand”.",
+      "o": [
+        "grow",
+        "stretch",
+        "increase",
+        "shrink"
+      ],
+      "r": 3,
+      "e": "“shrink” is the opposite of “expand”."
+    },
+    {
+      "q": "Choose the opposite of “fail”.",
+      "o": [
+        "succeed",
+        "lose",
+        "miss",
+        "fall"
+      ],
+      "r": 0,
+      "e": "“succeed” is the opposite of “fail”."
+    },
+    {
+      "q": "Choose the opposite of “generous”.",
+      "o": [
+        "kind",
+        "selfish",
+        "giving",
+        "helpful"
+      ],
+      "r": 1,
+      "e": "“selfish” is the opposite of “generous”."
+    },
+    {
+      "q": "Choose the opposite of “include”.",
+      "o": [
+        "add",
+        "contain",
+        "exclude",
+        "involve"
+      ],
+      "r": 2,
+      "e": "“exclude” is the opposite of “include”."
+    },
+    {
+      "q": "Choose the opposite of “increase”.",
+      "o": [
+        "raise",
+        "grow",
+        "improve",
+        "decrease"
+      ],
+      "r": 3,
+      "e": "“decrease” is the opposite of “increase”."
+    },
+    {
+      "q": "Choose the opposite of “loose”.",
+      "o": [
+        "tight",
+        "free",
+        "wide",
+        "open"
+      ],
+      "r": 0,
+      "e": "“tight” is the opposite of “loose”."
+    },
+    {
+      "q": "Choose the opposite of “maximum”.",
+      "o": [
+        "highest",
+        "minimum",
+        "greatest",
+        "largest"
+      ],
+      "r": 1,
+      "e": "“minimum” is the opposite of “maximum”."
+    },
+    {
+      "q": "Choose the opposite of “noisy”.",
+      "o": [
+        "loud",
+        "busy",
+        "quiet",
+        "rough"
+      ],
+      "r": 2,
+      "e": "“quiet” is the opposite of “noisy”."
+    },
+    {
+      "q": "Choose the opposite of “ordinary”.",
+      "o": [
+        "usual",
+        "common",
+        "normal",
+        "exceptional"
+      ],
+      "r": 3,
+      "e": "“exceptional” is the opposite of “ordinary”."
+    },
+    {
+      "q": "Choose the opposite of “patient”.",
+      "o": [
+        "impatient",
+        "calm",
+        "quiet",
+        "careful"
+      ],
+      "r": 0,
+      "e": "“impatient” is the opposite of “patient”."
+    },
+    {
+      "q": "Choose the opposite of “polite”.",
+      "o": [
+        "courteous",
+        "rude",
+        "kind",
+        "respectful"
+      ],
+      "r": 1,
+      "e": "“rude” is the opposite of “polite”."
+    },
+    {
+      "q": "Choose the opposite of “private”.",
+      "o": [
+        "personal",
+        "secret",
+        "public",
+        "hidden"
+      ],
+      "r": 2,
+      "e": "“public” is the opposite of “private”."
+    },
+    {
+      "q": "Choose the opposite of “victory”.",
+      "o": [
+        "success",
+        "prize",
+        "win",
+        "defeat"
+      ],
+      "r": 3,
+      "e": "“defeat” is the opposite of “victory”."
+    }
+  ]
+}
