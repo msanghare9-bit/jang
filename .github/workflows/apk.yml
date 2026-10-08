@@ -3,7 +3,7 @@ name: Construire l'APK et Déployer le Web
 on:
   push:
     branches: [main]
-    paths: ['code.b64', 'app/**', 'functions/**', 'firebase.json', 'firestore.rules', 'WEB.md', '.github/workflows/apk.yml']
+    paths: ['code.b64', 'app/**', 'functions/**', 'contenus/quiz/**', 'firebase.json', 'firestore.rules', 'WEB.md', '.github/workflows/apk.yml']
   workflow_dispatch:
 
 permissions:
@@ -41,6 +41,16 @@ jobs:
           channel: stable
           flutter-version: '3.32.8'
           cache: true
+
+      - name: Installer Firebase CLI
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: npm install --global firebase-tools
+
+      - name: Protéger les corrigés des banques de quiz
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: node functions/scripts/protect-quiz-banks.js
 
       - name: Vérifier les fonctions Firebase
         working-directory: functions
@@ -123,5 +133,4 @@ jobs:
             echo "Secrets Firebase manquants : déploiement ignoré. Voir WEB.md."
             exit 0
           fi
-          npm install --global firebase-tools
           firebase deploy --only hosting,firestore:rules,functions --project jang-ea5f3 --token "$FIREBASE_TOKEN"
