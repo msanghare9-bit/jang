@@ -284,7 +284,7 @@ class MatchService {
   }
 
   Stream<List<MatchObserver>> observers(String matchId, {bool includePending = false}) {
-    var query = _col.doc(matchId).collection('observateurs');
+    Query<Map<String, dynamic>> query = _col.doc(matchId).collection('observateurs');
     if (!includePending) query = query.where('status', isEqualTo: 'accepted');
     return query.snapshots().map((snap) => snap.docs.map(MatchObserver.fromDoc).toList());
   }
