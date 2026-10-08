@@ -50,11 +50,11 @@
     },
     "synonymes_intermediaire": {
       "fichier": "synonymes_intermediaire.json",
-      "nombre": 72
+      "nombre": 96
     },
     "synonymes_avance": {
       "fichier": "synonymes_avance.json",
-      "nombre": 72
+      "nombre": 96
     },
     "antonymes_intermediaire": {
       "fichier": "antonymes_intermediaire.json",
