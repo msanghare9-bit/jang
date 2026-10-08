@@ -1,0 +1,316 @@
+{
+  "questions": [
+    {
+      "q": "Comment dit-on « bonjour » en anglais ?",
+      "o": [
+        "Goodbye",
+        "Hello",
+        "Please",
+        "Thanks"
+      ],
+      "r": 1,
+      "e": "« Hello » signifie bonjour.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « merci » en anglais ?",
+      "o": [
+        "Sorry",
+        "Please",
+        "Thank you",
+        "Good night"
+      ],
+      "r": 2,
+      "e": "« Thank you » signifie merci.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « s'il vous plaît » en anglais ?",
+      "o": [
+        "Please",
+        "Welcome",
+        "Excuse me",
+        "Good morning"
+      ],
+      "r": 0,
+      "e": "« Please » signifie s'il vous plaît.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « au revoir » en anglais ?",
+      "o": [
+        "Hello",
+        "Goodbye",
+        "Good evening",
+        "Maybe"
+      ],
+      "r": 1,
+      "e": "« Goodbye » signifie au revoir.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « école » en anglais ?",
+      "o": [
+        "School",
+        "House",
+        "Book",
+        "Street"
+      ],
+      "r": 0,
+      "e": "« School » signifie école.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « livre » en anglais ?",
+      "o": [
+        "Pen",
+        "Book",
+        "Bag",
+        "Desk"
+      ],
+      "r": 1,
+      "e": "« Book » signifie livre.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « eau » en anglais ?",
+      "o": [
+        "Milk",
+        "Bread",
+        "Water",
+        "Juice"
+      ],
+      "r": 2,
+      "e": "« Water » signifie eau.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « ami » en anglais ?",
+      "o": [
+        "Friend",
+        "Family",
+        "Teacher",
+        "Neighbor"
+      ],
+      "r": 0,
+      "e": "« Friend » signifie ami.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « How are you? » ?",
+      "o": [
+        "Quel âge as-tu ?",
+        "Comment vas-tu ?",
+        "Où vas-tu ?",
+        "Qui es-tu ?"
+      ],
+      "r": 1,
+      "e": "« How are you? » demande comment va une personne.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « My name is Awa » ?",
+      "o": [
+        "Je m'appelle Awa",
+        "J'habite à Awa",
+        "Awa est mon amie",
+        "Je vois Awa"
+      ],
+      "r": 0,
+      "e": "« My name is… » signifie « Je m'appelle… ».",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « bonne nuit » en anglais ?",
+      "o": [
+        "Good morning",
+        "Good night",
+        "Good afternoon",
+        "Good luck"
+      ],
+      "r": 1,
+      "e": "« Good night » se dit au moment de se coucher.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « à bientôt » en anglais ?",
+      "o": [
+        "See you soon",
+        "Thank you",
+        "I am fine",
+        "Come here"
+      ],
+      "r": 0,
+      "e": "« See you soon » signifie à bientôt.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « I don't understand » ?",
+      "o": [
+        "Je ne sais pas",
+        "Je ne comprends pas",
+        "Je n'entends pas",
+        "Je ne veux pas"
+      ],
+      "r": 1,
+      "e": "« I don't understand » signifie je ne comprends pas.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « je suis fatigué » en anglais ?",
+      "o": [
+        "I am hungry",
+        "I am tired",
+        "I am happy",
+        "I am ready"
+      ],
+      "r": 1,
+      "e": "« I am tired » signifie je suis fatigué.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « Can you help me? » ?",
+      "o": [
+        "Peux-tu m'aider ?",
+        "Veux-tu partir ?",
+        "Peux-tu répéter ?",
+        "Où est mon livre ?"
+      ],
+      "r": 0,
+      "e": "« Can you help me? » demande de l'aide.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « à gauche » en anglais ?",
+      "o": [
+        "On the right",
+        "Straight ahead",
+        "On the left",
+        "Behind"
+      ],
+      "r": 2,
+      "e": "« On the left » signifie à gauche.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « à droite » en anglais ?",
+      "o": [
+        "On the right",
+        "On the left",
+        "At home",
+        "Near here"
+      ],
+      "r": 0,
+      "e": "« On the right » signifie à droite.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « I am hungry » ?",
+      "o": [
+        "J'ai soif",
+        "J'ai faim",
+        "J'ai peur",
+        "J'ai froid"
+      ],
+      "r": 1,
+      "e": "« I am hungry » signifie j'ai faim.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « je ne sais pas » en anglais ?",
+      "o": [
+        "I don't know",
+        "I can't go",
+        "I am not",
+        "I don't see"
+      ],
+      "r": 0,
+      "e": "« I don't know » signifie je ne sais pas.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « Have a nice day » ?",
+      "o": [
+        "Bonne chance",
+        "Bonne journée",
+        "Bonne nuit",
+        "Bienvenue"
+      ],
+      "r": 1,
+      "e": "C'est une formule pour souhaiter une bonne journée.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « bienvenue » en anglais ?",
+      "o": [
+        "Welcome",
+        "Goodbye",
+        "Sorry",
+        "Please"
+      ],
+      "r": 0,
+      "e": "« Welcome » signifie bienvenue.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « What time is it? » ?",
+      "o": [
+        "Quel jour sommes-nous ?",
+        "Quelle heure est-il ?",
+        "Où est-ce ?",
+        "Combien ça coûte ?"
+      ],
+      "r": 1,
+      "e": "« What time is it? » demande l'heure.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Comment dit-on « prends soin de toi » en anglais ?",
+      "o": [
+        "Take your time",
+        "Take care",
+        "Come with me",
+        "See you later"
+      ],
+      "r": 1,
+      "e": "« Take care » peut signifier prends soin de toi.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    },
+    {
+      "q": "Que signifie « See you later » ?",
+      "o": [
+        "À tout à l'heure",
+        "Je suis en retard",
+        "À demain matin",
+        "C'est très tard"
+      ],
+      "r": 0,
+      "e": "« See you later » signifie à plus tard.",
+      "d": "francais_anglais",
+      "n": "debutant"
+    }
+  ]
+}
