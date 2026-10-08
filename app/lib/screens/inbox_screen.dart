@@ -86,6 +86,10 @@ class _InboxScreenState extends State<InboxScreen> {
               else if (messages.isEmpty)
                 Text('Pas encore de message.', style: t.bodyMedium),
               for (final m in messages) _messageCard(context, p.uid, m),
+              if (p.isStaff) ...[
+                const SectionTitle('Messages envoyés'),
+                _SentMessages(uid: p.uid),
+              ],
               const SectionTitle('Annonces'),
               FutureBuilder<(List<Announcement>, Set<String>)>(
                 future: _ann,
@@ -167,6 +171,50 @@ class _InboxScreenState extends State<InboxScreen> {
       ]),
     );
   }
+}
+
+/// Carte des messages envoyés par un professeur, avec les réponses des élèves.
+class _SentMessages extends StatelessWidget {
+  final String uid;
+  const _SentMessages({required this.uid});
+
+  @override
+  Widget build(BuildContext context) => StreamBuilder<List<InboxMessage>>(
+        stream: InboxService.instance.sentMessages(uid),
+        builder: (context, snap) {
+          if (snap.hasError) return const Text('Impossible de charger les messages envoyés.');
+          if (snap.connectionState == ConnectionState.waiting && !snap.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          final messages = snap.data ?? const <InboxMessage>[];
+          if (messages.isEmpty) return const Text('Pas encore de message envoyé.');
+          return Column(children: [
+            for (final m in messages)
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Row(children: [
+                      const Icon(Icons.outgoing_mail, color: JangColors.primary),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text('À ${m.toName.isEmpty ? 'un élève' : m.toName}',
+                            style: const TextStyle(fontWeight: FontWeight.w800)),
+                      ),
+                    ]),
+                    const SizedBox(height: 8),
+                    Text(m.text),
+                    if (m.reply.isNotEmpty) ...[
+                      const Divider(),
+                      const Text('Réponse reçue', style: TextStyle(fontWeight: FontWeight.w800)),
+                      Text(m.reply),
+                    ],
+                  ]),
+                ),
+              ),
+          ]);
+        },
+      );
 }
 
 /// Carte « Message de ton prof » sur l'accueil (seulement s'il y a un message non lu).
