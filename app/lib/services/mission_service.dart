@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -277,19 +277,14 @@ class MissionService {
     final prefs = await SharedPreferences.getInstance();
     String? text;
     try {
-      final client = HttpClient()..connectionTimeout = const Duration(seconds: 8);
-      try {
-        final req = await client.getUrl(Uri.parse('$_url?t=${DateTime.now().millisecondsSinceEpoch ~/ 600000}'));
-        final res = await req.close().timeout(const Duration(seconds: 15));
-        if (res.statusCode == 200) {
-          text = await res.transform(utf8.decoder).join();
-          _parse(text);
-          await prefs.setString('missions_cache', text);
-        } else {
-          text = null;
-        }
-      } finally {
-        client.close();
+      final uri = Uri.parse('$_url?t=${DateTime.now().millisecondsSinceEpoch ~/ 600000}');
+      final res = await http.get(uri).timeout(const Duration(seconds: 15));
+      if (res.statusCode == 200) {
+        text = res.body;
+        _parse(text);
+        await prefs.setString('missions_cache', text);
+      } else {
+        text = null;
       }
     } catch (e) {
       debugPrint('Missions en ligne indisponibles : $e');

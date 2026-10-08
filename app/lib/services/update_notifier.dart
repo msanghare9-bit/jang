@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'dart:io';
 import 'dart:ui' show DartPluginRegistrant;
 
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../version.dart';
@@ -27,6 +27,7 @@ class UpdateNotifier {
 
   /// Programme la vérification périodique. Sans effet en cas d'erreur.
   static Future<void> schedule() async {
+    if (kIsWeb) return;
     try {
       await AndroidAlarmManager.initialize();
       await AndroidAlarmManager.periodic(
@@ -44,18 +45,12 @@ class UpdateNotifier {
   }
 
   static Future<dynamic> _get(String path) async {
-    final client = HttpClient()..connectionTimeout = const Duration(seconds: 15);
-    try {
-      final req = await client.getUrl(Uri.parse('https://api.github.com/repos/$_repo$path'));
-      req.headers.set('Accept', 'application/vnd.github+json');
-      req.headers.set('User-Agent', 'jang-app');
-      final res = await req.close().timeout(const Duration(seconds: 20));
-      final body = await res.transform(utf8.decoder).join();
-      if (res.statusCode != 200) throw HttpException('GitHub ${res.statusCode}');
-      return jsonDecode(body);
-    } finally {
-      client.close();
-    }
+    final res = await http.get(Uri.parse('https://api.github.com/repos/$_repo$path'), headers: {
+      'Accept': 'application/vnd.github+json',
+      'User-Agent': 'jang-app',
+    }).timeout(const Duration(seconds: 20));
+    if (res.statusCode != 200) throw Exception('GitHub ${res.statusCode}');
+    return jsonDecode(res.body);
   }
 
   static Future<void> _notify(int id, String title, String body) async {

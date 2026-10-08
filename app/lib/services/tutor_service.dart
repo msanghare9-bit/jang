@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:http/http.dart' as http;
 
 import '../models.dart';
 import 'auth_service.dart';
@@ -20,11 +20,7 @@ class TutorService {
   Future<TutorAnswer> ask(Lesson lesson, String question, {String? previousAnswer}) async {
     final token = await AuthService.instance.idToken();
     if (token == null) return TutorAnswer.error('Connecte-toi d\'abord.');
-    final client = HttpClient()..connectionTimeout = const Duration(seconds: 20);
     try {
-      final req = await client.postUrl(Uri.parse(endpoint));
-      req.headers.contentType = ContentType.json;
-      req.headers.set('Authorization', 'Bearer $token');
       final body = jsonEncode({
         'lessonId': lesson.id,
         'lessonTitle': lesson.title,
@@ -33,9 +29,10 @@ class TutorService {
         if (previousAnswer != null) 'previousAnswer': previousAnswer,
         'simpler': previousAnswer != null,
       });
-      req.add(utf8.encode(body));
-      final res = await req.close().timeout(const Duration(seconds: 60));
-      final text = await res.transform(utf8.decoder).join();
+      final res = await http.post(Uri.parse(endpoint),
+          headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer $token'},
+          body: body).timeout(const Duration(seconds: 60));
+      final text = res.body;
       final j = jsonDecode(text) as Map<String, dynamic>;
       if (res.statusCode != 200) {
         return TutorAnswer.error((j['error'] ?? 'Le tuteur ne répond pas pour le moment.') as String,
@@ -45,15 +42,11 @@ class TutorService {
       final remaining = (j['remaining'] as num?)?.toInt();
       _log(lesson, question, answer, previousAnswer != null);
       return TutorAnswer(answer: answer, remaining: remaining);
-    } on SocketException {
-      return TutorAnswer.error('Pas de connexion internet. Le tuteur a besoin d\'internet.');
     } on TimeoutException {
       return TutorAnswer.error('Le tuteur met trop de temps à répondre. Réessaie dans un moment.');
     } catch (e) {
       debugPrint('Tuteur : $e');
       return TutorAnswer.error('Le tuteur ne répond pas pour le moment. Réessaie plus tard.');
-    } finally {
-      client.close();
     }
   }
 
