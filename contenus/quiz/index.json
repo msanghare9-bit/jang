@@ -54,23 +54,23 @@
     },
     "synonymes_avance": {
       "fichier": "synonymes_avance.json",
-      "nombre": 24
+      "nombre": 48
     },
     "antonymes_intermediaire": {
       "fichier": "antonymes_intermediaire.json",
-      "nombre": 24
+      "nombre": 48
     },
     "antonymes_avance": {
       "fichier": "antonymes_avance.json",
-      "nombre": 24
+      "nombre": 48
     },
     "francais_anglais_intermediaire": {
       "fichier": "francais_anglais_intermediaire.json",
-      "nombre": 24
+      "nombre": 48
     },
     "francais_anglais_avance": {
       "fichier": "francais_anglais_avance.json",
-      "nombre": 24
+      "nombre": 48
     },
     "vocabulaire_intermediaire": {
       "fichier": "vocabulaire_intermediaire.json",
