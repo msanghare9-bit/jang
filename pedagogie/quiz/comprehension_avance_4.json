@@ -1,0 +1,292 @@
+{
+  "questions": [
+    {
+      "q": "What was the main reason the cooperative rented a cart?",
+      "o": [
+        "To transport more produce despite rising costs",
+        "To replace the shared sales notebook",
+        "To sell vegetables only on Fridays",
+        "To avoid discussing how to share earnings"
+      ],
+      "r": 0,
+      "e": "Elles ont loué un chariot pour transporter davantage de produits malgré les coûts.",
+      "t": "The cooperative began with six women who sold vegetables near the river. They kept a shared notebook of purchases and sales, and met every Friday to discuss prices. When transport costs rose, they pooled money to rent a cart. The new arrangement let them carry more produce to the market, though they still had to agree on a fair way to divide the earnings."
+    },
+    {
+      "q": "Which challenge remained after they rented the cart?",
+      "o": [
+        "Finding a place near the river",
+        "Agreeing how to divide the earnings",
+        "Keeping a record of sales",
+        "Meeting every Friday"
+      ],
+      "r": 1,
+      "e": "Elles devaient encore décider comment répartir équitablement les gains.",
+      "t": "The cooperative began with six women who sold vegetables near the river. They kept a shared notebook of purchases and sales, and met every Friday to discuss prices. When transport costs rose, they pooled money to rent a cart. The new arrangement let them carry more produce to the market, though they still had to agree on a fair way to divide the earnings."
+    },
+    {
+      "q": "Why did the clinic keep using paper cards?",
+      "o": [
+        "Text messages were always incorrect",
+        "The cards improved attendance by themselves",
+        "Some patients shared phones",
+        "Patients requested fewer appointments"
+      ],
+      "r": 2,
+      "e": "Certaines personnes partageaient un téléphone, donc les cartes restaient utiles.",
+      "t": "A local clinic noticed that many patients missed appointments because they did not know the date. The staff began giving each patient a small card and asking permission to send a reminder by text message. Attendance improved, but some people shared one phone with several relatives. The clinic therefore continued using paper cards as well as messages."
+    },
+    {
+      "q": "What did the clinic do before sending reminders?",
+      "o": [
+        "Removed all paper records",
+        "Changed every appointment date",
+        "Required patients to buy a phone",
+        "Asked patients for permission"
+      ],
+      "r": 3,
+      "e": "Le personnel demandait l’autorisation d’envoyer un SMS.",
+      "t": "A local clinic noticed that many patients missed appointments because they did not know the date. The staff began giving each patient a small card and asking permission to send a reminder by text message. Attendance improved, but some people shared one phone with several relatives. The clinic therefore continued using paper cards as well as messages."
+    },
+    {
+      "q": "What lesson did the team learn during practice?",
+      "o": [
+        "Claims need clear supporting evidence",
+        "Every speaker should use the same role",
+        "Strong claims need no examples",
+        "The opposing side should be ignored"
+      ],
+      "r": 0,
+      "e": "Ils ont compris qu’une affirmation doit être appuyée clairement.",
+      "t": "The school debate team prepared for a competition by assigning each speaker a different role. One student gathered evidence, another anticipated opposing arguments, and a third checked that the examples were understandable. During practice, they discovered that a strong claim was not enough; each point also needed clear support."
+    },
+    {
+      "q": "What did the second student do?",
+      "o": [
+        "Gathered all the evidence",
+        "Anticipated opposing arguments",
+        "Checked every speaker’s pronunciation",
+        "Chose the competition venue"
+      ],
+      "r": 1,
+      "e": "Le deuxième élève anticipait les arguments opposés.",
+      "t": "The school debate team prepared for a competition by assigning each speaker a different role. One student gathered evidence, another anticipated opposing arguments, and a third checked that the examples were understandable. During practice, they discovered that a strong claim was not enough; each point also needed clear support."
+    },
+    {
+      "q": "Why did the volunteers choose a shorter section?",
+      "o": [
+        "The school asked them to stop",
+        "The river had no rubbish elsewhere",
+        "They lacked enough equipment for the whole bank",
+        "They wanted to avoid sorting waste"
+      ],
+      "r": 2,
+      "e": "Ils n’avaient pas assez de gants ni de sacs pour toute la rive.",
+      "t": "A river clean-up group first planned to collect rubbish along the entire bank. After measuring the area, the volunteers realized they did not have enough gloves or bags. They chose a shorter section near the school and sorted the waste there. The group recorded the amount collected to help plan a larger event later."
+    },
+    {
+      "q": "Why did the group record the amount of waste?",
+      "o": [
+        "To decide who would leave the group",
+        "To compare river water colours",
+        "To replace the sorting process",
+        "To plan a larger future event"
+      ],
+      "r": 3,
+      "e": "La quantité aidera à organiser une action plus grande.",
+      "t": "A river clean-up group first planned to collect rubbish along the entire bank. After measuring the area, the volunteers realized they did not have enough gloves or bags. They chose a shorter section near the school and sorted the waste there. The group recorded the amount collected to help plan a larger event later."
+    },
+    {
+      "q": "How did Mariama begin to connect with people?",
+      "o": [
+        "She joined a reading club",
+        "She organized a football match",
+        "She moved back to her old home",
+        "She stopped reading aloud"
+      ],
+      "r": 0,
+      "e": "Elle a rejoint un club de lecture au centre communautaire.",
+      "t": "When Mariama’s family moved to a new neighbourhood, she worried about making friends. She joined a reading club at the community centre and offered to read aloud. At first she spoke softly, but the other members encouraged her. By the end of the month, she was helping a younger child choose books."
+    },
+    {
+      "q": "What change happened by the end of the month?",
+      "o": [
+        "She stopped attending the club",
+        "She helped a younger child choose books",
+        "She became the community centre manager",
+        "She moved to another neighbourhood"
+      ],
+      "r": 1,
+      "e": "À la fin du mois, elle aidait un plus jeune à choisir des livres.",
+      "t": "When Mariama’s family moved to a new neighbourhood, she worried about making friends. She joined a reading club at the community centre and offered to read aloud. At first she spoke softly, but the other members encouraged her. By the end of the month, she was helping a younger child choose books."
+    },
+    {
+      "q": "Why did the association decide to keep weekly records?",
+      "o": [
+        "To prove immediately that boats caused the change",
+        "To stop all fishing near the shore",
+        "To look for a pattern before choosing an action",
+        "To compare the price of different boats"
+      ],
+      "r": 2,
+      "e": "Des relevés réguliers peuvent faire apparaître une tendance.",
+      "t": "A fisherman noticed that the catch near the shore had become smaller. The village association discussed several possible causes, including weather and the number of boats. They agreed to record each week’s catch before deciding what to do. The chairperson said that one observation could not prove the cause, but regular records might reveal a pattern."
+    },
+    {
+      "q": "What caution did the chairperson express?",
+      "o": [
+        "Weather never affects the catch",
+        "Records are unnecessary",
+        "The boats must be sold",
+        "One observation cannot prove the cause"
+      ],
+      "r": 3,
+      "e": "Une seule observation ne suffit pas pour prouver la cause.",
+      "t": "A fisherman noticed that the catch near the shore had become smaller. The village association discussed several possible causes, including weather and the number of boats. They agreed to record each week’s catch before deciding what to do. The chairperson said that one observation could not prove the cause, but regular records might reveal a pattern."
+    },
+    {
+      "q": "Why did the students ask musicians to approve recordings?",
+      "o": [
+        "To get permission before using their words",
+        "To teach them how to play",
+        "To choose which instruments to lend",
+        "To shorten the exhibition"
+      ],
+      "r": 0,
+      "e": "Ils demandaient l’accord des personnes avant d’utiliser leurs propos.",
+      "t": "The museum planned an exhibition about local music. Organizers invited musicians to lend instruments and explain how they were made. A student team recorded short interviews, but they asked each person to approve the recording before using it. The exhibition included the musicians’ words alongside photographs of the instruments."
+    },
+    {
+      "q": "What appeared beside the musicians’ words?",
+      "o": [
+        "Maps of the river",
+        "Photographs of the instruments",
+        "Copies of the students’ exams",
+        "A list of ticket prices"
+      ],
+      "r": 1,
+      "e": "L’exposition associait les paroles à des photos d’instruments.",
+      "t": "The museum planned an exhibition about local music. Organizers invited musicians to lend instruments and explain how they were made. A student team recorded short interviews, but they asked each person to approve the recording before using it. The exhibition included the musicians’ words alongside photographs of the instruments."
+    },
+    {
+      "q": "What did students do at the start of the study period?",
+      "o": [
+        "Choose a teacher",
+        "Take an examination",
+        "Set a goal",
+        "Write a full report"
+      ],
+      "r": 2,
+      "e": "Chaque élève définissait un objectif pour l’heure.",
+      "t": "The school introduced a quiet study period before examinations. Students could choose any subject, but they had to set a goal for the hour. At the end, they wrote down what they had completed and what remained difficult. Teachers used these notes to suggest which lessons might need more review."
+    },
+    {
+      "q": "How did teachers use the students’ notes?",
+      "o": [
+        "To change the examination date",
+        "To decide who could study",
+        "To select a new subject",
+        "To suggest topics for more review"
+      ],
+      "r": 3,
+      "e": "Les notes aidaient à choisir les leçons à revoir.",
+      "t": "The school introduced a quiet study period before examinations. Students could choose any subject, but they had to set a goal for the hour. At the end, they wrote down what they had completed and what remained difficult. Teachers used these notes to suggest which lessons might need more review."
+    },
+    {
+      "q": "What did the bakery do with safe leftover bread?",
+      "o": [
+        "Sold it at a lower price",
+        "Threw it away immediately",
+        "Used it to make new ovens",
+        "Kept it for a full month"
+      ],
+      "r": 0,
+      "e": "Le pain encore consommable était vendu moins cher.",
+      "t": "A small bakery tested a new way to reduce food waste. At closing time, workers listed bread that was still safe to eat and offered it at a lower price. They tracked how much was sold and how much remained. After a month, the owner changed the baking schedule so fewer loaves were left unsold."
+    },
+    {
+      "q": "What change followed the month-long trial?",
+      "o": [
+        "The bakery stopped making bread",
+        "The baking schedule was adjusted",
+        "Workers stopped tracking leftovers",
+        "Prices were raised every evening"
+      ],
+      "r": 1,
+      "e": "Le propriétaire a ajusté les heures ou quantités de cuisson.",
+      "t": "A small bakery tested a new way to reduce food waste. At closing time, workers listed bread that was still safe to eat and offered it at a lower price. They tracked how much was sold and how much remained. After a month, the owner changed the baking schedule so fewer loaves were left unsold."
+    },
+    {
+      "q": "What weakness did the group identify in its arrangement?",
+      "o": [
+        "It had too many weekly meetings",
+        "Members refused to share photographs",
+        "It depended on only two account managers",
+        "Online buyers could not order baskets"
+      ],
+      "r": 2,
+      "e": "Le système dépendait fortement de deux personnes.",
+      "t": "A women’s group wanted to sell woven baskets online, but not every member had internet access. They chose two members to manage the account and agreed to share photographs and orders at weekly meetings. The arrangement worked until one manager became ill, so the group trained a third member as backup."
+    },
+    {
+      "q": "Why did the group train a third member?",
+      "o": [
+        "To replace the weekly meetings",
+        "To stop selling baskets online",
+        "To take photographs from buyers",
+        "To provide backup if a manager was unavailable"
+      ],
+      "r": 3,
+      "e": "La troisième personne peut remplacer une responsable absente.",
+      "t": "A women’s group wanted to sell woven baskets online, but not every member had internet access. They chose two members to manage the account and agreed to share photographs and orders at weekly meetings. The arrangement worked until one manager became ill, so the group trained a third member as backup."
+    },
+    {
+      "q": "What did the journalist do when sources disagreed?",
+      "o": [
+        "She reported that the date was uncertain",
+        "She selected the newest source automatically",
+        "She removed the whole article",
+        "She changed the photograph"
+      ],
+      "r": 0,
+      "e": "Elle n’a pas prétendu connaître une date sans preuve.",
+      "t": "A student journalist interviewed a retired teacher about the history of the school. She checked the dates in old notebooks and compared them with a photograph that showed the original classroom. When two sources disagreed, she wrote that the date was uncertain instead of choosing one without evidence."
+    },
+    {
+      "q": "Why did she compare different sources?",
+      "o": [
+        "To find a new classroom",
+        "To check the reliability of the dates",
+        "To make the interview shorter",
+        "To prove the teacher was wrong"
+      ],
+      "r": 1,
+      "e": "Elle comparait les sources pour vérifier les dates.",
+      "t": "A student journalist interviewed a retired teacher about the history of the school. She checked the dates in old notebooks and compared them with a photograph that showed the original classroom. When two sources disagreed, she wrote that the date was uncertain instead of choosing one without evidence."
+    },
+    {
+      "q": "Who was allowed to open the pump?",
+      "o": [
+        "Anyone who used the well",
+        "Only children",
+        "Trained workers",
+        "The first person to report a problem"
+      ],
+      "r": 2,
+      "e": "Seuls les travailleurs formés pouvaient ouvrir la pompe.",
+      "t": "The village water committee set a rule for repairing the pump: anyone who noticed a problem should report it quickly, but only trained workers could open the machine. This reduced damage caused by untrained repairs. The committee also posted the repair contact near the well."
+    },
+    {
+      "q": "What was the purpose of posting the repair contact?",
+      "o": [
+        "Teach children to open the machine",
+        "Replace the trained workers",
+        "Advertise the well",
+        "Help people report problems quickly"
+      ],
+      "r": 3,
+      "e": "Le contact affiché permet de signaler rapidement une panne.",
+      "t": "The village water committee set a rule for repairing the pump: anyone who noticed a problem should report it quickly, but only trained workers could open the machine. This reduced damage caused by untrained repairs. The committee also posted the repair contact near the well."
+    }
+  ]
+}
