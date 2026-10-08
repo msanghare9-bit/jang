@@ -46,7 +46,7 @@ class TournamentHomeScreen extends StatelessWidget {
             return Card(child:ListTile(
               leading:CircleAvatar(backgroundColor:JangColors.snGreen,child:Icon(t.status=='finished'?Icons.emoji_events:Icons.account_tree_outlined,color:Colors.white)),
               title:Text(t.title),
-              subtitle:Text(t.status=='waiting'?'Inscriptions ouvertes · ${t.hostName}':'Manche ${t.round} · ${t.hostName}'),
+              subtitle:Text(t.status=='waiting'?'Inscriptions ouvertes · ${t.hostName}':t.status=='finished'?'Champion : ${t.championName}':'Manche ${t.round} · ${t.hostName}'),
               trailing:const Icon(Icons.chevron_right),
               onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id))),
             ));
