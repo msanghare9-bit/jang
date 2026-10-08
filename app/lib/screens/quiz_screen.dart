@@ -80,7 +80,7 @@ class _QuizScreenState extends State<QuizScreen> {
         final result = await FirebaseFunctions.instance.httpsCallable('checkPracticeAnswer').call({
           'id': question.bankId,
         });
-        question.answer = (result.data['answer'] as num).toInt().clamp(0, 3);
+        question.answer = (result.data['answer'] as num).toInt().clamp(0, 3).toInt();
       } catch (_) {
         if (mounted) {
           setState(() => _checking = false);
