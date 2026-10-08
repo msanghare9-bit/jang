@@ -4,313 +4,265 @@
       "q": "Quel est un synonyme anglais de “happy” ?",
       "o": [
         "glad",
-        [
-          "sad",
-          "angry",
-          "tired"
-        ],
-        "“Glad” veut aussi dire heureux."
+        "sad",
+        "angry",
+        "tired"
       ],
-      "r": 0
+      "r": 0,
+      "e": "“Glad” veut aussi dire heureux."
     },
     {
       "q": "Quel est un synonyme anglais de “small” ?",
       "o": [
-        [
-          "tall",
-          "wide",
-          "heavy"
-        ],
+        "tall",
         "little",
-        "“Little” veut dire petit."
+        "wide",
+        "heavy"
       ],
-      "r": 1
+      "r": 1,
+      "e": "“Little” veut dire petit."
     },
     {
       "q": "Quel est un synonyme anglais de “big” ?",
       "o": [
-        [
-          "tiny",
-          "short",
-          "weak"
-        ],
-        "“Large” veut dire grand ou large.",
-        "large"
+        "tiny",
+        "short",
+        "large",
+        "weak"
       ],
-      "r": 2
+      "r": 2,
+      "e": "“Large” veut dire grand ou large."
     },
     {
       "q": "Quel est un synonyme anglais de “fast” ?",
       "o": [
-        [
-          "slow",
-          "late",
-          "careful"
-        ],
-        "“Quick” veut dire rapide.",
+        "slow",
+        "late",
+        "careful",
         "quick"
       ],
-      "r": 3
+      "r": 3,
+      "e": "“Quick” veut dire rapide."
     },
     {
       "q": "Quel est un synonyme anglais de “smart” ?",
       "o": [
         "clever",
-        [
-          "lazy",
-          "quiet",
-          "young"
-        ],
-        "“Clever” veut dire intelligent."
+        "lazy",
+        "quiet",
+        "young"
       ],
-      "r": 0
+      "r": 0,
+      "e": "“Clever” veut dire intelligent."
     },
     {
       "q": "Quel est un synonyme anglais de “begin” ?",
       "o": [
-        [
-          "stop",
-          "wait",
-          "close"
-        ],
+        "stop",
         "start",
-        "“Start” veut dire commencer."
+        "wait",
+        "close"
       ],
-      "r": 1
+      "r": 1,
+      "e": "“Start” veut dire commencer."
     },
     {
       "q": "Quel est un synonyme anglais de “end” ?",
       "o": [
-        [
-          "open",
-          "break",
-          "follow"
-        ],
-        "“Finish” veut dire terminer.",
-        "finish"
+        "open",
+        "break",
+        "finish",
+        "follow"
       ],
-      "r": 2
+      "r": 2,
+      "e": "“Finish” veut dire terminer."
     },
     {
       "q": "Quel est un synonyme anglais de “sick” ?",
       "o": [
-        [
-          "well",
-          "safe",
-          "full"
-        ],
-        "“Ill” veut dire malade.",
+        "well",
+        "safe",
+        "full",
         "ill"
       ],
-      "r": 3
+      "r": 3,
+      "e": "“Ill” veut dire malade."
     },
     {
       "q": "Quel est un synonyme anglais de “easy” ?",
       "o": [
         "simple",
-        [
-          "difficult",
-          "expensive",
-          "early"
-        ],
-        "“Simple” veut dire facile ici."
+        "difficult",
+        "expensive",
+        "early"
       ],
-      "r": 0
+      "r": 0,
+      "e": "“Simple” veut dire facile ici."
     },
     {
       "q": "Quel est un synonyme anglais de “angry” ?",
       "o": [
-        [
-          "glad",
-          "shy",
-          "hungry"
-        ],
+        "glad",
         "mad",
-        "“Mad” peut vouloir dire fâché."
+        "shy",
+        "hungry"
       ],
-      "r": 1
+      "r": 1,
+      "e": "“Mad” peut vouloir dire fâché."
     },
     {
       "q": "Quel est un synonyme anglais de “quiet” ?",
       "o": [
-        [
-          "noisy",
-          "busy",
-          "bright"
-        ],
-        "“Silent” veut dire silencieux.",
-        "silent"
+        "noisy",
+        "busy",
+        "silent",
+        "bright"
       ],
-      "r": 2
+      "r": 2,
+      "e": "“Silent” veut dire silencieux."
     },
     {
       "q": "Quel est un synonyme anglais de “near” ?",
       "o": [
-        [
-          "far",
-          "behind",
-          "across"
-        ],
-        "“Close” peut vouloir dire proche.",
+        "far",
+        "behind",
+        "across",
         "close"
       ],
-      "r": 3
+      "r": 3,
+      "e": "“Close” peut vouloir dire proche."
     },
     {
       "q": "Quel est un synonyme anglais de “gift” ?",
       "o": [
         "present",
-        [
-          "letter",
-          "price",
-          "shop"
-        ],
-        "“Present” veut aussi dire cadeau."
+        "letter",
+        "price",
+        "shop"
       ],
-      "r": 0
+      "r": 0,
+      "e": "“Present” veut aussi dire cadeau."
     },
     {
       "q": "Quel est un synonyme anglais de “child” ?",
       "o": [
-        [
-          "parent",
-          "friend",
-          "teacher"
-        ],
+        "parent",
         "kid",
-        "“Kid” veut dire enfant."
+        "friend",
+        "teacher"
       ],
-      "r": 1
+      "r": 1,
+      "e": "“Kid” veut dire enfant."
     },
     {
       "q": "Quel est un synonyme anglais de “shop” ?",
       "o": [
-        [
-          "school",
-          "street",
-          "station"
-        ],
-        "“Store” veut aussi dire magasin.",
-        "store"
+        "school",
+        "street",
+        "store",
+        "station"
       ],
-      "r": 2
+      "r": 2,
+      "e": "“Store” veut aussi dire magasin."
     },
     {
       "q": "Quel est un synonyme anglais de “buy” ?",
       "o": [
-        [
-          "sell",
-          "borrow",
-          "lend"
-        ],
-        "“Purchase” veut dire acheter.",
+        "sell",
+        "borrow",
+        "lend",
         "purchase"
       ],
-      "r": 3
+      "r": 3,
+      "e": "“Purchase” veut dire acheter."
     },
     {
       "q": "Quel est un synonyme anglais de “speak” ?",
       "o": [
         "talk",
-        [
-          "listen",
-          "write",
-          "read"
-        ],
-        "“Talk” veut dire parler."
+        "listen",
+        "write",
+        "read"
       ],
-      "r": 0
+      "r": 0,
+      "e": "“Talk” veut dire parler."
     },
     {
       "q": "Quel est un synonyme anglais de “answer” ?",
       "o": [
-        [
-          "question",
-          "story",
-          "lesson"
-        ],
+        "question",
         "reply",
-        "“Reply” veut dire répondre ou réponse."
+        "story",
+        "lesson"
       ],
-      "r": 1
+      "r": 1,
+      "e": "“Reply” veut dire répondre ou réponse."
     },
     {
       "q": "Quel est un synonyme anglais de “beautiful” ?",
       "o": [
-        [
-          "ugly",
-          "noisy",
-          "empty"
-        ],
-        "“Pretty” veut dire joli.",
-        "pretty"
+        "ugly",
+        "noisy",
+        "pretty",
+        "empty"
       ],
-      "r": 2
+      "r": 2,
+      "e": "“Pretty” veut dire joli."
     },
     {
       "q": "Quel est un synonyme anglais de “funny” ?",
       "o": [
-        [
-          "serious",
-          "sad",
-          "slow"
-        ],
-        "“Amusing” veut dire amusant.",
+        "serious",
+        "sad",
+        "slow",
         "amusing"
       ],
-      "r": 3
+      "r": 3,
+      "e": "“Amusing” veut dire amusant."
     },
     {
       "q": "Quel est un synonyme anglais de “job” ?",
       "o": [
         "work",
-        [
-          "rest",
-          "game",
-          "meal"
-        ],
-        "“Work” peut vouloir dire travail ou emploi."
+        "rest",
+        "game",
+        "meal"
       ],
-      "r": 0
+      "r": 0,
+      "e": "“Work” peut vouloir dire travail ou emploi."
     },
     {
       "q": "Quel est un synonyme anglais de “choose” ?",
       "o": [
-        [
-          "refuse",
-          "forget",
-          "carry"
-        ],
+        "refuse",
         "select",
-        "“Select” veut dire choisir."
+        "forget",
+        "carry"
       ],
-      "r": 1
+      "r": 1,
+      "e": "“Select” veut dire choisir."
     },
     {
       "q": "Quel est un synonyme anglais de “help” ?",
       "o": [
-        [
-          "hurt",
-          "hide",
-          "leave"
-        ],
-        "“Assist” veut dire aider.",
-        "assist"
+        "hurt",
+        "hide",
+        "assist",
+        "leave"
       ],
-      "r": 2
+      "r": 2,
+      "e": "“Assist” veut dire aider."
     },
     {
       "q": "Quel est un synonyme anglais de “home” ?",
       "o": [
-        [
-          "road",
-          "market",
-          "class"
-        ],
-        "“House” peut désigner la maison où l’on vit.",
+        "road",
+        "market",
+        "class",
         "house"
       ],
-      "r": 3
+      "r": 3,
+      "e": "“House” peut désigner la maison où l’on vit."
     }
   ]
 }
