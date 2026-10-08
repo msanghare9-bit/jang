@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What does “allocate” mean?",
+      "o": [
+        "Assign something for a particular purpose",
+        "Hide something from public view",
+        "Make something less accurate",
+        "Borrow something for a short time"
+      ],
+      "r": 0,
+      "e": "To allocate is to distribute or assign for a purpose."
+    },
+    {
+      "q": "What does “anticipate” mean?",
+      "o": [
+        "Prevent something from starting",
+        "Expect something to happen",
+        "Doubt that something exists",
+        "Remember something from childhood"
+      ],
+      "r": 1,
+      "e": "To anticipate is to expect or prepare for an event."
+    },
+    {
+      "q": "What does “assess” mean?",
+      "o": [
+        "Copy something exactly",
+        "Delay a decision",
+        "Evaluate the quality or importance of something",
+        "Remove a rule"
+      ],
+      "r": 2,
+      "e": "To assess is to judge or evaluate."
+    },
+    {
+      "q": "What is “bias”?",
+      "o": [
+        "A careful measurement",
+        "A public agreement",
+        "A temporary delay",
+        "An unfair preference for or against someone"
+      ],
+      "r": 3,
+      "e": "Bias is an unfair preference that affects judgment."
+    },
+    {
+      "q": "What does “coherent” mean?",
+      "o": [
+        "Clear and logically connected",
+        "Difficult to see",
+        "Likely to cause harm",
+        "Made of several materials"
+      ],
+      "r": 0,
+      "e": "A coherent explanation is clear and makes logical sense."
+    },
+    {
+      "q": "What does “consecutive” mean?",
+      "o": [
+        "Occurring at the same time",
+        "Following one after another without a break",
+        "Happening only once",
+        "Separated by long intervals"
+      ],
+      "r": 1,
+      "e": "Consecutive events happen in an unbroken sequence."
+    },
+    {
+      "q": "What does “controversial” mean?",
+      "o": [
+        "Accepted by everyone",
+        "Unrelated to a discussion",
+        "Causing strong disagreement",
+        "Easy to measure"
+      ],
+      "r": 2,
+      "e": "A controversial issue leads people to disagree."
+    },
+    {
+      "q": "What does “derive” mean?",
+      "o": [
+        "Hide a result from view",
+        "Make a rule less strict",
+        "Stop a process completely",
+        "Obtain something from a source"
+      ],
+      "r": 3,
+      "e": "To derive something is to get it from a source."
+    },
+    {
+      "q": "What does “distort” mean?",
+      "o": [
+        "Change something so it is no longer accurate",
+        "Explain something clearly",
+        "Keep something unchanged",
+        "Support an idea with evidence"
+      ],
+      "r": 0,
+      "e": "To distort is to alter or misrepresent."
+    },
+    {
+      "q": "What does “enhance” mean?",
+      "o": [
+        "Make something harder to see",
+        "Improve the quality or value of something",
+        "Remove something completely",
+        "Delay an important event"
+      ],
+      "r": 1,
+      "e": "To enhance is to improve or increase value."
+    },
+    {
+      "q": "What does “ethical” mean?",
+      "o": [
+        "Related only to price",
+        "Easy to repeat",
+        "Related to principles of right and wrong",
+        "Difficult to translate"
+      ],
+      "r": 2,
+      "e": "Ethical choices concern what is morally right."
+    },
+    {
+      "q": "What does “fundamental” mean?",
+      "o": [
+        "Temporary and uncertain",
+        "Rarely noticed",
+        "Unrelated to the subject",
+        "Basic and very important"
+      ],
+      "r": 3,
+      "e": "Fundamental means forming a necessary foundation."
+    },
+    {
+      "q": "What does “implement” mean as a verb?",
+      "o": [
+        "Put a plan or decision into effect",
+        "Discuss a plan without acting",
+        "Cancel a completed task",
+        "Change the meaning of a word"
+      ],
+      "r": 0,
+      "e": "To implement is to carry out a plan."
+    },
+    {
+      "q": "What does “infer” mean?",
+      "o": [
+        "Repeat a claim without checking",
+        "Reach a conclusion from evidence",
+        "Give evidence to another person",
+        "Avoid making a decision"
+      ],
+      "r": 1,
+      "e": "To infer is to conclude from facts or clues."
+    },
+    {
+      "q": "What is “integrity”?",
+      "o": [
+        "A short-term financial gain",
+        "A complicated machine",
+        "Honesty and strong moral principles",
+        "A public disagreement"
+      ],
+      "r": 2,
+      "e": "Integrity means being honest and principled."
+    },
+    {
+      "q": "What does “justify” mean?",
+      "o": [
+        "Make a claim less clear",
+        "Refuse to give an explanation",
+        "Change a result by guessing",
+        "Give a good reason for an action or claim"
+      ],
+      "r": 3,
+      "e": "To justify is to show a reason or basis."
+    },
+    {
+      "q": "What is a “mechanism”?",
+      "o": [
+        "A system or process that makes something work",
+        "A personal opinion",
+        "A short written summary",
+        "A group of unrelated facts"
+      ],
+      "r": 0,
+      "e": "A mechanism is a working system or process."
+    },
+    {
+      "q": "What is a “notion”?",
+      "o": [
+        "A precise measurement",
+        "An idea or belief",
+        "A legal punishment",
+        "An unexpected payment"
+      ],
+      "r": 1,
+      "e": "A notion is an idea or belief."
+    },
+    {
+      "q": "What does “offset” mean?",
+      "o": [
+        "Make an effect stronger",
+        "Repeat something exactly",
+        "Counterbalance or reduce the effect of something",
+        "Move something to a new place"
+      ],
+      "r": 2,
+      "e": "To offset is to balance or compensate for an effect."
+    },
+    {
+      "q": "What does “predominant” mean?",
+      "o": [
+        "Least important",
+        "Impossible to observe",
+        "Occurring only in the past",
+        "Most common or strongest"
+      ],
+      "r": 3,
+      "e": "Predominant means having the greatest presence or influence."
+    },
+    {
+      "q": "What does “refine” mean?",
+      "o": [
+        "Improve something through small changes",
+        "Destroy something completely",
+        "Make a guess without evidence",
+        "Avoid using a resource"
+      ],
+      "r": 0,
+      "e": "To refine is to improve by making careful changes."
+    },
+    {
+      "q": "What does “regulate” mean?",
+      "o": [
+        "Predict something without data",
+        "Control something by using rules",
+        "Make something more colourful",
+        "Allow everything without limits"
+      ],
+      "r": 1,
+      "e": "To regulate is to control according to rules."
+    },
+    {
+      "q": "What does “substantial” mean?",
+      "o": [
+        "Too small to notice",
+        "Uncertain and temporary",
+        "Large or important in amount",
+        "Unrelated to the result"
+      ],
+      "r": 2,
+      "e": "Substantial means considerable or significant."
+    },
+    {
+      "q": "What does “undergo” mean?",
+      "o": [
+        "Avoid every change",
+        "Cause something to disappear",
+        "Explain a process to others",
+        "Experience or be subjected to a process"
+      ],
+      "r": 3,
+      "e": "To undergo is to experience a change or process."
+    }
+  ]
+}
