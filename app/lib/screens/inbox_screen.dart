@@ -232,7 +232,8 @@ class InboxCard extends StatelessWidget {
         final subtitle = p.isStaff
             ? 'Messages reçus et envoyés'
             : unread > 0
-                ? '$unread message${unread > 1 ? 's' : ''} non lu${unread > 1 ? 's' : ''} · Messages et annonces';
+                ? '$unread message${unread > 1 ? 's' : ''} non lu${unread > 1 ? 's' : ''} · Messages et annonces'
+                : 'Messages de tes profs et annonces';
         return GestureDetector(
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
           child: Container(
