@@ -10,6 +10,7 @@ import '../models.dart';
 
 /// Une question de la banque des matchs (contenus/quiz/DOMAINE_NIVEAU.json).
 class BankQuestion {
+  final String id;
   final String question;
   final List<String> options;
   final int answer;
@@ -22,6 +23,7 @@ class BankQuestion {
   final String domain;
   final String level;
   BankQuestion({
+    this.id = '',
     required this.question,
     required this.options,
     required this.answer,
@@ -37,6 +39,7 @@ class BankQuestion {
       o.add('');
     }
     return BankQuestion(
+      id: '${m['id'] ?? ''}',
       question: '${m['q'] ?? ''}',
       options: o.take(4).toList(),
       answer: (m['r'] is num ? (m['r'] as num).toInt() : 0).clamp(0, 3).toInt(),
@@ -48,6 +51,7 @@ class BankQuestion {
   }
 
   Map<String, dynamic> toMap() => {
+        if (id.isNotEmpty) 'id': id,
         'q': question,
         'o': options,
         'r': answer,
@@ -63,6 +67,7 @@ class BankQuestion {
         options: options,
         answer: answer,
         explanation: explanation,
+        bankId: id,
       );
 
   factory BankQuestion.fromQuiz(QuizQuestion q) =>
@@ -121,7 +126,7 @@ class QuizBank {
     if (mem != null) return mem;
     String? text;
     final prefs = await SharedPreferences.getInstance();
-    final cacheKey = 'quiz_cache_$key';
+    final cacheKey = 'quiz_cache_v2_$key';
     final cachedAtKey = 'quiz_cache_at_$key';
     // Version locale récente (moins d'un jour) : pas besoin d'internet.
     try {
