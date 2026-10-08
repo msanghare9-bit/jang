@@ -195,7 +195,7 @@ class _SentMessages extends StatelessWidget {
                   padding: const EdgeInsets.all(12),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(children: [
-                      const Icon(Icons.outgoing_mail, color: JangColors.primary),
+                      const Icon(Icons.send_outlined, color: JangColors.primary),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text('À ${m.toName.isEmpty ? 'un élève' : m.toName}',
