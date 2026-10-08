@@ -575,6 +575,318 @@
       "e": "Wealthy means rich.",
       "d": "synonymes",
       "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “brave”.",
+      "o": [
+        "courageous",
+        "scared",
+        "swift",
+        "rise"
+      ],
+      "r": 0,
+      "e": "« courageous » est proche de « brave » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “famous”.",
+      "o": [
+        "fix",
+        "well-known",
+        "truthful",
+        "buy"
+      ],
+      "r": 1,
+      "e": "« well-known » est proche de « famous » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “ill”.",
+      "o": [
+        "reach",
+        "ordinary",
+        "unwell",
+        "choose"
+      ],
+      "r": 2,
+      "e": "« unwell » est proche de « ill » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “shout”.",
+      "o": [
+        "leave",
+        "respond",
+        "help",
+        "yell"
+      ],
+      "r": 3,
+      "e": "« yell » est proche de « shout » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “calm”.",
+      "o": [
+        "peaceful",
+        "allow",
+        "find",
+        "guard"
+      ],
+      "r": 0,
+      "e": "« peaceful » est proche de « calm » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “afraid”.",
+      "o": [
+        "rich",
+        "scared",
+        "decrease",
+        "reject"
+      ],
+      "r": 1,
+      "e": "« scared » est proche de « afraid » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “repair”.",
+      "o": [
+        "swift",
+        "rise",
+        "fix",
+        "carry on"
+      ],
+      "r": 2,
+      "e": "« fix » est proche de « repair » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “arrive”.",
+      "o": [
+        "truthful",
+        "buy",
+        "courageous",
+        "reach"
+      ],
+      "r": 3,
+      "e": "« reach » est proche de « arrive » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “depart”.",
+      "o": [
+        "leave",
+        "ordinary",
+        "choose",
+        "well-known"
+      ],
+      "r": 0,
+      "e": "« leave » est proche de « depart » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “permit”.",
+      "o": [
+        "respond",
+        "allow",
+        "help",
+        "unwell"
+      ],
+      "r": 1,
+      "e": "« allow » est proche de « permit » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “wealthy”.",
+      "o": [
+        "find",
+        "guard",
+        "rich",
+        "yell"
+      ],
+      "r": 2,
+      "e": "« rich » est proche de « wealthy » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “rapid”.",
+      "o": [
+        "decrease",
+        "reject",
+        "peaceful",
+        "swift"
+      ],
+      "r": 3,
+      "e": "« swift » est proche de « rapid » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “honest”.",
+      "o": [
+        "truthful",
+        "rise",
+        "carry on",
+        "scared"
+      ],
+      "r": 0,
+      "e": "« truthful » est proche de « honest » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “usual”.",
+      "o": [
+        "buy",
+        "ordinary",
+        "courageous",
+        "fix"
+      ],
+      "r": 1,
+      "e": "« ordinary » est proche de « usual » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “reply”.",
+      "o": [
+        "choose",
+        "well-known",
+        "respond",
+        "reach"
+      ],
+      "r": 2,
+      "e": "« respond » est proche de « reply » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “discover”.",
+      "o": [
+        "help",
+        "unwell",
+        "leave",
+        "find"
+      ],
+      "r": 3,
+      "e": "« find » est proche de « discover » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “reduce”.",
+      "o": [
+        "decrease",
+        "guard",
+        "yell",
+        "allow"
+      ],
+      "r": 0,
+      "e": "« decrease » est proche de « reduce » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “increase”.",
+      "o": [
+        "reject",
+        "rise",
+        "peaceful",
+        "rich"
+      ],
+      "r": 1,
+      "e": "« rise » est proche de « increase » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “purchase”.",
+      "o": [
+        "carry on",
+        "scared",
+        "buy",
+        "swift"
+      ],
+      "r": 2,
+      "e": "« buy » est proche de « purchase » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “select”.",
+      "o": [
+        "courageous",
+        "fix",
+        "truthful",
+        "choose"
+      ],
+      "r": 3,
+      "e": "« choose » est proche de « select » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “assist”.",
+      "o": [
+        "help",
+        "well-known",
+        "reach",
+        "ordinary"
+      ],
+      "r": 0,
+      "e": "« help » est proche de « assist » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “protect”.",
+      "o": [
+        "unwell",
+        "guard",
+        "leave",
+        "respond"
+      ],
+      "r": 1,
+      "e": "« guard » est proche de « protect » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “refuse”.",
+      "o": [
+        "yell",
+        "allow",
+        "reject",
+        "find"
+      ],
+      "r": 2,
+      "e": "« reject » est proche de « refuse » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the closest synonym for “continue”.",
+      "o": [
+        "peaceful",
+        "rich",
+        "decrease",
+        "carry on"
+      ],
+      "r": 3,
+      "e": "« carry on » est proche de « continue » dans ce sens.",
+      "d": "synonymes",
+      "n": "intermediaire"
     }
   ]
 }
