@@ -3,8 +3,9 @@
 Public : élèves sénégalais du collège et du lycée, francophones, qui apprennent l'anglais.
 Ils lisent mal le français : les explications sont en **français très simple**, courtes, on tutoie.
 
-## Format (un fichier = 200 questions)
-`pedagogie/quiz/<domaine>_<niveau>_<n>.json` (n = 1 à 5) :
+## Format (objectif : 2 000 questions par domaine et par niveau)
+Chaque fichier contient jusqu’à 200 questions; réunir 10 fichiers numérotés pour atteindre l’objectif de 2 000 questions. Les banques plus petites restent utilisables pendant leur préparation.
+`pedagogie/quiz/<domaine>_<niveau>_<n>.json` (n = 1 à 10, soit 2 000 questions quand les 10 fichiers contiennent chacun 200 questions) :
 ```json
 {"questions": [
   {"q": "What colour is a banana?", "o": ["Blue", "Yellow", "Black", "Pink"], "r": 1,
