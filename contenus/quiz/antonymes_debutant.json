@@ -1,316 +1,316 @@
 {
   "questions": [
     {
-      "q": "Quel est le contraire de « grand » ?",
+      "q": "Quel est le contraire de “hot” ?",
       "o": [
-        "haut",
-        "petit",
-        "large",
-        "long"
+        "cold",
+        [
+          "warm",
+          "dry",
+          "bright"
+        ],
+        "“Cold” veut dire froid."
       ],
-      "r": 1,
-      "e": "Le contraire de « grand » est « petit ».",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est le contraire de « chaud » ?",
+      "q": "Quel est le contraire de “tall” ?",
       "o": [
-        "froid",
-        "tiède",
-        "brûlant",
-        "sec"
+        [
+          "high",
+          "long",
+          "wide"
+        ],
+        "short",
+        "“Short” veut dire petit en hauteur."
       ],
-      "r": 0,
-      "e": "Le contraire de « chaud » est « froid ».",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est le contraire de « ouvrir » ?",
+      "q": "Quel est le contraire de “old” ?",
       "o": [
-        "entrer",
-        "fermer",
-        "pousser",
-        "tirer"
+        [
+          "young",
+          "late",
+          "slow"
+        ],
+        "“New” veut dire neuf ou nouveau.",
+        "new"
       ],
-      "r": 1,
-      "e": "Le contraire d'ouvrir est fermer.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est le contraire de « rapide » ?",
+      "q": "Quel est le contraire de “open” ?",
       "o": [
-        "pressé",
-        "lent",
-        "agile",
-        "vif"
+        [
+          "wide",
+          "free",
+          "ready"
+        ],
+        "“Closed” veut dire fermé.",
+        "closed"
       ],
-      "r": 1,
-      "e": "Le contraire de rapide est lent.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est le contraire de « heureux » ?",
+      "q": "Quel est le contraire de “early” ?",
       "o": [
-        "joyeux",
-        "triste",
-        "content",
-        "souriant"
+        "late",
+        [
+          "quick",
+          "soon",
+          "first"
+        ],
+        "“Late” veut dire en retard ou tard."
       ],
-      "r": 1,
-      "e": "Le contraire de heureux est triste.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est le contraire de « commencer » ?",
+      "q": "Quel est le contraire de “happy” ?",
       "o": [
-        "débuter",
-        "continuer",
-        "terminer",
-        "essayer"
+        [
+          "glad",
+          "kind",
+          "funny"
+        ],
+        "sad",
+        "“Sad” veut dire triste."
       ],
-      "r": 2,
-      "e": "Le contraire de commencer est terminer.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est le contraire de « plein » ?",
+      "q": "Quel est le contraire de “fast” ?",
       "o": [
-        "vide",
-        "complet",
-        "rempli",
-        "entier"
+        [
+          "quick",
+          "strong",
+          "easy"
+        ],
+        "“Slow” veut dire lent.",
+        "slow"
       ],
-      "r": 0,
-      "e": "Le contraire de plein est vide.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est le contraire de « monter » ?",
+      "q": "Quel est le contraire de “clean” ?",
       "o": [
-        "grimper",
-        "descendre",
-        "sauter",
-        "avancer"
+        [
+          "clear",
+          "fresh",
+          "empty"
+        ],
+        "“Dirty” veut dire sale.",
+        "dirty"
       ],
-      "r": 1,
-      "e": "Le contraire de monter est descendre.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est le contraire de « propre » ?",
+      "q": "Quel est le contraire de “full” ?",
       "o": [
-        "net",
-        "rangé",
-        "sale",
-        "lavé"
+        "empty",
+        [
+          "heavy",
+          "wide",
+          "ready"
+        ],
+        "“Empty” veut dire vide."
       ],
-      "r": 2,
-      "e": "Le contraire de propre est sale.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est le contraire de « jour » ?",
+      "q": "Quel est le contraire de “easy” ?",
       "o": [
-        "matin",
-        "soir",
-        "nuit",
-        "midi"
+        [
+          "simple",
+          "quick",
+          "safe"
+        ],
+        "difficult",
+        "“Difficult” veut dire difficile."
       ],
-      "r": 2,
-      "e": "L'opposé de jour est nuit.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est le contraire de « facile » ?",
+      "q": "Quel est le contraire de “wet” ?",
       "o": [
-        "simple",
-        "difficile",
-        "clair",
-        "possible"
+        [
+          "cold",
+          "soft",
+          "dark"
+        ],
+        "“Dry” veut dire sec.",
+        "dry"
       ],
-      "r": 1,
-      "e": "Le contraire de facile est difficile.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est le contraire de « faible » ?",
+      "q": "Quel est le contraire de “strong” ?",
       "o": [
-        "fragile",
-        "fort",
-        "mince",
-        "petit"
+        [
+          "brave",
+          "heavy",
+          "healthy"
+        ],
+        "“Weak” veut dire faible.",
+        "weak"
       ],
-      "r": 1,
-      "e": "Le contraire de faible est fort.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est le contraire de « près » ?",
+      "q": "Dans “a light bag”, quel est le contraire de “light” ?",
       "o": [
-        "proche",
-        "loin",
-        "ici",
-        "auprès"
+        "heavy",
+        [
+          "bright",
+          "small",
+          "empty"
+        ],
+        "Ici, “light” veut dire léger; son contraire est “heavy”."
       ],
-      "r": 1,
-      "e": "Le contraire de près est loin.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est le contraire de « jeune » ?",
+      "q": "Quel est le contraire de “start” ?",
       "o": [
-        "petit",
-        "âgé",
-        "neuf",
-        "vif"
+        [
+          "begin",
+          "move",
+          "stay"
+        ],
+        "stop",
+        "“Stop” veut dire arrêter."
       ],
-      "r": 1,
-      "e": "Le contraire de jeune est âgé.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est le contraire de « accepter » ?",
+      "q": "Quel est le contraire de “above” ?",
       "o": [
-        "refuser",
-        "recevoir",
-        "prendre",
-        "garder"
+        [
+          "over",
+          "high",
+          "inside"
+        ],
+        "“Below” veut dire en dessous.",
+        "below"
       ],
-      "r": 0,
-      "e": "Le contraire d'accepter est refuser.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est le contraire de « entrer » ?",
+      "q": "Quel est le contraire de “near” ?",
       "o": [
-        "venir",
-        "sortir",
-        "arriver",
-        "passer"
+        [
+          "close",
+          "next",
+          "beside"
+        ],
+        "“Far” veut dire loin.",
+        "far"
       ],
-      "r": 1,
-      "e": "Le contraire d'entrer est sortir.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est le contraire de « doux » ?",
+      "q": "Dans un échange, quel est le contraire de “buy” ?",
       "o": [
-        "sucré",
-        "dur",
-        "tendre",
-        "gentil"
+        "sell",
+        [
+          "pay",
+          "keep",
+          "choose"
+        ],
+        "Acheter et vendre sont des actions opposées dans un échange."
       ],
-      "r": 1,
-      "e": "Le contraire de doux peut être dur.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est le contraire de « monter » ?",
+      "q": "Quel est le contraire de “win” ?",
       "o": [
-        "lever",
-        "descendre",
-        "grandir",
-        "porter"
+        [
+          "play",
+          "score",
+          "try"
+        ],
+        "lose",
+        "“Lose” veut dire perdre."
       ],
-      "r": 1,
-      "e": "Descendre est l'action opposée à monter.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est le contraire de « clair » ?",
+      "q": "Quel est le contraire de “remember” ?",
       "o": [
-        "lumineux",
-        "sombre",
-        "blanc",
-        "visible"
+        [
+          "learn",
+          "know",
+          "repeat"
+        ],
+        "“Forget” veut dire oublier.",
+        "forget"
       ],
-      "r": 1,
-      "e": "Le contraire de clair est sombre.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est le contraire de « donner » ?",
+      "q": "Quel est le contraire de “noisy” ?",
       "o": [
-        "offrir",
-        "recevoir",
-        "prêter",
-        "partager"
+        [
+          "loud",
+          "busy",
+          "crowded"
+        ],
+        "“Quiet” veut dire calme ou silencieux.",
+        "quiet"
       ],
-      "r": 1,
-      "e": "Donner et recevoir sont des actions opposées.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 3
     },
     {
-      "q": "Quel est le contraire de « gagner » ?",
+      "q": "Quel est le contraire de “safe” ?",
       "o": [
-        "remporter",
-        "perdre",
-        "jouer",
-        "réussir"
+        "dangerous",
+        [
+          "careful",
+          "healthy",
+          "strong"
+        ],
+        "“Dangerous” veut dire dangereux."
       ],
-      "r": 1,
-      "e": "Le contraire de gagner est perdre.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 0
     },
     {
-      "q": "Quel est le contraire de « avant » ?",
+      "q": "Quel est le contraire de “kind” ?",
       "o": [
-        "devant",
-        "après",
-        "hier",
-        "maintenant"
+        [
+          "polite",
+          "helpful",
+          "friendly"
+        ],
+        "cruel",
+        "“Cruel” veut dire cruel."
       ],
-      "r": 1,
-      "e": "Le contraire de avant est après.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 1
     },
     {
-      "q": "Quel est le contraire de « toujours » ?",
+      "q": "Quel est le contraire de “arrive” ?",
       "o": [
-        "souvent",
-        "jamais",
-        "parfois",
-        "encore"
+        [
+          "reach",
+          "enter",
+          "come"
+        ],
+        "“Leave” veut dire partir.",
+        "leave"
       ],
-      "r": 1,
-      "e": "Dans cet exercice, l'opposé de toujours est jamais.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 2
     },
     {
-      "q": "Quel est le contraire de « vivant » ?",
+      "q": "Quel est le contraire de “give” ?",
       "o": [
-        "actif",
-        "mort",
-        "présent",
-        "debout"
+        [
+          "share",
+          "bring",
+          "send"
+        ],
+        "“Take” veut dire prendre.",
+        "take"
       ],
-      "r": 1,
-      "e": "Le contraire de vivant est mort.",
-      "d": "antonymes",
-      "n": "debutant"
+      "r": 3
     }
   ]
 }
