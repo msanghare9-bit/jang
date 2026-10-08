@@ -98,19 +98,19 @@
     },
     "comprehension_intermediaire": {
       "fichier": "comprehension_intermediaire.json",
-      "nombre": 24
+      "nombre": 48
     },
     "comprehension_avance": {
       "fichier": "comprehension_avance.json",
-      "nombre": 24
+      "nombre": 48
     },
     "culture_intermediaire": {
       "fichier": "culture_intermediaire.json",
-      "nombre": 24
+      "nombre": 48
     },
     "culture_avance": {
       "fichier": "culture_avance.json",
-      "nombre": 24
+      "nombre": 48
     }
   }
 }
