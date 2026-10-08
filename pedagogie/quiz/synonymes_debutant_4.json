@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Dans « Awa looks after her little brother », que veut dire « looks after »?",
+      "o": [
+        "takes care of",
+        "looks for",
+        "speaks to",
+        "waits for"
+      ],
+      "r": 0,
+      "e": "Look after veut dire s’occuper de quelqu’un."
+    },
+    {
+      "q": "Dans « We found out the answer », que veut dire « found out »?",
+      "o": [
+        "forgot",
+        "discovered",
+        "changed",
+        "copied"
+      ],
+      "r": 1,
+      "e": "Find out veut dire découvrir ou apprendre une information."
+    },
+    {
+      "q": "Dans « Please give back my book », que veut dire « give back »?",
+      "o": [
+        "borrow",
+        "open",
+        "return",
+        "carry"
+      ],
+      "r": 2,
+      "e": "Give back veut dire rendre quelque chose."
+    },
+    {
+      "q": "Dans « Turn off the radio », que veut dire « turn off »?",
+      "o": [
+        "turn around",
+        "listen to",
+        "turn up",
+        "switch off"
+      ],
+      "r": 3,
+      "e": "Turn off veut dire éteindre."
+    },
+    {
+      "q": "Dans « Turn on the light », que veut dire « turn on »?",
+      "o": [
+        "switch on",
+        "switch off",
+        "look at",
+        "clean up"
+      ],
+      "r": 0,
+      "e": "Turn on veut dire allumer."
+    },
+    {
+      "q": "Dans « I get up at six », que veut dire « get up »?",
+      "o": [
+        "go to sleep",
+        "leave the bed",
+        "eat breakfast",
+        "arrive at school"
+      ],
+      "r": 1,
+      "e": "Get up veut dire se lever."
+    },
+    {
+      "q": "Dans « The baby woke up », que veut dire « woke up »?",
+      "o": [
+        "started crying",
+        "went outside",
+        "stopped sleeping",
+        "fell down"
+      ],
+      "r": 2,
+      "e": "Wake up veut dire se réveiller."
+    },
+    {
+      "q": "Dans « Put on your jacket », que veut dire « put on »?",
+      "o": [
+        "wash",
+        "buy",
+        "remove",
+        "wear"
+      ],
+      "r": 3,
+      "e": "Put on veut dire mettre un vêtement."
+    },
+    {
+      "q": "Dans « Take off your shoes », que veut dire « take off »?",
+      "o": [
+        "remove",
+        "clean",
+        "find",
+        "tie"
+      ],
+      "r": 0,
+      "e": "Take off veut dire enlever."
+    },
+    {
+      "q": "Dans « We went back to the classroom », que veut dire « went back »?",
+      "o": [
+        "ran away",
+        "returned",
+        "looked around",
+        "sat down"
+      ],
+      "r": 1,
+      "e": "Go back veut dire retourner à un lieu."
+    },
+    {
+      "q": "Dans « Please come in », que veut dire « come in »?",
+      "o": [
+        "leave",
+        "wait",
+        "enter",
+        "sit"
+      ],
+      "r": 2,
+      "e": "Come in veut dire entrer."
+    },
+    {
+      "q": "Dans « The children went out after lunch », que veut dire « went out »?",
+      "o": [
+        "came inside",
+        "went to bed",
+        "sat quietly",
+        "left the house or room"
+      ],
+      "r": 3,
+      "e": "Go out veut dire sortir."
+    },
+    {
+      "q": "Dans « Carry on reading », que veut dire « carry on »?",
+      "o": [
+        "continue",
+        "stop",
+        "begin again",
+        "read aloud"
+      ],
+      "r": 0,
+      "e": "Carry on veut dire continuer."
+    },
+    {
+      "q": "Dans « Pick up the pencil », que veut dire « pick up »?",
+      "o": [
+        "drop",
+        "lift",
+        "hide",
+        "draw"
+      ],
+      "r": 1,
+      "e": "Pick up veut dire ramasser ou prendre."
+    },
+    {
+      "q": "Dans « Throw away the empty bottle », que veut dire « throw away »?",
+      "o": [
+        "fill",
+        "wash",
+        "discard",
+        "sell"
+      ],
+      "r": 2,
+      "e": "Throw away veut dire jeter."
+    },
+    {
+      "q": "Dans « Can you help me out? », que veut dire « help out »?",
+      "o": [
+        "call",
+        "wait",
+        "visit",
+        "assist"
+      ],
+      "r": 3,
+      "e": "Help out veut dire aider."
+    },
+    {
+      "q": "Dans « He was in a hurry », que veut dire « in a hurry »?",
+      "o": [
+        "moving quickly",
+        "feeling sleepy",
+        "being careful",
+        "feeling hungry"
+      ],
+      "r": 0,
+      "e": "In a hurry veut dire pressé."
+    },
+    {
+      "q": "Dans « Come here at once », que veut dire « at once »?",
+      "o": [
+        "tomorrow",
+        "immediately",
+        "quietly",
+        "together"
+      ],
+      "r": 1,
+      "e": "At once veut dire tout de suite."
+    },
+    {
+      "q": "Dans « I did the exercise by myself », que veut dire « by myself »?",
+      "o": [
+        "with a friend",
+        "very quickly",
+        "alone",
+        "at school"
+      ],
+      "r": 2,
+      "e": "By myself veut dire seul, sans aide."
+    },
+    {
+      "q": "Dans « There are a lot of books », que veut dire « a lot of »?",
+      "o": [
+        "few",
+        "old",
+        "new",
+        "many"
+      ],
+      "r": 3,
+      "e": "A lot of veut dire beaucoup de."
+    },
+    {
+      "q": "Dans « The shop is nearby », que veut dire « nearby »?",
+      "o": [
+        "close to here",
+        "far away",
+        "closed today",
+        "very large"
+      ],
+      "r": 0,
+      "e": "Nearby veut dire proche d’ici."
+    },
+    {
+      "q": "Dans « Perhaps we can play tomorrow », que veut dire « perhaps »?",
+      "o": [
+        "always",
+        "maybe",
+        "never",
+        "already"
+      ],
+      "r": 1,
+      "e": "Perhaps veut dire peut-être."
+    },
+    {
+      "q": "Dans « We often visit our grandmother », que veut dire « often »?",
+      "o": [
+        "rarely",
+        "never",
+        "frequently",
+        "once"
+      ],
+      "r": 2,
+      "e": "Often veut dire souvent."
+    },
+    {
+      "q": "Dans « See you soon », que veut dire « soon »?",
+      "o": [
+        "yesterday",
+        "late",
+        "sometimes",
+        "shortly"
+      ],
+      "r": 3,
+      "e": "Soon veut dire bientôt."
+    }
+  ]
+}
