@@ -18,46 +18,46 @@
     {
       "q": "Which schedule stayed unchanged?",
       "o": [
-        "The book-return schedule",
         [
           "The study room closing time",
           "The evening classes",
           "The library’s location"
         ],
+        "The book-return schedule",
         "Only the study room hours changed.",
         null
       ],
-      "r": 0,
+      "r": 1,
       "t": "When the coastal library extended its hours during exam season, attendance increased after evening classes. Staff noticed that students needed quiet places more than extra borrowing time, so they kept the study room open later while leaving the book-return schedule unchanged."
     },
     {
       "q": "What benefit did members notice?",
       "o": [
-        "Shared storage reduced losses in wet months",
         [
           "Every harvest became larger",
           "The wet season disappeared",
           "Records replaced the storage room"
         ],
         "The text links shared storage to fewer losses during wet months.",
+        "Shared storage reduced losses in wet months",
         null
       ],
-      "r": 0,
+      "r": 2,
       "t": "A farmers’ cooperative recorded harvest totals for three seasons. The figures varied, but members found that sharing storage reduced losses during the wettest months. They decided to keep collecting data before making claims about long-term productivity."
     },
     {
       "q": "Why did members continue collecting data?",
       "o": [
-        "They wanted more evidence before judging long-term productivity",
         [
           "They planned to stop farming",
           "They had forgotten the harvest",
           "They wanted to remove the storage"
         ],
         "They avoided broad conclusions from only three seasons.",
-        null
+        null,
+        "They wanted more evidence before judging long-term productivity"
       ],
-      "r": 0,
+      "r": 3,
       "t": "A farmers’ cooperative recorded harvest totals for three seasons. The figures varied, but members found that sharing storage reduced losses during the wettest months. They decided to keep collecting data before making claims about long-term productivity."
     },
     {
@@ -78,46 +78,46 @@
     {
       "q": "What improved after the signs were updated?",
       "o": [
-        "Passengers made fewer wrong turns",
         [
           "Every journey became shorter",
           "The route stopped serving the hospital",
           "The buses became free"
         ],
+        "Passengers made fewer wrong turns",
         "Passengers reported fewer wrong turns.",
         null
       ],
-      "r": 0,
+      "r": 1,
       "t": "A town bus route was redesigned to connect the hospital and the market. The first month brought confusion because some stop signs had not been moved. After signs were updated, passengers reported fewer wrong turns, although the journey was not shorter for everyone."
     },
     {
       "q": "What advantage did the covered dryer offer?",
       "o": [
-        "It protected fruit from dust and gave consistent results",
         [
           "It required no initial cost",
           "It worked without sunlight or heat",
           "It made every batch identical in size"
         ],
         "The text names protection from dust and consistent batches.",
+        "It protected fruit from dust and gave consistent results",
         null
       ],
-      "r": 0,
+      "r": 2,
       "t": "A student project compared open-air and covered drying of mango slices. The covered dryer required an initial cost, yet it protected the fruit from dust and produced more consistent batches. The team recommended it for groups that could share the equipment."
     },
     {
       "q": "For whom did the team recommend the dryer?",
       "o": [
-        "Groups able to share the equipment",
         [
           "A person drying one slice once",
           "People who do not grow fruit",
           "Groups without a place to store it"
         ],
         "Sharing helps address the initial cost.",
-        null
+        null,
+        "Groups able to share the equipment"
       ],
-      "r": 0,
+      "r": 3,
       "t": "A student project compared open-air and covered drying of mango slices. The covered dryer required an initial cost, yet it protected the fruit from dust and produced more consistent batches. The team recommended it for groups that could share the equipment."
     },
     {
@@ -138,46 +138,46 @@
     {
       "q": "Why did the clinic keep flexible slots?",
       "o": [
-        "To include patients with uncertain travel times",
         [
           "To prevent all appointments",
           "To shorten every journey",
           "To replace the appointment system"
         ],
+        "To include patients with uncertain travel times",
         "Flexible slots helped patients whose journeys were uncertain.",
         null
       ],
-      "r": 0,
+      "r": 1,
       "t": "A clinic’s appointment system reduced average waiting time. However, patients from distant villages sometimes arrived late because transport was unpredictable. The clinic reserved a few flexible slots, improving planning without excluding people whose journeys were uncertain."
     },
     {
       "q": "What pattern did the measurements show?",
       "o": [
-        "The river rose quickly and fell more slowly",
         [
           "The river fell quickly before rain",
           "The water level never changed",
           "The river rose only in dry weather"
         ],
         "The recorded pattern was a fast rise and slower fall.",
+        "The river rose quickly and fell more slowly",
         null
       ],
-      "r": 0,
+      "r": 2,
       "t": "Researchers measured water levels weekly during the rainy season. The river rose rapidly after several days of heavy rain and receded more slowly. They shared the pattern with residents but warned that past measurements could not predict every flood."
     },
     {
       "q": "Why did the researchers avoid promising a precise flood forecast?",
       "o": [
-        "Past measurements cannot predict every future event",
         [
           "They had never measured water",
           "Residents did not want information",
           "Rain cannot affect rivers"
         ],
         "The researchers cautioned against treating a past pattern as a certain forecast.",
-        null
+        null,
+        "Past measurements cannot predict every future event"
       ],
-      "r": 0,
+      "r": 3,
       "t": "Researchers measured water levels weekly during the rainy season. The river rose rapidly after several days of heavy rain and receded more slowly. They shared the pattern with residents but warned that past measurements could not predict every flood."
     },
     {
@@ -198,46 +198,46 @@
     {
       "q": "What conclusion did the curator draw?",
       "o": [
-        "Practical demonstrations make objects easier to relate to",
         [
           "Labels should be removed",
           "Visitors dislike farming history",
           "The tools should be sold"
         ],
+        "Practical demonstrations make objects easier to relate to",
         "The curator said demonstrations connected objects to everyday knowledge.",
         null
       ],
-      "r": 0,
+      "r": 1,
       "t": "A museum added short descriptions to a room of farming tools and invited an experienced farmer to demonstrate one technique. Visitors then asked how tools had changed over time. The curator concluded that practical demonstrations helped connect objects to everyday knowledge."
     },
     {
       "q": "What were peer tutors trained to do?",
       "o": [
-        "Ask questions that help pupils reason",
         [
           "Complete pupils’ work",
           "Give answers immediately",
           "Replace the classroom teacher"
         ],
         "Tutors were trained to guide reasoning with questions.",
+        "Ask questions that help pupils reason",
         null
       ],
-      "r": 0,
+      "r": 2,
       "t": "Peer tutors were trained to ask questions instead of supplying answers. At first, some younger pupils expected quick solutions. Over time, they began explaining their reasoning, and the older tutors reported becoming more patient."
     },
     {
       "q": "What change did younger pupils show?",
       "o": [
-        "They began explaining their reasoning",
         [
           "They stopped asking questions",
           "They left the school",
           "They asked tutors to do the work"
         ],
         "The text says pupils began explaining their thinking.",
-        null
+        null,
+        "They began explaining their reasoning"
       ],
-      "r": 0,
+      "r": 3,
       "t": "Peer tutors were trained to ask questions instead of supplying answers. At first, some younger pupils expected quick solutions. Over time, they began explaining their reasoning, and the older tutors reported becoming more patient."
     },
     {
@@ -258,46 +258,46 @@
     {
       "q": "What could mangrove roots do?",
       "o": [
-        "Hold soil and create habitat",
         [
           "Prevent every storm",
           "Turn salt water into fresh water",
           "Move the coastline overnight"
         ],
+        "Hold soil and create habitat",
         "The passage names soil retention and habitat as benefits.",
         null
       ],
-      "r": 0,
+      "r": 1,
       "t": "A shoreline association planted mangroves in a sheltered area. Members knew the trees could not prevent every storm, but their roots could hold soil and create habitat. They also agreed to monitor survival rates before extending the project."
     },
     {
       "q": "Why did some pupils prefer the old test?",
       "o": [
-        "It was familiar",
         [
           "It covered several topics in a project",
           "It revealed misunderstandings sooner",
           "It was held every week"
         ],
         "The passage says some preferred the familiar format.",
+        "It was familiar",
         null
       ],
-      "r": 0,
+      "r": 2,
       "t": "A teacher replaced one final test with shorter quizzes and a project. Some pupils preferred the familiar test, while others said smaller quizzes revealed misunderstandings sooner. The project remained because it asked pupils to combine ideas from several topics."
     },
     {
       "q": "Why did the project remain?",
       "o": [
-        "It required pupils to combine ideas from different topics",
         [
           "It replaced every lesson",
           "It was easier than all quizzes",
           "Pupils refused to take it"
         ],
         "The teacher kept it for cross-topic application.",
-        null
+        null,
+        "It required pupils to combine ideas from different topics"
       ],
-      "r": 0,
+      "r": 3,
       "t": "A teacher replaced one final test with shorter quizzes and a project. Some pupils preferred the familiar test, while others said smaller quizzes revealed misunderstandings sooner. The project remained because it asked pupils to combine ideas from several topics."
     },
     {
@@ -318,46 +318,46 @@
     {
       "q": "What would researchers compare the records with?",
       "o": [
-        "Longer-term observations",
         [
           "School exam scores",
           "Bus schedules",
           "A single market price"
         ],
+        "Longer-term observations",
         "The passage says researchers planned a longer comparison.",
         null
       ],
-      "r": 0,
+      "r": 1,
       "t": "A fishing community logged catch sizes over several months. Weather and season affected the totals, so the group avoided drawing conclusions from a single week. Researchers planned to compare the records with longer-term observations."
     },
     {
       "q": "What reduced household spending over the year?",
       "o": [
-        "Lower spending on replacement batteries",
         [
           "A lower initial lamp price",
           "A decrease in electricity use only",
           "The sale of the lamps"
         ],
         "The text says battery spending was lower despite the initial cost.",
+        "Lower spending on replacement batteries",
         null
       ],
-      "r": 0,
+      "r": 2,
       "t": "A solar-lamp project showed lower battery spending over one year, despite the lamps’ higher initial price. The team noted that the result depended on usage and access to replacement parts. They scheduled another review after the rainy season."
     },
     {
       "q": "Which factor could affect the result?",
       "o": [
-        "Access to replacement parts",
         [
           "The colour of the lamp",
           "The number of school lessons",
           "The library opening time"
         ],
         "The team specifically mentioned parts availability.",
-        null
+        null,
+        "Access to replacement parts"
       ],
-      "r": 0,
+      "r": 3,
       "t": "A solar-lamp project showed lower battery spending over one year, despite the lamps’ higher initial price. The team noted that the result depended on usage and access to replacement parts. They scheduled another review after the rainy season."
     }
   ]
