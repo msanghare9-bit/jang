@@ -86,9 +86,6 @@ class TournamentService {
       'round':0,'capacity':capacity,'questions':[for(final q in questions) q.toMap()],
       'createdAt':FieldValue.serverTimestamp(),
     });
-    await ref.collection('participants').doc(host.uid).set({
-      'name':host.publicName,'joinedAt':FieldValue.serverTimestamp(),
-    });
     return Tournament.fromDoc(await ref.get());
   }
 
