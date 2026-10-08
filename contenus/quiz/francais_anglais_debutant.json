@@ -625,15 +625,15 @@
       "n": "debutant"
     },
     {
-      "q": "Comment dit-on « bonjour » en anglais ?",
+      "q": "Comment dit-on « la pharmacie est au coin de la rue » en anglais ?",
       "o": [
-        "hello",
+        "the pharmacy is around the corner",
         "book",
         "I am tired",
         "have a nice day"
       ],
       "r": 0,
-      "e": "« bonjour » se traduit par « hello ».",
+      "e": "« la pharmacie est au coin de la rue » se traduit par « the pharmacy is around the corner ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -651,15 +651,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « s'il vous plaît » en anglais ?",
+      "q": "Comment dit-on « nous devons partir maintenant » en anglais ?",
       "o": [
         "friend",
         "on the left",
-        "please",
+        "we must leave now",
         "what time is it"
       ],
       "r": 2,
-      "e": "« s'il vous plaît » se traduit par « please ».",
+      "e": "« nous devons partir maintenant » se traduit par « we must leave now ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -677,15 +677,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « école » en anglais ?",
+      "q": "Comment dit-on « je cherche la pharmacie » en anglais ?",
       "o": [
-        "school",
+        "I am looking for the pharmacy",
         "see you soon",
         "I am hungry",
         "see you later"
       ],
       "r": 0,
-      "e": "« école » se traduit par « school ».",
+      "e": "« je cherche la pharmacie » se traduit par « I am looking for the pharmacy ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -703,15 +703,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « eau » en anglais ?",
+      "q": "Comment dit-on « il pleut depuis ce matin » en anglais ?",
       "o": [
         "I am tired",
         "have a nice day",
-        "water",
+        "it has been raining since this morning",
         "I am late"
       ],
       "r": 2,
-      "e": "« eau » se traduit par « water ».",
+      "e": "« il pleut depuis ce matin » se traduit par « it has been raining since this morning ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -729,15 +729,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « bonne nuit » en anglais ?",
+      "q": "Comment dit-on « je préfère marcher » en anglais ?",
       "o": [
-        "good night",
+        "I prefer walking",
         "on the left",
         "what time is it",
         "thank you"
       ],
       "r": 0,
-      "e": "« bonne nuit » se traduit par « good night ».",
+      "e": "« je préfère marcher » se traduit par « I prefer walking ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -807,15 +807,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « à droite » en anglais ?",
+      "q": "Comment dit-on « peux-tu me montrer le chemin » en anglais ?",
       "o": [
         "what time is it",
         "thank you",
-        "on the right",
+        "can you show me the way",
         "friend"
       ],
       "r": 2,
-      "e": "« à droite » se traduit par « on the right ».",
+      "e": "« peux-tu me montrer le chemin » se traduit par « can you show me the way ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -833,15 +833,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « je ne sais pas » en anglais ?",
+      "q": "Comment dit-on « le marché ouvre à huit heures » en anglais ?",
       "o": [
-        "I don't know",
+        "the market opens at eight o'clock",
         "see you later",
         "goodbye",
         "see you soon"
       ],
       "r": 0,
-      "e": "« je ne sais pas » se traduit par « I don't know ».",
+      "e": "« le marché ouvre à huit heures » se traduit par « the market opens at eight o'clock ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -859,15 +859,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « bienvenue » en anglais ?",
+      "q": "Comment dit-on « je suis d'accord avec toi » en anglais ?",
       "o": [
         "I am late",
         "book",
-        "welcome",
+        "I agree with you",
         "I am tired"
       ],
       "r": 2,
-      "e": "« bienvenue » se traduit par « welcome ».",
+      "e": "« je suis d'accord avec toi » se traduit par « I agree with you ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -885,15 +885,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « prends soin de toi » en anglais ?",
+      "q": "Comment dit-on « ne t'inquiète pas » en anglais ?",
       "o": [
-        "take care",
+        "don't worry",
         "thank you",
         "friend",
         "on the left"
       ],
       "r": 0,
-      "e": "« prends soin de toi » se traduit par « take care ».",
+      "e": "« ne t'inquiète pas » se traduit par « don't worry ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
@@ -911,15 +911,15 @@
       "n": "anglais_debutant"
     },
     {
-      "q": "Comment dit-on « petit déjeuner » en anglais ?",
+      "q": "Comment dit-on « prends ton temps » en anglais ?",
       "o": [
         "goodbye",
         "see you soon",
-        "breakfast",
+        "take your time",
         "I am hungry"
       ],
       "r": 2,
-      "e": "« petit déjeuner » se traduit par « breakfast ».",
+      "e": "« prends ton temps » se traduit par « take your time ».",
       "d": "francais",
       "n": "anglais_debutant"
     },
