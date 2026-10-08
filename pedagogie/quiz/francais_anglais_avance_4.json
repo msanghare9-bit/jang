@@ -14,34 +14,34 @@
     {
       "q": "What does « take something for granted » mean?",
       "o": [
-        "tenir quelque chose pour acquis",
         "prendre quelque chose en location",
+        "tenir quelque chose pour acquis",
         "offrir quelque chose gratuitement",
         "considérer quelque chose comme faux"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Take for granted veut dire tenir pour acquis."
     },
     {
       "q": "Which expression means « trouver une idée ou une solution »?",
       "o": [
-        "come up with",
         "come across",
         "come down with",
+        "come up with",
         "come along"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Come up with an idea veut dire trouver une idée."
     },
     {
       "q": "Which verb means « provoquer un changement »?",
       "o": [
-        "bring about",
         "bring along",
         "bring up",
-        "bring back"
+        "bring back",
+        "bring about"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Bring about veut dire provoquer ou entraîner."
     },
     {
@@ -58,34 +58,34 @@
     {
       "q": "Which expression means « mener une enquête »?",
       "o": [
-        "carry out an investigation",
         "put off an investigation",
+        "carry out an investigation",
         "look into an investigation",
         "turn down an investigation"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Carry out veut dire mener ou effectuer."
     },
     {
       "q": "Which expression means « expliquer les résultats »?",
       "o": [
-        "account for the results",
         "take after the results",
         "look forward to the results",
+        "account for the results",
         "set aside the results"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Account for veut dire expliquer ou rendre compte de."
     },
     {
       "q": "What does « be bound to happen » mean?",
       "o": [
-        "être certain d’arriver",
         "être autorisé à arriver",
         "être sur le point de partir",
-        "être empêché d’arriver"
+        "être empêché d’arriver",
+        "être certain d’arriver"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Be bound to exprime une forte certitude."
     },
     {
@@ -102,34 +102,34 @@
     {
       "q": "Which expression means « ne pas atteindre un objectif »?",
       "o": [
-        "fall short of a goal",
         "fall in with a group",
+        "fall short of a goal",
         "fall back on a plan",
         "fall out with a friend"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Fall short of veut dire ne pas atteindre le niveau ou l’objectif attendu."
     },
     {
       "q": "Which expression means « supporter un bruit »?",
       "o": [
-        "put up with the noise",
         "put out the noise",
         "put off the noise",
+        "put up with the noise",
         "put through the noise"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Put up with veut dire supporter ou tolérer."
     },
     {
       "q": "What does « get away with a mistake » mean?",
       "o": [
-        "s’en tirer sans être puni pour une faute",
         "corriger une faute immédiatement",
         "avouer une faute à quelqu’un",
-        "répéter la même faute"
+        "répéter la même faute",
+        "s’en tirer sans être puni pour une faute"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Get away with signifie ne pas être puni pour quelque chose."
     },
     {
@@ -146,34 +146,34 @@
     {
       "q": "Which expression means « suivre le rythme d’une classe »?",
       "o": [
-        "keep up with the class",
         "keep away from the class",
+        "keep up with the class",
         "keep on with the class",
         "keep out of the class"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Keep up with veut dire suivre le rythme de."
     },
     {
       "q": "Which verb means « refuser une offre »?",
       "o": [
-        "turn down",
         "turn up",
         "turn into",
+        "turn down",
         "turn over"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Turn down une offre veut dire la refuser."
     },
     {
       "q": "What does « set out to improve the service » mean?",
       "o": [
-        "entreprendre d’améliorer le service",
         "renoncer à améliorer le service",
         "empêcher le service de fonctionner",
-        "décrire le service en détail"
+        "décrire le service en détail",
+        "entreprendre d’améliorer le service"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Set out to veut dire commencer avec l’intention de faire quelque chose."
     },
     {
@@ -190,34 +190,34 @@
     {
       "q": "Which expression means « étayer une affirmation avec des faits »?",
       "o": [
-        "back up a claim",
         "break up a claim",
+        "back up a claim",
         "bring up a claim",
         "take up a claim"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Back up a claim veut dire appuyer une affirmation avec des preuves."
     },
     {
       "q": "Which expression means « à long terme »?",
       "o": [
-        "in the long run",
         "at the last minute",
         "for the time being",
+        "in the long run",
         "once in a while"
       ],
-      "r": 0,
+      "r": 2,
       "e": "In the long run veut dire à long terme."
     },
     {
       "q": "Which expression means « nullement »?",
       "o": [
-        "by no means",
         "by all means",
         "in no time",
-        "at any rate"
+        "at any rate",
+        "by no means"
       ],
-      "r": 0,
+      "r": 3,
       "e": "By no means veut dire nullement."
     },
     {
@@ -234,34 +234,34 @@
     {
       "q": "Which expression means « compenser une perte »?",
       "o": [
-        "make up for a loss",
         "make do with a loss",
+        "make up for a loss",
         "make off with a loss",
         "make out a loss"
       ],
-      "r": 0,
+      "r": 1,
       "e": "Make up for veut dire compenser."
     },
     {
       "q": "Which expression means « aller jusqu’au bout d’un projet »?",
       "o": [
-        "go through with a project",
         "go over a project",
         "go along with a project",
+        "go through with a project",
         "go out of a project"
       ],
-      "r": 0,
+      "r": 2,
       "e": "Go through with veut dire accomplir ce qu’on avait décidé de faire."
     },
     {
       "q": "Which expression means « réduire les options à trois »?",
       "o": [
-        "narrow down the options to three",
         "write down the options to three",
         "turn down the options to three",
-        "break down the options to three"
+        "break down the options to three",
+        "narrow down the options to three"
       ],
-      "r": 0,
+      "r": 3,
       "e": "Narrow down veut dire réduire le nombre de possibilités."
     }
   ]
