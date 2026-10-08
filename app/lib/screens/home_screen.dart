@@ -537,7 +537,7 @@ class _FlagBar extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(height),
-        color: JangColors.snGreen,
+        child: Container(color: JangColors.snGreen),
       ),
     );
   }
