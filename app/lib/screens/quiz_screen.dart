@@ -25,9 +25,8 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  // Tuiles façon Kahoot : rouge ▲, bleu ◆, jaune ●, vert ■.
-  static const _shapes = ['▲', '◆', '●', '■'];
-  static const _colors = [Color(0xFFE21B3C), Color(0xFF1368CE), Color(0xFFD89E00), Color(0xFF26890C)];
+  // Choix sobres : lettres et cartes claires au style Jàng.
+  static const _shapes = ['A', 'B', 'C', 'D'];
 
   late List<int?> _answers;
   int _index = 0;
@@ -257,20 +256,14 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  /// Grandes tuiles colorées façon Kahoot, deux par ligne.
+  /// Choix en grandes cartes empilées, avec un repère lettré.
   Widget _grid(QuizQuestion q, int? chosen) {
     final idx = [for (var o = 0; o < q.options.length && o < 4; o++) if (q.options[o].trim().isNotEmpty) o];
     return Column(children: [
-      for (var r = 0; r < idx.length; r += 2)
+      for (final option in idx)
         Padding(
-          padding: const EdgeInsets.only(bottom: 12),
-          child: IntrinsicHeight(
-            child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-              Expanded(child: _option(idx[r], q, chosen)),
-              const SizedBox(width: 12),
-              Expanded(child: r + 1 < idx.length ? _option(idx[r + 1], q, chosen) : const SizedBox()),
-            ]),
-          ),
+          padding: const EdgeInsets.only(bottom: 10),
+          child: _option(option, q, chosen),
         ),
     ]);
   }
@@ -279,35 +272,50 @@ class _QuizScreenState extends State<QuizScreen> {
     final answered = chosen != null;
     final isAnswer = o == q.answer;
     final isChosen = o == chosen;
-    final color = _colors[o];
-    final dim = answered && !isAnswer;
-    return Opacity(
-      opacity: dim ? (isChosen ? 0.75 : 0.35) : 1,
-      child: GestureDetector(
+    final Color fill = !answered
+        ? Colors.white
+        : isAnswer
+            ? JangColors.successBg
+            : isChosen
+                ? JangColors.errorBg
+                : Colors.white;
+    final Color edge = !answered
+        ? JangColors.border
+        : isAnswer
+            ? JangColors.success
+            : isChosen
+                ? JangColors.error
+                : JangColors.border;
+    return Material(
+      color: fill,
+      borderRadius: BorderRadius.circular(16),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
         onTap: answered ? null : () => _choose(o),
         child: Container(
-          constraints: const BoxConstraints(minHeight: 120),
-          padding: const EdgeInsets.fromLTRB(12, 10, 12, 14),
+          constraints: const BoxConstraints(minHeight: 72),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
           decoration: BoxDecoration(
-            color: color,
             borderRadius: BorderRadius.circular(16),
-            boxShadow: [BoxShadow(color: JangColors.darker(color, 0.12), offset: const Offset(0, 6))],
+            border: Border.all(color: edge, width: isAnswer && answered || isChosen ? 2 : 1.5),
           ),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: answered && (isAnswer || isChosen)
-                  ? Icon(isAnswer ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                      color: Colors.white, size: 30)
-                  : Text(_shapes[o], style: const TextStyle(color: Colors.white, fontSize: 26, height: 1)),
-            ),
-            Expanded(
-              child: Center(
-                child: Text(q.options[o],
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w800)),
+          child: Row(children: [
+            Container(
+              width: 38,
+              height: 38,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: isChosen && answered && !isAnswer ? JangColors.error : JangColors.snGreen,
+                borderRadius: BorderRadius.circular(12),
               ),
+              child: Text(_shapes[o],
+                  style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w900)),
             ),
+            const SizedBox(width: 12),
+            Expanded(child: Text(q.options[o],
+                style: const TextStyle(color: JangColors.text, fontSize: 16, fontWeight: FontWeight.w700))),
+            if (answered && isAnswer) const Icon(Icons.check_circle, color: JangColors.snGreen),
+            if (answered && isChosen && !isAnswer) const Icon(Icons.cancel, color: JangColors.error),
           ]),
         ),
       ),
