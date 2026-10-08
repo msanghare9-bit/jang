@@ -839,6 +839,270 @@
       "e": "« employee » exprime le contraire de « employer ».",
       "d": "antonymes",
       "n": "intermediaire"
+    },
+    {
+      "q": "The road is wide here, but it becomes ___ near the bridge.",
+      "o": [
+        "narrow",
+        "bright",
+        "straight",
+        "smooth"
+      ],
+      "r": 0,
+      "e": "Narrow est le contraire de wide : étroit est le contraire de large."
+    },
+    {
+      "q": "The classroom was noisy at lunch, but it became ___ when the lesson began.",
+      "o": [
+        "busy",
+        "quiet",
+        "crowded",
+        "bright"
+      ],
+      "r": 1,
+      "e": "Quiet est le contraire de noisy : silencieux est le contraire de bruyant."
+    },
+    {
+      "q": "The bottle is empty; now it is ___.",
+      "o": [
+        "broken",
+        "full",
+        "cold",
+        "clean"
+      ],
+      "r": 1,
+      "e": "Full est le contraire de empty : plein est le contraire de vide."
+    },
+    {
+      "q": "We arrived early, but our friends arrived ___.",
+      "o": [
+        "late",
+        "safely",
+        "together",
+        "quietly"
+      ],
+      "r": 0,
+      "e": "Late est le contraire de early : en retard est le contraire d’en avance."
+    },
+    {
+      "q": "The shop will increase its opening hours, not ___ them.",
+      "o": [
+        "change",
+        "decrease",
+        "announce",
+        "measure"
+      ],
+      "r": 1,
+      "e": "Decrease est le contraire de increase : diminuer est le contraire d’augmenter."
+    },
+    {
+      "q": "I remembered the address, but my brother ___ it.",
+      "o": [
+        "forgot",
+        "copied",
+        "found",
+        "wrote"
+      ],
+      "r": 0,
+      "e": "Forgot est le contraire de remembered : oublier est le contraire de se souvenir."
+    },
+    {
+      "q": "A generous person shares; a ___ person keeps everything.",
+      "o": [
+        "careful",
+        "selfish",
+        "polite",
+        "patient"
+      ],
+      "r": 1,
+      "e": "Selfish est le contraire de generous dans ce contexte."
+    },
+    {
+      "q": "The teacher will include this chapter, not ___ it.",
+      "o": [
+        "explain",
+        "exclude",
+        "repeat",
+        "study"
+      ],
+      "r": 1,
+      "e": "Exclude est le contraire de include : exclure est le contraire d’inclure."
+    },
+    {
+      "q": "Mariam is patient with beginners, but her brother is ___.",
+      "o": [
+        "impatient",
+        "helpful",
+        "curious",
+        "gentle"
+      ],
+      "r": 0,
+      "e": "Impatient est le contraire de patient."
+    },
+    {
+      "q": "The shallow end is safe for children; the other end is ___.",
+      "o": [
+        "deep",
+        "wide",
+        "warm",
+        "clear"
+      ],
+      "r": 0,
+      "e": "Deep est le contraire de shallow : profond est le contraire de peu profond."
+    },
+    {
+      "q": "This stone feels rough, but the table feels ___.",
+      "o": [
+        "hard",
+        "smooth",
+        "heavy",
+        "round"
+      ],
+      "r": 1,
+      "e": "Smooth est le contraire de rough : lisse est le contraire de rugueux."
+    },
+    {
+      "q": "The museum displays local art, not ___ art.",
+      "o": [
+        "modern",
+        "foreign",
+        "ancient",
+        "popular"
+      ],
+      "r": 1,
+      "e": "Foreign est le contraire de local dans ce contexte."
+    },
+    {
+      "q": "The first street is narrow; the next one is ___.",
+      "o": [
+        "wide",
+        "short",
+        "quiet",
+        "empty"
+      ],
+      "r": 0,
+      "e": "Wide est le contraire de narrow : large est le contraire d’étroit."
+    },
+    {
+      "q": "At the end of the trip, the bus will depart; at the start, it will ___.",
+      "o": [
+        "arrive",
+        "stop",
+        "wait",
+        "turn"
+      ],
+      "r": 0,
+      "e": "Arrive est le contraire de depart : arriver est le contraire de partir."
+    },
+    {
+      "q": "The new bridge is modern, while the old fort is ___.",
+      "o": [
+        "ancient",
+        "strong",
+        "nearby",
+        "famous"
+      ],
+      "r": 0,
+      "e": "Ancient est le contraire de modern : ancien est le contraire de moderne."
+    },
+    {
+      "q": "The first question is simple, but the last one is ___.",
+      "o": [
+        "easy",
+        "complicated",
+        "short",
+        "clear"
+      ],
+      "r": 1,
+      "e": "Complicated est le contraire de simple dans ce contexte."
+    },
+    {
+      "q": "The rope is strong, but this old thread is ___.",
+      "o": [
+        "weak",
+        "long",
+        "thin",
+        "rough"
+      ],
+      "r": 0,
+      "e": "Weak est le contraire de strong : faible est le contraire de fort."
+    },
+    {
+      "q": "The school permit is temporary, but the house permit is ___.",
+      "o": [
+        "permanent",
+        "local",
+        "private",
+        "recent"
+      ],
+      "r": 0,
+      "e": "Permanent est le contraire de temporary."
+    },
+    {
+      "q": "The meeting is public, but the staff room is ___.",
+      "o": [
+        "private",
+        "large",
+        "open",
+        "empty"
+      ],
+      "r": 0,
+      "e": "Private est le contraire de public."
+    },
+    {
+      "q": "The water is fresh today, but it may become ___ if it is left out.",
+      "o": [
+        "stale",
+        "cold",
+        "clear",
+        "deep"
+      ],
+      "r": 0,
+      "e": "Stale est le contraire de fresh pour la nourriture ou ce qui n’est plus frais."
+    },
+    {
+      "q": "A polite reply is welcome; a ___ reply can hurt someone.",
+      "o": [
+        "rude",
+        "short",
+        "honest",
+        "quick"
+      ],
+      "r": 0,
+      "e": "Rude est le contraire de polite."
+    },
+    {
+      "q": "This path is dangerous at night, but the main road is ___.",
+      "o": [
+        "safe",
+        "busy",
+        "wide",
+        "dark"
+      ],
+      "r": 0,
+      "e": "Safe est le contraire de dangerous."
+    },
+    {
+      "q": "The test was a success, but the first attempt was a ___.",
+      "o": [
+        "failure",
+        "surprise",
+        "lesson",
+        "mistake"
+      ],
+      "r": 0,
+      "e": "Failure est le contraire de success : échec est le contraire de réussite."
+    },
+    {
+      "q": "The instructions say to accept the offer, not ___ it.",
+      "o": [
+        "reject",
+        "read",
+        "change",
+        "share"
+      ],
+      "r": 0,
+      "e": "Reject est le contraire de accept : refuser est le contraire d’accepter."
     }
   ]
 }
