@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "The bridge ___ by local engineers last year.",
+      "o": [
+        "was designed",
+        "designed",
+        "has designing",
+        "is design"
+      ],
+      "r": 0,
+      "e": "Au passif au passé, on utilise was + participe passé."
+    },
+    {
+      "q": "“I am tired,” she said. She said that she ___ tired.",
+      "o": [
+        "is",
+        "was",
+        "will be",
+        "has been"
+      ],
+      "r": 1,
+      "e": "Au discours rapporté au passé, am devient was."
+    },
+    {
+      "q": "The new library ___ since the beginning of the year.",
+      "o": [
+        "has been built",
+        "built",
+        "is build",
+        "has built"
+      ],
+      "r": 0,
+      "e": "Au present perfect passif, on dit has been + participe passé."
+    },
+    {
+      "q": "The student ___ won the prize thanked her teacher.",
+      "o": [
+        "which",
+        "who",
+        "where",
+        "whose"
+      ],
+      "r": 1,
+      "e": "Who reprend une personne."
+    },
+    {
+      "q": "By the time we arrived, the film ___.",
+      "o": [
+        "started",
+        "has started",
+        "had started",
+        "will start"
+      ],
+      "r": 2,
+      "e": "Had started marque l’action terminée avant une autre action passée."
+    },
+    {
+      "q": "The report must ___ before Friday.",
+      "o": [
+        "submit",
+        "be submitted",
+        "submitted",
+        "be submitting"
+      ],
+      "r": 1,
+      "e": "Après must, le passif se forme avec be + participe passé."
+    },
+    {
+      "q": "She asked me where I ___ the previous day.",
+      "o": [
+        "go",
+        "went",
+        "had gone",
+        "will go"
+      ],
+      "r": 2,
+      "e": "Dans le discours rapporté, l’action antérieure devient had gone."
+    },
+    {
+      "q": "Unless you ___ now, you will miss the bus.",
+      "o": [
+        "leave",
+        "left",
+        "will leave",
+        "would leave"
+      ],
+      "r": 0,
+      "e": "Après unless, on utilise le présent pour parler d’une condition future."
+    },
+    {
+      "q": "The book, ___ was written in Senegal, is available online.",
+      "o": [
+        "who",
+        "where",
+        "which",
+        "whose"
+      ],
+      "r": 2,
+      "e": "Which reprend un objet ou une chose."
+    },
+    {
+      "q": "He wishes he ___ more carefully for the exam.",
+      "o": [
+        "studies",
+        "studied",
+        "will study",
+        "has studied"
+      ],
+      "r": 1,
+      "e": "Après wishes pour un regret présent, on emploie souvent le passé simple."
+    },
+    {
+      "q": "Not only ___ the speech, but she also answered questions.",
+      "o": [
+        "she gave",
+        "did she give",
+        "she did give",
+        "gave she"
+      ],
+      "r": 1,
+      "e": "Après Not only en tête, l’auxiliaire précède le sujet."
+    },
+    {
+      "q": "The roads were flooded; ___, the school remained open.",
+      "o": [
+        "however",
+        "because",
+        "therefore",
+        "unless"
+      ],
+      "r": 0,
+      "e": "However marque une opposition."
+    },
+    {
+      "q": "The teacher recommended that each student ___ a dictionary.",
+      "o": [
+        "brings",
+        "bring",
+        "brought",
+        "will bring"
+      ],
+      "r": 1,
+      "e": "Après recommend that, la forme de base bring est possible."
+    },
+    {
+      "q": "The man ___ car was stolen reported it to the police.",
+      "o": [
+        "who",
+        "which",
+        "whose",
+        "whom"
+      ],
+      "r": 2,
+      "e": "Whose indique la possession."
+    },
+    {
+      "q": "By next June, they ___ the new classroom.",
+      "o": [
+        "complete",
+        "completed",
+        "will have completed",
+        "have completing"
+      ],
+      "r": 2,
+      "e": "Will have completed exprime une action achevée avant une date future."
+    },
+    {
+      "q": "If she had left earlier, she ___ the train.",
+      "o": [
+        "would catch",
+        "would have caught",
+        "will catch",
+        "caught"
+      ],
+      "r": 1,
+      "e": "Pour une condition passée irréelle, on dit would have + participe passé."
+    },
+    {
+      "q": "The message ___ before the meeting began.",
+      "o": [
+        "had sent",
+        "had been sent",
+        "was sending",
+        "has been send"
+      ],
+      "r": 1,
+      "e": "Au passif au past perfect, on dit had been + participe passé."
+    },
+    {
+      "q": "He denied ___ the confidential file.",
+      "o": [
+        "to copy",
+        "copy",
+        "copying",
+        "copied"
+      ],
+      "r": 2,
+      "e": "Après deny, le verbe prend souvent la forme en -ing."
+    },
+    {
+      "q": "The results were so unclear that they ___ a second study.",
+      "o": [
+        "carried out",
+        "put off",
+        "turned down",
+        "looked after"
+      ],
+      "r": 0,
+      "e": "Carry out veut dire mener une étude."
+    },
+    {
+      "q": "Despite ___ the instructions, he made the same error.",
+      "o": [
+        "read",
+        "reading",
+        "to read",
+        "was reading"
+      ],
+      "r": 1,
+      "e": "Après despite, on peut utiliser un nom ou un verbe en -ing."
+    },
+    {
+      "q": "The company reduced costs, ___ helped it remain competitive.",
+      "o": [
+        "who",
+        "which",
+        "where",
+        "what"
+      ],
+      "r": 1,
+      "e": "Which peut reprendre toute l’idée de la proposition précédente."
+    },
+    {
+      "q": "She would rather ___ at home than travel in the storm.",
+      "o": [
+        "stay",
+        "stayed",
+        "to stay",
+        "staying"
+      ],
+      "r": 0,
+      "e": "Après would rather, on utilise la forme de base du verbe."
+    },
+    {
+      "q": "The more you practise, the ___ you become.",
+      "o": [
+        "confident",
+        "more confident",
+        "most confident",
+        "confidently"
+      ],
+      "r": 1,
+      "e": "The more..., the more... sert à comparer deux évolutions."
+    },
+    {
+      "q": "Only after the review ___ the error.",
+      "o": [
+        "we noticed",
+        "did we notice",
+        "we did noticed",
+        "noticed we"
+      ],
+      "r": 1,
+      "e": "Après Only after en tête, l’auxiliaire précède le sujet."
+    }
+  ]
+}
