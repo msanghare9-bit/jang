@@ -113,6 +113,7 @@ class QuizQuestion {
   List<String> options;
   int answer;
   String explanation;
+  String bankId;
 
   /// Photo de la question (identifiant dans media/), vide s'il n'y en a pas.
   String image;
@@ -122,6 +123,7 @@ class QuizQuestion {
     required this.answer,
     this.explanation = '',
     this.image = '',
+    this.bankId = '',
   });
 
   factory QuizQuestion.empty() =>
@@ -140,6 +142,7 @@ class QuizQuestion {
       answer: _int(m['answer']).clamp(0, 3).toInt(),
       explanation: _str(m['explanation']),
       image: _str(m['image']),
+      bankId: _str(m['bankId']),
     );
   }
 
@@ -149,6 +152,7 @@ class QuizQuestion {
         'answer': answer,
         'explanation': explanation,
         if (image.isNotEmpty) 'image': image,
+        if (bankId.isNotEmpty) 'bankId': bankId,
       };
 
   QuizQuestion copy() => QuizQuestion(
@@ -156,7 +160,8 @@ class QuizQuestion {
       options: List.of(options),
       answer: answer,
       explanation: explanation,
-      image: image);
+      image: image,
+      bankId: bankId);
 }
 
 class Lesson {
