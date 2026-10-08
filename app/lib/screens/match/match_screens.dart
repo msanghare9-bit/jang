@@ -389,6 +389,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
   final Set<String> _domains = {...QuizBank.domains};
   String _level = QuizBank.levels.first;
   int _count = 10;
+  String _opponent = 'aucun';
   bool _busy = false;
 
   Future<void> _go() async {
@@ -425,6 +426,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
                 quiz: [for (final q in qs) q.toQuiz()],
               ),
               subject: subject,
+              opponentId: _opponent == 'aucun' ? null : _opponent,
             ),
           ),
         );
@@ -495,6 +497,25 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
             selected: {_count},
             onSelectionChanged: (s) => setState(() => _count = s.first),
           ),
+          if (widget.solo) ...[
+            const SizedBox(height: 18),
+            Text('Choisis ton partenaire', style: titleStyle(19, weight: 800)),
+            const SizedBox(height: 8),
+            Wrap(spacing: 8, runSpacing: 8, children: [
+              for (final (id, name, level) in [
+                ('aucun', 'Jouer seul', 'À ton rythme'),
+                ('gainde', 'Gaïndé', 'Débutant'),
+                ('modou', 'Modou', 'Intermédiaire'),
+                ('awa', 'Awa', 'Bonne élève'),
+                ('kocc', 'Kocc', 'Excellent'),
+              ])
+                ChoiceChip(
+                  label: Text('$name · $level'),
+                  selected: _opponent == id,
+                  onSelected: (_) => setState(() => _opponent = id),
+                ),
+            ]),
+          ],
           const SizedBox(height: 24),
           ChunkyButton(
             label: _busy ? 'Un instant…' : (widget.solo ? 'Commencer' : 'Créer et avoir le code'),
