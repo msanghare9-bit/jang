@@ -140,8 +140,8 @@ class _InboxScreenState extends State<InboxScreen> {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFF1EBFF),
-        border: Border.all(color: const Color(0xFF8B5CF6), width: 2),
+        color: JangColors.successBg,
+        border: Border.all(color: JangColors.snGreen, width: 2),
         borderRadius: BorderRadius.circular(18),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -237,8 +237,8 @@ class InboxCard extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 10),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: const Color(0xFFF1EBFF),
-              border: Border.all(color: const Color(0xFF8B5CF6), width: 2),
+              color: JangColors.successBg,
+              border: Border.all(color: JangColors.snGreen, width: 2),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(children: [
