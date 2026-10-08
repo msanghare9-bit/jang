@@ -38,39 +38,39 @@
     },
     "synonymes_debutant": {
       "fichier": "synonymes_debutant.json",
-      "nombre": 48
+      "nombre": 72
     },
     "antonymes_debutant": {
       "fichier": "antonymes_debutant.json",
-      "nombre": 48
+      "nombre": 72
     },
     "francais_anglais_debutant": {
       "fichier": "francais_anglais_debutant.json",
-      "nombre": 48
+      "nombre": 72
     },
     "synonymes_intermediaire": {
       "fichier": "synonymes_intermediaire.json",
-      "nombre": 48
+      "nombre": 72
     },
     "synonymes_avance": {
       "fichier": "synonymes_avance.json",
-      "nombre": 48
+      "nombre": 72
     },
     "antonymes_intermediaire": {
       "fichier": "antonymes_intermediaire.json",
-      "nombre": 48
+      "nombre": 72
     },
     "antonymes_avance": {
       "fichier": "antonymes_avance.json",
-      "nombre": 48
+      "nombre": 72
     },
     "francais_anglais_intermediaire": {
       "fichier": "francais_anglais_intermediaire.json",
-      "nombre": 48
+      "nombre": 72
     },
     "francais_anglais_avance": {
       "fichier": "francais_anglais_avance.json",
-      "nombre": 48
+      "nombre": 72
     },
     "vocabulaire_intermediaire": {
       "fichier": "vocabulaire_intermediaire.json",
