@@ -839,6 +839,270 @@
       "e": "Reluctant describes someone unwilling to do something.",
       "d": "vocabulaire",
       "n": "avance"
+    },
+    {
+      "q": "The new policy will be implemented next month. What does implemented mean?",
+      "o": [
+        "put into effect",
+        "written about",
+        "taken apart",
+        "argued against"
+      ],
+      "r": 0,
+      "e": "Implement veut dire mettre en œuvre."
+    },
+    {
+      "q": "The plan is feasible with the available tools. What does feasible mean?",
+      "o": [
+        "possible to do",
+        "difficult to explain",
+        "already completed",
+        "not worth discussing"
+      ],
+      "r": 0,
+      "e": "Feasible veut dire réalisable."
+    },
+    {
+      "q": "The measurements must be accurate. What does accurate mean?",
+      "o": [
+        "correct and precise",
+        "quick and simple",
+        "large and visible",
+        "recent and useful"
+      ],
+      "r": 0,
+      "e": "Accurate veut dire exact et précis."
+    },
+    {
+      "q": "The storm had a serious impact on transport. What does impact mean?",
+      "o": [
+        "effect",
+        "forecast",
+        "route",
+        "warning"
+      ],
+      "r": 0,
+      "e": "Impact veut dire effet ou conséquence."
+    },
+    {
+      "q": "She was reluctant to change the schedule. What does reluctant mean?",
+      "o": [
+        "unwilling",
+        "prepared",
+        "certain",
+        "unable"
+      ],
+      "r": 0,
+      "e": "Reluctant veut dire peu disposé."
+    },
+    {
+      "q": "Fresh water is scarce in the region. What does scarce mean?",
+      "o": [
+        "limited in amount",
+        "easy to find",
+        "unsafe to drink",
+        "carefully stored"
+      ],
+      "r": 0,
+      "e": "Scarce veut dire rare ou en quantité limitée."
+    },
+    {
+      "q": "A new problem emerged during the meeting. What does emerged mean?",
+      "o": [
+        "appeared",
+        "disappeared",
+        "was solved",
+        "was hidden"
+      ],
+      "r": 0,
+      "e": "Emerge veut dire apparaître."
+    },
+    {
+      "q": "The archive retains copies of each letter. What does retains mean?",
+      "o": [
+        "keeps",
+        "sells",
+        "changes",
+        "forgets"
+      ],
+      "r": 0,
+      "e": "Retain veut dire garder."
+    },
+    {
+      "q": "The council allocated funds to the clinics. What does allocated mean?",
+      "o": [
+        "distributed for a purpose",
+        "borrowed temporarily",
+        "counted again",
+        "removed completely"
+      ],
+      "r": 0,
+      "e": "Allocate veut dire répartir ou attribuer pour un usage."
+    },
+    {
+      "q": "The outcome surprised the researchers. What does outcome mean?",
+      "o": [
+        "result",
+        "method",
+        "question",
+        "schedule"
+      ],
+      "r": 0,
+      "e": "Outcome veut dire résultat."
+    },
+    {
+      "q": "The new rules require all visitors to register. What does require mean?",
+      "o": [
+        "make necessary",
+        "make easier",
+        "make public",
+        "make optional"
+      ],
+      "r": 0,
+      "e": "Require veut dire exiger, rendre nécessaire."
+    },
+    {
+      "q": "The exercise was beneficial to the learners. What does beneficial mean?",
+      "o": [
+        "helpful",
+        "expensive",
+        "unexpected",
+        "unclear"
+      ],
+      "r": 0,
+      "e": "Beneficial veut dire bénéfique, qui aide."
+    },
+    {
+      "q": "The team collected evidence before making a claim. What does evidence mean?",
+      "o": [
+        "facts that support an idea",
+        "people who disagree",
+        "plans for the future",
+        "questions without answers"
+      ],
+      "r": 0,
+      "e": "Evidence veut dire preuve ou élément qui appuie une idée."
+    },
+    {
+      "q": "The committee conducted interviews with families. What does conducted mean?",
+      "o": [
+        "carried out",
+        "cancelled",
+        "prepared for",
+        "reported on"
+      ],
+      "r": 0,
+      "e": "Conduct veut dire mener ou effectuer une activité."
+    },
+    {
+      "q": "The number of errors declined after practice. What does declined mean?",
+      "o": [
+        "decreased",
+        "remained equal",
+        "became unclear",
+        "rose quickly"
+      ],
+      "r": 0,
+      "e": "Decline veut dire diminuer."
+    },
+    {
+      "q": "Her account is consistent with the written record. What does consistent mean?",
+      "o": [
+        "in agreement",
+        "full of detail",
+        "difficult to read",
+        "recently changed"
+      ],
+      "r": 0,
+      "e": "Consistent with veut dire en accord avec."
+    },
+    {
+      "q": "The discovery was significant for local history. What does significant mean?",
+      "o": [
+        "important",
+        "temporary",
+        "ordinary",
+        "uncertain"
+      ],
+      "r": 0,
+      "e": "Significant veut dire important."
+    },
+    {
+      "q": "Readers must interpret the chart carefully. What does interpret mean?",
+      "o": [
+        "explain its meaning",
+        "copy its numbers",
+        "hide its title",
+        "change its colours"
+      ],
+      "r": 0,
+      "e": "Interpret veut dire interpréter, expliquer le sens."
+    },
+    {
+      "q": "A lack of transport is a major constraint. What does constraint mean?",
+      "o": [
+        "limitation",
+        "advantage",
+        "suggestion",
+        "permission"
+      ],
+      "r": 0,
+      "e": "Constraint veut dire limite ou contrainte."
+    },
+    {
+      "q": "The school will evaluate the new programme. What does evaluate mean?",
+      "o": [
+        "judge its value or success",
+        "create it from nothing",
+        "announce its arrival",
+        "translate its name"
+      ],
+      "r": 0,
+      "e": "Evaluate veut dire évaluer, juger le résultat."
+    },
+    {
+      "q": "Do not assume the message is true. What does assume mean?",
+      "o": [
+        "accept as true without proof",
+        "prove with evidence",
+        "repeat to a friend",
+        "write in another language"
+      ],
+      "r": 0,
+      "e": "Assume veut dire supposer, croire sans preuve."
+    },
+    {
+      "q": "The first route is shorter, whereas the second is safer. What does whereas mean?",
+      "o": [
+        "while or in contrast",
+        "because of",
+        "as soon as",
+        "in order that"
+      ],
+      "r": 0,
+      "e": "Whereas sert à opposer deux faits."
+    },
+    {
+      "q": "Eventually, the rain stopped. What does eventually mean?",
+      "o": [
+        "in the end",
+        "at once",
+        "for a while",
+        "by accident"
+      ],
+      "r": 0,
+      "e": "Eventually veut dire finalement, après un certain temps."
+    },
+    {
+      "q": "Despite the delay, the lesson continued. What does despite mean?",
+      "o": [
+        "in spite of",
+        "because of",
+        "instead of",
+        "according to"
+      ],
+      "r": 0,
+      "e": "Despite veut dire malgré."
     }
   ]
 }
