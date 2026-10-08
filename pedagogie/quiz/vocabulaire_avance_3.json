@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What does “scarce” mean?",
+      "o": [
+        "rare",
+        "abondant",
+        "ordinaire",
+        "précis"
+      ],
+      "r": 0,
+      "e": "Scarce means difficult to find or not plentiful."
+    },
+    {
+      "q": "What does “evidence” mean?",
+      "o": [
+        "opinion",
+        "preuve",
+        "rumeur",
+        "prévision"
+      ],
+      "r": 1,
+      "e": "Evidence is information that supports a claim."
+    },
+    {
+      "q": "What does “outcome” mean?",
+      "o": [
+        "méthode",
+        "obstacle",
+        "résultat",
+        "objectif"
+      ],
+      "r": 2,
+      "e": "An outcome is the result of an action."
+    },
+    {
+      "q": "What does “to assess” mean?",
+      "o": [
+        "supposer",
+        "contester",
+        "retarder",
+        "évaluer"
+      ],
+      "r": 3,
+      "e": "To assess is to judge or measure something."
+    },
+    {
+      "q": "What does “aware” mean?",
+      "o": [
+        "conscient",
+        "convaincu",
+        "inquiet",
+        "disponible"
+      ],
+      "r": 0,
+      "e": "Aware means knowing that something exists."
+    },
+    {
+      "q": "What does “issue” mean in “a social issue”?",
+      "o": [
+        "solution",
+        "problème",
+        "règle",
+        "progrès"
+      ],
+      "r": 1,
+      "e": "Here issue means a matter that needs attention."
+    },
+    {
+      "q": "What does “approach” mean as a noun?",
+      "o": [
+        "résultat",
+        "obligation",
+        "méthode",
+        "ressource"
+      ],
+      "r": 2,
+      "e": "An approach is a way of dealing with something."
+    },
+    {
+      "q": "What does “to enhance” mean?",
+      "o": [
+        "réduire",
+        "retirer",
+        "ignorer",
+        "améliorer"
+      ],
+      "r": 3,
+      "e": "To enhance is to improve quality or value."
+    },
+    {
+      "q": "What does “drawback” mean?",
+      "o": [
+        "inconvénient",
+        "avantage",
+        "possibilité",
+        "accord"
+      ],
+      "r": 0,
+      "e": "A drawback is a negative feature."
+    },
+    {
+      "q": "What does “to maintain” mean?",
+      "o": [
+        "abandonner",
+        "maintenir",
+        "transformer",
+        "remplacer"
+      ],
+      "r": 1,
+      "e": "To maintain is to keep something at the same level."
+    },
+    {
+      "q": "What does “eventually” mean?",
+      "o": [
+        "immédiatement",
+        "rarement",
+        "finalement",
+        "autrefois"
+      ],
+      "r": 2,
+      "e": "Eventually means after some time."
+    },
+    {
+      "q": "What does “accurate” mean?",
+      "o": [
+        "approximatif",
+        "dépassé",
+        "incomplet",
+        "exact"
+      ],
+      "r": 3,
+      "e": "An accurate statement is correct and precise."
+    },
+    {
+      "q": "What does “to prohibit” mean?",
+      "o": [
+        "interdire",
+        "autoriser",
+        "conseiller",
+        "annoncer"
+      ],
+      "r": 0,
+      "e": "To prohibit is to officially forbid something."
+    },
+    {
+      "q": "What does “significant” mean?",
+      "o": [
+        "négligeable",
+        "important",
+        "temporaire",
+        "incertain"
+      ],
+      "r": 1,
+      "e": "Significant means important enough to notice."
+    },
+    {
+      "q": "What does “to undergo” mean?",
+      "o": [
+        "éviter",
+        "proposer",
+        "subir",
+        "conclure"
+      ],
+      "r": 2,
+      "e": "To undergo a change is to experience it."
+    },
+    {
+      "q": "What does “awareness” mean?",
+      "o": [
+        "ignorance",
+        "expérience",
+        "confiance",
+        "sensibilisation"
+      ],
+      "r": 3,
+      "e": "Awareness is knowledge or understanding of a topic."
+    },
+    {
+      "q": "What does “sustainable” mean?",
+      "o": [
+        "durable",
+        "éphémère",
+        "coûteux",
+        "artificiel"
+      ],
+      "r": 0,
+      "e": "Sustainable practices can continue without exhausting resources."
+    },
+    {
+      "q": "What does “regardless” mean?",
+      "o": [
+        "à cause de",
+        "sans tenir compte de",
+        "à proximité de",
+        "en comparaison avec"
+      ],
+      "r": 1,
+      "e": "Regardless means without being affected by something."
+    },
+    {
+      "q": "What does “to advocate” mean?",
+      "o": [
+        "abandonner une idée",
+        "refuser un débat",
+        "défendre une cause",
+        "cacher une preuve"
+      ],
+      "r": 2,
+      "e": "To advocate is to publicly support an idea."
+    },
+    {
+      "q": "What does “widespread” mean?",
+      "o": [
+        "isolé",
+        "interdit",
+        "incertain",
+        "répandu"
+      ],
+      "r": 3,
+      "e": "Widespread means found across many places or people."
+    },
+    {
+      "q": "What does “to allocate” mean?",
+      "o": [
+        "attribuer",
+        "emprunter",
+        "dissimuler",
+        "retarder"
+      ],
+      "r": 0,
+      "e": "To allocate is to distribute for a purpose."
+    },
+    {
+      "q": "What does “consequence” mean?",
+      "o": [
+        "intention",
+        "conséquence",
+        "condition",
+        "hypothèse"
+      ],
+      "r": 1,
+      "e": "A consequence is an effect of an action."
+    },
+    {
+      "q": "What does “feasible” mean?",
+      "o": [
+        "impossible",
+        "inutile",
+        "réalisable",
+        "incertain"
+      ],
+      "r": 2,
+      "e": "Feasible means possible to do."
+    },
+    {
+      "q": "What does “reluctant” mean?",
+      "o": [
+        "enthousiaste",
+        "certain",
+        "pressé",
+        "réticent"
+      ],
+      "r": 3,
+      "e": "Reluctant describes someone unwilling to do something."
+    }
+  ]
+}
