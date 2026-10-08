@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "What does “adequate” mean?",
+      "o": [
+        "Good enough for a particular purpose",
+        "Much better than necessary",
+        "Too small to be useful",
+        "Difficult to explain"
+      ],
+      "r": 0,
+      "e": "Adequate means sufficient for what is needed."
+    },
+    {
+      "q": "What does “assume” mean?",
+      "o": [
+        "Prove something with evidence",
+        "Accept something as true without proof",
+        "Change an idea completely",
+        "Refuse to consider an idea"
+      ],
+      "r": 1,
+      "e": "To assume is to suppose something is true."
+    },
+    {
+      "q": "What does “cease” mean?",
+      "o": [
+        "Begin again",
+        "Continue for a long time",
+        "Stop happening or stop doing something",
+        "Improve gradually"
+      ],
+      "r": 2,
+      "e": "Cease means stop."
+    },
+    {
+      "q": "What does “consume” mean?",
+      "o": [
+        "Produce something new",
+        "Keep something for later",
+        "Give something to another person",
+        "Use, eat, or drink something"
+      ],
+      "r": 3,
+      "e": "To consume is to use up, eat, or drink."
+    },
+    {
+      "q": "What does “contribute” mean?",
+      "o": [
+        "Give or add something to a shared effort",
+        "Take everything for yourself",
+        "Prevent a group from working",
+        "Copy someone else's work"
+      ],
+      "r": 0,
+      "e": "To contribute is to help by giving or adding."
+    },
+    {
+      "q": "What does “crucial” mean?",
+      "o": [
+        "Unlikely to happen",
+        "Extremely important",
+        "Easy to replace",
+        "Not connected to the issue"
+      ],
+      "r": 1,
+      "e": "Crucial means very important."
+    },
+    {
+      "q": "What does “expose” mean?",
+      "o": [
+        "Cover something completely",
+        "Keep something secret",
+        "Make something hidden known or visible",
+        "Repair something carefully"
+      ],
+      "r": 2,
+      "e": "To expose can mean to reveal something."
+    },
+    {
+      "q": "What does “factor” mean in “cost is a factor”?",
+      "o": [
+        "A final decision",
+        "A type of building",
+        "A person who buys goods",
+        "One thing that helps cause a result"
+      ],
+      "r": 3,
+      "e": "A factor is one part that influences a result."
+    },
+    {
+      "q": "What does “former” mean in “the former teacher”?",
+      "o": [
+        "The person who had that role before",
+        "The person who will have the role next",
+        "The person who has the role now",
+        "A person with no such role"
+      ],
+      "r": 0,
+      "e": "Former refers to an earlier time or position."
+    },
+    {
+      "q": "What does “impact” mean?",
+      "o": [
+        "A small object",
+        "A strong effect or influence",
+        "A planned meeting",
+        "A written instruction"
+      ],
+      "r": 1,
+      "e": "Impact means an effect or influence."
+    },
+    {
+      "q": "What does “maintain” mean?",
+      "o": [
+        "Stop something permanently",
+        "Make something less accurate",
+        "Keep something in good condition or continue it",
+        "Hide something from others"
+      ],
+      "r": 2,
+      "e": "To maintain is to keep or continue."
+    },
+    {
+      "q": "What does “obtain” mean?",
+      "o": [
+        "Lose something",
+        "Give something away",
+        "Refuse to accept something",
+        "Get something"
+      ],
+      "r": 3,
+      "e": "To obtain is to get or acquire."
+    },
+    {
+      "q": "What does “precise” mean?",
+      "o": [
+        "Exact and accurate",
+        "Unclear and uncertain",
+        "Very large",
+        "Easy to change"
+      ],
+      "r": 0,
+      "e": "Precise means exact."
+    },
+    {
+      "q": "What does “prevent” mean?",
+      "o": [
+        "Cause something to happen",
+        "Stop something from happening",
+        "Explain why something happened",
+        "Allow something to continue"
+      ],
+      "r": 1,
+      "e": "To prevent is to stop an event before it happens."
+    },
+    {
+      "q": "What does “pursue” mean?",
+      "o": [
+        "Give up immediately",
+        "Hide something from view",
+        "Continue trying to achieve or follow something",
+        "Make something less important"
+      ],
+      "r": 2,
+      "e": "To pursue a goal is to keep working toward it."
+    },
+    {
+      "q": "What does “require” mean?",
+      "o": [
+        "Offer as a gift",
+        "Make less difficult",
+        "Find by chance",
+        "Need or make necessary"
+      ],
+      "r": 3,
+      "e": "If something is required, it is needed."
+    },
+    {
+      "q": "What does “retain” mean?",
+      "o": [
+        "Keep or continue to have something",
+        "Throw something away",
+        "Share something equally",
+        "Change something completely"
+      ],
+      "r": 0,
+      "e": "To retain is to keep."
+    },
+    {
+      "q": "What does “shift” mean as a verb?",
+      "o": [
+        "Remain exactly the same",
+        "Change or move slightly",
+        "Explain in detail",
+        "Make something disappear"
+      ],
+      "r": 1,
+      "e": "To shift is to change or move."
+    },
+    {
+      "q": "What does “significant” mean?",
+      "o": [
+        "Impossible to measure",
+        "Unrelated to the subject",
+        "Important or large enough to matter",
+        "Very ordinary and unimportant"
+      ],
+      "r": 2,
+      "e": "Significant means important."
+    },
+    {
+      "q": "What does “source” mean?",
+      "o": [
+        "The last step in a process",
+        "A result that is measured",
+        "A rule that is followed",
+        "The place or person something comes from"
+      ],
+      "r": 3,
+      "e": "A source is an origin."
+    },
+    {
+      "q": "What does “temporary” mean?",
+      "o": [
+        "Lasting for a limited time",
+        "Continuing forever",
+        "Happening every day",
+        "Impossible to change"
+      ],
+      "r": 0,
+      "e": "Temporary means not permanent."
+    },
+    {
+      "q": "What does “valid” mean?",
+      "o": [
+        "Clearly false",
+        "Acceptable or supported by good reasons",
+        "Not allowed by a rule",
+        "Too old to use"
+      ],
+      "r": 1,
+      "e": "A valid reason is acceptable and well-founded."
+    },
+    {
+      "q": "What does “widespread” mean?",
+      "o": [
+        "Limited to one small area",
+        "Rarely seen anywhere",
+        "Found or happening in many places",
+        "Kept completely secret"
+      ],
+      "r": 2,
+      "e": "Widespread means present across a large area."
+    },
+    {
+      "q": "What does “obstacle” mean?",
+      "o": [
+        "A helpful suggestion",
+        "A final achievement",
+        "A place to rest",
+        "Something that makes progress difficult"
+      ],
+      "r": 3,
+      "e": "An obstacle is a difficulty or barrier."
+    }
+  ]
+}
