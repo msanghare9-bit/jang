@@ -302,12 +302,12 @@ class _ClassScreenState extends State<ClassScreen> {
         const SizedBox(height: 10),
         Wrap(spacing: 8, runSpacing: 8, children: [
           for (final e in {
-            'all': 'Tous (\${data.students.length})',
-            'support': 'À soutenir (\${supportCount})',
-            'doing_well': 'À l’aise (\${doingWellCount})',
-            'unassessed': 'À évaluer (\${unassessedCount})',
-            'active': 'Actifs (\${working})',
-            'inactive': 'Absents (\${data.students.length - working})',
+            'all': 'Tous (${data.students.length})',
+            'support': 'À soutenir (${supportCount})',
+            'doing_well': 'À l’aise (${doingWellCount})',
+            'unassessed': 'À évaluer (${unassessedCount})',
+            'active': 'Actifs (${working})',
+            'inactive': 'Absents (${data.students.length - working})',
           }.entries)
             ChoiceChip(
               label: Text(e.value),
@@ -328,7 +328,7 @@ class _ClassScreenState extends State<ClassScreen> {
             icon: Icons.groups_outlined,
             title: data.students.isEmpty ? 'Pas encore d’élève' : 'Personne ici',
             message: data.students.isEmpty
-                ? 'Donne le code \${_c.code} à tes élèves, ou ajoute-les avec leur nom d’utilisateur.'
+                ? 'Donne le code ${_c.code} à tes élèves, ou ajoute-les avec leur nom d’utilisateur.'
                 : null,
           ),
         for (final s in list)
@@ -339,9 +339,9 @@ class _ClassScreenState extends State<ClassScreen> {
               leading: Icon(Icons.circle, size: 14, color: s.active ? JangColors.success : JangColors.error),
               title: Text(s.name.isEmpty ? s.username : s.name, style: t.titleSmall),
               subtitle: Text(
-                '\${presenceLabel(s)}\\n'
-                '\${s.average == null ? 'Pas de quiz' : 'Moyenne \${s.average} %'} · '
-                '\${plural(s.missionsDone, 'mission')} · \${plural(s.lessonsSeen, 'leçon')} ouverte\${s.lessonsSeen > 1 ? 's' : ''}',
+                '${presenceLabel(s)}\n'
+                '${s.average == null ? 'Pas de quiz' : 'Moyenne ${s.average} %'} · '
+                '${plural(s.missionsDone, 'mission')} · ${plural(s.lessonsSeen, 'leçon')} ouverte${s.lessonsSeen > 1 ? 's' : ''}',
                 style: t.bodySmall,
               ),
               isThreeLine: true,
