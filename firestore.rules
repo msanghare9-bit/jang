@@ -142,6 +142,23 @@ service cloud.firestore {
         allow create, update: if isMe(uid);
         allow delete: if isMe(uid) || get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
       }
+      match /observateurs/{uid} {
+        function host() {
+          return signedIn()
+              && get(/databases/$(database)/documents/matchs/$(id)).data.hostUid == request.auth.uid;
+        }
+        allow read: if isMe(uid) || host() || resource.data.get('status', '') == 'accepted';
+        allow create: if isMe(uid)
+                      && request.resource.data.get('status', '') == 'pending'
+                      && get(/databases/$(database)/documents/matchs/$(id)).data.get('open', false) == true
+                      && get(/databases/$(database)/documents/matchs/$(id)).data.get('state', '') in ['question', 'correction']
+                      && !exists(/databases/$(database)/documents/matchs/$(id)/joueurs/$(uid));
+        allow update: if host()
+                      && resource.data.get('status', '') == 'pending'
+                      && request.resource.data.get('status', '') in ['accepted', 'refused']
+                      && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']);
+        allow delete: if isMe(uid) || host();
+      }
     }
 
     // Questions de match signalées.
