@@ -169,6 +169,8 @@ class Lesson {
   final List<Video> videos;
   final String body;
   final List<QuizQuestion> quiz;
+  final String createdByUid;
+  final String createdByName;
 
   /// Classes (niveaux) où la leçon est retirée, quand la matière est partagée.
   final List<String> hiddenIn;
@@ -183,6 +185,8 @@ class Lesson {
     this.videos = const [],
     this.body = '',
     this.quiz = const [],
+    this.createdByUid = '',
+    this.createdByName = '',
     this.hiddenIn = const [],
     this.deleted = false,
   });
@@ -204,6 +208,8 @@ class Lesson {
       videos: vids.whereType<Map>().map(Video.fromMap).toList(),
       body: _str(m['body']),
       quiz: qz.whereType<Map>().map(QuizQuestion.fromMap).toList(),
+      createdByUid: _str(m['createdByUid']),
+      createdByName: _str(m['createdByName']),
       hiddenIn: (m['hiddenIn'] is List ? m['hiddenIn'] as List : const []).whereType<String>().toList(),
       deleted: _bool(m['deleted']),
     );
@@ -218,6 +224,8 @@ class Lesson {
         'videos': videos.map((v) => v.toMap()).toList(),
         'body': body,
         'quiz': quiz.map((q) => q.toMap()).toList(),
+        'createdByUid': createdByUid,
+        'createdByName': createdByName,
         'hiddenIn': hiddenIn,
         'deleted': deleted,
       };
