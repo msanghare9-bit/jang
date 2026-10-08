@@ -44,7 +44,23 @@ class MatchHomeScreen extends StatelessWidget {
               ),
             ]),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
+          Card(
+            child: ListTile(
+              leading: const CircleAvatar(
+                backgroundColor: JangColors.snGreen,
+                child: Icon(Icons.history, color: Colors.white),
+              ),
+              title: const Text('Mon historique'),
+              subtitle: const Text('Matchs joués, victoires et défaites'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const MatchHistoryScreen()),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
           ChunkyButton(
             label: 'Créer un match',
             icon: Icons.add_circle_outline,
@@ -69,6 +85,114 @@ class MatchHomeScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+
+/// Historique personnel des matchs terminés.
+class MatchHistoryScreen extends StatefulWidget {
+  const MatchHistoryScreen({super.key});
+
+  @override
+  State<MatchHistoryScreen> createState() => _MatchHistoryScreenState();
+}
+
+class _MatchHistoryScreenState extends State<MatchHistoryScreen> {
+  late Future<List<(LiveMatch, MatchPlayer, bool)>> _future;
+
+  @override
+  void initState() {
+    super.initState();
+    _future = _load();
+  }
+
+  Future<List<(LiveMatch, MatchPlayer, bool)>> _load() {
+    final uid = AuthService.instance.profile.value?.uid ?? '';
+    return MatchService.instance.historyFor(uid);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Historique des matchs')),
+      body: FutureBuilder<List<(LiveMatch, MatchPlayer, bool)>>(
+        future: _future,
+        builder: (context, snap) {
+          if (snap.hasError) {
+            return const Center(
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Text('Impossible de charger l’historique. Vérifie ta connexion puis réessaie.'),
+              ),
+            );
+          }
+          if (!snap.hasData) return const Center(child: CircularProgressIndicator());
+          final games = snap.data!;
+          final wins = games.where((g) => g.$3).length;
+          final losses = games.length - wins;
+          final rate = games.isEmpty ? 0 : (wins * 100 / games.length).round();
+          return RefreshIndicator(
+            onRefresh: () async => setState(() => _future = _load()),
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                Card(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text('Ton bilan', style: titleStyle(20, weight: 800)),
+                      const SizedBox(height: 12),
+                      Row(children: [
+                        Expanded(child: _HistoryStat(label: 'Joués', value: '${games.length}')),
+                        Expanded(child: _HistoryStat(label: 'Gagnés', value: '$wins')),
+                        Expanded(child: _HistoryStat(label: 'Perdus', value: '$losses')),
+                        Expanded(child: _HistoryStat(label: 'Victoires', value: '$rate%')),
+                      ]),
+                    ]),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                if (games.isEmpty)
+                  const Padding(
+                    padding: EdgeInsets.only(top: 36),
+                    child: Center(child: Text('Tes matchs terminés apparaîtront ici.')),
+                  )
+                else
+                  for (final game in games)
+                    Card(
+                      child: ListTile(
+                        leading: CircleAvatar(
+                          backgroundColor: JangColors.snGreen,
+                          child: Icon(game.$3 ? Icons.emoji_events : Icons.sports_esports,
+                              color: Colors.white),
+                        ),
+                        title: Text(game.$1.title.isEmpty ? 'Match' : game.$1.title),
+                        subtitle: Text('${game.$3 ? 'Gagné' : 'Perdu'} · ${game.$2.score} points'),
+                        trailing: Text(game.$1.createdAt == null
+                            ? ''
+                            : '${game.$1.createdAt!.day.toString().padLeft(2, '0')}/${game.$1.createdAt!.month.toString().padLeft(2, '0')}/${game.$1.createdAt!.year}'),
+                      ),
+                    ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _HistoryStat extends StatelessWidget {
+  final String label;
+  final String value;
+  const _HistoryStat({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) => Column(children: [
+        Text(value, style: titleStyle(20, color: JangColors.snGreen, weight: 900)),
+        const SizedBox(height: 4),
+        Text(label, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodySmall),
+      ]);
 }
 
 /// Demande le code et entre dans le match.
