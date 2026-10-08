@@ -1,0 +1,268 @@
+{
+  "questions": [
+    {
+      "q": "Choose the antonym of “abundant”.",
+      "o": [
+        "scarce",
+        "harmful",
+        "implicit",
+        "pessimistic"
+      ],
+      "r": 0,
+      "e": "« scarce » exprime le contraire de « abundant »."
+    },
+    {
+      "q": "Choose the antonym of “accurate”.",
+      "o": [
+        "voluntary",
+        "inaccurate",
+        "counterfeit",
+        "transitory"
+      ],
+      "r": 1,
+      "e": "« inaccurate » exprime le contraire de « accurate »."
+    },
+    {
+      "q": "Choose the antonym of “ancient”.",
+      "o": [
+        "reveal",
+        "friendly",
+        "contemporary",
+        "irrelevant"
+      ],
+      "r": 2,
+      "e": "« contemporary » exprime le contraire de « ancient »."
+    },
+    {
+      "q": "Choose the antonym of “approve”.",
+      "o": [
+        "demolish",
+        "arrogant",
+        "flexible",
+        "oppose"
+      ],
+      "r": 3,
+      "e": "« oppose » exprime le contraire de « approve »."
+    },
+    {
+      "q": "Choose the antonym of “artificial”.",
+      "o": [
+        "natural",
+        "improve",
+        "external",
+        "opaque"
+      ],
+      "r": 0,
+      "e": "« natural » exprime le contraire de « artificial »."
+    },
+    {
+      "q": "Choose the antonym of “beneficial”.",
+      "o": [
+        "contract",
+        "harmful",
+        "captivity",
+        "divided"
+      ],
+      "r": 1,
+      "e": "« harmful » exprime le contraire de « beneficial »."
+    },
+    {
+      "q": "Choose the antonym of “compulsory”.",
+      "o": [
+        "implicit",
+        "pessimistic",
+        "voluntary",
+        "defeat"
+      ],
+      "r": 2,
+      "e": "« voluntary » exprime le contraire de « compulsory »."
+    },
+    {
+      "q": "Choose the antonym of “conceal”.",
+      "o": [
+        "counterfeit",
+        "transitory",
+        "scarce",
+        "reveal"
+      ],
+      "r": 3,
+      "e": "« reveal » exprime le contraire de « conceal »."
+    },
+    {
+      "q": "Choose the antonym of “construct”.",
+      "o": [
+        "demolish",
+        "friendly",
+        "irrelevant",
+        "inaccurate"
+      ],
+      "r": 0,
+      "e": "« demolish » exprime le contraire de « construct »."
+    },
+    {
+      "q": "Choose the antonym of “deteriorate”.",
+      "o": [
+        "arrogant",
+        "improve",
+        "flexible",
+        "contemporary"
+      ],
+      "r": 1,
+      "e": "« improve » exprime le contraire de « deteriorate »."
+    },
+    {
+      "q": "Choose the antonym of “expand”.",
+      "o": [
+        "external",
+        "opaque",
+        "contract",
+        "oppose"
+      ],
+      "r": 2,
+      "e": "« contract » exprime le contraire de « expand »."
+    },
+    {
+      "q": "Choose the antonym of “explicit”.",
+      "o": [
+        "captivity",
+        "divided",
+        "natural",
+        "implicit"
+      ],
+      "r": 3,
+      "e": "« implicit » exprime le contraire de « explicit »."
+    },
+    {
+      "q": "Choose the antonym of “genuine”.",
+      "o": [
+        "counterfeit",
+        "pessimistic",
+        "defeat",
+        "harmful"
+      ],
+      "r": 0,
+      "e": "« counterfeit » exprime le contraire de « genuine »."
+    },
+    {
+      "q": "Choose the antonym of “hostile”.",
+      "o": [
+        "transitory",
+        "friendly",
+        "scarce",
+        "voluntary"
+      ],
+      "r": 1,
+      "e": "« friendly » exprime le contraire de « hostile »."
+    },
+    {
+      "q": "Choose the antonym of “humble”.",
+      "o": [
+        "irrelevant",
+        "inaccurate",
+        "arrogant",
+        "reveal"
+      ],
+      "r": 2,
+      "e": "« arrogant » exprime le contraire de « humble »."
+    },
+    {
+      "q": "Choose the antonym of “internal”.",
+      "o": [
+        "flexible",
+        "contemporary",
+        "demolish",
+        "external"
+      ],
+      "r": 3,
+      "e": "« external » exprime le contraire de « internal »."
+    },
+    {
+      "q": "Choose the antonym of “liberty”.",
+      "o": [
+        "captivity",
+        "opaque",
+        "oppose",
+        "improve"
+      ],
+      "r": 0,
+      "e": "« captivity » exprime le contraire de « liberty »."
+    },
+    {
+      "q": "Choose the antonym of “optimistic”.",
+      "o": [
+        "divided",
+        "pessimistic",
+        "natural",
+        "contract"
+      ],
+      "r": 1,
+      "e": "« pessimistic » exprime le contraire de « optimistic »."
+    },
+    {
+      "q": "Choose the antonym of “permanent”.",
+      "o": [
+        "defeat",
+        "harmful",
+        "transitory",
+        "implicit"
+      ],
+      "r": 2,
+      "e": "« transitory » exprime le contraire de « permanent »."
+    },
+    {
+      "q": "Choose the antonym of “relevant”.",
+      "o": [
+        "scarce",
+        "voluntary",
+        "counterfeit",
+        "irrelevant"
+      ],
+      "r": 3,
+      "e": "« irrelevant » exprime le contraire de « relevant »."
+    },
+    {
+      "q": "Choose the antonym of “rigid”.",
+      "o": [
+        "flexible",
+        "inaccurate",
+        "reveal",
+        "friendly"
+      ],
+      "r": 0,
+      "e": "« flexible » exprime le contraire de « rigid »."
+    },
+    {
+      "q": "Choose the antonym of “transparent”.",
+      "o": [
+        "contemporary",
+        "opaque",
+        "demolish",
+        "arrogant"
+      ],
+      "r": 1,
+      "e": "« opaque » exprime le contraire de « transparent »."
+    },
+    {
+      "q": "Choose the antonym of “unanimous”.",
+      "o": [
+        "oppose",
+        "improve",
+        "divided",
+        "external"
+      ],
+      "r": 2,
+      "e": "« divided » exprime le contraire de « unanimous »."
+    },
+    {
+      "q": "Choose the antonym of “victory”.",
+      "o": [
+        "natural",
+        "contract",
+        "captivity",
+        "defeat"
+      ],
+      "r": 3,
+      "e": "« defeat » exprime le contraire de « victory »."
+    }
+  ]
+}
