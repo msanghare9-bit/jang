@@ -87,6 +87,30 @@
     "grammaire_avance": {
       "fichier": "grammaire_avance.json",
       "nombre": 24
+    },
+    "expressions_intermediaire": {
+      "fichier": "expressions_intermediaire.json",
+      "nombre": 24
+    },
+    "expressions_avance": {
+      "fichier": "expressions_avance.json",
+      "nombre": 24
+    },
+    "comprehension_intermediaire": {
+      "fichier": "comprehension_intermediaire.json",
+      "nombre": 24
+    },
+    "comprehension_avance": {
+      "fichier": "comprehension_avance.json",
+      "nombre": 24
+    },
+    "culture_intermediaire": {
+      "fichier": "culture_intermediaire.json",
+      "nombre": 24
+    },
+    "culture_avance": {
+      "fichier": "culture_avance.json",
+      "nombre": 24
     }
   }
 }
