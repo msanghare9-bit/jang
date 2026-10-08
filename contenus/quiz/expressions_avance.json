@@ -263,6 +263,270 @@
       ],
       "r": 3,
       "e": "Take responsibility, fix the error, and check related information."
+    },
+    {
+      "q": "You disagree with a conclusion in a meeting. What is constructive?",
+      "o": [
+        "I see the point; however, the evidence suggests another conclusion.",
+        "That conclusion is ridiculous.",
+        "I refuse to look at the evidence.",
+        "The evidence should agree with me."
+      ],
+      "r": 0,
+      "e": "Acknowledge the point and explain your concern professionally."
+    },
+    {
+      "q": "You want to suggest a change to a plan. What can you say?",
+      "o": [
+        "Your plan must be replaced right now.",
+        "Could we consider a slightly different approach?",
+        "I considered another approach yesterday.",
+        "Why did you plan anything?"
+      ],
+      "r": 1,
+      "e": "This phrasing offers an alternative without sounding forceful."
+    },
+    {
+      "q": "A colleague uses an unclear term. How can you ask?",
+      "o": [
+        "You are not making any sense.",
+        "I will define the term for you.",
+        "Would you mind clarifying what you mean by that term?",
+        "Why did you use a word?"
+      ],
+      "r": 2,
+      "e": "Ask for clarification politely."
+    },
+    {
+      "q": "You made an error in a report. What is responsible?",
+      "o": [
+        "The report made the mistake by itself.",
+        "Someone else should correct my work.",
+        "I will ignore the error.",
+        "I apologize for the oversight; I will correct it today."
+      ],
+      "r": 3,
+      "e": "Acknowledge the mistake and say how you will fix it."
+    },
+    {
+      "q": "A figure seems inconsistent with the rest of a report. What is tactful?",
+      "o": [
+        "I may be mistaken, but this figure seems inconsistent.",
+        "This figure is obviously nonsense.",
+        "I changed the figure without asking.",
+        "The rest of the report is useless."
+      ],
+      "r": 0,
+      "e": "This wording raises a concern without accusing anyone."
+    },
+    {
+      "q": "The evidence is incomplete. What can you suggest?",
+      "o": [
+        "We should decide before seeing the results.",
+        "Let's reserve judgement until we have reviewed the full results.",
+        "The evidence does not matter.",
+        "I have already rejected every result."
+      ],
+      "r": 1,
+      "e": "Wait for sufficient evidence before reaching a conclusion."
+    },
+    {
+      "q": "A team has little time left. How can you acknowledge that?",
+      "o": [
+        "We have unlimited time to do everything.",
+        "The deadline is not relevant.",
+        "Given the time constraints, we may need to prioritize.",
+        "No one should choose a priority."
+      ],
+      "r": 2,
+      "e": "Recognize the constraint and propose a practical response."
+    },
+    {
+      "q": "Several tasks remain for the team. What is collaborative?",
+      "o": [
+        "One person should do every task.",
+        "The remaining tasks should be forgotten.",
+        "I divided your tasks without asking.",
+        "How about we divide the remaining tasks between us?"
+      ],
+      "r": 3,
+      "e": "Suggest sharing the work."
+    },
+    {
+      "q": "You want to understand how a proposal affects timing. What can you ask?",
+      "o": [
+        "Could you elaborate on how this would affect the timeline?",
+        "Why is time always a problem?",
+        "I have already changed the timeline.",
+        "Could the timeline explain itself?"
+      ],
+      "r": 0,
+      "e": "Ask for a specific clarification."
+    },
+    {
+      "q": "You need an update without pressuring a colleague. What is suitable?",
+      "o": [
+        "Send the update immediately or else.",
+        "When you have a moment, could you share an update?",
+        "Why have you not finished yet?",
+        "I will ask everyone except you."
+      ],
+      "r": 1,
+      "e": "This request is courteous and gives the colleague flexibility."
+    },
+    {
+      "q": "A colleague shares difficult personal news. What is thoughtful?",
+      "o": [
+        "You should not tell me personal news.",
+        "That is not relevant to work.",
+        "I'm sorry you're going through this. Please let me know how I can help.",
+        "I know exactly how you feel."
+      ],
+      "r": 2,
+      "e": "Offer sympathy without claiming to know exactly how they feel."
+    },
+    {
+      "q": "You must decline an invitation professionally. What can you say?",
+      "o": [
+        "Your invitation is not worth my time.",
+        "I will attend, although I cannot.",
+        "Do not invite me to anything.",
+        "Thank you for inviting me; unfortunately, I will be unable to attend."
+      ],
+      "r": 3,
+      "e": "Thank the person and decline clearly."
+    },
+    {
+      "q": "You want to add to a colleague’s point. What can you say?",
+      "o": [
+        "May I build on the point Awa just raised?",
+        "Awa's point should be removed.",
+        "I will ignore the previous speaker.",
+        "Why did Awa raise a point?"
+      ],
+      "r": 0,
+      "e": "This phrase respectfully connects your comment to another person's idea."
+    },
+    {
+      "q": "You want to confirm what a team agreed. What can you say?",
+      "o": [
+        "We never need to agree about anything.",
+        "To make sure we're aligned, we agreed to submit the draft on Monday.",
+        "I submitted a different draft yesterday.",
+        "Why should anyone be aligned?"
+      ],
+      "r": 1,
+      "e": "Summarize the agreed action to confirm shared understanding."
+    },
+    {
+      "q": "A client is disappointed by a delay. What is empathetic and useful?",
+      "o": [
+        "You should not be frustrated.",
+        "The delay is your fault.",
+        "I understand this is frustrating. Let me explain the next steps.",
+        "There are no next steps."
+      ],
+      "r": 2,
+      "e": "Recognize the concern and provide a constructive response."
+    },
+    {
+      "q": "You need to close a formal email. Which phrase is appropriate?",
+      "o": [
+        "Tell me everything immediately.",
+        "I have no more things to say ever.",
+        "Why did you write to me?",
+        "Please let me know if you need any further information."
+      ],
+      "r": 3,
+      "e": "This is a courteous way to invite follow-up."
+    },
+    {
+      "q": "You want to raise a possible risk without sounding certain. What can you say?",
+      "o": [
+        "One concern may be that the revised schedule leaves little time for review.",
+        "The schedule will definitely fail.",
+        "I have removed the review period already.",
+        "There are no possible risks."
+      ],
+      "r": 0,
+      "e": "“One concern may be” introduces a measured caution."
+    },
+    {
+      "q": "A colleague explains that your remark caused offence. What is a good reply?",
+      "o": [
+        "You should not have felt offended.",
+        "I didn't intend to cause offence; thank you for explaining how it came across.",
+        "I will repeat the remark now.",
+        "Your explanation cannot be true."
+      ],
+      "r": 1,
+      "e": "Acknowledge the impact and thank the person for explaining."
+    },
+    {
+      "q": "A colleague offers to review your draft. How can you respond?",
+      "o": [
+        "You must review every draft I write.",
+        "I do not need anyone's help ever.",
+        "That would be very helpful; thank you for offering.",
+        "Why did you offer that?"
+      ],
+      "r": 2,
+      "e": "Accept the offer and show appreciation."
+    },
+    {
+      "q": "You want to verify the basis for an estimate. What can you ask?",
+      "o": [
+        "Why is the estimate a source?",
+        "I have deleted the source already.",
+        "The estimate should be its own source.",
+        "Could you share the source for this estimate?"
+      ],
+      "r": 3,
+      "e": "Ask directly and politely for supporting information."
+    },
+    {
+      "q": "A deadline may be unrealistic. What is a professional request?",
+      "o": [
+        "Would it be possible to extend the deadline by two days?",
+        "The deadline is impossible, so ignore it.",
+        "I extended the deadline without asking.",
+        "Why are deadlines used?"
+      ],
+      "r": 0,
+      "e": "Ask clearly for a specific extension."
+    },
+    {
+      "q": "A colleague is taking time to decide. What is reassuring?",
+      "o": [
+        "Decide now, regardless of the details.",
+        "Please take the time you need; there is no need to rush.",
+        "I will make the decision for you.",
+        "Why are you taking any time?"
+      ],
+      "r": 1,
+      "e": "This phrase reassures the colleague without pressure."
+    },
+    {
+      "q": "You promise to provide information later. What is clear?",
+      "o": [
+        "I followed up before you asked tomorrow.",
+        "I may or may not send anything someday.",
+        "I will follow up with you by Thursday.",
+        "Thursday will follow you."
+      ],
+      "r": 2,
+      "e": "Give a clear action and deadline."
+    },
+    {
+      "q": "You want to make a recommendation sound less forceful. What can you say?",
+      "o": [
+        "You must choose my recommendation.",
+        "A shorter trial period has no value.",
+        "I forbid any other option.",
+        "It may be worth considering a shorter trial period."
+      ],
+      "r": 3,
+      "e": "“It may be worth considering” presents a suggestion diplomatically."
     }
   ]
 }
