@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../services/auth_service.dart';
+import '../services/content_repo.dart';
+import '../models.dart';
 import '../theme.dart';
 import '../widgets/characters.dart';
 
@@ -13,6 +15,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _register = false;
+  bool _teacher = false;
+  List<Exam> _exams = const [];
+  String? _examId;
+  final _school = TextEditingController();
+  final _classes = TextEditingController();
+  final _subjects = TextEditingController();
   final _form = GlobalKey<FormState>();
   final _name = TextEditingController();
   final _user = TextEditingController();
@@ -24,17 +32,32 @@ class _LoginScreenState extends State<LoginScreen> {
   String? _error;
 
   @override
+  void initState() {
+    super.initState();
+    ContentRepo.instance.exams().then((exams) {
+      if (mounted) setState(() { _exams = exams; _examId ??= exams.firstOrNull?.id; });
+    });
+  }
+
+  @override
   void dispose() {
     _name.dispose();
     _user.dispose();
     _pass.dispose();
     _pass2.dispose();
+    _school.dispose();
+    _classes.dispose();
+    _subjects.dispose();
     super.dispose();
   }
 
   Future<void> _submit() async {
     if (!_form.currentState!.validate()) return;
-    if (_register && !_consent) {
+    if (_register && _teacher && (_school.text.trim().isEmpty || _classes.text.trim().isEmpty || _subjects.text.trim().isEmpty || _examId == null)) {
+      setState(() => _error = 'Renseigne ton école, ton niveau, tes classes et tes matières.');
+      return;
+    }
+    if (_register && !_teacher && !_consent) {
       setState(() => _error = 'Coche la case : tes parents doivent être d\'accord.');
       return;
     }
@@ -50,6 +73,11 @@ class _LoginScreenState extends State<LoginScreen> {
           password: _pass.text,
           examId: '',
           parentConsent: _consent,
+          teacher: _teacher,
+          school: _school.text.trim(),
+          teacherClasses: _classes.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
+          teacherSubjects: _subjects.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
+          teacherExamId: _examId ?? '',
         );
       } else {
         await AuthService.instance.signIn(_user.text, _pass.text);
@@ -92,6 +120,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     Text(_register ? 'Créer mon compte' : 'Se connecter', style: titleStyle(24)),
                     const SizedBox(height: 18),
                     if (_register) ...[
+                      SegmentedButton<bool>(
+                        segments: const [
+                          ButtonSegment(value: false, label: Text('Élève'), icon: Icon(Icons.menu_book_outlined)),
+                          ButtonSegment(value: true, label: Text('Professeur'), icon: Icon(Icons.school_outlined)),
+                        ],
+                        selected: {_teacher},
+                        onSelectionChanged: (v) => setState(() { _teacher = v.first; _error = null; }),
+                      ),
+                      const SizedBox(height: 14),
                       TextFormField(
                         controller: _name,
                         textCapitalization: TextCapitalization.words,
@@ -137,7 +174,27 @@ class _LoginScreenState extends State<LoginScreen> {
                             v != _pass.text ? 'Les deux mots de passe sont différents.' : null,
                       ),
                     ],
-                    if (_register) ...[
+                    if (_register && _teacher) ...[
+                      const SizedBox(height: 14),
+                      TextFormField(controller: _school, textCapitalization: TextCapitalization.words,
+                        decoration: const InputDecoration(labelText: 'École')),
+                      const SizedBox(height: 12),
+                      DropdownButtonFormField<String>(
+                        value: _exams.any((e) => e.id == _examId) ? _examId : null,
+                        decoration: const InputDecoration(labelText: 'Niveau scolaire principal'),
+                        items: [for (final e in _exams) DropdownMenuItem(value: e.id, child: Text(e.name))],
+                        onChanged: (v) => setState(() => _examId = v),
+                      ),
+                      const SizedBox(height: 12),
+                      TextFormField(controller: _classes, textCapitalization: TextCapitalization.words,
+                        decoration: const InputDecoration(labelText: 'Classes', hintText: '6e A, 6e B')),
+                      const SizedBox(height: 12),
+                      TextFormField(controller: _subjects, textCapitalization: TextCapitalization.words,
+                        decoration: const InputDecoration(labelText: 'Matières', hintText: 'Anglais, Français')),
+                      const SizedBox(height: 8),
+                      const Text('Ta demande sera vérifiée par le responsable avant l’ouverture de ton espace professeur.'),
+                    ],
+                    if (_register && !_teacher) ...[
                       const SizedBox(height: 10),
                       CheckboxListTile(
                         contentPadding: EdgeInsets.zero,
@@ -174,6 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ? null
                           : () => setState(() {
                                 _register = !_register;
+                                _teacher = false;
                                 _error = null;
                               }),
                       child: Text(_register
