@@ -74,19 +74,19 @@
     },
     "vocabulaire_intermediaire": {
       "fichier": "vocabulaire_intermediaire.json",
-      "nombre": 24
+      "nombre": 48
     },
     "vocabulaire_avance": {
       "fichier": "vocabulaire_avance.json",
-      "nombre": 24
+      "nombre": 48
     },
     "grammaire_intermediaire": {
       "fichier": "grammaire_intermediaire.json",
-      "nombre": 24
+      "nombre": 48
     },
     "grammaire_avance": {
       "fichier": "grammaire_avance.json",
-      "nombre": 24
+      "nombre": 48
     },
     "expressions_intermediaire": {
       "fichier": "expressions_intermediaire.json",
