@@ -262,12 +262,35 @@ class _ClassScreenState extends State<ClassScreen> {
 
   Widget _studentsTab(BuildContext context, _ClassData data) {
     final t = Theme.of(context).textTheme;
+    bool needsSupport(StudentSummary s) => !s.active || (s.average != null && s.average! < 50);
+    bool doingWell(StudentSummary s) => s.active && s.average != null && s.average! >= 75;
+    bool unassessed(StudentSummary s) => s.active && s.average == null;
     final list = data.students.where((s) {
       if (_filter == 'active') return s.active;
       if (_filter == 'inactive') return !s.active;
+      if (_filter == 'support') return needsSupport(s);
+      if (_filter == 'doing_well') return doingWell(s);
+      if (_filter == 'unassessed') return unassessed(s);
       return true;
     }).toList();
     final working = data.students.where((s) => s.active).length;
+    final supportCount = data.students.where(needsSupport).length;
+    final doingWellCount = data.students.where(doingWell).length;
+    final unassessedCount = data.students.where(unassessed).length;
+
+    Widget progressPill(StudentSummary s) {
+      if (needsSupport(s)) {
+        return const Pill('À soutenir', color: JangColors.errorDark, background: JangColors.errorBg);
+      }
+      if (unassessed(s)) {
+        return const Pill('À évaluer', color: JangColors.warning, background: JangColors.warningBg);
+      }
+      if (doingWell(s)) {
+        return const Pill('À l’aise', color: JangColors.successDark, background: JangColors.successBg);
+      }
+      return const Pill('En progrès', color: JangColors.primaryDark, background: JangColors.noteBg);
+    }
+
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
       children: [
@@ -277,11 +300,14 @@ class _ClassScreenState extends State<ClassScreen> {
           label: const Text('Ajouter un élève'),
         ),
         const SizedBox(height: 10),
-        Wrap(spacing: 8, children: [
+        Wrap(spacing: 8, runSpacing: 8, children: [
           for (final e in {
-            'all': 'Tous (${data.students.length})',
-            'active': 'Travaillent ($working)',
-            'inactive': 'Ne travaillent pas (${data.students.length - working})',
+            'all': 'Tous (\${data.students.length})',
+            'support': 'À soutenir (\${supportCount})',
+            'doing_well': 'À l’aise (\${doingWellCount})',
+            'unassessed': 'À évaluer (\${unassessedCount})',
+            'active': 'Actifs (\${working})',
+            'inactive': 'Absents (\${data.students.length - working})',
           }.entries)
             ChoiceChip(
               label: Text(e.value),
@@ -290,14 +316,19 @@ class _ClassScreenState extends State<ClassScreen> {
             ),
         ]),
         const SizedBox(height: 4),
-        Text('« Travaillent » : venus dans les 7 derniers jours.', style: t.bodySmall),
+        Text(
+          'À soutenir : moyenne sous 50 % ou absent depuis plus de 7 jours. '
+          'À l’aise : moyenne d’au moins 75 % et venu dans les 7 derniers jours. '
+          'À évaluer : pas encore de quiz.',
+          style: t.bodySmall,
+        ),
         const SizedBox(height: 8),
         if (list.isEmpty)
           EmptyState(
             icon: Icons.groups_outlined,
-            title: data.students.isEmpty ? 'Pas encore d\'élève' : 'Personne ici',
+            title: data.students.isEmpty ? 'Pas encore d’élève' : 'Personne ici',
             message: data.students.isEmpty
-                ? 'Donne le code ${_c.code} à tes élèves, ou ajoute-les avec leur nom d\'utilisateur.'
+                ? 'Donne le code \${_c.code} à tes élèves, ou ajoute-les avec leur nom d’utilisateur.'
                 : null,
           ),
         for (final s in list)
@@ -308,13 +339,16 @@ class _ClassScreenState extends State<ClassScreen> {
               leading: Icon(Icons.circle, size: 14, color: s.active ? JangColors.success : JangColors.error),
               title: Text(s.name.isEmpty ? s.username : s.name, style: t.titleSmall),
               subtitle: Text(
-                '${presenceLabel(s)}\n'
-                '${s.average == null ? 'Pas de quiz' : 'Moyenne ${s.average} %'} · '
-                '${plural(s.missionsDone, 'mission')} · ${plural(s.lessonsSeen, 'leçon')} ouverte${s.lessonsSeen > 1 ? 's' : ''}',
+                '\${presenceLabel(s)}\\n'
+                '\${s.average == null ? 'Pas de quiz' : 'Moyenne \${s.average} %'} · '
+                '\${plural(s.missionsDone, 'mission')} · \${plural(s.lessonsSeen, 'leçon')} ouverte\${s.lessonsSeen > 1 ? 's' : ''}',
                 style: t.bodySmall,
               ),
               isThreeLine: true,
-              trailing: const Icon(Icons.chevron_right),
+              trailing: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [progressPill(s), const Icon(Icons.chevron_right)],
+              ),
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
