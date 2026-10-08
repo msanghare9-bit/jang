@@ -257,6 +257,20 @@ class MatchService {
     return result.count ?? 0;
   }
 
+  /// Matchs actifs actualisés en temps réel pour l’écran d’observation.
+  Stream<List<LiveMatch>> watchActiveMatches() => _col
+      .where('open', isEqualTo: true)
+      .snapshots()
+      .map((snap) {
+        final list = [
+          for (final doc in snap.docs)
+            if (doc.data()['state'] == LiveMatch.asking || doc.data()['state'] == LiveMatch.showing)
+              LiveMatch.fromDoc(doc),
+        ];
+        list.sort((a, b) => (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0)));
+        return list;
+      });
+
   /// Matchs qui ont commencé et restent ouverts à l’observation.
   Future<List<LiveMatch>> activeMatches() async {
     final snap = await _col.where('open', isEqualTo: true).get();
