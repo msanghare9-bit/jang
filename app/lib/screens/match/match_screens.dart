@@ -277,7 +277,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
       final domainTitle = _domains.map(QuizBank.domainLabel).join(' + ');
       final title = '$domainTitle · ${QuizBank.levelLabel(_level)}';
       if (widget.solo) {
-        final subject = Subject(id: '', examId: p.examId, name: 'Anglais', color: '#46178F');
+        final subject = Subject(id: '', examId: p.examId, name: 'Anglais', color: '#00853F');
         await Navigator.pushReplacement(
           context,
           MaterialPageRoute(
