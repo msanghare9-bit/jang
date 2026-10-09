@@ -92,6 +92,7 @@ class PushService {
 
   Future<void> _subscribe(UserProfile p) async {
     final want = <String>{'tous'};
+    if (p.isProf) want.add('professeurs');
     if (p.examId.isNotEmpty) {
       want.add(pushTopic('niveau_${p.examId}'));
       for (final s in await ContentRepo.instance.subjects(p.examId)) {

@@ -42,8 +42,9 @@ class Announcement {
   final String examId;
   final String subject;
   final String fromName;
+  final String audience;
   final DateTime? sendAt;
-  Announcement(this.id, this.title, this.text, this.examId, this.subject, this.fromName, this.sendAt);
+  Announcement(this.id, this.title, this.text, this.examId, this.subject, this.fromName, this.audience, this.sendAt);
 
   factory Announcement.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
@@ -55,6 +56,7 @@ class Announcement {
       (m['examId'] as String?) ?? '',
       (m['subject'] as String?) ?? '',
       (m['fromName'] as String?) ?? '',
+      (m['audience'] as String?) ?? 'students',
       ts is Timestamp ? ts.toDate() : null,
     );
   }
@@ -118,7 +120,9 @@ class InboxService {
           .orderBy('sendAt', descending: true)
           .limit(30)
           .get();
-      return s.docs.map(Announcement.fromDoc).where((a) => a.concerns(p.examId, subjects)).toList();
+      final audience = p.isProf ? 'teachers' : 'students';
+      return s.docs.map(Announcement.fromDoc)
+          .where((a) => a.audience == audience && a.concerns(p.examId, subjects)).toList();
     } catch (e) {
       debugPrint('Annonces indisponibles : $e');
       return const [];
@@ -176,6 +180,7 @@ class InboxService {
     required String text,
     required String examId,
     required String subject,
+    String audience = 'students',
     DateTime? sendAt,
   }) async {
     final me = AuthService.instance.profile.value;
@@ -188,6 +193,7 @@ class InboxService {
       'text': text,
       'examId': examId,
       'subject': subject,
+      'audience': audience,
       'fromUid': me.uid,
       'fromName': me.name,
       'createdAt': FieldValue.serverTimestamp(),
@@ -198,7 +204,7 @@ class InboxService {
       final ok = await PushService.instance.send({
         'type': 'annonce',
         'id': ref.id,
-        'topic': announcementTopic(examId, subject),
+        'topic': audience == 'teachers' ? 'professeurs' : announcementTopic(examId, subject),
         'title': title,
         'body': text,
       });

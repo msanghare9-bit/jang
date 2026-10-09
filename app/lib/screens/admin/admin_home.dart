@@ -7,6 +7,7 @@ import 'teacher_applications_screen.dart';
 import 'course_export_logs_screen.dart';
 import 'lesson_creators_screen.dart';
 import '../classes/my_classes_screen.dart';
+import '../teacher_community_screen.dart';
 import 'official_missions_screen.dart';
 import 'reports_screen.dart';
 
@@ -91,6 +92,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                     ? _go('Profs et classes', Icons.school_outlined, const ClassesAdminScreen())
                     : _go('Mes classes', Icons.school_outlined, const MyClassesScreen()),
                 _go('Annonces', Icons.campaign_outlined, const AnnouncementsScreen()),
+                if (admin) _go('Ressources des professeurs', Icons.menu_book_outlined, const TeacherCommunityScreen()),
                 if (admin) _go('Missions avec Gaïndé', Icons.edit_note_outlined, const OfficialMissionsScreen()),
                 if (admin) _go('Questions de match signalées', Icons.flag_outlined, const ReportsScreen()),
                 if (admin) _go('Accueil de l\'app', Icons.home_outlined, const HomeConfigScreen()),

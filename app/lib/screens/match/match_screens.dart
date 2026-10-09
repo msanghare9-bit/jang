@@ -32,6 +32,7 @@ class MatchHomeScreen extends StatefulWidget {
 }
 
 class _MatchHomeScreenState extends State<MatchHomeScreen> {
+  bool _questionsMode = false;
   late final Future<List<BankQuestion>> _dailyChallenge = QuizBank.instance.dailyChallenge(DateTime.now());
   late final Future<BankQuestion?> _dailyQuestion = QuizBank.instance.dailyQuestion(DateTime.now());
 
@@ -62,8 +63,63 @@ class _MatchHomeScreenState extends State<MatchHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Match')),
-      body: ListView(
+      appBar: AppBar(
+        title: Text(_questionsMode ? 'Questions / Réponses' : 'Jeux'),
+        leading: _questionsMode
+            ? IconButton(
+                tooltip: 'Retour aux jeux',
+                onPressed: () => setState(() => _questionsMode = false),
+                icon: const Icon(Icons.arrow_back),
+              )
+            : null,
+      ),
+      body: _questionsMode ? _questionsGamesView() : _gamePicker(),
+    );
+  }
+
+  Widget _gamePicker() => ListView(
+        padding: const EdgeInsets.fromLTRB(16, 18, 16, 28),
+        children: [
+          Text('Choisis ton jeu', style: titleStyle(24, weight: 800)),
+          const SizedBox(height: 6),
+          const Text('Sélectionne un mode avant de créer ou rejoindre une partie.'),
+          const SizedBox(height: 16),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            child: ListTile(
+              minVerticalPadding: 18,
+              leading: const CircleAvatar(
+                radius: 26,
+                backgroundColor: JangColors.snGreen,
+                child: Icon(Icons.casino_outlined, color: Colors.white, size: 28),
+              ),
+              title: Text('Jouer à Ludo Jàng', style: titleStyle(19, weight: 800)),
+              subtitle: const Text('Un vrai plateau de Ludo, avec des questions pour avancer.'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const LudoJangScreen())),
+            ),
+          ),
+          const SizedBox(height: 10),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            child: ListTile(
+              minVerticalPadding: 18,
+              leading: const CircleAvatar(
+                radius: 26,
+                backgroundColor: JangColors.primary,
+                child: Icon(Icons.quiz_outlined, color: Colors.white, size: 28),
+              ),
+              title: Text('Jouer à Questions / Réponses', style: titleStyle(19, weight: 800)),
+              subtitle: const Text('Défie tes Xarit, joue seul ou participe à un tournoi.'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => setState(() => _questionsMode = true),
+            ),
+          ),
+        ],
+      );
+
+  Widget _questionsGamesView() => ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 28),
         children: [
           Container(
@@ -176,24 +232,14 @@ class _MatchHomeScreenState extends State<MatchHomeScreen> {
           ),
           const SizedBox(height: 8),
           ChunkyButton(
-            label: 'Jouer à Ludo Jàng',
-            icon: Icons.casino_outlined,
-            color: JangColors.snGreen,
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const LudoJangScreen()),
-            ),
-          ),
-          const SizedBox(height: 10),
-          ChunkyButton(
-            label: 'Créer un match',
+            label: 'Créer une partie Questions / Réponses',
             icon: Icons.add_circle_outline,
             color: JangColors.primary,
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MatchSetupScreen())),
           ),
           const SizedBox(height: 10),
           ChunkyButton(
-            label: 'Rejoindre avec un code',
+            label: 'Rejoindre une partie Questions / Réponses',
             icon: Icons.login,
             onPressed: () => joinMatchDialog(context),
           ),
@@ -449,9 +495,9 @@ Future<void> joinMatchDialog(BuildContext context) async {
   final code = await showDialog<String>(
     context: context,
     builder: (ctx) => AlertDialog(
-      title: const Text('Rejoindre un match'),
+      title: const Text('Rejoindre Questions / Réponses'),
       content: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Text('Tape le code à 6 chiffres que ton ami te donne.'),
+        const Text('Saisis le code à 6 chiffres de la partie Questions / Réponses de ton ami.'),
         const SizedBox(height: 10),
         TextField(
           controller: ctrl,
@@ -566,7 +612,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.solo ? 'M\'entraîner seul' : 'Créer un match')),
+      appBar: AppBar(title: Text(widget.solo ? 'M\'entraîner seul' : 'Créer Questions / Réponses')),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 28),
         children: [
@@ -639,7 +685,7 @@ class _MatchSetupScreenState extends State<MatchSetupScreen> {
           ],
           const SizedBox(height: 24),
           ChunkyButton(
-            label: _busy ? 'Un instant…' : (widget.solo ? 'Commencer' : 'Créer et avoir le code'),
+            label: _busy ? 'Un instant…' : (widget.solo ? 'Commencer' : 'Créer la partie et obtenir un code'),
             icon: Icons.play_arrow_rounded,
             color: JangColors.primary,
             onPressed: _busy ? null : _go,

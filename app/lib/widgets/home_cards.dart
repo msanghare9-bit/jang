@@ -101,7 +101,7 @@ class MyClassCard extends StatelessWidget {
   }
 }
 
-/// Accueil : les matchs entre amis (façon Kahoot).
+/// Accueil : les jeux éducatifs de Jàng.
 class MatchCard extends StatelessWidget {
   const MatchCard({super.key});
 
@@ -122,16 +122,12 @@ class MatchCard extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Match ⚡', style: titleStyle(19, color: Colors.white, weight: 800)),
+                  Text('Jeux 🎲', style: titleStyle(19, color: Colors.white, weight: 800)),
                   const Text('Joue et teste tes connaissances avec tes amis',
                       style: TextStyle(color: Colors.white)),
                 ]),
               ),
-              TextButton(
-                style: TextButton.styleFrom(foregroundColor: Colors.white),
-                onPressed: () => joinMatchDialog(context),
-                child: const Text('Rejoindre'),
-              ),
+              const Icon(Icons.chevron_right, color: Colors.white),
             ]),
           ),
         ),
