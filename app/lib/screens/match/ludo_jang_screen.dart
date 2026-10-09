@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -49,12 +50,15 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   final Set<String> _selectedDomains = {..._domains};
   int _playerCount = 2;
   bool _busy = false;
+  bool _soundEnabled = true;
+  final AudioPlayer _dicePlayer = AudioPlayer();
   bool _onlineMode = false;
   bool _onlineReady = false;
   String? _roomId;
   String? _roomCode;
   List<String> _roomUids = [];
   List<String> _roomNames = [];
+  final List<String> _localPlayerNames = List.filled(4, '');
   StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? _roomSub;
   Timer? _questionTimer;
   Timer? _moveTimer;
@@ -73,6 +77,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   late List<int> _missesSinceSix;
   int _die = 0;
   int? _rollingPlayer;
+  bool _isDieAnimating = false;
   String? _message;
   bool _done = false;
   bool _shieldAvailable = false;
@@ -86,6 +91,29 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     _shieldedPawns = List.generate(4, (_) => <int>{});
     _streaks = List.filled(4, 0);
     _missesSinceSix = List.filled(4, 0);
+    unawaited(_loadSoundPreference());
+  }
+
+  Future<void> _loadSoundPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (mounted) setState(() => _soundEnabled = prefs.getBool('ludo_jang_sound_enabled') ?? true);
+  }
+
+  Future<void> _toggleSound() async {
+    final next = !_soundEnabled;
+    setState(() => _soundEnabled = next);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('ludo_jang_sound_enabled', next);
+  }
+
+  Future<void> _playDiceSound() async {
+    if (!_soundEnabled) return;
+    try {
+      await _dicePlayer.stop();
+      await _dicePlayer.play(AssetSource('sounds/dice_roll.wav'));
+    } catch (_) {
+      // The visual roll remains available if this device cannot play audio.
+    }
   }
 
   @override
@@ -94,6 +122,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     _questionTimer?.cancel();
     _moveTimer?.cancel();
     _roomCodeController.dispose();
+    unawaited(_dicePlayer.dispose());
     super.dispose();
   }
 
@@ -106,6 +135,16 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   }
 
   int _seatOf(int player) => _playerCount == 2 ? player * 2 : player;
+
+  String _playerName(int player) {
+    if (player < _roomNames.length && _roomNames[player].trim().isNotEmpty) {
+      return _roomNames[player];
+    }
+    if (player < _localPlayerNames.length && _localPlayerNames[player].trim().isNotEmpty) {
+      return _localPlayerNames[player].trim();
+    }
+    return 'Joueur ${player + 1}';
+  }
 
   Color _colorOf(int player) => _playerColors[_seatOf(player)];
 
@@ -139,6 +178,12 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     if (_selectedDomains.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Choisissez au moins une catégorie.')),
+      );
+      return;
+    }
+    if (!_onlineMode && _localPlayerNames.take(_playerCount).any((name) => name.trim().isEmpty)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Saisissez le prénom de chaque joueur.')),
       );
       return;
     }
@@ -178,11 +223,12 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       _playerCount = players;
       _questionIndex = -1;
       _turn = 0;
+      _roomNames = _localPlayerNames.take(players).map((name) => name.trim()).toList();
       _streaks = List.filled(players, 0);
       _missesSinceSix = List.filled(players, 0);
       _die = 0;
       _rollingPlayer = null;
-      _message = 'Au tour du joueur 1';
+      _message = 'Au tour de ${_playerName(0)}';
       _done = false;
       _shieldAvailable = false;
       _pawns = List.generate(players, (_) => List.filled(4, -1));
@@ -446,7 +492,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       _pendingTarget = null;
       _done = won;
       _message = won
-          ? 'Bonne réponse ! Joueur ${_turn + 1} remporte la partie !'
+          ? 'Bonne réponse ! ${_playerName(_turn)} remporte la partie !'
           : correct
               ? captured ? 'Bonne réponse ! Pion adverse capturé.' : _shieldAvailable ? 'Bonne réponse ! Ndimbal gagné.' : 'Bonne réponse ! Le pion reste sur sa case.'
               : timedOut ? 'Temps écoulé : le pion revient à sa position précédente.' : 'Mauvaise réponse : le pion revient à sa position précédente.';
@@ -461,7 +507,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     });
   }
 
-  void _roll() {
+  Future<void> _roll() async {
     if (!_canAct || _die != 0 || _done || _waitingForSquareQuestion || _resolvingQuestion) return;
     final guaranteedSix = _missesSinceSix[_turn] >= 3;
     final value = guaranteedSix ? 6 : Random().nextInt(6) + 1;
@@ -472,6 +518,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         (position < 0 ? value == 6 : position + value <= 57));
     setState(() {
       _die = value;
+      _isDieAnimating = true;
       _missesSinceSix = misses;
       _rollingPlayer = _turn;
       if (!hasMove) {
@@ -482,7 +529,11 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         _message = guaranteedSix ? 'Le 6 est garanti après trois essais. Choisissez un pion.' : 'Vous avez obtenu $value. Choisissez un pion.';
       }
     });
+    unawaited(_playDiceSound());
     _saveOnlineState();
+    await Future<void>.delayed(const Duration(milliseconds: 950));
+    if (!mounted) return;
+    setState(() => _isDieAnimating = false);
     if (!hasMove) {
       Future<void>.delayed(const Duration(milliseconds: 900), () => _nextTurn(extraTurn: value == 6));
     } else {
@@ -519,7 +570,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       _waitingForSquareQuestion = true;
       _questionDeadline = deadline;
       _secondsRemaining = 20;
-      _message = 'Joueur ${_turn + 1}, réponds à la question de cette case.';
+      _message = '${_playerName(_turn)}, réponds à la question de cette case.';
     });
     _startQuestionTimer(deadline);
     _saveOnlineState();
@@ -534,7 +585,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       _rollingPlayer = null;
       _die = 0;
       _shieldAvailable = false;
-      _message = extraTurn ? 'Vous avez obtenu 6 : Joueur ${_turn + 1} rejoue !' : 'Au tour du joueur ${_turn + 1}';
+      _message = extraTurn ? 'Vous avez obtenu 6 : ${_playerName(_turn)} rejoue !' : 'Au tour de ${_playerName(_turn)}';
       _questionDeadline = null;
       _waitingForSquareQuestion = false;
       _resolvingQuestion = false;
@@ -660,6 +711,25 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
             selected: {_playerCount},
             onSelectionChanged: (value) => setState(() => _playerCount = value.first),
           ),
+          if (!_onlineMode) ...[
+            const SizedBox(height: 10),
+            for (var player = 0; player < _playerCount; player++)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: TextFormField(
+                  key: ValueKey('local-ludo-player-$player'),
+                  initialValue: _localPlayerNames[player],
+                  maxLength: 24,
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    labelText: 'Prénom du joueur ${player + 1}',
+                    counterText: '',
+                    prefixIcon: Icon(Icons.person, color: _colorOf(player)),
+                  ),
+                  onChanged: (name) => _localPlayerNames[player] = name,
+                ),
+              ),
+          ],
           const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: _busy ? null : _start,
@@ -692,7 +762,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
 
   Widget _gameView() => LayoutBuilder(builder: (context, constraints) {
         final double boardSide = min(constraints.maxWidth - 24, min(360.0, max(190.0, constraints.maxHeight * .39))).toDouble();
-        final activeName = _roomNames.length > _turn ? _roomNames[_turn] : 'Joueur ${_turn + 1}';
+        final activeName = _playerName(_turn);
         return Padding(
           padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
           child: Column(children: [
@@ -704,6 +774,14 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
                   CircleAvatar(radius: 15, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
                   const SizedBox(width: 8),
                   Expanded(child: Text(_message ?? 'Au tour de $activeName', maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
+                  IconButton(
+                    tooltip: _soundEnabled ? 'Couper les effets sonores' : 'Activer les effets sonores',
+                    visualDensity: VisualDensity.compact,
+                    constraints: const BoxConstraints.tightFor(width: 34, height: 34),
+                    padding: EdgeInsets.zero,
+                    onPressed: _toggleSound,
+                    icon: Icon(_soundEnabled ? Icons.volume_up_rounded : Icons.volume_off_rounded, size: 20),
+                  ),
                   if ((_message ?? '').startsWith('Bonne réponse'))
                     const Icon(Icons.check_circle, color: JangColors.snGreen, size: 20),
                   if ((_message ?? '').startsWith('Mauvaise réponse') || (_message ?? '').startsWith('Temps écoulé'))
@@ -712,7 +790,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
                     Padding(
                       padding: const EdgeInsets.only(left: 4),
                       child: Tooltip(
-                        message: '${_roomNames.length > player ? _roomNames[player] : 'Joueur ${player + 1}'} · ${_pawns[player].where((p) => p == 57).length}/4 arrivés · série ${_streaks[player]}/5',
+                        message: '${_playerName(player)} · ${_pawns[player].where((p) => p == 57).length}/4 arrivés · série ${_streaks[player]}/5',
                         child: CircleAvatar(
                           radius: 12,
                           backgroundColor: player == _turn ? _colorOf(player) : _colorOf(player).withValues(alpha: .35),
@@ -752,18 +830,37 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         child: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            if (_die == 0) ...[
-              const Text('Pas de question pour lancer le dé.'),
+            if (!_canAct) ...[
+              Text('Au tour de ${_playerName(_turn)}',
+                  textAlign: TextAlign.center, style: titleStyle(15, weight: 800)),
+            ] else if (_die == 0) ...[
+              Text('Au tour de ${_playerName(_turn)}',
+                  textAlign: TextAlign.center, style: titleStyle(15, weight: 800)),
+              const SizedBox(height: 6),
+              _AnimatedDie(
+                value: 0,
+                rolling: false,
+                enabled: !_done && !_resolvingQuestion,
+                color: _colorOf(_turn),
+                size: 58,
+                onTap: _roll,
+              ),
+              const Text('Touchez le dé devant vous pour le lancer. Aucune question n’est posée pour lancer le dé.'),
               if (_pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
                 Text('Lancers sans 6 : ${_missesSinceSix[_turn]}/3', style: titleStyle(13, color: JangColors.textSecondary)),
-              const SizedBox(height: 6),
-              FilledButton.icon(
-                onPressed: _canAct && !_done && !_resolvingQuestion ? _roll : null,
-                icon: const Icon(Icons.casino),
-                label: const Text('Lancer le dé'),
-              ),
             ] else ...[
-              Text('Dé : $_die · déplacez un pion dans les 10 secondes', textAlign: TextAlign.center, style: titleStyle(14, weight: 700)),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                _AnimatedDie(
+                  value: _die,
+                  rolling: _isDieAnimating,
+                  enabled: false,
+                  color: _colorOf(_turn),
+                  size: 58,
+                  onTap: _roll,
+                ),
+                const SizedBox(width: 10),
+                Flexible(child: Text('Résultat : $_die · déplacez un pion dans les 10 secondes', textAlign: TextAlign.center, style: titleStyle(14, weight: 700))),
+              ]),
               const SizedBox(height: 5),
               Wrap(alignment: WrapAlignment.center, spacing: 6, runSpacing: 2, children: [
                 for (var i = 0; i < 4; i++)
@@ -879,6 +976,106 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     }
     if (closest >= 0) _movePawn(closest);
   }
+}
+
+/// Shows a single physical-looking die for the active player and tumbles it
+/// when tapped. The die stays hidden on devices whose player is not active.
+class _AnimatedDie extends StatefulWidget {
+  const _AnimatedDie({
+    required this.value,
+    required this.rolling,
+    required this.enabled,
+    required this.color,
+    required this.size,
+    required this.onTap,
+  });
+
+  final int value;
+  final bool rolling;
+  final bool enabled;
+  final Color color;
+  final double size;
+  final VoidCallback onTap;
+
+  @override
+  State<_AnimatedDie> createState() => _AnimatedDieState();
+}
+
+class _AnimatedDieState extends State<_AnimatedDie>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 950),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.rolling) _controller.forward(from: 0);
+  }
+
+  @override
+  void didUpdateWidget(covariant _AnimatedDie oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.rolling && !oldWidget.rolling) _controller.forward(from: 0);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final face = widget.value == 0 || widget.rolling
+        ? Icons.casino_outlined
+        : _faceFor(widget.value);
+    return Semantics(
+      button: widget.enabled,
+      label: widget.value == 0 ? 'Lancer le dé' : 'Résultat du dé : ${widget.value}',
+      child: GestureDetector(
+        onTap: widget.enabled ? widget.onTap : null,
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) => Transform.rotate(
+            angle: _controller.value * pi * 8,
+            child: Transform.scale(
+              scale: 1 + sin(_controller.value * pi) * .16,
+              child: child,
+            ),
+          ),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 150),
+            width: widget.size,
+            height: widget.size,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(color: widget.color, width: 2.5),
+              boxShadow: [
+                BoxShadow(
+                  color: widget.color.withValues(alpha: .22),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Icon(face, size: widget.size * .72, color: widget.color),
+          ),
+        ),
+      ),
+    );
+  }
+
+  IconData _faceFor(int value) => switch (value) {
+        1 => Icons.looks_one_rounded,
+        2 => Icons.looks_two_rounded,
+        3 => Icons.looks_3_rounded,
+        4 => Icons.looks_4_rounded,
+        5 => Icons.looks_5_rounded,
+        _ => Icons.looks_6_rounded,
+      };
 }
 
 class _ClassicLudoBoardPainter extends CustomPainter {

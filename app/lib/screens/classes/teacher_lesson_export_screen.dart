@@ -44,7 +44,7 @@ class _TeacherLessonExportScreenState extends State<TeacherLessonExportScreen> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text('Leçons officielles')),
+        appBar: AppBar(title: const Text('Bibliothèque de cours Jàng')),
         body: FutureBuilder<List<Lesson>>(
           future: _future,
           builder: (context, snap) {
@@ -89,7 +89,7 @@ class _TeacherLessonExportScreenState extends State<TeacherLessonExportScreen> {
                     Text('${widget.classRoom.subjectName} · ${widget.classRoom.name}',
                         style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 6),
-                    Text('La copie sera visible uniquement par les élèves de cette classe.',
+                    Text('Ajoutez ce cours aux ressources de votre classe.',
                         style: Theme.of(context).textTheme.bodySmall),
                     const SizedBox(height: 12),
                     for (final lesson in lessons)

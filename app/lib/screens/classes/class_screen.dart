@@ -390,7 +390,7 @@ class _ClassScreenState extends State<ClassScreen> {
             if (added == true) _reload();
           },
           icon: const Icon(Icons.library_add_outlined),
-          label: const Text('Ajouter une leçon officielle'),
+            label: const Text('Ajouter un cours de Jàng'),
         ),
         const SizedBox(height: 10),
         if (data.items.isEmpty)

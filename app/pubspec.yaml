@@ -38,6 +38,7 @@ flutter:
   assets:
     - assets/histoires.json
     - assets/missions.json
+    - assets/sounds/dice_roll.wav
   fonts:
     - family: Baloo
       fonts:

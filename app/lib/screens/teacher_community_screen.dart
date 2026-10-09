@@ -156,7 +156,7 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
           content: SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, children: [
             TextField(controller: title, maxLength: 100, decoration: const InputDecoration(labelText: 'Titre')),
             const SizedBox(height: 8),
-            TextField(controller: body, minLines: 3, maxLines: 7, maxLength: 1500,
+            TextField(controller: body, minLines: 3, maxLines: 7,
                 decoration: const InputDecoration(labelText: 'Information ou conseil', alignLabelWithHint: true)),
             if (admin) ...[
               const SizedBox(height: 8),
