@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models.dart';
 import '../../services/class_service.dart';
 import '../../services/content_repo.dart';
+import '../../services/lesson_pdf_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 
@@ -111,15 +112,35 @@ class _TeacherLessonExportScreenState extends State<TeacherLessonExportScreen> {
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
-                          trailing: existing.contains(lesson.id)
-                              ? const Icon(Icons.check_circle, color: JangColors.success)
-                              : IconButton(
-                                  tooltip: 'Ajouter à la classe',
-                                  onPressed: _busy.contains(lesson.id) ? null : () => _add(lesson),
-                                  icon: _busy.contains(lesson.id)
-                                      ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2))
-                                      : const Icon(Icons.add_circle_outline),
-                                ),
+                          trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+                            IconButton(
+                              tooltip: 'Exporter cette leçon en PDF',
+                              onPressed: () async {
+                                try {
+                                  await LessonPdfService.shareLesson(
+                                    lesson,
+                                    subjectName: widget.classRoom.subjectName,
+                                    levelName: widget.classRoom.name,
+                                  );
+                                } catch (_) {
+                                  if (context.mounted) {
+                                    showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
+                                  }
+                                }
+                              },
+                              icon: const Icon(Icons.picture_as_pdf_outlined),
+                            ),
+                            if (existing.contains(lesson.id))
+                              const Icon(Icons.check_circle, color: JangColors.success)
+                            else
+                              IconButton(
+                                tooltip: 'Ajouter à la classe',
+                                onPressed: _busy.contains(lesson.id) ? null : () => _add(lesson),
+                                icon: _busy.contains(lesson.id)
+                                    ? const SizedBox(width: 22, height: 22, child: CircularProgressIndicator(strokeWidth: 2))
+                                    : const Icon(Icons.add_circle_outline),
+                              ),
+                          ]),
                         ),
                       ),
                   ],

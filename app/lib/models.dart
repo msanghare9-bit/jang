@@ -744,6 +744,8 @@ class ClassItem {
         videos: videos,
         body: body,
         quiz: quiz,
+        createdByUid: ownerUid,
+        createdByName: ownerName,
       );
 }
 

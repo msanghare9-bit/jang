@@ -18,10 +18,10 @@ IconData classItemIcon(String type) => switch (type) {
 
 /// Phrase simple qui explique un type de contenu.
 String classItemHelp(String type) => switch (type) {
-      ClassItem.lesson => 'Un texte à lire, avec un petit quiz à la fin si tu veux.',
+      ClassItem.lesson => 'Un texte à lire, avec un questionnaire facultatif à la fin.',
       ClassItem.mcq => 'Des questions avec 4 réponses. L\'élève choisit la bonne.',
       ClassItem.gaps => 'Des phrases avec un mot qui manque. L\'élève l\'écrit.',
-      ClassItem.homework => 'Une consigne. L\'élève écrit sa réponse et tu la corriges.',
+      ClassItem.homework => 'Une consigne. L’élève écrit sa réponse et vous la corrigez.',
       ClassItem.mission => 'Une petite histoire où l\'élève pratique avec Gaïndé.',
       _ => '',
     };
@@ -62,7 +62,7 @@ Widget loadError(VoidCallback retry) => Center(
       child: EmptyState(
         icon: Icons.cloud_off,
         title: 'Chargement impossible',
-        message: 'Vérifie ta connexion internet.',
+        message: 'Vérifiez votre connexion internet.',
         action: FilledButton(onPressed: retry, child: const Text('Réessayer')),
       ),
     );

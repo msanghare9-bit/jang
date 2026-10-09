@@ -34,7 +34,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
 
   Future<void> _organizeTournament(List<ClassRoom> classes) async {
     if (classes.isEmpty) {
-      showMessage(context, 'Crée d’abord une classe pour inviter ses élèves au tournoi.');
+      showMessage(context, 'Créez d’abord une classe pour inviter vos élèves au tournoi.');
       return;
     }
     var selected = classes.first;
@@ -140,7 +140,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
                   const EmptyState(
                     icon: Icons.school_outlined,
                     title: 'Aucune classe attribuée',
-                    message: 'Tes classes apparaîtront ici dès qu’elles seront associées à ton compte professeur.',
+                    message: 'Vos classes apparaîtront ici dès qu’elles seront associées à votre compte professeur.',
                   )
                 else
                   for (final c in classes)

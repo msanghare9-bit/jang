@@ -64,9 +64,9 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
         school: me.school,
       );
       _reload();
-      if (mounted) showMessage(context, 'La classe a été créée. Donne son code aux élèves.');
+      if (mounted) showMessage(context, 'La classe a été créée. Communiquez son code aux élèves.');
     } catch (_) {
-      if (mounted) showMessage(context, 'Impossible de créer la classe. Vérifie ta connexion.');
+      if (mounted) showMessage(context, 'Impossible de créer la classe. Vérifiez votre connexion.');
     }
   }
 
@@ -92,7 +92,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
               child: EmptyState(
                 icon: Icons.school_outlined,
                 title: 'Pas encore de classe',
-                message: 'Crée ta première classe avec le bouton + en haut de l’écran.',
+                message: 'Créez votre première classe avec le bouton + en haut de l’écran.',
               ),
             );
           }
@@ -101,7 +101,7 @@ class _MyClassesScreenState extends State<MyClassesScreen> {
             child: ListView(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
               children: [
-                Text('Touche une classe pour voir tes élèves, tes contenus et les devoirs.', style: t.bodySmall),
+                Text('Sélectionnez une classe pour consulter vos élèves, vos contenus et les devoirs.', style: t.bodySmall),
                 const SizedBox(height: 10),
                 for (final c in classes)
                   Card(
