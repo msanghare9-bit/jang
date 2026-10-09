@@ -178,11 +178,11 @@ service cloud.firestore {
                        && request.resource.data.playerUids.size() == resource.data.playerUids.size() + 1
                        && request.resource.data.playerNames.size() == resource.data.playerNames.size() + 1
                        && request.resource.data.get('status', '') == 'playing'
-                       && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['playerUids','playerNames','status','message','questionDeadline']))
+                       && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['playerUids','playerNames','status','message','questionDeadline','waitingForSquareQuestion','resolvingQuestion']))
                       || (request.auth.uid in resource.data.get('playerUids', [])
                           && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-                            'questionIndex','questionDeadline','turn','streaks','die','rollingPlayer','message',
-                            'done','shieldAvailable','pawns','shieldedPawns'
+                            'questionIndex','questionDeadline','waitingForSquareQuestion','resolvingQuestion','pendingPawnIndex','pendingOrigin','pendingTarget',
+                            'turn','streaks','missesSinceSix','die','rollingPlayer','message','done','shieldAvailable','pawns','shieldedPawns'
                           ]))
                     );
       allow delete: if signedIn() && resource.data.get('hostUid', '') == request.auth.uid;
@@ -484,4 +484,5 @@ service cloud.firestore {
     match /pushQueue/{id} { allow read, write: if false; }
   }
 }
+
 

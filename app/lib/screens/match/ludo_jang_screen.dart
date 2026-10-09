@@ -57,13 +57,20 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   List<String> _roomNames = [];
   StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? _roomSub;
   Timer? _questionTimer;
+  Timer? _moveTimer;
   DateTime? _questionDeadline;
   int _secondsRemaining = 20;
+  bool _waitingForSquareQuestion = false;
+  bool _resolvingQuestion = false;
+  int? _pendingPawnIndex;
+  int? _pendingOrigin;
+  int? _pendingTarget;
   final _roomCodeController = TextEditingController();
   List<BankQuestion> _questions = const [];
   int _questionIndex = 0;
   int _turn = 0;
   late List<int> _streaks;
+  late List<int> _missesSinceSix;
   int _die = 0;
   int? _rollingPlayer;
   String? _message;
@@ -78,12 +85,14 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     _pawns = List.generate(4, (_) => List.filled(4, -1));
     _shieldedPawns = List.generate(4, (_) => <int>{});
     _streaks = List.filled(4, 0);
+    _missesSinceSix = List.filled(4, 0);
   }
 
   @override
   void dispose() {
     _roomSub?.cancel();
     _questionTimer?.cancel();
+    _moveTimer?.cancel();
     _roomCodeController.dispose();
     super.dispose();
   }
@@ -95,6 +104,10 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     final uid = AuthService.instance.profile.value?.uid;
     return uid != null && _turn < _roomUids.length && _roomUids[_turn] == uid;
   }
+
+  int _seatOf(int player) => _playerCount == 2 ? player * 2 : player;
+
+  Color _colorOf(int player) => _playerColors[_seatOf(player)];
 
   Future<void> _showRulesIfNeeded() async {
     final prefs = await SharedPreferences.getInstance();
@@ -108,9 +121,9 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         title: Text('Comment jouer ? (${started + 1}/3)'),
         content: const SingleChildScrollView(
           child: Text(
-            'Vous avez 20 secondes pour répondre à chaque question. Une bonne réponse vous permet de lancer le dé et de déplacer un pion du nombre de cases indiqué. Il faut obtenir 6 pour sortir un pion.\n\n'
-            'Une mauvaise réponse passe le tour au joueur suivant. Il faut obtenir 6 pour sortir un pion de sa base. Faites le tour du plateau, puis avancez dans votre couloir de couleur. Il faut obtenir le nombre exact pour arriver.\n\n'
-            'Les cases étoilées sont protégées : aucun pion ne peut y être renvoyé à sa base. Cinq bonnes réponses d’affilée donnent un bouclier Ndimbal pour protéger un pion pendant un tour.\n\n'
+            'Lancez le dé sans répondre à une question. Il faut obtenir 6 pour sortir un pion de sa base. Après trois lancers consécutifs sans 6, le prochain lancer donnera 6. Un 6 donne un deuxième tour. Touchez ensuite le pion à déplacer.\n\n'
+            'Quand un pion arrive sur une case, vous avez 20 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
+            'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un bouclier Ndimbal pour protéger un pion pendant un tour.\n\n'
             'Le premier joueur qui amène ses quatre pions à l’arrivée gagne.',
           ),
         ),
@@ -163,9 +176,10 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     setState(() {
       _questions = questions;
       _playerCount = players;
-      _questionIndex = 0;
+      _questionIndex = -1;
       _turn = 0;
       _streaks = List.filled(players, 0);
+      _missesSinceSix = List.filled(players, 0);
       _die = 0;
       _rollingPlayer = null;
       _message = 'Au tour du joueur 1';
@@ -173,9 +187,13 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       _shieldAvailable = false;
       _pawns = List.generate(players, (_) => List.filled(4, -1));
       _shieldedPawns = List.generate(players, (_) => <int>{});
-      _questionDeadline = DateTime.now().add(const Duration(seconds: 20));
+      _questionDeadline = null;
+      _waitingForSquareQuestion = false;
+      _resolvingQuestion = false;
+      _pendingPawnIndex = null;
+      _pendingOrigin = null;
+      _pendingTarget = null;
     });
-    _startQuestionTimer(_questionDeadline!);
   }
 
   Future<String> _newRoomCode() async {
@@ -204,10 +222,13 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       'level': _level,
       'domains': _selectedDomains.toList(),
       'questions': [for (final q in questions) q.toMap()],
-      'questionIndex': 0,
-      'questionDeadline': DateTime.now().add(const Duration(seconds: 20)).millisecondsSinceEpoch,
+      'questionIndex': -1,
+      'questionDeadline': DateTime.now().millisecondsSinceEpoch,
+      'waitingForSquareQuestion': false,
+      'resolvingQuestion': false,
       'turn': 0,
       'streaks': [0, 0],
+      'missesSinceSix': [0, 0],
       'die': 0,
       'rollingPlayer': null,
       'message': 'En attente d’un autre joueur…',
@@ -259,7 +280,9 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
           'playerNames': [...names, profile.publicName],
           'status': 'playing',
           'message': 'La partie commence !',
-          'questionDeadline': DateTime.now().add(const Duration(seconds: 20)).millisecondsSinceEpoch,
+          'questionDeadline': DateTime.now().millisecondsSinceEpoch,
+          'waitingForSquareQuestion': false,
+          'resolvingQuestion': false,
         });
         _watchRoom(doc.id);
       }
@@ -288,10 +311,12 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       final shielded = (data['shieldedPawns'] as List? ?? const [])
           .map((row) => Set<int>.from(row as List))
           .toList();
+      final previousDie = _die;
+      final previousTurn = _turn;
       final rawDeadline = data['questionDeadline'];
       final deadline = rawDeadline is num
           ? DateTime.fromMillisecondsSinceEpoch(rawDeadline.toInt())
-          : DateTime.now().add(const Duration(seconds: 20));
+          : DateTime.now();
       if (questions.isEmpty || pawns.isEmpty) return;
       setState(() {
         _onlineMode = true;
@@ -305,9 +330,15 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
           ..clear()
           ..addAll(List<String>.from(data['domains'] ?? const <String>[]));
         _playerCount = uids.length.clamp(2, 4).toInt();
-        _questionIndex = (data['questionIndex'] as num? ?? 0).toInt();
+        _questionIndex = (data['questionIndex'] as num? ?? -1).toInt();
+        _waitingForSquareQuestion = data['waitingForSquareQuestion'] == true;
+        _resolvingQuestion = data['resolvingQuestion'] == true;
+        _pendingPawnIndex = (data['pendingPawnIndex'] as num?)?.toInt();
+        _pendingOrigin = (data['pendingOrigin'] as num?)?.toInt();
+        _pendingTarget = (data['pendingTarget'] as num?)?.toInt();
         _turn = (data['turn'] as num? ?? 0).toInt();
         _streaks = List<int>.from(data['streaks'] ?? List.filled(_playerCount, 0));
+        _missesSinceSix = List<int>.from(data['missesSinceSix'] ?? List.filled(_playerCount, 0));
         _die = (data['die'] as num? ?? 0).toInt();
         _rollingPlayer = (data['rollingPlayer'] as num?)?.toInt();
         _message = '${data['message'] ?? ''}';
@@ -317,9 +348,17 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         _shieldedPawns = shielded;
         _onlineReady = data['status'] == 'playing';
       });
-      if (_questionDeadline != deadline) {
+      if (_waitingForSquareQuestion && _questionDeadline != deadline) {
         _questionDeadline = deadline;
         _startQuestionTimer(deadline);
+      } else if (!_waitingForSquareQuestion) {
+        _questionTimer?.cancel();
+      }
+      if (_die > 0 && !_waitingForSquareQuestion && _canAct && (previousDie != _die || previousTurn != _turn)) {
+        _moveTimer?.cancel();
+        _moveTimer = Timer(const Duration(seconds: 10), _autoMove);
+      } else if (_die == 0 || _waitingForSquareQuestion || !_canAct) {
+        _moveTimer?.cancel();
       }
     }, onError: (_) {
       if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Connexion à la partie interrompue.')));
@@ -332,8 +371,14 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       await FirebaseFirestore.instance.collection('ludoGames').doc(_roomId).update({
         'questionIndex': _questionIndex,
         'questionDeadline': _questionDeadline?.millisecondsSinceEpoch,
+        'waitingForSquareQuestion': _waitingForSquareQuestion,
+        'resolvingQuestion': _resolvingQuestion,
+        'pendingPawnIndex': _pendingPawnIndex,
+        'pendingOrigin': _pendingOrigin,
+        'pendingTarget': _pendingTarget,
         'turn': _turn,
         'streaks': _streaks,
+        'missesSinceSix': _missesSinceSix,
         'die': _die,
         'rollingPlayer': _rollingPlayer,
         'message': _message,
@@ -348,113 +393,152 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   }
 
   void _answer(int selected) {
-    if (!_playing || !_canAct || _rollingPlayer != null || _secondsRemaining <= 0 || _message?.startsWith('Bonne réponse') == true) return;
+    if (!_playing || !_canAct || !_waitingForSquareQuestion || _secondsRemaining <= 0) return;
     _questionTimer?.cancel();
-    final correct = selected == _question.answer;
-    setState(() {
-      if (correct) {
-        _streaks[_turn]++;
-        if (_streaks[_turn] >= 5) {
-          _shieldAvailable = true;
-          _streaks[_turn] = 0;
-          _message = 'Bonne réponse ! Bouclier Ndimbal gagné. Lancez le dé.';
-        } else {
-          _message = 'Bonne réponse ! Lancez le dé.';
-        }
-        _rollingPlayer = _turn;
-      } else {
-        _streaks[_turn] = 0;
-        _message = 'Pas cette fois. Au tour du joueur suivant.';
-      }
-    });
-    _saveOnlineState();
-    if (!correct) _nextTurn();
+    _resolveSquareQuestion(selected == _question.answer);
   }
 
-  void _roll() {
-    if (!_canAct || _rollingPlayer != _turn || _done) return;
-    final value = Random().nextInt(6) + 1;
-    final available = _pawns[_turn];
-    final hasMove = available.any((position) => position < 57 &&
-        (position < 0 ? value == 6 : position + value <= 57));
-    setState(() {
-      _die = value;
-      if (!hasMove) {
-        _message = 'Vous avez obtenu $value. Aucun pion ne peut avancer.';
-      } else {
-        _message = 'Vous avez obtenu $value. Choisissez un pion.';
-      }
-    });
-    _saveOnlineState();
-    if (!hasMove) Future<void>.delayed(const Duration(milliseconds: 900), _nextTurn);
-  }
-
-  void _movePawn(int pawnIndex) {
-    if (!_canAct || _rollingPlayer != _turn || _die == 0 || _done) return;
-    final current = _pawns[_turn][pawnIndex];
-    if (current < 0 && _die != 6) return;
-    final target = current < 0 ? 0 : current + _die;
-    if (target > 57) return;
-    final targetCell = target < 51 ? (_startCells[_turn] + target) % 52 : -1;
+  void _resolveSquareQuestion(bool correct, {bool timedOut = false}) {
+    if (!_waitingForSquareQuestion || _pendingPawnIndex == null || _pendingOrigin == null || _pendingTarget == null) return;
+    _questionTimer?.cancel();
+    final pawnIndex = _pendingPawnIndex!;
+    final origin = _pendingOrigin!;
+    final target = _pendingTarget!;
     final pawns = [for (final row in _pawns) [...row]];
-    pawns[_turn][pawnIndex] = target;
-    var captured = false;
     final shields = [for (final row in _shieldedPawns) {...row}];
-    if (_shieldAvailable) {
-      shields[_turn].add(pawnIndex);
-    }
-    if (targetCell >= 0 && !_safeCells.contains(targetCell)) {
-      for (var player = 0; player < _playerCount; player++) {
-        if (player == _turn) continue;
-        for (var pawn = 0; pawn < 4; pawn++) {
-          final opponentProgress = pawns[player][pawn];
-          final opponentCell = opponentProgress < 0 || opponentProgress >= 51
-              ? -1
-              : (_startCells[player] + opponentProgress) % 52;
-          if (opponentCell == targetCell) {
-            if (shields[player].remove(pawn)) {
-              captured = false;
-            } else {
+    var captured = false;
+    if (correct) {
+      _streaks[_turn]++;
+      if (_streaks[_turn] >= 5) {
+        _shieldAvailable = true;
+        _streaks[_turn] = 0;
+      }
+      final targetCell = target < 51 ? (_startCells[_seatOf(_turn)] + target) % 52 : -1;
+      if (_shieldAvailable) shields[_turn].add(pawnIndex);
+      if (targetCell >= 0 && !_safeCells.contains(targetCell)) {
+        for (var player = 0; player < _playerCount; player++) {
+          if (player == _turn) continue;
+          for (var pawn = 0; pawn < 4; pawn++) {
+            final progress = pawns[player][pawn];
+            final cell = progress < 0 || progress >= 51 ? -1 : (_startCells[_seatOf(player)] + progress) % 52;
+            if (cell == targetCell) {
+              if (shields[player].remove(pawn)) continue;
               pawns[player][pawn] = -1;
               captured = true;
             }
           }
         }
       }
+    } else {
+      _streaks[_turn] = 0;
+      // Roll back to the exact position from before this move. This rollback never captures.
+      pawns[_turn][pawnIndex] = origin;
     }
-    final won = pawns[_turn].every((position) => position == 57);
+    final won = correct && pawns[_turn].every((position) => position == 57);
+    final extraTurn = _die == 6;
     setState(() {
       _pawns = pawns;
       _shieldedPawns = shields;
-      _message = won
-          ? 'Joueur ${_turn + 1} remporte la partie !'
-          : captured
-              ? 'Pion adverse renvoyé à sa base !'
-              : 'Pion déplacé.';
+      _waitingForSquareQuestion = false;
+      _resolvingQuestion = true;
+      _pendingPawnIndex = null;
+      _pendingOrigin = null;
+      _pendingTarget = null;
       _done = won;
-      _shieldAvailable = false;
+      _message = won
+          ? 'Bonne réponse ! Joueur ${_turn + 1} remporte la partie !'
+          : correct
+              ? captured ? 'Bonne réponse ! Pion adverse capturé.' : _shieldAvailable ? 'Bonne réponse ! Ndimbal gagné.' : 'Bonne réponse ! Le pion reste sur sa case.'
+              : timedOut ? 'Temps écoulé : le pion revient à sa position précédente.' : 'Mauvaise réponse : le pion revient à sa position précédente.';
     });
     if (won) {
       _saveOnlineState();
+      return;
+    }
+    _saveOnlineState();
+    Future<void>.delayed(const Duration(milliseconds: 1300), () {
+      if (mounted && !_waitingForSquareQuestion && !_done) _nextTurn(extraTurn: extraTurn);
+    });
+  }
+
+  void _roll() {
+    if (!_canAct || _die != 0 || _done || _waitingForSquareQuestion || _resolvingQuestion) return;
+    final guaranteedSix = _missesSinceSix[_turn] >= 3;
+    final value = guaranteedSix ? 6 : Random().nextInt(6) + 1;
+    final misses = [..._missesSinceSix];
+    misses[_turn] = value == 6 ? 0 : misses[_turn] + 1;
+    final available = _pawns[_turn];
+    final hasMove = available.any((position) => position < 57 &&
+        (position < 0 ? value == 6 : position + value <= 57));
+    setState(() {
+      _die = value;
+      _missesSinceSix = misses;
+      _rollingPlayer = _turn;
+      if (!hasMove) {
+        _message = guaranteedSix
+            ? 'Après trois lancers sans 6, le 6 est garanti. Aucun pion ne peut avancer.'
+            : 'Vous avez obtenu $value. Aucun pion ne peut avancer.';
+      } else {
+        _message = guaranteedSix ? 'Le 6 est garanti après trois essais. Choisissez un pion.' : 'Vous avez obtenu $value. Choisissez un pion.';
+      }
+    });
+    _saveOnlineState();
+    if (!hasMove) {
+      Future<void>.delayed(const Duration(milliseconds: 900), () => _nextTurn(extraTurn: value == 6));
     } else {
-      _nextTurn();
+      _moveTimer?.cancel();
+      _moveTimer = Timer(const Duration(seconds: 10), _autoMove);
     }
   }
 
-  void _nextTurn() {
-    if (!mounted || _done) return;
+  void _autoMove() {
+    if (!mounted || !_canAct || _die == 0 || _waitingForSquareQuestion || _resolvingQuestion || _done) return;
+    final movable = List<int>.generate(4, (i) => i).where((i) {
+      final p = _pawns[_turn][i];
+      return p != 57 && (p < 0 ? _die == 6 : p + _die <= 57);
+    }).toList();
+    if (movable.isNotEmpty) _movePawn(movable.first);
+  }
+
+  void _movePawn(int pawnIndex) {
+    if (!_canAct || _rollingPlayer != _turn || _die == 0 || _done || _waitingForSquareQuestion || _resolvingQuestion) return;
+    final current = _pawns[_turn][pawnIndex];
+    if (current < 0 && _die != 6) return;
+    final target = current < 0 ? 0 : current + _die;
+    if (target > 57) return;
+    final pawns = [for (final row in _pawns) [...row]];
+    pawns[_turn][pawnIndex] = target;
+    _moveTimer?.cancel();
     final deadline = DateTime.now().add(const Duration(seconds: 20));
     setState(() {
-      _questionIndex++;
-      _turn = (_turn + 1) % _playerCount;
-      _shieldedPawns[_turn].clear();
+      _pawns = pawns;
+      _questionIndex = (_questionIndex + 1) % _questions.length;
+      _pendingPawnIndex = pawnIndex;
+      _pendingOrigin = current;
+      _pendingTarget = target;
+      _waitingForSquareQuestion = true;
+      _questionDeadline = deadline;
+      _secondsRemaining = 20;
+      _message = 'Joueur ${_turn + 1}, réponds à la question de cette case.';
+    });
+    _startQuestionTimer(deadline);
+    _saveOnlineState();
+  }
+
+  void _nextTurn({bool extraTurn = false}) {
+    if (!mounted || _done) return;
+    _moveTimer?.cancel();
+    setState(() {
+      if (!extraTurn) _turn = (_turn + 1) % _playerCount;
+      if (!extraTurn) _shieldedPawns[_turn].clear();
       _rollingPlayer = null;
       _die = 0;
       _shieldAvailable = false;
-      _message = 'Au tour du joueur ${_turn + 1}';
-      _questionDeadline = deadline;
+      _message = extraTurn ? 'Vous avez obtenu 6 : Joueur ${_turn + 1} rejoue !' : 'Au tour du joueur ${_turn + 1}';
+      _questionDeadline = null;
+      _waitingForSquareQuestion = false;
+      _resolvingQuestion = false;
     });
-    _startQuestionTimer(deadline);
     _saveOnlineState();
   }
 
@@ -467,7 +551,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       if (_secondsRemaining != remaining) setState(() => _secondsRemaining = remaining);
       if (remaining == 0) {
         _questionTimer?.cancel();
-        if (_playing && _canAct && _rollingPlayer == null) _timeoutQuestion();
+        if (_playing && _canAct && _waitingForSquareQuestion) _timeoutQuestion();
       }
     }
     tick();
@@ -475,13 +559,9 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   }
 
   void _timeoutQuestion() {
-    if (!_playing || !_canAct || _rollingPlayer != null || _secondsRemaining > 0) return;
+    if (!_playing || !_canAct || !_waitingForSquareQuestion || _secondsRemaining > 0) return;
     _questionTimer?.cancel();
-    setState(() {
-      _streaks[_turn] = 0;
-      _message = 'Temps écoulé ! Au tour du joueur suivant.';
-    });
-    _nextTurn();
+    _resolveSquareQuestion(false, timedOut: true);
   }
 
   @override
@@ -503,7 +583,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
           const SizedBox(height: 8),
           Text(_onlineMode
               ? 'Créez une partie et partagez son code, ou rejoignez un ami avec son code.'
-              : 'Jouez à plusieurs sur ce téléphone. Répondez aux questions pour faire avancer vos pions.'),
+              : 'Jouez à plusieurs sur ce téléphone. Lancez le dé et répondez à la question de la case où arrive votre pion.'),
           const SizedBox(height: 16),
           SegmentedButton<bool>(
             segments: const [
@@ -604,151 +684,210 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
           const SizedBox(height: 18),
           Card(child: Column(children: [
             for (var i = 0; i < _roomNames.length; i++)
-              ListTile(leading: CircleAvatar(backgroundColor: _playerColors[i], child: Text('${i + 1}', style: const TextStyle(color: Colors.white))), title: Text(_roomNames[i])),
+              ListTile(leading: CircleAvatar(backgroundColor: _playerColors[i * 2], child: Text('${i + 1}', style: const TextStyle(color: Colors.white))), title: Text(_roomNames[i])),
             if (_roomNames.length < 2) const ListTile(leading: CircularProgressIndicator(), title: Text('En attente d’un autre joueur…')),
           ])),
         ],
       );
 
-  Widget _gameView() {
-    final question = _question;
-    final answered = _rollingPlayer == _turn;
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: [
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(14),
-            child: Column(children: [
-              Text(_message ?? 'Au tour du joueur ${_turn + 1}',
-                  textAlign: TextAlign.center, style: titleStyle(18, weight: 800)),
-              const SizedBox(height: 12),
-              Wrap(
-                alignment: WrapAlignment.center,
-                spacing: 10,
-                children: [
+  Widget _gameView() => LayoutBuilder(builder: (context, constraints) {
+        final double boardSide = min(constraints.maxWidth - 24, min(360.0, max(190.0, constraints.maxHeight * .39))).toDouble();
+        final activeName = _roomNames.length > _turn ? _roomNames[_turn] : 'Joueur ${_turn + 1}';
+        return Padding(
+          padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+          child: Column(children: [
+            _TurnGlow(
+              color: _colorOf(_turn),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+                child: Row(children: [
+                  CircleAvatar(radius: 15, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                  const SizedBox(width: 8),
+                  Expanded(child: Text(_message ?? 'Au tour de $activeName', maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
+                  if ((_message ?? '').startsWith('Bonne réponse'))
+                    const Icon(Icons.check_circle, color: JangColors.snGreen, size: 20),
+                  if ((_message ?? '').startsWith('Mauvaise réponse') || (_message ?? '').startsWith('Temps écoulé'))
+                    const Icon(Icons.cancel, color: Color(0xFFE31B23), size: 20),
                   for (var player = 0; player < _playerCount; player++)
-                    Chip(
-                      avatar: CircleAvatar(backgroundColor: _playerColors[player], child: Text('${player + 1}', style: const TextStyle(color: Colors.white))),
-                      label: Text('${_roomNames.length > player ? _roomNames[player] : 'Joueur ${player + 1}'}: ${_pawns[player].where((p) => p == 57).length}/4 · série ${_streaks[player]}/5'),
-                      backgroundColor: player == _turn ? JangColors.successBg : null,
-                    ),
-                ],
-              ),
-            ]),
-          ),
-        ),
-        const SizedBox(height: 8),
-        _board(),
-        if (_shieldAvailable)
-          Card(color: JangColors.successBg, child: const ListTile(
-            leading: Icon(Icons.shield, color: JangColors.snGreen),
-            title: Text('Ndimbal disponible'),
-            subtitle: Text('Votre bouclier protège un pion pendant le prochain tour.'),
-          )),
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-              Text('Question · ${QuizBank.levelLabel(_level)}', style: titleStyle(15, weight: 800)),
-              const SizedBox(height: 8),
-              Row(children: [
-                const Icon(Icons.timer_outlined, size: 18),
-                const SizedBox(width: 6),
-                Text('Temps restant : $_secondsRemaining s', style: titleStyle(14, weight: 800)),
-              ]),
-              const SizedBox(height: 5),
-              LinearProgressIndicator(
-                value: _secondsRemaining / 20,
-                color: _secondsRemaining <= 5 ? const Color(0xFFE31B23) : JangColors.snGreen,
-                backgroundColor: const Color(0xFFE5E9E6),
-                minHeight: 6,
-                borderRadius: BorderRadius.circular(99),
-              ),
-              const SizedBox(height: 8),
-              Text(question.text.isEmpty ? question.question : '${question.text}\n\n${question.question}',
-                  style: titleStyle(20, weight: 700)),
-              const SizedBox(height: 12),
-              for (var i = 0; i < question.options.length; i++)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: OutlinedButton(
-                    onPressed: !_canAct || answered || _die > 0 || _secondsRemaining <= 0 ? null : () => _answer(i),
-                    child: Text(question.options[i]),
-                  ),
-                ),
-              if (answered && _die == 0)
-                FilledButton.icon(onPressed: _canAct ? _roll : null, icon: const Icon(Icons.casino), label: const Text('Lancer le dé')),
-              if (_die > 0 && answered) ...[
-                Text('Dé : $_die', textAlign: TextAlign.center, style: titleStyle(22, weight: 800)),
-                const SizedBox(height: 8),
-                Text('Touchez un pion pour le déplacer :', style: titleStyle(14, weight: 700)),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 8,
-                  children: [
-                    for (var i = 0; i < 4; i++)
-                      ActionChip(
-                        avatar: Icon(Icons.circle, color: _playerColors[_turn]),
-                        label: Text(_pawns[_turn][i] < 0 ? 'Pion ${i + 1} · base' : _pawns[_turn][i] == 57 ? 'Pion ${i + 1} · arrivé' : _pawns[_turn][i] >= 51 ? 'Pion ${i + 1} · couloir' : 'Pion ${i + 1} · parcours ${_pawns[_turn][i] + 1}'),
-                        onPressed: !_canAct || _pawns[_turn][i] == 57 || (_pawns[_turn][i] < 0 && _die != 6) || (_pawns[_turn][i] >= 0 && _pawns[_turn][i] + _die > 57)
-                            ? null
-                            : () => _movePawn(i),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 4),
+                      child: Tooltip(
+                        message: '${_roomNames.length > player ? _roomNames[player] : 'Joueur ${player + 1}'} · ${_pawns[player].where((p) => p == 57).length}/4 arrivés · série ${_streaks[player]}/5',
+                        child: CircleAvatar(
+                          radius: 12,
+                          backgroundColor: player == _turn ? _colorOf(player) : _colorOf(player).withValues(alpha: .35),
+                          child: Text('${_pawns[player].where((p) => p == 57).length}', style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
+                        ),
                       ),
-                  ],
-                ),
-              ],
-            ]),
-          ),
-        ),
-        if (_done)
-          FilledButton.icon(
-            onPressed: () {
-              _roomSub?.cancel();
-              setState(() { _questions = const []; _done = false; _onlineReady = false; _roomId = null; _roomCode = null; });
-            },
-            icon: const Icon(Icons.replay),
-            label: const Text('Nouvelle partie'),
-          ),
-      ],
-    );
-  }
-
-  Widget _board() => Card(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Plateau de Ludo', style: titleStyle(17, weight: 800)),
-            const SizedBox(height: 8),
-            AspectRatio(
-              aspectRatio: 1,
-              child: CustomPaint(
-                painter: _ClassicLudoBoardPainter(
-                  colors: _playerColors,
-                  pawns: _pawns,
-                  shields: _shieldedPawns,
-                ),
-                child: const SizedBox.expand(),
+                    ),
+                ]),
               ),
             ),
-            const SizedBox(height: 8),
-            const Text('Les étoiles sont des cases sûres. Chaque couleur possède quatre pions et son propre couloir d’arrivée.'),
-            for (var player = 0; player < _playerCount; player++)
-              Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: Text('Joueur ${player + 1} · ${_pawns[player].where((p) => p < 0).length} en base · ${_pawns[player].where((p) => p == 57).length}/4 arrivé'),
+            const SizedBox(height: 5),
+            SizedBox(width: boardSide, height: boardSide, child: _board(boardSide)),
+            if (_shieldAvailable)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 3),
+                child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Icon(Icons.shield, color: JangColors.snGreen, size: 18),
+                  SizedBox(width: 5),
+                  Text('Ndimbal protège un pion pendant un tour.'),
+                ]),
               ),
+            Expanded(child: _waitingForSquareQuestion ? _questionPanel() : _turnPanel()),
+            if (_done)
+              FilledButton.icon(
+                onPressed: () {
+                  _roomSub?.cancel();
+                  setState(() { _questions = const []; _done = false; _onlineReady = false; _roomId = null; _roomCode = null; });
+                },
+                icon: const Icon(Icons.replay),
+                label: const Text('Nouvelle partie'),
+              ),
+          ]),
+        );
+      });
+
+  Widget _turnPanel() => Center(
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            if (_die == 0) ...[
+              const Text('Pas de question pour lancer le dé.'),
+              if (_pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
+                Text('Lancers sans 6 : ${_missesSinceSix[_turn]}/3', style: titleStyle(13, color: JangColors.textSecondary)),
+              const SizedBox(height: 6),
+              FilledButton.icon(
+                onPressed: _canAct && !_done && !_resolvingQuestion ? _roll : null,
+                icon: const Icon(Icons.casino),
+                label: const Text('Lancer le dé'),
+              ),
+            ] else ...[
+              Text('Dé : $_die · déplacez un pion dans les 10 secondes', textAlign: TextAlign.center, style: titleStyle(14, weight: 700)),
+              const SizedBox(height: 5),
+              Wrap(alignment: WrapAlignment.center, spacing: 6, runSpacing: 2, children: [
+                for (var i = 0; i < 4; i++)
+                  ActionChip(
+                    avatar: Icon(Icons.circle, color: _colorOf(_turn), size: 17),
+                    label: Text(_pawns[_turn][i] < 0 ? 'Base ${i + 1}' : _pawns[_turn][i] == 57 ? 'Arrivé ${i + 1}' : 'Pion ${i + 1}'),
+                    onPressed: !_canMovePawn(i) ? null : () => _movePawn(i),
+                  ),
+              ]),
+              const Text('Une question apparaîtra quand le pion arrivera sur sa case.'),
+            ],
           ]),
         ),
       );
+
+  bool _canMovePawn(int i) {
+    if (!_canAct || _die == 0 || _waitingForSquareQuestion || _resolvingQuestion || _done) return false;
+    final position = _pawns[_turn][i];
+    return position != 57 && (position < 0 ? _die == 6 : position + _die <= 57);
+  }
+
+  Widget _questionPanel() {
+    final question = _question;
+    final panel = Card(
+      margin: const EdgeInsets.only(top: 5),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Row(children: [
+            Expanded(child: Text('Question · ${QuizBank.levelLabel(_level)}', style: titleStyle(14, weight: 800))),
+            Text('$_secondsRemaining s', style: titleStyle(14, weight: 800, color: _secondsRemaining <= 5 ? const Color(0xFFE31B23) : JangColors.snGreen)),
+          ]),
+          LinearProgressIndicator(value: _secondsRemaining / 20, color: _secondsRemaining <= 5 ? const Color(0xFFE31B23) : JangColors.snGreen, minHeight: 4),
+          Expanded(
+            child: Center(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: SizedBox(
+                  width: max(220, MediaQuery.sizeOf(context).width - 48).toDouble(),
+                  child: Text(question.text.isEmpty ? question.question : '${question.text}\n${question.question}',
+                      textAlign: TextAlign.center, style: titleStyle(18, weight: 700)),
+                ),
+              ),
+            ),
+          ),
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisExtent: 40, crossAxisSpacing: 6, mainAxisSpacing: 4),
+            itemCount: question.options.length,
+            itemBuilder: (context, i) => OutlinedButton(
+              style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 5), visualDensity: VisualDensity.compact),
+              onPressed: !_canAct || _secondsRemaining <= 0 ? null : () => _answer(i),
+              child: Text(question.options[i], maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
+            ),
+          ),
+        ]),
+      ),
+    );
+    return _seatOf(_turn) >= 2 ? RotatedBox(quarterTurns: 2, child: panel) : panel;
+  }
+
+  Widget _board(double side) => Card(
+        margin: EdgeInsets.zero,
+        child: Padding(
+          padding: const EdgeInsets.all(7),
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTapDown: (details) => _handleBoardTap(details.localPosition, side - 14),
+            child: CustomPaint(
+              painter: _ClassicLudoBoardPainter(
+                colors: _playerColors,
+                pawns: _pawns,
+                shields: _shieldedPawns,
+                seats: List.generate(_playerCount, _seatOf),
+              ),
+              child: const SizedBox.expand(),
+            ),
+          ),
+        ),
+      );
+
+  void _handleBoardTap(Offset point, double side) {
+    if (_die == 0 || !_canAct || _waitingForSquareQuestion || _done) return;
+    final unit = side / 15;
+    final homeOrigins = <(int, int)>[(0, 0), (0, 9), (9, 9), (9, 0)];
+    const yardSlots = <(int, int)>[(2, 2), (4, 2), (2, 4), (4, 4)];
+    const pawnOffsets = <Offset>[Offset.zero, Offset(-.2, -.2), Offset(.2, -.2), Offset.zero];
+    var closest = -1;
+    var distance = unit * .9;
+    for (var pawn = 0; pawn < 4; pawn++) {
+      if (!_canMovePawn(pawn)) continue;
+      final progress = _pawns[_turn][pawn];
+      late Offset center;
+      if (progress < 0) {
+        final (r, c) = homeOrigins[_seatOf(_turn)];
+        final (dr, dc) = yardSlots[pawn];
+        center = Offset((c + dc) * unit, (r + dr) * unit);
+      } else if (progress == 57) {
+        center = Offset(7.5 * unit, 7.5 * unit);
+      } else {
+        final seat = _seatOf(_turn);
+        final (r, c) = progress < 51
+            ? _ClassicLudoBoardPainter.track[(_startCells[seat] + progress) % 52]
+            : _ClassicLudoBoardPainter.lanes[seat][progress - 51];
+        center = Offset((c + .5) * unit, (r + .5) * unit) + pawnOffsets[pawn] * unit;
+      }
+      final d = (point - center).distance;
+      if (d < distance) {
+        distance = d;
+        closest = pawn;
+      }
+    }
+    if (closest >= 0) _movePawn(closest);
+  }
 }
 
 class _ClassicLudoBoardPainter extends CustomPainter {
   final List<Color> colors;
   final List<List<int>> pawns;
   final List<Set<int>> shields;
+  final List<int> seats;
 
-  const _ClassicLudoBoardPainter({required this.colors, required this.pawns, required this.shields});
+  const _ClassicLudoBoardPainter({required this.colors, required this.pawns, required this.shields, required this.seats});
 
   static const _startCells = <int>[0, 13, 26, 39];
   static const _safeCells = <int>{0, 8, 13, 21, 26, 34, 39, 47};
@@ -767,6 +906,9 @@ class _ClassicLudoBoardPainter extends CustomPainter {
     [(7, 13), (7, 12), (7, 11), (7, 10), (7, 9), (7, 8)],
     [(13, 7), (12, 7), (11, 7), (10, 7), (9, 7), (8, 7)],
   ];
+
+  static List<(int, int)> get track => _track;
+  static List<List<(int, int)>> get lanes => _lanes;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -792,9 +934,10 @@ class _ClassicLudoBoardPainter extends CustomPainter {
         Offset((col + 2) * unit, (row + 4) * unit),
         Offset((col + 4) * unit, (row + 4) * unit),
       ];
+      final playerIndex = seats.indexOf(player);
+      if (playerIndex < 0) continue;
       for (var pawn = 0; pawn < 4; pawn++) {
-        if (player >= pawns.length) continue;
-        final progress = player < pawns.length && pawn < pawns[player].length ? pawns[player][pawn] : -1;
+        final progress = pawn < pawns[playerIndex].length ? pawns[playerIndex][pawn] : -1;
         if (progress < 0) _drawPawn(canvas, slots[pawn], unit * .34, colors[player], shield: false);
         if (progress == 57) {
           final goal = Offset(7.5 * unit, 7.5 * unit);
@@ -841,17 +984,19 @@ class _ClassicLudoBoardPainter extends CustomPainter {
     }
 
     // Pieces on the shared route and in their colored home lane.
-    for (var player = 0; player < min(4, pawns.length); player++) {
+    for (var player = 0; player < min(seats.length, pawns.length); player++) {
+      final seat = seats[player];
+      final color = colors[seat];
       for (var pawn = 0; pawn < min(4, pawns[player].length); pawn++) {
         final progress = pawns[player][pawn];
         if (progress < 0 || progress == 57) continue;
         final (row, col) = progress < 51
-            ? _track[(_startCells[player] + progress) % 52]
-            : _lanes[player][progress - 51];
+            ? _track[(_startCells[seat] + progress) % 52]
+            : _lanes[seat][progress - 51];
         final offsets = <Offset>[Offset.zero, Offset(-.2, -.2), Offset(.2, -.2), Offset.zero];
         final offset = offsets[pawn] * unit;
         _drawPawn(canvas, Offset((col + .5) * unit, (row + .5) * unit) + offset,
-            progress < 51 ? unit * .31 : unit * .34, colors[player],
+            progress < 51 ? unit * .31 : unit * .34, color,
             shield: player < shields.length && shields[player].contains(pawn));
       }
     }
@@ -883,5 +1028,44 @@ class _ClassicLudoBoardPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _ClassicLudoBoardPainter oldDelegate) =>
-      oldDelegate.colors != colors || oldDelegate.pawns != pawns || oldDelegate.shields != shields;
+      oldDelegate.colors != colors || oldDelegate.pawns != pawns || oldDelegate.shields != shields || oldDelegate.seats != seats;
 }
+
+class _TurnGlow extends StatefulWidget {
+  final Color color;
+  final Widget child;
+  const _TurnGlow({required this.color, required this.child});
+
+  @override
+  State<_TurnGlow> createState() => _TurnGlowState();
+}
+
+class _TurnGlowState extends State<_TurnGlow> with SingleTickerProviderStateMixin {
+  late final AnimationController _pulse = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 850),
+  )..repeat(reverse: true);
+
+  @override
+  void dispose() {
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => AnimatedBuilder(
+        animation: _pulse,
+        builder: (context, child) => Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Color.lerp(Colors.white, widget.color.withOpacity(.14), _pulse.value),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: widget.color.withOpacity(.25 + _pulse.value * .45)),
+            boxShadow: [BoxShadow(color: widget.color.withOpacity(.05 + _pulse.value * .16), blurRadius: 5 + _pulse.value * 7)],
+          ),
+          child: child,
+        ),
+        child: widget.child,
+      );
+}
+

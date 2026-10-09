@@ -53,10 +53,12 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
         'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'proposez des objectifs adaptés' : _objectives.text.trim()}. '
         'Commence par trois conseils concrets au professeur pour rendre la séance communicative et centrée sur les apprenants. '
-        'Puis rédige une leçon complète de 60 minutes, prête à être utilisée en classe. '
+        'Puis rédige une leçon complète de 60 minutes, réellement prête à être enseignée, pas un résumé ni un plan général. '
         'La leçon doit comporter AU MOINS SIX activités d’apprentissage distinctes, numérotées exactement '
         '« Activité 1 », « Activité 2 », etc. Pour chacune, indique la durée, l’objectif, le matériel, '
-        'la consigne que le professeur peut dire, ce que font les élèves, et comment vérifier leur réussite. '
+        'les contenus et exemples précis à enseigner, la consigne que le professeur peut dire mot pour mot, '
+        'les étapes détaillées, ce que font le professeur et les élèves, les réponses attendues ou critères de réussite, '
+        'et comment vérifier leur réussite. Ne te contente jamais d’énumérer une activité ou d’en donner les grandes lignes. '
         'Prévois une progression variée : mise en situation, découverte, pratique guidée, travail en binômes, '
         'production ou résolution de problème, partage et évaluation/transfert. Répartissez les durées pour totaliser 60 minutes. '
         'Ancre les exemples et supports dans un contexte sénégalais concret et respectueux : école, quartier, marché, '
@@ -64,6 +66,12 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'Les élèves doivent parler, réfléchir et travailler ensemble; le professeur facilite et guide. '
         'Ajoutez des objectifs mesurables, les prérequis, une évaluation formative, une adaptation pour les élèves '
         'qui ont besoin d’aide, un défi pour ceux qui avancent vite et un devoir lié à leur vie quotidienne. '
+        'Rédige aussi les supports et contenus complets à utiliser en classe (textes, exemples, données, dialogues ou tableau, '
+        'selon la matière), puis une série d’exercices avec leurs consignes, et un corrigé complet séparé qui explique '
+        'les réponses. Les exercices et corrigés doivent correspondre aux objectifs et aux activités de la leçon. '
+        'Utilise obligatoirement des sections clairement titrées : Conseils au professeur; Objectifs et prérequis; '
+        'Contenu complet de la leçon; Déroulement détaillé des Activités 1 à 6 (ou davantage); '
+        'Exercices à donner aux élèves; Corrigé détaillé réservé à la préparation du professeur; Devoir. '
         'Rédigez en français simple, avec des consignes prêtes à lire à la classe. Séparez clairement les conseils '
         'du professeur et la leçon complète, dans un document que je peux relire, modifier et partager. '
         'Adressez-vous toujours au professeur en le vouvoyant. Vous pouvez parfois lui donner un conseil très simple en anglais, suivi de sa traduction française.';
@@ -121,7 +129,8 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               padding: const EdgeInsets.all(14),
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
-                'Kocc prépare une leçon complète avec au moins six activités, dans un contexte sénégalais. '
+                'Kocc prépare une leçon complète avec au moins six activités détaillées, le contenu à enseigner, '
+                'des exercices et leurs corrigés, dans un contexte sénégalais. '
                 'Relisez et adaptez le brouillon avant de l’ajouter.',
               ),
             ),
@@ -160,7 +169,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             maxLines: 28,
             textCapitalization: TextCapitalization.sentences,
             decoration: const InputDecoration(
-              hintText: 'La leçon complète de Kocc apparaîtra ici, avec au moins six activités. Vous pourrez la modifier avant de l’ajouter.',
+              hintText: 'La leçon complète de Kocc apparaîtra ici, avec le contenu, les activités détaillées, les exercices et leur corrigé. Vous pourrez la modifier avant de l’ajouter.',
               alignLabelWithHint: true,
             ),
           ),
@@ -182,4 +191,5 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     );
   }
 }
+
 
