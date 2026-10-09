@@ -260,8 +260,7 @@ class _MatchHomeScreenState extends State<MatchHomeScreen> {
                 context, MaterialPageRoute(builder: (_) => const MatchSetupScreen(solo: true))),
           ),
         ],
-      ),
-    );
+      );
   }
 }
 
