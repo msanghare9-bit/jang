@@ -125,9 +125,6 @@ class QuizBank {
     final key = '${domain}_$level';
     final mem = _mem[key];
     if (mem != null) return mem;
-    if (domain == 'anglais_francais') {
-      return _mem[key] = await _reverseTranslations(level);
-    }
     String? text;
     final prefs = await SharedPreferences.getInstance();
     final cacheKey = 'quiz_cache_$key';
@@ -157,7 +154,12 @@ class QuizBank {
     try {
       if (text == null) text = prefs.getString(cacheKey);
     } catch (_) {}
-    if (text == null) return const [];
+    if (text == null) {
+      if (domain == 'anglais_francais') {
+        return _mem[key] = await _reverseTranslations(level);
+      }
+      return const [];
+    }
     try {
       final j = jsonDecode(text) as Map<String, dynamic>;
       final list = [

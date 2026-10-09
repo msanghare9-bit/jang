@@ -5,52 +5,72 @@ const { execFileSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '..', '..');
 const quizDir = path.join(root, 'contenus', 'quiz');
-const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais'];
+const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais', 'anglais_francais'];
 const levels = ['debutant', 'intermediaire', 'avance'];
 const token = process.env.FIREBASE_TOKEN;
 if (!token) throw new Error('FIREBASE_TOKEN requis pour protéger les réponses des banques.');
 
-const files = fs.readdirSync(quizDir).filter((name) => name.endsWith('.json')).sort();
-const answerMap = {};
+function firebase(args, options = {}) {
+  return execFileSync('firebase', [...args, '--project', 'jang-ea5f3', '--token', token], {
+    encoding: 'utf8', stdio: options.stdio || ['ignore', 'pipe', 'ignore'],
+  }).trim();
+}
+function secretName(domain, level) {
+  return `JANG_MATCH_ANSWERS_${domain.toUpperCase()}_${level.toUpperCase()}`;
+}
+function readSecret(name) {
+  try { return JSON.parse(firebase(['functions:secrets:access', name])); } catch (_) { return {}; }
+}
+
+const legacy = readSecret('JANG_MATCH_ANSWER_BANK');
 let changed = false;
-for (const name of files) {
-  const match = name.match(/^(.+)_(debutant|intermediaire|avance)\.json$/);
-  if (!match) continue;
-  const domainIndex = domains.indexOf(match[1]);
-  const levelIndex = levels.indexOf(match[2]);
-  if (domainIndex < 0 || levelIndex < 0) continue;
-  const file = path.join(quizDir, name);
-  const bank = JSON.parse(fs.readFileSync(file, 'utf8'));
-  if (!Array.isArray(bank.questions)) continue;
-  for (let i = 0; i < bank.questions.length; i++) {
-    const question = bank.questions[i];
-    const id = question.id || `q${domainIndex.toString(36)}${levelIndex.toString(36)}${i.toString(36)}`;
-    if (question.id !== id) { question.id = id; changed = true; }
-    if (Number.isInteger(question.r) && question.r >= 0 && question.r <= 3) {
-      answerMap[id] = question.r;
-      delete question.r;
-      changed = true;
+const answerBanks = new Map();
+for (const domain of domains) {
+  for (const level of levels) {
+    const key = `${domain}_${level}`;
+    const previous = readSecret(secretName(domain, level));
+    const answers = { ...legacy, ...previous };
+    const file = path.join(quizDir, `${key}.json`);
+    if (!fs.existsSync(file)) {
+      if (Object.keys(previous).length) answerBanks.set(key, previous);
+      continue;
     }
-    if ('e' in question) { delete question.e; changed = true; }
+    const bank = JSON.parse(fs.readFileSync(file, 'utf8'));
+    if (!Array.isArray(bank.questions)) throw new Error(`Banque invalide : ${file}`);
+    for (let i = 0; i < bank.questions.length; i++) {
+      const question = bank.questions[i];
+      const id = question.id || `q${domains.indexOf(domain).toString(36)}${levels.indexOf(level).toString(36)}${i.toString(36)}`;
+      if (question.id !== id) { question.id = id; changed = true; }
+      if (Number.isInteger(question.r) && question.r >= 0 && question.r <= 3) {
+        answers[id] = question.r;
+        delete question.r;
+        changed = true;
+      }
+      if (!Object.prototype.hasOwnProperty.call(answers, id)) {
+        throw new Error(`Corrigé absent pour ${key}/${id}. Les fichiers n'ont pas été publiés.`);
+      }
+      if ('e' in question) { delete question.e; changed = true; }
+    }
+    const localAnswers = {};
+    for (const question of bank.questions) localAnswers[question.id] = answers[question.id];
+    if (Buffer.byteLength(JSON.stringify(localAnswers), 'utf8') > 60000) {
+      throw new Error(`La banque privée ${key} dépasse la limite sûre d'un secret Firebase.`);
+    }
+    answerBanks.set(key, localAnswers);
+    if (changed) fs.writeFileSync(file, JSON.stringify(bank) + '\n');
   }
-  fs.writeFileSync(file, JSON.stringify(bank, null, 2) + '\n');
 }
-if (Object.keys(answerMap).length === 0) {
-  console.log('Les banques ne contiennent plus de corrigés à migrer.');
-  process.exit(0);
-}
-let previous = {};
-try {
-  const raw = execFileSync('firebase', ['functions:secrets:access', 'JANG_MATCH_ANSWER_BANK', '--project', 'jang-ea5f3', '--token', token], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-  previous = JSON.parse(raw);
-} catch (_) {}
-Object.assign(previous, answerMap);
-const payload = JSON.stringify(previous);
-if (Buffer.byteLength(payload, 'utf8') > 64 * 1024) throw new Error('La banque privée dépasse la limite de taille d’un secret Firebase.');
+
 const secretFile = path.join(process.env.RUNNER_TEMP || require('node:os').tmpdir(), 'jang-match-answer-bank.json');
-fs.writeFileSync(secretFile, payload, { mode: 0o600 });
-execFileSync('firebase', ['functions:secrets:set', 'JANG_MATCH_ANSWER_BANK', '--data-file', secretFile, '--project', 'jang-ea5f3', '--token', token], { stdio: 'inherit' });
+for (const [key, answers] of answerBanks) {
+  fs.writeFileSync(secretFile, JSON.stringify(answers), { mode: 0o600 });
+  const splitAt = key.lastIndexOf('_');
+  const domain = key.slice(0, splitAt);
+  const level = key.slice(splitAt + 1);
+  firebase(['functions:secrets:set', secretName(domain, level), '--data-file', secretFile], { stdio: 'inherit' });
+}
 fs.rmSync(secretFile, { force: true });
+
 if (changed) {
   execFileSync('git', ['config', 'user.name', 'jang-bot']);
   execFileSync('git', ['config', 'user.email', 'jang-bot@users.noreply.github.com']);
@@ -58,4 +78,4 @@ if (changed) {
   execFileSync('git', ['commit', '-m', 'Protéger les corrigés des banques de matchs']);
   execFileSync('git', ['push']);
 }
-console.log(`Corrigés transférés dans Firebase et retirés de ${files.length} banques publiques.`);
+console.log(`Corrigés répartis entre ${answerBanks.size} secrets Firebase. ${changed ? 'Les réponses ont été retirées des fichiers publics.' : 'Les banques sont déjà protégées.'}`);
