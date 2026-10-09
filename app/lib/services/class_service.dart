@@ -329,7 +329,7 @@ class ClassService {
     return ref.id;
   }
 
-  /// Copie une leçon officielle dans la classe et consigne qui l’a exportée.
+  /// Copie un cours de la bibliothèque Jàng dans la classe et consigne l’export.
   Future<String> exportLesson(ClassRoom room, Lesson lesson, UserProfile prof) async {
     final existing = await itemsOf(room.id);
     if (existing.any((item) => item.sourceLessonId == lesson.id)) {
@@ -347,7 +347,7 @@ class ClassService {
       type: ClassItem.lesson,
       title: lesson.title,
       sourceLessonId: lesson.id,
-      sourceOwnerName: 'Contenu officiel Jàng',
+      sourceOwnerName: 'Bibliothèque Jàng',
       videos: lesson.videos,
       body: lesson.body,
       quiz: lesson.quiz,
@@ -370,7 +370,7 @@ class ClassService {
       'subject': room.subjectName,
       'lessonId': lesson.id,
       'lessonTitle': lesson.title,
-      'sourceOwnerName': 'Contenu officiel Jàng',
+      'sourceOwnerName': 'Bibliothèque Jàng',
       'classItemId': itemRef.id,
       'createdAt': now,
     });
