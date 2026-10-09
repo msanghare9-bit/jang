@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 
 import '../../models.dart';
 import '../../services/class_service.dart';
+import '../../services/lesson_pdf_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../admin/students_screen.dart';
@@ -115,7 +116,7 @@ class _ClassScreenState extends State<ClassScreen> {
         builder: (c, setD) => AlertDialog(
           title: Text('Ajouter un élève', style: titleStyle(20)),
           content: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text('Écris le nom d\'utilisateur de l\'élève (celui qu\'il utilise pour se connecter).'),
+            const Text('Saisissez le nom d\'utilisateur de l\'élève (celui qu\'il utilise pour se connecter).'),
             const SizedBox(height: 10),
             TextField(
               controller: ctrl,
@@ -138,7 +139,7 @@ class _ClassScreenState extends State<ClassScreen> {
                       try {
                         e = await _service.addByUsername(_c, ctrl.text);
                       } catch (x) {
-                        e = 'Échec : vérifie ta connexion internet.';
+                        e = 'Échec : vérifiez votre connexion internet.';
                       }
                       if (!c.mounted) return;
                       if (e.isEmpty) {
@@ -234,7 +235,7 @@ class _ClassScreenState extends State<ClassScreen> {
               child: SelectableText(_c.code,
                   style: titleStyle(40, color: JangColors.primaryDark, weight: 800).copyWith(letterSpacing: 6)),
             ),
-            Text('Donne ce code à tes élèves : ils l\'écrivent dans l\'app pour entrer dans la classe.',
+            Text('Communiquez ce code à vos élèves : ils le saisissent dans l\'application pour rejoindre la classe.',
                 style: t.bodySmall),
             const SizedBox(height: 8),
             Wrap(spacing: 8, runSpacing: 4, children: [
@@ -328,7 +329,7 @@ class _ClassScreenState extends State<ClassScreen> {
             icon: Icons.groups_outlined,
             title: data.students.isEmpty ? 'Pas encore d’élève' : 'Personne ici',
             message: data.students.isEmpty
-                ? 'Donne le code ${_c.code} à tes élèves, ou ajoute-les avec leur nom d’utilisateur.'
+                ? 'Communiquez le code ${_c.code} à vos élèves, ou ajoutez-les avec leur nom d’utilisateur.'
                 : null,
           ),
         for (final s in list)
@@ -397,7 +398,7 @@ class _ClassScreenState extends State<ClassScreen> {
           const EmptyState(
             icon: Icons.library_add_outlined,
             title: 'Pas encore de contenu',
-            message: 'Crée une leçon, un QCM, un texte à trous, un devoir ou une mission pour ta classe.',
+            message: 'Créez une leçon, un QCM, un texte à trous, un devoir ou une mission pour votre classe.',
           ),
         for (final i in data.items)
           Card(
@@ -415,10 +416,20 @@ class _ClassScreenState extends State<ClassScreen> {
               ),
               trailing: PopupMenuButton<String>(
                 tooltip: 'Options',
-                onSelected: (v) => v == 'edit' ? _openEditor(i) : _deleteItem(i),
-                itemBuilder: (_) => const [
-                  PopupMenuItem(value: 'edit', child: Text('Modifier')),
-                  PopupMenuItem(value: 'delete', child: Text('Supprimer')),
+                onSelected: (v) {
+                  if (v == 'edit') {
+                    _openEditor(i);
+                  } else if (v == 'pdf') {
+                    LessonPdfService.shareClassItem(i, levelName: _c.name);
+                  } else {
+                    _deleteItem(i);
+                  }
+                },
+                itemBuilder: (_) => [
+                  const PopupMenuItem(value: 'edit', child: Text('Modifier')),
+                  if (i.type != ClassItem.mission)
+                    const PopupMenuItem(value: 'pdf', child: Text('Exporter en PDF')),
+                  const PopupMenuItem(value: 'delete', child: Text('Supprimer')),
                 ],
               ),
               onTap: () => Navigator.push(
@@ -441,7 +452,7 @@ class _ClassScreenState extends State<ClassScreen> {
           EmptyState(
             icon: Icons.assignment_outlined,
             title: 'Pas de devoir',
-            message: 'Crée un contenu de type « Devoir » : tes élèves y répondent et tu les corriges ici.',
+            message: 'Créez un devoir : vos élèves y répondent et vous pouvez le corriger ici.',
             action: OutlinedButton.icon(
                 onPressed: () => _openEditor(null), icon: const Icon(Icons.add), label: const Text('Créer')),
           )
@@ -578,7 +589,7 @@ class _ClassStudentScreenState extends State<ClassStudentScreen> {
       await Navigator.push(context,
           MaterialPageRoute(builder: (_) => StudentDetailScreen(uid: widget.student.uid, data: d.data() ?? {})));
     } catch (e) {
-      if (mounted) showMessage(context, 'Chargement impossible. Vérifie ta connexion internet.');
+      if (mounted) showMessage(context, 'Chargement impossible. Vérifiez votre connexion internet.');
     }
   }
 
@@ -615,7 +626,7 @@ class _ClassStudentScreenState extends State<ClassStudentScreen> {
                 icon: const Icon(Icons.insights_outlined),
                 label: const Text('Voir toute sa progression'),
               ),
-              SectionTitle('Dans ta classe (${widget.items.length})'),
+              SectionTitle('Dans votre classe (${widget.items.length})'),
               if (snap.hasError)
                 loadError(() => setState(() => _future = _load()))
               else if (!snap.hasData)
@@ -720,7 +731,7 @@ class _ItemResultsScreenState extends State<ItemResultsScreen> {
               if (item.isPublic)
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
-                  child: Text('Ce contenu est public : ici, on ne compte que les élèves de ta classe.',
+                  child: Text('Ce contenu est public : ici, seuls les élèves de votre classe sont comptabilisés.',
                       style: t.bodySmall),
                 ),
               if (hw) ...[
@@ -864,7 +875,7 @@ class _GradeScreenState extends State<GradeScreen> {
 
   Future<void> _save() async {
     if (_grade.text.trim().isEmpty && _comment.text.trim().isEmpty) {
-      showMessage(context, 'Écris une note ou un commentaire.');
+      showMessage(context, 'Saisissez une note ou un commentaire.');
       return;
     }
     setState(() => _busy = true);
@@ -989,7 +1000,7 @@ class _QuizLiveState extends State<_QuizLive> {
       ),
       Padding(
         padding: const EdgeInsets.only(top: 4),
-        child: Text('Les élèves entrent le code dans « Match ». Tu vois qui répond et le classement.', style: t.bodySmall),
+        child: Text('Les élèves entrent le code dans « Jeux ». Vous voyez qui répond et le classement.', style: t.bodySmall),
       ),
       FutureBuilder<(List<LiveMatch>, List<(String, int)>)>(
         future: _future,

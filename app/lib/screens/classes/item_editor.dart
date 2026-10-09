@@ -109,30 +109,30 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
 
   /// Vérifie le contenu ; renvoie un message simple, ou '' si tout va bien.
   String _check(String title, List<QuizQuestion> quiz, List<GapItem> gaps) {
-    if (title.isEmpty) return 'Écris un titre.';
+    if (title.isEmpty) return 'Saisissez un titre.';
     for (var i = 0; i < quiz.length; i++) {
       final q = quiz[i];
-      if (q.question.trim().isEmpty) return 'Question ${i + 1} : écris l\'énoncé.';
+      if (q.question.trim().isEmpty) return 'Question ${i + 1} : saisissez l\'énoncé.';
       if (q.options[q.answer].trim().isEmpty) return 'Question ${i + 1} : la bonne réponse est vide.';
       if (q.options.where((o) => o.trim().isNotEmpty).length < 2) {
-        return 'Question ${i + 1} : écris au moins 2 propositions.';
+        return 'Question ${i + 1} : saisissez au moins 2 propositions.';
       }
     }
     switch (_type) {
       case ClassItem.lesson:
-        if (_body.text.trim().isEmpty) return 'Écris le texte de la leçon.';
+        if (_body.text.trim().isEmpty) return 'Saisissez le texte de la leçon.';
       case ClassItem.mcq:
         if (quiz.isEmpty) return 'Ajoute au moins une question.';
       case ClassItem.gaps:
         if (gaps.isEmpty) return 'Ajoute au moins une phrase.';
         for (var i = 0; i < gaps.length; i++) {
-          if (gaps[i].answers.isEmpty) return 'Phrase ${i + 1} : écris la bonne réponse.';
-          if (gaps[i].before.isEmpty && gaps[i].after.isEmpty) return 'Phrase ${i + 1} : écris la phrase.';
+          if (gaps[i].answers.isEmpty) return 'Phrase ${i + 1} : saisissez la bonne réponse.';
+          if (gaps[i].before.isEmpty && gaps[i].after.isEmpty) return 'Phrase ${i + 1} : saisissez la phrase.';
         }
       case ClassItem.homework:
-        if (_body.text.trim().isEmpty) return 'Écris la consigne du devoir.';
+        if (_body.text.trim().isEmpty) return 'Saisissez la consigne du devoir.';
       case ClassItem.mission:
-        if (_mission.isEmpty) return 'Prépare la mission avec le bouton « Préparer la mission ».';
+        if (_mission.isEmpty) return 'Préparez la mission avec le bouton « Préparer la mission ».';
     }
     return '';
   }
@@ -276,7 +276,7 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
       canPop: !_dirty,
       onPopInvokedWithResult: (didPop, _) async {
         if (didPop) return;
-        final leave = await confirm(context, 'Quitter sans enregistrer ?', 'Ce que tu as écrit sera perdu.',
+        final leave = await confirm(context, 'Quitter sans enregistrer ?', 'Votre texte ne sera pas conservé.',
             ok: 'Quitter');
         if (leave && context.mounted) {
           _dirty = false;
@@ -291,7 +291,7 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
             Text('${widget.classRoom.name} · ${widget.classRoom.subjectName}', style: t.bodySmall),
             const SizedBox(height: 8),
             if (_isNew) ...[
-              Text('Que veux-tu créer ?', style: titleStyle(18)),
+              Text('Que souhaitez-vous créer ?', style: titleStyle(18)),
               const SizedBox(height: 6),
               for (final type in ClassItem.types) _typeCard(type),
             ] else
@@ -397,7 +397,7 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
         ];
       case ClassItem.mcq:
         return [
-          Text('Pour chaque question : 4 propositions. Touche le rond de la bonne réponse.', style: t.bodySmall),
+          Text('Pour chaque question, ajoutez 4 propositions et sélectionnez la bonne réponse.', style: t.bodySmall),
           const SizedBox(height: 8),
           ..._quizFields(context),
         ];
@@ -414,11 +414,11 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
             decoration: const InputDecoration(
               alignLabelWithHint: true,
               labelText: 'La consigne',
-              hintText: 'Ex. : Écris 5 phrases pour présenter ta famille.',
+              hintText: 'Ex. : Rédigez 5 phrases pour présenter votre famille.',
             ),
           ),
           const SizedBox(height: 6),
-          Text('L\'élève écrit sa réponse dans l\'app. Tu la lis et tu la notes dans l\'onglet « Devoirs ».',
+          Text('L\'élève écrit sa réponse dans l\'application. Vous pouvez la consulter et la noter dans l\'onglet « Devoirs ».',
               style: t.bodySmall),
         ];
       case ClassItem.mission:
@@ -481,7 +481,7 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
     final t = Theme.of(context).textTheme;
     return [
       Text(
-          'Écris le début de la phrase, puis la fin. Le trou ___ est au milieu. '
+          'Saisissez le début de la phrase, puis la fin. Le trou ___ est au milieu. '
           'S\'il y a plusieurs bonnes réponses, sépare-les par des virgules.',
           style: t.bodySmall),
       const SizedBox(height: 8),

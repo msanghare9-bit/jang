@@ -7,6 +7,7 @@ import '../models.dart';
 import '../services/auth_service.dart';
 import '../services/content_repo.dart';
 import '../services/flashcard_service.dart';
+import '../services/lesson_pdf_service.dart';
 import '../services/progress_repo.dart';
 import '../services/speech_service.dart';
 import '../theme.dart';
@@ -170,6 +171,20 @@ class _LessonScreenState extends State<LessonScreen> {
         foregroundColor: fg,
         elevation: 0,
         actions: [
+          IconButton(
+            tooltip: 'Exporter la leçon en PDF',
+            onPressed: () async {
+              try {
+                await LessonPdfService.shareLesson(
+                  lesson,
+                  subjectName: widget.subject.name,
+                );
+              } catch (_) {
+                if (context.mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
+              }
+            },
+            icon: const Icon(Icons.picture_as_pdf_outlined),
+          ),
           TextButton(
             onPressed: _toggleScale,
             style: TextButton.styleFrom(foregroundColor: fg),

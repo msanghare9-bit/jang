@@ -84,7 +84,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                     admin
                         ? 'Ce que tu enregistres ici est publié pour les élèves. Sans connexion, '
                             'l\'envoi se fait automatiquement dès le retour d\'internet.'
-                        : 'Tu suis tes élèves, tu leur écris et tu fais des annonces dans tes matières.',
+                        : 'Vous suivez vos élèves, échangez avec eux et publiez des annonces dans vos matières.',
                     style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(height: 16),
                 _go(admin ? 'Élèves' : 'Mes élèves', Icons.groups_outlined, const StudentsScreen(), filled: true),

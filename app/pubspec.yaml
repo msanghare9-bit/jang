@@ -29,6 +29,8 @@ dependencies:
   flutter_svg: '>=2.0.10 <3.0.0'
   audioplayers: '>=6.0.0 <7.0.0'
   android_alarm_manager_plus: '>=4.0.0 <5.0.0'
+  pdf: ^3.11.3
+  printing: ^5.14.3
 
 dev_dependencies:
   flutter_lints: '>=4.0.0 <100.0.0'
@@ -39,6 +41,7 @@ flutter:
     - assets/histoires.json
     - assets/missions.json
     - assets/sounds/dice_roll.wav
+    - tool/icons/mipmap-xxxhdpi/ic_launcher.png
   fonts:
     - family: Baloo
       fonts:
