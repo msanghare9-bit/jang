@@ -7,13 +7,14 @@ import 'match_service.dart';
 import 'quiz_bank.dart';
 
 class Tournament {
-  final String id, title, hostUid, hostName, status, championUid, championName;
+  final String id, title, hostUid, hostName, status, championUid, championName, classId, className;
   final int round, capacity;
   final List<BankQuestion> questions;
   const Tournament({
     required this.id, required this.title, required this.hostUid, required this.hostName,
     required this.status, required this.round, required this.capacity, required this.questions,
     this.championUid = '', this.championName = '',
+    this.classId = '', this.className = '',
   });
   factory Tournament.fromDoc(DocumentSnapshot<Map<String,dynamic>> doc) {
     final d=doc.data()??{};
@@ -23,6 +24,7 @@ class Tournament {
       round:d['round'] is num?(d['round'] as num).toInt():0,
       capacity:d['capacity'] is num?(d['capacity'] as num).toInt():16,
       championUid:'${d['championUid']??''}',championName:'${d['championName']??''}',
+      classId:'${d['classId']??''}',className:'${d['className']??''}',
       questions:[for(final q in (d['questions'] as List? ?? const [])) if(q is Map) BankQuestion.fromMap(q)],
     );
   }
@@ -77,11 +79,14 @@ class TournamentService {
     required UserProfile host,
     required String title,
     required List<BankQuestion> questions,
+    ClassRoom? classRoom,
     int capacity=16,
   }) async {
     final ref = _col.doc();
     await ref.set({'title': title.trim().isEmpty ? 'Tournoi de ${host.firstName}' : title.trim(), 'hostUid': host.uid,
       'hostName': host.publicName, 'status': 'waiting', 'round': 0, 'capacity': capacity,
+      if (classRoom != null) 'classId': classRoom.id,
+      if (classRoom != null) 'className': classRoom.name,
       'questions': [for (final q in questions) q.toMap()], 'createdAt': FieldValue.serverTimestamp()});
     return Tournament.fromDoc(await ref.get());
   }
@@ -100,6 +105,11 @@ class TournamentService {
     if(!doc.exists)return(false,'Ce tournoi n’existe plus.');
     final t=Tournament.fromDoc(doc);
     if(t.status!='waiting')return(false,'Les inscriptions sont terminées.');
+    if(t.classId.isNotEmpty) {
+      final room = await _db.collection('classes').doc(t.classId).get();
+      final students = (room.data()?['students'] as List? ?? const []).whereType<String>();
+      if (!room.exists || !students.contains(p.uid)) return(false,'Ce tournoi est réservé aux élèves de ${t.className}.');
+    }
     final people=await participants(id);
     if(people.any((x)=>x.uid==p.uid))return(true,'');
     if(people.length>=t.capacity)return(false,'Le tournoi est complet.');

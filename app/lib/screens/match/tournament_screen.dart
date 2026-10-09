@@ -10,7 +10,8 @@ import '../../widgets/jang_ui.dart';
 import 'match_screens.dart';
 
 class TournamentHomeScreen extends StatelessWidget {
-  const TournamentHomeScreen({super.key});
+  final ClassRoom? classRoom;
+  const TournamentHomeScreen({super.key, this.classRoom});
 
   Future<void> _create(BuildContext context) async {
     final form=await showDialog<_TournamentForm>(context:context,builder:(_)=>const _TournamentSetupDialog());
@@ -20,7 +21,7 @@ class TournamentHomeScreen extends StatelessWidget {
     try{
       final qs=await QuizBank.instance.drawDomains(form.domains,form.level,10);
       if(qs.isEmpty){ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Aucune question disponible pour ces choix.')));return;}
-      final t=await TournamentService.instance.create(host:host,title:form.title,questions:qs);
+      final t=await TournamentService.instance.create(host:host,title:form.title,questions:qs,classRoom:classRoom);
       if(context.mounted)await Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id)));
     }catch(_){if(context.mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Impossible de créer le tournoi.')));}
   }
@@ -46,7 +47,7 @@ class TournamentHomeScreen extends StatelessWidget {
             return Card(child:ListTile(
               leading:CircleAvatar(backgroundColor:JangColors.snGreen,child:Icon(t.status=='finished'?Icons.emoji_events:Icons.account_tree_outlined,color:Colors.white)),
               title:Text(t.title),
-              subtitle:Text(t.status=='waiting'?'Inscriptions ouvertes · ${t.hostName}':t.status=='finished'?'Champion : ${t.championName}':'Manche ${t.round} · ${t.hostName}'),
+              subtitle:Text('${t.status=='waiting'?'Inscriptions ouvertes':t.status=='finished'?'Champion : ${t.championName}':'Manche ${t.round}'} · ${t.className.isNotEmpty?'${t.className} · ':''}${t.hostName}'),
               trailing:const Icon(Icons.chevron_right),
               onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id))),
             ));

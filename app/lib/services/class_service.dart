@@ -95,9 +95,29 @@ class ClassService {
     try {
       final s = await _classes.where('students', arrayContains: uid).get();
       mine.value = [for (final d in s.docs) ClassRoom.fromDoc(d)].where((c) => !c.deleted).toList();
+      await _syncTeacherAccess(uid, mine.value);
     } catch (e) {
       debugPrint('Classes : $e');
     }
+  }
+
+  /// Maintient la liste des professeurs autorisés à consulter le profil de l'élève.
+  /// Cela permet l'inscription autonome des professeurs sans ouvrir les profils à tous.
+  Future<void> _syncTeacherAccess(String uid, List<ClassRoom> enrolled) async {
+    final teachers = _db.collection('studentAccess').doc(uid).collection('teachers');
+    final current = <String, String>{};
+    for (final room in enrolled) {
+      if (room.profUid.isNotEmpty) current[room.profUid] = room.id;
+    }
+    final existing = await teachers.get();
+    final batch = _db.batch();
+    for (final doc in existing.docs) {
+      if (!current.containsKey(doc.id)) batch.delete(doc.reference);
+    }
+    for (final entry in current.entries) {
+      batch.set(teachers.doc(entry.key), {'profUid': entry.key, 'classId': entry.value});
+    }
+    if (existing.docs.isNotEmpty || current.isNotEmpty) await batch.commit();
   }
 
   void clear() => mine.value = const [];
@@ -134,13 +154,14 @@ class ClassService {
     return List.generate(6, (_) => letters[r.nextInt(letters.length)]).join();
   }
 
-  /// Crée une classe (admin). Le code est tiré au hasard et vérifié.
+  /// Crée une classe au nom d'un prof ou d'un administrateur.
   Future<ClassRoom> create({
     required String name,
     required String examId,
     required String subjectName,
     required String profUid,
     required String profName,
+    String school = '',
   }) async {
     var code = _newCode();
     for (var i = 0; i < 5; i++) {
@@ -157,6 +178,7 @@ class ClassService {
       subjectName: subjectName,
       profUid: profUid,
       profName: profName,
+      school: school,
       code: code,
     );
     await ref.set({...c.toMap(), 'createdAt': FieldValue.serverTimestamp()});
@@ -165,7 +187,15 @@ class ClassService {
 
   Future<void> update(String id, Map<String, Object?> fields) => _classes.doc(id).update(fields);
 
-  Future<void> remove(String id) => _classes.doc(id).update({'deleted': true});
+  Future<void> remove(String id) async {
+    final room = await byId(id);
+    if (room == null) return;
+    await _classes.doc(id).update({'deleted': true});
+    for (final uid in room.students) {
+      final enrolled = await _classes.where('students', arrayContains: uid).get();
+      await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((c) => !c.deleted).toList());
+    }
+  }
 
   Future<String> newCode(String id) async {
     final code = _newCode();
@@ -203,9 +233,10 @@ class ClassService {
   Future<String> addByUsername(ClassRoom c, String username) async {
     final u = username.trim().toLowerCase();
     if (u.isEmpty) return 'Écris le nom d\'utilisateur de l\'élève.';
-    final s = await _db.collection('users').where('username', isEqualTo: u).limit(1).get();
+    final s = await _db.collection('usernames').where('username', isEqualTo: u).limit(1).get();
     if (s.docs.isEmpty) return 'Aucun élève ne s\'appelle « $u ».';
-    final uid = s.docs.first.id;
+    final uid = '${s.docs.first.data()['uid'] ?? ''}';
+    if (uid.isEmpty) return 'Ce compte ne peut pas être ajouté pour le moment.';
     // Une seule classe par matière : on le retire des autres classes de cette matière.
     final others = await _classes.where('students', arrayContains: uid).get();
     for (final d in others.docs) {
@@ -215,23 +246,24 @@ class ClassService {
       }
     }
     await _classes.doc(c.id).update({'students': FieldValue.arrayUnion([uid])});
+    final enrolled = await _classes.where('students', arrayContains: uid).get();
+    await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((room) => !room.deleted).toList());
     revision.value++;
     return '';
   }
 
   Future<void> removeStudent(ClassRoom c, String uid) async {
     await _classes.doc(c.id).update({'students': FieldValue.arrayRemove([uid])});
+    final enrolled = await _classes.where('students', arrayContains: uid).get();
+    await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((room) => !room.deleted).toList());
     revision.value++;
   }
 
   /// Fiches des élèves (par paquets de 30, la limite de Firestore).
   Future<List<StudentSummary>> students(List<String> uids) async {
-    final out = <StudentSummary>[];
-    for (var i = 0; i < uids.length; i += 30) {
-      final part = uids.sublist(i, min(i + 30, uids.length));
-      final s = await _db.collection('users').where(FieldPath.documentId, whereIn: part).get();
-      out.addAll(s.docs.map(StudentSummary.fromDoc));
-    }
+    final ids = uids.toSet().toList();
+    final snapshots = await Future.wait([for (final uid in ids) _db.collection('users').doc(uid).get()]);
+    final out = snapshots.where((d) => d.exists).map(StudentSummary.fromDoc).toList();
     out.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
     return out;
   }

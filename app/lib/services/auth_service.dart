@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 import '../models.dart';
+import 'class_service.dart';
 import 'stats_service.dart';
 
 /// Les élèves se connectent avec un identifiant (sans e-mail).
@@ -65,7 +66,6 @@ class AuthService {
     List<String> teacherClasses = const [],
     List<String> teacherSubjects = const [],
     String teacherExamId = '',
-    String teacherExamName = '',
   }) async {
     UserCredential cred;
     try {
@@ -77,33 +77,40 @@ class AuthService {
     final uid = cred.user!.uid;
     final normalized = normalizeUsername(username);
     final batch = _db.batch();
+    final normalizedSubjects = teacherSubjects.map((s) => subjectKey(s)).where((s) => s.isNotEmpty).toSet().toList();
+    final normalizedClasses = teacherClasses.map((s) => s.trim()).where((s) => s.isNotEmpty).toSet().toList();
     batch.set(_db.collection('users').doc(uid), {
       'name': name.trim(),
       'username': normalized,
-      'role': teacher ? 'pending_prof' : 'student',
-      'examId': examId,
+      'role': teacher ? 'prof' : 'student',
+      'examId': teacher ? teacherExamId : examId,
       'parentConsent': parentConsent,
       'createdAt': FieldValue.serverTimestamp(),
+      if (teacher) 'school': school.trim(),
+      if (teacher) 'profSubjects': normalizedSubjects,
+      if (teacher) 'profExams': [teacherExamId],
+      if (teacher) 'canEdit': false,
     });
-    if (teacher) {
-      batch.set(_db.collection('teacherApplications').doc(uid), {
-        'uid': uid,
-        'name': UserProfile.publicNameOf(name),
-        'school': school,
-        'classNames': teacherClasses,
-        'subjects': teacherSubjects,
-        'examId': teacherExamId,
-        'examName': teacherExamName,
-        'status': 'pending',
-        'createdAt': FieldValue.serverTimestamp(),
-      });
-    }
     batch.set(_db.collection('usernames').doc(normalized), {
       'uid': uid,
       'name': UserProfile.publicNameOf(name),
       'username': normalized,
     });
     await batch.commit();
+    if (teacher) {
+      for (final className in normalizedClasses) {
+        for (final subject in teacherSubjects.map((s) => s.trim()).where((s) => s.isNotEmpty).toSet()) {
+          await ClassService.instance.create(
+            name: className,
+            examId: teacherExamId,
+            subjectName: subject,
+            profUid: uid,
+            profName: name.trim(),
+            school: school.trim(),
+          );
+        }
+      }
+    }
     StatsService.instance.recordNewUser();
     await loadProfile();
   }

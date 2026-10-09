@@ -10,6 +10,7 @@ import 'xarit_screen.dart';
 import 'tournament_screen.dart';
 import '../../services/quiz_bank.dart';
 import '../../services/engagement_service.dart';
+import '../../services/ndimbal_service.dart';
 import '../../theme.dart';
 import '../../widgets/characters.dart';
 import '../../widgets/cheer.dart';
@@ -217,7 +218,7 @@ class MatchHistoryScreen extends StatefulWidget {
 }
 
 class _MatchHistoryScreenState extends State<MatchHistoryScreen> {
-  late Future<List<(LiveMatch, MatchPlayer, bool)>> _future;
+  late Future<List<(LiveMatch, MatchPlayer, bool, String)>> _future;
 
   @override
   void initState() {
@@ -225,7 +226,7 @@ class _MatchHistoryScreenState extends State<MatchHistoryScreen> {
     _future = _load();
   }
 
-  Future<List<(LiveMatch, MatchPlayer, bool)>> _load() {
+  Future<List<(LiveMatch, MatchPlayer, bool, String)>> _load() {
     final uid = AuthService.instance.profile.value?.uid ?? '';
     return MatchService.instance.historyFor(uid);
   }
@@ -234,7 +235,7 @@ class _MatchHistoryScreenState extends State<MatchHistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Historique des matchs')),
-      body: FutureBuilder<List<(LiveMatch, MatchPlayer, bool)>>(
+      body: FutureBuilder<List<(LiveMatch, MatchPlayer, bool, String)>>(
         future: _future,
         builder: (context, snap) {
           if (snap.hasError) {
@@ -287,7 +288,13 @@ class _MatchHistoryScreenState extends State<MatchHistoryScreen> {
                               color: Colors.white),
                         ),
                         title: Text(game.$1.title.isEmpty ? 'Match' : game.$1.title),
-                        subtitle: Text('${game.$3 ? 'Gagné' : 'Perdu'} · ${game.$2.score} points'),
+                        subtitle: Text(
+                          'Contre ${game.$4} · ${game.$3 ? 'Gagné' : 'Perdu'} · ${game.$2.score} pts'
+                          '${game.$1.domain.isEmpty ? '' : ' · ${QuizBank.domainLabel(game.$1.domain)}'}'
+                          '${game.$1.level.isEmpty ? '' : ' · ${QuizBank.levelLabel(game.$1.level)}'}',
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                         trailing: Text(game.$1.createdAt == null
                             ? ''
                             : '${game.$1.createdAt!.day.toString().padLeft(2, '0')}/${game.$1.createdAt!.month.toString().padLeft(2, '0')}/${game.$1.createdAt!.year}'),
@@ -661,6 +668,10 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
   int? _myChoice;
   int _myPoints = 0;
   bool _hostAdvancing = false;
+  int _ndimbalCount = 0;
+  bool _usingNdimbal = false;
+  final Set<int> _eliminatedChoices = {};
+  final Set<String> _recordedMatches = {};
 
   String get _uid => AuthService.instance.profile.value?.uid ?? '';
   bool get _isHost => _m?.hostUid == _uid;
@@ -669,6 +680,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
   @override
   void initState() {
     super.initState();
+    _refreshNdimbals();
     _mSub = _svc.watch(widget.matchId).listen(_onMatch);
     if (widget.spectator) {
       _oSub = _svc.myObservation(widget.matchId, _uid).listen((o) {
@@ -700,10 +712,12 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
       _seenAt = DateTime.now();
       _myChoice = null;
       _myPoints = 0;
+      _eliminatedChoices.clear();
       _hostAdvancing = false;
     }
     final was = _m?.state;
     setState(() => _m = m);
+    if (m.state == LiveMatch.over && was != LiveMatch.over) _recordMatchWin(m);
     // Après la correction, l'hôte d'un match entre élèves passe tout seul à la suite.
     if (_isHost && m.hostPlays && m.state == LiveMatch.showing && was != LiveMatch.showing) {
       final idx = m.index;
@@ -942,6 +956,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
           ),
           const SizedBox(height: 12),
           const SizedBox(height: 12),
+          if (_plays && m.tournamentId.isEmpty) _ndimbalPanel(q),
           if (_players.any((p) => p.reaction.isNotEmpty))
             Wrap(
               spacing: 8,
@@ -969,7 +984,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
               ],
             ),
           if (_plays)
-            _tiles(q, reveal: false)
+            _tiles(q, reveal: false, eliminated: _eliminatedChoices)
           else if (_isHost)
             _hostWatch(m)
           else
@@ -986,6 +1001,35 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
     ]);
   }
 
+  Widget _ndimbalPanel(BankQuestion q) => Card(
+        color: JangColors.successBg,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Row(children: [
+              const Icon(Icons.volunteer_activism_outlined, color: JangColors.snGreen),
+              const SizedBox(width: 8),
+              Expanded(child: Text('Ndimbal · $_ndimbalCount', style: const TextStyle(fontWeight: FontWeight.w900))),
+              OutlinedButton.icon(
+                onPressed: _ndimbalCount == 0 || _eliminatedChoices.isNotEmpty || _usingNdimbal
+                    ? null
+                    : () => _useNdimbal(q),
+                icon: _usingNdimbal
+                    ? const SizedBox(width: 15, height: 15, child: CircularProgressIndicator(strokeWidth: 2))
+                    : const Icon(Icons.auto_fix_high, size: 17),
+                label: Text(_eliminatedChoices.isNotEmpty ? 'Utilisé' : 'Éliminer 2'),
+              ),
+            ]),
+            const SizedBox(height: 6),
+            Wrap(spacing: 6, runSpacing: 6, children: const [
+              _NdimbalHint(icon: Icons.emoji_events_outlined, text: '5 victoires = 1'),
+              _NdimbalHint(icon: Icons.close_rounded, text: 'Élimine 2 mauvaises réponses'),
+              _NdimbalHint(icon: Icons.timer_outlined, text: '7 jours · hors tournois'),
+            ]),
+          ]),
+        ),
+      );
+
   Widget _hostWatch(LiveMatch m) => Column(children: [
         _tiles(m.current!, reveal: false, enabled: false),
         const SizedBox(height: 14),
@@ -999,9 +1043,10 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         ),
       ]);
 
-  Widget _tiles(BankQuestion q, {required bool reveal, bool enabled = true}) {
+  Widget _tiles(BankQuestion q, {required bool reveal, bool enabled = true, Set<int> eliminated = const {}}) {
     return Column(children: [
       for (var i = 0; i < 4; i++)
+        if (!eliminated.contains(i))
         Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: Opacity(
@@ -1140,21 +1185,88 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
     ]);
   }
 
-  Widget _rankRow(int i, MatchPlayer p) => Container(
-        margin: const EdgeInsets.only(bottom: 6),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(
+  Widget _rankRow(int i, MatchPlayer p) => Padding(
+        padding: const EdgeInsets.only(bottom: 6),
+        child: Material(
           color: p.uid == _uid ? const Color(0xFFFDEF42) : Colors.white,
           borderRadius: BorderRadius.circular(12),
+          child: InkWell(
+            borderRadius: BorderRadius.circular(12),
+            onTap: p.uid == _uid ? null : () => _addXarit(p),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Row(children: [
+                SizedBox(
+                    width: 32,
+                    child: Text(i < 3 ? ['🥇', '🥈', '🥉'][i] : '${i + 1}', style: const TextStyle(fontSize: 18))),
+                Expanded(child: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w800))),
+                if (p.uid != _uid) const Padding(
+                  padding: EdgeInsets.only(right: 8),
+                  child: Icon(Icons.person_add_alt_1, size: 18, color: JangColors.snGreen),
+                ),
+                Text('${p.score}', style: const TextStyle(fontWeight: FontWeight.w900)),
+              ]),
+            ),
+          ),
         ),
-        child: Row(children: [
-          SizedBox(
-              width: 32,
-              child: Text(i < 3 ? ['🥇', '🥈', '🥉'][i] : '${i + 1}', style: const TextStyle(fontSize: 18))),
-          Expanded(child: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w800))),
-          Text('${p.score}', style: const TextStyle(fontWeight: FontWeight.w900)),
-        ]),
       );
+
+  Future<void> _addXarit(MatchPlayer player) async {
+    final me = AuthService.instance.profile.value;
+    if (me == null || player.uid == me.uid) return;
+    try {
+      await XaritService.instance.requestFriendByUid(me, player.uid, player.name);
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Demande Xarit envoyée à ${player.name}.')));
+    } catch (e) {
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString().replaceFirst('Exception: ', ''))));
+    }
+  }
+
+  Future<void> _refreshNdimbals() async {
+    if (_uid.isEmpty) return;
+    try {
+      final count = await NdimbalService.instance.availableCount(_uid);
+      if (mounted) setState(() => _ndimbalCount = count);
+    } catch (_) {}
+  }
+
+  Future<void> _recordMatchWin(LiveMatch match) async {
+    if (match.tournamentId.isNotEmpty || _uid.isEmpty || _recordedMatches.contains(match.id)) return;
+    _recordedMatches.add(match.id);
+    try {
+      final history = await MatchService.instance.historyFor(_uid);
+      final result = history.where((entry) => entry.$1.id == match.id).firstOrNull;
+      if (result?.$3 != true || result?.$4 == 'Entraînement') return;
+      final wins = history.where((entry) => entry.$3).length;
+      final earned = await NdimbalService.instance.awardForWin(uid: _uid, matchId: match.id, wins: wins);
+      await _refreshNdimbals();
+      if (earned && mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('5 victoires ! Tu as gagné un Ndimbal, valable 7 jours.')),
+        );
+      }
+    } catch (_) {}
+  }
+
+  Future<void> _useNdimbal(BankQuestion q) async {
+    if (_usingNdimbal || _ndimbalCount < 1 || _eliminatedChoices.isNotEmpty) return;
+    setState(() => _usingNdimbal = true);
+    try {
+      final used = await NdimbalService.instance.consume(_uid);
+      if (!mounted) return;
+      if (!used) {
+        await _refreshNdimbals();
+        return;
+      }
+      final wrong = [for (var i = 0; i < q.options.length; i++) if (i != q.answer] i]..shuffle();
+      setState(() => _eliminatedChoices.addAll(wrong.take(2)));
+      await _refreshNdimbals();
+    } catch (_) {
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Impossible d’utiliser le Ndimbal. Réessaie.')));
+    } finally {
+      if (mounted) setState(() => _usingNdimbal = false);
+    }
+  }
 
   Future<void> _report(BankQuestion q) async {
     final p = AuthService.instance.profile.value;
@@ -1291,6 +1403,23 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
   }
 }
 
+class _NdimbalHint extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  const _NdimbalHint({required this.icon, required this.text});
+
+  @override
+  Widget build(BuildContext context) => Container(
+        padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          Icon(icon, size: 13, color: JangColors.snGreen),
+          const SizedBox(width: 4),
+          Text(text, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700)),
+        ]),
+      );
+}
+
 class _ObserversPanel extends StatelessWidget {
   final String matchId;
   final bool canManage;
@@ -1331,4 +1460,3 @@ class _ObserversPanel extends StatelessWidget {
         },
       );
 }
-
