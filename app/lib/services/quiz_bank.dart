@@ -80,7 +80,7 @@ class QuizBank {
 
   static const _base = 'https://raw.githubusercontent.com/msanghare9-bit/jang/main/contenus/quiz';
 
-  static const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais'];
+  static const domains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais', 'anglais_francais'];
   static const mixed = 'melange';
   static const levels = ['debutant', 'intermediaire', 'avance'];
 
@@ -93,6 +93,7 @@ class QuizBank {
         'synonymes' => 'Synonymes',
         'antonymes' => 'Antonymes',
         'francais_anglais' => 'Français → anglais',
+        'anglais_francais' => 'Anglais → français',
         mixed => 'Mélange',
         _ => d,
       };
@@ -106,6 +107,7 @@ class QuizBank {
         'synonymes' => '🔁',
         'antonymes' => '↔️',
         'francais_anglais' => '🇫🇷',
+        'anglais_francais' => '🇬🇧',
         _ => '🎲',
       };
 
@@ -123,6 +125,9 @@ class QuizBank {
     final key = '${domain}_$level';
     final mem = _mem[key];
     if (mem != null) return mem;
+    if (domain == 'anglais_francais') {
+      return _mem[key] = await _reverseTranslations(level);
+    }
     String? text;
     final prefs = await SharedPreferences.getInstance();
     final cacheKey = 'quiz_cache_$key';
@@ -186,6 +191,44 @@ class QuizBank {
     return out..shuffle(Random());
   }
 
+  /// Construit le sens anglais → français à partir des paires déjà présentes
+  /// dans la banque français → anglais, avec des réponses françaises plausibles.
+  Future<List<BankQuestion>> _reverseTranslations(String level) async {
+    final source = await load('francais_anglais', level);
+    final pairs = <(String, String)>[];
+    final quoted = RegExp(r'[«"]([^»"]+)[»"]');
+    for (final q in source) {
+      final match = quoted.firstMatch(q.question);
+      if (match == null || q.answer < 0 || q.answer >= q.options.length) continue;
+      final french = match.group(1)?.trim() ?? '';
+      final english = q.options[q.answer].trim();
+      if (french.isNotEmpty && english.isNotEmpty) pairs.add((english, french));
+    }
+    final rng = Random();
+    final reversed = <BankQuestion>[];
+    for (var i = 0; i < pairs.length; i++) {
+      final correctFrench = pairs[i].$2;
+      final distractors = pairs
+          .where((pair) => pair.$2.toLowerCase() != correctFrench.toLowerCase())
+          .map((pair) => pair.$2)
+          .toSet()
+          .toList()
+        ..shuffle(rng);
+      if (distractors.length < 3) continue;
+      final options = <String>[correctFrench, ...distractors.take(3)]..shuffle(rng);
+      reversed.add(BankQuestion(
+        id: 'en_fr_$i',
+        question: 'Que signifie « ${pairs[i].$1} » en français ?',
+        options: options,
+        answer: options.indexOf(correctFrench),
+        explanation: '« ${pairs[i].$1} » signifie « $correctFrench ».',
+        domain: 'anglais_francais',
+        level: level,
+      ));
+    }
+    return reversed;
+  }
+
   /// Défi identique pour tous les joueurs pendant une journée donnée.
   Future<List<BankQuestion>> dailyChallenge(DateTime day, {int count = 5, int offset = 0}) async {
     final pools = await Future.wait([for (final domain in domains) load(domain, 'debutant')]);
@@ -213,4 +256,5 @@ class QuizBank {
         'at': FieldValue.serverTimestamp(),
       });
 }
+
 

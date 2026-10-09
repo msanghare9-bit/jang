@@ -17,6 +17,7 @@ import '../../widgets/cheer.dart';
 import '../../widgets/jang_ui.dart';
 import '../../widgets/say.dart';
 import '../quiz_screen.dart';
+import 'ludo_jang_screen.dart';
 
 // Réponses au style Jàng, sobres et lisibles.
 const _shapes = ['A', 'B', 'C', 'D'];
@@ -174,6 +175,16 @@ class _MatchHomeScreenState extends State<MatchHomeScreen> {
             ),
           ),
           const SizedBox(height: 8),
+          ChunkyButton(
+            label: 'Jouer à Ludo Jàng',
+            icon: Icons.casino_outlined,
+            color: JangColors.snGreen,
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const LudoJangScreen()),
+            ),
+          ),
+          const SizedBox(height: 10),
           ChunkyButton(
             label: 'Créer un match',
             icon: Icons.add_circle_outline,
@@ -1460,3 +1471,4 @@ class _ObserversPanel extends StatelessWidget {
         },
       );
 }
+
