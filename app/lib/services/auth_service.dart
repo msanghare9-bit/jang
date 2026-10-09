@@ -66,6 +66,7 @@ class AuthService {
     List<String> teacherClasses = const [],
     List<String> teacherSubjects = const [],
     String teacherExamId = '',
+    List<String> teacherExamIds = const [],
   }) async {
     UserCredential cred;
     try {
@@ -79,16 +80,17 @@ class AuthService {
     final batch = _db.batch();
     final normalizedSubjects = teacherSubjects.map((s) => subjectKey(s)).where((s) => s.isNotEmpty).toSet().toList();
     final normalizedClasses = teacherClasses.map((s) => s.trim()).where((s) => s.isNotEmpty).toSet().toList();
+    final normalizedExamIds = teacherExamIds.isNotEmpty ? teacherExamIds.toSet().toList() : [teacherExamId];
     batch.set(_db.collection('users').doc(uid), {
       'name': name.trim(),
       'username': normalized,
       'role': teacher ? 'prof' : 'student',
-      'examId': teacher ? teacherExamId : examId,
+      'examId': teacher ? normalizedExamIds.first : examId,
       'parentConsent': parentConsent,
       'createdAt': FieldValue.serverTimestamp(),
       if (teacher) 'school': school.trim(),
       if (teacher) 'profSubjects': normalizedSubjects,
-      if (teacher) 'profExams': [teacherExamId],
+      if (teacher) 'profExams': normalizedExamIds,
       if (teacher) 'canEdit': false,
     });
     batch.set(_db.collection('usernames').doc(normalized), {
@@ -98,11 +100,13 @@ class AuthService {
     });
     await batch.commit();
     if (teacher) {
-      for (final className in normalizedClasses) {
+      for (var i = 0; i < normalizedClasses.length && i < normalizedExamIds.length; i++) {
+        final className = normalizedClasses[i];
+        final classExamId = normalizedExamIds[i];
         for (final subject in teacherSubjects.map((s) => s.trim()).where((s) => s.isNotEmpty).toSet()) {
           await ClassService.instance.create(
             name: className,
-            examId: teacherExamId,
+            examId: classExamId,
             subjectName: subject,
             profUid: uid,
             profName: name.trim(),
