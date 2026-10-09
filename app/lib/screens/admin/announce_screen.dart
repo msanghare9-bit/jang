@@ -62,7 +62,7 @@ class _AnnouncementsScreenState extends State<AnnouncementsScreen> {
                 Card(
                   child: ListTile(
                     title: Text(a.title, style: const TextStyle(fontWeight: FontWeight.w800)),
-                    subtitle: Text('${a.text}\n${_when(a.sendAt)} · lue par $read élève${read > 1 ? 's' : ''}'),
+                    subtitle: Text('${a.text}\n${_when(a.sendAt)} · lue par $read ${a.audience == 'teachers' ? 'professeur${read > 1 ? 's' : ''}' : 'élève${read > 1 ? 's' : ''}'}'),
                     isThreeLine: true,
                     trailing: IconButton(
                       icon: const Icon(Icons.delete_outline),
@@ -99,7 +99,7 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
   final _text = TextEditingController();
   List<Exam> _exams = const [];
   final Map<String, String> _subjects = {}; // clé -> nom affiché
-  String _target = 'all'; // all | exam | subject | both
+  String _target = 'all'; // all | exam | subject | both | teachers
   String _examId = '';
   String _subject = '';
   DateTime? _sendAt;
@@ -146,6 +146,7 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
 
   bool get _valid {
     if (_title.text.trim().isEmpty || _text.text.trim().isEmpty) return false;
+    if (_target == 'teachers') return true;
     if ((_target == 'exam' || _target == 'both') && _examId.isEmpty) return false;
     if ((_target == 'subject' || _target == 'both') && _subject.isEmpty) return false;
     return true;
@@ -156,7 +157,7 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
     setState(() => _count = null);
     try {
       Query<Map<String, dynamic>> q =
-          FirebaseFirestore.instance.collection('users').where('role', isEqualTo: 'student');
+          FirebaseFirestore.instance.collection('users').where('role', isEqualTo: _target == 'teachers' ? 'prof' : 'student');
       if (_examFilter.isNotEmpty) q = q.where('examId', isEqualTo: _examFilter);
       final c = await q.count().get();
       if (mounted) setState(() => _count = c.count);
@@ -183,6 +184,7 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
         text: _text.text.trim(),
         examId: _examFilter,
         subject: _subjectFilter,
+        audience: _target == 'teachers' ? 'teachers' : 'students',
         sendAt: _sendAt,
       );
       if (!mounted) return;
@@ -215,6 +217,7 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
           const SectionTitle('1 · Pour qui ?'),
           _chips({
             if (_me.isAdmin) 'all': 'Tous les élèves',
+            if (_me.isAdmin) 'teachers': 'Tous les professeurs',
             if (_me.isAdmin) 'exam': 'Un niveau',
             'subject': 'Une matière',
             'both': 'Une matière dans un niveau',
@@ -243,10 +246,10 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
             decoration: BoxDecoration(color: JangColors.noteBg, borderRadius: BorderRadius.circular(12)),
             child: Text(
               _count == null
-                  ? 'Calcul du nombre d\'élèves…'
+                  ? 'Calcul du nombre de destinataires…'
                   : _count! < 0
-                      ? 'Nombre d\'élèves inconnu (pas de connexion).'
-                      : '${_subjectFilter.isNotEmpty ? 'Jusqu\'à ' : ''}$_count élève${_count! > 1 ? 's' : ''} recevront l\'annonce.',
+                      ? 'Nombre de destinataires inconnu (pas de connexion).'
+                      : '${_subjectFilter.isNotEmpty ? 'Jusqu\'à ' : ''}$_count ${_target == 'teachers' ? 'professeur${_count! > 1 ? 's' : ''}' : 'élève${_count! > 1 ? 's' : ''}'} recevront l\'annonce.',
               style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.primaryDark),
             ),
           ),
@@ -279,8 +282,8 @@ class _NewAnnouncementScreenState extends State<NewAnnouncementScreen> {
           const SizedBox(height: 12),
           Text(
               _push
-                  ? 'Les élèves reçoivent une notification sur leur téléphone, même si l\'app est fermée.'
-                  : 'Les notifications push ne sont pas encore configurées : les élèves verront l\'annonce en ouvrant l\'app.',
+                  ? 'Les destinataires reçoivent une notification sur leur téléphone, même si l\'app est fermée.'
+                  : 'Les notifications push ne sont pas encore configurées : les destinataires verront l\'annonce en ouvrant l\'app.',
               style: t.bodySmall),
           const SizedBox(height: 16),
           FilledButton(
