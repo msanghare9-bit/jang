@@ -282,6 +282,12 @@ class ClassService {
     return _sorted(s.docs).where((i) => i.subject == k).toList();
   }
 
+  /// Cours rendus publics par les professeurs pour les partager avec leurs collègues.
+  Future<List<ClassItem>> sharedTeacherItems() async {
+    final snapshot = await _items.where('visibility', isEqualTo: 'public').limit(200).get();
+    return _sorted(snapshot.docs);
+  }
+
   /// Tous les contenus créés par un prof (pour l'admin).
   Future<List<ClassItem>> itemsOfOwner(String uid) async {
     final s = await _items.where('ownerUid', isEqualTo: uid).get();
