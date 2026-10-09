@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -685,7 +686,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
                         ? const Color(0xFFE5F3E9)
                         : cell != null
                             ? Colors.white
-                            : Colors.black.withOpacity(0.035),
+                            : Colors.black.withValues(alpha: 0.035),
                     borderRadius: BorderRadius.circular(6),
                     border: cell != null || home
                         ? Border.all(color: protectedSquare || home ? JangColors.snGreen : Colors.black26)
