@@ -317,11 +317,11 @@ class _ClassItemEditorState extends State<ClassItemEditor> {
                 _public = v;
                 _dirty = true;
               }),
-              title: Text(_public ? 'Public : tous les élèves de ce niveau' : 'Privé : seulement mes élèves',
+              title: Text(_public ? 'Public : partager avec élèves et professeurs' : 'Privé : seulement mes élèves',
                   style: const TextStyle(fontWeight: FontWeight.w700)),
               subtitle: Text(
                   _public
-                      ? 'Tous les élèves du niveau le voient dans ${widget.classRoom.subjectName}.'
+                      ? 'Les élèves du niveau le voient dans leur matière. Les autres professeurs peuvent aussi le consulter dans « Cours partagés ».'
                       : 'Seuls les élèves de ${widget.classRoom.name} le voient.',
                   style: t.bodySmall),
             ),
