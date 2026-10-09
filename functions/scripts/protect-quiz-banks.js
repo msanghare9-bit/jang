@@ -31,7 +31,7 @@ for (const domain of domains) {
     const previous = readSecret(secretName(domain, level));
     const answers = { ...legacy, ...previous };
     const file = path.join(quizDir, `${key}.json`);
-    if (!fs.existsSync(file)) {
+    if (!fs.existsSync(file) || fs.statSync(file).size === 0) {
       if (Object.keys(previous).length) answerBanks.set(key, previous);
       continue;
     }
