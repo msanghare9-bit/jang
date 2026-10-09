@@ -68,14 +68,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
             padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
             children: [
               Text('Profil', style: titleStyle(26)),
-              const CharacterSays('kocc',
-                  'Moi c\'est Kocc Barma, ton prof. Je suis très sérieux… sauf quand je tombe de ma chaise. Change ton niveau ici si besoin !'),
+              if (p.isProf)
+                const CharacterSays('kocc',
+                    'Bonjour, merci pour votre engagement auprès des élèves. Besoin d’un coup de main pour préparer votre prochain cours ?')
+              else
+                const CharacterSays('kocc',
+                    'Moi c\'est Kocc Barma, ton prof. Je suis très sérieux… sauf quand je tombe de ma chaise. Change ton niveau ici si besoin !'),
               const SizedBox(height: 6),
               Card(
                 child: ListTile(
                   leading: const Icon(Icons.mail_outline, color: JangColors.primaryDark),
                   title: const Text('Mes messages', style: TextStyle(fontWeight: FontWeight.w800)),
-                  subtitle: const Text('Messages de tes profs et annonces'),
+                  subtitle: Text(p.isProf ? 'Messages et annonces de Jàng' : 'Messages de tes profs et annonces'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
                 ),
@@ -98,6 +102,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               if (!p.isStaff) _MatchSummary(uid: p.uid),
               if (!p.isStaff) _MyClasses(profile: p),
+              if (!p.isStaff) ...[
               const SectionTitle('Mon niveau'),
               FutureBuilder<List<Exam>>(
                 future: _exams,
@@ -126,6 +131,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   );
                 },
               ),
+              ],
+              if (p.isProf) ...[
+                const SectionTitle('École et niveaux enseignés'),
+                Text(p.school, style: t.bodyMedium),
+                FutureBuilder<List<Exam>>(
+                  future: _exams,
+                  builder: (context, snap) {
+                    final names = (snap.data ?? const <Exam>[])
+                        .where((exam) => p.profExams.contains(exam.id))
+                        .map((exam) => exam.name)
+                        .toList();
+                    return Text(
+                      names.isEmpty ? 'Niveaux en cours de chargement…' : names.join(' · '),
+                      style: t.bodySmall,
+                    );
+                  },
+                ),
+              ],
               const SectionTitle('Contenu hors connexion'),
               Text(
                 ContentRepo.instance.lastSyncAt == null
@@ -200,6 +223,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       case 'admin':
         return 'Responsable';
       case 'teacher':
+      case 'prof':
         return 'Professeur';
       default:
         return 'Élève';
