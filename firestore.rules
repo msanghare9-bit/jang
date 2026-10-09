@@ -178,10 +178,10 @@ service cloud.firestore {
                        && request.resource.data.playerUids.size() == resource.data.playerUids.size() + 1
                        && request.resource.data.playerNames.size() == resource.data.playerNames.size() + 1
                        && request.resource.data.get('status', '') == 'playing'
-                       && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['playerUids','playerNames','status','message']))
+                       && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['playerUids','playerNames','status','message','questionDeadline']))
                       || (request.auth.uid in resource.data.get('playerUids', [])
                           && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
-                            'questionIndex','turn','streaks','die','rollingPlayer','message',
+                            'questionIndex','questionDeadline','turn','streaks','die','rollingPlayer','message',
                             'done','shieldAvailable','pawns','shieldedPawns'
                           ]))
                     );
@@ -199,10 +199,37 @@ service cloud.firestore {
     // Accueil, contact, adresse du serveur de notifications.
     match /config/{id} { allow read: if true; allow write: if isAdmin(); }
 
+    // Espace de développement professionnel réservé aux professeurs et à l'administration.
+    match /teacherPosts/{postId} {
+      function canSeePost() {
+        return isAdmin()
+          || (signedIn() && resource.data.get('type', '') == 'tip')
+          || (role() == 'prof'
+              && (resource.data.get('targetSubject', '') == ''
+                  || resource.data.get('targetSubject', '') in me().get('profSubjects', [])));
+      }
+      allow read: if canSeePost();
+      allow create: if signedIn()
+                    && request.resource.data.authorUid == request.auth.uid
+                    && ((isAdmin() && request.resource.data.type == 'resource')
+                        || (role() == 'prof' && request.resource.data.type == 'tip'));
+      allow update, delete: if isAdmin()
+                            || (role() == 'prof' && resource.data.authorUid == request.auth.uid
+                                && resource.data.type == 'tip');
+    }
+
     // ---------- Vie de la classe ----------
     match /annonces/{id} {
       allow read: if signedIn();
-      allow create, update, delete: if isAdmin();
+      allow create: if isAdmin()
+                    || (role() == 'prof'
+                        && request.resource.data.get('audience', 'students') == 'students'
+                        && request.resource.data.get('fromUid', '') == request.auth.uid
+                        && request.resource.data.get('subject', '') in me().get('profSubjects', [])
+                        && (request.resource.data.get('examId', '') == ''
+                            || request.resource.data.examId in me().get('profExams', [])));
+      allow update, delete: if isAdmin()
+                            || (role() == 'prof' && resource.data.get('fromUid', '') == request.auth.uid);
       match /lus/{uid} {
         allow read: if isAdmin() || isMe(uid);
         allow write: if isMe(uid);
