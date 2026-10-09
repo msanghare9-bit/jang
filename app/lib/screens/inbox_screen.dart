@@ -80,7 +80,7 @@ class _InboxScreenState extends State<InboxScreen> {
           return ListView(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 28),
             children: [
-              const SectionTitle('Messages de mes profs'),
+              SectionTitle(p.isProf ? 'Messages reçus' : 'Messages de mes profs'),
               if (snap.connectionState == ConnectionState.waiting && messages.isEmpty)
                 const Center(child: Padding(padding: EdgeInsets.all(16), child: CircularProgressIndicator()))
               else if (messages.isEmpty)
@@ -217,9 +217,9 @@ class _SentMessages extends StatelessWidget {
       );
 }
 
-/// Carte « Message de ton prof » sur l'accueil (seulement s'il y a un message non lu).
-class InboxCard extends StatelessWidget {
-  const InboxCard({super.key});
+/// Icône compacte de messagerie, placée dans l'en-tête de l'accueil.
+class InboxIcon extends StatelessWidget {
+  const InboxIcon({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -229,45 +229,14 @@ class InboxCard extends StatelessWidget {
       stream: InboxService.instance.myMessages(p.uid),
       builder: (context, snap) {
         final unread = (snap.data ?? const <InboxMessage>[]).where((m) => !m.read).length;
-        final subtitle = p.isStaff
-            ? 'Messages reçus et envoyés'
-            : unread > 0
-                ? '$unread message${unread > 1 ? 's' : ''} non lu${unread > 1 ? 's' : ''} · Messages et annonces'
-                : 'Messages de tes profs et annonces';
-        return GestureDetector(
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
-          child: Container(
-            margin: const EdgeInsets.only(bottom: 6),
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-            decoration: BoxDecoration(
-              color: JangColors.successBg,
-              border: Border.all(color: JangColors.snGreen, width: 2),
-              borderRadius: BorderRadius.circular(14),
-            ),
-            child: Row(children: [
-              const CircleAvatar(
-                radius: 18,
-                backgroundColor: JangColors.snGreen,
-                child: Icon(Icons.forum_outlined, color: Colors.white, size: 19),
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Row(children: [
-                  Text('Messagerie', style: titleStyle(15, weight: 800)),
-                  const SizedBox(width: 8),
-                  Expanded(child: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodySmall)),
-                ]),
-              ),
-              if (unread > 0)
-                CircleAvatar(
-                  radius: 14,
-                  backgroundColor: JangColors.snGreen,
-                  child: Text('$unread', style: const TextStyle(color: Colors.white, fontSize: 12)),
-                )
-              else
-                const Icon(Icons.chevron_right),
-            ]),
+        return IconButton(
+          tooltip: unread > 0 ? 'Messagerie · $unread message${unread == 1 ? '' : 's'} non lu${unread == 1 ? '' : 's'}' : 'Messagerie',
+          style: IconButton.styleFrom(backgroundColor: Colors.white, foregroundColor: JangColors.snGreen),
+          onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
+          icon: Badge(
+            isLabelVisible: unread > 0,
+            label: Text(unread > 99 ? '99+' : '$unread'),
+            child: const Icon(Icons.mail_outline),
           ),
         );
       },
