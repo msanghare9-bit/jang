@@ -20,6 +20,7 @@ import '../services/engagement_service.dart';
 import 'admin/admin_home.dart';
 import 'profile_screen.dart';
 import 'teacher_home_screen.dart';
+import 'teacher_community_screen.dart';
 import 'progress_screen.dart';
 import 'sheep_screen.dart';
 import 'inbox_screen.dart';
@@ -246,6 +247,8 @@ class _SubjectsTabState extends State<SubjectsTab> {
                     Row(children: [
                       if (data.exam != null) Chip2(data.exam!.name),
                       const Spacer(),
+                      const InboxIcon(),
+                      const SizedBox(width: 6),
                       ValueListenableBuilder(
                         valueListenable: EngagementService.instance.revision,
                         builder: (context, _, __) =>
@@ -276,9 +279,9 @@ class _SubjectsTabState extends State<SubjectsTab> {
                   children: [
                     const _SyncStatus(),
                     const SizedBox(height: 4),
-                    const InboxCard(),
                     const MyClassCard(),
                     const MatchCard(),
+                    const TeacherTipsCard(),
                     if (_config.show('banniere') && (_config.banner?.active ?? false))
                       Container(
                         margin: const EdgeInsets.only(bottom: 10),
