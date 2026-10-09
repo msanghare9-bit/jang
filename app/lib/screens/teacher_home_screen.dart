@@ -10,6 +10,7 @@ import 'classes/my_classes_screen.dart';
 import 'classes/teacher_course_screen.dart';
 import 'inbox_screen.dart';
 import 'match/tournament_screen.dart';
+import 'teacher_community_screen.dart';
 
 /// Home page for teacher accounts.
 class TeacherHomeScreen extends StatefulWidget {
@@ -83,28 +84,42 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
                     color: JangColors.snGreen,
                     borderRadius: BorderRadius.circular(22),
                   ),
-                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    Text(name.isEmpty ? 'Espace professeur' : 'Bonjour, $name',
-                        style: titleStyle(24, color: Colors.white, weight: 800)),
-                    const SizedBox(height: 6),
-                    const Text('Tes classes, tes élèves et tes cours au même endroit.',
-                        style: TextStyle(color: Colors.white)),
+                  child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text(name.isEmpty ? 'Espace professeur' : 'Bienvenue, $name',
+                          style: titleStyle(24, color: Colors.white, weight: 800)),
+                      const SizedBox(height: 6),
+                      const Text('Retrouvez vos classes, vos élèves et vos cours au même endroit.',
+                          style: TextStyle(color: Colors.white)),
+                    ])),
+                    IconButton(
+                    tooltip: 'Messages reçus et envoyés',
+                    style: IconButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: JangColors.snGreen,
+                    ),
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const InboxScreen()),
+                    ),
+                    icon: const Icon(Icons.mail_outline),
+                    ),
                   ]),
                 ),
                 const SizedBox(height: 12),
                 OutlinedButton.icon(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const InboxScreen()),
-                  ),
-                  icon: const Icon(Icons.forum_outlined),
-                  label: const Text('Messages reçus et envoyés'),
-                ),
-                const SizedBox(height: 6),
-                OutlinedButton.icon(
                   onPressed: () => _organizeTournament(classes),
                   icon: const Icon(Icons.emoji_events_outlined),
                   label: const Text('Organiser un tournoi avec mes élèves'),
+                ),
+                const SizedBox(height: 6),
+                FilledButton.tonalIcon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const TeacherCommunityScreen()),
+                  ),
+                  icon: const Icon(Icons.menu_book_outlined),
+                  label: const Text('Développement professionnel et cours partagés'),
                 ),
                 const SizedBox(height: 8),
                 Row(children: [
@@ -156,7 +171,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
                               _refresh();
                             },
                             icon: const Icon(Icons.auto_awesome),
-                            label: const Text('Kocc prépare un cours pour cette classe'),
+                            label: const Text('Demander un cours complet à Kocc'),
                           ),
                         ]),
                       ),
