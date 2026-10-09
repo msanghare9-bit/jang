@@ -3,7 +3,7 @@ name: Construire l'APK et Déployer le Web
 on:
   push:
     branches: [main]
-    paths: ['code.b64', 'app/**', 'contenus/quiz/**', 'firebase.json', 'firestore.rules', 'WEB.md', '.github/workflows/apk.yml']
+    paths: ['code.b64', 'app/**', 'contenus/quiz/**', 'functions/**', 'firebase.json', 'firestore.rules', 'WEB.md', '.github/workflows/apk.yml']
   workflow_dispatch:
 
 permissions:
@@ -110,6 +110,17 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: npm install --global firebase-tools
 
+      - name: Protéger les réponses des banques de questions
+        if: github.ref == 'refs/heads/main'
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          if [ -z "$FIREBASE_TOKEN" ]; then
+            echo "FIREBASE_TOKEN absent : protection et déploiement des fonctions ignorés."
+            exit 0
+          fi
+          node functions/scripts/protect-quiz-banks.js
+
       - name: Déployer la version Web sur Firebase Hosting
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
         env:
@@ -121,4 +132,4 @@ jobs:
             echo "Secrets Firebase manquants : déploiement ignoré. Voir WEB.md."
             exit 0
           fi
-          firebase deploy --only hosting,firestore:rules --project jang-ea5f3 --token "$FIREBASE_TOKEN"
+          firebase deploy --only functions,hosting,firestore:rules --project jang-ea5f3 --token "$FIREBASE_TOKEN"

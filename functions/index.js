@@ -9,11 +9,27 @@ const db = getFirestore();
 const region = 'us-central1';
 const maxPlayers = 40;
 const matchAnswerBank = defineSecret('JANG_MATCH_ANSWER_BANK');
+const quizDomains = ['vocabulaire', 'grammaire', 'expressions', 'comprehension', 'culture', 'synonymes', 'antonymes', 'francais_anglais', 'anglais_francais'];
+const quizLevels = ['debutant', 'intermediaire', 'avance'];
+const matchAnswerBanks = new Map();
+for (const domain of quizDomains) {
+  for (const level of quizLevels) {
+    const name = `JANG_MATCH_ANSWERS_${domain.toUpperCase()}_${level.toUpperCase()}`;
+    matchAnswerBanks.set(`${domain}_${level}`, defineSecret(name));
+  }
+}
+const allMatchAnswerSecrets = [matchAnswerBank, ...matchAnswerBanks.values()];
 
 function privateAnswer(question) {
   const id = cleanText(question && question.id, 40);
-  let bank;
-  try { bank = JSON.parse(matchAnswerBank.value()); } catch (_) { bank = {}; }
+  const domain = cleanText(question && question.d, 80);
+  const level = cleanText(question && question.n, 40);
+  let bank = {};
+  const scopedSecret = matchAnswerBanks.get(`${domain}_${level}`);
+  try { if (scopedSecret) bank = JSON.parse(scopedSecret.value()); } catch (_) {}
+  if (!Object.prototype.hasOwnProperty.call(bank, id)) {
+    try { bank = { ...bank, ...JSON.parse(matchAnswerBank.value()) }; } catch (_) {}
+  }
   const answer = Number(bank[id]);
   if (!id || !Number.isInteger(answer) || answer < 0 || answer > 3) {
     throw new HttpsError('failed-precondition', 'Le corrigé de cette question n’est pas disponible.');
@@ -30,7 +46,7 @@ function cleanText(value, max = 500) {
   return typeof value === 'string' ? value.trim().slice(0, max) : '';
 }
 
-exports.createMatch = onCall({ region, secrets: [matchAnswerBank] }, async (request) => {
+exports.createMatch = onCall({ region, secrets: allMatchAnswerSecrets }, async (request) => {
   const uid = requireAuth(request);
   const data = request.data || {};
   const incoming = data.questions;
@@ -89,12 +105,11 @@ exports.createMatch = onCall({ region, secrets: [matchAnswerBank] }, async (requ
 });
 
 
-exports.checkPracticeAnswer = onCall({ region, secrets: [matchAnswerBank] }, async (request) => {
+exports.checkPracticeAnswer = onCall({ region, secrets: allMatchAnswerSecrets }, async (request) => {
   requireAuth(request);
   const id = cleanText(request.data && request.data.id, 40);
   if (!id) throw new HttpsError('invalid-argument', 'Question introuvable.');
-  const bank = JSON.parse(matchAnswerBank.value());
-  const answer = Number(bank[id]);
+  const answer = privateAnswer({ id, d: request.data && request.data.domain, n: request.data && request.data.level });
   if (!Number.isInteger(answer) || answer < 0 || answer > 3) {
     throw new HttpsError('not-found', 'Corrigé introuvable.');
   }
@@ -240,7 +255,7 @@ exports.finishMatch = onCall({ region }, async (request) => {
   return { ok: true };
 });
 
-exports.createTournament = onCall({ region, secrets: [matchAnswerBank] }, async (request) => {
+exports.createTournament = onCall({ region, secrets: allMatchAnswerSecrets }, async (request) => {
   const uid = requireAuth(request);
   const data = request.data || {};
   const incoming = data.questions;
