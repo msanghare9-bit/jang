@@ -23,6 +23,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
   final _draft = TextEditingController();
   bool _busy = false;
   bool _saving = false;
+  bool _shareWithColleagues = false;
 
   @override
   void dispose() {
@@ -50,21 +51,22 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     );
     final prompt = 'Kocc Bàrma, aide-moi à préparer un cours complet sur « ${_topic.text.trim()} » '
         'pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
-        'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'propose des objectifs adaptés' : _objectives.text.trim()}. '
+        'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'proposez des objectifs adaptés' : _objectives.text.trim()}. '
         'Commence par trois conseils concrets au professeur pour rendre la séance communicative et centrée sur les apprenants. '
         'Puis rédige une leçon complète de 60 minutes, prête à être utilisée en classe. '
         'La leçon doit comporter AU MOINS SIX activités d’apprentissage distinctes, numérotées exactement '
         '« Activité 1 », « Activité 2 », etc. Pour chacune, indique la durée, l’objectif, le matériel, '
         'la consigne que le professeur peut dire, ce que font les élèves, et comment vérifier leur réussite. '
         'Prévois une progression variée : mise en situation, découverte, pratique guidée, travail en binômes, '
-        'production ou résolution de problème, partage et évaluation/transfert. Répartis les durées pour totaliser 60 minutes. '
+        'production ou résolution de problème, partage et évaluation/transfert. Répartissez les durées pour totaliser 60 minutes. '
         'Ancre les exemples et supports dans un contexte sénégalais concret et respectueux : école, quartier, marché, '
         'transport, famille, environnement ou vie locale, selon le thème et la matière; évite les clichés. '
         'Les élèves doivent parler, réfléchir et travailler ensemble; le professeur facilite et guide. '
-        'Ajoute des objectifs mesurables, les prérequis, une évaluation formative, une adaptation pour les élèves '
+        'Ajoutez des objectifs mesurables, les prérequis, une évaluation formative, une adaptation pour les élèves '
         'qui ont besoin d’aide, un défi pour ceux qui avancent vite et un devoir lié à leur vie quotidienne. '
-        'Rédige en français simple, avec des consignes prêtes à lire à la classe. Sépare clairement les conseils '
-        'du professeur et la leçon complète, dans un document que je peux relire, modifier et partager.';
+        'Rédigez en français simple, avec des consignes prêtes à lire à la classe. Séparez clairement les conseils '
+        'du professeur et la leçon complète, dans un document que je peux relire, modifier et partager. '
+        'Adressez-vous toujours au professeur en le vouvoyant. Vous pouvez parfois lui donner un conseil très simple en anglais, suivi de sa traduction française.';
     final result = await TutorService.instance.ask(lesson, prompt);
     if (!mounted) return;
     setState(() {
@@ -94,7 +96,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         type: ClassItem.lesson,
         title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
         body: _draft.text.trim(),
-        visibility: 'prive',
+        visibility: _shareWithColleagues ? 'public' : 'prive',
       ));
       if (!mounted) return;
       showMessage(context, 'Le cours a été ajouté à ${widget.classRoom.name}.');
@@ -120,7 +122,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
                 'Kocc prépare une leçon complète avec au moins six activités, dans un contexte sénégalais. '
-                'Relis et adapte le brouillon avant de l’ajouter.',
+                'Relisez et adaptez le brouillon avant de l’ajouter.',
               ),
             ),
           ),
@@ -140,7 +142,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             maxLines: 4,
             decoration: const InputDecoration(
               labelText: 'Objectifs ou besoins particuliers (facultatif)',
-              hintText: 'Ce que les élèves devront savoir faire',
+              hintText: 'Ce que vos élèves devront savoir faire',
             ),
           ),
           const SizedBox(height: 14),
@@ -158,9 +160,16 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             maxLines: 28,
             textCapitalization: TextCapitalization.sentences,
             decoration: const InputDecoration(
-              hintText: 'La leçon complète de Kocc apparaîtra ici, avec au moins six activités. Tu peux la modifier avant de l’ajouter.',
+              hintText: 'La leçon complète de Kocc apparaîtra ici, avec au moins six activités. Vous pourrez la modifier avant de l’ajouter.',
               alignLabelWithHint: true,
             ),
+          ),
+          SwitchListTile(
+            contentPadding: EdgeInsets.zero,
+            value: _shareWithColleagues,
+            onChanged: (value) => setState(() => _shareWithColleagues = value),
+            title: const Text('Partager ce cours avec les autres professeurs'),
+            subtitle: const Text('Les professeurs pourront le retrouver dans « Cours partagés ». Les élèves du niveau pourront aussi le voir.'),
           ),
           const SizedBox(height: 16),
           FilledButton.icon(
