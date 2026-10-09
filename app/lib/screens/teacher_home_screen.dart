@@ -9,6 +9,7 @@ import 'classes/class_screen.dart';
 import 'classes/my_classes_screen.dart';
 import 'classes/teacher_course_screen.dart';
 import 'inbox_screen.dart';
+import 'match/tournament_screen.dart';
 
 /// Home page for teacher accounts.
 class TeacherHomeScreen extends StatefulWidget {
@@ -28,6 +29,37 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
 
   void _refresh() {
     if (mounted) setState(() => _classes = _load());
+  }
+
+  Future<void> _organizeTournament(List<ClassRoom> classes) async {
+    if (classes.isEmpty) {
+      showMessage(context, 'Crée d’abord une classe pour inviter ses élèves au tournoi.');
+      return;
+    }
+    var selected = classes.first;
+    final room = await showDialog<ClassRoom>(
+      context: context,
+      builder: (dialogContext) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('Choisir une classe'),
+          content: DropdownButtonFormField<String>(
+            value: selected.id,
+            decoration: const InputDecoration(labelText: 'Classe participante'),
+            items: [
+              for (final room in classes)
+                DropdownMenuItem(value: room.id, child: Text('${room.name} · ${room.subjectName}')),
+            ],
+            onChanged: (id) => setDialogState(() => selected = classes.firstWhere((c) => c.id == id)),
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(dialogContext), child: const Text('Annuler')),
+            FilledButton(onPressed: () => Navigator.pop(dialogContext, selected), child: const Text('Continuer')),
+          ],
+        ),
+      ),
+    );
+    if (room == null || !mounted) return;
+    await Navigator.push(context, MaterialPageRoute(builder: (_) => TournamentHomeScreen(classRoom: room)));
   }
 
   @override
@@ -67,6 +99,12 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
                   ),
                   icon: const Icon(Icons.forum_outlined),
                   label: const Text('Messages reçus et envoyés'),
+                ),
+                const SizedBox(height: 6),
+                OutlinedButton.icon(
+                  onPressed: () => _organizeTournament(classes),
+                  icon: const Icon(Icons.emoji_events_outlined),
+                  label: const Text('Organiser un tournoi avec mes élèves'),
                 ),
                 const SizedBox(height: 8),
                 Row(children: [

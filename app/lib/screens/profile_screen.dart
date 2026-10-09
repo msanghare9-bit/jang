@@ -8,6 +8,7 @@ import '../services/class_service.dart';
 import '../services/content_repo.dart';
 import '../services/github_service.dart';
 import '../services/match_service.dart';
+import '../services/ndimbal_service.dart';
 import '../theme.dart';
 import '../version.dart';
 import '../widgets/class_section.dart' show showJoinClassDialog;
@@ -212,7 +213,7 @@ class _MatchSummary extends StatelessWidget {
   const _MatchSummary({required this.uid});
 
   @override
-  Widget build(BuildContext context) => FutureBuilder<List<(LiveMatch, MatchPlayer, bool)>>(
+  Widget build(BuildContext context) => FutureBuilder<List<(LiveMatch, MatchPlayer, bool, String)>>(
         future: MatchService.instance.historyFor(uid),
         builder: (context, snap) {
           if (snap.hasError) return const SizedBox.shrink();
@@ -270,6 +271,17 @@ class _MatchSummary extends StatelessWidget {
                     ]),
                   ),
                 ]),
+              ),
+            ),
+            FutureBuilder<int>(
+              future: NdimbalService.instance.availableCount(uid),
+              builder: (context, tokenSnap) => Card(
+                child: ListTile(
+                  leading: const Icon(Icons.volunteer_activism_outlined, color: JangColors.snGreen),
+                  title: Text('Ndimbal disponibles : ${tokenSnap.data ?? 0}',
+                      style: const TextStyle(fontWeight: FontWeight.w800)),
+                  subtitle: const Text('Un Ndimbal s’obtient toutes les 5 victoires en match classique et dure 7 jours.'),
+                ),
               ),
             ),
           ]);
@@ -362,4 +374,3 @@ class _MyClasses extends StatelessWidget {
     ]);
   }
 }
-

@@ -12,6 +12,11 @@ service cloud.firestore {
     function isStaff() { return role() in ['admin', 'prof', 'teacher']; }
     function canEdit() { return isAdmin() || (isStaff() && me().get('canEdit', false) == true); }
     function isMe(uid) { return signedIn() && request.auth.uid == uid; }
+    function canReadStudent(uid) {
+      return isAdmin()
+             || (isStaff() && !isAdmin()
+                 && exists(/databases/$(database)/documents/studentAccess/$(uid)/teachers/$(request.auth.uid)));
+    }
     // Champs qu'un élève ne peut pas changer lui-même.
     function protectedFields() { return ['role', 'disabled', 'blocked', 'profSubjects', 'profExams', 'canEdit', 'deleted', 'school']; }
     function keepsProtected() {
@@ -20,23 +25,57 @@ service cloud.firestore {
 
     // ---------- Comptes ----------
     match /users/{uid} {
-      allow read: if isMe(uid) || isStaff();
+      allow read: if isMe(uid) || canReadStudent(uid);
       allow create: if isMe(uid)
-                    && request.resource.data.get('role', 'student') in ['student', 'pending_prof']
-                    && !request.resource.data.keys().hasAny(['disabled', 'canEdit', 'profSubjects', 'profExams', 'school']);
+                    && (request.resource.data.get('role', 'student') == 'student'
+                        ? !request.resource.data.keys().hasAny(['disabled', 'canEdit', 'profSubjects', 'profExams', 'school'])
+                        : request.resource.data.get('role', '') == 'prof'
+                          && request.resource.data.get('school', '') is string
+                          && request.resource.data.school.size() > 0
+                          && request.resource.data.get('profSubjects', []) is list
+                          && request.resource.data.profSubjects.size() > 0
+                          && request.resource.data.get('profExams', []) is list
+                          && request.resource.data.profExams.size() > 0
+                          && request.resource.data.get('canEdit', true) == false
+                          && request.resource.data.keys().hasOnly(['name','username','role','examId','parentConsent','createdAt','school','profSubjects','profExams','canEdit']));
       allow update: if (isMe(uid) && keepsProtected()) || isAdmin()
                     || (isStaff() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['disabled', 'blocked']));
       allow delete: if isAdmin();
 
       match /progress/{id} {
-        allow read: if isMe(uid) || isStaff();
+        allow read: if isMe(uid) || canReadStudent(uid);
         allow write: if isMe(uid);
         allow delete: if isMe(uid) || isStaff();
       }
       match /missions/{id} {
-        allow read: if isMe(uid) || isStaff();
+        allow read: if isMe(uid) || canReadStudent(uid);
         allow write: if isMe(uid);
         allow delete: if isMe(uid) || isStaff();
+      }
+      function wonStandardMatch(matchId) {
+        let matchData = get(/databases/$(database)/documents/matchs/$(matchId)).data;
+        return matchData.get('state', '') == 'fini'
+               && matchData.get('tournamentId', '') == ''
+               && request.auth.uid in matchData.get('winnerUids', []);
+      }
+      match /matchRewards/{matchId} {
+        allow read: if isMe(uid);
+        allow create: if isMe(uid) && wonStandardMatch(matchId)
+                      && request.resource.data.get('sourceMatch', '') == matchId
+                      && request.resource.data.get('milestone', 0) is int
+                      && request.resource.data.milestone > 0
+                      && request.resource.data.milestone % 5 == 0
+                      && request.resource.data.keys().hasOnly(['sourceMatch','milestone','at']);
+        allow update, delete: if false;
+      }
+      match /ndimbals/{tokenId} {
+        allow read: if isMe(uid);
+        allow create: if isMe(uid) && wonStandardMatch(tokenId)
+                      && request.resource.data.get('sourceMatch', '') == tokenId
+                      && existsAfter(/databases/$(database)/documents/users/$(uid)/matchRewards/$(tokenId))
+                      && request.resource.data.keys().hasOnly(['sourceMatch','earnedAt','expiresAt']);
+        allow update: if false;
+        allow delete: if isMe(uid);
       }
       // Messages des profs à un élève.
       match /messages/{id} {
@@ -45,6 +84,7 @@ service cloud.firestore {
         allow create: if isStaff()
                       && request.resource.data.get('fromUid', '') == request.auth.uid
                       && request.resource.data.get('toUid', '') == uid
+                      && canReadStudent(uid)
                       && request.resource.data.get('text', '') is string;
         allow update: if isAdmin()
                       || (isMe(uid) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['readAt', 'reply', 'replyAt']));
@@ -53,7 +93,7 @@ service cloud.firestore {
       }
     }
 
-    // Candidatures professeur : le profil reste sans privilèges avant validation admin.
+    // Anciennes demandes de professeurs (conservées pour les comptes créés avant l'inscription directe).
     match /teacherApplications/{uid} {
       allow read: if isMe(uid) || isAdmin();
       allow create: if isMe(uid)
@@ -131,9 +171,9 @@ service cloud.firestore {
     // ---------- Vie de la classe ----------
     match /annonces/{id} {
       allow read: if signedIn();
-      allow create, update, delete: if isStaff();
+      allow create, update, delete: if isAdmin();
       match /lus/{uid} {
-        allow read: if isStaff() || isMe(uid);
+        allow read: if isAdmin() || isMe(uid);
         allow write: if isMe(uid);
       }
     }
@@ -142,15 +182,15 @@ service cloud.firestore {
     match /moutons/{uid} {
       allow read: if signedIn();
       allow write: if isMe(uid);
-      allow delete: if isMe(uid) || isStaff();
+      allow delete: if isMe(uid) || isAdmin();
     }
 
     match /comments/{id} {
       allow read: if signedIn();
       allow create: if signedIn() && request.resource.data.get('uid', request.auth.uid) == request.auth.uid;
-      allow update: if isStaff()
+      allow update: if isAdmin()
                     || (signedIn() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reports', 'answered']));
-      allow delete: if isStaff() || (signedIn() && resource.data.get('uid', '') == request.auth.uid);
+      allow delete: if isAdmin() || (signedIn() && resource.data.get('uid', '') == request.auth.uid);
     }
 
     // Missions avec Gaïndé modifiées par l'admin.
@@ -168,13 +208,37 @@ service cloud.firestore {
 
     match /classes/{id} {
       allow read: if signedIn();
-      allow create, delete: if isAdmin();
+      allow create: if isAdmin()
+                    || (signedIn()
+                        && role() == 'prof'
+                        && request.resource.data.profUid == request.auth.uid
+                        && request.resource.data.school == me().get('school', '')
+                        && request.resource.data.get('students', []) is list
+                        && request.resource.data.students.size() == 0);
+      allow delete: if isAdmin() || (isStaff() && resource.data.profUid == request.auth.uid);
       allow update: if isAdmin()
                     || (isStaff() && resource.data.profUid == request.auth.uid)
                     // un prof retire un élève qui change de classe dans la même matière
-                    || (isStaff() && onlyStudents() && onlyRemoves(request.resource.data.students, resource.data.students))
+                    || (isStaff() && resource.data.profUid == request.auth.uid
+                        && onlyStudents() && onlyRemoves(request.resource.data.students, resource.data.students))
                     // l'élève entre ou sort avec le code
                     || (signedIn() && onlyStudents() && onlyMe(request.resource.data.students, resource.data.students));
+    }
+
+    // Un professeur ne peut consulter les données d'un élève que si celui-ci est dans sa classe.
+    // Les liens sont créés automatiquement à l'inscription dans une classe ou à l'ajout par le prof.
+    match /studentAccess/{uid}/teachers/{profUid} {
+      function linkedClass() {
+        return get(/databases/$(database)/documents/classes/$(request.resource.data.classId)).data;
+      }
+      function validLink() {
+        return request.resource.data.get('profUid', '') == profUid
+               && linkedClass().profUid == profUid
+               && uid in linkedClass().get('students', []);
+      }
+      allow read: if signedIn() && (isMe(uid) || isMe(profUid) || isAdmin());
+      allow create, update: if signedIn() && validLink() && (isMe(uid) || isMe(profUid) || isAdmin());
+      allow delete: if signedIn() && (isMe(uid) || isMe(profUid) || isAdmin());
     }
 
     // Journal administratif des exports de leçons officielles vers les classes.
@@ -241,7 +305,10 @@ service cloud.firestore {
       allow read: if signedIn();
       allow create: if signedIn()
                     && request.resource.data.hostUid == request.auth.uid
-                    && request.resource.data.questions is list;
+                    && request.resource.data.questions is list
+                    && (request.resource.data.get('classId', '') == ''
+                        || (classOf(request.resource.data.classId).profUid == request.auth.uid
+                            && classOf(request.resource.data.classId).get('deleted', false) != true));
       allow update: if signedIn()
                     && resource.data.hostUid == request.auth.uid;
       allow delete: if signedIn() && resource.data.hostUid == request.auth.uid;
@@ -309,6 +376,8 @@ service cloud.firestore {
         allow read: if signedIn();
         allow create: if isMe(uid)
                       && parentTournament().status == 'waiting'
+                      && (parentTournament().get('classId', '') == ''
+                          || uid in classOf(parentTournament().classId).get('students', []))
                       && request.resource.data.keys().hasOnly(['name','joinedAt']);
         allow update: if isMe(uid)
                       && parentTournament().status == 'waiting'
@@ -346,7 +415,11 @@ service cloud.firestore {
     // ---------- Statistiques et journaux ----------
     match /statsLessons/{id} { allow read: if isStaff(); allow write: if signedIn(); }
     match /statsDays/{id} { allow read: if isStaff(); allow write: if signedIn(); }
-    match /tutorLogs/{id} { allow read, delete: if isStaff(); allow create: if signedIn(); }
+    match /tutorLogs/{id} {
+      allow read: if isAdmin() || canReadStudent(resource.data.get('uid', ''));
+      allow delete: if isAdmin();
+      allow create: if signedIn() && request.resource.data.get('uid', '') == request.auth.uid;
+    }
     match /journal/{id} { allow read: if isAdmin(); allow create: if isStaff(); }
 
     // File d'attente des notifications de nuit : seul le serveur (compte de service) y touche.

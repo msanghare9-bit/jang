@@ -50,11 +50,15 @@ class XaritService {
   }
 
   Future<void> requestFriend(UserProfile me, XaritUser other) async {
-    if (me.uid == other.uid) throw Exception('Tu ne peux pas t’ajouter toi-même.');
-    final outId = '${me.uid}__${other.uid}';
+    await requestFriendByUid(me, other.uid, other.name);
+  }
+
+  Future<void> requestFriendByUid(UserProfile me, String otherUid, String otherName) async {
+    if (me.uid == otherUid) throw Exception('Tu ne peux pas t’ajouter toi-même.');
+    final outId = '${me.uid}__$otherUid';
     final prior = await Future.wait([
-      _requests.where('fromUid', isEqualTo: me.uid).where('toUid', isEqualTo: other.uid).get(),
-      _requests.where('fromUid', isEqualTo: other.uid).where('toUid', isEqualTo: me.uid).get(),
+      _requests.where('fromUid', isEqualTo: me.uid).where('toUid', isEqualTo: otherUid).get(),
+      _requests.where('fromUid', isEqualTo: otherUid).where('toUid', isEqualTo: me.uid).get(),
     ]);
     final rows = prior.expand((s) => s.docs).toList();
     if (rows.any((d) => d.data()['status'] == 'accepted')) {
@@ -67,7 +71,7 @@ class XaritService {
       await doc.reference.delete();
     }
     await _requests.doc(outId).set({
-      'fromUid': me.uid, 'toUid': other.uid, 'fromName': me.publicName, 'toName': other.name,
+      'fromUid': me.uid, 'toUid': otherUid, 'fromName': me.publicName, 'toName': otherName,
       'status': 'pending', 'createdAt': FieldValue.serverTimestamp(),
     });
   }

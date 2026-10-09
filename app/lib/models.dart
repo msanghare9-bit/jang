@@ -259,6 +259,7 @@ class UserProfile {
   /// Le prénom n'est pas montré aux autres élèves (comparaison des moutons).
   final bool hideName;
   final String sheepName;
+  final String school;
   UserProfile({
     required this.uid,
     required this.name,
@@ -274,6 +275,7 @@ class UserProfile {
     this.disabled = false,
     this.hideName = false,
     this.sheepName = '',
+    this.school = '',
   });
 
   bool get isAdmin => role == 'admin';
@@ -324,6 +326,7 @@ class UserProfile {
         disabled: disabled,
         hideName: hideName ?? this.hideName,
         sheepName: sheepName ?? this.sheepName,
+        school: school,
       );
 
   factory UserProfile.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
@@ -346,6 +349,7 @@ class UserProfile {
       disabled: _bool(m['disabled']),
       hideName: _bool(m['hideName']),
       sheepName: _str(m['sheepName']),
+      school: _str(m['school']),
     );
   }
 }

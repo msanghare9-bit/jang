@@ -297,7 +297,12 @@ class MatchService {
 
   Future<void> ask(LiveMatch m, int index) => _col.doc(m.id).update({'state': LiveMatch.asking, 'index': index, 'askedAt': FieldValue.serverTimestamp()});
   Future<void> reveal(LiveMatch m) => _col.doc(m.id).update({'state': LiveMatch.showing});
-  Future<void> finish(LiveMatch m) => _col.doc(m.id).update({'state': LiveMatch.over, 'open': false});
+  Future<void> finish(LiveMatch m) async {
+    final players = await playersOnce(m.id);
+    final topScore = players.isEmpty ? -1 : players.first.score;
+    final winners = [for (final p in players) if (p.score == topScore) p.uid];
+    await _col.doc(m.id).update({'state': LiveMatch.over, 'open': false, 'winnerUids': winners});
+  }
   Future<void> next(LiveMatch m) => m.isLast ? finish(m) : ask(m, m.index + 1);
 
   // ---------- Le joueur répond ----------
@@ -342,9 +347,9 @@ class MatchService {
   }
 
   /// Historique des matchs terminés auxquels le joueur a participé.
-  Future<List<(LiveMatch, MatchPlayer, bool)>> historyFor(String uid) async {
+  Future<List<(LiveMatch, MatchPlayer, bool, String)>> historyFor(String uid) async {
     final rows = await _db.collectionGroup('joueurs').where('uid', isEqualTo: uid).get();
-    final entries = <(LiveMatch, MatchPlayer, bool)>[];
+    final entries = <(LiveMatch, MatchPlayer, bool, String)>[];
     for (final row in rows.docs) {
       final matchRef = row.reference.parent.parent;
       if (matchRef == null) continue;
@@ -356,7 +361,8 @@ class MatchService {
       final me = players.where((p) => p.uid == uid).firstOrNull;
       if (me == null) continue;
       final won = players.isNotEmpty && me.score == players.first.score;
-      entries.add((match, me, won));
+      final opponents = players.where((p) => p.uid != uid).map((p) => p.name).where((n) => n.isNotEmpty).toList();
+      entries.add((match, me, won, opponents.isEmpty ? 'Entraînement' : opponents.join(', ')));
     }
     entries.sort((a, b) =>
         (b.$1.createdAt ?? DateTime(1970)).compareTo(a.$1.createdAt ?? DateTime(1970)));

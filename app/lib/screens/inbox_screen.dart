@@ -237,23 +237,26 @@ class InboxCard extends StatelessWidget {
         return GestureDetector(
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
           child: Container(
-            margin: const EdgeInsets.only(bottom: 10),
-            padding: const EdgeInsets.all(12),
+            margin: const EdgeInsets.only(bottom: 6),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
             decoration: BoxDecoration(
               color: JangColors.successBg,
               border: Border.all(color: JangColors.snGreen, width: 2),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(14),
             ),
             child: Row(children: [
               const CircleAvatar(
+                radius: 18,
                 backgroundColor: JangColors.snGreen,
-                child: Icon(Icons.forum_outlined, color: Colors.white),
+                child: Icon(Icons.forum_outlined, color: Colors.white, size: 19),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 8),
               Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text('Messagerie', style: titleStyle(17, weight: 800)),
-                  Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
+                child: Row(children: [
+                  Text('Messagerie', style: titleStyle(15, weight: 800)),
+                  const SizedBox(width: 8),
+                  Expanded(child: Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.bodySmall)),
                 ]),
               ),
               if (unread > 0)

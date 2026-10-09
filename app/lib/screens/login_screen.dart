@@ -78,7 +78,6 @@ class _LoginScreenState extends State<LoginScreen> {
           teacherClasses: _classes.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
           teacherSubjects: _subjects.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
           teacherExamId: _examId ?? '',
-          teacherExamName: _exams.where((e) => e.id == _examId).firstOrNull?.name ?? '',
         );
       } else {
         await AuthService.instance.signIn(_user.text, _pass.text);
@@ -193,7 +192,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(controller: _subjects, textCapitalization: TextCapitalization.words,
                         decoration: const InputDecoration(labelText: 'Matières', hintText: 'Anglais, Français')),
                       const SizedBox(height: 8),
-                      const Text('Ta demande sera vérifiée par le responsable avant l’ouverture de ton espace professeur.'),
+                      const Text('Ton espace professeur et tes classes seront créés immédiatement, sans validation manuelle.'),
                     ],
                     if (_register && !_teacher) ...[
                       const SizedBox(height: 10),

@@ -134,10 +134,25 @@ class _SubjectsTabState extends State<SubjectsTab> {
 
   static const _tips = <(String, String, bool)>[
     ('awa', 'Salut ! Une petite leçon aujourd\'hui ? Diambar nga, tu peux le faire !', true),
+    ('awa', 'Nanga def ? Prête pour une nouvelle question ? Je crois en toi !', false),
+    ('awa', 'Petit pas après petit pas, on avance. Quelle matière choisis-tu ?', true),
+    ('awa', 'Tu as déjà appris beaucoup. Montre-moi ce que tu sais aujourd’hui !', false),
     ('modou', 'Ma pirogue attend tes bonnes réponses pour partir à la pêche. Boul bayi !', false),
+    ('modou', 'Le vent est bon sur le fleuve ! On révise ensemble ?', true),
+    ('modou', 'Chaque réponse nous rapproche du prochain arrêt. En route !', false),
+    ('modou', 'Je garde une place dans la pirogue. Tu viens apprendre ?', true),
     ('doudou', 'Mon tama est prêt 🥁 Fais 8/10 et je joue rien que pour toi !', true),
+    ('doudou', 'Toum-toum ! Une bonne réponse et le tama se réveille !', false),
+    ('doudou', 'On révise un peu ? J’ai déjà choisi le rythme !', true),
+    ('doudou', 'Le prochain morceau est pour toi. À toi de jouer !', false),
     ('kocc', 'C\'est moi, Kocc Barma ! J\'ai encore glissé sur une peau de banane… mais je suis là si tu as une question.', false),
+    ('kocc', 'Une question te tracasse ? Réfléchissons-y pas à pas, sama xarit.', true),
+    ('kocc', 'Le savoir grandit quand on pose des questions. Qu’aimerais-tu comprendre ?', false),
+    ('kocc', 'Je range mes livres… et je suis prêt à t’aider à apprendre !', true),
     ('gainde', 'MIAOU ! … euh, je voulais dire ROAR ! Viens apprendre avec moi : comprendre nga bou bax !', true),
+    ('gainde', 'Mon cahier est ouvert ! On découvre quelque chose de nouveau ?', false),
+    ('gainde', 'J’ai bien écouté cette fois. Tu me montres la bonne réponse ?', true),
+    ('gainde', 'Un exercice, une idée, un progrès. On commence ?', false),
     ('awa', 'Toutes les 2 missions, un nouvel épisode de « Mon histoire » s\'ouvre. Va voir dans ta matière !', false),
   ];
 
