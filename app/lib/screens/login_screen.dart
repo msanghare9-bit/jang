@@ -17,10 +17,9 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _register = false;
   bool _teacher = false;
   List<Exam> _exams = const [];
-  String? _examId;
+  final Set<String> _teacherExamIds = {};
   final _school = TextEditingController();
-  final _classes = TextEditingController();
-  final _subjects = TextEditingController();
+  final List<TextEditingController> _subjectFields = [TextEditingController()];
   final _form = GlobalKey<FormState>();
   final _name = TextEditingController();
   final _user = TextEditingController();
@@ -35,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     super.initState();
     ContentRepo.instance.exams().then((exams) {
-      if (mounted) setState(() { _exams = exams; _examId ??= exams.firstOrNull?.id; });
+      if (mounted) setState(() => _exams = exams);
     });
   }
 
@@ -46,15 +45,16 @@ class _LoginScreenState extends State<LoginScreen> {
     _pass.dispose();
     _pass2.dispose();
     _school.dispose();
-    _classes.dispose();
-    _subjects.dispose();
+    for (final field in _subjectFields) {
+      field.dispose();
+    }
     super.dispose();
   }
 
   Future<void> _submit() async {
     if (!_form.currentState!.validate()) return;
-    if (_register && _teacher && (_school.text.trim().isEmpty || _classes.text.trim().isEmpty || _subjects.text.trim().isEmpty || _examId == null)) {
-      setState(() => _error = 'Renseigne ton école, ton niveau, tes classes et tes matières.');
+    if (_register && _teacher && (_school.text.trim().isEmpty || _teacherExamIds.isEmpty || _subjectFields.every((field) => field.text.trim().isEmpty))) {
+      setState(() => _error = 'Renseignez votre école, au moins un niveau et une matière.');
       return;
     }
     if (_register && !_teacher && !_consent) {
@@ -67,6 +67,8 @@ class _LoginScreenState extends State<LoginScreen> {
     });
     try {
       if (_register) {
+        final selectedExams = _exams.where((exam) => _teacherExamIds.contains(exam.id)).toList();
+        final school = _school.text.trim();
         await AuthService.instance.register(
           name: _name.text,
           username: _user.text,
@@ -74,10 +76,11 @@ class _LoginScreenState extends State<LoginScreen> {
           examId: '',
           parentConsent: _consent,
           teacher: _teacher,
-          school: _school.text.trim(),
-          teacherClasses: _classes.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
-          teacherSubjects: _subjects.text.split(',').map((s) => s.trim()).where((s) => s.isNotEmpty).toList(),
-          teacherExamId: _examId ?? '',
+          school: school,
+          teacherClasses: [for (final exam in selectedExams) '$school · ${exam.name}'],
+          teacherSubjects: _subjectFields.map((field) => field.text.trim()).where((s) => s.isNotEmpty).toList(),
+          teacherExamId: selectedExams.first.id,
+          teacherExamIds: [for (final exam in selectedExams) exam.id],
         );
       } else {
         await AuthService.instance.signIn(_user.text, _pass.text);
@@ -179,20 +182,55 @@ class _LoginScreenState extends State<LoginScreen> {
                       TextFormField(controller: _school, textCapitalization: TextCapitalization.words,
                         decoration: const InputDecoration(labelText: 'École')),
                       const SizedBox(height: 12),
-                      DropdownButtonFormField<String>(
-                        value: _exams.any((e) => e.id == _examId) ? _examId : null,
-                        decoration: const InputDecoration(labelText: 'Niveau scolaire principal'),
-                        items: [for (final e in _exams) DropdownMenuItem(value: e.id, child: Text(e.name))],
-                        onChanged: (v) => setState(() => _examId = v),
-                      ),
-                      const SizedBox(height: 12),
-                      TextFormField(controller: _classes, textCapitalization: TextCapitalization.words,
-                        decoration: const InputDecoration(labelText: 'Classes', hintText: '6e A, 6e B')),
-                      const SizedBox(height: 12),
-                      TextFormField(controller: _subjects, textCapitalization: TextCapitalization.words,
-                        decoration: const InputDecoration(labelText: 'Matières', hintText: 'Anglais, Français')),
+                      Text('Niveaux de classe', style: t.titleMedium?.copyWith(fontWeight: FontWeight.w800)),
+                      const Text('Cochez tous les niveaux où vous enseignez. Une classe sera créée automatiquement pour chacun.'),
+                      const SizedBox(height: 4),
+                      if (_exams.isEmpty)
+                        const LinearProgressIndicator()
+                      else
+                        ..._exams.map((exam) => CheckboxListTile(
+                              contentPadding: EdgeInsets.zero,
+                              controlAffinity: ListTileControlAffinity.leading,
+                              value: _teacherExamIds.contains(exam.id),
+                              title: Text(exam.name),
+                              onChanged: (selected) => setState(() {
+                                if (selected == true) {
+                                  _teacherExamIds.add(exam.id);
+                                } else {
+                                  _teacherExamIds.remove(exam.id);
+                                }
+                              }),
+                            )),
                       const SizedBox(height: 8),
-                      const Text('Ton espace professeur et tes classes seront créés immédiatement, sans validation manuelle.'),
+                      Row(children: [
+                        Expanded(child: Text('Matières enseignées', style: t.titleMedium?.copyWith(fontWeight: FontWeight.w800))),
+                        IconButton(
+                          tooltip: 'Ajouter une matière',
+                          onPressed: () => setState(() => _subjectFields.add(TextEditingController())),
+                          icon: const Icon(Icons.add_circle_outline),
+                        ),
+                      ]),
+                      for (var i = 0; i < _subjectFields.length; i++)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Row(children: [
+                            Expanded(child: TextFormField(
+                              controller: _subjectFields[i],
+                              textCapitalization: TextCapitalization.words,
+                              decoration: InputDecoration(labelText: 'Matière ${i + 1}', hintText: 'Anglais'),
+                            )),
+                            if (_subjectFields.length > 1)
+                              IconButton(
+                                tooltip: 'Supprimer cette matière',
+                                onPressed: () => setState(() {
+                                  _subjectFields.removeAt(i).dispose();
+                                }),
+                                icon: const Icon(Icons.remove_circle_outline),
+                              ),
+                          ]),
+                        ),
+                      const SizedBox(height: 8),
+                      const Text('Votre espace professeur et vos classes seront créés immédiatement, sans validation manuelle.'),
                     ],
                     if (_register && !_teacher) ...[
                       const SizedBox(height: 10),
