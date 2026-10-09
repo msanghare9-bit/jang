@@ -7,6 +7,7 @@ import '../services/auth_service.dart';
 import '../services/class_service.dart';
 import '../services/content_repo.dart';
 import '../services/github_service.dart';
+import '../services/match_service.dart';
 import '../theme.dart';
 import '../version.dart';
 import '../widgets/class_section.dart' show showJoinClassDialog;
@@ -94,6 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ),
               ),
+              if (!p.isStaff) _MatchSummary(uid: p.uid),
               if (!p.isStaff) _MyClasses(profile: p),
               const SectionTitle('Mon niveau'),
               FutureBuilder<List<Exam>>(
@@ -205,6 +207,91 @@ class _ProfileScreenState extends State<ProfileScreen> {
 }
 
 /// Carte « Mes classes » de l'élève : ses classes, et le code pour entrer dans une nouvelle classe.
+class _MatchSummary extends StatelessWidget {
+  final String uid;
+  const _MatchSummary({required this.uid});
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<List<(LiveMatch, MatchPlayer, bool)>>(
+        future: MatchService.instance.historyFor(uid),
+        builder: (context, snap) {
+          if (snap.hasError) return const SizedBox.shrink();
+          if (!snap.hasData) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              child: Center(child: CircularProgressIndicator()),
+            );
+          }
+          final games = snap.data!;
+          final wins = games.where((g) => g.$3).length;
+          final losses = games.length - wins;
+          final percent = games.isEmpty ? 0 : (wins * 100 / games.length).round();
+          final winStreak = games.takeWhile((g) => g.$3).length;
+          const ranks = <(String, int)>[
+            ('Jàngkat', 0),
+            ('Boroom xam-xam', 5),
+            ('Jàmbaar', 15),
+            ('Njiit', 30),
+            ('Damel', 60),
+            ('Buur', 100),
+          ];
+          var rankIndex = 0;
+          for (var i = 0; i < ranks.length; i++) {
+            if (wins >= ranks[i].$2) rankIndex = i;
+          }
+          final nextRank = rankIndex + 1 < ranks.length ? ranks[rankIndex + 1] : null;
+          return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+            const SectionTitle('Mes matchs'),
+            Card(
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Wrap(spacing: 20, runSpacing: 12, children: [
+                    _ProfileMatchStat(label: 'Joués', value: '${games.length}'),
+                    _ProfileMatchStat(label: 'Gagnés', value: '$wins'),
+                    _ProfileMatchStat(label: 'Perdus', value: '$losses'),
+                    _ProfileMatchStat(label: 'Victoires', value: '$percent %'),
+                    _ProfileMatchStat(label: 'Série', value: '$winStreak 🔥'),
+                  ]),
+                  const SizedBox(height: 12),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: JangColors.successBg,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Text('Titre : ${ranks[rankIndex].$1}',
+                          style: const TextStyle(fontWeight: FontWeight.w900, color: JangColors.successDark)),
+                      if (nextRank != null)
+                        Text('Encore ${nextRank.$2 - wins} victoire${nextRank.$2 - wins == 1 ? '' : 's'} pour devenir ${nextRank.$1}.'),
+                      if (nextRank == null) const Text('Tu as atteint le rang le plus élevé !'),
+                    ]),
+                  ),
+                ]),
+              ),
+            ),
+          ]);
+        },
+      );
+}
+
+class _ProfileMatchStat extends StatelessWidget {
+  final String label;
+  final String value;
+  const _ProfileMatchStat({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) => SizedBox(
+        width: 78,
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(value, style: titleStyle(19, weight: 800)),
+          Text(label, style: Theme.of(context).textTheme.bodySmall),
+        ]),
+      );
+}
+
 class _MyClasses extends StatelessWidget {
   final UserProfile profile;
   const _MyClasses({required this.profile});
@@ -275,3 +362,4 @@ class _MyClasses extends StatelessWidget {
     ]);
   }
 }
+

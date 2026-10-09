@@ -186,6 +186,21 @@ class QuizBank {
     return out..shuffle(Random());
   }
 
+  /// Défi identique pour tous les joueurs pendant une journée donnée.
+  Future<List<BankQuestion>> dailyChallenge(DateTime day, {int count = 5, int offset = 0}) async {
+    final pools = await Future.wait([for (final domain in domains) load(domain, 'debutant')]);
+    final all = [for (final pool in pools) ...pool];
+    if (all.isEmpty || count <= 0) return const [];
+    final dayKey = day.year * 10000 + day.month * 100 + day.day;
+    final start = (dayKey + offset) % all.length;
+    return [for (var i = 0; i < min(count, all.length); i++) all[(start + i) % all.length]];
+  }
+
+  Future<BankQuestion?> dailyQuestion(DateTime day) async {
+    final questions = await dailyChallenge(day, count: 1, offset: 5);
+    return questions.isEmpty ? null : questions.first;
+  }
+
   /// Un élève ou un prof signale une question fausse ou mal écrite.
   Future<void> report(BankQuestion q, UserProfile p, {String note = ''}) =>
       FirebaseFirestore.instance.collection('signalements').add({
@@ -198,3 +213,4 @@ class QuizBank {
         'at': FieldValue.serverTimestamp(),
       });
 }
+

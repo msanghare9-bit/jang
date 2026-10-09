@@ -52,14 +52,19 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
         'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'propose des objectifs adaptés' : _objectives.text.trim()}. '
         'Commence par trois conseils concrets au professeur pour rendre la séance communicative et centrée sur les apprenants. '
-        'Puis propose un cours complet de 45 minutes. Les élèves doivent parler, réfléchir et travailler ensemble; '
-        'le professeur facilite et guide au lieu de parler tout le temps. '
-        'Donne le titre, des objectifs mesurables, le matériel, les étapes avec durées, '
-        'les consignes simples du professeur, les tâches des élèves, une vérification des acquis, '
-        'une adaptation pour les élèves qui ont besoin d’aide et un devoir. '
-        'Utilise des exemples adaptés au contexte des élèves sénégalais quand c’est pertinent. '
-        'Rédige les consignes du professeur en français simple. Sépare clairement les conseils et le cours complet, '
-        'dans un document que je peux relire, modifier et partager avec ma classe.';
+        'Puis rédige une leçon complète de 60 minutes, prête à être utilisée en classe. '
+        'La leçon doit comporter AU MOINS SIX activités d’apprentissage distinctes, numérotées exactement '
+        '« Activité 1 », « Activité 2 », etc. Pour chacune, indique la durée, l’objectif, le matériel, '
+        'la consigne que le professeur peut dire, ce que font les élèves, et comment vérifier leur réussite. '
+        'Prévois une progression variée : mise en situation, découverte, pratique guidée, travail en binômes, '
+        'production ou résolution de problème, partage et évaluation/transfert. Répartis les durées pour totaliser 60 minutes. '
+        'Ancre les exemples et supports dans un contexte sénégalais concret et respectueux : école, quartier, marché, '
+        'transport, famille, environnement ou vie locale, selon le thème et la matière; évite les clichés. '
+        'Les élèves doivent parler, réfléchir et travailler ensemble; le professeur facilite et guide. '
+        'Ajoute des objectifs mesurables, les prérequis, une évaluation formative, une adaptation pour les élèves '
+        'qui ont besoin d’aide, un défi pour ceux qui avancent vite et un devoir lié à leur vie quotidienne. '
+        'Rédige en français simple, avec des consignes prêtes à lire à la classe. Sépare clairement les conseils '
+        'du professeur et la leçon complète, dans un document que je peux relire, modifier et partager.';
     final result = await TutorService.instance.ask(lesson, prompt);
     if (!mounted) return;
     setState(() {
@@ -114,7 +119,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               padding: const EdgeInsets.all(14),
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
-                'Kocc va proposer un cours communicatif et centré sur les apprenants. '
+                'Kocc prépare une leçon complète avec au moins six activités, dans un contexte sénégalais. '
                 'Relis et adapte le brouillon avant de l’ajouter.',
               ),
             ),
@@ -125,7 +130,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             textCapitalization: TextCapitalization.sentences,
             decoration: const InputDecoration(
               labelText: 'Thème du cours',
-              hintText: 'Ex. Se présenter en anglais',
+              hintText: 'Ex. Se présenter en anglais au collège',
             ),
           ),
           const SizedBox(height: 10),
@@ -153,7 +158,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             maxLines: 28,
             textCapitalization: TextCapitalization.sentences,
             decoration: const InputDecoration(
-              hintText: 'Le cours de Kocc apparaîtra ici. Tu peux le modifier avant de l’ajouter.',
+              hintText: 'La leçon complète de Kocc apparaîtra ici, avec au moins six activités. Tu peux la modifier avant de l’ajouter.',
               alignLabelWithHint: true,
             ),
           ),
@@ -168,3 +173,4 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     );
   }
 }
+
