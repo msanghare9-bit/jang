@@ -1258,7 +1258,7 @@ class _MatchRoomScreenState extends State<MatchRoomScreen> {
         await _refreshNdimbals();
         return;
       }
-      final wrong = [for (var i = 0; i < q.options.length; i++) if (i != q.answer] i]..shuffle();
+      final wrong = [for (var i = 0; i < q.options.length; i++) if (i != q.answer) i]..shuffle();
       setState(() => _eliminatedChoices.addAll(wrong.take(2)));
       await _refreshNdimbals();
     } catch (_) {
