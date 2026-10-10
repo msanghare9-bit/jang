@@ -87,6 +87,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   int _turn = 0;
   late List<int> _streaks;
   late List<int> _missesSinceSix;
+  late List<int> _correctAnswers;
+  late List<int> _incorrectAnswers;
   int _die = 0;
   int? _rollingPlayer;
   bool _isDieAnimating = false;
@@ -95,6 +97,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   bool _shieldAvailable = false;
   late List<List<int>> _pawns;
   late List<Set<int>> _shieldedPawns;
+  late List<List<int>> _shieldTurnsRemaining;
 
   @override
   void initState() {
@@ -118,8 +121,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       });
     _pawns = List.generate(4, (_) => List.filled(4, -1));
     _shieldedPawns = List.generate(4, (_) => <int>{});
+    _shieldTurnsRemaining = List.generate(4, (_) => List.filled(4, 0));
     _streaks = List.filled(4, 0);
     _missesSinceSix = List.filled(4, 0);
+    _correctAnswers = List.filled(4, 0);
+    _incorrectAnswers = List.filled(4, 0);
     unawaited(_loadSoundPreference());
   }
 
@@ -237,7 +243,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             'Lancez le dé sans répondre à une question. Il faut obtenir 6 pour sortir un pion de sa base. Après trois lancers consécutifs sans 6, le prochain lancer donnera 6. Un 6 donne un deuxième tour. Touchez ensuite le pion à déplacer.\n\n'
             'Quand un pion arrive sur une case, vous avez 20 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
             'Si le délai de 20 secondes expire, le pion retourne lui aussi à la case qu’il occupait avant son déplacement.\n\n'
-            'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un bouclier Ndimbal pour protéger un pion pendant un tour.\n\n'
+            'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un Ndimbal : tous vos pions sont protégés contre les captures pendant les deux prochains tours des adversaires.\n\n'
             'Le premier joueur qui amène ses quatre pions à l’arrivée gagne.',
           ),
         ),
@@ -302,6 +308,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _roomNames = _localPlayerNames.take(players).map((name) => name.trim()).toList();
       _streaks = List.filled(players, 0);
       _missesSinceSix = List.filled(players, 0);
+      _correctAnswers = List.filled(players, 0);
+      _incorrectAnswers = List.filled(players, 0);
       _die = 0;
       _rollingPlayer = null;
       _message = 'Au tour de ${_playerName(0)}';
@@ -309,6 +317,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _shieldAvailable = false;
       _pawns = List.generate(players, (_) => List.filled(4, -1));
       _shieldedPawns = List.generate(players, (_) => <int>{});
+      _shieldTurnsRemaining = List.generate(players, (_) => List.filled(4, 0));
       _questionDeadline = null;
       _waitingForSquareQuestion = false;
       _resolvingQuestion = false;
@@ -356,6 +365,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
           for (final pawn in shields[player]) player * 4 + pawn,
       ];
 
+  List<int> _encodeShieldTurns(List<List<int>> turns) =>
+      [for (final row in turns) ...row];
+
   List<Set<int>> _decodeShieldedPawns(dynamic value, int playerCount) {
     final raw = value is List ? value : const [];
     final shields = List.generate(playerCount, (_) => <int>{});
@@ -374,6 +386,24 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       if (index >= 0 && player < playerCount) shields[player].add(pawn);
     }
     return shields;
+  }
+
+  List<List<int>> _decodeShieldTurns(
+    dynamic value,
+    int playerCount,
+    List<Set<int>> shields,
+  ) {
+    final raw = value is List ? value : const [];
+    final flat = raw.whereType<num>().map((turns) => turns.toInt()).toList();
+    return List.generate(
+      playerCount,
+      (player) => List.generate(4, (pawn) {
+        final index = player * 4 + pawn;
+        if (index < flat.length) return flat[index].clamp(0, 2).toInt();
+        // Older rooms used a one-turn Ndimbal marker.
+        return player < shields.length && shields[player].contains(pawn) ? 1 : 0;
+      }),
+    );
   }
 
   Future<void> _createOnlineRoom(List<BankQuestion> questions) async {
@@ -406,6 +436,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         'shieldAvailable': false,
         'pawns': initialPawns,
         'shieldedPawns': <int>[],
+        'shieldTurnsRemaining': List.filled(players * 4, 0),
+        'correctAnswers': List.filled(players, 0),
+        'incorrectAnswers': List.filled(players, 0),
         'moveAnimation': null,
         'createdAt': FieldValue.serverTimestamp(),
     });
@@ -482,6 +515,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         data['shieldedPawns'],
         uids.length.clamp(2, 4).toInt(),
       );
+      final shieldTurns = _decodeShieldTurns(
+        data['shieldTurnsRemaining'],
+        uids.length.clamp(2, 4).toInt(),
+        shielded,
+      );
       final previousDie = _die;
       final previousTurn = _turn;
       final rawDeadline = data['questionDeadline'];
@@ -510,6 +548,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _turn = (data['turn'] as num? ?? 0).toInt();
         _streaks = List<int>.from(data['streaks'] ?? List.filled(_playerCount, 0));
         _missesSinceSix = List<int>.from(data['missesSinceSix'] ?? List.filled(_playerCount, 0));
+        _correctAnswers = List<int>.from(data['correctAnswers'] ?? List.filled(_playerCount, 0));
+        _incorrectAnswers = List<int>.from(data['incorrectAnswers'] ?? List.filled(_playerCount, 0));
         _die = (data['die'] as num? ?? 0).toInt();
         _rollingPlayer = (data['rollingPlayer'] as num?)?.toInt();
         _message = '${data['message'] ?? ''}';
@@ -517,6 +557,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _shieldAvailable = data['shieldAvailable'] == true;
         _pawns = pawns;
         _shieldedPawns = shielded;
+        _shieldTurnsRemaining = shieldTurns;
         _onlineReady = data['status'] == 'playing';
       });
       final rawMove = data['moveAnimation'];
@@ -577,6 +618,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         'shieldAvailable': _shieldAvailable,
         'pawns': _encodePawns(_pawns),
         'shieldedPawns': _encodeShieldedPawns(_shieldedPawns),
+        'shieldTurnsRemaining': _encodeShieldTurns(_shieldTurnsRemaining),
+        'correctAnswers': _correctAnswers,
+        'incorrectAnswers': _incorrectAnswers,
         'moveAnimation': moveAnimation,
       });
     } catch (error) {
@@ -599,15 +643,24 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     final target = _pendingTarget!;
     final pawns = [for (final row in _pawns) [...row]];
     final shields = [for (final row in _shieldedPawns) {...row}];
+    final shieldTurns = [for (final row in _shieldTurnsRemaining) [...row]];
+    final correctAnswers = [..._correctAnswers];
+    final incorrectAnswers = [..._incorrectAnswers];
     var captured = false;
     if (correct) {
+      correctAnswers[_turn]++;
       _streaks[_turn]++;
       if (_streaks[_turn] >= 5) {
         _shieldAvailable = true;
         _streaks[_turn] = 0;
       }
       final targetCell = target < 51 ? (_startCells[_seatOf(_turn)] + target) % 52 : -1;
-      if (_shieldAvailable) shields[_turn].add(pawnIndex);
+      if (_shieldAvailable) {
+        for (var pawn = 0; pawn < 4; pawn++) {
+          shields[_turn].add(pawn);
+          shieldTurns[_turn][pawn] = 2;
+        }
+      }
       if (targetCell >= 0 && !_safeCells.contains(targetCell)) {
         for (var player = 0; player < _playerCount; player++) {
           if (player == _turn) continue;
@@ -615,7 +668,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             final progress = pawns[player][pawn];
             final cell = progress < 0 || progress >= 51 ? -1 : (_startCells[_seatOf(player)] + progress) % 52;
             if (cell == targetCell) {
-              if (shields[player].remove(pawn)) continue;
+              if (shields[player].contains(pawn)) continue;
               pawns[player][pawn] = -1;
               captured = true;
             }
@@ -623,6 +676,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         }
       }
     } else {
+      incorrectAnswers[_turn]++;
       _streaks[_turn] = 0;
       // The return is animated too; it never captures a pawn.
       final player = _turn;
@@ -631,6 +685,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       final startedAtMs = DateTime.now().millisecondsSinceEpoch;
       setState(() {
         _shieldedPawns = shields;
+        _shieldTurnsRemaining = shieldTurns;
+        _correctAnswers = correctAnswers;
+        _incorrectAnswers = incorrectAnswers;
         _waitingForSquareQuestion = false;
         _resolvingQuestion = true;
         _pendingPawnIndex = null;
@@ -672,6 +729,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     setState(() {
       _pawns = pawns;
       _shieldedPawns = shields;
+      _shieldTurnsRemaining = shieldTurns;
+      _correctAnswers = correctAnswers;
+      _incorrectAnswers = incorrectAnswers;
       _waitingForSquareQuestion = false;
       _resolvingQuestion = true;
       _pendingPawnIndex = null;
@@ -887,9 +947,23 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   void _nextTurn({bool extraTurn = false}) {
     if (!mounted || _done) return;
     _moveTimer?.cancel();
+    final shields = [for (final row in _shieldedPawns) {...row}];
+    final shieldTurns = [for (final row in _shieldTurnsRemaining) [...row]];
+    if (!extraTurn) {
+      // Each completed opponent turn consumes one of the protected pawn's two turns.
+      for (var owner = 0; owner < _playerCount; owner++) {
+        if (owner == _turn) continue;
+        for (var pawn = 0; pawn < 4; pawn++) {
+          if (shieldTurns[owner][pawn] <= 0) continue;
+          shieldTurns[owner][pawn]--;
+          if (shieldTurns[owner][pawn] == 0) shields[owner].remove(pawn);
+        }
+      }
+    }
     setState(() {
       if (!extraTurn) _turn = (_turn + 1) % _playerCount;
-      if (!extraTurn) _shieldedPawns[_turn].clear();
+      _shieldedPawns = shields;
+      _shieldTurnsRemaining = shieldTurns;
       _rollingPlayer = null;
       _die = 0;
       _shieldAvailable = false;
@@ -900,6 +974,44 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     });
     _saveOnlineState();
   }
+
+  Future<void> _showPlayerAnswerStats(int player) => showDialog<void>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text('Questions de ${_playerName(player)}'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(children: [
+                const Icon(Icons.check_circle, color: JangColors.snGreen),
+                const SizedBox(width: 8),
+                Text('Bonnes réponses : ${_correctAnswers[player]}'),
+              ]),
+              const SizedBox(height: 10),
+              Row(children: [
+                const Icon(Icons.cancel, color: Color(0xFFE31B23)),
+                const SizedBox(width: 8),
+                Text('Réponses fausses : ${_incorrectAnswers[player]}'),
+              ]),
+              const SizedBox(height: 12),
+              Text('Série actuelle : ${_streaks[player]}/5'),
+              if (_shieldedPawns[player].isNotEmpty) ...[
+                const SizedBox(height: 10),
+                Text(
+                  'Ndimbal actif : ${_shieldTurnsFor(player)} ${_shieldTurnsFor(player) == 1 ? 'tour adverse restant' : 'tours adverses restants'}.',
+                ),
+              ],
+            ],
+          ),
+          actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fermer'))],
+        ),
+      );
+
+  int _shieldTurnsFor(int player) => _shieldTurnsRemaining[player].fold<int>(
+        0,
+        (remaining, turns) => turns > remaining ? turns : remaining,
+      );
 
   void _startQuestionTimer(DateTime deadline) {
     _questionTimer?.cancel();
@@ -1110,6 +1222,44 @@ class _LudoJangScreenState extends State<LudoJangScreen>
               ),
             ),
             const SizedBox(height: 5),
+            SizedBox(
+              height: 34,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    for (var player = 0; player < _playerCount; player++)
+                      Padding(
+                        padding: const EdgeInsets.only(right: 6),
+                        child: OutlinedButton.icon(
+                          onPressed: () => _showPlayerAnswerStats(player),
+                          style: OutlinedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
+                            visualDensity: VisualDensity.compact,
+                            minimumSize: const Size(0, 30),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          icon: Icon(
+                            _shieldedPawns[player].isNotEmpty ? Icons.shield_outlined : Icons.quiz_outlined,
+                            size: 16,
+                            color: _colorOf(player),
+                          ),
+                          label: Row(mainAxisSize: MainAxisSize.min, children: [
+                            Text(_playerName(player), maxLines: 1, overflow: TextOverflow.ellipsis),
+                            const SizedBox(width: 6),
+                            const Icon(Icons.check, size: 14, color: JangColors.snGreen),
+                            Text('${_correctAnswers[player]}'),
+                            const SizedBox(width: 4),
+                            const Icon(Icons.close, size: 14, color: Color(0xFFE31B23)),
+                            Text('${_incorrectAnswers[player]}'),
+                          ]),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 5),
             SizedBox(width: boardSide, height: boardSide, child: _board(boardSide)),
             if (_shieldAvailable)
               const Padding(
@@ -1117,7 +1267,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Icon(Icons.shield, color: JangColors.snGreen, size: 18),
                   SizedBox(width: 5),
-                  Text('Ndimbal protège un pion pendant un tour.'),
+                  Text('Ndimbal rend tous les pions invincibles pendant deux tours adverses.'),
                 ]),
               ),
             Expanded(child: _waitingForSquareQuestion ? _questionPanel() : _turnPanel()),

@@ -182,7 +182,7 @@ service cloud.firestore {
                       || (request.auth.uid in resource.data.get('playerUids', [])
                           && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
                             'questionIndex','questionDeadline','waitingForSquareQuestion','resolvingQuestion','pendingPawnIndex','pendingOrigin','pendingTarget',
-                            'turn','streaks','missesSinceSix','die','rollingPlayer','message','done','shieldAvailable','pawns','shieldedPawns','moveAnimation'
+                            'turn','streaks','missesSinceSix','die','rollingPlayer','message','done','shieldAvailable','pawns','shieldedPawns','shieldTurnsRemaining','correctAnswers','incorrectAnswers','moveAnimation'
                           ]))
                     );
       allow delete: if signedIn() && resource.data.get('hostUid', '') == request.auth.uid;
