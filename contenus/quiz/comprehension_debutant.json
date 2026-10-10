@@ -2,7 +2,7 @@
  "questions": [
   {
    "id": "comprehension_debutant_0001",
-   "t": "SMS from Awa: Hi Fatou! I am at the market with my mum. We buy rice and fish. See you at 5 o'clock.",
+   "t": "SMS from Awa: Hi Fatou! I am at the market. See you at 5.",
    "q": "Where is Awa?",
    "o": [
     "At the market",
@@ -17,7 +17,7 @@
   },
   {
    "id": "comprehension_debutant_0002",
-   "t": "SMS from Awa: Hi Fatou! I am at the market with my mum. We buy rice and fish. See you at 5 o'clock.",
+   "t": "SMS from Awa: Hi Fatou! I am at the market. See you at 5.",
    "q": "What time will Awa see Fatou?",
    "o": [
     "At 12 o'clock",
@@ -32,7 +32,7 @@
   },
   {
    "id": "comprehension_debutant_0003",
-   "t": "Hello Moussa. I am sick today. I can't come to football. My head hurts. Sorry! - Ibrahima",
+   "t": "Hello Moussa. I am sick. My head hurts. I can't come to football. - Ibrahima",
    "q": "Pourquoi Ibrahima ne vient pas au football ?",
    "o": [
     "Il a des devoirs",
@@ -47,7 +47,7 @@
   },
   {
    "id": "comprehension_debutant_0004",
-   "t": "Hello Moussa. I am sick today. I can't come to football. My head hurts. Sorry! - Ibrahima",
+   "t": "Hello Moussa. I am sick. My head hurts. I can't come to football. - Ibrahima",
    "q": "What hurts?",
    "o": [
     "His tooth",
@@ -62,7 +62,7 @@
   },
   {
    "id": "comprehension_debutant_0005",
-   "t": "Mum, I am at Khady's house. We do our homework together. I come home at 7. Love, Aminata.",
+   "t": "Mum, I am at Khady's house. We do our homework. I come home at 7. Love, Aminata.",
    "q": "Où est Aminata ?",
    "o": [
     "Chez Khady",
@@ -77,7 +77,7 @@
   },
   {
    "id": "comprehension_debutant_0006",
-   "t": "Mum, I am at Khady's house. We do our homework together. I come home at 7. Love, Aminata.",
+   "t": "Mum, I am at Khady's house. We do our homework. I come home at 7. Love, Aminata.",
    "q": "What do Aminata and Khady do?",
    "o": [
     "The cooking",
@@ -92,7 +92,7 @@
   },
   {
    "id": "comprehension_debutant_0007",
-   "t": "Dad, the car is at the garage. Please take a taxi to work. The mechanic says it is ready on Friday. - Mum",
+   "t": "Dad, the car is at the garage. Take a taxi today. It is ready on Friday. - Mum",
    "q": "How does Dad go to work?",
    "o": [
     "By bus",
@@ -107,7 +107,7 @@
   },
   {
    "id": "comprehension_debutant_0008",
-   "t": "Dad, the car is at the garage. Please take a taxi to work. The mechanic says it is ready on Friday. - Mum",
+   "t": "Dad, the car is at the garage. Take a taxi today. It is ready on Friday. - Mum",
    "q": "When is the car ready?",
    "o": [
     "Today",
@@ -122,7 +122,7 @@
   },
   {
    "id": "comprehension_debutant_0009",
-   "t": "Cheikh, happy birthday! You are 13 today. I have a present for you: a new ball. Your friend, Pape.",
+   "t": "Cheikh, happy birthday! You are 13 today. Here is your present: a new ball. - Pape",
    "q": "How old is Cheikh today?",
    "o": [
     "13",
@@ -137,7 +137,7 @@
   },
   {
    "id": "comprehension_debutant_0010",
-   "t": "Cheikh, happy birthday! You are 13 today. I have a present for you: a new ball. Your friend, Pape.",
+   "t": "Cheikh, happy birthday! You are 13 today. Here is your present: a new ball. - Pape",
    "q": "What is the present?",
    "o": [
     "A bike",
@@ -152,7 +152,7 @@
   },
   {
    "id": "comprehension_debutant_0011",
-   "t": "Hi Ousmane. The teacher is absent today. There is no maths class. We can play basketball. Come!",
+   "t": "Hi Ousmane. The teacher is absent today. No maths class! We can play basketball.",
    "q": "Quel cours n'a pas lieu ?",
    "o": [
     "L'anglais",
@@ -167,7 +167,7 @@
   },
   {
    "id": "comprehension_debutant_0012",
-   "t": "Hi Ousmane. The teacher is absent today. There is no maths class. We can play basketball. Come!",
+   "t": "Hi Ousmane. The teacher is absent today. No maths class! We can play basketball.",
    "q": "What can they play?",
    "o": [
     "Tennis",
@@ -182,7 +182,7 @@
   },
   {
    "id": "comprehension_debutant_0013",
-   "t": "Grandma, I miss you! I am in Dakar with Aunt Bineta. It is hot here. I come to Kaolack in July. Kisses, Mariama.",
+   "t": "Grandma, I miss you! I am in Dakar now. I come to Kaolack in July. Kisses, Mariama.",
    "q": "Where is Mariama now?",
    "o": [
     "In Dakar",
@@ -197,7 +197,7 @@
   },
   {
    "id": "comprehension_debutant_0014",
-   "t": "Grandma, I miss you! I am in Dakar with Aunt Bineta. It is hot here. I come to Kaolack in July. Kisses, Mariama.",
+   "t": "Grandma, I miss you! I am in Dakar now. I come to Kaolack in July. Kisses, Mariama.",
    "q": "Quand Mariama va-t-elle à Kaolack ?",
    "o": [
     "En août",
@@ -212,7 +212,7 @@
   },
   {
    "id": "comprehension_debutant_0015",
-   "t": "Modou, can you buy bread on your way home? We have no bread for dinner. Thanks! - Your sister Astou",
+   "t": "Modou, please buy bread on your way home. We have no bread. - Your sister Astou",
    "q": "What does Astou want?",
    "o": [
     "Milk",
@@ -227,7 +227,7 @@
   },
   {
    "id": "comprehension_debutant_0016",
-   "t": "Modou, can you buy bread on your way home? We have no bread for dinner. Thanks! - Your sister Astou",
+   "t": "Modou, please buy bread on your way home. We have no bread. - Your sister Astou",
    "q": "Who is Astou?",
    "o": [
     "Modou's mother",
@@ -242,7 +242,7 @@
   },
   {
    "id": "comprehension_debutant_0017",
-   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop. I see the bus now!",
+   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop now!",
    "q": "What time does the bus leave?",
    "o": [
     "At 8",
@@ -257,7 +257,7 @@
   },
   {
    "id": "comprehension_debutant_0018",
-   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop. I see the bus now!",
+   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop now!",
    "q": "Where is Coumba?",
    "o": [
     "At the shop",
@@ -272,7 +272,7 @@
   },
   {
    "id": "comprehension_debutant_0019",
-   "t": "Hi Babacar! My new phone number is 77 45 12 30. My old phone is broken. Call me tonight. - Sidy",
+   "t": "Hi Babacar! My old phone is broken. My new number is 77 45 12 30. Call me tonight. - Sidy",
    "q": "Pourquoi Sidy a un nouveau numéro ?",
    "o": [
     "Il n'aime pas son numéro",
@@ -287,7 +287,7 @@
   },
   {
    "id": "comprehension_debutant_0020",
-   "t": "Hi Babacar! My new phone number is 77 45 12 30. My old phone is broken. Call me tonight. - Sidy",
+   "t": "Hi Babacar! My old phone is broken. My new number is 77 45 12 30. Call me tonight. - Sidy",
    "q": "When can Babacar call Sidy?",
    "o": [
     "On Sunday",
@@ -302,7 +302,7 @@
   },
   {
    "id": "comprehension_debutant_0021",
-   "t": "Message: Aissatou, the cat is under your bed. It is afraid of the rain. Please give it some milk. - Mum",
+   "t": "Aissatou, the cat is under your bed. It is afraid of the rain. Give it some milk. - Mum",
    "q": "Where is the cat?",
    "o": [
     "Under the bed",
@@ -317,7 +317,7 @@
   },
   {
    "id": "comprehension_debutant_0022",
-   "t": "Message: Aissatou, the cat is under your bed. It is afraid of the rain. Please give it some milk. - Mum",
+   "t": "Aissatou, the cat is under your bed. It is afraid of the rain. Give it some milk. - Mum",
    "q": "Why is the cat there?",
    "o": [
     "It is sleeping",
@@ -332,7 +332,7 @@
   },
   {
    "id": "comprehension_debutant_0023",
-   "t": "Hi Assane! I am in Saint-Louis. The city is beautiful. I can see the river and the big bridge. Bye! Rokhaya",
+   "t": "Hi Assane! I am in Saint-Louis. It is a beautiful city. I see the river and the bridge. - Rokhaya",
    "q": "What can Rokhaya see?",
    "o": [
     "The desert",
@@ -347,7 +347,7 @@
   },
   {
    "id": "comprehension_debutant_0024",
-   "t": "Hi Assane! I am in Saint-Louis. The city is beautiful. I can see the river and the big bridge. Bye! Rokhaya",
+   "t": "Hi Assane! I am in Saint-Louis. It is a beautiful city. I see the river and the bridge. - Rokhaya",
    "q": "Comment est la ville d'après Rokhaya ?",
    "o": [
     "Froide",
@@ -362,7 +362,7 @@
   },
   {
    "id": "comprehension_debutant_0025",
-   "t": "Demba, don't forget: Grandpa's birthday is on Sunday. We eat at his house at 2 pm. Bring your guitar! - Dad",
+   "t": "Demba, Grandpa's birthday is on Sunday. Bring your guitar! - Dad",
    "q": "What day is Grandpa's birthday?",
    "o": [
     "Sunday",
@@ -377,7 +377,7 @@
   },
   {
    "id": "comprehension_debutant_0026",
-   "t": "Demba, don't forget: Grandpa's birthday is on Sunday. We eat at his house at 2 pm. Bring your guitar! - Dad",
+   "t": "Demba, Grandpa's birthday is on Sunday. Bring your guitar! - Dad",
    "q": "What must Demba bring?",
    "o": [
     "A cake",
@@ -392,7 +392,7 @@
   },
   {
    "id": "comprehension_debutant_0027",
-   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come to school today. Thank you. - Mrs Diop",
+   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come today. - Mrs Diop",
    "q": "Who writes the message?",
    "o": [
     "The teacher",
@@ -407,7 +407,7 @@
   },
   {
    "id": "comprehension_debutant_0028",
-   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come to school today. Thank you. - Mrs Diop",
+   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come today. - Mrs Diop",
    "q": "What is wrong with Malick?",
    "o": [
     "He is tired",
@@ -422,7 +422,7 @@
   },
   {
    "id": "comprehension_debutant_0029",
-   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now, it's ready.",
+   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now.",
    "q": "What is for lunch?",
    "o": [
     "Thieboudienne",
@@ -437,7 +437,7 @@
   },
   {
    "id": "comprehension_debutant_0030",
-   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now, it's ready.",
+   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now.",
    "q": "Comment se sent Sokhna ?",
    "o": [
     "Elle a froid",
@@ -452,7 +452,7 @@
   },
   {
    "id": "comprehension_debutant_0031",
-   "t": "Alioune, I am late. My bus is very slow. Please wait for me at the cinema door. - Yacine",
+   "t": "Alioune, I am late. My bus is slow. Wait for me at the cinema door. - Yacine",
    "q": "Why is Yacine late?",
    "o": [
     "She is sleeping",
@@ -467,7 +467,7 @@
   },
   {
    "id": "comprehension_debutant_0032",
-   "t": "Alioune, I am late. My bus is very slow. Please wait for me at the cinema door. - Yacine",
+   "t": "Alioune, I am late. My bus is slow. Wait for me at the cinema door. - Yacine",
    "q": "Where must Alioune wait?",
    "o": [
     "At the bus stop",
@@ -482,7 +482,7 @@
   },
   {
    "id": "comprehension_debutant_0033",
-   "t": "Hi Adama! We have a new baby in our family. She is my little sister. Her name is Ndeye. She is very small!",
+   "t": "Hi Adama! We have a new baby. She is my little sister. Her name is Ndeye.",
    "q": "Who is the new baby?",
    "o": [
     "The writer's little sister",
@@ -497,7 +497,7 @@
   },
   {
    "id": "comprehension_debutant_0034",
-   "t": "Hi Adama! We have a new baby in our family. She is my little sister. Her name is Ndeye. She is very small!",
+   "t": "Hi Adama! We have a new baby. She is my little sister. Her name is Ndeye.",
    "q": "What is the baby's name?",
    "o": [
     "Awa",
@@ -512,7 +512,7 @@
   },
   {
    "id": "comprehension_debutant_0035",
-   "t": "Fallou, I can't find my blue pen. Is it in your bag? I need it for the English test. - Serigne",
+   "t": "Fallou, I can't find my blue pen. I need it for the English test. - Serigne",
    "q": "What colour is the pen?",
    "o": [
     "Green",
@@ -527,7 +527,7 @@
   },
   {
    "id": "comprehension_debutant_0036",
-   "t": "Fallou, I can't find my blue pen. Is it in your bag? I need it for the English test. - Serigne",
+   "t": "Fallou, I can't find my blue pen. I need it for the English test. - Serigne",
    "q": "Pourquoi Serigne a besoin du stylo ?",
    "o": [
     "Pour dessiner",
@@ -542,7 +542,7 @@
   },
   {
    "id": "comprehension_debutant_0037",
-   "t": "Message from Mame Diarra: I am at the hospital. My aunt has a new baby boy. They are fine. I come back tomorrow.",
+   "t": "Mame Diarra: I am at the hospital. My aunt has a new baby boy. I come back tomorrow.",
    "q": "Where is Mame Diarra?",
    "o": [
     "At the hospital",
@@ -557,7 +557,7 @@
   },
   {
    "id": "comprehension_debutant_0038",
-   "t": "Message from Mame Diarra: I am at the hospital. My aunt has a new baby boy. They are fine. I come back tomorrow.",
+   "t": "Mame Diarra: I am at the hospital. My aunt has a new baby boy. I come back tomorrow.",
    "q": "When does Mame Diarra come back?",
    "o": [
     "On Friday",
@@ -572,7 +572,7 @@
   },
   {
    "id": "comprehension_debutant_0039",
-   "t": "Khadim, it is raining a lot. Please close the windows of your room. I am at work until 6. - Mum",
+   "t": "Khadim, it is raining a lot. Close your windows. I am at work until 6. - Mum",
    "q": "What must Khadim close?",
    "o": [
     "The shop",
@@ -587,7 +587,7 @@
   },
   {
    "id": "comprehension_debutant_0040",
-   "t": "Khadim, it is raining a lot. Please close the windows of your room. I am at work until 6. - Mum",
+   "t": "Khadim, it is raining a lot. Close your windows. I am at work until 6. - Mum",
    "q": "Quel temps fait-il ?",
    "o": [
     "Il fait beau",
@@ -602,7 +602,7 @@
   },
   {
    "id": "comprehension_debutant_0041",
-   "t": "Marème: Can you come to my house on Saturday? Saliou: Yes, I can. What time? Marème: At 4. We can watch a film.",
+   "t": "Marème: Come to my house on Saturday, at 4. Saliou: OK! Marème: We can watch a film.",
    "q": "What day is the visit?",
    "o": [
     "Saturday",
@@ -617,7 +617,7 @@
   },
   {
    "id": "comprehension_debutant_0042",
-   "t": "Marème: Can you come to my house on Saturday? Saliou: Yes, I can. What time? Marème: At 4. We can watch a film.",
+   "t": "Marème: Come to my house on Saturday, at 4. Saliou: OK! Marème: We can watch a film.",
    "q": "What can they do?",
    "o": [
     "Cook",
@@ -632,7 +632,7 @@
   },
   {
    "id": "comprehension_debutant_0043",
-   "t": "Hi Oumou! I have two tickets for the wrestling match in Dakar. It is on Sunday at the stadium. Do you want to come?",
+   "t": "Hi Oumou! I have two tickets for the wrestling match. It is on Sunday, at the stadium. Come with me!",
    "q": "How many tickets are there?",
    "o": [
     "One",
@@ -647,7 +647,7 @@
   },
   {
    "id": "comprehension_debutant_0044",
-   "t": "Hi Oumou! I have two tickets for the wrestling match in Dakar. It is on Sunday at the stadium. Do you want to come?",
+   "t": "Hi Oumou! I have two tickets for the wrestling match. It is on Sunday, at the stadium. Come with me!",
    "q": "What is the match?",
    "o": [
     "Basketball",
@@ -662,7 +662,7 @@
   },
   {
    "id": "comprehension_debutant_0045",
-   "t": "Boubacar, your shoes are under the sofa. Your school bag is on the chair. Hurry, it is 7:30! - Dad",
+   "t": "Boubacar, your shoes are under the sofa. Your bag is on the chair. Hurry, it is 7:30! - Dad",
    "q": "Where are the shoes?",
    "o": [
     "Under the sofa",
@@ -677,7 +677,7 @@
   },
   {
    "id": "comprehension_debutant_0046",
-   "t": "Boubacar, your shoes are under the sofa. Your school bag is on the chair. Hurry, it is 7:30! - Dad",
+   "t": "Boubacar, your shoes are under the sofa. Your bag is on the chair. Hurry, it is 7:30! - Dad",
    "q": "Où est le cartable ?",
    "o": [
     "Sous le lit",
@@ -692,7 +692,7 @@
   },
   {
    "id": "comprehension_debutant_0047",
-   "t": "Ramatoulaye, thank you for the beautiful dress! I love the colour. Yellow is my favourite colour. - Penda",
+   "t": "Ramatoulaye, thank you for the dress! I love it. Yellow is my favourite colour. - Penda",
    "q": "Why does Penda say thank you?",
    "o": [
     "For a bag",
@@ -707,7 +707,7 @@
   },
   {
    "id": "comprehension_debutant_0048",
-   "t": "Ramatoulaye, thank you for the beautiful dress! I love the colour. Yellow is my favourite colour. - Penda",
+   "t": "Ramatoulaye, thank you for the dress! I love it. Yellow is my favourite colour. - Penda",
    "q": "What is Penda's favourite colour?",
    "o": [
     "Red",
@@ -722,7 +722,7 @@
   },
   {
    "id": "comprehension_debutant_0049",
-   "t": "Idrissa, the shop is closed today. Can you buy the sugar at Mr Fall's shop near the mosque? Thanks, Mum.",
+   "t": "Idrissa, the shop is closed today. Buy sugar at Mr Fall's shop. It is near the mosque. - Mum",
    "q": "Where can Idrissa buy sugar?",
    "o": [
     "At Mr Fall's shop",
@@ -737,7 +737,7 @@
   },
   {
    "id": "comprehension_debutant_0050",
-   "t": "Idrissa, the shop is closed today. Can you buy the sugar at Mr Fall's shop near the mosque? Thanks, Mum.",
+   "t": "Idrissa, the shop is closed today. Buy sugar at Mr Fall's shop. It is near the mosque. - Mum",
    "q": "Où est la boutique de M. Fall ?",
    "o": [
     "Près de l'école",
@@ -752,7 +752,7 @@
   },
   {
    "id": "comprehension_debutant_0051",
-   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come with your sister!",
+   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come!",
    "q": "How many friends are with Samba?",
    "o": [
     "Four",
@@ -767,7 +767,7 @@
   },
   {
    "id": "comprehension_debutant_0052",
-   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come with your sister!",
+   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come!",
    "q": "How is the water?",
    "o": [
     "Dirty",
@@ -782,7 +782,7 @@
   },
   {
    "id": "comprehension_debutant_0053",
-   "t": "Maimouna, I am at the library. I have your English book. I give it to you tomorrow at school. - Souleymane",
+   "t": "Maimouna, I am at the library. I have your English book. I give it back tomorrow. - Souleymane",
    "q": "Where is Souleymane?",
    "o": [
     "At the library",
@@ -797,7 +797,7 @@
   },
   {
    "id": "comprehension_debutant_0054",
-   "t": "Maimouna, I am at the library. I have your English book. I give it to you tomorrow at school. - Souleymane",
+   "t": "Maimouna, I am at the library. I have your English book. I give it back tomorrow. - Souleymane",
    "q": "Quel livre a Souleymane ?",
    "o": [
     "Son livre de maths",
@@ -812,7 +812,7 @@
   },
   {
    "id": "comprehension_debutant_0055",
-   "t": "Hi Nogaye! My dog has five puppies! They are black and white. Come and see them after school.",
+   "t": "Hi Nogaye! My dog has five puppies. They are black and white. Come and see them!",
    "q": "How many puppies are there?",
    "o": [
     "Four",
@@ -827,7 +827,7 @@
   },
   {
    "id": "comprehension_debutant_0056",
-   "t": "Hi Nogaye! My dog has five puppies! They are black and white. Come and see them after school.",
+   "t": "Hi Nogaye! My dog has five puppies. They are black and white. Come and see them!",
    "q": "What colour are the puppies?",
    "o": [
     "Black and brown",
@@ -842,7 +842,7 @@
   },
   {
    "id": "comprehension_debutant_0057",
-   "t": "Elhadji, I have a problem. My bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
+   "t": "Elhadji, my bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
    "q": "What is Arame's problem?",
    "o": [
     "Her bike has a flat tyre",
@@ -857,7 +857,7 @@
   },
   {
    "id": "comprehension_debutant_0058",
-   "t": "Elhadji, I have a problem. My bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
+   "t": "Elhadji, my bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
    "q": "Where is Arame?",
    "o": [
     "At the hospital",
@@ -872,7 +872,7 @@
   },
   {
    "id": "comprehension_debutant_0059",
-   "t": "Thierno: Is the English class in room 5? Yaye: No, it is in room 8 today. Room 5 is closed.",
+   "t": "Thierno: Is the English class in room 5? Yaye: No, room 5 is closed. It is in room 8 today.",
    "q": "Where is the English class today?",
    "o": [
     "In room 3",
@@ -887,7 +887,7 @@
   },
   {
    "id": "comprehension_debutant_0060",
-   "t": "Thierno: Is the English class in room 5? Yaye: No, it is in room 8 today. Room 5 is closed.",
+   "t": "Thierno: Is the English class in room 5? Yaye: No, room 5 is closed. It is in room 8 today.",
    "q": "Pourquoi la salle 5 n'est pas utilisée ?",
    "o": [
     "Elle est sale",
@@ -902,7 +902,7 @@
   },
   {
    "id": "comprehension_debutant_0061",
-   "t": "Hello Aliou, it is Nafi. I am at the airport. My plane leaves at 10. I am going to Paris to see my uncle.",
+   "t": "Hello Aliou, it's Nafi. I am at the airport. My plane leaves at 10. I go to Paris to see my uncle.",
    "q": "Where is Nafi going?",
    "o": [
     "To Paris",
@@ -917,7 +917,7 @@
   },
   {
    "id": "comprehension_debutant_0062",
-   "t": "Hello Aliou, it is Nafi. I am at the airport. My plane leaves at 10. I am going to Paris to see my uncle.",
+   "t": "Hello Aliou, it's Nafi. I am at the airport. My plane leaves at 10. I go to Paris to see my uncle.",
    "q": "Who will Nafi see?",
    "o": [
     "Her grandmother",
@@ -932,7 +932,7 @@
   },
   {
    "id": "comprehension_debutant_0063",
-   "t": "Djibril, please feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
+   "t": "Djibril, feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
    "q": "What must Djibril do?",
    "o": [
     "Feed the goats",
@@ -947,7 +947,7 @@
   },
   {
    "id": "comprehension_debutant_0064",
-   "t": "Djibril, please feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
+   "t": "Djibril, feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
    "q": "Where are Djibril's parents?",
    "o": [
     "At the market",
@@ -962,7 +962,7 @@
   },
   {
    "id": "comprehension_debutant_0065",
-   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20. Fanta: Thanks!",
+   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20.",
    "q": "Which page is the homework?",
    "o": [
     "Page 20",
@@ -977,7 +977,7 @@
   },
   {
    "id": "comprehension_debutant_0066",
-   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20. Fanta: Thanks!",
+   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20.",
    "q": "Quels exercices faut-il faire ?",
    "o": [
     "L'exercice 20",
@@ -992,7 +992,7 @@
   },
   {
    "id": "comprehension_debutant_0067",
-   "t": "Hi Habib! I am in Ziguinchor with my family. We visit my grandmother. She has a big garden with mango trees.",
+   "t": "Hi Habib! I am in Ziguinchor. We visit my grandmother. She has a garden with mango trees.",
    "q": "Who does Habib's friend visit?",
    "o": [
     "A teacher",
@@ -1007,7 +1007,7 @@
   },
   {
    "id": "comprehension_debutant_0068",
-   "t": "Hi Habib! I am in Ziguinchor with my family. We visit my grandmother. She has a big garden with mango trees.",
+   "t": "Hi Habib! I am in Ziguinchor. We visit my grandmother. She has a garden with mango trees.",
    "q": "What is in the garden?",
    "o": [
     "Orange trees",
@@ -1022,7 +1022,7 @@
   },
   {
    "id": "comprehension_debutant_0069",
-   "t": "Anta, the water is cut today. Please don't use the shower. There is water in the big bucket in the kitchen. - Dad",
+   "t": "Anta, the water is cut today. Don't use the shower. There is water in the bucket, in the kitchen. - Dad",
    "q": "What is the problem today?",
    "o": [
     "There is no water",
@@ -1037,7 +1037,7 @@
   },
   {
    "id": "comprehension_debutant_0070",
-   "t": "Anta, the water is cut today. Please don't use the shower. There is water in the big bucket in the kitchen. - Dad",
+   "t": "Anta, the water is cut today. Don't use the shower. There is water in the bucket, in the kitchen. - Dad",
    "q": "Où est le grand seau d'eau ?",
    "o": [
     "Dans la chambre",
@@ -1052,7 +1052,7 @@
   },
   {
    "id": "comprehension_debutant_0071",
-   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new boubou for the party. It is green.",
+   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new green boubou for the party.",
    "q": "Where is Dior?",
    "o": [
     "At the market",
@@ -1067,7 +1067,7 @@
   },
   {
    "id": "comprehension_debutant_0072",
-   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new boubou for the party. It is green.",
+   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new green boubou for the party.",
    "q": "What colour is the boubou?",
    "o": [
     "Orange",
@@ -1082,7 +1082,7 @@
   },
   {
    "id": "comprehension_debutant_0073",
-   "t": "Hi Ngoné! Thank you for your help with my English homework. I have 18 out of 20! You are a great friend. - Codou",
+   "t": "Hi Ngoné! Thank you for your help. I have 18 out of 20 in English! - Codou",
    "q": "What is Codou's mark?",
    "o": [
     "18 out of 20",
@@ -1097,7 +1097,7 @@
   },
   {
    "id": "comprehension_debutant_0074",
-   "t": "Hi Ngoné! Thank you for your help with my English homework. I have 18 out of 20! You are a great friend. - Codou",
+   "t": "Hi Ngoné! Thank you for your help. I have 18 out of 20 in English! - Codou",
    "q": "Why does Codou thank Ngoné?",
    "o": [
     "For a cake",
@@ -1142,7 +1142,7 @@
   },
   {
    "id": "comprehension_debutant_0077",
-   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. The doctor is nice. We are home at 3. - Mum",
+   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. We are home at 3. - Mum",
    "q": "Who is sick?",
    "o": [
     "Ndella's brother",
@@ -1157,7 +1157,7 @@
   },
   {
    "id": "comprehension_debutant_0078",
-   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. The doctor is nice. We are home at 3. - Mum",
+   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. We are home at 3. - Mum",
    "q": "What does the brother have?",
    "o": [
     "A headache",
@@ -1172,7 +1172,7 @@
   },
   {
    "id": "comprehension_debutant_0079",
-   "t": "School notice: Class 6B, tomorrow is a holiday. There is no school. Classes start again on Thursday.",
+   "t": "Notice for Class 6B: tomorrow is a holiday, no school. Classes start again on Thursday.",
    "q": "Is there school tomorrow?",
    "o": [
     "Yes, in the afternoon",
@@ -1187,7 +1187,7 @@
   },
   {
    "id": "comprehension_debutant_0080",
-   "t": "School notice: Class 6B, tomorrow is a holiday. There is no school. Classes start again on Thursday.",
+   "t": "Notice for Class 6B: tomorrow is a holiday, no school. Classes start again on Thursday.",
    "q": "When do classes start again?",
    "o": [
     "On Monday",
@@ -1202,7 +1202,7 @@
   },
   {
    "id": "comprehension_debutant_0081",
-   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History. 11:30 Sport.",
+   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History.",
    "q": "What is the first class on Monday?",
    "o": [
     "English",
@@ -1217,7 +1217,7 @@
   },
   {
    "id": "comprehension_debutant_0082",
-   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History. 11:30 Sport.",
+   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History.",
    "q": "What time is the break?",
    "o": [
     "At 11:30",
@@ -1232,7 +1232,7 @@
   },
   {
    "id": "comprehension_debutant_0083",
-   "t": "My school is in Thiès. It is big. There are 20 classrooms and a big yard. My favourite place is the library.",
+   "t": "My school is in Thiès. It is big: 20 classrooms and a big yard. I love the library.",
    "q": "Where is the school?",
    "o": [
     "In Kaolack",
@@ -1247,7 +1247,7 @@
   },
   {
    "id": "comprehension_debutant_0084",
-   "t": "My school is in Thiès. It is big. There are 20 classrooms and a big yard. My favourite place is the library.",
+   "t": "My school is in Thiès. It is big: 20 classrooms and a big yard. I love the library.",
    "q": "How many classrooms are there?",
    "o": [
     "2",
@@ -1262,7 +1262,7 @@
   },
   {
    "id": "comprehension_debutant_0085",
-   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag. We like his class.",
+   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag.",
    "q": "Comment est M. Ndiaye ?",
    "o": [
     "Grand et drôle",
@@ -1277,7 +1277,7 @@
   },
   {
    "id": "comprehension_debutant_0086",
-   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag. We like his class.",
+   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag.",
    "q": "What colour is his bag?",
    "o": [
     "Red",
@@ -1292,7 +1292,7 @@
   },
   {
    "id": "comprehension_debutant_0087",
-   "t": "School rules: Come to school at 7:45. Don't run in the classroom. Don't eat in class. Respect your teachers.",
+   "t": "School rules: Come at 7:45. Don't run in class. Don't eat in class. Respect your teachers.",
    "q": "What time must students arrive?",
    "o": [
     "At 7:00",
@@ -1307,7 +1307,7 @@
   },
   {
    "id": "comprehension_debutant_0088",
-   "t": "School rules: Come to school at 7:45. Don't run in the classroom. Don't eat in class. Respect your teachers.",
+   "t": "School rules: Come at 7:45. Don't run in class. Don't eat in class. Respect your teachers.",
    "q": "Qu'est-ce qui est interdit en classe ?",
    "o": [
     "Écrire",
@@ -1322,7 +1322,7 @@
   },
   {
    "id": "comprehension_debutant_0089",
-   "t": "I am Moussa. I am in 6th grade. I have six subjects. My favourite subject is science because I like animals.",
+   "t": "I am Moussa, in 6th grade. I have six subjects. My favourite is science. I like animals.",
    "q": "What is Moussa's favourite subject?",
    "o": [
     "Science",
@@ -1337,7 +1337,7 @@
   },
   {
    "id": "comprehension_debutant_0090",
-   "t": "I am Moussa. I am in 6th grade. I have six subjects. My favourite subject is science because I like animals.",
+   "t": "I am Moussa, in 6th grade. I have six subjects. My favourite is science. I like animals.",
    "q": "Pourquoi Moussa aime cette matière ?",
    "o": [
     "Il aime les nombres",
@@ -1352,7 +1352,7 @@
   },
   {
    "id": "comprehension_debutant_0091",
-   "t": "In my school bag, I have three books, two notebooks, a ruler and a pencil case. My pencil case is red.",
+   "t": "In my school bag: three books, two notebooks, a ruler and a red pencil case.",
    "q": "How many notebooks are in the bag?",
    "o": [
     "One",
@@ -1367,7 +1367,7 @@
   },
   {
    "id": "comprehension_debutant_0092",
-   "t": "In my school bag, I have three books, two notebooks, a ruler and a pencil case. My pencil case is red.",
+   "t": "In my school bag: three books, two notebooks, a ruler and a red pencil case.",
    "q": "What colour is the pencil case?",
    "o": [
     "Blue",
@@ -1382,7 +1382,7 @@
   },
   {
    "id": "comprehension_debutant_0093",
-   "t": "Notice: The school canteen is closed on Friday. Please bring your lunch from home. Thank you. - The Director",
+   "t": "Notice: the canteen is closed on Friday. Bring your lunch from home. - The Director",
    "q": "When is the canteen closed?",
    "o": [
     "On Friday",
@@ -1397,7 +1397,7 @@
   },
   {
    "id": "comprehension_debutant_0094",
-   "t": "Notice: The school canteen is closed on Friday. Please bring your lunch from home. Thank you. - The Director",
+   "t": "Notice: the canteen is closed on Friday. Bring your lunch from home. - The Director",
    "q": "Que doivent faire les élèves ce jour-là ?",
    "o": [
     "Rester à la maison",
@@ -1412,7 +1412,7 @@
   },
   {
    "id": "comprehension_debutant_0095",
-   "t": "Fatou is a good student. She sits in the first row. She always does her homework. Her best friend is Awa.",
+   "t": "Fatou is a good student. She sits in the first row. Her best friend is Awa.",
    "q": "Where does Fatou sit?",
    "o": [
     "Near the window",
@@ -1427,7 +1427,7 @@
   },
   {
    "id": "comprehension_debutant_0096",
-   "t": "Fatou is a good student. She sits in the first row. She always does her homework. Her best friend is Awa.",
+   "t": "Fatou is a good student. She sits in the first row. Her best friend is Awa.",
    "q": "Who is Fatou's best friend?",
    "o": [
     "Bineta",
@@ -1442,7 +1442,7 @@
   },
   {
    "id": "comprehension_debutant_0097",
-   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long. Bring a pen and a pencil.",
+   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long.",
    "q": "What day is the English exam?",
    "o": [
     "Tuesday",
@@ -1457,7 +1457,7 @@
   },
   {
    "id": "comprehension_debutant_0098",
-   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long. Bring a pen and a pencil.",
+   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long.",
    "q": "How long is the exam?",
    "o": [
     "Thirty minutes",
@@ -1472,7 +1472,7 @@
   },
   {
    "id": "comprehension_debutant_0099",
-   "t": "Our classroom has 40 desks. The walls are white. There is a big map of Senegal on the wall near the board.",
+   "t": "Our classroom has 40 desks. The walls are white. There is a map of Senegal on the wall.",
    "q": "How many desks are there?",
    "o": [
     "4",
@@ -1487,7 +1487,7 @@
   },
   {
    "id": "comprehension_debutant_0100",
-   "t": "Our classroom has 40 desks. The walls are white. There is a big map of Senegal on the wall near the board.",
+   "t": "Our classroom has 40 desks. The walls are white. There is a map of Senegal on the wall.",
    "q": "What is on the wall?",
    "o": [
     "A photo of the class",
@@ -1502,7 +1502,7 @@
   },
   {
    "id": "comprehension_debutant_0101",
-   "t": "Mrs Sarr is the maths teacher. She is short and kind. She wears glasses. She comes to school by car.",
+   "t": "Mrs Sarr is the maths teacher. She is short and kind. She comes to school by car.",
    "q": "What does Mrs Sarr teach?",
    "o": [
     "Maths",
@@ -1517,7 +1517,7 @@
   },
   {
    "id": "comprehension_debutant_0102",
-   "t": "Mrs Sarr is the maths teacher. She is short and kind. She wears glasses. She comes to school by car.",
+   "t": "Mrs Sarr is the maths teacher. She is short and kind. She comes to school by car.",
    "q": "Comment Mme Sarr vient à l'école ?",
    "o": [
     "En bus",
@@ -1532,7 +1532,7 @@
   },
   {
    "id": "comprehension_debutant_0103",
-   "t": "School club: The English club meets every Wednesday at 3 pm in room 2. We sing songs and play games. Everyone is welcome!",
+   "t": "The English club meets every Wednesday at 3 pm. We sing songs and play games.",
    "q": "When does the English club meet?",
    "o": [
     "Every day",
@@ -1547,7 +1547,7 @@
   },
   {
    "id": "comprehension_debutant_0104",
-   "t": "School club: The English club meets every Wednesday at 3 pm in room 2. We sing songs and play games. Everyone is welcome!",
+   "t": "The English club meets every Wednesday at 3 pm. We sing songs and play games.",
    "q": "What do they do at the club?",
    "o": [
     "Play football",
@@ -1562,7 +1562,7 @@
   },
   {
    "id": "comprehension_debutant_0105",
-   "t": "Ibrahima walks to school every morning. His school is near his house. He leaves home at 7:30 with his brother.",
+   "t": "Ibrahima walks to school every morning. He leaves home at 7:30 with his brother.",
    "q": "How does Ibrahima go to school?",
    "o": [
     "He walks",
@@ -1577,7 +1577,7 @@
   },
   {
    "id": "comprehension_debutant_0106",
-   "t": "Ibrahima walks to school every morning. His school is near his house. He leaves home at 7:30 with his brother.",
+   "t": "Ibrahima walks to school every morning. He leaves home at 7:30 with his brother.",
    "q": "Who goes with him?",
    "o": [
     "His father",
@@ -1592,7 +1592,7 @@
   },
   {
    "id": "comprehension_debutant_0107",
-   "t": "Lost in the yard: a black school bag with a green bottle in it. Ask the guard at the school gate.",
+   "t": "Lost in the yard: a black school bag with a green bottle. Ask the guard.",
    "q": "What colour is the bag?",
    "o": [
     "Green",
@@ -1607,7 +1607,7 @@
   },
   {
    "id": "comprehension_debutant_0108",
-   "t": "Lost in the yard: a black school bag with a green bottle in it. Ask the guard at the school gate.",
+   "t": "Lost in the yard: a black school bag with a green bottle. Ask the guard.",
    "q": "À qui faut-il demander ?",
    "o": [
     "À la cantinière",
@@ -1622,7 +1622,7 @@
   },
   {
    "id": "comprehension_debutant_0109",
-   "t": "Today we have a new student. His name is Lamine. He is from Kolda. He is 12 and he likes drawing.",
+   "t": "Today we have a new student, Lamine. He is from Kolda. He is 12 and likes drawing.",
    "q": "Where is Lamine from?",
    "o": [
     "Kolda",
@@ -1637,7 +1637,7 @@
   },
   {
    "id": "comprehension_debutant_0110",
-   "t": "Today we have a new student. His name is Lamine. He is from Kolda. He is 12 and he likes drawing.",
+   "t": "Today we have a new student, Lamine. He is from Kolda. He is 12 and likes drawing.",
    "q": "What does Lamine like?",
    "o": [
     "Swimming",
@@ -1652,7 +1652,7 @@
   },
   {
    "id": "comprehension_debutant_0111",
-   "t": "Class trip! On Saturday, Class 5C visits Gorée Island. Meet at the school at 8 am. Bring water and a hat.",
+   "t": "Class trip! Class 5C visits Gorée Island on Saturday. Meet at school at 8 am. Bring water and a hat.",
    "q": "Where does the class go?",
    "o": [
     "Saint-Louis",
@@ -1667,7 +1667,7 @@
   },
   {
    "id": "comprehension_debutant_0112",
-   "t": "Class trip! On Saturday, Class 5C visits Gorée Island. Meet at the school at 8 am. Bring water and a hat.",
+   "t": "Class trip! Class 5C visits Gorée Island on Saturday. Meet at school at 8 am. Bring water and a hat.",
    "q": "What must students bring?",
    "o": [
     "Money and a book",
@@ -1682,7 +1682,7 @@
   },
   {
    "id": "comprehension_debutant_0113",
-   "t": "Coumba is the class captain. She helps the teacher. She cleans the board and she opens the windows every morning.",
+   "t": "Coumba is the class captain. Every morning, she cleans the board and opens the windows.",
    "q": "What is Coumba's job in class?",
    "o": [
     "Class captain",
@@ -1697,7 +1697,7 @@
   },
   {
    "id": "comprehension_debutant_0114",
-   "t": "Coumba is the class captain. She helps the teacher. She cleans the board and she opens the windows every morning.",
+   "t": "Coumba is the class captain. Every morning, she cleans the board and opens the windows.",
    "q": "Que fait Coumba chaque matin ?",
    "o": [
     "Elle lit un livre",
@@ -1712,7 +1712,7 @@
   },
   {
    "id": "comprehension_debutant_0115",
-   "t": "Pape is sad. His mark in French is 6 out of 20. His mother is not happy. He wants to work harder.",
+   "t": "Pape is sad. His mark in French is 6 out of 20. He wants to work harder.",
    "q": "What is Pape's mark?",
    "o": [
     "10 out of 20",
@@ -1727,7 +1727,7 @@
   },
   {
    "id": "comprehension_debutant_0116",
-   "t": "Pape is sad. His mark in French is 6 out of 20. His mother is not happy. He wants to work harder.",
+   "t": "Pape is sad. His mark in French is 6 out of 20. He wants to work harder.",
    "q": "Comment se sent Pape ?",
    "o": [
     "En colère",
@@ -1742,7 +1742,7 @@
   },
   {
    "id": "comprehension_debutant_0117",
-   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week. Don't eat near the books.",
+   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week.",
    "q": "How many books can you take?",
    "o": [
     "Two",
@@ -1757,7 +1757,7 @@
   },
   {
    "id": "comprehension_debutant_0118",
-   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week. Don't eat near the books.",
+   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week.",
    "q": "Quand faut-il rendre les livres ?",
    "o": [
     "Après un mois",
@@ -1772,7 +1772,7 @@
   },
   {
    "id": "comprehension_debutant_0119",
-   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play with my friends in the yard.",
+   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play in the yard.",
    "q": "What does the writer drink?",
    "o": [
     "Milk",
@@ -1787,7 +1787,7 @@
   },
   {
    "id": "comprehension_debutant_0120",
-   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play with my friends in the yard.",
+   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play in the yard.",
    "q": "Where does the writer play?",
    "o": [
     "In the classroom",
@@ -1802,7 +1802,7 @@
   },
   {
    "id": "comprehension_debutant_0121",
-   "t": "At my school, students wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
+   "t": "At my school, we wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
    "q": "What colour are the boys' trousers?",
    "o": [
     "Grey",
@@ -1817,7 +1817,7 @@
   },
   {
    "id": "comprehension_debutant_0122",
-   "t": "At my school, students wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
+   "t": "At my school, we wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
    "q": "What do girls wear?",
    "o": [
     "A yellow dress",
@@ -1832,7 +1832,7 @@
   },
   {
    "id": "comprehension_debutant_0123",
-   "t": "The school year starts in October and ends in July. We have holidays in December and in April.",
+   "t": "The school year starts in October and ends in July. We have holidays in December and April.",
    "q": "When does the school year start?",
    "o": [
     "In January",
@@ -1847,7 +1847,7 @@
   },
   {
    "id": "comprehension_debutant_0124",
-   "t": "The school year starts in October and ends in July. We have holidays in December and in April.",
+   "t": "The school year starts in October and ends in July. We have holidays in December and April.",
    "q": "Quand y a-t-il des vacances ?",
    "o": [
     "En août seulement",
@@ -1862,7 +1862,7 @@
   },
   {
    "id": "comprehension_debutant_0125",
-   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school. The teacher is not happy.",
+   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school.",
    "q": "Why is Ousmane late?",
    "o": [
     "His alarm clock does not ring",
@@ -1877,7 +1877,7 @@
   },
   {
    "id": "comprehension_debutant_0126",
-   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school. The teacher is not happy.",
+   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school.",
    "q": "Comment Ousmane va à l'école ?",
    "o": [
     "Son père l'emmène",
@@ -1892,7 +1892,7 @@
   },
   {
    "id": "comprehension_debutant_0127",
-   "t": "Notice for parents: Parents' meeting on Saturday 12th at 10 am in the big hall. Please come. - The Director",
+   "t": "Notice for parents: meeting on Saturday 12th, 10 am, in the big hall. - The Director",
    "q": "Who is the meeting for?",
    "o": [
     "Teachers only",
@@ -1907,7 +1907,7 @@
   },
   {
    "id": "comprehension_debutant_0128",
-   "t": "Notice for parents: Parents' meeting on Saturday 12th at 10 am in the big hall. Please come. - The Director",
+   "t": "Notice for parents: meeting on Saturday 12th, 10 am, in the big hall. - The Director",
    "q": "Where is the meeting?",
    "o": [
     "In the yard",
@@ -1922,7 +1922,7 @@
   },
   {
    "id": "comprehension_debutant_0129",
-   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil and some tomatoes.",
+   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil.",
    "q": "How many fish are on the list?",
    "o": [
     "Three",
@@ -1937,7 +1937,7 @@
   },
   {
    "id": "comprehension_debutant_0130",
-   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil and some tomatoes.",
+   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil.",
    "q": "Combien de kilos d'oignons ?",
    "o": [
     "Un demi-kilo",
@@ -1952,7 +1952,7 @@
   },
   {
    "id": "comprehension_debutant_0131",
-   "t": "At Sandaga market, Awa sells fruit. She has mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
+   "t": "At Sandaga market, Awa sells fruit: mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
    "q": "What does Awa sell?",
    "o": [
     "Clothes",
@@ -1967,7 +1967,7 @@
   },
   {
    "id": "comprehension_debutant_0132",
-   "t": "At Sandaga market, Awa sells fruit. She has mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
+   "t": "At Sandaga market, Awa sells fruit: mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
    "q": "How much is a kilo of mangoes?",
    "o": [
     "5,000 francs",
@@ -1982,7 +1982,7 @@
   },
   {
    "id": "comprehension_debutant_0133",
-   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: It is too expensive! Seller: OK, 1,500 francs.",
+   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: Too expensive! Seller: OK, 1,500 francs.",
    "q": "What is the first price?",
    "o": [
     "2,000 francs",
@@ -1997,7 +1997,7 @@
   },
   {
    "id": "comprehension_debutant_0134",
-   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: It is too expensive! Seller: OK, 1,500 francs.",
+   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: Too expensive! Seller: OK, 1,500 francs.",
    "q": "What is the new price?",
    "o": [
     "2,000 francs",
@@ -2012,7 +2012,7 @@
   },
   {
    "id": "comprehension_debutant_0135",
-   "t": "Every morning, Grandma makes breakfast. We eat bread with butter and drink coffee with milk. My little brother drinks juice.",
+   "t": "Every morning, Grandma makes breakfast. We eat bread and drink coffee. My little brother drinks juice.",
    "q": "Who makes breakfast?",
    "o": [
     "Mum",
@@ -2027,7 +2027,7 @@
   },
   {
    "id": "comprehension_debutant_0136",
-   "t": "Every morning, Grandma makes breakfast. We eat bread with butter and drink coffee with milk. My little brother drinks juice.",
+   "t": "Every morning, Grandma makes breakfast. We eat bread and drink coffee. My little brother drinks juice.",
    "q": "What does the little brother drink?",
    "o": [
     "Milk",
@@ -2042,7 +2042,7 @@
   },
   {
    "id": "comprehension_debutant_0137",
-   "t": "I love yassa chicken. My mother cooks it on Sundays. It has onions, lemon and chicken. It is delicious!",
+   "t": "I love yassa chicken. My mother cooks it on Sundays, with onions, lemon and chicken.",
    "q": "When does the mother cook yassa?",
    "o": [
     "On Sundays",
@@ -2057,7 +2057,7 @@
   },
   {
    "id": "comprehension_debutant_0138",
-   "t": "I love yassa chicken. My mother cooks it on Sundays. It has onions, lemon and chicken. It is delicious!",
+   "t": "I love yassa chicken. My mother cooks it on Sundays, with onions, lemon and chicken.",
    "q": "Qu'y a-t-il dans le yassa ?",
    "o": [
     "Viande et arachide",
@@ -2072,7 +2072,7 @@
   },
   {
    "id": "comprehension_debutant_0139",
-   "t": "Mr Ba is a fisherman in Kayar. He goes to sea in his pirogue every morning. He sells his fish at the beach.",
+   "t": "Mr Ba is a fisherman in Kayar. Every morning, he goes to sea. He sells fish at the beach.",
    "q": "What is Mr Ba's job?",
    "o": [
     "Farmer",
@@ -2087,7 +2087,7 @@
   },
   {
    "id": "comprehension_debutant_0140",
-   "t": "Mr Ba is a fisherman in Kayar. He goes to sea in his pirogue every morning. He sells his fish at the beach.",
+   "t": "Mr Ba is a fisherman in Kayar. Every morning, he goes to sea. He sells fish at the beach.",
    "q": "Where does he sell his fish?",
    "o": [
     "In his house",
@@ -2102,7 +2102,7 @@
   },
   {
    "id": "comprehension_debutant_0141",
-   "t": "Bineta's shop: Rice 450 F a kilo. Sugar 700 F a kilo. Milk 300 F. Bread 150 F. Open every day from 7 am to 10 pm.",
+   "t": "Bineta's shop: Rice 450 F. Sugar 700 F. Milk 300 F. Bread 150 F. Open 7 am to 10 pm.",
    "q": "How much is the sugar?",
    "o": [
     "700 F a kilo",
@@ -2117,7 +2117,7 @@
   },
   {
    "id": "comprehension_debutant_0142",
-   "t": "Bineta's shop: Rice 450 F a kilo. Sugar 700 F a kilo. Milk 300 F. Bread 150 F. Open every day from 7 am to 10 pm.",
+   "t": "Bineta's shop: Rice 450 F. Sugar 700 F. Milk 300 F. Bread 150 F. Open 7 am to 10 pm.",
    "q": "When does the shop close?",
    "o": [
     "At 7 am",
@@ -2132,7 +2132,7 @@
   },
   {
    "id": "comprehension_debutant_0143",
-   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal. They are yellow and sweet.",
+   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal.",
    "q": "What is the writer's favourite fruit?",
    "o": [
     "The orange",
@@ -2147,7 +2147,7 @@
   },
   {
    "id": "comprehension_debutant_0144",
-   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal. They are yellow and sweet.",
+   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal.",
    "q": "Quand y a-t-il beaucoup de mangues ?",
    "o": [
     "En octobre",
@@ -2162,7 +2162,7 @@
   },
   {
    "id": "comprehension_debutant_0145",
-   "t": "Kiné: I'm thirsty. Can I have some water? Aunt Penda: Yes, there is cold water in the fridge. Take a glass.",
+   "t": "Kiné: I'm thirsty. Can I have water? Aunt Penda: Yes, there is cold water in the fridge.",
    "q": "What does Kiné want?",
    "o": [
     "Water",
@@ -2177,7 +2177,7 @@
   },
   {
    "id": "comprehension_debutant_0146",
-   "t": "Kiné: I'm thirsty. Can I have some water? Aunt Penda: Yes, there is cold water in the fridge. Take a glass.",
+   "t": "Kiné: I'm thirsty. Can I have water? Aunt Penda: Yes, there is cold water in the fridge.",
    "q": "Where is the cold water?",
    "o": [
     "In the kitchen sink",
@@ -2192,7 +2192,7 @@
   },
   {
    "id": "comprehension_debutant_0147",
-   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. I eat a salad. We drink ginger juice.",
+   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. We drink ginger juice.",
    "q": "What does Mum eat?",
    "o": [
     "Couscous",
@@ -2207,7 +2207,7 @@
   },
   {
    "id": "comprehension_debutant_0148",
-   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. I eat a salad. We drink ginger juice.",
+   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. We drink ginger juice.",
    "q": "What do they drink?",
    "o": [
     "Water",
@@ -2222,7 +2222,7 @@
   },
   {
    "id": "comprehension_debutant_0149",
-   "t": "Mamadou is a baker. He makes bread every night from 2 am. In the morning, people buy his bread. It is hot and good.",
+   "t": "Mamadou is a baker. He makes bread every night, from 2 am. People buy it in the morning.",
    "q": "What is Mamadou's job?",
    "o": [
     "Baker",
@@ -2237,7 +2237,7 @@
   },
   {
    "id": "comprehension_debutant_0150",
-   "t": "Mamadou is a baker. He makes bread every night from 2 am. In the morning, people buy his bread. It is hot and good.",
+   "t": "Mamadou is a baker. He makes bread every night, from 2 am. People buy it in the morning.",
    "q": "Quand Mamadou commence à travailler ?",
    "o": [
     "À midi",
@@ -2252,7 +2252,7 @@
   },
   {
    "id": "comprehension_debutant_0151",
-   "t": "Recipe for bissap juice: Put bissap flowers in hot water. Wait one hour. Add sugar and mint. Drink it cold.",
+   "t": "Bissap juice: put flowers in hot water. Wait one hour. Add sugar and mint.",
    "q": "How long do you wait?",
    "o": [
     "Ten minutes",
@@ -2267,7 +2267,7 @@
   },
   {
    "id": "comprehension_debutant_0152",
-   "t": "Recipe for bissap juice: Put bissap flowers in hot water. Wait one hour. Add sugar and mint. Drink it cold.",
+   "t": "Bissap juice: put flowers in hot water. Wait one hour. Add sugar and mint.",
    "q": "What do you add?",
    "o": [
     "Honey",
@@ -2282,7 +2282,7 @@
   },
   {
    "id": "comprehension_debutant_0153",
-   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs. Students love her peanuts.",
+   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs.",
    "q": "What does Seynabou sell?",
    "o": [
     "Peanuts",
@@ -2297,7 +2297,7 @@
   },
   {
    "id": "comprehension_debutant_0154",
-   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs. Students love her peanuts.",
+   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs.",
    "q": "How much is a big bag?",
    "o": [
     "500 francs",
@@ -2312,7 +2312,7 @@
   },
   {
    "id": "comprehension_debutant_0155",
-   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: Great! I love the peanut sauce.",
+   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: I love the peanut sauce!",
    "q": "What is for dinner?",
    "o": [
     "Fish and chips",
@@ -2327,7 +2327,7 @@
   },
   {
    "id": "comprehension_debutant_0156",
-   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: Great! I love the peanut sauce.",
+   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: I love the peanut sauce!",
    "q": "What does Abdou love?",
    "o": [
     "The rice",
@@ -2342,7 +2342,7 @@
   },
   {
    "id": "comprehension_debutant_0157",
-   "t": "The butcher's shop is next to the bakery. It opens at 8 am. Meat is 3,500 francs a kilo. The butcher is Mr Sow.",
+   "t": "The butcher's shop is next to the bakery. The butcher is Mr Sow. Meat is 3,500 francs a kilo.",
    "q": "Where is the butcher's shop?",
    "o": [
     "Next to the bakery",
@@ -2357,7 +2357,7 @@
   },
   {
    "id": "comprehension_debutant_0158",
-   "t": "The butcher's shop is next to the bakery. It opens at 8 am. Meat is 3,500 francs a kilo. The butcher is Mr Sow.",
+   "t": "The butcher's shop is next to the bakery. The butcher is Mr Sow. Meat is 3,500 francs a kilo.",
    "q": "Who is the butcher?",
    "o": [
     "Mr Ba",
@@ -2372,7 +2372,7 @@
   },
   {
    "id": "comprehension_debutant_0159",
-   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and eat from a big bowl. My father says \"Bon appétit!\"",
+   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and share one bowl.",
    "q": "What time is lunch?",
    "o": [
     "At 3 pm",
@@ -2387,7 +2387,7 @@
   },
   {
    "id": "comprehension_debutant_0160",
-   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and eat from a big bowl. My father says \"Bon appétit!\"",
+   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and share one bowl.",
    "q": "Où la famille s'assoit pour manger ?",
    "o": [
     "Dans le jardin",
@@ -2402,7 +2402,7 @@
   },
   {
    "id": "comprehension_debutant_0161",
-   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 francs and meat for 3,000 francs.",
+   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 and meat for 3,000.",
    "q": "How much money does Aminata have?",
    "o": [
     "5,000 francs",
@@ -2417,7 +2417,7 @@
   },
   {
    "id": "comprehension_debutant_0162",
-   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 francs and meat for 3,000 francs.",
+   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 and meat for 3,000.",
    "q": "Combien coûte la viande ?",
    "o": [
     "1 000 francs",
@@ -2432,7 +2432,7 @@
   },
   {
    "id": "comprehension_debutant_0163",
-   "t": "Rice field in Podor: Mr Diallo is a farmer. He grows rice near the river. His sons help him in the field.",
+   "t": "Mr Diallo is a farmer in Podor. He grows rice near the river. His sons help him.",
    "q": "What does Mr Diallo grow?",
    "o": [
     "Millet",
@@ -2447,7 +2447,7 @@
   },
   {
    "id": "comprehension_debutant_0164",
-   "t": "Rice field in Podor: Mr Diallo is a farmer. He grows rice near the river. His sons help him in the field.",
+   "t": "Mr Diallo is a farmer in Podor. He grows rice near the river. His sons help him.",
    "q": "Who helps Mr Diallo?",
    "o": [
     "His wife",
@@ -2522,7 +2522,7 @@
   },
   {
    "id": "comprehension_debutant_0169",
-   "t": "Ndeye: Two bananas, please. Seller: Here you are. 200 francs. Ndeye: Here is 500 francs. Seller: Your change: 300 francs.",
+   "t": "Ndeye: Two bananas, please. Seller: 200 francs. Ndeye: Here is 500. Seller: Your change: 300 francs.",
    "q": "How many bananas does Ndeye buy?",
    "o": [
     "Two",
@@ -2537,7 +2537,7 @@
   },
   {
    "id": "comprehension_debutant_0170",
-   "t": "Ndeye: Two bananas, please. Seller: Here you are. 200 francs. Ndeye: Here is 500 francs. Seller: Your change: 300 francs.",
+   "t": "Ndeye: Two bananas, please. Seller: 200 francs. Ndeye: Here is 500. Seller: Your change: 300 francs.",
    "q": "Combien de monnaie reçoit Ndeye ?",
    "o": [
     "100 francs",
@@ -2552,7 +2552,7 @@
   },
   {
    "id": "comprehension_debutant_0171",
-   "t": "Lunch box: Today, Babacar has rice and chicken in his lunch box. He has an apple too. He eats at school at 12:30.",
+   "t": "Today, Babacar's lunch box has rice, chicken and an apple. He eats at school at 12:30.",
    "q": "What fruit is in the lunch box?",
    "o": [
     "A banana",
@@ -2567,7 +2567,7 @@
   },
   {
    "id": "comprehension_debutant_0172",
-   "t": "Lunch box: Today, Babacar has rice and chicken in his lunch box. He has an apple too. He eats at school at 12:30.",
+   "t": "Today, Babacar's lunch box has rice, chicken and an apple. He eats at school at 12:30.",
    "q": "When does Babacar eat?",
    "o": [
     "At 1:30",
@@ -2582,7 +2582,7 @@
   },
   {
    "id": "comprehension_debutant_0173",
-   "t": "Grandpa has a small farm in Fatick. He has ten goats, five cows and many chickens. He sells milk in the village.",
+   "t": "Grandpa has a small farm in Fatick: ten goats, five cows and many chickens. He sells milk.",
    "q": "How many goats does Grandpa have?",
    "o": [
     "Ten",
@@ -2597,7 +2597,7 @@
   },
   {
    "id": "comprehension_debutant_0174",
-   "t": "Grandpa has a small farm in Fatick. He has ten goats, five cows and many chickens. He sells milk in the village.",
+   "t": "Grandpa has a small farm in Fatick: ten goats, five cows and many chickens. He sells milk.",
    "q": "What does Grandpa sell?",
    "o": [
     "Meat",
@@ -2612,7 +2612,7 @@
   },
   {
    "id": "comprehension_debutant_0175",
-   "t": "Tea time: In the evening, my uncle makes attaya. He makes three glasses. The first glass is strong. The third glass is very sweet.",
+   "t": "In the evening, my uncle makes attaya: three glasses. The first is strong, the third is very sweet.",
    "q": "Who makes attaya?",
    "o": [
     "The father",
@@ -2627,7 +2627,7 @@
   },
   {
    "id": "comprehension_debutant_0176",
-   "t": "Tea time: In the evening, my uncle makes attaya. He makes three glasses. The first glass is strong. The third glass is very sweet.",
+   "t": "In the evening, my uncle makes attaya: three glasses. The first is strong, the third is very sweet.",
    "q": "Comment est le troisième verre ?",
    "o": [
     "Amer",
@@ -2642,7 +2642,7 @@
   },
   {
    "id": "comprehension_debutant_0177",
-   "t": "Market day in Diourbel is on Thursday. Many people come from the villages. They sell goats, peanuts and clothes.",
+   "t": "Market day in Diourbel is on Thursday. People sell goats, peanuts and clothes.",
    "q": "When is market day?",
    "o": [
     "On Thursday",
@@ -2657,7 +2657,7 @@
   },
   {
    "id": "comprehension_debutant_0178",
-   "t": "Market day in Diourbel is on Thursday. Many people come from the villages. They sell goats, peanuts and clothes.",
+   "t": "Market day in Diourbel is on Thursday. People sell goats, peanuts and clothes.",
    "q": "What do people sell?",
    "o": [
     "Books",
@@ -2672,7 +2672,7 @@
   },
   {
    "id": "comprehension_debutant_0179",
-   "t": "Cheikh is hungry after school. He eats a big plate of couscous with milk. Then he drinks a glass of water and sleeps.",
+   "t": "Cheikh is hungry after school. He eats couscous with milk. Then he drinks water and sleeps.",
    "q": "What does Cheikh eat?",
    "o": [
     "A sandwich",
@@ -2687,7 +2687,7 @@
   },
   {
    "id": "comprehension_debutant_0180",
-   "t": "Cheikh is hungry after school. He eats a big plate of couscous with milk. Then he drinks a glass of water and sleeps.",
+   "t": "Cheikh is hungry after school. He eats couscous with milk. Then he drinks water and sleeps.",
    "q": "What does Cheikh do after he drinks?",
    "o": [
     "He watches TV",
@@ -2702,7 +2702,7 @@
   },
   {
    "id": "comprehension_debutant_0181",
-   "t": "Fruit juice price list: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F. All juices are cold.",
+   "t": "Fruit juice prices: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F.",
    "q": "Which juice is the most expensive?",
    "o": [
     "Orange",
@@ -2717,7 +2717,7 @@
   },
   {
    "id": "comprehension_debutant_0182",
-   "t": "Fruit juice price list: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F. All juices are cold.",
+   "t": "Fruit juice prices: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F.",
    "q": "How much is a bouye juice?",
    "o": [
     "150 F",
@@ -2732,7 +2732,7 @@
   },
   {
    "id": "comprehension_debutant_0183",
-   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat at her restaurant.",
+   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat there.",
    "q": "Where is the restaurant?",
    "o": [
     "In Joal",
@@ -2747,7 +2747,7 @@
   },
   {
    "id": "comprehension_debutant_0184",
-   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat at her restaurant.",
+   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat there.",
    "q": "Qui mange dans son restaurant ?",
    "o": [
     "Les élèves",
@@ -2762,7 +2762,7 @@
   },
   {
    "id": "comprehension_debutant_0185",
-   "t": "Astou's birthday cake is big. It is chocolate. There are 11 candles on the cake. Her friends sing \"Happy Birthday\".",
+   "t": "Astou's birthday cake is big and chocolate. There are 11 candles on it.",
    "q": "What kind of cake is it?",
    "o": [
     "Chocolate",
@@ -2777,7 +2777,7 @@
   },
   {
    "id": "comprehension_debutant_0186",
-   "t": "Astou's birthday cake is big. It is chocolate. There are 11 candles on the cake. Her friends sing \"Happy Birthday\".",
+   "t": "Astou's birthday cake is big and chocolate. There are 11 candles on it.",
    "q": "How old is Astou?",
    "o": [
     "12",
@@ -2792,7 +2792,7 @@
   },
   {
    "id": "comprehension_debutant_0187",
-   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Can you buy a new gas bottle? - Khady",
+   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Buy a new gas bottle? - Khady",
    "q": "What is finished?",
    "o": [
     "The water",
@@ -2807,7 +2807,7 @@
   },
   {
    "id": "comprehension_debutant_0188",
-   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Can you buy a new gas bottle? - Khady",
+   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Buy a new gas bottle? - Khady",
    "q": "What can't Khady do?",
    "o": [
     "Go to school",
@@ -2822,7 +2822,7 @@
   },
   {
    "id": "comprehension_debutant_0189",
-   "t": "Hi Coumba, our team wins 3-1! I score two goals. The coach is very happy. We play again on Sunday. - Assane",
+   "t": "Hi Coumba, our team wins 3-1! I score two goals. We play again on Sunday. - Assane",
    "q": "What is the score?",
    "o": [
     "3-1",
@@ -2837,7 +2837,7 @@
   },
   {
    "id": "comprehension_debutant_0190",
-   "t": "Hi Coumba, our team wins 3-1! I score two goals. The coach is very happy. We play again on Sunday. - Assane",
+   "t": "Hi Coumba, our team wins 3-1! I score two goals. We play again on Sunday. - Assane",
    "q": "How many goals does Assane score?",
    "o": [
     "Four",
@@ -2852,7 +2852,7 @@
   },
   {
    "id": "comprehension_debutant_0191",
-   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. Sorry. - Yacine",
+   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. - Yacine",
    "q": "Why can't Yacine come?",
    "o": [
     "She is travelling",
@@ -2867,7 +2867,7 @@
   },
   {
    "id": "comprehension_debutant_0192",
-   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. Sorry. - Yacine",
+   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. - Yacine",
    "q": "What time is the appointment?",
    "o": [
     "At 3 am",
@@ -2882,7 +2882,7 @@
   },
   {
    "id": "comprehension_debutant_0193",
-   "t": "Hello Dieynaba. Our new house is in Pikine. It has four rooms and a small garden. Come and visit us! - Marème",
+   "t": "Hello Dieynaba. Our new house is in Pikine: four rooms and a small garden. Come visit! - Marème",
    "q": "Where is the new house?",
    "o": [
     "In Pikine",
@@ -2897,7 +2897,7 @@
   },
   {
    "id": "comprehension_debutant_0194",
-   "t": "Hello Dieynaba. Our new house is in Pikine. It has four rooms and a small garden. Come and visit us! - Marème",
+   "t": "Hello Dieynaba. Our new house is in Pikine: four rooms and a small garden. Come visit! - Marème",
    "q": "How many rooms does it have?",
    "o": [
     "Five",
@@ -2912,7 +2912,7 @@
   },
   {
    "id": "comprehension_debutant_0195",
-   "t": "Teacher's note: Very good work, Malick! Your English is better now. Read more books in English. - Mrs Diouf",
+   "t": "Teacher's note: very good work, Malick! Read more books in English. - Mrs Diouf",
    "q": "What does the teacher think?",
    "o": [
     "Malick is late",
@@ -2927,7 +2927,7 @@
   },
   {
    "id": "comprehension_debutant_0196",
-   "t": "Teacher's note: Very good work, Malick! Your English is better now. Read more books in English. - Mrs Diouf",
+   "t": "Teacher's note: very good work, Malick! Read more books in English. - Mrs Diouf",
    "q": "Qu'est-ce que la professeure conseille ?",
    "o": [
     "Regarder la télé",
@@ -2942,7 +2942,7 @@
   },
   {
    "id": "comprehension_debutant_0197",
-   "t": "Bineta: Where is my red scarf? Mum: It is in your room, on the bed. Bineta: Thanks! I wear it to the wedding today.",
+   "t": "Bineta: Where is my red scarf? Mum: On your bed. Bineta: Thanks! I wear it to the wedding today.",
    "q": "Where is the scarf?",
    "o": [
     "On the bed",
@@ -2957,7 +2957,7 @@
   },
   {
    "id": "comprehension_debutant_0198",
-   "t": "Bineta: Where is my red scarf? Mum: It is in your room, on the bed. Bineta: Thanks! I wear it to the wedding today.",
+   "t": "Bineta: Where is my red scarf? Mum: On your bed. Bineta: Thanks! I wear it to the wedding today.",
    "q": "Où va Bineta aujourd'hui ?",
    "o": [
     "Au marché",
@@ -2972,7 +2972,7 @@
   },
   {
    "id": "comprehension_debutant_0199",
-   "t": "Kitchen note: Pape, wash the plates and the glasses, please. Then put them in the cupboard. Thank you! - Aunt Kiné",
+   "t": "Kitchen note: Pape, wash the plates and the glasses. Put them in the cupboard. - Aunt Kiné",
    "q": "What must Pape wash?",
    "o": [
     "The floor",
@@ -2987,7 +2987,7 @@
   },
   {
    "id": "comprehension_debutant_0200",
-   "t": "Kitchen note: Pape, wash the plates and the glasses, please. Then put them in the cupboard. Thank you! - Aunt Kiné",
+   "t": "Kitchen note: Pape, wash the plates and the glasses. Put them in the cupboard. - Aunt Kiné",
    "q": "Where must Pape put them?",
    "o": [
     "In the fridge",
@@ -3002,7 +3002,7 @@
   },
   {
    "id": "comprehension_debutant_0201",
-   "t": "LOST: a small white cat. Her name is Mimi. She has a blue collar. Call Fatou: 77 123 45 67. Thank you!",
+   "t": "LOST: a small white cat, Mimi. She has a blue collar. Call Fatou: 77 123 45 67.",
    "q": "What is lost?",
    "o": [
     "A cat",
@@ -3017,7 +3017,7 @@
   },
   {
    "id": "comprehension_debutant_0202",
-   "t": "LOST: a small white cat. Her name is Mimi. She has a blue collar. Call Fatou: 77 123 45 67. Thank you!",
+   "t": "LOST: a small white cat, Mimi. She has a blue collar. Call Fatou: 77 123 45 67.",
    "q": "What colour is the collar?",
    "o": [
     "Black",
@@ -3032,7 +3032,7 @@
   },
   {
    "id": "comprehension_debutant_0203",
-   "t": "FOR SALE: a red bike. It is two years old. It is in good condition. Price: 40,000 francs. Call Moussa in Thiès.",
+   "t": "FOR SALE: a red bike, two years old. Good condition. 40,000 francs. Call Moussa, Thiès.",
    "q": "What is for sale?",
    "o": [
     "A bed",
@@ -3047,7 +3047,7 @@
   },
   {
    "id": "comprehension_debutant_0204",
-   "t": "FOR SALE: a red bike. It is two years old. It is in good condition. Price: 40,000 francs. Call Moussa in Thiès.",
+   "t": "FOR SALE: a red bike, two years old. Good condition. 40,000 francs. Call Moussa, Thiès.",
    "q": "How much is it?",
    "o": [
     "20,000 francs",
@@ -3062,7 +3062,7 @@
   },
   {
    "id": "comprehension_debutant_0205",
-   "t": "ROOM TO RENT in Yoff. One big room with a bathroom. Near the beach. 60,000 francs a month. Call Mr Sene.",
+   "t": "ROOM TO RENT in Yoff: one big room with a bathroom. 60,000 francs a month. Call Mr Sene.",
    "q": "Where is the room?",
    "o": [
     "In Yoff",
@@ -3077,7 +3077,7 @@
   },
   {
    "id": "comprehension_debutant_0206",
-   "t": "ROOM TO RENT in Yoff. One big room with a bathroom. Near the beach. 60,000 francs a month. Call Mr Sene.",
+   "t": "ROOM TO RENT in Yoff: one big room with a bathroom. 60,000 francs a month. Call Mr Sene.",
    "q": "Qu'y a-t-il avec la chambre ?",
    "o": [
     "Un garage",
@@ -3092,7 +3092,7 @@
   },
   {
    "id": "comprehension_debutant_0207",
-   "t": "FOUND: a black phone near the Kermel market. It is at the shop of Mr Diop, number 12. Come with your ID card.",
+   "t": "FOUND: a black phone near the Kermel market. Ask Mr Diop, shop 12. Bring your ID card.",
    "q": "What is found?",
    "o": [
     "Some keys",
@@ -3107,7 +3107,7 @@
   },
   {
    "id": "comprehension_debutant_0208",
-   "t": "FOUND: a black phone near the Kermel market. It is at the shop of Mr Diop, number 12. Come with your ID card.",
+   "t": "FOUND: a black phone near the Kermel market. Ask Mr Diop, shop 12. Bring your ID card.",
    "q": "What must you bring?",
    "o": [
     "Money",
@@ -3122,7 +3122,7 @@
   },
   {
    "id": "comprehension_debutant_0209",
-   "t": "WANTED: a teacher of English for two children, 8 and 10 years old. Every Saturday morning in Point E. Call 76 555 22 11.",
+   "t": "WANTED: an English teacher, for two children, 8 and 10. Every Saturday morning, Point E.",
    "q": "Who is wanted?",
    "o": [
     "An English teacher",
@@ -3137,7 +3137,7 @@
   },
   {
    "id": "comprehension_debutant_0210",
-   "t": "WANTED: a teacher of English for two children, 8 and 10 years old. Every Saturday morning in Point E. Call 76 555 22 11.",
+   "t": "WANTED: an English teacher, for two children, 8 and 10. Every Saturday morning, Point E.",
    "q": "Quand sont les cours ?",
    "o": [
     "Chaque jour",
@@ -3152,7 +3152,7 @@
   },
   {
    "id": "comprehension_debutant_0211",
-   "t": "LOST DOG! Bobby is brown and big. He is very friendly. He is lost near the Parcelles Assainies market. Please call Lamine.",
+   "t": "LOST DOG! Bobby is brown and big. He is friendly. Lost near the Parcelles Assainies market. Call Lamine.",
    "q": "What colour is Bobby?",
    "o": [
     "Black",
@@ -3167,7 +3167,7 @@
   },
   {
    "id": "comprehension_debutant_0212",
-   "t": "LOST DOG! Bobby is brown and big. He is very friendly. He is lost near the Parcelles Assainies market. Please call Lamine.",
+   "t": "LOST DOG! Bobby is brown and big. He is friendly. Lost near the Parcelles Assainies market. Call Lamine.",
    "q": "Where is Bobby lost?",
    "o": [
     "In Thiès",
@@ -3182,7 +3182,7 @@
   },
   {
    "id": "comprehension_debutant_0213",
-   "t": "FOR SALE: school books for 6th grade. English, maths and French. Like new! 2,000 francs each. Ask Aissatou in class 5B.",
+   "t": "FOR SALE: 6th grade school books, like new. 2,000 francs each. Ask Aissatou, class 5B.",
    "q": "Combien coûte un livre ?",
    "o": [
     "2 000 francs",
@@ -3197,7 +3197,7 @@
   },
   {
    "id": "comprehension_debutant_0214",
-   "t": "FOR SALE: school books for 6th grade. English, maths and French. Like new! 2,000 francs each. Ask Aissatou in class 5B.",
+   "t": "FOR SALE: 6th grade school books, like new. 2,000 francs each. Ask Aissatou, class 5B.",
    "q": "What grade are the books for?",
    "o": [
     "5th grade",
@@ -3212,7 +3212,7 @@
   },
   {
    "id": "comprehension_debutant_0215",
-   "t": "JOB: The Teranga Hotel in Saly wants a cook. You must speak French and English. Work from 6 am to 2 pm.",
+   "t": "JOB: the Teranga Hotel in Saly wants a cook. Speak French and English. Work 6 am to 2 pm.",
    "q": "What job is it?",
    "o": [
     "Driver",
@@ -3227,7 +3227,7 @@
   },
   {
    "id": "comprehension_debutant_0216",
-   "t": "JOB: The Teranga Hotel in Saly wants a cook. You must speak French and English. Work from 6 am to 2 pm.",
+   "t": "JOB: the Teranga Hotel in Saly wants a cook. Speak French and English. Work 6 am to 2 pm.",
    "q": "Quelles langues faut-il parler ?",
    "o": [
     "Anglais seulement",
@@ -3242,7 +3242,7 @@
   },
   {
    "id": "comprehension_debutant_0217",
-   "t": "FOR SALE: two goats, white and black. Good for Tabaski. Ask Samba at the Kaolack livestock market.",
+   "t": "FOR SALE: two goats, white and black, for Tabaski. Ask Samba at the Kaolack livestock market.",
    "q": "How many goats are for sale?",
    "o": [
     "Two",
@@ -3257,7 +3257,7 @@
   },
   {
    "id": "comprehension_debutant_0218",
-   "t": "FOR SALE: two goats, white and black. Good for Tabaski. Ask Samba at the Kaolack livestock market.",
+   "t": "FOR SALE: two goats, white and black, for Tabaski. Ask Samba at the Kaolack livestock market.",
    "q": "Where can you find Samba?",
    "o": [
     "At the Dakar market",
@@ -3272,7 +3272,7 @@
   },
   {
    "id": "comprehension_debutant_0219",
-   "t": "FREE football training for children 8 to 12 years old. Every Wednesday at 4 pm at the Médina stadium. Bring water!",
+   "t": "FREE football training, children 8 to 12. Every Wednesday, 4 pm, Médina stadium. Bring water!",
    "q": "How much is the training?",
    "o": [
     "500 francs",
@@ -3287,7 +3287,7 @@
   },
   {
    "id": "comprehension_debutant_0220",
-   "t": "FREE football training for children 8 to 12 years old. Every Wednesday at 4 pm at the Médina stadium. Bring water!",
+   "t": "FREE football training, children 8 to 12. Every Wednesday, 4 pm, Médina stadium. Bring water!",
    "q": "Qui peut venir ?",
    "o": [
     "Les adultes",
@@ -3302,7 +3302,7 @@
   },
   {
    "id": "comprehension_debutant_0221",
-   "t": "LOST: a green school bag with three notebooks and a pencil case. The name in the books is Codou Ndiaye. Call 70 222 33 44.",
+   "t": "LOST: a green school bag with notebooks. The name inside is Codou Ndiaye. Call 70 222 33 44.",
    "q": "What colour is the bag?",
    "o": [
     "Green",
@@ -3317,7 +3317,7 @@
   },
   {
    "id": "comprehension_debutant_0222",
-   "t": "LOST: a green school bag with three notebooks and a pencil case. The name in the books is Codou Ndiaye. Call 70 222 33 44.",
+   "t": "LOST: a green school bag with notebooks. The name inside is Codou Ndiaye. Call 70 222 33 44.",
    "q": "Whose bag is it?",
    "o": [
     "The teacher's",
@@ -3332,7 +3332,7 @@
   },
   {
    "id": "comprehension_debutant_0223",
-   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden and a garage. 250,000 francs a month.",
+   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden. 250,000 francs a month.",
    "q": "How many bedrooms are there?",
    "o": [
     "One",
@@ -3347,7 +3347,7 @@
   },
   {
    "id": "comprehension_debutant_0224",
-   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden and a garage. 250,000 francs a month.",
+   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden. 250,000 francs a month.",
    "q": "What is the rent?",
    "o": [
     "350,000 francs a month",
@@ -3362,7 +3362,7 @@
   },
   {
    "id": "comprehension_debutant_0225",
-   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, from 5 pm to 8 pm. Call Mrs Gaye.",
+   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, 5 pm to 8 pm.",
    "q": "How old are the children?",
    "o": [
     "3 and 5",
@@ -3377,7 +3377,7 @@
   },
   {
    "id": "comprehension_debutant_0226",
-   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, from 5 pm to 8 pm. Call Mrs Gaye.",
+   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, 5 pm to 8 pm.",
    "q": "Which days?",
    "o": [
     "Only Saturday",
@@ -3392,7 +3392,7 @@
   },
   {
    "id": "comprehension_debutant_0227",
-   "t": "Sewing class! Learn to make clothes with Mrs Fall. Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
+   "t": "Sewing class with Mrs Fall! Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
    "q": "What can you learn?",
    "o": [
     "To cook",
@@ -3407,7 +3407,7 @@
   },
   {
    "id": "comprehension_debutant_0228",
-   "t": "Sewing class! Learn to make clothes with Mrs Fall. Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
+   "t": "Sewing class with Mrs Fall! Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
    "q": "Quels jours sont les cours ?",
    "o": [
     "Vendredi",
@@ -3422,7 +3422,7 @@
   },
   {
    "id": "comprehension_debutant_0229",
-   "t": "FOR SALE: a big fridge, white, 5 years old. It works very well. 75,000 francs. Mr Mbaye, Rufisque.",
+   "t": "FOR SALE: a big white fridge, 5 years old. Works well. 75,000 francs. Mr Mbaye, Rufisque.",
    "q": "What is for sale?",
    "o": [
     "A fridge",
@@ -3437,7 +3437,7 @@
   },
   {
    "id": "comprehension_debutant_0230",
-   "t": "FOR SALE: a big fridge, white, 5 years old. It works very well. 75,000 francs. Mr Mbaye, Rufisque.",
+   "t": "FOR SALE: a big white fridge, 5 years old. Works well. 75,000 francs. Mr Mbaye, Rufisque.",
    "q": "Where does Mr Mbaye live?",
    "o": [
     "In Mbour",
@@ -3452,7 +3452,7 @@
   },
   {
    "id": "comprehension_debutant_0231",
-   "t": "LOST at the beach of Ngor: a gold watch. It is a present from my father. Big reward! Call Ousmane.",
+   "t": "LOST at Ngor beach: a gold watch, a present from my father. Big reward! Call Ousmane.",
    "q": "Where is the watch lost?",
    "o": [
     "At school",
@@ -3467,7 +3467,7 @@
   },
   {
    "id": "comprehension_debutant_0232",
-   "t": "LOST at the beach of Ngor: a gold watch. It is a present from my father. Big reward! Call Ousmane.",
+   "t": "LOST at Ngor beach: a gold watch, a present from my father. Big reward! Call Ousmane.",
    "q": "Pourquoi la montre est importante ?",
    "o": [
     "Elle est neuve",
@@ -3482,7 +3482,7 @@
   },
   {
    "id": "comprehension_debutant_0233",
-   "t": "Driver wanted for a small bus. Dakar to Thiès, every day. You must have a driving licence. Call 77 900 10 10.",
+   "t": "Driver wanted, small bus, Dakar to Thiès, every day. You need a driving licence.",
    "q": "What job is it?",
    "o": [
     "Driver",
@@ -3497,7 +3497,7 @@
   },
   {
    "id": "comprehension_debutant_0234",
-   "t": "Driver wanted for a small bus. Dakar to Thiès, every day. You must have a driving licence. Call 77 900 10 10.",
+   "t": "Driver wanted, small bus, Dakar to Thiès, every day. You need a driving licence.",
    "q": "What must you have?",
    "o": [
     "A car",
@@ -3512,7 +3512,7 @@
   },
   {
    "id": "comprehension_debutant_0235",
-   "t": "Swimming lessons for children at the Saly pool. Saturday at 9 am. Ages 6 to 14. 3,000 francs a lesson.",
+   "t": "Swimming lessons, Saly pool. Saturday, 9 am. Ages 6 to 14. 3,000 francs a lesson.",
    "q": "What lessons are they?",
    "o": [
     "Dancing",
@@ -3527,7 +3527,7 @@
   },
   {
    "id": "comprehension_debutant_0236",
-   "t": "Swimming lessons for children at the Saly pool. Saturday at 9 am. Ages 6 to 14. 3,000 francs a lesson.",
+   "t": "Swimming lessons, Saly pool. Saturday, 9 am. Ages 6 to 14. 3,000 francs a lesson.",
    "q": "Combien coûte une leçon ?",
    "o": [
     "1 400 francs",
@@ -3542,7 +3542,7 @@
   },
   {
    "id": "comprehension_debutant_0237",
-   "t": "FOUND: a small boy's shoe, blue, near the school gate. Ask the school guard. - School of Grand Yoff",
+   "t": "FOUND: a small blue shoe, near the school gate. Ask the school guard. - Grand Yoff school",
    "q": "What is found?",
    "o": [
     "A shoe",
@@ -3557,7 +3557,7 @@
   },
   {
    "id": "comprehension_debutant_0238",
-   "t": "FOUND: a small boy's shoe, blue, near the school gate. Ask the school guard. - School of Grand Yoff",
+   "t": "FOUND: a small blue shoe, near the school gate. Ask the school guard. - Grand Yoff school",
    "q": "Who has it?",
    "o": [
     "The director",
@@ -3572,7 +3572,7 @@
   },
   {
    "id": "comprehension_debutant_0239",
-   "t": "Moving sale! Chairs, a table, a sofa and a TV. Everything must go! Saturday, 10 am to 4 pm, Sicap Liberté 2, house 45.",
+   "t": "Moving sale! Chairs, a table, a sofa, a TV. Saturday, 10 am to 4 pm. Sicap Liberté 2, house 45.",
    "q": "What day is the sale?",
    "o": [
     "Friday",
@@ -3587,7 +3587,7 @@
   },
   {
    "id": "comprehension_debutant_0240",
-   "t": "Moving sale! Chairs, a table, a sofa and a TV. Everything must go! Saturday, 10 am to 4 pm, Sicap Liberté 2, house 45.",
+   "t": "Moving sale! Chairs, a table, a sofa, a TV. Saturday, 10 am to 4 pm. Sicap Liberté 2, house 45.",
    "q": "What is the house number?",
    "o": [
     "2",
@@ -3602,7 +3602,7 @@
   },
   {
    "id": "comprehension_debutant_0241",
-   "t": "Computer class for beginners. Learn to use a computer and the internet. Every Monday at 6 pm at the youth centre of Guédiawaye.",
+   "t": "Computer class for beginners. Learn computers and internet. Every Monday, 6 pm, Guédiawaye youth centre.",
    "q": "What can you learn?",
    "o": [
     "To use a computer",
@@ -3617,7 +3617,7 @@
   },
   {
    "id": "comprehension_debutant_0242",
-   "t": "Computer class for beginners. Learn to use a computer and the internet. Every Monday at 6 pm at the youth centre of Guédiawaye.",
+   "t": "Computer class for beginners. Learn computers and internet. Every Monday, 6 pm, Guédiawaye youth centre.",
    "q": "Où ont lieu les cours ?",
    "o": [
     "À l'école",
@@ -3632,7 +3632,7 @@
   },
   {
    "id": "comprehension_debutant_0243",
-   "t": "LOST: my keys! Three keys on a red key ring. Lost in a taxi from Plateau to Ouakam. Please call Khady.",
+   "t": "LOST: three keys on a red key ring. Lost in a taxi, Plateau to Ouakam. Call Khady.",
    "q": "How many keys are lost?",
    "o": [
     "One",
@@ -3647,7 +3647,7 @@
   },
   {
    "id": "comprehension_debutant_0244",
-   "t": "LOST: my keys! Three keys on a red key ring. Lost in a taxi from Plateau to Ouakam. Please call Khady.",
+   "t": "LOST: three keys on a red key ring. Lost in a taxi, Plateau to Ouakam. Call Khady.",
    "q": "Where are the keys lost?",
    "o": [
     "In a bus",
@@ -3662,7 +3662,7 @@
   },
   {
    "id": "comprehension_debutant_0245",
-   "t": "FOR SALE: fresh eggs from my farm. 100 francs an egg. 1,000 francs for twelve eggs. Mrs Seck, Sébikotane.",
+   "t": "FOR SALE: fresh eggs. 100 francs an egg, 1,000 francs for twelve. Mrs Seck, Sébikotane.",
    "q": "What does Mrs Seck sell?",
    "o": [
     "Eggs",
@@ -3677,7 +3677,7 @@
   },
   {
    "id": "comprehension_debutant_0246",
-   "t": "FOR SALE: fresh eggs from my farm. 100 francs an egg. 1,000 francs for twelve eggs. Mrs Seck, Sébikotane.",
+   "t": "FOR SALE: fresh eggs. 100 francs an egg, 1,000 francs for twelve. Mrs Seck, Sébikotane.",
    "q": "How much are twelve eggs?",
    "o": [
     "1,500 francs",
@@ -3692,7 +3692,7 @@
   },
   {
    "id": "comprehension_debutant_0247",
-   "t": "Music school: guitar, piano and djembe lessons. For children and adults. Open Monday to Saturday. Medina, near the big mosque.",
+   "t": "Music school: guitar, piano, djembe. For children and adults. Medina, near the big mosque.",
    "q": "Which instrument is NOT in the list?",
    "o": [
     "Guitar",
@@ -3707,7 +3707,7 @@
   },
   {
    "id": "comprehension_debutant_0248",
-   "t": "Music school: guitar, piano and djembe lessons. For children and adults. Open Monday to Saturday. Medina, near the big mosque.",
+   "t": "Music school: guitar, piano, djembe. For children and adults. Medina, near the big mosque.",
    "q": "Who can take lessons?",
    "o": [
     "Only girls",
@@ -3722,7 +3722,7 @@
   },
   {
    "id": "comprehension_debutant_0249",
-   "t": "Happy Birthday, Awa! You are 12 today. We love you very much. Have a wonderful day! - Mum, Dad and Moussa",
+   "t": "Happy Birthday, Awa! You are 12 today. We love you! - Mum, Dad and Moussa",
    "q": "How old is Awa?",
    "o": [
     "12",
@@ -3737,7 +3737,7 @@
   },
   {
    "id": "comprehension_debutant_0250",
-   "t": "Happy Birthday, Awa! You are 12 today. We love you very much. Have a wonderful day! - Mum, Dad and Moussa",
+   "t": "Happy Birthday, Awa! You are 12 today. We love you! - Mum, Dad and Moussa",
    "q": "Who sends the card?",
    "o": [
     "Awa's teacher",
@@ -3752,7 +3752,7 @@
   },
   {
    "id": "comprehension_debutant_0251",
-   "t": "Invitation: Come to my birthday party! Saturday 15th May, 4 pm, at my house in Liberté 6. There is cake and music! - Cheikh",
+   "t": "Come to my birthday party! Saturday 15th May, 4 pm, Liberté 6. Cake and music! - Cheikh",
    "q": "What is the date of the party?",
    "o": [
     "Saturday 5th May",
@@ -3767,7 +3767,7 @@
   },
   {
    "id": "comprehension_debutant_0252",
-   "t": "Invitation: Come to my birthday party! Saturday 15th May, 4 pm, at my house in Liberté 6. There is cake and music! - Cheikh",
+   "t": "Come to my birthday party! Saturday 15th May, 4 pm, Liberté 6. Cake and music! - Cheikh",
    "q": "Qu'y a-t-il à la fête ?",
    "o": [
     "Un film",
@@ -3782,7 +3782,7 @@
   },
   {
    "id": "comprehension_debutant_0253",
-   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy invite you to their wedding on Sunday 3rd August at 5 pm, Hotel Ngor.",
+   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy. Sunday 3rd August, 5 pm, Hotel Ngor.",
    "q": "Who is getting married?",
    "o": [
     "Mariama and Ibrahima",
@@ -3797,7 +3797,7 @@
   },
   {
    "id": "comprehension_debutant_0254",
-   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy invite you to their wedding on Sunday 3rd August at 5 pm, Hotel Ngor.",
+   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy. Sunday 3rd August, 5 pm, Hotel Ngor.",
    "q": "Where is the wedding?",
    "o": [
     "At their house",
@@ -3812,7 +3812,7 @@
   },
   {
    "id": "comprehension_debutant_0255",
-   "t": "Thank you card: Dear Aunt Coumba, thank you for the beautiful watch. I wear it every day to school. Love, Babacar.",
+   "t": "Dear Aunt Coumba, thank you for the watch! I wear it every day to school. - Babacar",
    "q": "What is the present?",
    "o": [
     "A phone",
@@ -3827,7 +3827,7 @@
   },
   {
    "id": "comprehension_debutant_0256",
-   "t": "Thank you card: Dear Aunt Coumba, thank you for the beautiful watch. I wear it every day to school. Love, Babacar.",
+   "t": "Dear Aunt Coumba, thank you for the watch! I wear it every day to school. - Babacar",
    "q": "Quand Babacar la porte ?",
    "o": [
     "Jamais",
@@ -3842,7 +3842,7 @@
   },
   {
    "id": "comprehension_debutant_0257",
-   "t": "Get well soon, Pape! We miss you in class. Here are your homework and a card from all your friends. - Class 5A",
+   "t": "Get well soon, Pape! We miss you in class. Here is a card from your friends. - Class 5A",
    "q": "Why does Pape get this card?",
    "o": [
     "He is sick",
@@ -3857,7 +3857,7 @@
   },
   {
    "id": "comprehension_debutant_0258",
-   "t": "Get well soon, Pape! We miss you in class. Here are your homework and a card from all your friends. - Class 5A",
+   "t": "Get well soon, Pape! We miss you in class. Here is a card from your friends. - Class 5A",
    "q": "Who sends the card?",
    "o": [
     "The doctor",
@@ -3872,7 +3872,7 @@
   },
   {
    "id": "comprehension_debutant_0259",
-   "t": "Baptism! Our baby girl is one week old. Her name is Sokhna. Come to the baptism on Saturday at 10 am. - Mr and Mrs Thiam",
+   "t": "Baptism! Our baby girl, Sokhna, is one week old. Come on Saturday at 10 am. - Mr and Mrs Thiam",
    "q": "How old is the baby?",
    "o": [
     "One month",
@@ -3887,7 +3887,7 @@
   },
   {
    "id": "comprehension_debutant_0260",
-   "t": "Baptism! Our baby girl is one week old. Her name is Sokhna. Come to the baptism on Saturday at 10 am. - Mr and Mrs Thiam",
+   "t": "Baptism! Our baby girl, Sokhna, is one week old. Come on Saturday at 10 am. - Mr and Mrs Thiam",
    "q": "What is the baby's name?",
    "o": [
     "Thiam",
@@ -3902,7 +3902,7 @@
   },
   {
    "id": "comprehension_debutant_0261",
-   "t": "Congratulations, Ndeye! You pass your exam. You are a great student. We are proud of you. - Grandma and Grandpa",
+   "t": "Congratulations, Ndeye! You pass your exam. We are very proud of you! - Grandma and Grandpa",
    "q": "Why do the grandparents say congratulations?",
    "o": [
     "Ndeye passes her exam",
@@ -3917,7 +3917,7 @@
   },
   {
    "id": "comprehension_debutant_0262",
-   "t": "Congratulations, Ndeye! You pass your exam. You are a great student. We are proud of you. - Grandma and Grandpa",
+   "t": "Congratulations, Ndeye! You pass your exam. We are very proud of you! - Grandma and Grandpa",
    "q": "Comment se sentent les grands-parents ?",
    "o": [
     "Fatigués",
@@ -3932,7 +3932,7 @@
   },
   {
    "id": "comprehension_debutant_0263",
-   "t": "Dear Amadou, welcome to our school! I am your new classmate. My name is Lamine. I can help you with maths.",
+   "t": "Dear Amadou, welcome to our school! I am Lamine, your new classmate. I can help you with maths.",
    "q": "Who writes the card?",
    "o": [
     "The director",
@@ -3947,7 +3947,7 @@
   },
   {
    "id": "comprehension_debutant_0264",
-   "t": "Dear Amadou, welcome to our school! I am your new classmate. My name is Lamine. I can help you with maths.",
+   "t": "Dear Amadou, welcome to our school! I am Lamine, your new classmate. I can help you with maths.",
    "q": "What can Lamine help with?",
    "o": [
     "Football",
@@ -3962,7 +3962,7 @@
   },
   {
    "id": "comprehension_debutant_0265",
-   "t": "Happy New Year, Aunt Rokhaya! I hope 2027 is a great year for you. Come to see us in Louga soon. Kisses, Yacine.",
+   "t": "Happy New Year, Aunt Rokhaya! Come to see us in Louga soon. Kisses, Yacine.",
    "q": "Where does Yacine live?",
    "o": [
     "In Louga",
@@ -3977,7 +3977,7 @@
   },
   {
    "id": "comprehension_debutant_0266",
-   "t": "Happy New Year, Aunt Rokhaya! I hope 2027 is a great year for you. Come to see us in Louga soon. Kisses, Yacine.",
+   "t": "Happy New Year, Aunt Rokhaya! Come to see us in Louga soon. Kisses, Yacine.",
    "q": "Quelle fête est-ce ?",
    "o": [
     "Un mariage",
@@ -3992,7 +3992,7 @@
   },
   {
    "id": "comprehension_debutant_0267",
-   "t": "Invitation: Class 6C end-of-year party. Friday 27th June, 3 pm, in the school yard. Bring a dish to share!",
+   "t": "Class 6C end-of-year party! Friday 27th June, 3 pm, school yard. Bring a dish to share!",
    "q": "Where is the party?",
    "o": [
     "At the director's house",
@@ -4007,7 +4007,7 @@
   },
   {
    "id": "comprehension_debutant_0268",
-   "t": "Invitation: Class 6C end-of-year party. Friday 27th June, 3 pm, in the school yard. Bring a dish to share!",
+   "t": "Class 6C end-of-year party! Friday 27th June, 3 pm, school yard. Bring a dish to share!",
    "q": "What must students bring?",
    "o": [
     "Music",
@@ -4022,7 +4022,7 @@
   },
   {
    "id": "comprehension_debutant_0269",
-   "t": "Dear Mum, happy Mother's Day! You are the best mother in the world. Thank you for your love and your good food. - Fatou",
+   "t": "Dear Mum, happy Mother's Day! Thank you for your love and your good food. - Fatou",
    "q": "Quelle fête est-ce ?",
    "o": [
     "La fête des mères",
@@ -4037,7 +4037,7 @@
   },
   {
    "id": "comprehension_debutant_0270",
-   "t": "Dear Mum, happy Mother's Day! You are the best mother in the world. Thank you for your love and your good food. - Fatou",
+   "t": "Dear Mum, happy Mother's Day! Thank you for your love and your good food. - Fatou",
    "q": "Why does Fatou thank her mum?",
    "o": [
     "For a present",
@@ -4052,7 +4052,7 @@
   },
   {
    "id": "comprehension_debutant_0271",
-   "t": "Sorry card: Dear Moussa, I am sorry. I break your pen. Here is a new pen for you. Are we still friends? - Pape",
+   "t": "Dear Moussa, I am sorry. I break your pen. Here is a new one. - Pape",
    "q": "Why is Pape sorry?",
    "o": [
     "He is late",
@@ -4067,7 +4067,7 @@
   },
   {
    "id": "comprehension_debutant_0272",
-   "t": "Sorry card: Dear Moussa, I am sorry. I break your pen. Here is a new pen for you. Are we still friends? - Pape",
+   "t": "Dear Moussa, I am sorry. I break your pen. Here is a new one. - Pape",
    "q": "What does Pape give?",
    "o": [
     "Some sweets",
@@ -4082,7 +4082,7 @@
   },
   {
    "id": "comprehension_debutant_0273",
-   "t": "Welcome home, Grandpa! We are happy you are back from Mecca. The family is waiting for you with a big lunch.",
+   "t": "Welcome home, Grandpa! You are back from Mecca. The family has a big lunch for you.",
    "q": "Où était le grand-père ?",
    "o": [
     "À La Mecque",
@@ -4097,7 +4097,7 @@
   },
   {
    "id": "comprehension_debutant_0274",
-   "t": "Welcome home, Grandpa! We are happy you are back from Mecca. The family is waiting for you with a big lunch.",
+   "t": "Welcome home, Grandpa! You are back from Mecca. The family has a big lunch for you.",
    "q": "What is the family preparing?",
    "o": [
     "A present",
@@ -4112,7 +4112,7 @@
   },
   {
    "id": "comprehension_debutant_0275",
-   "t": "Party invitation: Bineta is 9! Come to her party at the Hann zoo park. Sunday 11 am. We can see the animals and eat cake.",
+   "t": "Bineta is 9! Come to her party at the Hann zoo park. Sunday, 11 am. See the animals and eat cake!",
    "q": "How old is Bineta?",
    "o": [
     "10",
@@ -4127,7 +4127,7 @@
   },
   {
    "id": "comprehension_debutant_0276",
-   "t": "Party invitation: Bineta is 9! Come to her party at the Hann zoo park. Sunday 11 am. We can see the animals and eat cake.",
+   "t": "Bineta is 9! Come to her party at the Hann zoo park. Sunday, 11 am. See the animals and eat cake!",
    "q": "Where is the party?",
    "o": [
     "At the beach",
@@ -4142,7 +4142,7 @@
   },
   {
    "id": "comprehension_debutant_0277",
-   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well tonight and eat a good breakfast. You can do it! - Your sister Khady",
+   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well and eat a good breakfast. - Your sister Khady",
    "q": "When is the exam?",
    "o": [
     "Tomorrow",
@@ -4157,7 +4157,7 @@
   },
   {
    "id": "comprehension_debutant_0278",
-   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well tonight and eat a good breakfast. You can do it! - Your sister Khady",
+   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well and eat a good breakfast. - Your sister Khady",
    "q": "What does Khady say?",
    "o": [
     "Go to the cinema",
@@ -4172,7 +4172,7 @@
   },
   {
    "id": "comprehension_debutant_0279",
-   "t": "Postcard: Hello from Cap Skirring! The beach is beautiful and the sea is warm. We swim every day. See you soon! - Mamadou",
+   "t": "Hello from Cap Skirring! The beach is beautiful. We swim every day. - Mamadou",
    "q": "Where is Mamadou?",
    "o": [
     "In Kayar",
@@ -4187,7 +4187,7 @@
   },
   {
    "id": "comprehension_debutant_0280",
-   "t": "Postcard: Hello from Cap Skirring! The beach is beautiful and the sea is warm. We swim every day. See you soon! - Mamadou",
+   "t": "Hello from Cap Skirring! The beach is beautiful. We swim every day. - Mamadou",
    "q": "What does Mamadou do every day?",
    "o": [
     "He fishes",
@@ -4202,7 +4202,7 @@
   },
   {
    "id": "comprehension_debutant_0281",
-   "t": "Dear Teacher, thank you for this school year. Your English class is very interesting. Have good holidays! - Class 4B",
+   "t": "Dear Teacher, thank you for this year. Your English class is very interesting! - Class 4B",
    "q": "Who is the card for?",
    "o": [
     "The teacher",
@@ -4217,7 +4217,7 @@
   },
   {
    "id": "comprehension_debutant_0282",
-   "t": "Dear Teacher, thank you for this school year. Your English class is very interesting. Have good holidays! - Class 4B",
+   "t": "Dear Teacher, thank you for this year. Your English class is very interesting! - Class 4B",
    "q": "What do they say about the class?",
    "o": [
     "It is boring",
@@ -4232,7 +4232,7 @@
   },
   {
    "id": "comprehension_debutant_0283",
-   "t": "Invitation: Tabaski lunch at Grandma's house in Diourbel. Monday at 1 pm. All the family is there. Don't be late!",
+   "t": "Tabaski lunch at Grandma's house in Diourbel. Monday, 1 pm. All the family is there!",
    "q": "Where is the lunch?",
    "o": [
     "At Uncle's house",
@@ -4247,7 +4247,7 @@
   },
   {
    "id": "comprehension_debutant_0284",
-   "t": "Invitation: Tabaski lunch at Grandma's house in Diourbel. Monday at 1 pm. All the family is there. Don't be late!",
+   "t": "Tabaski lunch at Grandma's house in Diourbel. Monday, 1 pm. All the family is there!",
    "q": "What time is the lunch?",
    "o": [
     "At 2 pm",
@@ -4262,7 +4262,7 @@
   },
   {
    "id": "comprehension_debutant_0285",
-   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa chicken, thieboudienne, mafé. Desserts: fruit, thiakry.",
+   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa, thieboudienne, mafé. Desserts: fruit, thiakry.",
    "q": "Which one is a dessert?",
    "o": [
     "Thiakry",
@@ -4277,7 +4277,7 @@
   },
   {
    "id": "comprehension_debutant_0286",
-   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa chicken, thieboudienne, mafé. Desserts: fruit, thiakry.",
+   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa, thieboudienne, mafé. Desserts: fruit, thiakry.",
    "q": "How many main dishes are there?",
    "o": [
     "Five",
@@ -4292,7 +4292,7 @@
   },
   {
    "id": "comprehension_debutant_0287",
-   "t": "Menu of the day: Monday - rice and fish. Tuesday - couscous. Wednesday - pasta. Thursday - mafé. Friday - thieboudienne.",
+   "t": "Menu of the day: Monday rice and fish. Tuesday couscous. Wednesday pasta. Thursday mafé. Friday thieboudienne.",
    "q": "What is on Wednesday?",
    "o": [
     "Couscous",
@@ -4307,7 +4307,7 @@
   },
   {
    "id": "comprehension_debutant_0288",
-   "t": "Menu of the day: Monday - rice and fish. Tuesday - couscous. Wednesday - pasta. Thursday - mafé. Friday - thieboudienne.",
+   "t": "Menu of the day: Monday rice and fish. Tuesday couscous. Wednesday pasta. Thursday mafé. Friday thieboudienne.",
    "q": "Quel jour y a-t-il du mafé ?",
    "o": [
     "Lundi",
@@ -4322,7 +4322,7 @@
   },
   {
    "id": "comprehension_debutant_0289",
-   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Croissant 400 F. Open from 7 am to 7 pm.",
+   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Open 7 am to 7 pm.",
    "q": "How much is a tea?",
    "o": [
     "200 F",
@@ -4337,7 +4337,7 @@
   },
   {
    "id": "comprehension_debutant_0290",
-   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Croissant 400 F. Open from 7 am to 7 pm.",
+   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Open 7 am to 7 pm.",
    "q": "What time does the café open?",
    "o": [
     "At 6 am",
@@ -4352,7 +4352,7 @@
   },
   {
    "id": "comprehension_debutant_0291",
-   "t": "School canteen menu, Tuesday: Starter: carrot salad. Main: chicken with rice. Dessert: banana. Drink: water.",
+   "t": "School canteen, Tuesday: carrot salad, chicken with rice, banana, water.",
    "q": "What is the starter?",
    "o": [
     "Soup",
@@ -4367,7 +4367,7 @@
   },
   {
    "id": "comprehension_debutant_0292",
-   "t": "School canteen menu, Tuesday: Starter: carrot salad. Main: chicken with rice. Dessert: banana. Drink: water.",
+   "t": "School canteen, Tuesday: carrot salad, chicken with rice, banana, water.",
    "q": "What is the drink?",
    "o": [
     "Juice",
@@ -4382,7 +4382,7 @@
   },
   {
    "id": "comprehension_debutant_0293",
-   "t": "Fast food Le Baobab: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F. Soda 500 F.",
+   "t": "Le Baobab fast food: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F.",
    "q": "What is the most expensive?",
    "o": [
     "Pizza",
@@ -4397,7 +4397,7 @@
   },
   {
    "id": "comprehension_debutant_0294",
-   "t": "Fast food Le Baobab: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F. Soda 500 F.",
+   "t": "Le Baobab fast food: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F.",
    "q": "Combien coûte un hamburger ?",
    "o": [
     "1 000 F",
@@ -4412,7 +4412,7 @@
   },
   {
    "id": "comprehension_debutant_0295",
-   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. With onions and bread. Open every evening from 6 pm.",
+   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. Open every evening from 6 pm.",
    "q": "What does the dibiterie sell?",
    "o": [
     "Grilled fish",
@@ -4427,7 +4427,7 @@
   },
   {
    "id": "comprehension_debutant_0296",
-   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. With onions and bread. Open every evening from 6 pm.",
+   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. Open every evening from 6 pm.",
    "q": "Quand ouvre la dibiterie ?",
    "o": [
     "Le dimanche seulement",
@@ -4442,7 +4442,7 @@
   },
   {
    "id": "comprehension_debutant_0297",
-   "t": "Children's menu: one small pizza or one small plate of chicken, one juice and one ice cream. Price: 2,500 F. For children under 10.",
+   "t": "Children's menu: pizza or chicken, a juice and an ice cream. 2,500 F. For children under 10.",
    "q": "How much is the children's menu?",
    "o": [
     "2,500 F",
@@ -4457,7 +4457,7 @@
   },
   {
    "id": "comprehension_debutant_0298",
-   "t": "Children's menu: one small pizza or one small plate of chicken, one juice and one ice cream. Price: 2,500 F. For children under 10.",
+   "t": "Children's menu: pizza or chicken, a juice and an ice cream. 2,500 F. For children under 10.",
    "q": "Who is the menu for?",
    "o": [
     "All children",
@@ -4472,7 +4472,7 @@
   },
   {
    "id": "comprehension_debutant_0299",
-   "t": "Breakfast at Hotel Savana: from 6:30 to 10 am. Bread, butter, jam, eggs, fruit, coffee and tea. Free for hotel guests.",
+   "t": "Breakfast at Hotel Savana: 6:30 to 10 am. Bread, eggs, fruit, coffee. Free for hotel guests.",
    "q": "When does breakfast end?",
    "o": [
     "At 11 am",
@@ -4487,7 +4487,7 @@
   },
   {
    "id": "comprehension_debutant_0300",
-   "t": "Breakfast at Hotel Savana: from 6:30 to 10 am. Bread, butter, jam, eggs, fruit, coffee and tea. Free for hotel guests.",
+   "t": "Breakfast at Hotel Savana: 6:30 to 10 am. Bread, eggs, fruit, coffee. Free for hotel guests.",
    "q": "Pour qui le petit-déjeuner est gratuit ?",
    "o": [
     "Les enfants",
@@ -4502,7 +4502,7 @@
   },
   {
    "id": "comprehension_debutant_0301",
-   "t": "Juice bar menu: Mango juice, papaya juice, baobab juice, lemon juice. Small glass 300 F, big glass 600 F.",
+   "t": "Juice bar: mango, papaya, baobab, lemon juice. Small glass 300 F, big glass 600 F.",
    "q": "How much is a big glass?",
    "o": [
     "600 F",
@@ -4517,7 +4517,7 @@
   },
   {
    "id": "comprehension_debutant_0302",
-   "t": "Juice bar menu: Mango juice, papaya juice, baobab juice, lemon juice. Small glass 300 F, big glass 600 F.",
+   "t": "Juice bar: mango, papaya, baobab, lemon juice. Small glass 300 F, big glass 600 F.",
    "q": "Which juice is on the menu?",
    "o": [
     "Orange juice",
@@ -4532,7 +4532,7 @@
   },
   {
    "id": "comprehension_debutant_0303",
-   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice and salad, 3,500 F. Closed on Sunday.",
+   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice, 3,500 F. Closed on Sunday.",
    "q": "What is today's special?",
    "o": [
     "Pizza",
@@ -4547,7 +4547,7 @@
   },
   {
    "id": "comprehension_debutant_0304",
-   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice and salad, 3,500 F. Closed on Sunday.",
+   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice, 3,500 F. Closed on Sunday.",
    "q": "Quand le restaurant est-il fermé ?",
    "o": [
     "Le samedi",
@@ -4562,7 +4562,7 @@
   },
   {
    "id": "comprehension_debutant_0305",
-   "t": "Pastry shop: Cakes 500 F. Doughnuts 100 F. Pancakes 200 F. Birthday cakes from 10,000 F. Order one day before.",
+   "t": "Pastry shop: cakes 500 F, doughnuts 100 F. Birthday cakes from 10,000 F. Order one day before.",
    "q": "How much is a doughnut?",
    "o": [
     "100 F",
@@ -4577,7 +4577,7 @@
   },
   {
    "id": "comprehension_debutant_0306",
-   "t": "Pastry shop: Cakes 500 F. Doughnuts 100 F. Pancakes 200 F. Birthday cakes from 10,000 F. Order one day before.",
+   "t": "Pastry shop: cakes 500 F, doughnuts 100 F. Birthday cakes from 10,000 F. Order one day before.",
    "q": "Pour un gâteau d'anniversaire, il faut…",
    "o": [
     "Appeler le soir",
@@ -4592,7 +4592,7 @@
   },
   {
    "id": "comprehension_debutant_0307",
-   "t": "Street food in Dakar: Fataya (fried pastry with fish) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
+   "t": "Street food in Dakar: fataya (fish pastry) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
    "q": "What is in fataya?",
    "o": [
     "Rice",
@@ -4607,7 +4607,7 @@
   },
   {
    "id": "comprehension_debutant_0308",
-   "t": "Street food in Dakar: Fataya (fried pastry with fish) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
+   "t": "Street food in Dakar: fataya (fish pastry) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
    "q": "How much is an accara?",
    "o": [
     "300 F",
@@ -4622,7 +4622,7 @@
   },
   {
    "id": "comprehension_debutant_0309",
-   "t": "Hotel restaurant: Lunch from 12 to 3 pm. Dinner from 7 to 11 pm. Please book a table for groups of more than 6 people.",
+   "t": "Hotel restaurant: lunch 12 to 3 pm, dinner 7 to 11 pm. Groups over 6 people must book.",
    "q": "When is dinner?",
    "o": [
     "From 7 to 11 pm",
@@ -4637,7 +4637,7 @@
   },
   {
    "id": "comprehension_debutant_0310",
-   "t": "Hotel restaurant: Lunch from 12 to 3 pm. Dinner from 7 to 11 pm. Please book a table for groups of more than 6 people.",
+   "t": "Hotel restaurant: lunch 12 to 3 pm, dinner 7 to 11 pm. Groups over 6 people must book.",
    "q": "Qui doit réserver une table ?",
    "o": [
     "Les touristes",
@@ -4652,7 +4652,7 @@
   },
   {
    "id": "comprehension_debutant_0311",
-   "t": "Price list at the fish market of Soumbédioune: Thiof 4,000 F a kilo. Yaboye 1,000 F a kilo. Shrimps 5,000 F a kilo.",
+   "t": "Soumbédioune fish market: Thiof 4,000 F a kilo. Yaboye 1,000 F. Shrimps 5,000 F.",
    "q": "Which fish is 1,000 F a kilo?",
    "o": [
     "Thiof",
@@ -4667,7 +4667,7 @@
   },
   {
    "id": "comprehension_debutant_0312",
-   "t": "Price list at the fish market of Soumbédioune: Thiof 4,000 F a kilo. Yaboye 1,000 F a kilo. Shrimps 5,000 F a kilo.",
+   "t": "Soumbédioune fish market: Thiof 4,000 F a kilo. Yaboye 1,000 F. Shrimps 5,000 F.",
    "q": "What is the most expensive?",
    "o": [
     "Thiof",
@@ -4682,7 +4682,7 @@
   },
   {
    "id": "comprehension_debutant_0313",
-   "t": "Pizzeria Napoli, Mbour. Pizza Margherita 3,000 F. Pizza with fish 4,000 F. Free delivery in Mbour. Call 33 957 00 00.",
+   "t": "Pizzeria Napoli, Mbour. Margherita 3,000 F, fish pizza 4,000 F. Free delivery in Mbour.",
    "q": "Where is the pizzeria?",
    "o": [
     "In Mbour",
@@ -4697,7 +4697,7 @@
   },
   {
    "id": "comprehension_debutant_0314",
-   "t": "Pizzeria Napoli, Mbour. Pizza Margherita 3,000 F. Pizza with fish 4,000 F. Free delivery in Mbour. Call 33 957 00 00.",
+   "t": "Pizzeria Napoli, Mbour. Margherita 3,000 F, fish pizza 4,000 F. Free delivery in Mbour.",
    "q": "How much is delivery?",
    "o": [
     "3,000 F",
@@ -4712,7 +4712,7 @@
   },
   {
    "id": "comprehension_debutant_0315",
-   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water. Lunch is at 2 pm.",
+   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water.",
    "q": "What is the dessert?",
    "o": [
     "Thiakry",
@@ -4727,7 +4727,7 @@
   },
   {
    "id": "comprehension_debutant_0316",
-   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water. Lunch is at 2 pm.",
+   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water.",
    "q": "What drinks are there?",
    "o": [
     "Milk and juice",
@@ -4742,7 +4742,7 @@
   },
   {
    "id": "comprehension_debutant_0317",
-   "t": "Grocery store sign: Fresh bread every morning at 7 am. Milk, eggs, sugar and rice. Open seven days a week.",
+   "t": "Grocery store: fresh bread every morning at 7 am. Milk, eggs, sugar, rice. Open seven days.",
    "q": "When is fresh bread ready?",
    "o": [
     "Every morning at 7 am",
@@ -4757,7 +4757,7 @@
   },
   {
    "id": "comprehension_debutant_0318",
-   "t": "Grocery store sign: Fresh bread every morning at 7 am. Milk, eggs, sugar and rice. Open seven days a week.",
+   "t": "Grocery store: fresh bread every morning at 7 am. Milk, eggs, sugar, rice. Open seven days.",
    "q": "Combien de jours la boutique est ouverte ?",
    "o": [
     "Six jours",
@@ -4772,7 +4772,7 @@
   },
   {
    "id": "comprehension_debutant_0319",
-   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F. Water 250 F.",
+   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F.",
    "q": "How much is the vegetable soup?",
    "o": [
     "2,000 F",
@@ -4787,7 +4787,7 @@
   },
   {
    "id": "comprehension_debutant_0320",
-   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F. Water 250 F.",
+   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F.",
    "q": "Which dish comes with chips?",
    "o": [
     "Soup",
@@ -4802,7 +4802,7 @@
   },
   {
    "id": "comprehension_debutant_0321",
-   "t": "Poster: BIG CONCERT at the Daniel Sorano Theatre! Saturday at 9 pm. Tickets: 5,000 F. Children under 12: free.",
+   "t": "BIG CONCERT at the Daniel Sorano Theatre! Saturday, 9 pm. Tickets 5,000 F. Children under 12 free.",
    "q": "Where is the concert?",
    "o": [
     "At the Daniel Sorano Theatre",
@@ -4817,7 +4817,7 @@
   },
   {
    "id": "comprehension_debutant_0322",
-   "t": "Poster: BIG CONCERT at the Daniel Sorano Theatre! Saturday at 9 pm. Tickets: 5,000 F. Children under 12: free.",
+   "t": "BIG CONCERT at the Daniel Sorano Theatre! Saturday, 9 pm. Tickets 5,000 F. Children under 12 free.",
    "q": "Combien paient les enfants de moins de 12 ans ?",
    "o": [
     "2 500 F",
@@ -4832,7 +4832,7 @@
   },
   {
    "id": "comprehension_debutant_0323",
-   "t": "Wrestling! Big match at the Arena in Pikine. Sunday at 5 pm. Doors open at 2 pm. Tickets from 2,000 F.",
+   "t": "Wrestling match at the Arena, Pikine! Sunday, 5 pm. Doors open at 2 pm.",
    "q": "What time does the match start?",
    "o": [
     "At 3 pm",
@@ -4847,7 +4847,7 @@
   },
   {
    "id": "comprehension_debutant_0324",
-   "t": "Wrestling! Big match at the Arena in Pikine. Sunday at 5 pm. Doors open at 2 pm. Tickets from 2,000 F.",
+   "t": "Wrestling match at the Arena, Pikine! Sunday, 5 pm. Doors open at 2 pm.",
    "q": "When do the doors open?",
    "o": [
     "At 4 pm",
@@ -4862,7 +4862,7 @@
   },
   {
    "id": "comprehension_debutant_0325",
-   "t": "Clean-up day! Let's clean our neighbourhood in Grand Dakar. Saturday 8 am. Bring gloves. Water and bread for everyone.",
+   "t": "Clean-up day in Grand Dakar! Saturday, 8 am. Bring gloves. Water and bread for everyone.",
    "q": "What is the event?",
    "o": [
     "A clean-up day",
@@ -4877,7 +4877,7 @@
   },
   {
    "id": "comprehension_debutant_0326",
-   "t": "Clean-up day! Let's clean our neighbourhood in Grand Dakar. Saturday 8 am. Bring gloves. Water and bread for everyone.",
+   "t": "Clean-up day in Grand Dakar! Saturday, 8 am. Bring gloves. Water and bread for everyone.",
    "q": "Que faut-il apporter ?",
    "o": [
     "De l'eau",
@@ -4892,7 +4892,7 @@
   },
   {
    "id": "comprehension_debutant_0327",
-   "t": "Health day at the Kolda hospital: free checks for children. Wednesday 9 am to 1 pm. Bring the child's health card.",
+   "t": "Health day at Kolda hospital: free checks for children. Wednesday, 9 am to 1 pm. Bring the health card.",
    "q": "What is free?",
    "o": [
     "Food",
@@ -4907,7 +4907,7 @@
   },
   {
    "id": "comprehension_debutant_0328",
-   "t": "Health day at the Kolda hospital: free checks for children. Wednesday 9 am to 1 pm. Bring the child's health card.",
+   "t": "Health day at Kolda hospital: free checks for children. Wednesday, 9 am to 1 pm. Bring the health card.",
    "q": "What must you bring?",
    "o": [
     "A photo",
@@ -4922,7 +4922,7 @@
   },
   {
    "id": "comprehension_debutant_0329",
-   "t": "Football tournament for schools! Teams of 7 players. Register before 10th March. The winner gets a cup.",
+   "t": "School football tournament! Teams of 7 players. Register before 10th March. The winner gets a cup.",
    "q": "How many players are in a team?",
    "o": [
     "7",
@@ -4937,7 +4937,7 @@
   },
   {
    "id": "comprehension_debutant_0330",
-   "t": "Football tournament for schools! Teams of 7 players. Register before 10th March. The winner gets a cup.",
+   "t": "School football tournament! Teams of 7 players. Register before 10th March. The winner gets a cup.",
    "q": "Qu'est-ce que le gagnant reçoit ?",
    "o": [
     "Un ballon",
@@ -4952,7 +4952,7 @@
   },
   {
    "id": "comprehension_debutant_0331",
-   "t": "Cinema tonight! A film for children at the cultural centre of Ziguinchor. 7 pm. Tickets 500 F. Popcorn 200 F.",
+   "t": "Cinema tonight! A film for children, cultural centre of Ziguinchor, 7 pm. Tickets 500 F.",
    "q": "Where is the film?",
    "o": [
     "At school",
@@ -4967,7 +4967,7 @@
   },
   {
    "id": "comprehension_debutant_0332",
-   "t": "Cinema tonight! A film for children at the cultural centre of Ziguinchor. 7 pm. Tickets 500 F. Popcorn 200 F.",
+   "t": "Cinema tonight! A film for children, cultural centre of Ziguinchor, 7 pm. Tickets 500 F.",
    "q": "How much is a ticket?",
    "o": [
     "1,000 F",
@@ -4982,7 +4982,7 @@
   },
   {
    "id": "comprehension_debutant_0333",
-   "t": "Art show by students of class 3A. Paintings and drawings of Senegal. In the school library, Monday to Friday.",
+   "t": "Art show by class 3A: paintings and drawings of Senegal. School library, Monday to Friday.",
    "q": "Who are the artists?",
    "o": [
     "Students of class 3A",
@@ -4997,7 +4997,7 @@
   },
   {
    "id": "comprehension_debutant_0334",
-   "t": "Art show by students of class 3A. Paintings and drawings of Senegal. In the school library, Monday to Friday.",
+   "t": "Art show by class 3A: paintings and drawings of Senegal. School library, Monday to Friday.",
    "q": "What do the paintings show?",
    "o": [
     "Cars",
@@ -5012,7 +5012,7 @@
   },
   {
    "id": "comprehension_debutant_0335",
-   "t": "Book fair in Dakar! Books for children and adults. Meet writers. From 10th to 15th December. Entrance free.",
+   "t": "Book fair in Dakar! Books for children and adults. 10th to 15th December. Free entrance.",
    "q": "What is the event?",
    "o": [
     "A sports day",
@@ -5027,7 +5027,7 @@
   },
   {
    "id": "comprehension_debutant_0336",
-   "t": "Book fair in Dakar! Books for children and adults. Meet writers. From 10th to 15th December. Entrance free.",
+   "t": "Book fair in Dakar! Books for children and adults. 10th to 15th December. Free entrance.",
    "q": "How much is entrance?",
    "o": [
     "1,000 F",
@@ -5042,7 +5042,7 @@
   },
   {
    "id": "comprehension_debutant_0337",
-   "t": "Saint-Louis Jazz Festival. Music every night for four days. Concerts start at 9 pm. Tickets at the festival office.",
+   "t": "Saint-Louis Jazz Festival: music every night, for four days. Concerts start at 9 pm.",
    "q": "What kind of music is it?",
    "o": [
     "Jazz",
@@ -5057,7 +5057,7 @@
   },
   {
    "id": "comprehension_debutant_0338",
-   "t": "Saint-Louis Jazz Festival. Music every night for four days. Concerts start at 9 pm. Tickets at the festival office.",
+   "t": "Saint-Louis Jazz Festival: music every night, for four days. Concerts start at 9 pm.",
    "q": "Combien de jours dure le festival ?",
    "o": [
     "Deux jours",
@@ -5072,7 +5072,7 @@
   },
   {
    "id": "comprehension_debutant_0339",
-   "t": "Running race! 5 km in Corniche Ouest. Sunday 7 am. For everyone over 14 years old. Free T-shirt for runners.",
+   "t": "Running race: 5 km, Corniche Ouest. Sunday, 7 am. For runners over 14. Free T-shirt!",
    "q": "How long is the race?",
    "o": [
     "7 km",
@@ -5087,7 +5087,7 @@
   },
   {
    "id": "comprehension_debutant_0340",
-   "t": "Running race! 5 km in Corniche Ouest. Sunday 7 am. For everyone over 14 years old. Free T-shirt for runners.",
+   "t": "Running race: 5 km, Corniche Ouest. Sunday, 7 am. For runners over 14. Free T-shirt!",
    "q": "What do runners get?",
    "o": [
     "A bottle",
@@ -5102,7 +5102,7 @@
   },
   {
    "id": "comprehension_debutant_0341",
-   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees. Come with your teacher.",
+   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees.",
    "q": "How many trees does the school plant?",
    "o": [
     "100",
@@ -5117,7 +5117,7 @@
   },
   {
    "id": "comprehension_debutant_0342",
-   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees. Come with your teacher.",
+   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees.",
    "q": "How many trees does each class plant?",
    "o": [
     "10",
@@ -5132,7 +5132,7 @@
   },
   {
    "id": "comprehension_debutant_0343",
-   "t": "Notice: The swimming pool is closed for cleaning on Monday and Tuesday. It opens again on Wednesday at 9 am.",
+   "t": "Notice: the pool is closed for cleaning, Monday and Tuesday. It opens again Wednesday at 9 am.",
    "q": "Why is the pool closed?",
    "o": [
     "For a competition",
@@ -5147,7 +5147,7 @@
   },
   {
    "id": "comprehension_debutant_0344",
-   "t": "Notice: The swimming pool is closed for cleaning on Monday and Tuesday. It opens again on Wednesday at 9 am.",
+   "t": "Notice: the pool is closed for cleaning, Monday and Tuesday. It opens again Wednesday at 9 am.",
    "q": "Quand la piscine rouvre ?",
    "o": [
     "Mardi soir",
@@ -5162,7 +5162,7 @@
   },
   {
    "id": "comprehension_debutant_0345",
-   "t": "Bus notice: Line 8 does not stop at Colobane today. Please take the bus at the next stop, near the hospital.",
+   "t": "Bus notice: Line 8 does not stop at Colobane today. Take the next stop, near the hospital.",
    "q": "Which bus line is it?",
    "o": [
     "Line 8",
@@ -5177,7 +5177,7 @@
   },
   {
    "id": "comprehension_debutant_0346",
-   "t": "Bus notice: Line 8 does not stop at Colobane today. Please take the bus at the next stop, near the hospital.",
+   "t": "Bus notice: Line 8 does not stop at Colobane today. Take the next stop, near the hospital.",
    "q": "Où prendre le bus aujourd'hui ?",
    "o": [
     "À Colobane",
@@ -5192,7 +5192,7 @@
   },
   {
    "id": "comprehension_debutant_0347",
-   "t": "Shop notice: Back in 10 minutes. I am at the bank. Please wait or call 77 600 70 80. - Modou",
+   "t": "Shop notice: back in 10 minutes. I am at the bank. Wait or call 77 600 70 80. - Modou",
    "q": "Where is Modou?",
    "o": [
     "At home",
@@ -5207,7 +5207,7 @@
   },
   {
    "id": "comprehension_debutant_0348",
-   "t": "Shop notice: Back in 10 minutes. I am at the bank. Please wait or call 77 600 70 80. - Modou",
+   "t": "Shop notice: back in 10 minutes. I am at the bank. Wait or call 77 600 70 80. - Modou",
    "q": "When does Modou come back?",
    "o": [
     "In one hour",
@@ -5222,7 +5222,7 @@
   },
   {
    "id": "comprehension_debutant_0349",
-   "t": "Notice at the beach: Danger! No swimming today. The sea is too strong. Swimming is OK again tomorrow.",
+   "t": "Notice at the beach: Danger! No swimming today, the sea is too strong. OK again tomorrow.",
    "q": "Can you swim today?",
    "o": [
     "No, it is dangerous",
@@ -5237,7 +5237,7 @@
   },
   {
    "id": "comprehension_debutant_0350",
-   "t": "Notice at the beach: Danger! No swimming today. The sea is too strong. Swimming is OK again tomorrow.",
+   "t": "Notice at the beach: Danger! No swimming today, the sea is too strong. OK again tomorrow.",
    "q": "Pourquoi c'est interdit ?",
    "o": [
     "Il pleut",
@@ -5252,7 +5252,7 @@
   },
   {
    "id": "comprehension_debutant_0351",
-   "t": "Zoo rules: Don't feed the animals. Don't touch the cages. Children must stay with an adult. Thank you!",
+   "t": "Zoo rules: don't feed the animals. Don't touch the cages. Children must stay with an adult.",
    "q": "What must you not do?",
    "o": [
     "Talk",
@@ -5267,7 +5267,7 @@
   },
   {
    "id": "comprehension_debutant_0352",
-   "t": "Zoo rules: Don't feed the animals. Don't touch the cages. Children must stay with an adult. Thank you!",
+   "t": "Zoo rules: don't feed the animals. Don't touch the cages. Children must stay with an adult.",
    "q": "Les enfants doivent…",
    "o": [
     "Porter un chapeau",
@@ -5282,7 +5282,7 @@
   },
   {
    "id": "comprehension_debutant_0353",
-   "t": "Pharmacy Thiaroye: open 24 hours a day, 7 days a week. Ask the pharmacist for help. Telephone: 33 834 55 55.",
+   "t": "Pharmacy Thiaroye: open 24 hours, 7 days a week. Ask the pharmacist for help.",
    "q": "When is the pharmacy open?",
    "o": [
     "24 hours a day, 7 days a week",
@@ -5297,7 +5297,7 @@
   },
   {
    "id": "comprehension_debutant_0354",
-   "t": "Pharmacy Thiaroye: open 24 hours a day, 7 days a week. Ask the pharmacist for help. Telephone: 33 834 55 55.",
+   "t": "Pharmacy Thiaroye: open 24 hours, 7 days a week. Ask the pharmacist for help.",
    "q": "Who can help you?",
    "o": [
     "The guard",
@@ -5312,7 +5312,7 @@
   },
   {
    "id": "comprehension_debutant_0355",
-   "t": "Taxi-brousse station, Kaolack: Departures for Tambacounda at 6 am and 1 pm. Price: 7,000 F. Bags: 500 F.",
+   "t": "Taxi-brousse, Kaolack: departures for Tambacounda at 6 am and 1 pm. Price 7,000 F.",
    "q": "Where do the cars go?",
    "o": [
     "To Dakar",
@@ -5327,7 +5327,7 @@
   },
   {
    "id": "comprehension_debutant_0356",
-   "t": "Taxi-brousse station, Kaolack: Departures for Tambacounda at 6 am and 1 pm. Price: 7,000 F. Bags: 500 F.",
+   "t": "Taxi-brousse, Kaolack: departures for Tambacounda at 6 am and 1 pm. Price 7,000 F.",
    "q": "Combien coûte un bagage ?",
    "o": [
     "6 000 F",
@@ -5342,7 +5342,7 @@
   },
   {
    "id": "comprehension_debutant_0357",
-   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed on Sunday.",
+   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed Sunday.",
    "q": "When does the post office close on Saturday?",
    "o": [
     "At 12 pm",
@@ -5357,7 +5357,7 @@
   },
   {
    "id": "comprehension_debutant_0358",
-   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed on Sunday.",
+   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed Sunday.",
    "q": "Is it open on Sunday?",
    "o": [
     "Yes, in the morning",
@@ -5372,7 +5372,7 @@
   },
   {
    "id": "comprehension_debutant_0359",
-   "t": "Library notice: New books for children! Come and read stories in English and French. Every Saturday, 10 am, free.",
+   "t": "Library notice: new books for children! Stories in English and French. Every Saturday, 10 am, free.",
    "q": "What is new at the library?",
    "o": [
     "Computers",
@@ -5387,7 +5387,7 @@
   },
   {
    "id": "comprehension_debutant_0360",
-   "t": "Library notice: New books for children! Come and read stories in English and French. Every Saturday, 10 am, free.",
+   "t": "Library notice: new books for children! Stories in English and French. Every Saturday, 10 am, free.",
    "q": "In which languages are the stories?",
    "o": [
     "Only English",
@@ -5402,7 +5402,7 @@
   },
   {
    "id": "comprehension_debutant_0361",
-   "t": "Hairdresser Nafi: Braids 5,000 F. Haircut for men 1,000 F. Haircut for children 500 F. Open Tuesday to Sunday.",
+   "t": "Hairdresser Nafi: braids 5,000 F. Men's haircut 1,000 F. Children's haircut 500 F. Closed on Monday.",
    "q": "How much are braids?",
    "o": [
     "5,000 F",
@@ -5417,7 +5417,7 @@
   },
   {
    "id": "comprehension_debutant_0362",
-   "t": "Hairdresser Nafi: Braids 5,000 F. Haircut for men 1,000 F. Haircut for children 500 F. Open Tuesday to Sunday.",
+   "t": "Hairdresser Nafi: braids 5,000 F. Men's haircut 1,000 F. Children's haircut 500 F. Closed on Monday.",
    "q": "Quel jour est-ce fermé ?",
    "o": [
     "Mardi",
@@ -5432,7 +5432,7 @@
   },
   {
    "id": "comprehension_debutant_0363",
-   "t": "Garage Diallo: We repair cars, motorbikes and bikes. Open from 8 am to 6 pm. Behind the Total station.",
+   "t": "Garage Diallo: we repair cars, motorbikes and bikes. Open 8 am to 6 pm, behind the Total station.",
    "q": "What does the garage repair?",
    "o": [
     "Phones and TVs",
@@ -5447,7 +5447,7 @@
   },
   {
    "id": "comprehension_debutant_0364",
-   "t": "Garage Diallo: We repair cars, motorbikes and bikes. Open from 8 am to 6 pm. Behind the Total station.",
+   "t": "Garage Diallo: we repair cars, motorbikes and bikes. Open 8 am to 6 pm, behind the Total station.",
    "q": "Où est le garage ?",
    "o": [
     "Au marché",
@@ -5462,7 +5462,7 @@
   },
   {
    "id": "comprehension_debutant_0365",
-   "t": "Tailor Aliou: New boubous for the Korité party! Order now. Ready in one week. Many colours: blue, white, green.",
+   "t": "Tailor Aliou: new boubous for Korité! Order now, ready in one week. Blue, white or green.",
    "q": "What does Aliou make?",
    "o": [
     "Boubous",
@@ -5477,7 +5477,7 @@
   },
   {
    "id": "comprehension_debutant_0366",
-   "t": "Tailor Aliou: New boubous for the Korité party! Order now. Ready in one week. Many colours: blue, white, green.",
+   "t": "Tailor Aliou: new boubous for Korité! Order now, ready in one week. Blue, white or green.",
    "q": "When is the order ready?",
    "o": [
     "In one day",
@@ -5492,7 +5492,7 @@
   },
   {
    "id": "comprehension_debutant_0367",
-   "t": "Phone repair: Is your phone broken? We repair it in one hour! Screen: 15,000 F. Battery: 8,000 F. Sandaga market, shop 7.",
+   "t": "Phone repair: we fix it in one hour! Screen 15,000 F, battery 8,000 F. Sandaga market, shop 7.",
    "q": "How long is the repair?",
    "o": [
     "Ten minutes",
@@ -5507,7 +5507,7 @@
   },
   {
    "id": "comprehension_debutant_0368",
-   "t": "Phone repair: Is your phone broken? We repair it in one hour! Screen: 15,000 F. Battery: 8,000 F. Sandaga market, shop 7.",
+   "t": "Phone repair: we fix it in one hour! Screen 15,000 F, battery 8,000 F. Sandaga market, shop 7.",
    "q": "How much is a new battery?",
    "o": [
     "1,000 F",
@@ -5522,7 +5522,7 @@
   },
   {
    "id": "comprehension_debutant_0369",
-   "t": "Clinic Sainte Marie: Doctor for children every morning. Dentist on Tuesday and Friday. Eye doctor on Thursday.",
+   "t": "Clinic Sainte Marie: children's doctor every morning. Dentist Tuesday and Friday. Eye doctor Thursday.",
    "q": "When is the dentist there?",
    "o": [
     "Tuesday and Friday",
@@ -5537,7 +5537,7 @@
   },
   {
    "id": "comprehension_debutant_0370",
-   "t": "Clinic Sainte Marie: Doctor for children every morning. Dentist on Tuesday and Friday. Eye doctor on Thursday.",
+   "t": "Clinic Sainte Marie: children's doctor every morning. Dentist Tuesday and Friday. Eye doctor Thursday.",
    "q": "Quel médecin vient le jeudi ?",
    "o": [
     "Le médecin des enfants",
@@ -5552,7 +5552,7 @@
   },
   {
    "id": "comprehension_debutant_0371",
-   "t": "Sign on the door: Please take off your shoes. Thank you. - The family Ndoye",
+   "t": "Sign on the door: please take off your shoes. - The Ndoye family",
    "q": "What must you do?",
    "o": [
     "Close the door",
@@ -5567,7 +5567,7 @@
   },
   {
    "id": "comprehension_debutant_0372",
-   "t": "Sign on the door: Please take off your shoes. Thank you. - The family Ndoye",
+   "t": "Sign on the door: please take off your shoes. - The Ndoye family",
    "q": "Who writes the sign?",
    "o": [
     "The teacher",
@@ -5582,7 +5582,7 @@
   },
   {
    "id": "comprehension_debutant_0373",
-   "t": "Lost and found at Blaise Diagne Airport: Did you lose something? Go to the office near gate 3. Open 24 hours.",
+   "t": "Lost and found, Blaise Diagne Airport: go to the office near gate 3. Open 24 hours.",
    "q": "Where is the office?",
    "o": [
     "Near gate 3",
@@ -5597,7 +5597,7 @@
   },
   {
    "id": "comprehension_debutant_0374",
-   "t": "Lost and found at Blaise Diagne Airport: Did you lose something? Go to the office near gate 3. Open 24 hours.",
+   "t": "Lost and found, Blaise Diagne Airport: go to the office near gate 3. Open 24 hours.",
    "q": "When is the office open?",
    "o": [
     "Only in the morning",
@@ -5612,7 +5612,7 @@
   },
   {
    "id": "comprehension_debutant_0375",
-   "t": "Dance class for girls and boys! Sabar dance with Mrs Ndiaye. Friday at 5 pm, youth centre of Thiès. 1,000 F.",
+   "t": "Sabar dance class with Mrs Ndiaye! Friday, 5 pm, Thiès youth centre. 1,000 F.",
    "q": "What dance is it?",
    "o": [
     "Salsa",
@@ -5627,7 +5627,7 @@
   },
   {
    "id": "comprehension_debutant_0376",
-   "t": "Dance class for girls and boys! Sabar dance with Mrs Ndiaye. Friday at 5 pm, youth centre of Thiès. 1,000 F.",
+   "t": "Sabar dance class with Mrs Ndiaye! Friday, 5 pm, Thiès youth centre. 1,000 F.",
    "q": "Où a lieu le cours ?",
    "o": [
     "Au théâtre",
@@ -5642,7 +5642,7 @@
   },
   {
    "id": "comprehension_debutant_0377",
-   "t": "FOR SALE: a small TV, black, with remote control. Very good condition. 30,000 F. Call Rokhaya after 6 pm.",
+   "t": "FOR SALE: a small black TV with remote control. 30,000 F. Call Rokhaya after 6 pm.",
    "q": "What comes with the TV?",
    "o": [
     "A remote control",
@@ -5657,7 +5657,7 @@
   },
   {
    "id": "comprehension_debutant_0378",
-   "t": "FOR SALE: a small TV, black, with remote control. Very good condition. 30,000 F. Call Rokhaya after 6 pm.",
+   "t": "FOR SALE: a small black TV with remote control. 30,000 F. Call Rokhaya after 6 pm.",
    "q": "When can you call Rokhaya?",
    "o": [
     "At noon",
@@ -5672,7 +5672,7 @@
   },
   {
    "id": "comprehension_debutant_0379",
-   "t": "FREE kittens! Three little kittens, two grey and one black. They are two months old. They need a good home. Call Anta.",
+   "t": "FREE kittens! Three kittens, two grey and one black, two months old. Call Anta.",
    "q": "How many kittens are grey?",
    "o": [
     "Three",
@@ -5687,7 +5687,7 @@
   },
   {
    "id": "comprehension_debutant_0380",
-   "t": "FREE kittens! Three little kittens, two grey and one black. They are two months old. They need a good home. Call Anta.",
+   "t": "FREE kittens! Three kittens, two grey and one black, two months old. Call Anta.",
    "q": "How old are the kittens?",
    "o": [
     "Three months",
@@ -5702,7 +5702,7 @@
   },
   {
    "id": "comprehension_debutant_0381",
-   "t": "Volunteers wanted! Help old people in our village. Read to them, cook with them. Every Sunday afternoon. Call Demba.",
+   "t": "Volunteers wanted! Help old people in our village. Every Sunday afternoon. Call Demba.",
    "q": "What do volunteers do?",
    "o": [
     "Help old people",
@@ -5717,7 +5717,7 @@
   },
   {
    "id": "comprehension_debutant_0382",
-   "t": "Volunteers wanted! Help old people in our village. Read to them, cook with them. Every Sunday afternoon. Call Demba.",
+   "t": "Volunteers wanted! Help old people in our village. Every Sunday afternoon. Call Demba.",
    "q": "Quand ?",
    "o": [
     "Chaque samedi matin",
@@ -5732,7 +5732,7 @@
   },
   {
    "id": "comprehension_debutant_0383",
-   "t": "Car for sale: blue Toyota, 2015. 4 doors, air conditioning. 3,500,000 F. Call Mr Ka, Kaolack.",
+   "t": "Car for sale: blue Toyota, 2015. 3,500,000 F. Call Mr Ka, Kaolack.",
    "q": "What colour is the car?",
    "o": [
     "White",
@@ -5747,7 +5747,7 @@
   },
   {
    "id": "comprehension_debutant_0384",
-   "t": "Holiday camp in Toubab Dialaw! For children 7 to 13. Games, swimming, music. 1st to 15th August. Call 77 333 44 55.",
+   "t": "Holiday camp in Toubab Dialaw! Children 7 to 13. Games, swimming, music. 1st to 15th August.",
    "q": "Where is the camp?",
    "o": [
     "In Joal",
@@ -5762,7 +5762,7 @@
   },
   {
    "id": "comprehension_debutant_0385",
-   "t": "Holiday camp in Toubab Dialaw! For children 7 to 13. Games, swimming, music. 1st to 15th August. Call 77 333 44 55.",
+   "t": "Holiday camp in Toubab Dialaw! Children 7 to 13. Games, swimming, music. 1st to 15th August.",
    "q": "Which activity is in the camp?",
    "o": [
     "Swimming",
@@ -5777,7 +5777,7 @@
   },
   {
    "id": "comprehension_debutant_0386",
-   "t": "Invitation: Our grandfather is 80! Big family lunch in Joal on Sunday 9th. Bring your photos of Grandpa for the party.",
+   "t": "Our grandfather is 80! Big family lunch in Joal, Sunday 9th. Bring photos of Grandpa.",
    "q": "How old is the grandfather?",
    "o": [
     "70",
@@ -5792,7 +5792,7 @@
   },
   {
    "id": "comprehension_debutant_0387",
-   "t": "Invitation: Our grandfather is 80! Big family lunch in Joal on Sunday 9th. Bring your photos of Grandpa for the party.",
+   "t": "Our grandfather is 80! Big family lunch in Joal, Sunday 9th. Bring photos of Grandpa.",
    "q": "What must you bring?",
    "o": [
     "A present",
@@ -5807,7 +5807,7 @@
   },
   {
    "id": "comprehension_debutant_0388",
-   "t": "Notice: The school bus is late this morning. It arrives at 8:15. The first class starts at 8:30 today.",
+   "t": "Notice: the school bus is late. It arrives at 8:15. The first class starts at 8:30 today.",
    "q": "When does the bus arrive?",
    "o": [
     "At 7:45",
@@ -5822,7 +5822,7 @@
   },
   {
    "id": "comprehension_debutant_0389",
-   "t": "Notice: The school bus is late this morning. It arrives at 8:15. The first class starts at 8:30 today.",
+   "t": "Notice: the school bus is late. It arrives at 8:15. The first class starts at 8:30 today.",
    "q": "What time does the first class start today?",
    "o": [
     "At 8:30",
@@ -5837,7 +5837,7 @@
   },
   {
    "id": "comprehension_debutant_0390",
-   "t": "Gym open in Point E: men and women. Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
+   "t": "Gym in Point E: Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
    "q": "How much is one month?",
    "o": [
     "6,000 F",
@@ -5852,7 +5852,7 @@
   },
   {
    "id": "comprehension_debutant_0391",
-   "t": "Gym open in Point E: men and women. Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
+   "t": "Gym in Point E: Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
    "q": "Qu'est-ce qui est gratuit ?",
    "o": [
     "Le premier mois",
@@ -5867,7 +5867,7 @@
   },
   {
    "id": "comprehension_debutant_0392",
-   "t": "Message on the board: Class 5B, the history test is on Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
+   "t": "Message for Class 5B: the history test is Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
    "q": "When is the history test?",
    "o": [
     "On Monday",
@@ -5882,7 +5882,7 @@
   },
   {
    "id": "comprehension_debutant_0393",
-   "t": "Message on the board: Class 5B, the history test is on Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
+   "t": "Message for Class 5B: the history test is Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
    "q": "Which chapters must students study?",
    "o": [
     "Chapters 2 and 3",
@@ -5897,7 +5897,7 @@
   },
   {
    "id": "comprehension_debutant_0394",
-   "t": "Card: Dear Penda, welcome back from Italy! We are happy to see you again. Come to dinner on Friday. - Your cousins",
+   "t": "Dear Penda, welcome back from Italy! Come to dinner on Friday. - Your cousins",
    "q": "Where is Penda back from?",
    "o": [
     "France",
@@ -5912,7 +5912,7 @@
   },
   {
    "id": "comprehension_debutant_0395",
-   "t": "Card: Dear Penda, welcome back from Italy! We are happy to see you again. Come to dinner on Friday. - Your cousins",
+   "t": "Dear Penda, welcome back from Italy! Come to dinner on Friday. - Your cousins",
    "q": "When is the dinner?",
    "o": [
     "On Saturday",
@@ -5927,7 +5927,7 @@
   },
   {
    "id": "comprehension_debutant_0396",
-   "t": "Birthday card: Happy birthday, Dad! You are 45 today. You are a great father. We love you. - Seynabou and Cheikh",
+   "t": "Happy birthday, Dad! You are 45 today. We love you! - Seynabou and Cheikh",
    "q": "How old is Dad?",
    "o": [
     "40",
@@ -5942,7 +5942,7 @@
   },
   {
    "id": "comprehension_debutant_0397",
-   "t": "Birthday card: Happy birthday, Dad! You are 45 today. You are a great father. We love you. - Seynabou and Cheikh",
+   "t": "Happy birthday, Dad! You are 45 today. We love you! - Seynabou and Cheikh",
    "q": "Who writes the card?",
    "o": [
     "Seynabou and Cheikh",
@@ -5957,7 +5957,7 @@
   },
   {
    "id": "comprehension_debutant_0398",
-   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month. Water and electricity included.",
+   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month.",
    "q": "Who is the room for?",
    "o": [
     "Tourists",
@@ -5972,7 +5972,7 @@
   },
   {
    "id": "comprehension_debutant_0399",
-   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month. Water and electricity included.",
+   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month.",
    "q": "Where is the room?",
    "o": [
     "Near the beach",
@@ -5987,7 +5987,7 @@
   },
   {
    "id": "comprehension_debutant_0400",
-   "t": "FOR SALE: a sheep for Tabaski. Big and white. 150,000 F. Ask Idrissa, Thiaroye, near the bus station.",
+   "t": "FOR SALE: a sheep for Tabaski, big and white. 150,000 F. Ask Idrissa, Thiaroye.",
    "q": "What colour is the sheep?",
    "o": [
     "Brown",
