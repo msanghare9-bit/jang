@@ -328,13 +328,61 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     throw StateError('Impossible de créer un code. Réessayez.');
   }
 
+  List<int> _encodePawns(List<List<int>> pawns) =>
+      [for (final row in pawns) ...row];
+
+  List<List<int>> _decodePawns(dynamic value, int playerCount) {
+    final raw = value is List ? value : const [];
+    // Read old room documents if one was written by a previous app version.
+    if (raw.isNotEmpty && raw.first is List) {
+      return raw
+          .map((row) => List<int>.from(row as List))
+          .toList();
+    }
+    final flat = raw.map((position) => (position as num).toInt()).toList();
+    return List.generate(
+      playerCount,
+      (player) => List.generate(
+        4,
+        (pawn) => player * 4 + pawn < flat.length
+            ? flat[player * 4 + pawn]
+            : -1,
+      ),
+    );
+  }
+
+  List<int> _encodeShieldedPawns(List<Set<int>> shields) => [
+        for (var player = 0; player < shields.length; player++)
+          for (final pawn in shields[player]) player * 4 + pawn,
+      ];
+
+  List<Set<int>> _decodeShieldedPawns(dynamic value, int playerCount) {
+    final raw = value is List ? value : const [];
+    final shields = List.generate(playerCount, (_) => <int>{});
+    // Read old room documents if one was written by a previous app version.
+    if (raw.isNotEmpty && raw.first is List) {
+      for (var player = 0; player < raw.length && player < playerCount; player++) {
+        shields[player].addAll(List<int>.from(raw[player] as List));
+      }
+      return shields;
+    }
+    for (final value in raw) {
+      if (value is! num) continue;
+      final index = value.toInt();
+      final player = index ~/ 4;
+      final pawn = index % 4;
+      if (index >= 0 && player < playerCount) shields[player].add(pawn);
+    }
+    return shields;
+  }
+
   Future<void> _createOnlineRoom(List<BankQuestion> questions) async {
     final profile = AuthService.instance.profile.value;
     if (profile == null) throw StateError('Connectez-vous avant de créer une partie en ligne.');
     final code = await _newRoomCode();
     final ref = FirebaseFirestore.instance.collection('ludoGames').doc(code);
     const players = 2;
-    final initialPawns = List.generate(players, (_) => List.filled(4, -1));
+    final initialPawns = List.filled(players * 4, -1);
     await ref.set({
       'code': code,
       'hostUid': profile.uid,
@@ -357,7 +405,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       'done': false,
         'shieldAvailable': false,
         'pawns': initialPawns,
-        'shieldedPawns': [<int>[], <int>[]],
+        'shieldedPawns': <int>[],
         'moveAnimation': null,
         'createdAt': FieldValue.serverTimestamp(),
     });
@@ -429,12 +477,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
           .toList();
       final uids = List<String>.from(data['playerUids'] ?? const <String>[]);
       final names = List<String>.from(data['playerNames'] ?? const <String>[]);
-      final pawns = (data['pawns'] as List? ?? const [])
-          .map((row) => List<int>.from(row as List))
-          .toList();
-      final shielded = (data['shieldedPawns'] as List? ?? const [])
-          .map((row) => Set<int>.from(row as List))
-          .toList();
+      final pawns = _decodePawns(data['pawns'], uids.length.clamp(2, 4).toInt());
+      final shielded = _decodeShieldedPawns(
+        data['shieldedPawns'],
+        uids.length.clamp(2, 4).toInt(),
+      );
       final previousDie = _die;
       final previousTurn = _turn;
       final rawDeadline = data['questionDeadline'];
@@ -528,8 +575,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         'message': _message,
         'done': _done,
         'shieldAvailable': _shieldAvailable,
-        'pawns': _pawns,
-        'shieldedPawns': [for (final row in _shieldedPawns) row.toList()],
+        'pawns': _encodePawns(_pawns),
+        'shieldedPawns': _encodeShieldedPawns(_shieldedPawns),
         'moveAnimation': moveAnimation,
       });
     } catch (error) {
