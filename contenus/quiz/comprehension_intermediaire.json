@@ -1,0 +1,4549 @@
+{
+ "questions": [
+  {
+   "id": "comprehension_intermediaire_0001",
+   "t": "A cooperative in Kaolack began sharing a storage room for millet. Members record each bag when it arrives and check the list before taking grain home. The arrangement has reduced confusion during the busy harvest period.",
+   "q": "What does the shared list help members do?",
+   "o": [
+    "Check which bags arrive and leave",
+    "Repair the storage roof",
+    "Find a bus timetable",
+    "Choose a school subject"
+   ],
+   "r": 0,
+   "e": "Members record bags and check the list.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0002",
+   "t": "A cooperative in Kaolack began sharing a storage room for millet. Members record each bag when it arrives and check the list before taking grain home. The arrangement has reduced confusion during the busy harvest period.",
+   "q": "When is the arrangement especially useful?",
+   "o": [
+    "During the school holidays only",
+    "During the harvest period",
+    "At the end of every lesson",
+    "When the market is closed"
+   ],
+   "r": 1,
+   "e": "The text says it helps during the busy harvest period.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0003",
+   "t": "The morning bus from Rufisque was often full, so the transport office added another trip at half past seven. Students who used the later bus were asked to show their school cards. After a month, fewer students arrived after the first lesson.",
+   "q": "Why was another bus trip added?",
+   "o": [
+    "Students asked for a later exam",
+    "The road was closed every morning",
+    "The first bus was often full",
+    "The school moved to another town"
+   ],
+   "r": 2,
+   "e": "The first bus did not have enough space.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0004",
+   "t": "The morning bus from Rufisque was often full, so the transport office added another trip at half past seven. Students who used the later bus were asked to show their school cards. After a month, fewer students arrived after the first lesson.",
+   "q": "What happened after a month?",
+   "o": [
+    "More students missed the bus",
+    "The bus stopped running",
+    "The school cancelled its first lesson",
+    "Fewer students arrived late"
+   ],
+   "r": 3,
+   "e": "The text says fewer students arrived after the first lesson.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0005",
+   "t": "A clinic introduced appointment cards to reduce waiting. Patients could still come without a card, but they might have to wait longer. Nurses asked people to arrive ten minutes before their appointment.",
+   "q": "What was the main purpose of appointment cards?",
+   "o": [
+    "To reduce waiting",
+    "To close the clinic earlier",
+    "To replace the nurses",
+    "To give patients medicine at home"
+   ],
+   "r": 0,
+   "e": "The cards were introduced to reduce waiting.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0006",
+   "t": "A clinic introduced appointment cards to reduce waiting. Patients could still come without a card, but they might have to wait longer. Nurses asked people to arrive ten minutes before their appointment.",
+   "q": "When should patients arrive?",
+   "o": [
+    "An hour after the appointment",
+    "Ten minutes early",
+    "At the end of the day",
+    "Only when the nurse calls"
+   ],
+   "r": 1,
+   "e": "The notice asks patients to arrive ten minutes before.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0007",
+   "t": "The science club will meet in Room 12 on Thursday. Members will build simple water filters using sand, stones and cloth. They should bring a clean plastic bottle, but the club will provide the other materials.",
+   "q": "Where will the club meet?",
+   "o": [
+    "In the library",
+    "At the clinic",
+    "In Room 12",
+    "In the school yard"
+   ],
+   "r": 2,
+   "e": "The notice says the meeting is in Room 12.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0008",
+   "t": "The science club will meet in Room 12 on Thursday. Members will build simple water filters using sand, stones and cloth. They should bring a clean plastic bottle, but the club will provide the other materials.",
+   "q": "What should members bring?",
+   "o": [
+    "Sand and stones from home",
+    "A glass of water",
+    "A new water filter",
+    "A clean plastic bottle"
+   ],
+   "r": 3,
+   "e": "The club asks each member to bring a clean bottle.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0009",
+   "t": "After two weeks without rain, the farmers delayed planting their groundnuts. They waited for the soil to become wet enough. When the rain finally came, they planted together and shared the work.",
+   "q": "Why did the farmers delay planting?",
+   "o": [
+    "The soil was too dry",
+    "They were waiting for a market",
+    "They had no seeds at all",
+    "The fields were under water"
+   ],
+   "r": 0,
+   "e": "They waited until the soil was wet enough.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0010",
+   "t": "After two weeks without rain, the farmers delayed planting their groundnuts. They waited for the soil to become wet enough. When the rain finally came, they planted together and shared the work.",
+   "q": "How did they plant after the rain?",
+   "o": [
+    "They asked the school to do it",
+    "They worked together",
+    "Each farmer planted in a different country",
+    "They planted only at night"
+   ],
+   "r": 1,
+   "e": "The text says they planted together and shared the work.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0011",
+   "t": "The team practised passing on Tuesday and shooting on Thursday. Their coach recorded each player’s progress. On Saturday, they played a match, but the coach reminded them that teamwork mattered more than the score.",
+   "q": "What did the team practise on Tuesday?",
+   "o": [
+    "Running a market",
+    "Keeping score",
+    "Passing",
+    "Shooting"
+   ],
+   "r": 2,
+   "e": "Passing was Tuesday’s focus.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0012",
+   "t": "The team practised passing on Tuesday and shooting on Thursday. Their coach recorded each player’s progress. On Saturday, they played a match, but the coach reminded them that teamwork mattered more than the score.",
+   "q": "What did the coach say mattered most?",
+   "o": [
+    "The length of practice",
+    "The final score",
+    "New uniforms",
+    "Teamwork"
+   ],
+   "r": 3,
+   "e": "The coach said teamwork mattered more than the score.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0013",
+   "t": "A library member may keep a book for fourteen days. If nobody else has requested it, the member can renew it once. Books must be returned during opening hours, even when the front door is busy.",
+   "q": "How long may a member first keep a book?",
+   "o": [
+    "Fourteen days",
+    "One month",
+    "One year",
+    "Seven days"
+   ],
+   "r": 0,
+   "e": "The rule allows fourteen days.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0014",
+   "t": "A library member may keep a book for fourteen days. If nobody else has requested it, the member can renew it once. Books must be returned during opening hours, even when the front door is busy.",
+   "q": "When can a member renew a book?",
+   "o": [
+    "Every day",
+    "When nobody else has requested it",
+    "When the library is closed",
+    "Only after losing it"
+   ],
+   "r": 1,
+   "e": "Renewal is allowed if there is no other request.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0015",
+   "t": "At the market, a sign showed the price of tomatoes per basket. The seller explained that the price could change during the week because the supply was different each day. Awa compared two stalls before buying.",
+   "q": "Why could the tomato price change?",
+   "o": [
+    "The market opened only once",
+    "Awa changed the sign",
+    "The supply changed from day to day",
+    "The baskets changed colour"
+   ],
+   "r": 2,
+   "e": "The seller linked changing prices to changing supply.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0016",
+   "t": "At the market, a sign showed the price of tomatoes per basket. The seller explained that the price could change during the week because the supply was different each day. Awa compared two stalls before buying.",
+   "q": "What did Awa do before buying?",
+   "o": [
+    "Changed the tomatoes herself",
+    "Asked the bus driver",
+    "Went home without looking",
+    "Compared two stalls"
+   ],
+   "r": 3,
+   "e": "She compared two stalls.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0017",
+   "t": "Pupils placed paper, metal and plastic in different boxes. Their teacher said this makes recycling easier because each material can be sorted separately. They agreed to empty the boxes every Friday.",
+   "q": "Why did pupils use different boxes?",
+   "o": [
+    "To sort materials for recycling",
+    "To store their homework",
+    "To keep the classroom dark",
+    "To hide the school books"
+   ],
+   "r": 0,
+   "e": "Separate boxes make sorting easier.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0018",
+   "t": "Pupils placed paper, metal and plastic in different boxes. Their teacher said this makes recycling easier because each material can be sorted separately. They agreed to empty the boxes every Friday.",
+   "q": "When will they empty the boxes?",
+   "o": [
+    "Only when it rains",
+    "Every Friday",
+    "Every morning",
+    "At the end of the year"
+   ],
+   "r": 1,
+   "e": "They agreed to empty them each Friday.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0019",
+   "t": "The school garden has a small tank that collects rainwater from the roof. Pupils use this water for young plants when the weather is dry. A teacher checks the tank each week to make sure it is clean.",
+   "q": "Where does the tank water come from?",
+   "o": [
+    "A river under the school",
+    "Bottles from the market",
+    "Rainwater from the roof",
+    "A nearby ocean"
+   ],
+   "r": 2,
+   "e": "The tank collects rainwater from the roof.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0020",
+   "t": "The school garden has a small tank that collects rainwater from the roof. Pupils use this water for young plants when the weather is dry. A teacher checks the tank each week to make sure it is clean.",
+   "q": "Who checks the tank?",
+   "o": [
+    "The bus driver",
+    "A shopkeeper",
+    "A visitor",
+    "A teacher"
+   ],
+   "r": 3,
+   "e": "A teacher checks it each week.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0021",
+   "t": "A group tested solar lamps at home for one month. They found the lamps useful during power cuts, but they needed to charge them in sunlight during the day. The group shared its notes with other families.",
+   "q": "When did the group need to charge the lamps?",
+   "o": [
+    "During the day",
+    "Only at midnight",
+    "Under water",
+    "Inside a closed cupboard"
+   ],
+   "r": 0,
+   "e": "The lamps charge in sunlight during the day.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0022",
+   "t": "A group tested solar lamps at home for one month. They found the lamps useful during power cuts, but they needed to charge them in sunlight during the day. The group shared its notes with other families.",
+   "q": "Why did families find the lamps useful?",
+   "o": [
+    "They produced rain",
+    "They worked during power cuts",
+    "They made the rooms colder",
+    "They replaced every household tool"
+   ],
+   "r": 1,
+   "e": "The text says they were useful during power cuts.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0023",
+   "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
+   "q": "How long did the group review vocabulary?",
+   "o": [
+    "Two days",
+    "Ten minutes",
+    "Twenty minutes",
+    "One hour"
+   ],
+   "r": 2,
+   "e": "The text gives twenty minutes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0024",
+   "t": "Before the test, the study group reviewed vocabulary for twenty minutes and then took a short break. Each learner explained one difficult word to the others. They finished by asking questions about words they still did not understand.",
+   "q": "How did learners help each other?",
+   "o": [
+    "They left the room",
+    "They copied every answer",
+    "They cancelled the test",
+    "They explained difficult words"
+   ],
+   "r": 3,
+   "e": "Each learner explained one difficult word.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0025",
+   "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon.",
+   "q": "Where did the group start the library?",
+   "o": [
+    "In a room at the community centre",
+    "Inside a hospital",
+    "At the bus station",
+    "On a school roof"
+   ],
+   "r": 0,
+   "e": "The passage says the library uses an unused community-centre room.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0026",
+   "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon.",
+   "q": "How do volunteers record each loan?",
+   "o": [
+    "They paint a mark on each book.",
+    "They write it in a notebook.",
+    "They send a radio message.",
+    "They keep the information in a box."
+   ],
+   "r": 1,
+   "e": "The volunteers write each loan in a notebook.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0027",
+   "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon.",
+   "q": "How long may a reader first keep a book?",
+   "o": [
+    "One year",
+    "One day",
+    "Two weeks",
+    "One month"
+   ],
+   "r": 2,
+   "e": "A reader may keep a book for two weeks.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0028",
+   "t": "A youth group in Thiès started a small library in an unused room at the community centre. Volunteers collect books from families and write each loan in a notebook. A reader may keep a book for two weeks, then return it or ask for one more week. The group opens every Saturday afternoon.",
+   "q": "When does the library open?",
+   "o": [
+    "On Friday nights",
+    "Only during holidays",
+    "Every Monday morning",
+    "Every Saturday afternoon"
+   ],
+   "r": 3,
+   "e": "The group opens every Saturday afternoon.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0029",
+   "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week.",
+   "q": "Why did pupils and parents lay stones on the path?",
+   "o": [
+    "To make the muddy path easier to use",
+    "To mark a football field",
+    "To stop pupils from walking",
+    "To build a wall around the school"
+   ],
+   "r": 0,
+   "e": "They laid stones to improve the muddy footpath.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0030",
+   "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week.",
+   "q": "Who helped collect the stones?",
+   "o": [
+    "Only visitors",
+    "Pupils and parents",
+    "Bus drivers and shopkeepers",
+    "The school cooks"
+   ],
+   "r": 1,
+   "e": "The passage says pupils and parents collected stones.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0031",
+   "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week.",
+   "q": "Why did they leave a gap near the tree?",
+   "o": [
+    "So the path would become longer",
+    "So a bus could pass",
+    "So rainwater could flow",
+    "So they could plant a new tree"
+   ],
+   "r": 2,
+   "e": "The gap allowed rainwater to flow.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0032",
+   "t": "After heavy rain, a footpath near a school became muddy. Pupils and parents collected stones and laid them along the path. The school asked everyone to leave a small gap near a tree so rainwater could flow. The route was easier to use the following week.",
+   "q": "When was the route easier to use?",
+   "o": [
+    "Before the rain",
+    "One year later",
+    "The same morning",
+    "The following week"
+   ],
+   "r": 3,
+   "e": "The passage says the route was easier the following week.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0033",
+   "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read.",
+   "q": "Where did members put the notice?",
+   "o": [
+    "Beside the weighing scale",
+    "At the school gate",
+    "Inside a fishing boat",
+    "Near the bus station"
+   ],
+   "r": 0,
+   "e": "The notice was placed beside the scale.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0034",
+   "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read.",
+   "q": "What information did the notice show?",
+   "o": [
+    "The names of every visitor",
+    "Prices and the checker’s name",
+    "A list of school lessons",
+    "The weather for the month"
+   ],
+   "r": 1,
+   "e": "It showed the day's prices and who checked each catch.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0035",
+   "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read.",
+   "q": "When did the group discuss the notice?",
+   "o": [
+    "After the next fishing season",
+    "Before opening the cooperative",
+    "At the end of the week",
+    "Every morning at sunrise"
+   ],
+   "r": 2,
+   "e": "They discussed it at the end of the week.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0036",
+   "t": "At a fishing cooperative in Joal, members placed a notice beside the weighing scale. It showed the day’s prices and the name of the person checking each catch. New members could ask questions before selling. At the end of the week, the group discussed whether the notice was easy to read.",
+   "q": "What could new members do before selling?",
+   "o": [
+    "Take the weighing scale home",
+    "Change every price themselves",
+    "Choose a different cooperative",
+    "Ask questions"
+   ],
+   "r": 3,
+   "e": "New members could ask questions before selling.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0037",
+   "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour.",
+   "q": "Why did Awa take a raincoat?",
+   "o": [
+    "She heard that rain might come.",
+    "She wanted to lend it to a teacher.",
+    "Her brother asked her to buy one.",
+    "The sky was very hot."
+   ],
+   "r": 0,
+   "e": "The forecast warned that rain was possible.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0038",
+   "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour.",
+   "q": "What did Awa check?",
+   "o": [
+    "A school timetable",
+    "A radio weather report",
+    "A list of bus tickets",
+    "A message about a football match"
+   ],
+   "r": 1,
+   "e": "She checked a weather report on the radio.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0039",
+   "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour.",
+   "q": "What happened before noon?",
+   "o": [
+    "Awa lost her raincoat.",
+    "The class was cancelled.",
+    "It rained.",
+    "The sun became very hot."
+   ],
+   "r": 2,
+   "e": "The passage says it rained before noon.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0040",
+   "t": "Awa planned to walk to class, but the sky became dark. She checked a radio weather report and took a raincoat. It rained before noon, so she stayed dry. Her brother did not hear the forecast and borrowed an umbrella from a neighbour.",
+   "q": "How did her brother stay dry?",
+   "o": [
+    "He wore Awa’s shoes.",
+    "He listened to a lesson on the radio.",
+    "He stayed at home all day.",
+    "He borrowed an umbrella from a neighbour."
+   ],
+   "r": 3,
+   "e": "He borrowed an umbrella from a neighbour.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0041",
+   "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months.",
+   "q": "Why did the garden use two containers?",
+   "o": [
+    "To compare rainwater and tap water",
+    "To store two kinds of seeds",
+    "To keep the plants in the dark",
+    "To collect water for cooking"
+   ],
+   "r": 0,
+   "e": "One container held rainwater and the other tap water.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0042",
+   "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months.",
+   "q": "What did learners measure?",
+   "o": [
+    "The number of school books",
+    "The amount of water used",
+    "The height of the school wall",
+    "The price of each plant"
+   ],
+   "r": 1,
+   "e": "They measured water use each Friday.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0043",
+   "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months.",
+   "q": "When did learners measure the water?",
+   "o": [
+    "After each school holiday",
+    "At the start of the year only",
+    "Each Friday",
+    "Every Monday evening"
+   ],
+   "r": 2,
+   "e": "The passage says they measured it each Friday.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0044",
+   "t": "A school garden used two water containers: one for rainwater and one for tap water. Learners marked each container and used a small cup for the plants. They measured the water each Friday to see which method used less. The results helped them plan for the dry months.",
+   "q": "How did the results help the learners?",
+   "o": [
+    "They could stop growing plants.",
+    "They could change the school calendar.",
+    "They could sell the containers.",
+    "They could plan for the dry months."
+   ],
+   "r": 3,
+   "e": "The results helped with planning for the dry months.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0045",
+   "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk.",
+   "q": "How long did each group practise speaking?",
+   "o": [
+    "Three minutes",
+    "Half an hour",
+    "One minute",
+    "Ten minutes"
+   ],
+   "r": 0,
+   "e": "Each group practised for three minutes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0046",
+   "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk.",
+   "q": "What did one student do during practice?",
+   "o": [
+    "Marked the classroom floor",
+    "Watched the clock",
+    "Read the next chapter",
+    "Collected lunch money"
+   ],
+   "r": 1,
+   "e": "One student watched the clock.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0047",
+   "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk.",
+   "q": "What were the two suggestions about?",
+   "o": [
+    "Clothing and handwriting",
+    "Travel and transport",
+    "Voice and clear examples",
+    "Food and exercise"
+   ],
+   "r": 2,
+   "e": "The feedback concerned voice and examples.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0048",
+   "t": "Before a class presentation, each group practised speaking for three minutes. One student watched the clock, while another wrote down two helpful suggestions. After each presentation, the group received one suggestion about voice and one about clear examples. The teacher asked learners to use the feedback in their next talk.",
+   "q": "When should learners use the feedback?",
+   "o": [
+    "During the lunch break",
+    "Before choosing a group",
+    "Only at the end of the year",
+    "In their next presentation"
+   ],
+   "r": 3,
+   "e": "The teacher asked them to use it in their next talk.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0049",
+   "t": "Awa bought rice and tomatoes at the market on Saturday morning, because her aunt was preparing lunch.",
+   "q": "What did Awa do?",
+   "o": [
+    "bought rice and tomatoes",
+    "practised a short speech",
+    "made a poster about handwashing",
+    "visited her grandmother"
+   ],
+   "r": 0,
+   "e": "Le passage dit que Awa bought rice and tomatoes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0050",
+   "t": "Moussa repaired a bicycle tyre beside his house after school, because his friend needed to ride home.",
+   "q": "Where did Moussa do it?",
+   "o": [
+    "from his English teacher",
+    "beside his house",
+    "at a shop near school",
+    "to the community garden"
+   ],
+   "r": 1,
+   "e": "Le passage situe l’action beside his house.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0051",
+   "t": "Fatou returned two library books to the school library before the final bell, because the books were due that day.",
+   "q": "When did Fatou do it?",
+   "o": [
+    "after the science fair",
+    "on Sunday evening",
+    "before the final bell",
+    "on Friday evening"
+   ],
+   "r": 2,
+   "e": "Le passage précise le moment : before the final bell.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0052",
+   "t": "Idrissa planted six young trees behind the classroom on Thursday afternoon, because the school garden needed more shade.",
+   "q": "Why did Idrissa do it?",
+   "o": [
+    "his class was planning where to plant seeds",
+    "the road was blocked by a delivery truck",
+    "his class was recycling plastic",
+    "the school garden needed more shade"
+   ],
+   "r": 3,
+   "e": "Le passage donne cette raison : the school garden needed more shade.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0053",
+   "t": "Mariama practised a short speech in the assembly hall before classes began, because she was speaking at the school meeting.",
+   "q": "What did Mariama do?",
+   "o": [
+    "practised a short speech",
+    "visited her grandmother",
+    "prepared a fruit salad",
+    "made a poster about handwashing"
+   ],
+   "r": 0,
+   "e": "Le passage dit que Mariama practised a short speech.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0054",
+   "t": "Cheikh borrowed a dictionary from his English teacher during the reading lesson, because he wanted to check a new word.",
+   "q": "Where did Cheikh do it?",
+   "o": [
+    "to the community garden",
+    "from his English teacher",
+    "under a bench",
+    "at a shop near school"
+   ],
+   "r": 1,
+   "e": "Le passage situe l’action from his English teacher.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0055",
+   "t": "Ndeye washed the football shirts at home on Sunday evening, because the team had a match the next day.",
+   "q": "When did Ndeye do it?",
+   "o": [
+    "on Friday evening",
+    "after the science fair",
+    "on Sunday evening",
+    "after lunch"
+   ],
+   "r": 2,
+   "e": "Le passage précise le moment : on Sunday evening.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0056",
+   "t": "Pape collected clean bottles near the sports field after the match, because his class was recycling plastic.",
+   "q": "Why did Pape do it?",
+   "o": [
+    "he wanted to confirm their meeting time",
+    "the road was blocked by a delivery truck",
+    "his class was planning where to plant seeds",
+    "his class was recycling plastic"
+   ],
+   "r": 3,
+   "e": "Le passage donne cette raison : his class was recycling plastic.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0057",
+   "t": "Bineta visited her grandmother in the next village during the school holiday, because she had not seen her for months.",
+   "q": "What did Bineta do?",
+   "o": [
+    "visited her grandmother",
+    "made a poster about handwashing",
+    "cleaned the classroom windows",
+    "prepared a fruit salad"
+   ],
+   "r": 0,
+   "e": "Le passage dit que Bineta visited her grandmother.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0058",
+   "t": "Omar helped carry the water cans to the community garden early on Tuesday, because the volunteers were watering vegetables.",
+   "q": "Where did Omar do it?",
+   "o": [
+    "at the bookshop",
+    "to the community garden",
+    "at a shop near school",
+    "under a bench"
+   ],
+   "r": 1,
+   "e": "Le passage situe l’action to the community garden.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0059",
+   "t": "Sokhna wrote a thank-you note in her classroom after the science fair, because her group had received help.",
+   "q": "When did Sokhna do it?",
+   "o": [
+    "at half past four",
+    "on Friday evening",
+    "after the science fair",
+    "after lunch"
+   ],
+   "r": 2,
+   "e": "Le passage précise le moment : after the science fair.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0060",
+   "t": "Lamine missed the first bus at the bus stop just after six, because the road was blocked by a delivery truck.",
+   "q": "Why did Lamine do it?",
+   "o": [
+    "his class was planning where to plant seeds",
+    "he wanted to confirm their meeting time",
+    "she wanted to know if it would rain",
+    "the road was blocked by a delivery truck"
+   ],
+   "r": 3,
+   "e": "Le passage donne cette raison : the road was blocked by a delivery truck.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0061",
+   "t": "Aminata made a poster about handwashing for the health club on Wednesday afternoon, because the club was planning an awareness day.",
+   "q": "What did Aminata do?",
+   "o": [
+    "made a poster about handwashing",
+    "bought rice and tomatoes",
+    "prepared a fruit salad",
+    "cleaned the classroom windows"
+   ],
+   "r": 0,
+   "e": "Le passage dit que Aminata made a poster about handwashing.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0062",
+   "t": "Boubacar bought a notebook and two pens at a shop near school during the lunch break, because he had used the last page of his notebook.",
+   "q": "Where did Boubacar do it?",
+   "o": [
+    "beside his house",
+    "at a shop near school",
+    "at the bookshop",
+    "under a bench"
+   ],
+   "r": 1,
+   "e": "Le passage situe l’action at a shop near school.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0063",
+   "t": "Khady read a story aloud to her younger cousins on Friday evening, because they wanted to hear a new story.",
+   "q": "When did Khady do it?",
+   "o": [
+    "after lunch",
+    "at half past four",
+    "on Friday evening",
+    "before the final bell"
+   ],
+   "r": 2,
+   "e": "Le passage précise le moment : on Friday evening.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0064",
+   "t": "Mamadou measured the garden beds with a tape measure before the rain, because his class was planning where to plant seeds.",
+   "q": "Why did Mamadou do it?",
+   "o": [
+    "he wanted to confirm their meeting time",
+    "she wanted to know if it would rain",
+    "the school garden needed more shade",
+    "his class was planning where to plant seeds"
+   ],
+   "r": 3,
+   "e": "Le passage donne cette raison : his class was planning where to plant seeds.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0065",
+   "t": "Rokhaya prepared a fruit salad in the school kitchen after the cooking lesson, because her group was sharing a healthy snack.",
+   "q": "What did Rokhaya do?",
+   "o": [
+    "prepared a fruit salad",
+    "bought rice and tomatoes",
+    "practised a short speech",
+    "cleaned the classroom windows"
+   ],
+   "r": 0,
+   "e": "Le passage dit que Rokhaya prepared a fruit salad.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0066",
+   "t": "Alioune found a lost key under a bench during the football practice, because he wanted to return it to its owner.",
+   "q": "Where did Alioune do it?",
+   "o": [
+    "from his English teacher",
+    "under a bench",
+    "at the bookshop",
+    "beside his house"
+   ],
+   "r": 1,
+   "e": "Le passage situe l’action under a bench.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0067",
+   "t": "Coumba asked the librarian for help at the reading desk after lunch, because she could not find the history book.",
+   "q": "When did Coumba do it?",
+   "o": [
+    "at half past four",
+    "on Sunday evening",
+    "after lunch",
+    "before the final bell"
+   ],
+   "r": 2,
+   "e": "Le passage précise le moment : after lunch.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0068",
+   "t": "Samba sent a message to his cousin from the family house in the evening, because he wanted to confirm their meeting time.",
+   "q": "Why did Samba do it?",
+   "o": [
+    "she wanted to know if it would rain",
+    "the school garden needed more shade",
+    "his class was recycling plastic",
+    "he wanted to confirm their meeting time"
+   ],
+   "r": 3,
+   "e": "Le passage donne cette raison : he wanted to confirm their meeting time.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0069",
+   "t": "Adama cleaned the classroom windows with two classmates on Friday afternoon, because their class was welcoming visitors.",
+   "q": "What did Adama do?",
+   "o": [
+    "cleaned the classroom windows",
+    "practised a short speech",
+    "visited her grandmother",
+    "bought rice and tomatoes"
+   ],
+   "r": 0,
+   "e": "Le passage dit que Adama cleaned the classroom windows.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0070",
+   "t": "Diarra chose a blue folder at the bookshop before the new term, because she needed a place for her notes.",
+   "q": "Where did Diarra do it?",
+   "o": [
+    "from his English teacher",
+    "at the bookshop",
+    "beside his house",
+    "to the community garden"
+   ],
+   "r": 1,
+   "e": "Le passage situe l’action at the bookshop.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0071",
+   "t": "Ibrahima waited for his sister outside the clinic at half past four, because they were going home together.",
+   "q": "When did Ibrahima do it?",
+   "o": [
+    "on Sunday evening",
+    "before the final bell",
+    "at half past four",
+    "after the science fair"
+   ],
+   "r": 2,
+   "e": "Le passage précise le moment : at half past four.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0072",
+   "t": "Aïssatou checked the weather report on the radio before leaving home, because she wanted to know if it would rain.",
+   "q": "Why did Aïssatou do it?",
+   "o": [
+    "the road was blocked by a delivery truck",
+    "the school garden needed more shade",
+    "his class was recycling plastic",
+    "she wanted to know if it would rain"
+   ],
+   "r": 3,
+   "e": "Le passage donne cette raison : she wanted to know if it would rain.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0073",
+   "t": "Awa’s school club planted trees near the football field. The pupils chose local trees because they need less water. They made a watering schedule for the first month. Awa’s group waters the trees every Tuesday.",
+   "q": "Which trees did the pupils choose?",
+   "o": [
+    "Local trees",
+    "Fruit trees from Europe",
+    "Very tall palm trees",
+    "Trees that need daily water"
+   ],
+   "r": 0,
+   "e": "Le texte précise qu’ils ont choisi des arbres locaux.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0074",
+   "t": "Awa’s school club planted trees near the football field. The pupils chose local trees because they need less water. They made a watering schedule for the first month. Awa’s group waters the trees every Tuesday.",
+   "q": "When does Awa’s group water the trees?",
+   "o": [
+    "Only on Sunday",
+    "Every Tuesday",
+    "Once a month",
+    "Every morning"
+   ],
+   "r": 1,
+   "e": "Le groupe d’Awa arrose les arbres chaque mardi.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0075",
+   "t": "Mamadou’s bus to Saint-Louis was delayed by heavy rain. He sent a message to his aunt and waited inside the station. When the bus arrived, he checked the number before getting on. He reached his aunt’s house before dinner.",
+   "q": "Why was Mamadou’s bus delayed?",
+   "o": [
+    "A missing ticket",
+    "A school meeting",
+    "Heavy rain",
+    "A broken bridge"
+   ],
+   "r": 2,
+   "e": "La pluie forte a retardé le bus.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0076",
+   "t": "Mamadou’s bus to Saint-Louis was delayed by heavy rain. He sent a message to his aunt and waited inside the station. When the bus arrived, he checked the number before getting on. He reached his aunt’s house before dinner.",
+   "q": "What did Mamadou check before boarding?",
+   "o": [
+    "His aunt’s address",
+    "The station clock",
+    "The weather report",
+    "The bus number"
+   ],
+   "r": 3,
+   "e": "Il a vérifié le numéro du bus.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0077",
+   "t": "At the market, Fatou compared the prices of two baskets of oranges. One basket was cheaper, but several oranges were damaged. She chose the other basket because the fruit was fresh. The seller gave her a small discount.",
+   "q": "Why did Fatou choose the more expensive basket?",
+   "o": [
+    "The oranges were fresh",
+    "It was the largest basket",
+    "It had fewer oranges",
+    "The seller was her friend"
+   ],
+   "r": 0,
+   "e": "Elle a choisi les fruits frais.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0078",
+   "t": "At the market, Fatou compared the prices of two baskets of oranges. One basket was cheaper, but several oranges were damaged. She chose the other basket because the fruit was fresh. The seller gave her a small discount.",
+   "q": "What does “damaged” mean in this text?",
+   "o": [
+    "Very sweet",
+    "Hurt or spoiled",
+    "Newly picked",
+    "Difficult to carry"
+   ],
+   "r": 1,
+   "e": "Damaged veut dire abîmé.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0079",
+   "t": "The school library closes at five, but students may borrow books until Friday. They write their names and the book title in a notebook. A student who returns a book late must speak to the librarian. Mariama borrowed a story about the sea.",
+   "q": "Until what day may students borrow books?",
+   "o": [
+    "Monday",
+    "Sunday",
+    "Friday",
+    "Wednesday"
+   ],
+   "r": 2,
+   "e": "Les élèves peuvent emprunter des livres jusqu’à vendredi.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0080",
+   "t": "The school library closes at five, but students may borrow books until Friday. They write their names and the book title in a notebook. A student who returns a book late must speak to the librarian. Mariama borrowed a story about the sea.",
+   "q": "What must a student do after returning a book late?",
+   "o": [
+    "Stay after school",
+    "Buy another book",
+    "Write a new story",
+    "Speak to the librarian"
+   ],
+   "r": 3,
+   "e": "Le texte dit qu’il faut parler à la bibliothécaire.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0081",
+   "t": "During the dry season, a village committee repaired a well. The work took three days, and families brought water in clean containers. The committee asked everyone to close the well cover after use. This helps keep dust and insects out.",
+   "q": "Why should people close the well cover?",
+   "o": [
+    "To keep dust and insects out",
+    "To help the well dry",
+    "To make the water warmer",
+    "To stop the well from getting deeper"
+   ],
+   "r": 0,
+   "e": "Le couvercle protège l’eau de la poussière et des insectes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0082",
+   "t": "During the dry season, a village committee repaired a well. The work took three days, and families brought water in clean containers. The committee asked everyone to close the well cover after use. This helps keep dust and insects out.",
+   "q": "How long did the repair work take?",
+   "o": [
+    "Two months",
+    "Three days",
+    "One week",
+    "One morning"
+   ],
+   "r": 1,
+   "e": "Les réparations ont duré trois jours.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0083",
+   "t": "Aminata wanted to practise English, so she listened to a short radio programme each evening. She wrote down three new words and used them in sentences. After two weeks, she could understand more of the programme. She still asked her teacher about difficult words.",
+   "q": "What did Aminata do with new words?",
+   "o": [
+    "She taught them on the radio",
+    "She translated the whole programme",
+    "She used them in sentences",
+    "She forgot them after listening"
+   ],
+   "r": 2,
+   "e": "Elle écrivait les mots puis les utilisait dans des phrases.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0084",
+   "t": "Aminata wanted to practise English, so she listened to a short radio programme each evening. She wrote down three new words and used them in sentences. After two weeks, she could understand more of the programme. She still asked her teacher about difficult words.",
+   "q": "How did her listening change after two weeks?",
+   "o": [
+    "She changed the radio station",
+    "She understood less",
+    "She stopped listening",
+    "She understood more"
+   ],
+   "r": 3,
+   "e": "Après deux semaines, elle comprenait davantage.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0085",
+   "t": "A football team arrived early for its match. The coach asked the players to drink water and stretch before warming up. The match began at four o’clock. Their goalkeeper saved a penalty in the second half.",
+   "q": "What did the players do before warming up?",
+   "o": [
+    "They drank water and stretched",
+    "They ate a large meal",
+    "They watched another match",
+    "They changed the referee"
+   ],
+   "r": 0,
+   "e": "Le coach leur a demandé de boire et de s’étirer.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0086",
+   "t": "A football team arrived early for its match. The coach asked the players to drink water and stretch before warming up. The match began at four o’clock. Their goalkeeper saved a penalty in the second half.",
+   "q": "When did the goalkeeper save a penalty?",
+   "o": [
+    "Before the match",
+    "In the second half",
+    "At half past four",
+    "After the final whistle"
+   ],
+   "r": 1,
+   "e": "Le texte dit que c’était pendant la deuxième mi-temps.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0087",
+   "t": "The health worker visited the school to talk about handwashing. She showed the pupils how to use soap and clean water. A poster near the classroom sink reminds them to wash before eating. The pupils made a song to remember the steps.",
+   "q": "What did the health worker demonstrate?",
+   "o": [
+    "How to write a poster",
+    "How to clean the classroom",
+    "How to wash hands",
+    "How to prepare lunch"
+   ],
+   "r": 2,
+   "e": "Elle a montré comment se laver les mains.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0088",
+   "t": "The health worker visited the school to talk about handwashing. She showed the pupils how to use soap and clean water. A poster near the classroom sink reminds them to wash before eating. The pupils made a song to remember the steps.",
+   "q": "When does the poster remind pupils to wash?",
+   "o": [
+    "After sleeping",
+    "Before playing football",
+    "After reading",
+    "Before eating"
+   ],
+   "r": 3,
+   "e": "L’affiche rappelle de se laver avant de manger.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0089",
+   "t": "A farmer planted millet after the first good rain. He removed weeds by hand and checked the field each week. His daughter helped count the rows. They planned to store the harvest in dry bags.",
+   "q": "What did the farmer plant?",
+   "o": [
+    "Millet",
+    "Rice",
+    "Onions",
+    "Cotton"
+   ],
+   "r": 0,
+   "e": "Le texte indique qu’il a planté du millet.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0090",
+   "t": "A farmer planted millet after the first good rain. He removed weeds by hand and checked the field each week. His daughter helped count the rows. They planned to store the harvest in dry bags.",
+   "q": "How often did he check the field?",
+   "o": [
+    "Only after harvest",
+    "Each week",
+    "Once a season",
+    "Every day"
+   ],
+   "r": 1,
+   "e": "Il vérifiait le champ chaque semaine.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0091",
+   "t": "At the bus station, Ousmane saw a wallet on a bench. He took it to the information desk instead of keeping it. The worker checked for an identification card and called the owner. The owner returned later to thank Ousmane.",
+   "q": "Where did Ousmane take the wallet?",
+   "o": [
+    "To the bus driver",
+    "To his home",
+    "To the information desk",
+    "To the market"
+   ],
+   "r": 2,
+   "e": "Il a apporté le portefeuille au bureau d’information.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0092",
+   "t": "At the bus station, Ousmane saw a wallet on a bench. He took it to the information desk instead of keeping it. The worker checked for an identification card and called the owner. The owner returned later to thank Ousmane.",
+   "q": "Why could the worker call the owner?",
+   "o": [
+    "Ousmane knew the owner",
+    "The owner was on the bus",
+    "The wallet had a phone",
+    "There was an identification card"
+   ],
+   "r": 3,
+   "e": "La carte d’identité permettait de contacter le propriétaire.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0093",
+   "t": "The science class placed two plants near a window. One plant received water every day, while the other received water only once a week. After several weeks, the daily-water plant was taller. The class recorded the changes in a table.",
+   "q": "What difference did the class test?",
+   "o": [
+    "How often the plants received water",
+    "How much sunlight the room received",
+    "Which plant had larger leaves",
+    "Which soil was darker"
+   ],
+   "r": 0,
+   "e": "La fréquence de l’arrosage changeait.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0094",
+   "t": "The science class placed two plants near a window. One plant received water every day, while the other received water only once a week. After several weeks, the daily-water plant was taller. The class recorded the changes in a table.",
+   "q": "Which plant became taller?",
+   "o": [
+    "The one watered weekly",
+    "The one watered every day",
+    "The one kept outside",
+    "Both stayed the same height"
+   ],
+   "r": 1,
+   "e": "La plante arrosée chaque jour était plus haute.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0095",
+   "t": "Before the school trip, Binta packed a hat, a water bottle and a notebook. Her teacher asked everyone to stay with a partner at the museum. Binta wrote down the names of three objects she found interesting. She shared her notes with the class the next day.",
+   "q": "Why did Binta pack a notebook?",
+   "o": [
+    "To give it to the museum",
+    "To record the weather",
+    "To write down interesting objects",
+    "To draw a bus map"
+   ],
+   "r": 2,
+   "e": "Elle voulait noter les objets intéressants.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0096",
+   "t": "Before the school trip, Binta packed a hat, a water bottle and a notebook. Her teacher asked everyone to stay with a partner at the museum. Binta wrote down the names of three objects she found interesting. She shared her notes with the class the next day.",
+   "q": "What rule did the teacher give at the museum?",
+   "o": [
+    "Do not bring water",
+    "Write on the objects",
+    "Leave before the group",
+    "Stay with a partner"
+   ],
+   "r": 3,
+   "e": "La consigne était de rester avec un camarade.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0097",
+   "t": "Every Saturday, Modou helps his uncle at a small phone repair shop in Louga. Most customers bring phones with broken screens or weak batteries. Modou is learning to replace batteries, but his uncle still repairs the screens because the work needs more experience.",
+   "q": "Where does Modou work on Saturdays?",
+   "o": [
+    "At a phone repair shop in Louga",
+    "At a market in Thiès",
+    "At a school library",
+    "At a bakery in Dakar"
+   ],
+   "r": 0,
+   "e": "Il aide son oncle dans un atelier de réparation de téléphones à Louga.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0098",
+   "t": "Every Saturday, Modou helps his uncle at a small phone repair shop in Louga. Most customers bring phones with broken screens or weak batteries. Modou is learning to replace batteries, but his uncle still repairs the screens because the work needs more experience.",
+   "q": "What problems do most customers have?",
+   "o": [
+    "Slow internet at home",
+    "Broken screens or weak batteries",
+    "Old chargers only",
+    "Lost phone numbers"
+   ],
+   "r": 1,
+   "e": "Le texte cite les écrans cassés et les batteries faibles.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0099",
+   "t": "Every Saturday, Modou helps his uncle at a small phone repair shop in Louga. Most customers bring phones with broken screens or weak batteries. Modou is learning to replace batteries, but his uncle still repairs the screens because the work needs more experience.",
+   "q": "Why does the uncle still repair the screens?",
+   "o": [
+    "Modou is too busy",
+    "The screens are too cheap",
+    "The work needs more experience",
+    "Customers prefer women workers"
+   ],
+   "r": 2,
+   "e": "La réparation des écrans demande plus d'expérience.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0100",
+   "t": "In Ziguinchor, the rainy season usually starts in June. Last year, the first rains came three weeks late. Farmers waited before planting rice, and many used the extra time to repair their small dykes and clean the canals.",
+   "q": "When does the rainy season usually start in Ziguinchor?",
+   "o": [
+    "In March",
+    "In October",
+    "In December",
+    "In June"
+   ],
+   "r": 3,
+   "e": "Le texte dit qu'elle commence d'habitude en juin.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0101",
+   "t": "In Ziguinchor, the rainy season usually starts in June. Last year, the first rains came three weeks late. Farmers waited before planting rice, and many used the extra time to repair their small dykes and clean the canals.",
+   "q": "What happened last year?",
+   "o": [
+    "The first rains came three weeks late",
+    "The canals were destroyed",
+    "The rain started in April",
+    "There was no rain at all"
+   ],
+   "r": 0,
+   "e": "Les premières pluies sont arrivées trois semaines en retard.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0102",
+   "t": "In Ziguinchor, the rainy season usually starts in June. Last year, the first rains came three weeks late. Farmers waited before planting rice, and many used the extra time to repair their small dykes and clean the canals.",
+   "q": "How did many farmers use the extra time?",
+   "o": [
+    "They planted millet instead",
+    "They repaired dykes and cleaned canals",
+    "They travelled to Dakar",
+    "They sold their rice fields"
+   ],
+   "r": 1,
+   "e": "Ils ont réparé les digues et nettoyé les canaux.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0103",
+   "t": "Seynabou wanted to join the school choir, but she was shy about singing alone. The music teacher allowed her to practise with two friends first. After a month, she felt confident enough to sing a short part alone at the end-of-year concert.",
+   "q": "Why was Seynabou nervous about the choir?",
+   "o": [
+    "She disliked the teacher",
+    "She lived too far away",
+    "She was shy about singing alone",
+    "She could not read music"
+   ],
+   "r": 2,
+   "e": "Elle était timide à l'idée de chanter seule.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0104",
+   "t": "Seynabou wanted to join the school choir, but she was shy about singing alone. The music teacher allowed her to practise with two friends first. After a month, she felt confident enough to sing a short part alone at the end-of-year concert.",
+   "q": "How did the teacher help her?",
+   "o": [
+    "He asked her to play the drum",
+    "He moved the concert to another day",
+    "He gave her a new song book",
+    "He let her practise with two friends first"
+   ],
+   "r": 3,
+   "e": "Le professeur lui a permis de s'entraîner d'abord avec deux amies.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0105",
+   "t": "Seynabou wanted to join the school choir, but she was shy about singing alone. The music teacher allowed her to practise with two friends first. After a month, she felt confident enough to sing a short part alone at the end-of-year concert.",
+   "q": "What did Seynabou do at the concert?",
+   "o": [
+    "She sang a short part alone",
+    "She played the guitar",
+    "She only watched the choir",
+    "She left before the end"
+   ],
+   "r": 0,
+   "e": "Elle a chanté seule une courte partie.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0106",
+   "t": "A new footbridge was built over the river near Kolda. Before, children had to cross by canoe during the rainy season, and some missed school when the water was too high. Now they can walk across safely all year.",
+   "q": "Where was the footbridge built?",
+   "o": [
+    "Near the sea in Mbour",
+    "Over the river near Kolda",
+    "Across a road in Thiès",
+    "In the centre of Dakar"
+   ],
+   "r": 1,
+   "e": "Le pont a été construit sur la rivière près de Kolda.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0107",
+   "t": "A new footbridge was built over the river near Kolda. Before, children had to cross by canoe during the rainy season, and some missed school when the water was too high. Now they can walk across safely all year.",
+   "q": "How did children cross the river before?",
+   "o": [
+    "On a large ferry",
+    "By bus",
+    "By canoe",
+    "By bicycle"
+   ],
+   "r": 2,
+   "e": "Avant, les enfants traversaient en pirogue.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0108",
+   "t": "A new footbridge was built over the river near Kolda. Before, children had to cross by canoe during the rainy season, and some missed school when the water was too high. Now they can walk across safely all year.",
+   "q": "Why did some children miss school in the past?",
+   "o": [
+    "They had no uniforms",
+    "The school was closed in the rainy season",
+    "The canoe was too expensive",
+    "The water was too high"
+   ],
+   "r": 3,
+   "e": "Certains manquaient l'école quand l'eau était trop haute.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0109",
+   "t": "The school canteen in Kébémer started serving local food twice a week. On those days, pupils eat millet with beans or rice with fish bought from nearby farmers and fishermen. The cook says the meals cost less and pupils finish their plates more often.",
+   "q": "How often does the canteen serve local food?",
+   "o": [
+    "Twice a week",
+    "Every day",
+    "Only during holidays",
+    "Once a month"
+   ],
+   "r": 0,
+   "e": "La cantine sert des produits locaux deux fois par semaine.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0110",
+   "t": "The school canteen in Kébémer started serving local food twice a week. On those days, pupils eat millet with beans or rice with fish bought from nearby farmers and fishermen. The cook says the meals cost less and pupils finish their plates more often.",
+   "q": "Where does the food come from?",
+   "o": [
+    "From a supermarket in Europe",
+    "From nearby farmers and fishermen",
+    "From the pupils' homes",
+    "From a big factory"
+   ],
+   "r": 1,
+   "e": "La nourriture est achetée aux agriculteurs et pêcheurs voisins.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0111",
+   "t": "The school canteen in Kébémer started serving local food twice a week. On those days, pupils eat millet with beans or rice with fish bought from nearby farmers and fishermen. The cook says the meals cost less and pupils finish their plates more often.",
+   "q": "What does the cook say about the meals?",
+   "o": [
+    "Pupils do not like them",
+    "They are more expensive but healthier",
+    "They cost less and pupils finish their plates more often",
+    "They take too long to prepare"
+   ],
+   "r": 2,
+   "e": "Les repas coûtent moins cher et les élèves finissent plus souvent leur assiette.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0112",
+   "t": "Ibou's grandfather was a fisherman in Kayar for forty years. He tells Ibou that the sea used to give more fish. Today, boats must go much farther from the coast, so trips are longer and fuel is more expensive.",
+   "q": "How long was Ibou's grandfather a fisherman?",
+   "o": [
+    "For four years",
+    "For ten years",
+    "For fourteen years",
+    "For forty years"
+   ],
+   "r": 3,
+   "e": "Il a été pêcheur pendant quarante ans.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0113",
+   "t": "Ibou's grandfather was a fisherman in Kayar for forty years. He tells Ibou that the sea used to give more fish. Today, boats must go much farther from the coast, so trips are longer and fuel is more expensive.",
+   "q": "What does the grandfather say about the past?",
+   "o": [
+    "The sea used to give more fish",
+    "Boats were bigger",
+    "Fuel was very expensive",
+    "Fishing was forbidden"
+   ],
+   "r": 0,
+   "e": "Selon lui, la mer donnait plus de poissons autrefois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0114",
+   "t": "Ibou's grandfather was a fisherman in Kayar for forty years. He tells Ibou that the sea used to give more fish. Today, boats must go much farther from the coast, so trips are longer and fuel is more expensive.",
+   "q": "Why are fishing trips longer today?",
+   "o": [
+    "Fishermen start later",
+    "Boats must go farther from the coast",
+    "The boats are slower",
+    "The port is closed in the morning"
+   ],
+   "r": 1,
+   "e": "Les bateaux doivent aller plus loin de la côte.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0115",
+   "t": "Rama found an old photograph of her mother as a student in Saint-Louis. In the picture, her mother is standing in front of the Faidherbe Bridge with three classmates. Rama asked her mother about the day, and she learned that it was taken after their final exam.",
+   "q": "What did Rama find?",
+   "o": [
+    "A map of Saint-Louis",
+    "A letter from her grandfather",
+    "An old photograph of her mother",
+    "Her mother's school report"
+   ],
+   "r": 2,
+   "e": "Elle a trouvé une vieille photo de sa mère.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0116",
+   "t": "Rama found an old photograph of her mother as a student in Saint-Louis. In the picture, her mother is standing in front of the Faidherbe Bridge with three classmates. Rama asked her mother about the day, and she learned that it was taken after their final exam.",
+   "q": "Where was the photo taken?",
+   "o": [
+    "Near a mosque in Touba",
+    "At the beach in Dakar",
+    "Inside a classroom",
+    "In front of the Faidherbe Bridge"
+   ],
+   "r": 3,
+   "e": "Sa mère se tient devant le pont Faidherbe.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0117",
+   "t": "Rama found an old photograph of her mother as a student in Saint-Louis. In the picture, her mother is standing in front of the Faidherbe Bridge with three classmates. Rama asked her mother about the day, and she learned that it was taken after their final exam.",
+   "q": "When was the photo taken?",
+   "o": [
+    "After the final exam",
+    "During a wedding",
+    "Before a football match",
+    "On the first day of school"
+   ],
+   "r": 0,
+   "e": "La photo a été prise après leur examen final.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0118",
+   "t": "The village of Ndiaganiao organised a vaccination day for babies and young children. Health workers set up tables under a large tree near the mosque. Mothers received a small card that shows the date of the next vaccine.",
+   "q": "Who was the vaccination day for?",
+   "o": [
+    "Football players",
+    "Babies and young children",
+    "Old people",
+    "Teachers only"
+   ],
+   "r": 1,
+   "e": "La journée était pour les bébés et les jeunes enfants.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0119",
+   "t": "The village of Ndiaganiao organised a vaccination day for babies and young children. Health workers set up tables under a large tree near the mosque. Mothers received a small card that shows the date of the next vaccine.",
+   "q": "Where did health workers set up tables?",
+   "o": [
+    "At the bus station",
+    "Inside the market",
+    "Under a large tree near the mosque",
+    "In the school kitchen"
+   ],
+   "r": 2,
+   "e": "Les tables étaient sous un grand arbre près de la mosquée.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0120",
+   "t": "The village of Ndiaganiao organised a vaccination day for babies and young children. Health workers set up tables under a large tree near the mosque. Mothers received a small card that shows the date of the next vaccine.",
+   "q": "What does the small card show?",
+   "o": [
+    "The name of the doctor",
+    "The baby's weight",
+    "The price of medicine",
+    "The date of the next vaccine"
+   ],
+   "r": 3,
+   "e": "La carte indique la date du prochain vaccin.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0121",
+   "t": "Our class visited a cashew processing workshop in the Casamance region. Women sorted the nuts by size and then roasted them carefully. The manager explained that roasted nuts sell for a much higher price than raw ones.",
+   "q": "What does the workshop process?",
+   "o": [
+    "Cashew nuts",
+    "Groundnuts",
+    "Mangoes",
+    "Rice"
+   ],
+   "r": 0,
+   "e": "L'atelier transforme les noix de cajou.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0122",
+   "t": "Our class visited a cashew processing workshop in the Casamance region. Women sorted the nuts by size and then roasted them carefully. The manager explained that roasted nuts sell for a much higher price than raw ones.",
+   "q": "What did the women do first?",
+   "o": [
+    "They sold the nuts",
+    "They sorted the nuts by size",
+    "They planted new trees",
+    "They roasted the nuts"
+   ],
+   "r": 1,
+   "e": "Elles ont d'abord trié les noix par taille.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0123",
+   "t": "Our class visited a cashew processing workshop in the Casamance region. Women sorted the nuts by size and then roasted them carefully. The manager explained that roasted nuts sell for a much higher price than raw ones.",
+   "q": "Why do they roast the nuts?",
+   "o": [
+    "Roasting makes the nuts bigger",
+    "Raw nuts are dangerous",
+    "Roasted nuts sell for a higher price",
+    "Customers cannot buy raw nuts"
+   ],
+   "r": 2,
+   "e": "Les noix grillées se vendent beaucoup plus cher.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0124",
+   "t": "Abdou wanted to buy a football, but he did not have enough money. He decided to save the coins he received for running errands for his neighbours. After two months, he had enough money, and he also bought a small pump to keep the ball full of air.",
+   "q": "How did Abdou earn money?",
+   "o": [
+    "By selling bread",
+    "By teaching younger pupils",
+    "By washing cars",
+    "By running errands for his neighbours"
+   ],
+   "r": 3,
+   "e": "Il recevait des pièces pour des courses faites pour ses voisins.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0125",
+   "t": "Abdou wanted to buy a football, but he did not have enough money. He decided to save the coins he received for running errands for his neighbours. After two months, he had enough money, and he also bought a small pump to keep the ball full of air.",
+   "q": "How long did he need to save?",
+   "o": [
+    "Two months",
+    "Two weeks",
+    "Two days",
+    "Two years"
+   ],
+   "r": 0,
+   "e": "Après deux mois, il avait assez d'argent.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0126",
+   "t": "Abdou wanted to buy a football, but he did not have enough money. He decided to save the coins he received for running errands for his neighbours. After two months, he had enough money, and he also bought a small pump to keep the ball full of air.",
+   "q": "What else did Abdou buy?",
+   "o": [
+    "A new shirt",
+    "A small pump",
+    "A water bottle",
+    "A pair of boots"
+   ],
+   "r": 1,
+   "e": "Il a aussi acheté une petite pompe.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0127",
+   "t": "Desert locusts can travel long distances and eat crops very quickly. In some years, large groups of locusts have crossed the Sahel and damaged millet and sorghum fields. Today, teams use phones to report locusts early so that action can be taken in time.",
+   "q": "What can desert locusts do?",
+   "o": [
+    "Make honey for farmers",
+    "Protect fields from birds",
+    "Travel long distances and eat crops quickly",
+    "Bring rain to the Sahel"
+   ],
+   "r": 2,
+   "e": "Les criquets voyagent loin et mangent les cultures très vite.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0128",
+   "t": "Desert locusts can travel long distances and eat crops very quickly. In some years, large groups of locusts have crossed the Sahel and damaged millet and sorghum fields. Today, teams use phones to report locusts early so that action can be taken in time.",
+   "q": "Which crops have locusts damaged?",
+   "o": [
+    "Cotton and coffee",
+    "Mangoes and oranges",
+    "Fish and rice",
+    "Millet and sorghum"
+   ],
+   "r": 3,
+   "e": "Le texte cite le mil et le sorgho.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0129",
+   "t": "Desert locusts can travel long distances and eat crops very quickly. In some years, large groups of locusts have crossed the Sahel and damaged millet and sorghum fields. Today, teams use phones to report locusts early so that action can be taken in time.",
+   "q": "Why do teams use phones today?",
+   "o": [
+    "To report locusts early",
+    "To sell their crops",
+    "To play music to the insects",
+    "To call for rain"
+   ],
+   "r": 0,
+   "e": "Les équipes signalent tôt les criquets grâce aux téléphones.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0130",
+   "t": "Marième's family runs a small guesthouse near the Sine-Saloum delta. Visitors come to see birds, mangroves and fishing villages. Marième speaks English with tourists from Ghana and Nigeria, and she says the job has improved her speaking skills.",
+   "q": "What does Marième's family run?",
+   "o": [
+    "A bookshop",
+    "A small guesthouse",
+    "A fishing company",
+    "A large hotel in Dakar"
+   ],
+   "r": 1,
+   "e": "La famille tient une petite maison d'hôtes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0131",
+   "t": "Marième's family runs a small guesthouse near the Sine-Saloum delta. Visitors come to see birds, mangroves and fishing villages. Marième speaks English with tourists from Ghana and Nigeria, and she says the job has improved her speaking skills.",
+   "q": "What do visitors come to see?",
+   "o": [
+    "Big factories",
+    "Mountains and snow",
+    "Birds, mangroves and fishing villages",
+    "Football stadiums"
+   ],
+   "r": 2,
+   "e": "Les visiteurs viennent voir les oiseaux, les mangroves et les villages de pêcheurs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0132",
+   "t": "Marième's family runs a small guesthouse near the Sine-Saloum delta. Visitors come to see birds, mangroves and fishing villages. Marième speaks English with tourists from Ghana and Nigeria, and she says the job has improved her speaking skills.",
+   "q": "What has improved thanks to the job?",
+   "o": [
+    "Her driving",
+    "Her mathematics marks",
+    "Her cooking",
+    "Marième's speaking skills"
+   ],
+   "r": 3,
+   "e": "Elle dit que ce travail a amélioré son expression orale.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0133",
+   "t": "The Kébémer school library received fifty new books in English. To protect them, the librarian covered each book with plastic and wrote a number on the back. Students can borrow two books at a time for ten days.",
+   "q": "How many new English books did the library receive?",
+   "o": [
+    "Fifty",
+    "Five hundred",
+    "Five",
+    "Fifteen"
+   ],
+   "r": 0,
+   "e": "La bibliothèque a reçu cinquante nouveaux livres.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0134",
+   "t": "The Kébémer school library received fifty new books in English. To protect them, the librarian covered each book with plastic and wrote a number on the back. Students can borrow two books at a time for ten days.",
+   "q": "How did the librarian protect the books?",
+   "o": [
+    "She kept them in a locked box",
+    "She covered each book with plastic",
+    "She did not allow borrowing",
+    "She put them in the teachers' room"
+   ],
+   "r": 1,
+   "e": "Elle a couvert chaque livre de plastique.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0135",
+   "t": "The Kébémer school library received fifty new books in English. To protect them, the librarian covered each book with plastic and wrote a number on the back. Students can borrow two books at a time for ten days.",
+   "q": "How long can students keep the books?",
+   "o": [
+    "Two days",
+    "One year",
+    "Ten days",
+    "One month"
+   ],
+   "r": 2,
+   "e": "Les élèves peuvent emprunter pour dix jours.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0136",
+   "t": "Penda's mother sells fruit juice in front of a secondary school in Thiès. She makes bissap and ginger juice every morning. Since the electricity cuts became frequent, she has bought a solar freezer so that the juice stays cold.",
+   "q": "Where does Penda's mother sell juice?",
+   "o": [
+    "In a village shop",
+    "At the airport",
+    "On the beach in Saly",
+    "In front of a secondary school in Thiès"
+   ],
+   "r": 3,
+   "e": "Elle vend devant un lycée à Thiès.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0137",
+   "t": "Penda's mother sells fruit juice in front of a secondary school in Thiès. She makes bissap and ginger juice every morning. Since the electricity cuts became frequent, she has bought a solar freezer so that the juice stays cold.",
+   "q": "Which juices does she make?",
+   "o": [
+    "Bissap and ginger",
+    "Orange and apple",
+    "Pineapple and coconut",
+    "Mango and lemon"
+   ],
+   "r": 0,
+   "e": "Elle fait du bissap et du gingembre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0138",
+   "t": "Penda's mother sells fruit juice in front of a secondary school in Thiès. She makes bissap and ginger juice every morning. Since the electricity cuts became frequent, she has bought a solar freezer so that the juice stays cold.",
+   "q": "Why did she buy a solar freezer?",
+   "o": [
+    "Because customers asked for ice cream",
+    "Because of frequent electricity cuts",
+    "Because it was a gift",
+    "Because she moved to a new shop"
+   ],
+   "r": 1,
+   "e": "Elle l'a acheté à cause des coupures fréquentes d'électricité.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0139",
+   "t": "Last week, a strong wind damaged the roof of one classroom at our school. The lessons for that class moved to the library for three days. Parents and teachers worked together on Sunday to repair the roof with new metal sheets.",
+   "q": "What damaged the roof?",
+   "o": [
+    "An old tree",
+    "A flood",
+    "A strong wind",
+    "A fire"
+   ],
+   "r": 2,
+   "e": "Un vent fort a endommagé le toit.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0140",
+   "t": "Last week, a strong wind damaged the roof of one classroom at our school. The lessons for that class moved to the library for three days. Parents and teachers worked together on Sunday to repair the roof with new metal sheets.",
+   "q": "Where did the lessons take place for three days?",
+   "o": [
+    "Under a tree",
+    "At the town hall",
+    "In the mosque",
+    "In the library"
+   ],
+   "r": 3,
+   "e": "Les cours ont eu lieu à la bibliothèque.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0141",
+   "t": "Last week, a strong wind damaged the roof of one classroom at our school. The lessons for that class moved to the library for three days. Parents and teachers worked together on Sunday to repair the roof with new metal sheets.",
+   "q": "Who repaired the roof?",
+   "o": [
+    "Parents and teachers",
+    "Only the pupils",
+    "A company from Dakar",
+    "The mayor alone"
+   ],
+   "r": 0,
+   "e": "Parents et enseignants ont travaillé ensemble.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0142",
+   "t": "Many young people in Dakar now use mobile money to pay for transport and small purchases. They do not need to carry much cash. However, some older traders still prefer coins and notes because they find the phone menus difficult to read.",
+   "q": "What do young people in Dakar use mobile money for?",
+   "o": [
+    "Buying houses",
+    "Transport and small purchases",
+    "Paying school exams only",
+    "Sending letters"
+   ],
+   "r": 1,
+   "e": "Ils paient le transport et les petits achats.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0143",
+   "t": "Many young people in Dakar now use mobile money to pay for transport and small purchases. They do not need to carry much cash. However, some older traders still prefer coins and notes because they find the phone menus difficult to read.",
+   "q": "What is one advantage of mobile money mentioned?",
+   "o": [
+    "It is free of charge",
+    "It gives better marks",
+    "People do not need to carry much cash",
+    "It works without a phone"
+   ],
+   "r": 2,
+   "e": "On n'a pas besoin de transporter beaucoup d'argent liquide.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0144",
+   "t": "Many young people in Dakar now use mobile money to pay for transport and small purchases. They do not need to carry much cash. However, some older traders still prefer coins and notes because they find the phone menus difficult to read.",
+   "q": "Why do some older traders prefer cash?",
+   "o": [
+    "Coins are lighter",
+    "Phones are forbidden at the market",
+    "They have no money",
+    "They find the phone menus difficult to read"
+   ],
+   "r": 3,
+   "e": "Ils trouvent les menus du téléphone difficiles à lire.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0145",
+   "t": "Aliou is training to become a carpenter in Diourbel. Each morning, he watches his master measure the wood twice before cutting it. \"A mistake in the measurement wastes good wood,\" the master often says. Aliou has now made his first small table.",
+   "q": "What job is Aliou training for?",
+   "o": [
+    "Carpenter",
+    "Teacher",
+    "Mechanic",
+    "Tailor"
+   ],
+   "r": 0,
+   "e": "Il se forme pour devenir menuisier.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0146",
+   "t": "Aliou is training to become a carpenter in Diourbel. Each morning, he watches his master measure the wood twice before cutting it. \"A mistake in the measurement wastes good wood,\" the master often says. Aliou has now made his first small table.",
+   "q": "What does the master do before cutting the wood?",
+   "o": [
+    "He sells it",
+    "He measures it twice",
+    "He washes it",
+    "He paints it"
+   ],
+   "r": 1,
+   "e": "Il mesure le bois deux fois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0147",
+   "t": "Aliou is training to become a carpenter in Diourbel. Each morning, he watches his master measure the wood twice before cutting it. \"A mistake in the measurement wastes good wood,\" the master often says. Aliou has now made his first small table.",
+   "q": "What has Aliou made?",
+   "o": [
+    "A large door",
+    "A wooden boat",
+    "His first small table",
+    "A chair for his master"
+   ],
+   "r": 2,
+   "e": "Il a fabriqué sa première petite table.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0148",
+   "t": "The Great Green Wall is an African project to plant trees and restore land across the Sahel, from Senegal to Djibouti. In northern Senegal, villagers plant acacia and other trees that can survive with little water. Some of these trees also give gum, fruit or animal feed.",
+   "q": "What is the aim of the Great Green Wall?",
+   "o": [
+    "To build a wall around cities",
+    "To protect beaches from waves",
+    "To create new football fields",
+    "To plant trees and restore land across the Sahel"
+   ],
+   "r": 3,
+   "e": "Le projet vise à planter des arbres et restaurer les terres du Sahel.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0149",
+   "t": "The Great Green Wall is an African project to plant trees and restore land across the Sahel, from Senegal to Djibouti. In northern Senegal, villagers plant acacia and other trees that can survive with little water. Some of these trees also give gum, fruit or animal feed.",
+   "q": "Why are acacia trees chosen?",
+   "o": [
+    "They can survive with little water",
+    "They grow only in cities",
+    "They are very tall",
+    "They need a lot of rain"
+   ],
+   "r": 0,
+   "e": "Ces arbres survivent avec peu d'eau.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0150",
+   "t": "The Great Green Wall is an African project to plant trees and restore land across the Sahel, from Senegal to Djibouti. In northern Senegal, villagers plant acacia and other trees that can survive with little water. Some of these trees also give gum, fruit or animal feed.",
+   "q": "What can some of these trees give?",
+   "o": [
+    "Cotton cloth",
+    "Gum, fruit or animal feed",
+    "Fish and salt",
+    "Oil and gas"
+   ],
+   "r": 1,
+   "e": "Certains arbres donnent de la gomme, des fruits ou du fourrage.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0151",
+   "t": "Coumba felt tired and had headaches for several days. At the health post, the nurse asked her how much water she drank. Coumba admitted that she drank very little during the hot afternoons. The nurse advised her to carry a water bottle to school.",
+   "q": "What problem did Coumba have?",
+   "o": [
+    "She lost her voice",
+    "She broke her arm",
+    "She felt tired and had headaches",
+    "She had a cough"
+   ],
+   "r": 2,
+   "e": "Elle était fatiguée et avait des maux de tête.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0152",
+   "t": "Coumba felt tired and had headaches for several days. At the health post, the nurse asked her how much water she drank. Coumba admitted that she drank very little during the hot afternoons. The nurse advised her to carry a water bottle to school.",
+   "q": "What did the nurse ask her?",
+   "o": [
+    "Where she lived",
+    "What she ate for breakfast",
+    "How many hours she slept",
+    "How much water she drank"
+   ],
+   "r": 3,
+   "e": "L'infirmière lui a demandé combien d'eau elle buvait.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0153",
+   "t": "Coumba felt tired and had headaches for several days. At the health post, the nurse asked her how much water she drank. Coumba admitted that she drank very little during the hot afternoons. The nurse advised her to carry a water bottle to school.",
+   "q": "What did the nurse advise?",
+   "o": [
+    "To carry a water bottle to school",
+    "To stay at home for a month",
+    "To stop going to school",
+    "To eat more sugar"
+   ],
+   "r": 0,
+   "e": "Elle lui a conseillé d'apporter une bouteille d'eau.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0154",
+   "t": "The bus between Dakar and Touba stopped at a rest area after two hours. Passengers bought bread, tea and grilled meat. The driver checked the tyres while they ate. Twenty minutes later, everyone got back on the bus and the journey continued.",
+   "q": "When did the bus stop?",
+   "o": [
+    "After five hours",
+    "After two hours",
+    "After ten minutes",
+    "At midnight"
+   ],
+   "r": 1,
+   "e": "Le bus s'est arrêté après deux heures.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0155",
+   "t": "The bus between Dakar and Touba stopped at a rest area after two hours. Passengers bought bread, tea and grilled meat. The driver checked the tyres while they ate. Twenty minutes later, everyone got back on the bus and the journey continued.",
+   "q": "What did the driver do during the break?",
+   "o": [
+    "He bought tea",
+    "He slept",
+    "He checked the tyres",
+    "He washed the bus"
+   ],
+   "r": 2,
+   "e": "Le chauffeur a vérifié les pneus.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0156",
+   "t": "The bus between Dakar and Touba stopped at a rest area after two hours. Passengers bought bread, tea and grilled meat. The driver checked the tyres while they ate. Twenty minutes later, everyone got back on the bus and the journey continued.",
+   "q": "How long was the stop?",
+   "o": [
+    "Five minutes",
+    "One hour",
+    "Two hours",
+    "Twenty minutes"
+   ],
+   "r": 3,
+   "e": "Vingt minutes plus tard, tout le monde est remonté.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0157",
+   "t": "Khadija runs a small online shop that sells handmade bags. She takes photos of each bag in natural light and posts them on social media. Most of her customers live in Dakar, but some order from France and the United States.",
+   "q": "What does Khadija sell?",
+   "o": [
+    "Handmade bags",
+    "Phones",
+    "Clothes for babies",
+    "Fresh fruit"
+   ],
+   "r": 0,
+   "e": "Elle vend des sacs faits à la main.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0158",
+   "t": "Khadija runs a small online shop that sells handmade bags. She takes photos of each bag in natural light and posts them on social media. Most of her customers live in Dakar, but some order from France and the United States.",
+   "q": "How does she take photos?",
+   "o": [
+    "In a professional studio",
+    "In natural light",
+    "At night",
+    "With a borrowed camera only"
+   ],
+   "r": 1,
+   "e": "Elle photographie chaque sac à la lumière naturelle.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0159",
+   "t": "Khadija runs a small online shop that sells handmade bags. She takes photos of each bag in natural light and posts them on social media. Most of her customers live in Dakar, but some order from France and the United States.",
+   "q": "Where do most of her customers live?",
+   "o": [
+    "In the United States",
+    "In France",
+    "In Dakar",
+    "In Saint-Louis"
+   ],
+   "r": 2,
+   "e": "La plupart de ses clients vivent à Dakar.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0160",
+   "t": "Before the wrestling match in the village, young men beat drums and sang songs. The two wrestlers danced around the sand circle to greet the crowd. The match lasted only a few minutes, and the winner lifted his arms while his supporters cheered.",
+   "q": "What did the young men do before the match?",
+   "o": [
+    "They cooked a meal",
+    "They played football",
+    "They cleaned the circle",
+    "They beat drums and sang songs"
+   ],
+   "r": 3,
+   "e": "Ils jouaient du tambour et chantaient.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0161",
+   "t": "Before the wrestling match in the village, young men beat drums and sang songs. The two wrestlers danced around the sand circle to greet the crowd. The match lasted only a few minutes, and the winner lifted his arms while his supporters cheered.",
+   "q": "Why did the wrestlers dance around the circle?",
+   "o": [
+    "To greet the crowd",
+    "To find their shoes",
+    "To warm the sand",
+    "To measure the circle"
+   ],
+   "r": 0,
+   "e": "Ils dansaient pour saluer le public.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0162",
+   "t": "Before the wrestling match in the village, young men beat drums and sang songs. The two wrestlers danced around the sand circle to greet the crowd. The match lasted only a few minutes, and the winner lifted his arms while his supporters cheered.",
+   "q": "How long did the match last?",
+   "o": [
+    "Three days",
+    "Only a few minutes",
+    "The whole afternoon",
+    "Two hours"
+   ],
+   "r": 1,
+   "e": "Le combat n'a duré que quelques minutes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0163",
+   "t": "In our neighbourhood, the youth association organises a \"Set Setal\" day on the first Saturday of each month. Volunteers sweep the streets, clear blocked drains and paint walls. The local council provides brooms and bags for the rubbish.",
+   "q": "When is the \"Set Setal\" day?",
+   "o": [
+    "Once a year",
+    "Every Sunday",
+    "On the first Saturday of each month",
+    "On the last Friday of each month"
+   ],
+   "r": 2,
+   "e": "C'est le premier samedi de chaque mois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0164",
+   "t": "In our neighbourhood, the youth association organises a \"Set Setal\" day on the first Saturday of each month. Volunteers sweep the streets, clear blocked drains and paint walls. The local council provides brooms and bags for the rubbish.",
+   "q": "What do volunteers do?",
+   "o": [
+    "Teach English",
+    "Sell food",
+    "Build new houses",
+    "Sweep streets, clear drains and paint walls"
+   ],
+   "r": 3,
+   "e": "Ils balaient, débouchent les caniveaux et peignent les murs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0165",
+   "t": "In our neighbourhood, the youth association organises a \"Set Setal\" day on the first Saturday of each month. Volunteers sweep the streets, clear blocked drains and paint walls. The local council provides brooms and bags for the rubbish.",
+   "q": "What does the local council provide?",
+   "o": [
+    "Brooms and bags",
+    "Money for volunteers",
+    "New paint only",
+    "Food and drinks"
+   ],
+   "r": 0,
+   "e": "La mairie fournit des balais et des sacs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0166",
+   "t": "Thierno's sister is a midwife at the hospital in Matam. She often works at night, when many babies are born. She told Thierno that the most important part of her job is to stay calm and to explain clearly to mothers what is happening.",
+   "q": "What is the job of Thierno's sister?",
+   "o": [
+    "Pharmacist",
+    "Midwife",
+    "Police officer",
+    "Teacher"
+   ],
+   "r": 1,
+   "e": "Elle est sage-femme.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0167",
+   "t": "Thierno's sister is a midwife at the hospital in Matam. She often works at night, when many babies are born. She told Thierno that the most important part of her job is to stay calm and to explain clearly to mothers what is happening.",
+   "q": "When does she often work?",
+   "o": [
+    "During school holidays",
+    "In the morning",
+    "At night",
+    "Only on Sundays"
+   ],
+   "r": 2,
+   "e": "Elle travaille souvent la nuit.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0168",
+   "t": "Thierno's sister is a midwife at the hospital in Matam. She often works at night, when many babies are born. She told Thierno that the most important part of her job is to stay calm and to explain clearly to mothers what is happening.",
+   "q": "What does she say is most important in her job?",
+   "o": [
+    "Working fast",
+    "Earning a lot of money",
+    "Having modern machines",
+    "Staying calm and explaining clearly"
+   ],
+   "r": 3,
+   "e": "Elle dit qu'il faut rester calme et expliquer clairement.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0169",
+   "t": "The English Club of our school prepared a short play about water conservation. Students wrote the dialogue themselves and made costumes from old clothes. They performed the play for parents, and the audience asked them to perform it again at the town festival.",
+   "q": "What was the play about?",
+   "o": [
+    "Water conservation",
+    "The history of Dakar",
+    "A wedding",
+    "Football"
+   ],
+   "r": 0,
+   "e": "La pièce parlait de l'économie de l'eau.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0170",
+   "t": "The English Club of our school prepared a short play about water conservation. Students wrote the dialogue themselves and made costumes from old clothes. They performed the play for parents, and the audience asked them to perform it again at the town festival.",
+   "q": "How did the students make costumes?",
+   "o": [
+    "They bought them in Dakar",
+    "From old clothes",
+    "They did not use costumes",
+    "They borrowed them from a theatre"
+   ],
+   "r": 1,
+   "e": "Ils ont fabriqué les costumes avec de vieux vêtements.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0171",
+   "t": "The English Club of our school prepared a short play about water conservation. Students wrote the dialogue themselves and made costumes from old clothes. They performed the play for parents, and the audience asked them to perform it again at the town festival.",
+   "q": "What did the audience ask?",
+   "o": [
+    "To write a new play",
+    "To stop the club",
+    "To perform the play again at the town festival",
+    "To pay for tickets"
+   ],
+   "r": 2,
+   "e": "Le public a demandé une nouvelle représentation au festival.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0172",
+   "t": "Ousmane's family keeps three cows in their compound in a village near Linguère. In the dry season, there is little grass, so Ousmane's father buys groundnut hay for the animals. The cows give milk that the family drinks and sometimes sells.",
+   "q": "How many cows does the family keep?",
+   "o": [
+    "One",
+    "Thirteen",
+    "Thirty",
+    "Three"
+   ],
+   "r": 3,
+   "e": "La famille a trois vaches.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0173",
+   "t": "Ousmane's family keeps three cows in their compound in a village near Linguère. In the dry season, there is little grass, so Ousmane's father buys groundnut hay for the animals. The cows give milk that the family drinks and sometimes sells.",
+   "q": "What does the father buy in the dry season?",
+   "o": [
+    "Groundnut hay",
+    "Fresh grass from Dakar",
+    "Bags of rice",
+    "New cows"
+   ],
+   "r": 0,
+   "e": "Il achète du foin d'arachide.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0174",
+   "t": "Ousmane's family keeps three cows in their compound in a village near Linguère. In the dry season, there is little grass, so Ousmane's father buys groundnut hay for the animals. The cows give milk that the family drinks and sometimes sells.",
+   "q": "What does the family do with the milk?",
+   "o": [
+    "They make medicine",
+    "They drink it and sometimes sell it",
+    "They give it to the school only",
+    "They throw it away"
+   ],
+   "r": 1,
+   "e": "La famille boit le lait et en vend parfois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0175",
+   "t": "Aïda learned to code during a free weekend workshop in Saint-Louis. The trainers showed participants how to build a simple website. Aïda made a page that presents her village and its main crops. She now wants to study computer science at university.",
+   "q": "Where did Aïda learn to code?",
+   "o": [
+    "At a private school in Paris",
+    "From her brother at home",
+    "At a free weekend workshop in Saint-Louis",
+    "On television"
+   ],
+   "r": 2,
+   "e": "Elle a appris lors d'un atelier gratuit le week-end à Saint-Louis.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0176",
+   "t": "Aïda learned to code during a free weekend workshop in Saint-Louis. The trainers showed participants how to build a simple website. Aïda made a page that presents her village and its main crops. She now wants to study computer science at university.",
+   "q": "What did her web page present?",
+   "o": [
+    "A list of recipes",
+    "A football team",
+    "Her favourite singers",
+    "Her village and its main crops"
+   ],
+   "r": 3,
+   "e": "Sa page présente son village et ses principales cultures.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0177",
+   "t": "Aïda learned to code during a free weekend workshop in Saint-Louis. The trainers showed participants how to build a simple website. Aïda made a page that presents her village and its main crops. She now wants to study computer science at university.",
+   "q": "What does Aïda want to do now?",
+   "o": [
+    "Study computer science at university",
+    "Stop studying",
+    "Open a restaurant",
+    "Become a farmer"
+   ],
+   "r": 0,
+   "e": "Elle veut étudier l'informatique à l'université.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0178",
+   "t": "The market in Kaolack is one of the largest in Senegal. Traders sell cloth, spices, tools and animals. On busy days, it is difficult to walk through the narrow paths, so many shoppers come early in the morning when it is cooler and quieter.",
+   "q": "What is said about the market in Kaolack?",
+   "o": [
+    "It sells only fish",
+    "It is one of the largest in Senegal",
+    "It opens only at night",
+    "It is new and empty"
+   ],
+   "r": 1,
+   "e": "C'est l'un des plus grands marchés du Sénégal.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0179",
+   "t": "The market in Kaolack is one of the largest in Senegal. Traders sell cloth, spices, tools and animals. On busy days, it is difficult to walk through the narrow paths, so many shoppers come early in the morning when it is cooler and quieter.",
+   "q": "Why is it hard to walk there on busy days?",
+   "o": [
+    "The ground is wet",
+    "Cars drive inside",
+    "The paths are narrow",
+    "There are no lights"
+   ],
+   "r": 2,
+   "e": "Les allées sont étroites.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0180",
+   "t": "The market in Kaolack is one of the largest in Senegal. Traders sell cloth, spices, tools and animals. On busy days, it is difficult to walk through the narrow paths, so many shoppers come early in the morning when it is cooler and quieter.",
+   "q": "Why do many shoppers come early?",
+   "o": [
+    "Prices are doubled later",
+    "The market closes at nine",
+    "The buses stop at noon",
+    "It is cooler and quieter"
+   ],
+   "r": 3,
+   "e": "Le matin, c'est plus frais et plus calme.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0181",
+   "t": "Fallou broke his arm while playing football. At the hospital, a doctor put a plaster cast on it. For six weeks, Fallou could not write with his right hand, so his classmate Babacar shared his notes with him every day.",
+   "q": "How did Fallou break his arm?",
+   "o": [
+    "While playing football",
+    "In a car accident",
+    "By falling from a tree",
+    "During a wrestling match"
+   ],
+   "r": 0,
+   "e": "Il s'est cassé le bras en jouant au football.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0182",
+   "t": "Fallou broke his arm while playing football. At the hospital, a doctor put a plaster cast on it. For six weeks, Fallou could not write with his right hand, so his classmate Babacar shared his notes with him every day.",
+   "q": "How long could Fallou not write with his right hand?",
+   "o": [
+    "Six days",
+    "Six weeks",
+    "Six months",
+    "Two weeks"
+   ],
+   "r": 1,
+   "e": "Pendant six semaines, il ne pouvait pas écrire.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0183",
+   "t": "Fallou broke his arm while playing football. At the hospital, a doctor put a plaster cast on it. For six weeks, Fallou could not write with his right hand, so his classmate Babacar shared his notes with him every day.",
+   "q": "How did Babacar help him?",
+   "o": [
+    "He did his homework",
+    "He drove him to school",
+    "He shared his notes every day",
+    "He carried his bag"
+   ],
+   "r": 2,
+   "e": "Babacar partageait ses notes chaque jour.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0184",
+   "t": "Many households in rural Senegal cook with firewood. The smoke can cause breathing problems, especially for women and children. A local group now sells improved stoves that use less wood and produce less smoke.",
+   "q": "What do many rural households use for cooking?",
+   "o": [
+    "Natural gas only",
+    "Electricity",
+    "Solar ovens",
+    "Firewood"
+   ],
+   "r": 3,
+   "e": "Beaucoup de foyers cuisinent au bois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0185",
+   "t": "Many households in rural Senegal cook with firewood. The smoke can cause breathing problems, especially for women and children. A local group now sells improved stoves that use less wood and produce less smoke.",
+   "q": "Who is especially affected by the smoke?",
+   "o": [
+    "Women and children",
+    "Farmers in the fields",
+    "Old men",
+    "Teachers"
+   ],
+   "r": 0,
+   "e": "La fumée touche surtout les femmes et les enfants.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0186",
+   "t": "Many households in rural Senegal cook with firewood. The smoke can cause breathing problems, especially for women and children. A local group now sells improved stoves that use less wood and produce less smoke.",
+   "q": "What are the advantages of the improved stoves?",
+   "o": [
+    "They cook without heat",
+    "They use less wood and produce less smoke",
+    "They are free and very large",
+    "They work only with gas"
+   ],
+   "r": 1,
+   "e": "Ils utilisent moins de bois et font moins de fumée.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0187",
+   "t": "Ndella's school organised a debate on the question: \"Should mobile phones be allowed in class?\" Her team argued that phones can help students find information quickly. The other team said phones distract students. In the end, the judges chose Ndella's team as the winner.",
+   "q": "What was the debate question?",
+   "o": [
+    "Should uniforms be colourful?",
+    "Should school start earlier?",
+    "Should mobile phones be allowed in class?",
+    "Should students learn Chinese?"
+   ],
+   "r": 2,
+   "e": "La question portait sur l'usage des téléphones en classe.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0188",
+   "t": "Ndella's school organised a debate on the question: \"Should mobile phones be allowed in class?\" Her team argued that phones can help students find information quickly. The other team said phones distract students. In the end, the judges chose Ndella's team as the winner.",
+   "q": "What did Ndella's team argue?",
+   "o": [
+    "Phones are too expensive",
+    "Phones should be banned",
+    "Phones damage eyes",
+    "Phones can help find information quickly"
+   ],
+   "r": 3,
+   "e": "Son équipe disait que les téléphones aident à trouver vite l'information.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0189",
+   "t": "Ndella's school organised a debate on the question: \"Should mobile phones be allowed in class?\" Her team argued that phones can help students find information quickly. The other team said phones distract students. In the end, the judges chose Ndella's team as the winner.",
+   "q": "Who won the debate?",
+   "o": [
+    "Ndella's team",
+    "The other team",
+    "Nobody won",
+    "The teachers"
+   ],
+   "r": 0,
+   "e": "Les juges ont choisi l'équipe de Ndella.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0190",
+   "t": "The baobab tree is common in Senegal and can live for hundreds of years. Its fruit, called \"bouye\", is used to make a sweet drink. People also use its leaves in sauces. In many villages, people meet and talk in the shade of a big baobab.",
+   "q": "How long can a baobab tree live?",
+   "o": [
+    "About ten years",
+    "Hundreds of years",
+    "Only one season",
+    "Fifty days"
+   ],
+   "r": 1,
+   "e": "Il peut vivre des centaines d'années.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0191",
+   "t": "The baobab tree is common in Senegal and can live for hundreds of years. Its fruit, called \"bouye\", is used to make a sweet drink. People also use its leaves in sauces. In many villages, people meet and talk in the shade of a big baobab.",
+   "q": "What is made from \"bouye\"?",
+   "o": [
+    "A medicine for cows",
+    "A kind of cloth",
+    "A sweet drink",
+    "Bread"
+   ],
+   "r": 2,
+   "e": "Le fruit sert à préparer une boisson sucrée.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0192",
+   "t": "The baobab tree is common in Senegal and can live for hundreds of years. Its fruit, called \"bouye\", is used to make a sweet drink. People also use its leaves in sauces. In many villages, people meet and talk in the shade of a big baobab.",
+   "q": "What do people do in the shade of a big baobab?",
+   "o": [
+    "They sleep at night",
+    "They play basketball",
+    "They sell cars",
+    "They meet and talk"
+   ],
+   "r": 3,
+   "e": "Les gens se rencontrent et discutent à l'ombre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0193",
+   "t": "Yacine's older brother works as a driver for a delivery company in Dakar. He uses a motorbike to bring parcels to offices and homes. The traffic is heavy, so he uses a map application on his phone to find faster routes.",
+   "q": "What is the job of Yacine's brother?",
+   "o": [
+    "A driver for a delivery company",
+    "A bus conductor",
+    "A police officer",
+    "A shop owner"
+   ],
+   "r": 0,
+   "e": "Il est livreur pour une entreprise à Dakar.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0194",
+   "t": "Yacine's older brother works as a driver for a delivery company in Dakar. He uses a motorbike to bring parcels to offices and homes. The traffic is heavy, so he uses a map application on his phone to find faster routes.",
+   "q": "What vehicle does he use?",
+   "o": [
+    "A bicycle",
+    "A motorbike",
+    "A taxi",
+    "A truck"
+   ],
+   "r": 1,
+   "e": "Il utilise une moto.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0195",
+   "t": "Yacine's older brother works as a driver for a delivery company in Dakar. He uses a motorbike to bring parcels to offices and homes. The traffic is heavy, so he uses a map application on his phone to find faster routes.",
+   "q": "Why does he use a map application?",
+   "o": [
+    "To call his customers",
+    "To check the weather",
+    "To find faster routes in heavy traffic",
+    "To play games"
+   ],
+   "r": 2,
+   "e": "Il cherche des itinéraires plus rapides à cause des embouteillages.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0196",
+   "t": "In the Fouta region, some families build houses with mud bricks. These houses stay cool in the hot season. However, the walls need repair after heavy rains, so families often cover them with a mixture of clay and straw.",
+   "q": "What are some houses in the Fouta built with?",
+   "o": [
+    "Glass",
+    "Wood from the forest",
+    "Metal sheets only",
+    "Mud bricks"
+   ],
+   "r": 3,
+   "e": "Certaines maisons sont construites en briques de terre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0197",
+   "t": "In the Fouta region, some families build houses with mud bricks. These houses stay cool in the hot season. However, the walls need repair after heavy rains, so families often cover them with a mixture of clay and straw.",
+   "q": "What is an advantage of these houses?",
+   "o": [
+    "They stay cool in the hot season",
+    "They never need repair",
+    "They are cheap to heat",
+    "They are very tall"
+   ],
+   "r": 0,
+   "e": "Elles restent fraîches pendant la saison chaude.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0198",
+   "t": "In the Fouta region, some families build houses with mud bricks. These houses stay cool in the hot season. However, the walls need repair after heavy rains, so families often cover them with a mixture of clay and straw.",
+   "q": "When do the walls need repair?",
+   "o": [
+    "In the cold season",
+    "After heavy rains",
+    "Every week",
+    "After a wedding"
+   ],
+   "r": 1,
+   "e": "Les murs doivent être réparés après de fortes pluies.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0199",
+   "t": "The village of Keur Massar received a new water tower last month. Before, women walked one kilometre to the well twice a day. Now there are four taps in the village, and each family pays a small amount every month for maintenance.",
+   "q": "What did the village receive?",
+   "o": [
+    "A hospital",
+    "A new school",
+    "A new water tower",
+    "A football stadium"
+   ],
+   "r": 2,
+   "e": "Le village a reçu un nouveau château d'eau.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0200",
+   "t": "The village of Keur Massar received a new water tower last month. Before, women walked one kilometre to the well twice a day. Now there are four taps in the village, and each family pays a small amount every month for maintenance.",
+   "q": "How far did women walk before?",
+   "o": [
+    "Ten kilometres",
+    "Five kilometres",
+    "One hundred metres",
+    "One kilometre"
+   ],
+   "r": 3,
+   "e": "Elles marchaient un kilomètre jusqu'au puits.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0201",
+   "t": "The village of Keur Massar received a new water tower last month. Before, women walked one kilometre to the well twice a day. Now there are four taps in the village, and each family pays a small amount every month for maintenance.",
+   "q": "What do families pay for?",
+   "o": [
+    "Maintenance",
+    "Electricity",
+    "The water tower's construction",
+    "Teachers' salaries"
+   ],
+   "r": 0,
+   "e": "Chaque famille paie une petite somme pour l'entretien.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0202",
+   "t": "Djibril likes to listen to the radio in Wolof while he helps in his father's field. His favourite programme gives advice to farmers about seeds and the weather. Last week, the programme warned that strong winds were coming, so his father protected the young plants.",
+   "q": "What does Djibril listen to?",
+   "o": [
+    "Music on his phone",
+    "The radio in Wolof",
+    "A podcast in French",
+    "The news on television"
+   ],
+   "r": 1,
+   "e": "Il écoute la radio en wolof.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0203",
+   "t": "Djibril likes to listen to the radio in Wolof while he helps in his father's field. His favourite programme gives advice to farmers about seeds and the weather. Last week, the programme warned that strong winds were coming, so his father protected the young plants.",
+   "q": "What is his favourite programme about?",
+   "o": [
+    "Cooking recipes",
+    "Love stories",
+    "Advice for farmers about seeds and weather",
+    "Football results"
+   ],
+   "r": 2,
+   "e": "L'émission donne des conseils aux agriculteurs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0204",
+   "t": "Djibril likes to listen to the radio in Wolof while he helps in his father's field. His favourite programme gives advice to farmers about seeds and the weather. Last week, the programme warned that strong winds were coming, so his father protected the young plants.",
+   "q": "What did his father do after the warning?",
+   "o": [
+    "He travelled to the city",
+    "He sold the field",
+    "He planted new seeds",
+    "He protected the young plants"
+   ],
+   "r": 3,
+   "e": "Il a protégé les jeunes plants.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0205",
+   "t": "Our school started a recycling project with plastic bottles. Students collect bottles, wash them and fill them with sand. These bottles are then used as bricks to build a small wall around the school garden.",
+   "q": "What do students collect?",
+   "o": [
+    "Plastic bottles",
+    "Metal cans",
+    "Old newspapers",
+    "Glass jars"
+   ],
+   "r": 0,
+   "e": "Les élèves ramassent des bouteilles en plastique.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0206",
+   "t": "Our school started a recycling project with plastic bottles. Students collect bottles, wash them and fill them with sand. These bottles are then used as bricks to build a small wall around the school garden.",
+   "q": "What do they fill the bottles with?",
+   "o": [
+    "Water",
+    "Sand",
+    "Rice",
+    "Stones and oil"
+   ],
+   "r": 1,
+   "e": "Ils les remplissent de sable.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0207",
+   "t": "Our school started a recycling project with plastic bottles. Students collect bottles, wash them and fill them with sand. These bottles are then used as bricks to build a small wall around the school garden.",
+   "q": "What are the bottles used for?",
+   "o": [
+    "To water the plants",
+    "To sell at the market",
+    "To build a wall around the school garden",
+    "To decorate the classroom"
+   ],
+   "r": 2,
+   "e": "Elles servent de briques pour un petit mur autour du jardin.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0208",
+   "t": "Mame Diarra is the first woman in her village to become a mechanic. At first, some customers did not trust her. But after she repaired many cars and motorbikes correctly, people began to recommend her garage to their friends.",
+   "q": "What is special about Mame Diarra?",
+   "o": [
+    "She is a famous singer",
+    "She owns many cars",
+    "She is the oldest person in the village",
+    "She is the first woman mechanic in her village"
+   ],
+   "r": 3,
+   "e": "Elle est la première femme mécanicienne de son village.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0209",
+   "t": "Mame Diarra is the first woman in her village to become a mechanic. At first, some customers did not trust her. But after she repaired many cars and motorbikes correctly, people began to recommend her garage to their friends.",
+   "q": "How did some customers react at first?",
+   "o": [
+    "They did not trust her",
+    "They paid twice",
+    "They gave her presents",
+    "They asked her to teach"
+   ],
+   "r": 0,
+   "e": "Au début, certains clients ne lui faisaient pas confiance.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0210",
+   "t": "Mame Diarra is the first woman in her village to become a mechanic. At first, some customers did not trust her. But after she repaired many cars and motorbikes correctly, people began to recommend her garage to their friends.",
+   "q": "Why did people start recommending her garage?",
+   "o": [
+    "She gave free petrol",
+    "She repaired many vehicles correctly",
+    "Her garage was in Dakar",
+    "Her prices were very high"
+   ],
+   "r": 1,
+   "e": "Elle a réparé correctement de nombreux véhicules.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0211",
+   "t": "Every year, thousands of pilgrims travel to Touba for the Grand Magal. During these days, the city's population grows very quickly. Volunteers organise free meals, water points and first-aid tents to help visitors.",
+   "q": "Why do pilgrims travel to Touba?",
+   "o": [
+    "To visit the beach",
+    "To find work",
+    "For the Grand Magal",
+    "For a football tournament"
+   ],
+   "r": 2,
+   "e": "Les pèlerins viennent pour le Grand Magal.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0212",
+   "t": "Every year, thousands of pilgrims travel to Touba for the Grand Magal. During these days, the city's population grows very quickly. Volunteers organise free meals, water points and first-aid tents to help visitors.",
+   "q": "What happens to the city's population?",
+   "o": [
+    "It stays the same",
+    "It becomes smaller",
+    "It moves to Dakar",
+    "It grows very quickly"
+   ],
+   "r": 3,
+   "e": "La population augmente très vite.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0213",
+   "t": "Every year, thousands of pilgrims travel to Touba for the Grand Magal. During these days, the city's population grows very quickly. Volunteers organise free meals, water points and first-aid tents to help visitors.",
+   "q": "What do volunteers organise?",
+   "o": [
+    "Free meals, water points and first-aid tents",
+    "Exams for students",
+    "Taxi services",
+    "Concerts and dances"
+   ],
+   "r": 0,
+   "e": "Les bénévoles organisent repas, points d'eau et tentes de secours.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0214",
+   "t": "Sidy's science teacher asked the class to keep a weather diary for one month. Each day, students wrote the temperature, the wind and whether it rained. At the end, they made a graph and noticed that the hottest days were also the least windy.",
+   "q": "How long did the students keep the diary?",
+   "o": [
+    "One year",
+    "One month",
+    "Two days",
+    "One week"
+   ],
+   "r": 1,
+   "e": "Ils ont tenu le journal pendant un mois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0215",
+   "t": "Sidy's science teacher asked the class to keep a weather diary for one month. Each day, students wrote the temperature, the wind and whether it rained. At the end, they made a graph and noticed that the hottest days were also the least windy.",
+   "q": "What did they write each day?",
+   "o": [
+    "Their marks in English",
+    "The names of birds",
+    "The temperature, the wind and the rain",
+    "The price of bread"
+   ],
+   "r": 2,
+   "e": "Ils notaient la température, le vent et la pluie.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0216",
+   "t": "Sidy's science teacher asked the class to keep a weather diary for one month. Each day, students wrote the temperature, the wind and whether it rained. At the end, they made a graph and noticed that the hottest days were also the least windy.",
+   "q": "What did they notice from the graph?",
+   "o": [
+    "The wind was always strong",
+    "The temperature never changed",
+    "It rained every day",
+    "The hottest days were the least windy"
+   ],
+   "r": 3,
+   "e": "Les jours les plus chauds étaient les moins venteux.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0217",
+   "t": "The Senegalese national football team won the Africa Cup of Nations for the first time in 2022. The final was played in Cameroon against Egypt. When the players returned to Dakar, huge crowds filled the streets to welcome them.",
+   "q": "When did Senegal first win the Africa Cup of Nations?",
+   "o": [
+    "In 2022",
+    "In 2012",
+    "In 2002",
+    "In 1992"
+   ],
+   "r": 0,
+   "e": "Le Sénégal a gagné pour la première fois en 2022.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0218",
+   "t": "The Senegalese national football team won the Africa Cup of Nations for the first time in 2022. The final was played in Cameroon against Egypt. When the players returned to Dakar, huge crowds filled the streets to welcome them.",
+   "q": "Where was the final played?",
+   "o": [
+    "In Morocco",
+    "In Cameroon",
+    "In Egypt",
+    "In Senegal"
+   ],
+   "r": 1,
+   "e": "La finale a eu lieu au Cameroun.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0219",
+   "t": "The Senegalese national football team won the Africa Cup of Nations for the first time in 2022. The final was played in Cameroon against Egypt. When the players returned to Dakar, huge crowds filled the streets to welcome them.",
+   "q": "What happened when the players returned to Dakar?",
+   "o": [
+    "They played another match",
+    "They left for Europe",
+    "Huge crowds welcomed them",
+    "Nobody came to the airport"
+   ],
+   "r": 2,
+   "e": "Une foule immense les a accueillis.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0220",
+   "t": "Astou's family moved from a village to Pikine, a suburb of Dakar. At first, she missed the quiet nights and the open fields. But she enjoys her new school, where she can use computers, and she visits her grandparents during the holidays.",
+   "q": "Where did Astou's family move to?",
+   "o": [
+    "Saint-Louis",
+    "A village in the south",
+    "Paris",
+    "Pikine, a suburb of Dakar"
+   ],
+   "r": 3,
+   "e": "La famille s'est installée à Pikine.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0221",
+   "t": "Astou's family moved from a village to Pikine, a suburb of Dakar. At first, she missed the quiet nights and the open fields. But she enjoys her new school, where she can use computers, and she visits her grandparents during the holidays.",
+   "q": "What did Astou miss at first?",
+   "o": [
+    "The quiet nights and open fields",
+    "Her cat",
+    "The sea",
+    "Her old teacher"
+   ],
+   "r": 0,
+   "e": "Elle regrettait les nuits calmes et les champs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0222",
+   "t": "Astou's family moved from a village to Pikine, a suburb of Dakar. At first, she missed the quiet nights and the open fields. But she enjoys her new school, where she can use computers, and she visits her grandparents during the holidays.",
+   "q": "What does she enjoy about her new school?",
+   "o": [
+    "It has no homework",
+    "She can use computers",
+    "It is close to the beach",
+    "It is very small"
+   ],
+   "r": 1,
+   "e": "Elle peut utiliser des ordinateurs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0223",
+   "t": "A group of students in Bambey studied how to keep onions longer after the harvest. They built a storage room with good air circulation and a raised floor. Onions stored there stayed fresh for four months, compared with only one month in a closed room.",
+   "q": "What did the students study?",
+   "o": [
+    "How to cook onions",
+    "How to grow tomatoes",
+    "How to keep onions longer after harvest",
+    "How to sell onions online"
+   ],
+   "r": 2,
+   "e": "Ils ont étudié comment conserver les oignons plus longtemps.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0224",
+   "t": "A group of students in Bambey studied how to keep onions longer after the harvest. They built a storage room with good air circulation and a raised floor. Onions stored there stayed fresh for four months, compared with only one month in a closed room.",
+   "q": "What features did the storage room have?",
+   "o": [
+    "A cold machine",
+    "Glass walls",
+    "No windows",
+    "Good air circulation and a raised floor"
+   ],
+   "r": 3,
+   "e": "La salle avait une bonne aération et un plancher surélevé.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0225",
+   "t": "A group of students in Bambey studied how to keep onions longer after the harvest. They built a storage room with good air circulation and a raised floor. Onions stored there stayed fresh for four months, compared with only one month in a closed room.",
+   "q": "How long did onions stay fresh in the new room?",
+   "o": [
+    "Four months",
+    "One year",
+    "One month",
+    "One week"
+   ],
+   "r": 0,
+   "e": "Les oignons sont restés frais quatre mois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0226",
+   "t": "Every evening, Malick reads stories to his little brother using a small solar lamp. The lamp charges during the day on the roof. Before they had it, they used candles, which were expensive and sometimes dangerous.",
+   "q": "What does Malick use to read at night?",
+   "o": [
+    "A candle",
+    "A small solar lamp",
+    "A torch with batteries",
+    "The television light"
+   ],
+   "r": 1,
+   "e": "Il utilise une petite lampe solaire.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0227",
+   "t": "Every evening, Malick reads stories to his little brother using a small solar lamp. The lamp charges during the day on the roof. Before they had it, they used candles, which were expensive and sometimes dangerous.",
+   "q": "Where does the lamp charge?",
+   "o": [
+    "At a neighbour's house",
+    "In the kitchen at night",
+    "On the roof during the day",
+    "At the school"
+   ],
+   "r": 2,
+   "e": "La lampe se recharge sur le toit pendant la journée.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0228",
+   "t": "Every evening, Malick reads stories to his little brother using a small solar lamp. The lamp charges during the day on the roof. Before they had it, they used candles, which were expensive and sometimes dangerous.",
+   "q": "What was the problem with candles?",
+   "o": [
+    "They lasted too long",
+    "They were too bright",
+    "They smelled of flowers",
+    "They were expensive and sometimes dangerous"
+   ],
+   "r": 3,
+   "e": "Les bougies étaient chères et parfois dangereuses.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0229",
+   "t": "The island of Gorée, near Dakar, is a UNESCO World Heritage site. Its House of Slaves reminds visitors of the Atlantic slave trade. Many students visit the island to learn about this painful history and to remember the people who suffered.",
+   "q": "Where is the island of Gorée?",
+   "o": [
+    "Near Dakar",
+    "Far in the desert",
+    "In the River Senegal",
+    "Near Ziguinchor"
+   ],
+   "r": 0,
+   "e": "L'île de Gorée est près de Dakar.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0230",
+   "t": "The island of Gorée, near Dakar, is a UNESCO World Heritage site. Its House of Slaves reminds visitors of the Atlantic slave trade. Many students visit the island to learn about this painful history and to remember the people who suffered.",
+   "q": "What does the House of Slaves remind visitors of?",
+   "o": [
+    "A football victory",
+    "The Atlantic slave trade",
+    "A famous king",
+    "The independence day"
+   ],
+   "r": 1,
+   "e": "Elle rappelle la traite atlantique.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0231",
+   "t": "The island of Gorée, near Dakar, is a UNESCO World Heritage site. Its House of Slaves reminds visitors of the Atlantic slave trade. Many students visit the island to learn about this painful history and to remember the people who suffered.",
+   "q": "Why do many students visit the island?",
+   "o": [
+    "To buy cheap clothes",
+    "To swim and fish",
+    "To learn about this history and remember the victims",
+    "To take an exam"
+   ],
+   "r": 2,
+   "e": "Ils viennent apprendre cette histoire et se souvenir des victimes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0232",
+   "t": "Lamine is a member of his school's environment club. This month, the club measured how much rubbish the canteen produces each day. They found that most of it was food waste, so they started a compost pit to make fertiliser for the school garden.",
+   "q": "What did the club measure?",
+   "o": [
+    "The size of the classrooms",
+    "The temperature in the canteen",
+    "The number of trees",
+    "How much rubbish the canteen produces"
+   ],
+   "r": 3,
+   "e": "Le club a mesuré la quantité de déchets de la cantine.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0233",
+   "t": "Lamine is a member of his school's environment club. This month, the club measured how much rubbish the canteen produces each day. They found that most of it was food waste, so they started a compost pit to make fertiliser for the school garden.",
+   "q": "What was most of the rubbish?",
+   "o": [
+    "Food waste",
+    "Glass",
+    "Plastic bags",
+    "Paper"
+   ],
+   "r": 0,
+   "e": "La plupart des déchets étaient alimentaires.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0234",
+   "t": "Lamine is a member of his school's environment club. This month, the club measured how much rubbish the canteen produces each day. They found that most of it was food waste, so they started a compost pit to make fertiliser for the school garden.",
+   "q": "What did the club start?",
+   "o": [
+    "A recycling shop",
+    "A compost pit",
+    "A plastic factory",
+    "A new canteen"
+   ],
+   "r": 1,
+   "e": "Ils ont commencé une fosse à compost.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0235",
+   "t": "Aminata dreams of becoming a pilot. She has never been on a plane, but she watches videos about how airplanes fly. Her teacher told her that she must work hard in mathematics and physics, and she now studies these subjects every evening.",
+   "q": "What does Aminata want to become?",
+   "o": [
+    "A singer",
+    "A doctor",
+    "A pilot",
+    "A farmer"
+   ],
+   "r": 2,
+   "e": "Elle rêve d'être pilote.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0236",
+   "t": "Aminata dreams of becoming a pilot. She has never been on a plane, but she watches videos about how airplanes fly. Her teacher told her that she must work hard in mathematics and physics, and she now studies these subjects every evening.",
+   "q": "How does she learn about airplanes?",
+   "o": [
+    "She works at the airport",
+    "She flies every month",
+    "She reads her father's notes",
+    "She watches videos"
+   ],
+   "r": 3,
+   "e": "Elle regarde des vidéos.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0237",
+   "t": "Aminata dreams of becoming a pilot. She has never been on a plane, but she watches videos about how airplanes fly. Her teacher told her that she must work hard in mathematics and physics, and she now studies these subjects every evening.",
+   "q": "Which subjects does her teacher advise her to work on?",
+   "o": [
+    "Mathematics and physics",
+    "Music and art",
+    "History and geography",
+    "English and Arabic"
+   ],
+   "r": 0,
+   "e": "Son professeur lui conseille les maths et la physique.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0238",
+   "t": "In Mauritania and northern Senegal, many people raise camels. Camels can walk for days without drinking, which makes them useful in the desert. Their milk is rich, and some cooperatives now sell it in small bottles in Nouakchott.",
+   "q": "Why are camels useful in the desert?",
+   "o": [
+    "They can swim",
+    "They can walk for days without drinking",
+    "They eat only fish",
+    "They run faster than cars"
+   ],
+   "r": 1,
+   "e": "Les chameaux peuvent marcher des jours sans boire.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0239",
+   "t": "In Mauritania and northern Senegal, many people raise camels. Camels can walk for days without drinking, which makes them useful in the desert. Their milk is rich, and some cooperatives now sell it in small bottles in Nouakchott.",
+   "q": "What is said about camel milk?",
+   "o": [
+    "It is dangerous",
+    "It is never sold",
+    "It is rich",
+    "It is blue"
+   ],
+   "r": 2,
+   "e": "Leur lait est riche.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0240",
+   "t": "In Mauritania and northern Senegal, many people raise camels. Camels can walk for days without drinking, which makes them useful in the desert. Their milk is rich, and some cooperatives now sell it in small bottles in Nouakchott.",
+   "q": "Where do some cooperatives sell camel milk?",
+   "o": [
+    "In Europe",
+    "In Dakar only",
+    "In Kayar",
+    "In Nouakchott"
+   ],
+   "r": 3,
+   "e": "Des coopératives le vendent à Nouakchott.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0241",
+   "t": "Souleymane plays basketball for his school team in Rufisque. The team trains on an outdoor court, so they cannot practise when it rains. The coach decided to organise fitness exercises in a classroom on rainy days.",
+   "q": "Which sport does Souleymane play?",
+   "o": [
+    "Basketball",
+    "Football",
+    "Wrestling",
+    "Handball"
+   ],
+   "r": 0,
+   "e": "Il joue au basket.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0242",
+   "t": "Souleymane plays basketball for his school team in Rufisque. The team trains on an outdoor court, so they cannot practise when it rains. The coach decided to organise fitness exercises in a classroom on rainy days.",
+   "q": "Why can't the team practise when it rains?",
+   "o": [
+    "The ball is broken",
+    "The court is outdoors",
+    "The school closes",
+    "The coach is absent"
+   ],
+   "r": 1,
+   "e": "Le terrain est en plein air.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0243",
+   "t": "Souleymane plays basketball for his school team in Rufisque. The team trains on an outdoor court, so they cannot practise when it rains. The coach decided to organise fitness exercises in a classroom on rainy days.",
+   "q": "What did the coach decide?",
+   "o": [
+    "To buy a new ball",
+    "To cancel all training",
+    "To organise fitness exercises in a classroom",
+    "To move the team to Dakar"
+   ],
+   "r": 2,
+   "e": "Il organise des exercices physiques en classe.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0244",
+   "t": "Mariama received a scholarship to study agronomy at a university in Ghana. She was worried about speaking English all day. During the first weeks, her classmates helped her, and after three months she could follow the lectures without difficulty.",
+   "q": "What did Mariama receive?",
+   "o": [
+    "A prize for singing",
+    "A job offer",
+    "A new phone",
+    "A scholarship"
+   ],
+   "r": 3,
+   "e": "Elle a reçu une bourse.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0245",
+   "t": "Mariama received a scholarship to study agronomy at a university in Ghana. She was worried about speaking English all day. During the first weeks, her classmates helped her, and after three months she could follow the lectures without difficulty.",
+   "q": "What was she worried about?",
+   "o": [
+    "Speaking English all day",
+    "The food",
+    "Paying the rent",
+    "The weather"
+   ],
+   "r": 0,
+   "e": "Elle s'inquiétait de parler anglais toute la journée.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0246",
+   "t": "Mariama received a scholarship to study agronomy at a university in Ghana. She was worried about speaking English all day. During the first weeks, her classmates helped her, and after three months she could follow the lectures without difficulty.",
+   "q": "What happened after three months?",
+   "o": [
+    "She returned to Senegal",
+    "She could follow the lectures without difficulty",
+    "She stopped attending",
+    "She changed her subject"
+   ],
+   "r": 1,
+   "e": "Après trois mois, elle suivait les cours sans difficulté.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0247",
+   "t": "A small radio station in Podor broadcasts programmes in Pulaar, Wolof and French. Listeners call in to ask questions about health, farming and education. The station runs on solar panels because the electricity network is not reliable.",
+   "q": "In which languages does the station broadcast?",
+   "o": [
+    "English and Arabic",
+    "Spanish and Wolof",
+    "Pulaar, Wolof and French",
+    "Only French"
+   ],
+   "r": 2,
+   "e": "La station émet en pulaar, wolof et français.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0248",
+   "t": "A small radio station in Podor broadcasts programmes in Pulaar, Wolof and French. Listeners call in to ask questions about health, farming and education. The station runs on solar panels because the electricity network is not reliable.",
+   "q": "What do listeners ask about?",
+   "o": [
+    "Football transfers",
+    "Foreign holidays",
+    "Fashion and cars",
+    "Health, farming and education"
+   ],
+   "r": 3,
+   "e": "Les auditeurs posent des questions sur la santé, l'agriculture et l'éducation.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0249",
+   "t": "A small radio station in Podor broadcasts programmes in Pulaar, Wolof and French. Listeners call in to ask questions about health, farming and education. The station runs on solar panels because the electricity network is not reliable.",
+   "q": "Why does the station use solar panels?",
+   "o": [
+    "The electricity network is not reliable",
+    "The government forbids electricity",
+    "Solar panels are free",
+    "The station is on a boat"
+   ],
+   "r": 0,
+   "e": "Le réseau électrique n'est pas fiable.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0250",
+   "t": "Bassirou forgot to study for his history test because he spent the evening watching a series. He got a low mark. The next week, he made a timetable that included one hour of revision before any entertainment, and his results improved.",
+   "q": "Why did Bassirou forget to study?",
+   "o": [
+    "He was ill",
+    "He spent the evening watching a series",
+    "He visited his aunt",
+    "He worked in the field"
+   ],
+   "r": 1,
+   "e": "Il a passé la soirée à regarder une série.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0251",
+   "t": "Bassirou forgot to study for his history test because he spent the evening watching a series. He got a low mark. The next week, he made a timetable that included one hour of revision before any entertainment, and his results improved.",
+   "q": "What did he make the next week?",
+   "o": [
+    "A poster",
+    "A cake",
+    "A timetable",
+    "A new friend"
+   ],
+   "r": 2,
+   "e": "Il a fait un emploi du temps.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0252",
+   "t": "Bassirou forgot to study for his history test because he spent the evening watching a series. He got a low mark. The next week, he made a timetable that included one hour of revision before any entertainment, and his results improved.",
+   "q": "What did his timetable include?",
+   "o": [
+    "Two hours of football",
+    "Sleeping in the afternoon",
+    "No homework",
+    "One hour of revision before entertainment"
+   ],
+   "r": 3,
+   "e": "Une heure de révision avant tout divertissement.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0253",
+   "t": "In Kédougou, in south-eastern Senegal, there are hills, waterfalls and forests. The Dindéfélo waterfall attracts many visitors. Local guides take tourists along the path and explain the plants and animals of the area.",
+   "q": "Where is Kédougou?",
+   "o": [
+    "In south-eastern Senegal",
+    "In northern Senegal",
+    "On an island",
+    "Near Dakar"
+   ],
+   "r": 0,
+   "e": "Kédougou est dans le sud-est du Sénégal.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0254",
+   "t": "In Kédougou, in south-eastern Senegal, there are hills, waterfalls and forests. The Dindéfélo waterfall attracts many visitors. Local guides take tourists along the path and explain the plants and animals of the area.",
+   "q": "What attracts many visitors?",
+   "o": [
+    "A football stadium",
+    "The Dindéfélo waterfall",
+    "A large shopping centre",
+    "A famous bridge"
+   ],
+   "r": 1,
+   "e": "La cascade de Dindéfélo attire de nombreux visiteurs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0255",
+   "t": "In Kédougou, in south-eastern Senegal, there are hills, waterfalls and forests. The Dindéfélo waterfall attracts many visitors. Local guides take tourists along the path and explain the plants and animals of the area.",
+   "q": "What do local guides do?",
+   "o": [
+    "Sell tickets for buses",
+    "Build hotels",
+    "Explain the plants and animals of the area",
+    "Cook for tourists"
+   ],
+   "r": 2,
+   "e": "Les guides expliquent les plantes et les animaux.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0256",
+   "t": "Every Friday, the women of the village of Ngaye meet to save money together. Each woman pays the same amount, and every month one member receives the total. With this money, Awa bought a sewing machine and started making school uniforms.",
+   "q": "When do the women meet?",
+   "o": [
+    "Every Monday",
+    "Every evening",
+    "Once a year",
+    "Every Friday"
+   ],
+   "r": 3,
+   "e": "Elles se réunissent chaque vendredi.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0257",
+   "t": "Every Friday, the women of the village of Ngaye meet to save money together. Each woman pays the same amount, and every month one member receives the total. With this money, Awa bought a sewing machine and started making school uniforms.",
+   "q": "How does the group work?",
+   "o": [
+    "Each woman pays the same amount and one receives the total each month",
+    "They sell fish together",
+    "Only one woman pays",
+    "The bank gives them money"
+   ],
+   "r": 0,
+   "e": "Chacune paie le même montant et une membre reçoit le total chaque mois.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0258",
+   "t": "Every Friday, the women of the village of Ngaye meet to save money together. Each woman pays the same amount, and every month one member receives the total. With this money, Awa bought a sewing machine and started making school uniforms.",
+   "q": "What did Awa buy with the money?",
+   "o": [
+    "A goat",
+    "A sewing machine",
+    "A bicycle",
+    "A phone"
+   ],
+   "r": 1,
+   "e": "Awa a acheté une machine à coudre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0259",
+   "t": "Moustapha's class took part in a national spelling competition in English. Each student had to spell twenty words correctly. Moustapha made only one mistake, on the word \"necessary\", and he finished second in his region.",
+   "q": "What kind of competition was it?",
+   "o": [
+    "A singing contest",
+    "A science fair",
+    "A spelling competition in English",
+    "A football tournament"
+   ],
+   "r": 2,
+   "e": "C'était un concours d'orthographe en anglais.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0260",
+   "t": "Moustapha's class took part in a national spelling competition in English. Each student had to spell twenty words correctly. Moustapha made only one mistake, on the word \"necessary\", and he finished second in his region.",
+   "q": "How many words did each student spell?",
+   "o": [
+    "Fifty",
+    "Two",
+    "Ten",
+    "Twenty"
+   ],
+   "r": 3,
+   "e": "Chaque élève devait épeler vingt mots.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0261",
+   "t": "Moustapha's class took part in a national spelling competition in English. Each student had to spell twenty words correctly. Moustapha made only one mistake, on the word \"necessary\", and he finished second in his region.",
+   "q": "What was Moustapha's result?",
+   "o": [
+    "He finished second in his region",
+    "He did not finish",
+    "He won the national prize",
+    "He made many mistakes"
+   ],
+   "r": 0,
+   "e": "Il a terminé deuxième de sa région.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0262",
+   "t": "Many fishing canoes in Senegal are painted in bright colours. The paintings often show flags, names of religious leaders or football teams. Fishermen say the colours make the canoes easy to recognise from far away on the beach.",
+   "q": "How are many fishing canoes painted?",
+   "o": [
+    "Only in black",
+    "In bright colours",
+    "In grey",
+    "They are not painted"
+   ],
+   "r": 1,
+   "e": "Les pirogues sont peintes de couleurs vives.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0263",
+   "t": "Many fishing canoes in Senegal are painted in bright colours. The paintings often show flags, names of religious leaders or football teams. Fishermen say the colours make the canoes easy to recognise from far away on the beach.",
+   "q": "What do the paintings often show?",
+   "o": [
+    "Maps of Africa",
+    "Prices of fish",
+    "Flags, religious leaders or football teams",
+    "Animals from the forest"
+   ],
+   "r": 2,
+   "e": "Elles montrent des drapeaux, des guides religieux ou des équipes de foot.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0264",
+   "t": "Many fishing canoes in Senegal are painted in bright colours. The paintings often show flags, names of religious leaders or football teams. Fishermen say the colours make the canoes easy to recognise from far away on the beach.",
+   "q": "Why do fishermen like the colours?",
+   "o": [
+    "They keep fish fresh",
+    "They are cheaper",
+    "They protect against rain",
+    "The canoes are easy to recognise from far away"
+   ],
+   "r": 3,
+   "e": "Les couleurs permettent de reconnaître la pirogue de loin.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0265",
+   "t": "Ndeye Fatou volunteers at the Red Cross in Kaffrine. She learned first aid during a two-day training. Last month, she helped a boy who had cut his leg at the market by cleaning the wound and stopping the bleeding before the ambulance arrived.",
+   "q": "Where does Ndeye Fatou volunteer?",
+   "o": [
+    "At the Red Cross in Kaffrine",
+    "At a bank",
+    "At a school canteen",
+    "At a radio station"
+   ],
+   "r": 0,
+   "e": "Elle est bénévole à la Croix-Rouge de Kaffrine.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0266",
+   "t": "Ndeye Fatou volunteers at the Red Cross in Kaffrine. She learned first aid during a two-day training. Last month, she helped a boy who had cut his leg at the market by cleaning the wound and stopping the bleeding before the ambulance arrived.",
+   "q": "How long was her first-aid training?",
+   "o": [
+    "Two weeks",
+    "Two days",
+    "Two hours",
+    "Two months"
+   ],
+   "r": 1,
+   "e": "La formation a duré deux jours.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0267",
+   "t": "Ndeye Fatou volunteers at the Red Cross in Kaffrine. She learned first aid during a two-day training. Last month, she helped a boy who had cut his leg at the market by cleaning the wound and stopping the bleeding before the ambulance arrived.",
+   "q": "What did she do for the boy?",
+   "o": [
+    "She drove him home",
+    "She called his teacher",
+    "She cleaned the wound and stopped the bleeding",
+    "She gave him money"
+   ],
+   "r": 2,
+   "e": "Elle a nettoyé la plaie et arrêté le saignement.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0268",
+   "t": "A teacher in Fatick uses songs to teach English vocabulary. Pupils learn words for colours, animals and food by singing. Parents say their children sing the songs at home and even teach new words to their younger brothers and sisters.",
+   "q": "How does the teacher teach vocabulary?",
+   "o": [
+    "With films only",
+    "With long tests",
+    "With dictionaries only",
+    "With songs"
+   ],
+   "r": 3,
+   "e": "Le professeur utilise des chansons.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0269",
+   "t": "A teacher in Fatick uses songs to teach English vocabulary. Pupils learn words for colours, animals and food by singing. Parents say their children sing the songs at home and even teach new words to their younger brothers and sisters.",
+   "q": "Which words do pupils learn?",
+   "o": [
+    "Colours, animals and food",
+    "Car parts",
+    "Names of countries only",
+    "Medical terms"
+   ],
+   "r": 0,
+   "e": "Ils apprennent les couleurs, les animaux et la nourriture.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0270",
+   "t": "A teacher in Fatick uses songs to teach English vocabulary. Pupils learn words for colours, animals and food by singing. Parents say their children sing the songs at home and even teach new words to their younger brothers and sisters.",
+   "q": "What do parents say?",
+   "o": [
+    "Children stopped speaking Wolof",
+    "Children sing at home and teach their siblings",
+    "Children are bored",
+    "Children forget the words"
+   ],
+   "r": 1,
+   "e": "Les enfants chantent à la maison et apprennent des mots à leurs frères et sœurs.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0271",
+   "t": "The town of Richard-Toll is known for its large sugar cane fields. The sugar factory employs thousands of workers, especially during the harvest. The fields need a lot of water, which comes from the Senegal River.",
+   "q": "What is Richard-Toll known for?",
+   "o": [
+    "Its mountains",
+    "Its beaches",
+    "Its large sugar cane fields",
+    "Its car factory"
+   ],
+   "r": 2,
+   "e": "La ville est connue pour ses champs de canne à sucre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0272",
+   "t": "The town of Richard-Toll is known for its large sugar cane fields. The sugar factory employs thousands of workers, especially during the harvest. The fields need a lot of water, which comes from the Senegal River.",
+   "q": "When does the factory employ the most workers?",
+   "o": [
+    "In the school holidays",
+    "At night",
+    "During the rainy season only",
+    "During the harvest"
+   ],
+   "r": 3,
+   "e": "Surtout pendant la récolte.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0273",
+   "t": "The town of Richard-Toll is known for its large sugar cane fields. The sugar factory employs thousands of workers, especially during the harvest. The fields need a lot of water, which comes from the Senegal River.",
+   "q": "Where does the water for the fields come from?",
+   "o": [
+    "The Senegal River",
+    "Rain only",
+    "Deep wells in Dakar",
+    "The Atlantic Ocean"
+   ],
+   "r": 0,
+   "e": "L'eau vient du fleuve Sénégal.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0274",
+   "t": "Ablaye's phone screen broke, so he decided to stop using his phone for a week before repairing it. At first, he felt bored. Then he started reading the novels in his house and playing draughts with his grandfather, which he enjoyed a lot.",
+   "q": "Why did Ablaye stop using his phone?",
+   "o": [
+    "His father took it",
+    "The screen broke",
+    "He lost the charger",
+    "It was stolen"
+   ],
+   "r": 1,
+   "e": "L'écran de son téléphone s'est cassé.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0275",
+   "t": "Ablaye's phone screen broke, so he decided to stop using his phone for a week before repairing it. At first, he felt bored. Then he started reading the novels in his house and playing draughts with his grandfather, which he enjoyed a lot.",
+   "q": "How did he feel at first?",
+   "o": [
+    "Sick",
+    "Angry with his friends",
+    "Bored",
+    "Very happy"
+   ],
+   "r": 2,
+   "e": "Au début, il s'ennuyait.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0276",
+   "t": "Ablaye's phone screen broke, so he decided to stop using his phone for a week before repairing it. At first, he felt bored. Then he started reading the novels in his house and playing draughts with his grandfather, which he enjoyed a lot.",
+   "q": "What did he start doing?",
+   "o": [
+    "Sleeping more",
+    "Watching television all day",
+    "Working at the market",
+    "Reading novels and playing draughts with his grandfather"
+   ],
+   "r": 3,
+   "e": "Il a lu des romans et joué aux dames avec son grand-père.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0277",
+   "t": "The city of Kigali in Rwanda is often praised for being very clean. Plastic bags have been banned there since 2008, and once a month residents take part in community work called \"Umuganda\". Visitors are often surprised by the clean streets.",
+   "q": "Which city is described?",
+   "o": [
+    "Kigali in Rwanda",
+    "Lagos in Nigeria",
+    "Dakar in Senegal",
+    "Accra in Ghana"
+   ],
+   "r": 0,
+   "e": "Le texte parle de Kigali au Rwanda.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0278",
+   "t": "The city of Kigali in Rwanda is often praised for being very clean. Plastic bags have been banned there since 2008, and once a month residents take part in community work called \"Umuganda\". Visitors are often surprised by the clean streets.",
+   "q": "What has been banned since 2008?",
+   "o": [
+    "Motorbikes",
+    "Plastic bags",
+    "Street music",
+    "Football in the street"
+   ],
+   "r": 1,
+   "e": "Les sacs plastiques sont interdits depuis 2008.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0279",
+   "t": "The city of Kigali in Rwanda is often praised for being very clean. Plastic bags have been banned there since 2008, and once a month residents take part in community work called \"Umuganda\". Visitors are often surprised by the clean streets.",
+   "q": "What is \"Umuganda\"?",
+   "o": [
+    "A type of food",
+    "A football team",
+    "Monthly community work by residents",
+    "A festival of music"
+   ],
+   "r": 2,
+   "e": "C'est un travail communautaire mensuel.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0280",
+   "t": "Racine wanted to plant a mango tree in his compound. His grandmother told him to wait until the rainy season so the young tree would get enough water. Racine planted it in July and put a fence of sticks around it to protect it from goats.",
+   "q": "What did Racine want to plant?",
+   "o": [
+    "A baobab",
+    "A palm tree",
+    "A lemon tree",
+    "A mango tree"
+   ],
+   "r": 3,
+   "e": "Il voulait planter un manguier.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0281",
+   "t": "Racine wanted to plant a mango tree in his compound. His grandmother told him to wait until the rainy season so the young tree would get enough water. Racine planted it in July and put a fence of sticks around it to protect it from goats.",
+   "q": "Why did his grandmother tell him to wait?",
+   "o": [
+    "So the tree would get enough water in the rainy season",
+    "Because July is cold",
+    "Because goats sleep in June",
+    "Because mangoes are expensive"
+   ],
+   "r": 0,
+   "e": "Elle voulait qu'il attende la saison des pluies pour l'eau.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0282",
+   "t": "Racine wanted to plant a mango tree in his compound. His grandmother told him to wait until the rainy season so the young tree would get enough water. Racine planted it in July and put a fence of sticks around it to protect it from goats.",
+   "q": "Why did he put a fence around the tree?",
+   "o": [
+    "To mark his name",
+    "To protect it from goats",
+    "To stop the wind",
+    "To give it shade"
+   ],
+   "r": 1,
+   "e": "La clôture protège l'arbre des chèvres.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0283",
+   "t": "A group of young engineers in Dakar created an app that helps farmers check market prices. Farmers send a short message, and the app replies with the price of products in different markets. This helps them decide where to sell their harvest.",
+   "q": "Who created the app?",
+   "o": [
+    "A bank in Paris",
+    "A school in Saint-Louis",
+    "Young engineers in Dakar",
+    "Farmers in Kaolack"
+   ],
+   "r": 2,
+   "e": "De jeunes ingénieurs de Dakar ont créé l'application.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0284",
+   "t": "A group of young engineers in Dakar created an app that helps farmers check market prices. Farmers send a short message, and the app replies with the price of products in different markets. This helps them decide where to sell their harvest.",
+   "q": "What does the app give farmers?",
+   "o": [
+    "Free seeds",
+    "Football scores",
+    "The weather for tomorrow",
+    "The prices of products in different markets"
+   ],
+   "r": 3,
+   "e": "L'application donne les prix dans différents marchés.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0285",
+   "t": "A group of young engineers in Dakar created an app that helps farmers check market prices. Farmers send a short message, and the app replies with the price of products in different markets. This helps them decide where to sell their harvest.",
+   "q": "How does the app help farmers?",
+   "o": [
+    "It helps them decide where to sell",
+    "It lends them money",
+    "It plants their seeds",
+    "It transports their harvest"
+   ],
+   "r": 0,
+   "e": "Elle les aide à choisir où vendre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0286",
+   "t": "The Lompoul desert, between Dakar and Saint-Louis, has orange sand dunes. Visitors sleep in tents and watch the sunset from the top of the dunes. Because the desert is close to the ocean, the nights can be quite cool.",
+   "q": "What is special about the Lompoul desert?",
+   "o": [
+    "It has many lakes",
+    "It has orange sand dunes",
+    "It is full of trees",
+    "It has snow"
+   ],
+   "r": 1,
+   "e": "Le désert de Lompoul a des dunes de sable orange.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0287",
+   "t": "The Lompoul desert, between Dakar and Saint-Louis, has orange sand dunes. Visitors sleep in tents and watch the sunset from the top of the dunes. Because the desert is close to the ocean, the nights can be quite cool.",
+   "q": "Where do visitors sleep?",
+   "o": [
+    "In big hotels",
+    "In the village school",
+    "In tents",
+    "In the car"
+   ],
+   "r": 2,
+   "e": "Les visiteurs dorment sous des tentes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0288",
+   "t": "The Lompoul desert, between Dakar and Saint-Louis, has orange sand dunes. Visitors sleep in tents and watch the sunset from the top of the dunes. Because the desert is close to the ocean, the nights can be quite cool.",
+   "q": "Why can the nights be cool?",
+   "o": [
+    "There are many mountains",
+    "The tents have air conditioning",
+    "It rains every night",
+    "The desert is close to the ocean"
+   ],
+   "r": 3,
+   "e": "Le désert est proche de l'océan.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0289",
+   "t": "Maïmouna noticed that many pupils in her class did not eat breakfast. She talked to the school principal, and together they started a programme where pupils receive bread and milk before the first lesson. Teachers say pupils now concentrate better in the morning.",
+   "q": "What did Maïmouna notice?",
+   "o": [
+    "Many pupils did not eat breakfast",
+    "Pupils had no books",
+    "The classroom was dirty",
+    "Many pupils were late"
+   ],
+   "r": 0,
+   "e": "Beaucoup d'élèves ne prenaient pas de petit-déjeuner.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0290",
+   "t": "Maïmouna noticed that many pupils in her class did not eat breakfast. She talked to the school principal, and together they started a programme where pupils receive bread and milk before the first lesson. Teachers say pupils now concentrate better in the morning.",
+   "q": "What do pupils receive before the first lesson?",
+   "o": [
+    "Rice and fish",
+    "Bread and milk",
+    "Biscuits and tea",
+    "Fruit juice"
+   ],
+   "r": 1,
+   "e": "Ils reçoivent du pain et du lait.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0291",
+   "t": "Maïmouna noticed that many pupils in her class did not eat breakfast. She talked to the school principal, and together they started a programme where pupils receive bread and milk before the first lesson. Teachers say pupils now concentrate better in the morning.",
+   "q": "What do teachers say now?",
+   "o": [
+    "Pupils are always hungry",
+    "Pupils sleep in class",
+    "Pupils concentrate better in the morning",
+    "Pupils come late"
+   ],
+   "r": 2,
+   "e": "Les élèves se concentrent mieux le matin.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0292",
+   "t": "Every year in December, the town of Saint-Louis welcomes an international jazz festival. Musicians come from Africa, Europe and America. During the festival, small concerts also take place in the streets, so people who cannot buy tickets can still enjoy the music.",
+   "q": "When does the jazz festival take place?",
+   "o": [
+    "In March",
+    "In September",
+    "In June",
+    "In December"
+   ],
+   "r": 3,
+   "e": "Le festival a lieu en décembre.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0293",
+   "t": "Every year in December, the town of Saint-Louis welcomes an international jazz festival. Musicians come from Africa, Europe and America. During the festival, small concerts also take place in the streets, so people who cannot buy tickets can still enjoy the music.",
+   "q": "Where do the musicians come from?",
+   "o": [
+    "Africa, Europe and America",
+    "Asia and Australia",
+    "Only France",
+    "Only Senegal"
+   ],
+   "r": 0,
+   "e": "Les musiciens viennent d'Afrique, d'Europe et d'Amérique.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0294",
+   "t": "Every year in December, the town of Saint-Louis welcomes an international jazz festival. Musicians come from Africa, Europe and America. During the festival, small concerts also take place in the streets, so people who cannot buy tickets can still enjoy the music.",
+   "q": "Why are there small concerts in the streets?",
+   "o": [
+    "To sell food",
+    "So people without tickets can enjoy the music",
+    "Because the main hall is closed",
+    "Because it rains"
+   ],
+   "r": 1,
+   "e": "Ainsi, ceux qui n'ont pas de billet peuvent profiter de la musique.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0295",
+   "t": "Fatoumata works as a nurse in a village health post near Tambacounda. The nearest hospital is eighty kilometres away. When a patient needs urgent care, she calls the ambulance and stays with the patient until it arrives.",
+   "q": "Where does Fatoumata work?",
+   "o": [
+    "In a big hospital in Dakar",
+    "At a school in Louga",
+    "In a village health post near Tambacounda",
+    "In a pharmacy in Thiès"
+   ],
+   "r": 2,
+   "e": "Elle travaille dans un poste de santé près de Tambacounda.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0296",
+   "t": "Fatoumata works as a nurse in a village health post near Tambacounda. The nearest hospital is eighty kilometres away. When a patient needs urgent care, she calls the ambulance and stays with the patient until it arrives.",
+   "q": "How far is the nearest hospital?",
+   "o": [
+    "Eight kilometres",
+    "Eighteen kilometres",
+    "Eight hundred kilometres",
+    "Eighty kilometres"
+   ],
+   "r": 3,
+   "e": "L'hôpital le plus proche est à quatre-vingts kilomètres.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0297",
+   "t": "Fatoumata works as a nurse in a village health post near Tambacounda. The nearest hospital is eighty kilometres away. When a patient needs urgent care, she calls the ambulance and stays with the patient until it arrives.",
+   "q": "What does she do when a patient needs urgent care?",
+   "o": [
+    "She calls the ambulance and stays with the patient",
+    "She sends the patient home",
+    "She closes the health post",
+    "She drives the patient on her motorbike"
+   ],
+   "r": 0,
+   "e": "Elle appelle l'ambulance et reste avec le patient.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0298",
+   "t": "Pape Demba and his friends built a small football goal from old wooden poles and a fishing net. They play every afternoon on a sandy field behind the mosque. When younger children want to join, the older boys teach them how to pass the ball.",
+   "q": "What did they use to build the goal?",
+   "o": [
+    "Metal bars from a shop",
+    "Old wooden poles and a fishing net",
+    "Plastic bottles",
+    "Bricks and cement"
+   ],
+   "r": 1,
+   "e": "Ils ont utilisé de vieux poteaux en bois et un filet de pêche.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0299",
+   "t": "Pape Demba and his friends built a small football goal from old wooden poles and a fishing net. They play every afternoon on a sandy field behind the mosque. When younger children want to join, the older boys teach them how to pass the ball.",
+   "q": "Where do they play?",
+   "o": [
+    "On the school roof",
+    "On the beach in Dakar",
+    "On a sandy field behind the mosque",
+    "In a stadium"
+   ],
+   "r": 2,
+   "e": "Ils jouent sur un terrain sablonneux derrière la mosquée.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0300",
+   "t": "Pape Demba and his friends built a small football goal from old wooden poles and a fishing net. They play every afternoon on a sandy field behind the mosque. When younger children want to join, the older boys teach them how to pass the ball.",
+   "q": "What do the older boys teach the younger children?",
+   "o": [
+    "How to fish",
+    "How to referee",
+    "How to build goals",
+    "How to pass the ball"
+   ],
+   "r": 3,
+   "e": "Ils leur apprennent à faire des passes.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0301",
+   "t": "In Ethiopia, coffee is an important part of daily life. In many homes, a coffee ceremony takes place when guests arrive. The coffee beans are roasted, ground and boiled in a clay pot, and guests usually drink three small cups.",
+   "q": "In which country does this text take place?",
+   "o": [
+    "Ethiopia",
+    "Morocco",
+    "Kenya",
+    "Senegal"
+   ],
+   "r": 0,
+   "e": "Le texte parle de l'Éthiopie.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0302",
+   "t": "In Ethiopia, coffee is an important part of daily life. In many homes, a coffee ceremony takes place when guests arrive. The coffee beans are roasted, ground and boiled in a clay pot, and guests usually drink three small cups.",
+   "q": "When does a coffee ceremony often take place?",
+   "o": [
+    "Only at weddings",
+    "When guests arrive",
+    "Every morning at school",
+    "Only during holidays"
+   ],
+   "r": 1,
+   "e": "La cérémonie a lieu à l'arrivée des invités.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  },
+  {
+   "id": "comprehension_intermediaire_0303",
+   "t": "In Ethiopia, coffee is an important part of daily life. In many homes, a coffee ceremony takes place when guests arrive. The coffee beans are roasted, ground and boiled in a clay pot, and guests usually drink three small cups.",
+   "q": "How many cups do guests usually drink?",
+   "o": [
+    "One",
+    "Five",
+    "Three",
+    "Ten"
+   ],
+   "r": 2,
+   "e": "Les invités boivent habituellement trois petites tasses.",
+   "d": "comprehension",
+   "n": "intermediaire"
+  }
+ ]
+}

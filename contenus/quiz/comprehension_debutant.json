@@ -1,0 +1,6004 @@
+{
+ "questions": [
+  {
+   "id": "comprehension_debutant_0001",
+   "t": "SMS from Awa: Hi Fatou! I am at the market with my mum. We buy rice and fish. See you at 5 o'clock.",
+   "q": "Where is Awa?",
+   "o": [
+    "At the market",
+    "At home",
+    "At school",
+    "At the beach"
+   ],
+   "r": 0,
+   "e": "Awa dit : « I am at the market » : elle est au marché.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0002",
+   "t": "SMS from Awa: Hi Fatou! I am at the market with my mum. We buy rice and fish. See you at 5 o'clock.",
+   "q": "What time will Awa see Fatou?",
+   "o": [
+    "At 12 o'clock",
+    "At 5 o'clock",
+    "At 7 o'clock",
+    "At 3 o'clock"
+   ],
+   "r": 1,
+   "e": "Le SMS dit : « See you at 5 o'clock » : à 5 heures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0003",
+   "t": "Hello Moussa. I am sick today. I can't come to football. My head hurts. Sorry! - Ibrahima",
+   "q": "Pourquoi Ibrahima ne vient pas au football ?",
+   "o": [
+    "Il a des devoirs",
+    "Il dort",
+    "Il est malade",
+    "Il est en voyage"
+   ],
+   "r": 2,
+   "e": "« I am sick today » veut dire : je suis malade aujourd'hui.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0004",
+   "t": "Hello Moussa. I am sick today. I can't come to football. My head hurts. Sorry! - Ibrahima",
+   "q": "What hurts?",
+   "o": [
+    "His tooth",
+    "His hand",
+    "His leg",
+    "His head"
+   ],
+   "r": 3,
+   "e": "« My head hurts » : il a mal à la tête. Head = tête.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0005",
+   "t": "Mum, I am at Khady's house. We do our homework together. I come home at 7. Love, Aminata.",
+   "q": "Où est Aminata ?",
+   "o": [
+    "Chez Khady",
+    "Au marché",
+    "À l'école",
+    "Chez sa grand-mère"
+   ],
+   "r": 0,
+   "e": "« I am at Khady's house » : elle est chez Khady.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0006",
+   "t": "Mum, I am at Khady's house. We do our homework together. I come home at 7. Love, Aminata.",
+   "q": "What do Aminata and Khady do?",
+   "o": [
+    "The cooking",
+    "Their homework",
+    "A football match",
+    "Their shopping"
+   ],
+   "r": 1,
+   "e": "« We do our homework together » : elles font leurs devoirs ensemble.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0007",
+   "t": "Dad, the car is at the garage. Please take a taxi to work. The mechanic says it is ready on Friday. - Mum",
+   "q": "How does Dad go to work?",
+   "o": [
+    "By bus",
+    "On foot",
+    "By taxi",
+    "By car"
+   ],
+   "r": 2,
+   "e": "Maman dit : « Please take a taxi to work » : il prend un taxi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0008",
+   "t": "Dad, the car is at the garage. Please take a taxi to work. The mechanic says it is ready on Friday. - Mum",
+   "q": "When is the car ready?",
+   "o": [
+    "Today",
+    "On Sunday",
+    "On Monday",
+    "On Friday"
+   ],
+   "r": 3,
+   "e": "« It is ready on Friday » : la voiture est prête vendredi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0009",
+   "t": "Cheikh, happy birthday! You are 13 today. I have a present for you: a new ball. Your friend, Pape.",
+   "q": "How old is Cheikh today?",
+   "o": [
+    "13",
+    "14",
+    "30",
+    "12"
+   ],
+   "r": 0,
+   "e": "« You are 13 today » : Cheikh a 13 ans aujourd'hui.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0010",
+   "t": "Cheikh, happy birthday! You are 13 today. I have a present for you: a new ball. Your friend, Pape.",
+   "q": "What is the present?",
+   "o": [
+    "A bike",
+    "A ball",
+    "A book",
+    "A phone"
+   ],
+   "r": 1,
+   "e": "« I have a present for you: a new ball » : le cadeau est un ballon.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0011",
+   "t": "Hi Ousmane. The teacher is absent today. There is no maths class. We can play basketball. Come!",
+   "q": "Quel cours n'a pas lieu ?",
+   "o": [
+    "L'anglais",
+    "Le sport",
+    "Les maths",
+    "Le français"
+   ],
+   "r": 2,
+   "e": "« There is no maths class » : il n'y a pas de cours de maths.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0012",
+   "t": "Hi Ousmane. The teacher is absent today. There is no maths class. We can play basketball. Come!",
+   "q": "What can they play?",
+   "o": [
+    "Tennis",
+    "Cards",
+    "Football",
+    "Basketball"
+   ],
+   "r": 3,
+   "e": "« We can play basketball » : ils peuvent jouer au basket.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0013",
+   "t": "Grandma, I miss you! I am in Dakar with Aunt Bineta. It is hot here. I come to Kaolack in July. Kisses, Mariama.",
+   "q": "Where is Mariama now?",
+   "o": [
+    "In Dakar",
+    "In Kaolack",
+    "In Thiès",
+    "In Louga"
+   ],
+   "r": 0,
+   "e": "« I am in Dakar with Aunt Bineta » : Mariama est à Dakar.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0014",
+   "t": "Grandma, I miss you! I am in Dakar with Aunt Bineta. It is hot here. I come to Kaolack in July. Kisses, Mariama.",
+   "q": "Quand Mariama va-t-elle à Kaolack ?",
+   "o": [
+    "En août",
+    "En juillet",
+    "En janvier",
+    "En juin"
+   ],
+   "r": 1,
+   "e": "« I come to Kaolack in July » : July = juillet.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0015",
+   "t": "Modou, can you buy bread on your way home? We have no bread for dinner. Thanks! - Your sister Astou",
+   "q": "What does Astou want?",
+   "o": [
+    "Milk",
+    "Sugar",
+    "Bread",
+    "Rice"
+   ],
+   "r": 2,
+   "e": "« Can you buy bread? » : Astou veut du pain.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0016",
+   "t": "Modou, can you buy bread on your way home? We have no bread for dinner. Thanks! - Your sister Astou",
+   "q": "Who is Astou?",
+   "o": [
+    "Modou's mother",
+    "Modou's friend",
+    "Modou's teacher",
+    "Modou's sister"
+   ],
+   "r": 3,
+   "e": "Le message est signé « Your sister Astou » : c'est sa sœur.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0017",
+   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop. I see the bus now!",
+   "q": "What time does the bus leave?",
+   "o": [
+    "At 8",
+    "At 9",
+    "At 10",
+    "At 6"
+   ],
+   "r": 0,
+   "e": "« The bus leaves at 8 » : le bus part à 8 heures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0018",
+   "t": "Lamine: Where are you? The bus leaves at 8. Coumba: I am at the bus stop. I see the bus now!",
+   "q": "Where is Coumba?",
+   "o": [
+    "At the shop",
+    "At the bus stop",
+    "At home",
+    "In the bus"
+   ],
+   "r": 1,
+   "e": "Coumba dit : « I am at the bus stop » : à l'arrêt de bus.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0019",
+   "t": "Hi Babacar! My new phone number is 77 45 12 30. My old phone is broken. Call me tonight. - Sidy",
+   "q": "Pourquoi Sidy a un nouveau numéro ?",
+   "o": [
+    "Il n'aime pas son numéro",
+    "Il habite ailleurs",
+    "Son vieux téléphone est cassé",
+    "Il a perdu son téléphone"
+   ],
+   "r": 2,
+   "e": "« My old phone is broken » : son vieux téléphone est cassé.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0020",
+   "t": "Hi Babacar! My new phone number is 77 45 12 30. My old phone is broken. Call me tonight. - Sidy",
+   "q": "When can Babacar call Sidy?",
+   "o": [
+    "On Sunday",
+    "Tomorrow",
+    "This morning",
+    "Tonight"
+   ],
+   "r": 3,
+   "e": "« Call me tonight » : appelle-moi ce soir.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0021",
+   "t": "Message: Aissatou, the cat is under your bed. It is afraid of the rain. Please give it some milk. - Mum",
+   "q": "Where is the cat?",
+   "o": [
+    "Under the bed",
+    "On the table",
+    "On the roof",
+    "In the garden"
+   ],
+   "r": 0,
+   "e": "« The cat is under your bed » : sous le lit. Under = sous.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0022",
+   "t": "Message: Aissatou, the cat is under your bed. It is afraid of the rain. Please give it some milk. - Mum",
+   "q": "Why is the cat there?",
+   "o": [
+    "It is sleeping",
+    "It is afraid of the rain",
+    "It is hungry",
+    "It is sick"
+   ],
+   "r": 1,
+   "e": "« It is afraid of the rain » : il a peur de la pluie.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0023",
+   "t": "Hi Assane! I am in Saint-Louis. The city is beautiful. I can see the river and the big bridge. Bye! Rokhaya",
+   "q": "What can Rokhaya see?",
+   "o": [
+    "The desert",
+    "The sea and the boats",
+    "The river and the bridge",
+    "The mountains"
+   ],
+   "r": 2,
+   "e": "« I can see the river and the big bridge » : le fleuve et le grand pont.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0024",
+   "t": "Hi Assane! I am in Saint-Louis. The city is beautiful. I can see the river and the big bridge. Bye! Rokhaya",
+   "q": "Comment est la ville d'après Rokhaya ?",
+   "o": [
+    "Froide",
+    "Petite",
+    "Sale",
+    "Belle"
+   ],
+   "r": 3,
+   "e": "« The city is beautiful » : la ville est belle.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0025",
+   "t": "Demba, don't forget: Grandpa's birthday is on Sunday. We eat at his house at 2 pm. Bring your guitar! - Dad",
+   "q": "What day is Grandpa's birthday?",
+   "o": [
+    "Sunday",
+    "Saturday",
+    "Monday",
+    "Friday"
+   ],
+   "r": 0,
+   "e": "« Grandpa's birthday is on Sunday » : dimanche.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0026",
+   "t": "Demba, don't forget: Grandpa's birthday is on Sunday. We eat at his house at 2 pm. Bring your guitar! - Dad",
+   "q": "What must Demba bring?",
+   "o": [
+    "A cake",
+    "His guitar",
+    "His ball",
+    "Flowers"
+   ],
+   "r": 1,
+   "e": "« Bring your guitar! » : apporte ta guitare.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0027",
+   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come to school today. Thank you. - Mrs Diop",
+   "q": "Who writes the message?",
+   "o": [
+    "The teacher",
+    "Malick",
+    "Mrs Diop",
+    "The doctor"
+   ],
+   "r": 2,
+   "e": "Le message est signé « Mrs Diop » : c'est la maman de Malick.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0028",
+   "t": "Hello Teacher. My son Malick is sick. He has a fever. He can't come to school today. Thank you. - Mrs Diop",
+   "q": "What is wrong with Malick?",
+   "o": [
+    "He is tired",
+    "He has a broken arm",
+    "He has a cold",
+    "He has a fever"
+   ],
+   "r": 3,
+   "e": "« He has a fever » : il a de la fièvre.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0029",
+   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now, it's ready.",
+   "q": "What is for lunch?",
+   "o": [
+    "Thieboudienne",
+    "Mafé",
+    "Couscous",
+    "Yassa"
+   ],
+   "r": 0,
+   "e": "Maman dit : « Thieboudienne! » : c'est le plat du déjeuner.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0030",
+   "t": "Sokhna: I'm hungry! What's for lunch? Mum: Thieboudienne! Come home now, it's ready.",
+   "q": "Comment se sent Sokhna ?",
+   "o": [
+    "Elle a froid",
+    "Elle a faim",
+    "Elle a soif",
+    "Elle est fatiguée"
+   ],
+   "r": 1,
+   "e": "« I'm hungry » veut dire : j'ai faim.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0031",
+   "t": "Alioune, I am late. My bus is very slow. Please wait for me at the cinema door. - Yacine",
+   "q": "Why is Yacine late?",
+   "o": [
+    "She is sleeping",
+    "She has no money",
+    "Her bus is slow",
+    "She is sick"
+   ],
+   "r": 2,
+   "e": "« My bus is very slow » : son bus est très lent.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0032",
+   "t": "Alioune, I am late. My bus is very slow. Please wait for me at the cinema door. - Yacine",
+   "q": "Where must Alioune wait?",
+   "o": [
+    "At the bus stop",
+    "At the market",
+    "At the school",
+    "At the cinema door"
+   ],
+   "r": 3,
+   "e": "« Wait for me at the cinema door » : à la porte du cinéma.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0033",
+   "t": "Hi Adama! We have a new baby in our family. She is my little sister. Her name is Ndeye. She is very small!",
+   "q": "Who is the new baby?",
+   "o": [
+    "The writer's little sister",
+    "Adama's cousin",
+    "Adama's daughter",
+    "The writer's mother"
+   ],
+   "r": 0,
+   "e": "L'auteur dit : « She is my little sister » : c'est la petite sœur de celui qui écrit.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0034",
+   "t": "Hi Adama! We have a new baby in our family. She is my little sister. Her name is Ndeye. She is very small!",
+   "q": "What is the baby's name?",
+   "o": [
+    "Awa",
+    "Ndeye",
+    "Fatou",
+    "Adama"
+   ],
+   "r": 1,
+   "e": "« Her name is Ndeye » : elle s'appelle Ndeye.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0035",
+   "t": "Fallou, I can't find my blue pen. Is it in your bag? I need it for the English test. - Serigne",
+   "q": "What colour is the pen?",
+   "o": [
+    "Green",
+    "Red",
+    "Blue",
+    "Black"
+   ],
+   "r": 2,
+   "e": "« my blue pen » : le stylo est bleu.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0036",
+   "t": "Fallou, I can't find my blue pen. Is it in your bag? I need it for the English test. - Serigne",
+   "q": "Pourquoi Serigne a besoin du stylo ?",
+   "o": [
+    "Pour dessiner",
+    "Pour écrire une lettre",
+    "Pour le cours de maths",
+    "Pour le contrôle d'anglais"
+   ],
+   "r": 3,
+   "e": "« I need it for the English test » : pour le contrôle d'anglais.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0037",
+   "t": "Message from Mame Diarra: I am at the hospital. My aunt has a new baby boy. They are fine. I come back tomorrow.",
+   "q": "Where is Mame Diarra?",
+   "o": [
+    "At the hospital",
+    "At the airport",
+    "At the school",
+    "At the market"
+   ],
+   "r": 0,
+   "e": "« I am at the hospital » : elle est à l'hôpital.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0038",
+   "t": "Message from Mame Diarra: I am at the hospital. My aunt has a new baby boy. They are fine. I come back tomorrow.",
+   "q": "When does Mame Diarra come back?",
+   "o": [
+    "On Friday",
+    "Tomorrow",
+    "Today",
+    "Next week"
+   ],
+   "r": 1,
+   "e": "« I come back tomorrow » : elle revient demain.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0039",
+   "t": "Khadim, it is raining a lot. Please close the windows of your room. I am at work until 6. - Mum",
+   "q": "What must Khadim close?",
+   "o": [
+    "The shop",
+    "The door",
+    "The windows",
+    "The gate"
+   ],
+   "r": 2,
+   "e": "« Please close the windows » : ferme les fenêtres.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0040",
+   "t": "Khadim, it is raining a lot. Please close the windows of your room. I am at work until 6. - Mum",
+   "q": "Quel temps fait-il ?",
+   "o": [
+    "Il fait beau",
+    "Il y a du vent",
+    "Il fait très chaud",
+    "Il pleut beaucoup"
+   ],
+   "r": 3,
+   "e": "« It is raining a lot » : il pleut beaucoup.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0041",
+   "t": "Marème: Can you come to my house on Saturday? Saliou: Yes, I can. What time? Marème: At 4. We can watch a film.",
+   "q": "What day is the visit?",
+   "o": [
+    "Saturday",
+    "Sunday",
+    "Tuesday",
+    "Friday"
+   ],
+   "r": 0,
+   "e": "« Can you come to my house on Saturday? » : samedi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0042",
+   "t": "Marème: Can you come to my house on Saturday? Saliou: Yes, I can. What time? Marème: At 4. We can watch a film.",
+   "q": "What can they do?",
+   "o": [
+    "Cook",
+    "Watch a film",
+    "Play football",
+    "Read books"
+   ],
+   "r": 1,
+   "e": "« We can watch a film » : regarder un film.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0043",
+   "t": "Hi Oumou! I have two tickets for the wrestling match in Dakar. It is on Sunday at the stadium. Do you want to come?",
+   "q": "How many tickets are there?",
+   "o": [
+    "One",
+    "Three",
+    "Two",
+    "Four"
+   ],
+   "r": 2,
+   "e": "« I have two tickets » : deux billets.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0044",
+   "t": "Hi Oumou! I have two tickets for the wrestling match in Dakar. It is on Sunday at the stadium. Do you want to come?",
+   "q": "What is the match?",
+   "o": [
+    "Basketball",
+    "Handball",
+    "Football",
+    "Wrestling"
+   ],
+   "r": 3,
+   "e": "« tickets for the wrestling match » : c'est un match de lutte.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0045",
+   "t": "Boubacar, your shoes are under the sofa. Your school bag is on the chair. Hurry, it is 7:30! - Dad",
+   "q": "Where are the shoes?",
+   "o": [
+    "Under the sofa",
+    "Near the door",
+    "In the bag",
+    "On the chair"
+   ],
+   "r": 0,
+   "e": "« Your shoes are under the sofa » : sous le canapé.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0046",
+   "t": "Boubacar, your shoes are under the sofa. Your school bag is on the chair. Hurry, it is 7:30! - Dad",
+   "q": "Où est le cartable ?",
+   "o": [
+    "Sous le lit",
+    "Sur la chaise",
+    "Sur la table",
+    "Dans la voiture"
+   ],
+   "r": 1,
+   "e": "« Your school bag is on the chair » : sur la chaise.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0047",
+   "t": "Ramatoulaye, thank you for the beautiful dress! I love the colour. Yellow is my favourite colour. - Penda",
+   "q": "Why does Penda say thank you?",
+   "o": [
+    "For a bag",
+    "For a book",
+    "For a dress",
+    "For a cake"
+   ],
+   "r": 2,
+   "e": "« Thank you for the beautiful dress! » : pour la robe.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0048",
+   "t": "Ramatoulaye, thank you for the beautiful dress! I love the colour. Yellow is my favourite colour. - Penda",
+   "q": "What is Penda's favourite colour?",
+   "o": [
+    "Red",
+    "Blue",
+    "White",
+    "Yellow"
+   ],
+   "r": 3,
+   "e": "« Yellow is my favourite colour » : sa couleur préférée est le jaune.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0049",
+   "t": "Idrissa, the shop is closed today. Can you buy the sugar at Mr Fall's shop near the mosque? Thanks, Mum.",
+   "q": "Where can Idrissa buy sugar?",
+   "o": [
+    "At Mr Fall's shop",
+    "At school",
+    "At the supermarket",
+    "At the market"
+   ],
+   "r": 0,
+   "e": "« Buy the sugar at Mr Fall's shop » : à la boutique de M. Fall.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0050",
+   "t": "Idrissa, the shop is closed today. Can you buy the sugar at Mr Fall's shop near the mosque? Thanks, Mum.",
+   "q": "Où est la boutique de M. Fall ?",
+   "o": [
+    "Près de l'école",
+    "Près de la mosquée",
+    "Près de la gare",
+    "Près de la plage"
+   ],
+   "r": 1,
+   "e": "« near the mosque » : près de la mosquée.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0051",
+   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come with your sister!",
+   "q": "How many friends are with Samba?",
+   "o": [
+    "Four",
+    "Three",
+    "Two",
+    "One"
+   ],
+   "r": 2,
+   "e": "Samba est avec Kiné et Doudou : deux amis.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0052",
+   "t": "Samba: I am at the beach with Kiné and Doudou. The water is cold but nice. Come with your sister!",
+   "q": "How is the water?",
+   "o": [
+    "Dirty",
+    "Very deep",
+    "Hot",
+    "Cold but nice"
+   ],
+   "r": 3,
+   "e": "« The water is cold but nice » : froide mais agréable.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0053",
+   "t": "Maimouna, I am at the library. I have your English book. I give it to you tomorrow at school. - Souleymane",
+   "q": "Where is Souleymane?",
+   "o": [
+    "At the library",
+    "At home",
+    "At the mosque",
+    "At the hospital"
+   ],
+   "r": 0,
+   "e": "« I am at the library » : à la bibliothèque.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0054",
+   "t": "Maimouna, I am at the library. I have your English book. I give it to you tomorrow at school. - Souleymane",
+   "q": "Quel livre a Souleymane ?",
+   "o": [
+    "Son livre de maths",
+    "Le livre d'anglais de Maimouna",
+    "Un livre d'histoires",
+    "Le livre du professeur"
+   ],
+   "r": 1,
+   "e": "« I have your English book » : il a le livre d'anglais de Maimouna.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0055",
+   "t": "Hi Nogaye! My dog has five puppies! They are black and white. Come and see them after school.",
+   "q": "How many puppies are there?",
+   "o": [
+    "Four",
+    "Six",
+    "Five",
+    "Three"
+   ],
+   "r": 2,
+   "e": "« My dog has five puppies » : cinq chiots.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0056",
+   "t": "Hi Nogaye! My dog has five puppies! They are black and white. Come and see them after school.",
+   "q": "What colour are the puppies?",
+   "o": [
+    "Black and brown",
+    "Brown",
+    "All white",
+    "Black and white"
+   ],
+   "r": 3,
+   "e": "« They are black and white » : noir et blanc.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0057",
+   "t": "Elhadji, I have a problem. My bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
+   "q": "What is Arame's problem?",
+   "o": [
+    "Her bike has a flat tyre",
+    "Her phone is broken",
+    "She has no money",
+    "She is lost"
+   ],
+   "r": 0,
+   "e": "« My bike has a flat tyre » : son vélo a un pneu crevé.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0058",
+   "t": "Elhadji, I have a problem. My bike has a flat tyre. Can you help me? I am in front of the post office. - Arame",
+   "q": "Where is Arame?",
+   "o": [
+    "At the hospital",
+    "In front of the post office",
+    "Near the beach",
+    "Behind the school"
+   ],
+   "r": 1,
+   "e": "« I am in front of the post office » : devant la poste.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0059",
+   "t": "Thierno: Is the English class in room 5? Yaye: No, it is in room 8 today. Room 5 is closed.",
+   "q": "Where is the English class today?",
+   "o": [
+    "In room 3",
+    "In the library",
+    "In room 8",
+    "In room 5"
+   ],
+   "r": 2,
+   "e": "Yaye dit : « it is in room 8 today » : salle 8.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0060",
+   "t": "Thierno: Is the English class in room 5? Yaye: No, it is in room 8 today. Room 5 is closed.",
+   "q": "Pourquoi la salle 5 n'est pas utilisée ?",
+   "o": [
+    "Elle est sale",
+    "Elle est trop petite",
+    "Elle est occupée",
+    "Elle est fermée"
+   ],
+   "r": 3,
+   "e": "« Room 5 is closed » : la salle 5 est fermée.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0061",
+   "t": "Hello Aliou, it is Nafi. I am at the airport. My plane leaves at 10. I am going to Paris to see my uncle.",
+   "q": "Where is Nafi going?",
+   "o": [
+    "To Paris",
+    "To Dakar",
+    "To London",
+    "To Abidjan"
+   ],
+   "r": 0,
+   "e": "« I am going to Paris » : à Paris.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0062",
+   "t": "Hello Aliou, it is Nafi. I am at the airport. My plane leaves at 10. I am going to Paris to see my uncle.",
+   "q": "Who will Nafi see?",
+   "o": [
+    "Her grandmother",
+    "Her uncle",
+    "Her aunt",
+    "Her brother"
+   ],
+   "r": 1,
+   "e": "« to see my uncle » : son oncle.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0063",
+   "t": "Djibril, please feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
+   "q": "What must Djibril do?",
+   "o": [
+    "Feed the goats",
+    "Go to the field",
+    "Feed the chickens",
+    "Clean the house"
+   ],
+   "r": 2,
+   "e": "« Please feed the chickens » : donner à manger aux poules.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0064",
+   "t": "Djibril, please feed the chickens this morning. I am at the field with your father. We come back at noon. - Mum",
+   "q": "Where are Djibril's parents?",
+   "o": [
+    "At the market",
+    "At the hospital",
+    "In town",
+    "At the field"
+   ],
+   "r": 3,
+   "e": "« I am at the field with your father » : au champ.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0065",
+   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20. Fanta: Thanks!",
+   "q": "Which page is the homework?",
+   "o": [
+    "Page 20",
+    "Page 3",
+    "Page 4",
+    "Page 12"
+   ],
+   "r": 0,
+   "e": "« Exercises 3 and 4, page 20 » : page 20.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0066",
+   "t": "Fanta: Do you have the maths homework? Tidiane: Yes. Exercises 3 and 4, page 20. Fanta: Thanks!",
+   "q": "Quels exercices faut-il faire ?",
+   "o": [
+    "L'exercice 20",
+    "Les exercices 3 et 4",
+    "Les exercices 2 et 3",
+    "Les exercices 4 et 5"
+   ],
+   "r": 1,
+   "e": "« Exercises 3 and 4 » : les exercices 3 et 4.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0067",
+   "t": "Hi Habib! I am in Ziguinchor with my family. We visit my grandmother. She has a big garden with mango trees.",
+   "q": "Who does Habib's friend visit?",
+   "o": [
+    "A teacher",
+    "The uncle",
+    "The grandmother",
+    "A cousin"
+   ],
+   "r": 2,
+   "e": "« We visit my grandmother » : la grand-mère.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0068",
+   "t": "Hi Habib! I am in Ziguinchor with my family. We visit my grandmother. She has a big garden with mango trees.",
+   "q": "What is in the garden?",
+   "o": [
+    "Orange trees",
+    "Baobabs",
+    "Flowers",
+    "Mango trees"
+   ],
+   "r": 3,
+   "e": "« She has a big garden with mango trees » : des manguiers.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0069",
+   "t": "Anta, the water is cut today. Please don't use the shower. There is water in the big bucket in the kitchen. - Dad",
+   "q": "What is the problem today?",
+   "o": [
+    "There is no water",
+    "There is no electricity",
+    "The door is broken",
+    "The phone is cut"
+   ],
+   "r": 0,
+   "e": "« The water is cut today » : il n'y a pas d'eau.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0070",
+   "t": "Anta, the water is cut today. Please don't use the shower. There is water in the big bucket in the kitchen. - Dad",
+   "q": "Où est le grand seau d'eau ?",
+   "o": [
+    "Dans la chambre",
+    "Dans la cuisine",
+    "Dans la cour",
+    "Dans la salle de bain"
+   ],
+   "r": 1,
+   "e": "« in the big bucket in the kitchen » : dans la cuisine.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0071",
+   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new boubou for the party. It is green.",
+   "q": "Where is Dior?",
+   "o": [
+    "At the market",
+    "At home",
+    "At the tailor",
+    "At school"
+   ],
+   "r": 2,
+   "e": "« I am at the tailor » : chez le tailleur.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0072",
+   "t": "Mbaye: Are you at home? Dior: No, I am at the tailor. I want a new boubou for the party. It is green.",
+   "q": "What colour is the boubou?",
+   "o": [
+    "Orange",
+    "Blue",
+    "Purple",
+    "Green"
+   ],
+   "r": 3,
+   "e": "« It is green » : le boubou est vert.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0073",
+   "t": "Hi Ngoné! Thank you for your help with my English homework. I have 18 out of 20! You are a great friend. - Codou",
+   "q": "What is Codou's mark?",
+   "o": [
+    "18 out of 20",
+    "20 out of 20",
+    "15 out of 20",
+    "8 out of 20"
+   ],
+   "r": 0,
+   "e": "« I have 18 out of 20 » : 18 sur 20.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0074",
+   "t": "Hi Ngoné! Thank you for your help with my English homework. I have 18 out of 20! You are a great friend. - Codou",
+   "q": "Why does Codou thank Ngoné?",
+   "o": [
+    "For a cake",
+    "For help with homework",
+    "For a present",
+    "For a phone call"
+   ],
+   "r": 1,
+   "e": "« Thank you for your help with my English homework » : pour l'aide aux devoirs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0075",
+   "t": "Gora, the electricity is off. Take the lamp from the cupboard. The matches are on the table. - Grandpa",
+   "q": "Qu'est-ce qui ne marche pas ?",
+   "o": [
+    "La télé",
+    "L'eau",
+    "L'électricité",
+    "Le téléphone"
+   ],
+   "r": 2,
+   "e": "« The electricity is off » : il n'y a pas d'électricité.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0076",
+   "t": "Gora, the electricity is off. Take the lamp from the cupboard. The matches are on the table. - Grandpa",
+   "q": "Where are the matches?",
+   "o": [
+    "In the cupboard",
+    "Under the bed",
+    "In the kitchen",
+    "On the table"
+   ],
+   "r": 3,
+   "e": "« The matches are on the table » : sur la table.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0077",
+   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. The doctor is nice. We are home at 3. - Mum",
+   "q": "Who is sick?",
+   "o": [
+    "Ndella's brother",
+    "Ndella",
+    "Ndella's mum",
+    "Ndella's sister"
+   ],
+   "r": 0,
+   "e": "« I am at the clinic with your brother. He has a bad cough » : son frère.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0078",
+   "t": "Ndella, I am at the clinic with your brother. He has a bad cough. The doctor is nice. We are home at 3. - Mum",
+   "q": "What does the brother have?",
+   "o": [
+    "A headache",
+    "A bad cough",
+    "A broken leg",
+    "A fever"
+   ],
+   "r": 1,
+   "e": "« He has a bad cough » : une grosse toux.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0079",
+   "t": "School notice: Class 6B, tomorrow is a holiday. There is no school. Classes start again on Thursday.",
+   "q": "Is there school tomorrow?",
+   "o": [
+    "Yes, in the afternoon",
+    "Only for 6A",
+    "No, it is a holiday",
+    "Yes, at 8"
+   ],
+   "r": 2,
+   "e": "« tomorrow is a holiday. There is no school » : pas d'école demain.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0080",
+   "t": "School notice: Class 6B, tomorrow is a holiday. There is no school. Classes start again on Thursday.",
+   "q": "When do classes start again?",
+   "o": [
+    "On Monday",
+    "On Wednesday",
+    "On Saturday",
+    "On Thursday"
+   ],
+   "r": 3,
+   "e": "« Classes start again on Thursday » : jeudi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0081",
+   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History. 11:30 Sport.",
+   "q": "What is the first class on Monday?",
+   "o": [
+    "English",
+    "Sport",
+    "Maths",
+    "History"
+   ],
+   "r": 0,
+   "e": "À 8h00, il y a « English » : c'est le premier cours.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0082",
+   "t": "Monday timetable, Class 5A: 8:00 English. 9:00 Maths. 10:00 Break. 10:30 History. 11:30 Sport.",
+   "q": "What time is the break?",
+   "o": [
+    "At 11:30",
+    "At 10:00",
+    "At 10:30",
+    "At 9:00"
+   ],
+   "r": 1,
+   "e": "« 10:00 Break » : la récréation est à 10 heures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0083",
+   "t": "My school is in Thiès. It is big. There are 20 classrooms and a big yard. My favourite place is the library.",
+   "q": "Where is the school?",
+   "o": [
+    "In Kaolack",
+    "In Dakar",
+    "In Thiès",
+    "In Mbour"
+   ],
+   "r": 2,
+   "e": "« My school is in Thiès » : à Thiès.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0084",
+   "t": "My school is in Thiès. It is big. There are 20 classrooms and a big yard. My favourite place is the library.",
+   "q": "How many classrooms are there?",
+   "o": [
+    "2",
+    "30",
+    "12",
+    "20"
+   ],
+   "r": 3,
+   "e": "« There are 20 classrooms » : 20 salles de classe.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0085",
+   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag. We like his class.",
+   "q": "Comment est M. Ndiaye ?",
+   "o": [
+    "Grand et drôle",
+    "Vieux et triste",
+    "Petit et sévère",
+    "Gros et calme"
+   ],
+   "r": 0,
+   "e": "« He is tall and funny » : grand et drôle.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0086",
+   "t": "Our English teacher is Mr Ndiaye. He is tall and funny. He has a big blue bag. We like his class.",
+   "q": "What colour is his bag?",
+   "o": [
+    "Red",
+    "Blue",
+    "Brown",
+    "Black"
+   ],
+   "r": 1,
+   "e": "« He has a big blue bag » : son sac est bleu.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0087",
+   "t": "School rules: Come to school at 7:45. Don't run in the classroom. Don't eat in class. Respect your teachers.",
+   "q": "What time must students arrive?",
+   "o": [
+    "At 7:00",
+    "At 8:45",
+    "At 7:45",
+    "At 8:00"
+   ],
+   "r": 2,
+   "e": "« Come to school at 7:45 » : à 7h45.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0088",
+   "t": "School rules: Come to school at 7:45. Don't run in the classroom. Don't eat in class. Respect your teachers.",
+   "q": "Qu'est-ce qui est interdit en classe ?",
+   "o": [
+    "Écrire",
+    "Lire",
+    "Parler anglais",
+    "Manger"
+   ],
+   "r": 3,
+   "e": "« Don't eat in class » : ne mange pas en classe.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0089",
+   "t": "I am Moussa. I am in 6th grade. I have six subjects. My favourite subject is science because I like animals.",
+   "q": "What is Moussa's favourite subject?",
+   "o": [
+    "Science",
+    "English",
+    "Maths",
+    "History"
+   ],
+   "r": 0,
+   "e": "« My favourite subject is science » : les sciences.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0090",
+   "t": "I am Moussa. I am in 6th grade. I have six subjects. My favourite subject is science because I like animals.",
+   "q": "Pourquoi Moussa aime cette matière ?",
+   "o": [
+    "Il aime les nombres",
+    "Il aime les animaux",
+    "C'est facile",
+    "Le professeur est drôle"
+   ],
+   "r": 1,
+   "e": "« because I like animals » : parce qu'il aime les animaux.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0091",
+   "t": "In my school bag, I have three books, two notebooks, a ruler and a pencil case. My pencil case is red.",
+   "q": "How many notebooks are in the bag?",
+   "o": [
+    "One",
+    "Four",
+    "Two",
+    "Three"
+   ],
+   "r": 2,
+   "e": "« two notebooks » : deux cahiers.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0092",
+   "t": "In my school bag, I have three books, two notebooks, a ruler and a pencil case. My pencil case is red.",
+   "q": "What colour is the pencil case?",
+   "o": [
+    "Blue",
+    "Black",
+    "Yellow",
+    "Red"
+   ],
+   "r": 3,
+   "e": "« My pencil case is red » : la trousse est rouge.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0093",
+   "t": "Notice: The school canteen is closed on Friday. Please bring your lunch from home. Thank you. - The Director",
+   "q": "When is the canteen closed?",
+   "o": [
+    "On Friday",
+    "On Monday",
+    "On Wednesday",
+    "Every day"
+   ],
+   "r": 0,
+   "e": "« The school canteen is closed on Friday » : vendredi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0094",
+   "t": "Notice: The school canteen is closed on Friday. Please bring your lunch from home. Thank you. - The Director",
+   "q": "Que doivent faire les élèves ce jour-là ?",
+   "o": [
+    "Rester à la maison",
+    "Apporter leur repas",
+    "Partir à midi",
+    "Manger au marché"
+   ],
+   "r": 1,
+   "e": "« Please bring your lunch from home » : apporter son repas.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0095",
+   "t": "Fatou is a good student. She sits in the first row. She always does her homework. Her best friend is Awa.",
+   "q": "Where does Fatou sit?",
+   "o": [
+    "Near the window",
+    "Near the door",
+    "In the first row",
+    "In the last row"
+   ],
+   "r": 2,
+   "e": "« She sits in the first row » : au premier rang.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0096",
+   "t": "Fatou is a good student. She sits in the first row. She always does her homework. Her best friend is Awa.",
+   "q": "Who is Fatou's best friend?",
+   "o": [
+    "Bineta",
+    "Coumba",
+    "Khady",
+    "Awa"
+   ],
+   "r": 3,
+   "e": "« Her best friend is Awa » : sa meilleure amie est Awa.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0097",
+   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long. Bring a pen and a pencil.",
+   "q": "What day is the English exam?",
+   "o": [
+    "Tuesday",
+    "Friday",
+    "Thursday",
+    "Monday"
+   ],
+   "r": 0,
+   "e": "« The English exam is on Tuesday » : mardi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0098",
+   "t": "Exam day! The English exam is on Tuesday at 9 am. It is one hour long. Bring a pen and a pencil.",
+   "q": "How long is the exam?",
+   "o": [
+    "Thirty minutes",
+    "One hour",
+    "Two hours",
+    "Three hours"
+   ],
+   "r": 1,
+   "e": "« It is one hour long » : une heure.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0099",
+   "t": "Our classroom has 40 desks. The walls are white. There is a big map of Senegal on the wall near the board.",
+   "q": "How many desks are there?",
+   "o": [
+    "4",
+    "14",
+    "40",
+    "30"
+   ],
+   "r": 2,
+   "e": "« Our classroom has 40 desks » : 40 tables.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0100",
+   "t": "Our classroom has 40 desks. The walls are white. There is a big map of Senegal on the wall near the board.",
+   "q": "What is on the wall?",
+   "o": [
+    "A photo of the class",
+    "A calendar",
+    "A clock",
+    "A map of Senegal"
+   ],
+   "r": 3,
+   "e": "« There is a big map of Senegal on the wall » : une carte du Sénégal.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0101",
+   "t": "Mrs Sarr is the maths teacher. She is short and kind. She wears glasses. She comes to school by car.",
+   "q": "What does Mrs Sarr teach?",
+   "o": [
+    "Maths",
+    "Science",
+    "English",
+    "French"
+   ],
+   "r": 0,
+   "e": "« Mrs Sarr is the maths teacher » : elle enseigne les maths.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0102",
+   "t": "Mrs Sarr is the maths teacher. She is short and kind. She wears glasses. She comes to school by car.",
+   "q": "Comment Mme Sarr vient à l'école ?",
+   "o": [
+    "En bus",
+    "En voiture",
+    "À vélo",
+    "À pied"
+   ],
+   "r": 1,
+   "e": "« She comes to school by car » : en voiture.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0103",
+   "t": "School club: The English club meets every Wednesday at 3 pm in room 2. We sing songs and play games. Everyone is welcome!",
+   "q": "When does the English club meet?",
+   "o": [
+    "Every day",
+    "Every Friday",
+    "Every Wednesday",
+    "Every Monday"
+   ],
+   "r": 2,
+   "e": "« The English club meets every Wednesday » : chaque mercredi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0104",
+   "t": "School club: The English club meets every Wednesday at 3 pm in room 2. We sing songs and play games. Everyone is welcome!",
+   "q": "What do they do at the club?",
+   "o": [
+    "Play football",
+    "Watch TV",
+    "Cook food",
+    "Sing songs and play games"
+   ],
+   "r": 3,
+   "e": "« We sing songs and play games » : chanter et jouer.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0105",
+   "t": "Ibrahima walks to school every morning. His school is near his house. He leaves home at 7:30 with his brother.",
+   "q": "How does Ibrahima go to school?",
+   "o": [
+    "He walks",
+    "By bus",
+    "By bike",
+    "By car"
+   ],
+   "r": 0,
+   "e": "« Ibrahima walks to school » : il va à l'école à pied.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0106",
+   "t": "Ibrahima walks to school every morning. His school is near his house. He leaves home at 7:30 with his brother.",
+   "q": "Who goes with him?",
+   "o": [
+    "His father",
+    "His brother",
+    "His friend",
+    "His sister"
+   ],
+   "r": 1,
+   "e": "« with his brother » : avec son frère.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0107",
+   "t": "Lost in the yard: a black school bag with a green bottle in it. Ask the guard at the school gate.",
+   "q": "What colour is the bag?",
+   "o": [
+    "Green",
+    "Blue",
+    "Black",
+    "Brown"
+   ],
+   "r": 2,
+   "e": "« a black school bag » : un cartable noir.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0108",
+   "t": "Lost in the yard: a black school bag with a green bottle in it. Ask the guard at the school gate.",
+   "q": "À qui faut-il demander ?",
+   "o": [
+    "À la cantinière",
+    "Au professeur",
+    "Au directeur",
+    "Au gardien"
+   ],
+   "r": 3,
+   "e": "« Ask the guard at the school gate » : au gardien.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0109",
+   "t": "Today we have a new student. His name is Lamine. He is from Kolda. He is 12 and he likes drawing.",
+   "q": "Where is Lamine from?",
+   "o": [
+    "Kolda",
+    "Fatick",
+    "Dakar",
+    "Matam"
+   ],
+   "r": 0,
+   "e": "« He is from Kolda » : il vient de Kolda.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0110",
+   "t": "Today we have a new student. His name is Lamine. He is from Kolda. He is 12 and he likes drawing.",
+   "q": "What does Lamine like?",
+   "o": [
+    "Swimming",
+    "Drawing",
+    "Reading",
+    "Singing"
+   ],
+   "r": 1,
+   "e": "« He likes drawing » : il aime dessiner.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0111",
+   "t": "Class trip! On Saturday, Class 5C visits Gorée Island. Meet at the school at 8 am. Bring water and a hat.",
+   "q": "Where does the class go?",
+   "o": [
+    "Saint-Louis",
+    "Lac Rose",
+    "Gorée Island",
+    "The zoo"
+   ],
+   "r": 2,
+   "e": "« Class 5C visits Gorée Island » : l'île de Gorée.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0112",
+   "t": "Class trip! On Saturday, Class 5C visits Gorée Island. Meet at the school at 8 am. Bring water and a hat.",
+   "q": "What must students bring?",
+   "o": [
+    "Money and a book",
+    "A camera",
+    "A ball",
+    "Water and a hat"
+   ],
+   "r": 3,
+   "e": "« Bring water and a hat » : de l'eau et un chapeau.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0113",
+   "t": "Coumba is the class captain. She helps the teacher. She cleans the board and she opens the windows every morning.",
+   "q": "What is Coumba's job in class?",
+   "o": [
+    "Class captain",
+    "Teacher",
+    "Director",
+    "Guard"
+   ],
+   "r": 0,
+   "e": "« Coumba is the class captain » : chef de classe.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0114",
+   "t": "Coumba is the class captain. She helps the teacher. She cleans the board and she opens the windows every morning.",
+   "q": "Que fait Coumba chaque matin ?",
+   "o": [
+    "Elle lit un livre",
+    "Elle ouvre les fenêtres",
+    "Elle ferme la porte",
+    "Elle arrose les plantes"
+   ],
+   "r": 1,
+   "e": "« she opens the windows every morning » : elle ouvre les fenêtres.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0115",
+   "t": "Pape is sad. His mark in French is 6 out of 20. His mother is not happy. He wants to work harder.",
+   "q": "What is Pape's mark?",
+   "o": [
+    "10 out of 20",
+    "16 out of 20",
+    "6 out of 20",
+    "20 out of 20"
+   ],
+   "r": 2,
+   "e": "« His mark in French is 6 out of 20 » : 6 sur 20.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0116",
+   "t": "Pape is sad. His mark in French is 6 out of 20. His mother is not happy. He wants to work harder.",
+   "q": "Comment se sent Pape ?",
+   "o": [
+    "En colère",
+    "Fatigué",
+    "Content",
+    "Triste"
+   ],
+   "r": 3,
+   "e": "« Pape is sad » : Pape est triste.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0117",
+   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week. Don't eat near the books.",
+   "q": "How many books can you take?",
+   "o": [
+    "Two",
+    "One",
+    "Three",
+    "Five"
+   ],
+   "r": 0,
+   "e": "« Take only two books » : deux livres seulement.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0118",
+   "t": "Library rules: Be quiet. Take only two books. Bring them back after one week. Don't eat near the books.",
+   "q": "Quand faut-il rendre les livres ?",
+   "o": [
+    "Après un mois",
+    "Après une semaine",
+    "Après deux semaines",
+    "Après un jour"
+   ],
+   "r": 1,
+   "e": "« Bring them back after one week » : après une semaine.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0119",
+   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play with my friends in the yard.",
+   "q": "What does the writer drink?",
+   "o": [
+    "Milk",
+    "Tea",
+    "Bissap juice",
+    "Water"
+   ],
+   "r": 2,
+   "e": "« drink bissap juice » : du jus de bissap.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0120",
+   "t": "Our break is at 10. I eat a sandwich and drink bissap juice. Then I play with my friends in the yard.",
+   "q": "Where does the writer play?",
+   "o": [
+    "In the classroom",
+    "In the street",
+    "In the library",
+    "In the yard"
+   ],
+   "r": 3,
+   "e": "« I play with my friends in the yard » : dans la cour.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0121",
+   "t": "At my school, students wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
+   "q": "What colour are the boys' trousers?",
+   "o": [
+    "Grey",
+    "White",
+    "Black",
+    "Blue"
+   ],
+   "r": 0,
+   "e": "« Boys wear a blue shirt and grey trousers » : pantalon gris.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0122",
+   "t": "At my school, students wear a uniform. Boys wear a blue shirt and grey trousers. Girls wear a blue dress.",
+   "q": "What do girls wear?",
+   "o": [
+    "A yellow dress",
+    "A blue dress",
+    "A white shirt",
+    "A grey skirt"
+   ],
+   "r": 1,
+   "e": "« Girls wear a blue dress » : une robe bleue.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0123",
+   "t": "The school year starts in October and ends in July. We have holidays in December and in April.",
+   "q": "When does the school year start?",
+   "o": [
+    "In January",
+    "In September",
+    "In October",
+    "In July"
+   ],
+   "r": 2,
+   "e": "« The school year starts in October » : en octobre.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0124",
+   "t": "The school year starts in October and ends in July. We have holidays in December and in April.",
+   "q": "Quand y a-t-il des vacances ?",
+   "o": [
+    "En août seulement",
+    "En mai et en juin",
+    "En janvier et en mars",
+    "En décembre et en avril"
+   ],
+   "r": 3,
+   "e": "« We have holidays in December and in April » : décembre et avril.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0125",
+   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school. The teacher is not happy.",
+   "q": "Why is Ousmane late?",
+   "o": [
+    "His alarm clock does not ring",
+    "He is sick",
+    "His bus is late",
+    "He loses his bag"
+   ],
+   "r": 0,
+   "e": "« His alarm clock does not ring » : son réveil ne sonne pas.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0126",
+   "t": "Ousmane is late for school. His alarm clock does not ring. He runs to school. The teacher is not happy.",
+   "q": "Comment Ousmane va à l'école ?",
+   "o": [
+    "Son père l'emmène",
+    "Il court",
+    "À vélo",
+    "Il prend le bus"
+   ],
+   "r": 1,
+   "e": "« He runs to school » : il court.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0127",
+   "t": "Notice for parents: Parents' meeting on Saturday 12th at 10 am in the big hall. Please come. - The Director",
+   "q": "Who is the meeting for?",
+   "o": [
+    "Teachers only",
+    "Guards",
+    "Parents",
+    "Students"
+   ],
+   "r": 2,
+   "e": "« Notice for parents: Parents' meeting » : pour les parents.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0128",
+   "t": "Notice for parents: Parents' meeting on Saturday 12th at 10 am in the big hall. Please come. - The Director",
+   "q": "Where is the meeting?",
+   "o": [
+    "In the yard",
+    "In the library",
+    "In room 12",
+    "In the big hall"
+   ],
+   "r": 3,
+   "e": "« in the big hall » : dans la grande salle.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0129",
+   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil and some tomatoes.",
+   "q": "How many fish are on the list?",
+   "o": [
+    "Three",
+    "Two",
+    "Four",
+    "One"
+   ],
+   "r": 0,
+   "e": "« 3 fish » : trois poissons.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0130",
+   "t": "Market list: 2 kilos of rice, 1 kilo of onions, 3 fish, a bottle of oil and some tomatoes.",
+   "q": "Combien de kilos d'oignons ?",
+   "o": [
+    "Un demi-kilo",
+    "Un kilo",
+    "Trois kilos",
+    "Deux kilos"
+   ],
+   "r": 1,
+   "e": "« 1 kilo of onions » : un kilo.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0131",
+   "t": "At Sandaga market, Awa sells fruit. She has mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
+   "q": "What does Awa sell?",
+   "o": [
+    "Clothes",
+    "Shoes",
+    "Fruit",
+    "Fish"
+   ],
+   "r": 2,
+   "e": "« Awa sells fruit » : elle vend des fruits.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0132",
+   "t": "At Sandaga market, Awa sells fruit. She has mangoes, bananas and oranges. Mangoes are 500 francs a kilo.",
+   "q": "How much is a kilo of mangoes?",
+   "o": [
+    "5,000 francs",
+    "50 francs",
+    "1,000 francs",
+    "500 francs"
+   ],
+   "r": 3,
+   "e": "« Mangoes are 500 francs a kilo » : 500 francs le kilo.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0133",
+   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: It is too expensive! Seller: OK, 1,500 francs.",
+   "q": "What is the first price?",
+   "o": [
+    "2,000 francs",
+    "1,500 francs",
+    "2,500 francs",
+    "1,000 francs"
+   ],
+   "r": 0,
+   "e": "Le vendeur dit d'abord : « 2,000 francs ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0134",
+   "t": "Customer: How much is this fish? Seller: 2,000 francs. Customer: It is too expensive! Seller: OK, 1,500 francs.",
+   "q": "What is the new price?",
+   "o": [
+    "2,000 francs",
+    "1,500 francs",
+    "1,200 francs",
+    "500 francs"
+   ],
+   "r": 1,
+   "e": "Ensuite il dit : « OK, 1,500 francs » : le nouveau prix.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0135",
+   "t": "Every morning, Grandma makes breakfast. We eat bread with butter and drink coffee with milk. My little brother drinks juice.",
+   "q": "Who makes breakfast?",
+   "o": [
+    "Mum",
+    "The little brother",
+    "Grandma",
+    "Dad"
+   ],
+   "r": 2,
+   "e": "« Grandma makes breakfast » : la grand-mère.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0136",
+   "t": "Every morning, Grandma makes breakfast. We eat bread with butter and drink coffee with milk. My little brother drinks juice.",
+   "q": "What does the little brother drink?",
+   "o": [
+    "Milk",
+    "Tea",
+    "Coffee",
+    "Juice"
+   ],
+   "r": 3,
+   "e": "« My little brother drinks juice » : du jus.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0137",
+   "t": "I love yassa chicken. My mother cooks it on Sundays. It has onions, lemon and chicken. It is delicious!",
+   "q": "When does the mother cook yassa?",
+   "o": [
+    "On Sundays",
+    "On Fridays",
+    "On Mondays",
+    "Every day"
+   ],
+   "r": 0,
+   "e": "« My mother cooks it on Sundays » : le dimanche.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0138",
+   "t": "I love yassa chicken. My mother cooks it on Sundays. It has onions, lemon and chicken. It is delicious!",
+   "q": "Qu'y a-t-il dans le yassa ?",
+   "o": [
+    "Viande et arachide",
+    "Oignons, citron et poulet",
+    "Tomates et pain",
+    "Poisson, riz et carottes"
+   ],
+   "r": 1,
+   "e": "« It has onions, lemon and chicken » : oignons, citron, poulet.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0139",
+   "t": "Mr Ba is a fisherman in Kayar. He goes to sea in his pirogue every morning. He sells his fish at the beach.",
+   "q": "What is Mr Ba's job?",
+   "o": [
+    "Farmer",
+    "Teacher",
+    "Fisherman",
+    "Driver"
+   ],
+   "r": 2,
+   "e": "« Mr Ba is a fisherman » : il est pêcheur.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0140",
+   "t": "Mr Ba is a fisherman in Kayar. He goes to sea in his pirogue every morning. He sells his fish at the beach.",
+   "q": "Where does he sell his fish?",
+   "o": [
+    "In his house",
+    "At school",
+    "At the market",
+    "At the beach"
+   ],
+   "r": 3,
+   "e": "« He sells his fish at the beach » : sur la plage.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0141",
+   "t": "Bineta's shop: Rice 450 F a kilo. Sugar 700 F a kilo. Milk 300 F. Bread 150 F. Open every day from 7 am to 10 pm.",
+   "q": "How much is the sugar?",
+   "o": [
+    "700 F a kilo",
+    "450 F a kilo",
+    "300 F",
+    "150 F"
+   ],
+   "r": 0,
+   "e": "« Sugar 700 F a kilo » : 700 francs le kilo.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0142",
+   "t": "Bineta's shop: Rice 450 F a kilo. Sugar 700 F a kilo. Milk 300 F. Bread 150 F. Open every day from 7 am to 10 pm.",
+   "q": "When does the shop close?",
+   "o": [
+    "At 7 am",
+    "At 10 pm",
+    "At 7 pm",
+    "At midnight"
+   ],
+   "r": 1,
+   "e": "« Open every day from 7 am to 10 pm » : elle ferme à 22h.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0143",
+   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal. They are yellow and sweet.",
+   "q": "What is the writer's favourite fruit?",
+   "o": [
+    "The orange",
+    "The papaya",
+    "The mango",
+    "The banana"
+   ],
+   "r": 2,
+   "e": "« My favourite fruit is the mango » : la mangue.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0144",
+   "t": "My favourite fruit is the mango. In June, there are many mangoes in Senegal. They are yellow and sweet.",
+   "q": "Quand y a-t-il beaucoup de mangues ?",
+   "o": [
+    "En octobre",
+    "En décembre",
+    "En janvier",
+    "En juin"
+   ],
+   "r": 3,
+   "e": "« In June, there are many mangoes » : en juin.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0145",
+   "t": "Kiné: I'm thirsty. Can I have some water? Aunt Penda: Yes, there is cold water in the fridge. Take a glass.",
+   "q": "What does Kiné want?",
+   "o": [
+    "Water",
+    "Tea",
+    "Juice",
+    "Milk"
+   ],
+   "r": 0,
+   "e": "« Can I have some water? » : Kiné veut de l'eau.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0146",
+   "t": "Kiné: I'm thirsty. Can I have some water? Aunt Penda: Yes, there is cold water in the fridge. Take a glass.",
+   "q": "Where is the cold water?",
+   "o": [
+    "In the kitchen sink",
+    "In the fridge",
+    "On the table",
+    "In the yard"
+   ],
+   "r": 1,
+   "e": "« there is cold water in the fridge » : dans le frigo.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0147",
+   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. I eat a salad. We drink ginger juice.",
+   "q": "What does Mum eat?",
+   "o": [
+    "Couscous",
+    "Rice with fish",
+    "Chicken and chips",
+    "A salad"
+   ],
+   "r": 2,
+   "e": "« Mum eats chicken and chips » : poulet et frites.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0148",
+   "t": "At the restaurant, Dad eats rice with fish. Mum eats chicken and chips. I eat a salad. We drink ginger juice.",
+   "q": "What do they drink?",
+   "o": [
+    "Water",
+    "Bissap juice",
+    "Coffee",
+    "Ginger juice"
+   ],
+   "r": 3,
+   "e": "« We drink ginger juice » : du jus de gingembre.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0149",
+   "t": "Mamadou is a baker. He makes bread every night from 2 am. In the morning, people buy his bread. It is hot and good.",
+   "q": "What is Mamadou's job?",
+   "o": [
+    "Baker",
+    "Cook",
+    "Butcher",
+    "Farmer"
+   ],
+   "r": 0,
+   "e": "« Mamadou is a baker » : il est boulanger.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0150",
+   "t": "Mamadou is a baker. He makes bread every night from 2 am. In the morning, people buy his bread. It is hot and good.",
+   "q": "Quand Mamadou commence à travailler ?",
+   "o": [
+    "À midi",
+    "À 2 heures du matin",
+    "À 8 heures",
+    "À 6 heures du soir"
+   ],
+   "r": 1,
+   "e": "« He makes bread every night from 2 am » : dès 2h du matin.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0151",
+   "t": "Recipe for bissap juice: Put bissap flowers in hot water. Wait one hour. Add sugar and mint. Drink it cold.",
+   "q": "How long do you wait?",
+   "o": [
+    "Ten minutes",
+    "One day",
+    "One hour",
+    "Two hours"
+   ],
+   "r": 2,
+   "e": "« Wait one hour » : attendre une heure.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0152",
+   "t": "Recipe for bissap juice: Put bissap flowers in hot water. Wait one hour. Add sugar and mint. Drink it cold.",
+   "q": "What do you add?",
+   "o": [
+    "Honey",
+    "Milk and sugar",
+    "Lemon and salt",
+    "Sugar and mint"
+   ],
+   "r": 3,
+   "e": "« Add sugar and mint » : du sucre et de la menthe.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0153",
+   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs. Students love her peanuts.",
+   "q": "What does Seynabou sell?",
+   "o": [
+    "Peanuts",
+    "Mangoes",
+    "Biscuits",
+    "Juice"
+   ],
+   "r": 0,
+   "e": "« Seynabou sells peanuts » : des arachides.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0154",
+   "t": "Seynabou sells peanuts near the school. A small bag is 100 francs. A big bag is 250 francs. Students love her peanuts.",
+   "q": "How much is a big bag?",
+   "o": [
+    "500 francs",
+    "250 francs",
+    "200 francs",
+    "100 francs"
+   ],
+   "r": 1,
+   "e": "« A big bag is 250 francs » : 250 francs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0155",
+   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: Great! I love the peanut sauce.",
+   "q": "What is for dinner?",
+   "o": [
+    "Fish and chips",
+    "Yassa with rice",
+    "Mafé with rice",
+    "Thieboudienne"
+   ],
+   "r": 2,
+   "e": "« Mafé with rice » : du mafé avec du riz.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0156",
+   "t": "Abdou: Mum, what is for dinner? Mum: Mafé with rice. Abdou: Great! I love the peanut sauce.",
+   "q": "What does Abdou love?",
+   "o": [
+    "The rice",
+    "The fish",
+    "The onions",
+    "The peanut sauce"
+   ],
+   "r": 3,
+   "e": "« I love the peanut sauce » : la sauce d'arachide.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0157",
+   "t": "The butcher's shop is next to the bakery. It opens at 8 am. Meat is 3,500 francs a kilo. The butcher is Mr Sow.",
+   "q": "Where is the butcher's shop?",
+   "o": [
+    "Next to the bakery",
+    "Next to the school",
+    "Behind the mosque",
+    "In the market"
+   ],
+   "r": 0,
+   "e": "« The butcher's shop is next to the bakery » : à côté de la boulangerie.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0158",
+   "t": "The butcher's shop is next to the bakery. It opens at 8 am. Meat is 3,500 francs a kilo. The butcher is Mr Sow.",
+   "q": "Who is the butcher?",
+   "o": [
+    "Mr Ba",
+    "Mr Sow",
+    "Mr Diallo",
+    "Mr Fall"
+   ],
+   "r": 1,
+   "e": "« The butcher is Mr Sow » : c'est M. Sow.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0159",
+   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and eat from a big bowl. My father says \"Bon appétit!\"",
+   "q": "What time is lunch?",
+   "o": [
+    "At 3 pm",
+    "At 12 pm",
+    "At 2 pm",
+    "At 1 pm"
+   ],
+   "r": 2,
+   "e": "« We eat lunch together at 2 pm » : à 14h.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0160",
+   "t": "In my family, we eat lunch together at 2 pm. We sit on a mat and eat from a big bowl. My father says \"Bon appétit!\"",
+   "q": "Où la famille s'assoit pour manger ?",
+   "o": [
+    "Dans le jardin",
+    "Au restaurant",
+    "Sur des chaises",
+    "Sur une natte"
+   ],
+   "r": 3,
+   "e": "« We sit on a mat » : sur une natte.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0161",
+   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 francs and meat for 3,000 francs.",
+   "q": "How much money does Aminata have?",
+   "o": [
+    "5,000 francs",
+    "2,000 francs",
+    "3,000 francs",
+    "1,000 francs"
+   ],
+   "r": 0,
+   "e": "« with 5,000 francs » : elle a 5 000 francs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0162",
+   "t": "Aminata goes to the market with 5,000 francs. She buys vegetables for 2,000 francs and meat for 3,000 francs.",
+   "q": "Combien coûte la viande ?",
+   "o": [
+    "1 000 francs",
+    "3 000 francs",
+    "5 000 francs",
+    "2 000 francs"
+   ],
+   "r": 1,
+   "e": "« meat for 3,000 francs » : la viande coûte 3 000 francs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0163",
+   "t": "Rice field in Podor: Mr Diallo is a farmer. He grows rice near the river. His sons help him in the field.",
+   "q": "What does Mr Diallo grow?",
+   "o": [
+    "Millet",
+    "Onions",
+    "Rice",
+    "Peanuts"
+   ],
+   "r": 2,
+   "e": "« He grows rice near the river » : du riz.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0164",
+   "t": "Rice field in Podor: Mr Diallo is a farmer. He grows rice near the river. His sons help him in the field.",
+   "q": "Who helps Mr Diallo?",
+   "o": [
+    "His wife",
+    "His daughters",
+    "His friends",
+    "His sons"
+   ],
+   "r": 3,
+   "e": "« His sons help him » : ses fils.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0165",
+   "t": "Ice cream shop: Vanilla 500 F. Chocolate 500 F. Mango 600 F. Coconut 700 F. Closed on Mondays.",
+   "q": "Which ice cream costs 700 F?",
+   "o": [
+    "Coconut",
+    "Chocolate",
+    "Vanilla",
+    "Mango"
+   ],
+   "r": 0,
+   "e": "« Coconut 700 F » : la glace coco.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0166",
+   "t": "Ice cream shop: Vanilla 500 F. Chocolate 500 F. Mango 600 F. Coconut 700 F. Closed on Mondays.",
+   "q": "When is the shop closed?",
+   "o": [
+    "On Sundays",
+    "On Mondays",
+    "On Fridays",
+    "Every evening"
+   ],
+   "r": 1,
+   "e": "« Closed on Mondays » : fermé le lundi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0167",
+   "t": "Moussa does not like fish. He likes meat and eggs. For breakfast, he eats an omelette and bread.",
+   "q": "What does Moussa not like?",
+   "o": [
+    "Eggs",
+    "Meat",
+    "Fish",
+    "Bread"
+   ],
+   "r": 2,
+   "e": "« Moussa does not like fish » : il n'aime pas le poisson.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0168",
+   "t": "Moussa does not like fish. He likes meat and eggs. For breakfast, he eats an omelette and bread.",
+   "q": "What does he eat for breakfast?",
+   "o": [
+    "Fish and rice",
+    "Bread and butter",
+    "Porridge",
+    "An omelette and bread"
+   ],
+   "r": 3,
+   "e": "« he eats an omelette and bread » : une omelette et du pain.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0169",
+   "t": "Ndeye: Two bananas, please. Seller: Here you are. 200 francs. Ndeye: Here is 500 francs. Seller: Your change: 300 francs.",
+   "q": "How many bananas does Ndeye buy?",
+   "o": [
+    "Two",
+    "Five",
+    "Three",
+    "One"
+   ],
+   "r": 0,
+   "e": "« Two bananas, please » : deux bananes.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0170",
+   "t": "Ndeye: Two bananas, please. Seller: Here you are. 200 francs. Ndeye: Here is 500 francs. Seller: Your change: 300 francs.",
+   "q": "Combien de monnaie reçoit Ndeye ?",
+   "o": [
+    "100 francs",
+    "300 francs",
+    "500 francs",
+    "200 francs"
+   ],
+   "r": 1,
+   "e": "« Your change: 300 francs » : 300 francs de monnaie.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0171",
+   "t": "Lunch box: Today, Babacar has rice and chicken in his lunch box. He has an apple too. He eats at school at 12:30.",
+   "q": "What fruit is in the lunch box?",
+   "o": [
+    "A banana",
+    "An orange",
+    "An apple",
+    "A mango"
+   ],
+   "r": 2,
+   "e": "« He has an apple too » : une pomme.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0172",
+   "t": "Lunch box: Today, Babacar has rice and chicken in his lunch box. He has an apple too. He eats at school at 12:30.",
+   "q": "When does Babacar eat?",
+   "o": [
+    "At 1:30",
+    "At 12:00",
+    "At 10:30",
+    "At 12:30"
+   ],
+   "r": 3,
+   "e": "« He eats at school at 12:30 » : à 12h30.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0173",
+   "t": "Grandpa has a small farm in Fatick. He has ten goats, five cows and many chickens. He sells milk in the village.",
+   "q": "How many goats does Grandpa have?",
+   "o": [
+    "Ten",
+    "Five",
+    "Fifteen",
+    "Two"
+   ],
+   "r": 0,
+   "e": "« He has ten goats » : dix chèvres.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0174",
+   "t": "Grandpa has a small farm in Fatick. He has ten goats, five cows and many chickens. He sells milk in the village.",
+   "q": "What does Grandpa sell?",
+   "o": [
+    "Meat",
+    "Milk",
+    "Eggs",
+    "Peanuts"
+   ],
+   "r": 1,
+   "e": "« He sells milk in the village » : du lait.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0175",
+   "t": "Tea time: In the evening, my uncle makes attaya. He makes three glasses. The first glass is strong. The third glass is very sweet.",
+   "q": "Who makes attaya?",
+   "o": [
+    "The father",
+    "The grandmother",
+    "The uncle",
+    "The brother"
+   ],
+   "r": 2,
+   "e": "« my uncle makes attaya » : l'oncle.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0176",
+   "t": "Tea time: In the evening, my uncle makes attaya. He makes three glasses. The first glass is strong. The third glass is very sweet.",
+   "q": "Comment est le troisième verre ?",
+   "o": [
+    "Amer",
+    "Froid",
+    "Très fort",
+    "Très sucré"
+   ],
+   "r": 3,
+   "e": "« The third glass is very sweet » : très sucré.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0177",
+   "t": "Market day in Diourbel is on Thursday. Many people come from the villages. They sell goats, peanuts and clothes.",
+   "q": "When is market day?",
+   "o": [
+    "On Thursday",
+    "On Tuesday",
+    "On Sunday",
+    "Every day"
+   ],
+   "r": 0,
+   "e": "« Market day in Diourbel is on Thursday » : jeudi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0178",
+   "t": "Market day in Diourbel is on Thursday. Many people come from the villages. They sell goats, peanuts and clothes.",
+   "q": "What do people sell?",
+   "o": [
+    "Books",
+    "Goats, peanuts and clothes",
+    "Fish and rice",
+    "Cars and bikes"
+   ],
+   "r": 1,
+   "e": "« They sell goats, peanuts and clothes » : chèvres, arachides, vêtements.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0179",
+   "t": "Cheikh is hungry after school. He eats a big plate of couscous with milk. Then he drinks a glass of water and sleeps.",
+   "q": "What does Cheikh eat?",
+   "o": [
+    "A sandwich",
+    "Bread and eggs",
+    "Couscous with milk",
+    "Rice with fish"
+   ],
+   "r": 2,
+   "e": "« He eats a big plate of couscous with milk » : couscous au lait.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0180",
+   "t": "Cheikh is hungry after school. He eats a big plate of couscous with milk. Then he drinks a glass of water and sleeps.",
+   "q": "What does Cheikh do after he drinks?",
+   "o": [
+    "He watches TV",
+    "He plays",
+    "He reads",
+    "He sleeps"
+   ],
+   "r": 3,
+   "e": "« Then he drinks a glass of water and sleeps » : il dort.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0181",
+   "t": "Fruit juice price list: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F. All juices are cold.",
+   "q": "Which juice is the most expensive?",
+   "o": [
+    "Orange",
+    "Bissap",
+    "Ginger",
+    "Bouye"
+   ],
+   "r": 0,
+   "e": "L'orange coûte 300 F : c'est le plus cher.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0182",
+   "t": "Fruit juice price list: Bissap 200 F. Bouye 250 F. Ginger 200 F. Orange 300 F. All juices are cold.",
+   "q": "How much is a bouye juice?",
+   "o": [
+    "150 F",
+    "250 F",
+    "300 F",
+    "200 F"
+   ],
+   "r": 1,
+   "e": "« Bouye 250 F » : 250 francs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0183",
+   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat at her restaurant.",
+   "q": "Where is the restaurant?",
+   "o": [
+    "In Joal",
+    "In Saly",
+    "In Mbour",
+    "In Dakar"
+   ],
+   "r": 2,
+   "e": "« Mrs Faye has a restaurant in Mbour » : à Mbour.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0184",
+   "t": "Mrs Faye has a restaurant in Mbour. She cooks fish every day. Tourists and fishermen eat at her restaurant.",
+   "q": "Qui mange dans son restaurant ?",
+   "o": [
+    "Les élèves",
+    "Les professeurs",
+    "Les médecins",
+    "Les touristes et les pêcheurs"
+   ],
+   "r": 3,
+   "e": "« Tourists and fishermen eat at her restaurant ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0185",
+   "t": "Astou's birthday cake is big. It is chocolate. There are 11 candles on the cake. Her friends sing \"Happy Birthday\".",
+   "q": "What kind of cake is it?",
+   "o": [
+    "Chocolate",
+    "Mango",
+    "Vanilla",
+    "Coconut"
+   ],
+   "r": 0,
+   "e": "« It is chocolate » : un gâteau au chocolat.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0186",
+   "t": "Astou's birthday cake is big. It is chocolate. There are 11 candles on the cake. Her friends sing \"Happy Birthday\".",
+   "q": "How old is Astou?",
+   "o": [
+    "12",
+    "11",
+    "13",
+    "10"
+   ],
+   "r": 1,
+   "e": "Il y a 11 bougies : Astou a 11 ans.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0187",
+   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Can you buy a new gas bottle? - Khady",
+   "q": "What is finished?",
+   "o": [
+    "The water",
+    "The rice",
+    "The gas",
+    "The oil"
+   ],
+   "r": 2,
+   "e": "« The gas is finished » : il n'y a plus de gaz.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0188",
+   "t": "SMS: Mum, the gas is finished. I can't cook the rice. Can you buy a new gas bottle? - Khady",
+   "q": "What can't Khady do?",
+   "o": [
+    "Go to school",
+    "Wash the clothes",
+    "Watch TV",
+    "Cook the rice"
+   ],
+   "r": 3,
+   "e": "« I can't cook the rice » : elle ne peut pas cuire le riz.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0189",
+   "t": "Hi Coumba, our team wins 3-1! I score two goals. The coach is very happy. We play again on Sunday. - Assane",
+   "q": "What is the score?",
+   "o": [
+    "3-1",
+    "3-2",
+    "2-1",
+    "1-3"
+   ],
+   "r": 0,
+   "e": "« Our team wins 3-1 » : 3 à 1.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0190",
+   "t": "Hi Coumba, our team wins 3-1! I score two goals. The coach is very happy. We play again on Sunday. - Assane",
+   "q": "How many goals does Assane score?",
+   "o": [
+    "Four",
+    "Two",
+    "One",
+    "Three"
+   ],
+   "r": 1,
+   "e": "« I score two goals » : deux buts.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0191",
+   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. Sorry. - Yacine",
+   "q": "Why can't Yacine come?",
+   "o": [
+    "She is travelling",
+    "She has a test",
+    "She has a dentist appointment",
+    "She is sick"
+   ],
+   "r": 2,
+   "e": "« I have a dentist appointment » : rendez-vous chez le dentiste.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0192",
+   "t": "Dear Mr Gueye, I can't come to the English club today. I have a dentist appointment at 3 pm. Sorry. - Yacine",
+   "q": "What time is the appointment?",
+   "o": [
+    "At 3 am",
+    "At 2 pm",
+    "At 4 pm",
+    "At 3 pm"
+   ],
+   "r": 3,
+   "e": "« at 3 pm » : à 15 heures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0193",
+   "t": "Hello Dieynaba. Our new house is in Pikine. It has four rooms and a small garden. Come and visit us! - Marème",
+   "q": "Where is the new house?",
+   "o": [
+    "In Pikine",
+    "In Ngor",
+    "In Rufisque",
+    "In Yoff"
+   ],
+   "r": 0,
+   "e": "« Our new house is in Pikine » : à Pikine.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0194",
+   "t": "Hello Dieynaba. Our new house is in Pikine. It has four rooms and a small garden. Come and visit us! - Marème",
+   "q": "How many rooms does it have?",
+   "o": [
+    "Five",
+    "Four",
+    "Three",
+    "Two"
+   ],
+   "r": 1,
+   "e": "« It has four rooms » : quatre pièces.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0195",
+   "t": "Teacher's note: Very good work, Malick! Your English is better now. Read more books in English. - Mrs Diouf",
+   "q": "What does the teacher think?",
+   "o": [
+    "Malick is late",
+    "Malick is lazy",
+    "Malick's work is very good",
+    "Malick talks too much"
+   ],
+   "r": 2,
+   "e": "« Very good work, Malick! » : très bon travail.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0196",
+   "t": "Teacher's note: Very good work, Malick! Your English is better now. Read more books in English. - Mrs Diouf",
+   "q": "Qu'est-ce que la professeure conseille ?",
+   "o": [
+    "Regarder la télé",
+    "Faire du sport",
+    "Dormir plus",
+    "Lire plus de livres en anglais"
+   ],
+   "r": 3,
+   "e": "« Read more books in English » : lire plus de livres en anglais.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0197",
+   "t": "Bineta: Where is my red scarf? Mum: It is in your room, on the bed. Bineta: Thanks! I wear it to the wedding today.",
+   "q": "Where is the scarf?",
+   "o": [
+    "On the bed",
+    "In the bag",
+    "In the cupboard",
+    "On the chair"
+   ],
+   "r": 0,
+   "e": "« It is in your room, on the bed » : sur le lit.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0198",
+   "t": "Bineta: Where is my red scarf? Mum: It is in your room, on the bed. Bineta: Thanks! I wear it to the wedding today.",
+   "q": "Où va Bineta aujourd'hui ?",
+   "o": [
+    "Au marché",
+    "À un mariage",
+    "À l'hôpital",
+    "À l'école"
+   ],
+   "r": 1,
+   "e": "« I wear it to the wedding today » : elle va à un mariage.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0199",
+   "t": "Kitchen note: Pape, wash the plates and the glasses, please. Then put them in the cupboard. Thank you! - Aunt Kiné",
+   "q": "What must Pape wash?",
+   "o": [
+    "The floor",
+    "The car",
+    "The plates and the glasses",
+    "The clothes"
+   ],
+   "r": 2,
+   "e": "« wash the plates and the glasses » : les assiettes et les verres.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0200",
+   "t": "Kitchen note: Pape, wash the plates and the glasses, please. Then put them in the cupboard. Thank you! - Aunt Kiné",
+   "q": "Where must Pape put them?",
+   "o": [
+    "In the fridge",
+    "In the box",
+    "On the table",
+    "In the cupboard"
+   ],
+   "r": 3,
+   "e": "« put them in the cupboard » : dans le placard.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0201",
+   "t": "LOST: a small white cat. Her name is Mimi. She has a blue collar. Call Fatou: 77 123 45 67. Thank you!",
+   "q": "What is lost?",
+   "o": [
+    "A cat",
+    "A dog",
+    "A bag",
+    "A phone"
+   ],
+   "r": 0,
+   "e": "« LOST: a small white cat » : un chat est perdu.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0202",
+   "t": "LOST: a small white cat. Her name is Mimi. She has a blue collar. Call Fatou: 77 123 45 67. Thank you!",
+   "q": "What colour is the collar?",
+   "o": [
+    "Black",
+    "Blue",
+    "White",
+    "Red"
+   ],
+   "r": 1,
+   "e": "« She has a blue collar » : le collier est bleu.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0203",
+   "t": "FOR SALE: a red bike. It is two years old. It is in good condition. Price: 40,000 francs. Call Moussa in Thiès.",
+   "q": "What is for sale?",
+   "o": [
+    "A bed",
+    "A car",
+    "A bike",
+    "A phone"
+   ],
+   "r": 2,
+   "e": "« FOR SALE: a red bike » : un vélo est à vendre.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0204",
+   "t": "FOR SALE: a red bike. It is two years old. It is in good condition. Price: 40,000 francs. Call Moussa in Thiès.",
+   "q": "How much is it?",
+   "o": [
+    "20,000 francs",
+    "4,000 francs",
+    "400,000 francs",
+    "40,000 francs"
+   ],
+   "r": 3,
+   "e": "« Price: 40,000 francs » : 40 000 francs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0205",
+   "t": "ROOM TO RENT in Yoff. One big room with a bathroom. Near the beach. 60,000 francs a month. Call Mr Sene.",
+   "q": "Where is the room?",
+   "o": [
+    "In Yoff",
+    "In Rufisque",
+    "In Ngor",
+    "In Pikine"
+   ],
+   "r": 0,
+   "e": "« ROOM TO RENT in Yoff » : à Yoff.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0206",
+   "t": "ROOM TO RENT in Yoff. One big room with a bathroom. Near the beach. 60,000 francs a month. Call Mr Sene.",
+   "q": "Qu'y a-t-il avec la chambre ?",
+   "o": [
+    "Un garage",
+    "Une salle de bain",
+    "Une cuisine",
+    "Un jardin"
+   ],
+   "r": 1,
+   "e": "« One big room with a bathroom » : une salle de bain.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0207",
+   "t": "FOUND: a black phone near the Kermel market. It is at the shop of Mr Diop, number 12. Come with your ID card.",
+   "q": "What is found?",
+   "o": [
+    "Some keys",
+    "A wallet",
+    "A black phone",
+    "A black bag"
+   ],
+   "r": 2,
+   "e": "« FOUND: a black phone » : un téléphone noir.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0208",
+   "t": "FOUND: a black phone near the Kermel market. It is at the shop of Mr Diop, number 12. Come with your ID card.",
+   "q": "What must you bring?",
+   "o": [
+    "Money",
+    "Your phone number",
+    "A photo",
+    "Your ID card"
+   ],
+   "r": 3,
+   "e": "« Come with your ID card » : ta carte d'identité.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0209",
+   "t": "WANTED: a teacher of English for two children, 8 and 10 years old. Every Saturday morning in Point E. Call 76 555 22 11.",
+   "q": "Who is wanted?",
+   "o": [
+    "An English teacher",
+    "A driver",
+    "A football coach",
+    "A cook"
+   ],
+   "r": 0,
+   "e": "« WANTED: a teacher of English » : on cherche un professeur d'anglais.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0210",
+   "t": "WANTED: a teacher of English for two children, 8 and 10 years old. Every Saturday morning in Point E. Call 76 555 22 11.",
+   "q": "Quand sont les cours ?",
+   "o": [
+    "Chaque jour",
+    "Le samedi matin",
+    "Le mercredi après-midi",
+    "Le dimanche soir"
+   ],
+   "r": 1,
+   "e": "« Every Saturday morning » : chaque samedi matin.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0211",
+   "t": "LOST DOG! Bobby is brown and big. He is very friendly. He is lost near the Parcelles Assainies market. Please call Lamine.",
+   "q": "What colour is Bobby?",
+   "o": [
+    "Black",
+    "Grey",
+    "Brown",
+    "White"
+   ],
+   "r": 2,
+   "e": "« Bobby is brown and big » : il est marron.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0212",
+   "t": "LOST DOG! Bobby is brown and big. He is very friendly. He is lost near the Parcelles Assainies market. Please call Lamine.",
+   "q": "Where is Bobby lost?",
+   "o": [
+    "In Thiès",
+    "Near the school",
+    "At the beach",
+    "Near the Parcelles Assainies market"
+   ],
+   "r": 3,
+   "e": "« He is lost near the Parcelles Assainies market ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0213",
+   "t": "FOR SALE: school books for 6th grade. English, maths and French. Like new! 2,000 francs each. Ask Aissatou in class 5B.",
+   "q": "Combien coûte un livre ?",
+   "o": [
+    "2 000 francs",
+    "6 000 francs",
+    "5 000 francs",
+    "200 francs"
+   ],
+   "r": 0,
+   "e": "« 2,000 francs each » : 2 000 francs chacun.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0214",
+   "t": "FOR SALE: school books for 6th grade. English, maths and French. Like new! 2,000 francs each. Ask Aissatou in class 5B.",
+   "q": "What grade are the books for?",
+   "o": [
+    "5th grade",
+    "6th grade",
+    "4th grade",
+    "3rd grade"
+   ],
+   "r": 1,
+   "e": "« school books for 6th grade » : pour la 6e.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0215",
+   "t": "JOB: The Teranga Hotel in Saly wants a cook. You must speak French and English. Work from 6 am to 2 pm.",
+   "q": "What job is it?",
+   "o": [
+    "Driver",
+    "Guard",
+    "Cook",
+    "Teacher"
+   ],
+   "r": 2,
+   "e": "« wants a cook » : un cuisinier.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0216",
+   "t": "JOB: The Teranga Hotel in Saly wants a cook. You must speak French and English. Work from 6 am to 2 pm.",
+   "q": "Quelles langues faut-il parler ?",
+   "o": [
+    "Anglais seulement",
+    "Arabe et anglais",
+    "Wolof et français",
+    "Français et anglais"
+   ],
+   "r": 3,
+   "e": "« You must speak French and English ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0217",
+   "t": "FOR SALE: two goats, white and black. Good for Tabaski. Ask Samba at the Kaolack livestock market.",
+   "q": "How many goats are for sale?",
+   "o": [
+    "Two",
+    "Four",
+    "One",
+    "Three"
+   ],
+   "r": 0,
+   "e": "« FOR SALE: two goats » : deux chèvres.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0218",
+   "t": "FOR SALE: two goats, white and black. Good for Tabaski. Ask Samba at the Kaolack livestock market.",
+   "q": "Where can you find Samba?",
+   "o": [
+    "At the Dakar market",
+    "At the Kaolack livestock market",
+    "At the mosque",
+    "At the farm"
+   ],
+   "r": 1,
+   "e": "« Ask Samba at the Kaolack livestock market ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0219",
+   "t": "FREE football training for children 8 to 12 years old. Every Wednesday at 4 pm at the Médina stadium. Bring water!",
+   "q": "How much is the training?",
+   "o": [
+    "500 francs",
+    "2,000 francs",
+    "It is free",
+    "1,000 francs"
+   ],
+   "r": 2,
+   "e": "« FREE football training » : c'est gratuit.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0220",
+   "t": "FREE football training for children 8 to 12 years old. Every Wednesday at 4 pm at the Médina stadium. Bring water!",
+   "q": "Qui peut venir ?",
+   "o": [
+    "Les adultes",
+    "Les filles seulement",
+    "Les enfants de 5 ans",
+    "Les enfants de 8 à 12 ans"
+   ],
+   "r": 3,
+   "e": "« for children 8 to 12 years old ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0221",
+   "t": "LOST: a green school bag with three notebooks and a pencil case. The name in the books is Codou Ndiaye. Call 70 222 33 44.",
+   "q": "What colour is the bag?",
+   "o": [
+    "Green",
+    "Blue",
+    "Red",
+    "Black"
+   ],
+   "r": 0,
+   "e": "« a green school bag » : un sac vert.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0222",
+   "t": "LOST: a green school bag with three notebooks and a pencil case. The name in the books is Codou Ndiaye. Call 70 222 33 44.",
+   "q": "Whose bag is it?",
+   "o": [
+    "The teacher's",
+    "Codou Ndiaye's",
+    "Lamine's",
+    "Fatou's"
+   ],
+   "r": 1,
+   "e": "« The name in the books is Codou Ndiaye » : c'est le sac de Codou.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0223",
+   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden and a garage. 250,000 francs a month.",
+   "q": "How many bedrooms are there?",
+   "o": [
+    "One",
+    "Two",
+    "Three",
+    "Four"
+   ],
+   "r": 2,
+   "e": "« three bedrooms » : trois chambres.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0224",
+   "t": "HOUSE FOR RENT in Mermoz: three bedrooms, a kitchen, a garden and a garage. 250,000 francs a month.",
+   "q": "What is the rent?",
+   "o": [
+    "350,000 francs a month",
+    "25,000 francs a month",
+    "200,000 francs a month",
+    "250,000 francs a month"
+   ],
+   "r": 3,
+   "e": "« 250,000 francs a month » : le loyer.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0225",
+   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, from 5 pm to 8 pm. Call Mrs Gaye.",
+   "q": "How old are the children?",
+   "o": [
+    "3 and 5",
+    "5 and 8",
+    "2 and 4",
+    "3 and 8"
+   ],
+   "r": 0,
+   "e": "« Two children, 3 and 5 years old » : 3 et 5 ans.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0226",
+   "t": "Baby-sitter wanted! Two children, 3 and 5 years old. Monday to Friday, from 5 pm to 8 pm. Call Mrs Gaye.",
+   "q": "Which days?",
+   "o": [
+    "Only Saturday",
+    "Monday to Friday",
+    "Every day",
+    "Every weekend"
+   ],
+   "r": 1,
+   "e": "« Monday to Friday » : du lundi au vendredi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0227",
+   "t": "Sewing class! Learn to make clothes with Mrs Fall. Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
+   "q": "What can you learn?",
+   "o": [
+    "To cook",
+    "To sing",
+    "To make clothes",
+    "To drive"
+   ],
+   "r": 2,
+   "e": "« Learn to make clothes » : apprendre à faire des vêtements.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0228",
+   "t": "Sewing class! Learn to make clothes with Mrs Fall. Tuesday and Thursday, 3 pm to 5 pm. 5,000 francs a month.",
+   "q": "Quels jours sont les cours ?",
+   "o": [
+    "Vendredi",
+    "Samedi et dimanche",
+    "Lundi et mercredi",
+    "Mardi et jeudi"
+   ],
+   "r": 3,
+   "e": "« Tuesday and Thursday » : mardi et jeudi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0229",
+   "t": "FOR SALE: a big fridge, white, 5 years old. It works very well. 75,000 francs. Mr Mbaye, Rufisque.",
+   "q": "What is for sale?",
+   "o": [
+    "A fridge",
+    "A TV",
+    "A bed",
+    "A car"
+   ],
+   "r": 0,
+   "e": "« FOR SALE: a big fridge » : un réfrigérateur.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0230",
+   "t": "FOR SALE: a big fridge, white, 5 years old. It works very well. 75,000 francs. Mr Mbaye, Rufisque.",
+   "q": "Where does Mr Mbaye live?",
+   "o": [
+    "In Mbour",
+    "In Rufisque",
+    "In Pikine",
+    "In Thiès"
+   ],
+   "r": 1,
+   "e": "« Mr Mbaye, Rufisque » : à Rufisque.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0231",
+   "t": "LOST at the beach of Ngor: a gold watch. It is a present from my father. Big reward! Call Ousmane.",
+   "q": "Where is the watch lost?",
+   "o": [
+    "At school",
+    "At the market",
+    "At the beach of Ngor",
+    "In a taxi"
+   ],
+   "r": 2,
+   "e": "« LOST at the beach of Ngor » : sur la plage de Ngor.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0232",
+   "t": "LOST at the beach of Ngor: a gold watch. It is a present from my father. Big reward! Call Ousmane.",
+   "q": "Pourquoi la montre est importante ?",
+   "o": [
+    "Elle est neuve",
+    "Elle est très chère",
+    "C'est sa première montre",
+    "C'est un cadeau de son père"
+   ],
+   "r": 3,
+   "e": "« It is a present from my father ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0233",
+   "t": "Driver wanted for a small bus. Dakar to Thiès, every day. You must have a driving licence. Call 77 900 10 10.",
+   "q": "What job is it?",
+   "o": [
+    "Driver",
+    "Mechanic",
+    "Cook",
+    "Seller"
+   ],
+   "r": 0,
+   "e": "« Driver wanted » : on cherche un chauffeur.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0234",
+   "t": "Driver wanted for a small bus. Dakar to Thiès, every day. You must have a driving licence. Call 77 900 10 10.",
+   "q": "What must you have?",
+   "o": [
+    "A car",
+    "A driving licence",
+    "A diploma",
+    "A phone"
+   ],
+   "r": 1,
+   "e": "« You must have a driving licence » : un permis de conduire.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0235",
+   "t": "Swimming lessons for children at the Saly pool. Saturday at 9 am. Ages 6 to 14. 3,000 francs a lesson.",
+   "q": "What lessons are they?",
+   "o": [
+    "Dancing",
+    "Football",
+    "Swimming",
+    "Music"
+   ],
+   "r": 2,
+   "e": "« Swimming lessons » : des cours de natation.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0236",
+   "t": "Swimming lessons for children at the Saly pool. Saturday at 9 am. Ages 6 to 14. 3,000 francs a lesson.",
+   "q": "Combien coûte une leçon ?",
+   "o": [
+    "1 400 francs",
+    "6 000 francs",
+    "9 000 francs",
+    "3 000 francs"
+   ],
+   "r": 3,
+   "e": "« 3,000 francs a lesson ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0237",
+   "t": "FOUND: a small boy's shoe, blue, near the school gate. Ask the school guard. - School of Grand Yoff",
+   "q": "What is found?",
+   "o": [
+    "A shoe",
+    "A book",
+    "A cap",
+    "A ball"
+   ],
+   "r": 0,
+   "e": "« FOUND: a small boy's shoe » : une chaussure.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0238",
+   "t": "FOUND: a small boy's shoe, blue, near the school gate. Ask the school guard. - School of Grand Yoff",
+   "q": "Who has it?",
+   "o": [
+    "The director",
+    "The school guard",
+    "A teacher",
+    "A mother"
+   ],
+   "r": 1,
+   "e": "« Ask the school guard » : le gardien de l'école.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0239",
+   "t": "Moving sale! Chairs, a table, a sofa and a TV. Everything must go! Saturday, 10 am to 4 pm, Sicap Liberté 2, house 45.",
+   "q": "What day is the sale?",
+   "o": [
+    "Friday",
+    "Sunday",
+    "Saturday",
+    "Monday"
+   ],
+   "r": 2,
+   "e": "« Saturday, 10 am to 4 pm » : samedi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0240",
+   "t": "Moving sale! Chairs, a table, a sofa and a TV. Everything must go! Saturday, 10 am to 4 pm, Sicap Liberté 2, house 45.",
+   "q": "What is the house number?",
+   "o": [
+    "2",
+    "10",
+    "4",
+    "45"
+   ],
+   "r": 3,
+   "e": "« house 45 » : maison numéro 45.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0241",
+   "t": "Computer class for beginners. Learn to use a computer and the internet. Every Monday at 6 pm at the youth centre of Guédiawaye.",
+   "q": "What can you learn?",
+   "o": [
+    "To use a computer",
+    "To swim",
+    "To repair phones",
+    "To drive"
+   ],
+   "r": 0,
+   "e": "« Learn to use a computer and the internet ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0242",
+   "t": "Computer class for beginners. Learn to use a computer and the internet. Every Monday at 6 pm at the youth centre of Guédiawaye.",
+   "q": "Où ont lieu les cours ?",
+   "o": [
+    "À l'école",
+    "Au centre des jeunes de Guédiawaye",
+    "À la bibliothèque",
+    "À la mairie"
+   ],
+   "r": 1,
+   "e": "« at the youth centre of Guédiawaye ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0243",
+   "t": "LOST: my keys! Three keys on a red key ring. Lost in a taxi from Plateau to Ouakam. Please call Khady.",
+   "q": "How many keys are lost?",
+   "o": [
+    "One",
+    "Four",
+    "Three",
+    "Two"
+   ],
+   "r": 2,
+   "e": "« Three keys on a red key ring » : trois clés.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0244",
+   "t": "LOST: my keys! Three keys on a red key ring. Lost in a taxi from Plateau to Ouakam. Please call Khady.",
+   "q": "Where are the keys lost?",
+   "o": [
+    "In a bus",
+    "At home",
+    "At the office",
+    "In a taxi"
+   ],
+   "r": 3,
+   "e": "« Lost in a taxi » : dans un taxi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0245",
+   "t": "FOR SALE: fresh eggs from my farm. 100 francs an egg. 1,000 francs for twelve eggs. Mrs Seck, Sébikotane.",
+   "q": "What does Mrs Seck sell?",
+   "o": [
+    "Eggs",
+    "Milk",
+    "Vegetables",
+    "Chickens"
+   ],
+   "r": 0,
+   "e": "« fresh eggs from my farm » : des œufs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0246",
+   "t": "FOR SALE: fresh eggs from my farm. 100 francs an egg. 1,000 francs for twelve eggs. Mrs Seck, Sébikotane.",
+   "q": "How much are twelve eggs?",
+   "o": [
+    "1,500 francs",
+    "1,000 francs",
+    "1,200 francs",
+    "100 francs"
+   ],
+   "r": 1,
+   "e": "« 1,000 francs for twelve eggs ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0247",
+   "t": "Music school: guitar, piano and djembe lessons. For children and adults. Open Monday to Saturday. Medina, near the big mosque.",
+   "q": "Which instrument is NOT in the list?",
+   "o": [
+    "Guitar",
+    "Piano",
+    "Violin",
+    "Djembe"
+   ],
+   "r": 2,
+   "e": "L'annonce cite guitare, piano et djembé. Le violon n'y est pas.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0248",
+   "t": "Music school: guitar, piano and djembe lessons. For children and adults. Open Monday to Saturday. Medina, near the big mosque.",
+   "q": "Who can take lessons?",
+   "o": [
+    "Only girls",
+    "Only children",
+    "Only teachers",
+    "Children and adults"
+   ],
+   "r": 3,
+   "e": "« For children and adults » : enfants et adultes.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0249",
+   "t": "Happy Birthday, Awa! You are 12 today. We love you very much. Have a wonderful day! - Mum, Dad and Moussa",
+   "q": "How old is Awa?",
+   "o": [
+    "12",
+    "13",
+    "11",
+    "10"
+   ],
+   "r": 0,
+   "e": "« You are 12 today » : elle a 12 ans.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0250",
+   "t": "Happy Birthday, Awa! You are 12 today. We love you very much. Have a wonderful day! - Mum, Dad and Moussa",
+   "q": "Who sends the card?",
+   "o": [
+    "Awa's teacher",
+    "Mum, Dad and Moussa",
+    "Grandma and Grandpa",
+    "Awa's friends"
+   ],
+   "r": 1,
+   "e": "La carte est signée « Mum, Dad and Moussa ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0251",
+   "t": "Invitation: Come to my birthday party! Saturday 15th May, 4 pm, at my house in Liberté 6. There is cake and music! - Cheikh",
+   "q": "What is the date of the party?",
+   "o": [
+    "Saturday 5th May",
+    "Friday 15th March",
+    "Saturday 15th May",
+    "Sunday 15th May"
+   ],
+   "r": 2,
+   "e": "« Saturday 15th May » : samedi 15 mai.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0252",
+   "t": "Invitation: Come to my birthday party! Saturday 15th May, 4 pm, at my house in Liberté 6. There is cake and music! - Cheikh",
+   "q": "Qu'y a-t-il à la fête ?",
+   "o": [
+    "Un film",
+    "Un match",
+    "Une piscine",
+    "Du gâteau et de la musique"
+   ],
+   "r": 3,
+   "e": "« There is cake and music! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0253",
+   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy invite you to their wedding on Sunday 3rd August at 5 pm, Hotel Ngor.",
+   "q": "Who is getting married?",
+   "o": [
+    "Mariama and Ibrahima",
+    "Awa and Ibrahima",
+    "Fatou and Moussa",
+    "Mariama and Cheikh"
+   ],
+   "r": 0,
+   "e": "« Mariama Diallo and Ibrahima Sy invite you to their wedding ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0254",
+   "t": "Wedding invitation: Mariama Diallo and Ibrahima Sy invite you to their wedding on Sunday 3rd August at 5 pm, Hotel Ngor.",
+   "q": "Where is the wedding?",
+   "o": [
+    "At their house",
+    "At Hotel Ngor",
+    "At Hotel Saly",
+    "At the mosque"
+   ],
+   "r": 1,
+   "e": "« Hotel Ngor » : à l'hôtel Ngor.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0255",
+   "t": "Thank you card: Dear Aunt Coumba, thank you for the beautiful watch. I wear it every day to school. Love, Babacar.",
+   "q": "What is the present?",
+   "o": [
+    "A phone",
+    "Some shoes",
+    "A watch",
+    "A bag"
+   ],
+   "r": 2,
+   "e": "« thank you for the beautiful watch » : une montre.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0256",
+   "t": "Thank you card: Dear Aunt Coumba, thank you for the beautiful watch. I wear it every day to school. Love, Babacar.",
+   "q": "Quand Babacar la porte ?",
+   "o": [
+    "Jamais",
+    "Le dimanche",
+    "Aux fêtes",
+    "Tous les jours à l'école"
+   ],
+   "r": 3,
+   "e": "« I wear it every day to school ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0257",
+   "t": "Get well soon, Pape! We miss you in class. Here are your homework and a card from all your friends. - Class 5A",
+   "q": "Why does Pape get this card?",
+   "o": [
+    "He is sick",
+    "It is his birthday",
+    "He has a good mark",
+    "He has a new baby brother"
+   ],
+   "r": 0,
+   "e": "« Get well soon » veut dire : guéris vite. Il est malade.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0258",
+   "t": "Get well soon, Pape! We miss you in class. Here are your homework and a card from all your friends. - Class 5A",
+   "q": "Who sends the card?",
+   "o": [
+    "The doctor",
+    "Class 5A",
+    "His mother",
+    "His teacher only"
+   ],
+   "r": 1,
+   "e": "« Class 5A » : toute la classe.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0259",
+   "t": "Baptism! Our baby girl is one week old. Her name is Sokhna. Come to the baptism on Saturday at 10 am. - Mr and Mrs Thiam",
+   "q": "How old is the baby?",
+   "o": [
+    "One month",
+    "One year",
+    "One week",
+    "Two weeks"
+   ],
+   "r": 2,
+   "e": "« Our baby girl is one week old » : une semaine.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0260",
+   "t": "Baptism! Our baby girl is one week old. Her name is Sokhna. Come to the baptism on Saturday at 10 am. - Mr and Mrs Thiam",
+   "q": "What is the baby's name?",
+   "o": [
+    "Thiam",
+    "Astou",
+    "Mariama",
+    "Sokhna"
+   ],
+   "r": 3,
+   "e": "« Her name is Sokhna » : elle s'appelle Sokhna.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0261",
+   "t": "Congratulations, Ndeye! You pass your exam. You are a great student. We are proud of you. - Grandma and Grandpa",
+   "q": "Why do the grandparents say congratulations?",
+   "o": [
+    "Ndeye passes her exam",
+    "Ndeye gets married",
+    "Ndeye has a new job",
+    "Ndeye has a birthday"
+   ],
+   "r": 0,
+   "e": "« You pass your exam » : elle a réussi son examen.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0262",
+   "t": "Congratulations, Ndeye! You pass your exam. You are a great student. We are proud of you. - Grandma and Grandpa",
+   "q": "Comment se sentent les grands-parents ?",
+   "o": [
+    "Fatigués",
+    "Fiers",
+    "Tristes",
+    "Inquiets"
+   ],
+   "r": 1,
+   "e": "« We are proud of you » : nous sommes fiers de toi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0263",
+   "t": "Dear Amadou, welcome to our school! I am your new classmate. My name is Lamine. I can help you with maths.",
+   "q": "Who writes the card?",
+   "o": [
+    "The director",
+    "The teacher",
+    "Lamine",
+    "Amadou"
+   ],
+   "r": 2,
+   "e": "« My name is Lamine » : c'est Lamine qui écrit.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0264",
+   "t": "Dear Amadou, welcome to our school! I am your new classmate. My name is Lamine. I can help you with maths.",
+   "q": "What can Lamine help with?",
+   "o": [
+    "Football",
+    "Science",
+    "English",
+    "Maths"
+   ],
+   "r": 3,
+   "e": "« I can help you with maths ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0265",
+   "t": "Happy New Year, Aunt Rokhaya! I hope 2027 is a great year for you. Come to see us in Louga soon. Kisses, Yacine.",
+   "q": "Where does Yacine live?",
+   "o": [
+    "In Louga",
+    "In Dakar",
+    "In Matam",
+    "In Thiès"
+   ],
+   "r": 0,
+   "e": "« Come to see us in Louga » : Yacine habite à Louga.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0266",
+   "t": "Happy New Year, Aunt Rokhaya! I hope 2027 is a great year for you. Come to see us in Louga soon. Kisses, Yacine.",
+   "q": "Quelle fête est-ce ?",
+   "o": [
+    "Un mariage",
+    "Le Nouvel An",
+    "Un baptême",
+    "Un anniversaire"
+   ],
+   "r": 1,
+   "e": "« Happy New Year » : bonne année.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0267",
+   "t": "Invitation: Class 6C end-of-year party. Friday 27th June, 3 pm, in the school yard. Bring a dish to share!",
+   "q": "Where is the party?",
+   "o": [
+    "At the director's house",
+    "At the beach",
+    "In the school yard",
+    "In room 6C"
+   ],
+   "r": 2,
+   "e": "« in the school yard » : dans la cour de l'école.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0268",
+   "t": "Invitation: Class 6C end-of-year party. Friday 27th June, 3 pm, in the school yard. Bring a dish to share!",
+   "q": "What must students bring?",
+   "o": [
+    "Music",
+    "Money",
+    "A present",
+    "A dish to share"
+   ],
+   "r": 3,
+   "e": "« Bring a dish to share! » : un plat à partager.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0269",
+   "t": "Dear Mum, happy Mother's Day! You are the best mother in the world. Thank you for your love and your good food. - Fatou",
+   "q": "Quelle fête est-ce ?",
+   "o": [
+    "La fête des mères",
+    "Un anniversaire",
+    "Le Nouvel An",
+    "La Tabaski"
+   ],
+   "r": 0,
+   "e": "« Happy Mother's Day » : bonne fête des mères.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0270",
+   "t": "Dear Mum, happy Mother's Day! You are the best mother in the world. Thank you for your love and your good food. - Fatou",
+   "q": "Why does Fatou thank her mum?",
+   "o": [
+    "For a present",
+    "For her love and good food",
+    "For a trip",
+    "For money"
+   ],
+   "r": 1,
+   "e": "« Thank you for your love and your good food ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0271",
+   "t": "Sorry card: Dear Moussa, I am sorry. I break your pen. Here is a new pen for you. Are we still friends? - Pape",
+   "q": "Why is Pape sorry?",
+   "o": [
+    "He is late",
+    "He loses Moussa's book",
+    "He breaks Moussa's pen",
+    "He forgets Moussa's birthday"
+   ],
+   "r": 2,
+   "e": "« I break your pen » : il a cassé le stylo.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0272",
+   "t": "Sorry card: Dear Moussa, I am sorry. I break your pen. Here is a new pen for you. Are we still friends? - Pape",
+   "q": "What does Pape give?",
+   "o": [
+    "Some sweets",
+    "A ball",
+    "A new book",
+    "A new pen"
+   ],
+   "r": 3,
+   "e": "« Here is a new pen for you ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0273",
+   "t": "Welcome home, Grandpa! We are happy you are back from Mecca. The family is waiting for you with a big lunch.",
+   "q": "Où était le grand-père ?",
+   "o": [
+    "À La Mecque",
+    "À Paris",
+    "À l'hôpital",
+    "À Touba"
+   ],
+   "r": 0,
+   "e": "« you are back from Mecca » : il revient de La Mecque.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0274",
+   "t": "Welcome home, Grandpa! We are happy you are back from Mecca. The family is waiting for you with a big lunch.",
+   "q": "What is the family preparing?",
+   "o": [
+    "A present",
+    "A big lunch",
+    "A party with music",
+    "A big cake"
+   ],
+   "r": 1,
+   "e": "« The family is waiting for you with a big lunch ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0275",
+   "t": "Party invitation: Bineta is 9! Come to her party at the Hann zoo park. Sunday 11 am. We can see the animals and eat cake.",
+   "q": "How old is Bineta?",
+   "o": [
+    "10",
+    "11",
+    "9",
+    "8"
+   ],
+   "r": 2,
+   "e": "« Bineta is 9! » : elle a 9 ans.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0276",
+   "t": "Party invitation: Bineta is 9! Come to her party at the Hann zoo park. Sunday 11 am. We can see the animals and eat cake.",
+   "q": "Where is the party?",
+   "o": [
+    "At the beach",
+    "At her house",
+    "At school",
+    "At the Hann zoo park"
+   ],
+   "r": 3,
+   "e": "« at the Hann zoo park » : au parc zoologique de Hann.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0277",
+   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well tonight and eat a good breakfast. You can do it! - Your sister Khady",
+   "q": "When is the exam?",
+   "o": [
+    "Tomorrow",
+    "Today",
+    "On Friday",
+    "Next week"
+   ],
+   "r": 0,
+   "e": "« good luck for your exam tomorrow » : demain.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0278",
+   "t": "Dear Aissatou, good luck for your exam tomorrow! Sleep well tonight and eat a good breakfast. You can do it! - Your sister Khady",
+   "q": "What does Khady say?",
+   "o": [
+    "Go to the cinema",
+    "Sleep well and eat a good breakfast",
+    "Don't eat",
+    "Study all night"
+   ],
+   "r": 1,
+   "e": "« Sleep well tonight and eat a good breakfast ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0279",
+   "t": "Postcard: Hello from Cap Skirring! The beach is beautiful and the sea is warm. We swim every day. See you soon! - Mamadou",
+   "q": "Where is Mamadou?",
+   "o": [
+    "In Kayar",
+    "In Saint-Louis",
+    "In Cap Skirring",
+    "In Saly"
+   ],
+   "r": 2,
+   "e": "« Hello from Cap Skirring! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0280",
+   "t": "Postcard: Hello from Cap Skirring! The beach is beautiful and the sea is warm. We swim every day. See you soon! - Mamadou",
+   "q": "What does Mamadou do every day?",
+   "o": [
+    "He fishes",
+    "He reads",
+    "He plays football",
+    "He swims"
+   ],
+   "r": 3,
+   "e": "« We swim every day » : nager.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0281",
+   "t": "Dear Teacher, thank you for this school year. Your English class is very interesting. Have good holidays! - Class 4B",
+   "q": "Who is the card for?",
+   "o": [
+    "The teacher",
+    "A student",
+    "The director",
+    "A parent"
+   ],
+   "r": 0,
+   "e": "« Dear Teacher » : la carte est pour le professeur.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0282",
+   "t": "Dear Teacher, thank you for this school year. Your English class is very interesting. Have good holidays! - Class 4B",
+   "q": "What do they say about the class?",
+   "o": [
+    "It is boring",
+    "It is very interesting",
+    "It is long",
+    "It is very difficult"
+   ],
+   "r": 1,
+   "e": "« Your English class is very interesting ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0283",
+   "t": "Invitation: Tabaski lunch at Grandma's house in Diourbel. Monday at 1 pm. All the family is there. Don't be late!",
+   "q": "Where is the lunch?",
+   "o": [
+    "At Uncle's house",
+    "At school",
+    "At Grandma's house",
+    "At a restaurant"
+   ],
+   "r": 2,
+   "e": "« Tabaski lunch at Grandma's house ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0284",
+   "t": "Invitation: Tabaski lunch at Grandma's house in Diourbel. Monday at 1 pm. All the family is there. Don't be late!",
+   "q": "What time is the lunch?",
+   "o": [
+    "At 2 pm",
+    "At 12 pm",
+    "At 11 am",
+    "At 1 pm"
+   ],
+   "r": 3,
+   "e": "« Monday at 1 pm » : à 13 heures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0285",
+   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa chicken, thieboudienne, mafé. Desserts: fruit, thiakry.",
+   "q": "Which one is a dessert?",
+   "o": [
+    "Thiakry",
+    "Mafé",
+    "Soup",
+    "Salad"
+   ],
+   "r": 0,
+   "e": "Dans « Desserts: fruit, thiakry », le thiakry est un dessert.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0286",
+   "t": "Restaurant Chez Fatou. Starters: salad, soup. Main dishes: yassa chicken, thieboudienne, mafé. Desserts: fruit, thiakry.",
+   "q": "How many main dishes are there?",
+   "o": [
+    "Five",
+    "Three",
+    "Four",
+    "Two"
+   ],
+   "r": 1,
+   "e": "Il y a yassa, thieboudienne, mafé : trois plats.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0287",
+   "t": "Menu of the day: Monday - rice and fish. Tuesday - couscous. Wednesday - pasta. Thursday - mafé. Friday - thieboudienne.",
+   "q": "What is on Wednesday?",
+   "o": [
+    "Couscous",
+    "Rice and fish",
+    "Pasta",
+    "Mafé"
+   ],
+   "r": 2,
+   "e": "« Wednesday - pasta » : des pâtes le mercredi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0288",
+   "t": "Menu of the day: Monday - rice and fish. Tuesday - couscous. Wednesday - pasta. Thursday - mafé. Friday - thieboudienne.",
+   "q": "Quel jour y a-t-il du mafé ?",
+   "o": [
+    "Lundi",
+    "Mardi",
+    "Vendredi",
+    "Jeudi"
+   ],
+   "r": 3,
+   "e": "« Thursday - mafé » : jeudi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0289",
+   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Croissant 400 F. Open from 7 am to 7 pm.",
+   "q": "How much is a tea?",
+   "o": [
+    "200 F",
+    "500 F",
+    "300 F",
+    "400 F"
+   ],
+   "r": 0,
+   "e": "« Tea 200 F » : 200 francs.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0290",
+   "t": "Café Teranga: Coffee 300 F. Tea 200 F. Hot chocolate 500 F. Croissant 400 F. Open from 7 am to 7 pm.",
+   "q": "What time does the café open?",
+   "o": [
+    "At 6 am",
+    "At 7 am",
+    "At 8 am",
+    "At 7 pm"
+   ],
+   "r": 1,
+   "e": "« Open from 7 am to 7 pm » : il ouvre à 7h.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0291",
+   "t": "School canteen menu, Tuesday: Starter: carrot salad. Main: chicken with rice. Dessert: banana. Drink: water.",
+   "q": "What is the starter?",
+   "o": [
+    "Soup",
+    "Chicken with rice",
+    "Carrot salad",
+    "Banana"
+   ],
+   "r": 2,
+   "e": "« Starter: carrot salad » : salade de carottes.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0292",
+   "t": "School canteen menu, Tuesday: Starter: carrot salad. Main: chicken with rice. Dessert: banana. Drink: water.",
+   "q": "What is the drink?",
+   "o": [
+    "Juice",
+    "Milk",
+    "Tea",
+    "Water"
+   ],
+   "r": 3,
+   "e": "« Drink: water » : de l'eau.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0293",
+   "t": "Fast food Le Baobab: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F. Soda 500 F.",
+   "q": "What is the most expensive?",
+   "o": [
+    "Pizza",
+    "Chips",
+    "Hamburger",
+    "Sandwich"
+   ],
+   "r": 0,
+   "e": "La pizza coûte 3 000 F : c'est le plus cher.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0294",
+   "t": "Fast food Le Baobab: Sandwich 1,000 F. Hamburger 2,000 F. Chips 500 F. Pizza 3,000 F. Soda 500 F.",
+   "q": "Combien coûte un hamburger ?",
+   "o": [
+    "1 000 F",
+    "2 000 F",
+    "500 F",
+    "3 000 F"
+   ],
+   "r": 1,
+   "e": "« Hamburger 2,000 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0295",
+   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. With onions and bread. Open every evening from 6 pm.",
+   "q": "What does the dibiterie sell?",
+   "o": [
+    "Grilled fish",
+    "Rice",
+    "Grilled lamb",
+    "Chicken"
+   ],
+   "r": 2,
+   "e": "« grilled lamb » : de l'agneau grillé.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0296",
+   "t": "Dibiterie Chez Mbaye: grilled lamb, 4,000 F a kilo. With onions and bread. Open every evening from 6 pm.",
+   "q": "Quand ouvre la dibiterie ?",
+   "o": [
+    "Le dimanche seulement",
+    "Chaque matin",
+    "À midi",
+    "Chaque soir à 18h"
+   ],
+   "r": 3,
+   "e": "« Open every evening from 6 pm ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0297",
+   "t": "Children's menu: one small pizza or one small plate of chicken, one juice and one ice cream. Price: 2,500 F. For children under 10.",
+   "q": "How much is the children's menu?",
+   "o": [
+    "2,500 F",
+    "10,000 F",
+    "2,000 F",
+    "1,500 F"
+   ],
+   "r": 0,
+   "e": "« Price: 2,500 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0298",
+   "t": "Children's menu: one small pizza or one small plate of chicken, one juice and one ice cream. Price: 2,500 F. For children under 10.",
+   "q": "Who is the menu for?",
+   "o": [
+    "All children",
+    "Children under 10",
+    "Students",
+    "Adults"
+   ],
+   "r": 1,
+   "e": "« For children under 10 » : enfants de moins de 10 ans.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0299",
+   "t": "Breakfast at Hotel Savana: from 6:30 to 10 am. Bread, butter, jam, eggs, fruit, coffee and tea. Free for hotel guests.",
+   "q": "When does breakfast end?",
+   "o": [
+    "At 11 am",
+    "At 6:30 am",
+    "At 10 am",
+    "At 9 am"
+   ],
+   "r": 2,
+   "e": "« from 6:30 to 10 am » : jusqu'à 10 heures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0300",
+   "t": "Breakfast at Hotel Savana: from 6:30 to 10 am. Bread, butter, jam, eggs, fruit, coffee and tea. Free for hotel guests.",
+   "q": "Pour qui le petit-déjeuner est gratuit ?",
+   "o": [
+    "Les enfants",
+    "Tout le monde",
+    "Les employés",
+    "Les clients de l'hôtel"
+   ],
+   "r": 3,
+   "e": "« Free for hotel guests ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0301",
+   "t": "Juice bar menu: Mango juice, papaya juice, baobab juice, lemon juice. Small glass 300 F, big glass 600 F.",
+   "q": "How much is a big glass?",
+   "o": [
+    "600 F",
+    "300 F",
+    "500 F",
+    "900 F"
+   ],
+   "r": 0,
+   "e": "« big glass 600 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0302",
+   "t": "Juice bar menu: Mango juice, papaya juice, baobab juice, lemon juice. Small glass 300 F, big glass 600 F.",
+   "q": "Which juice is on the menu?",
+   "o": [
+    "Orange juice",
+    "Baobab juice",
+    "Apple juice",
+    "Grape juice"
+   ],
+   "r": 1,
+   "e": "Le menu cite mangue, papaye, baobab, citron.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0303",
+   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice and salad, 3,500 F. Closed on Sunday.",
+   "q": "What is today's special?",
+   "o": [
+    "Pizza",
+    "Chicken with chips",
+    "Grilled fish with rice and salad",
+    "Mafé"
+   ],
+   "r": 2,
+   "e": "« Today's special: grilled fish with rice and salad ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0304",
+   "t": "Restaurant La Pirogue, Saint-Louis. Today's special: grilled fish with rice and salad, 3,500 F. Closed on Sunday.",
+   "q": "Quand le restaurant est-il fermé ?",
+   "o": [
+    "Le samedi",
+    "Le lundi",
+    "Le soir",
+    "Le dimanche"
+   ],
+   "r": 3,
+   "e": "« Closed on Sunday » : fermé le dimanche.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0305",
+   "t": "Pastry shop: Cakes 500 F. Doughnuts 100 F. Pancakes 200 F. Birthday cakes from 10,000 F. Order one day before.",
+   "q": "How much is a doughnut?",
+   "o": [
+    "100 F",
+    "1,000 F",
+    "200 F",
+    "500 F"
+   ],
+   "r": 0,
+   "e": "« Doughnuts 100 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0306",
+   "t": "Pastry shop: Cakes 500 F. Doughnuts 100 F. Pancakes 200 F. Birthday cakes from 10,000 F. Order one day before.",
+   "q": "Pour un gâteau d'anniversaire, il faut…",
+   "o": [
+    "Appeler le soir",
+    "Commander un jour avant",
+    "Payer 5 000 F",
+    "Venir le matin"
+   ],
+   "r": 1,
+   "e": "« Order one day before ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0307",
+   "t": "Street food in Dakar: Fataya (fried pastry with fish) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
+   "q": "What is in fataya?",
+   "o": [
+    "Rice",
+    "Meat",
+    "Fish",
+    "Beans"
+   ],
+   "r": 2,
+   "e": "« Fataya (fried pastry with fish) » : avec du poisson.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0308",
+   "t": "Street food in Dakar: Fataya (fried pastry with fish) 100 F. Accara (bean fritters) 50 F. Thiakry 300 F.",
+   "q": "How much is an accara?",
+   "o": [
+    "300 F",
+    "500 F",
+    "100 F",
+    "50 F"
+   ],
+   "r": 3,
+   "e": "« Accara (bean fritters) 50 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0309",
+   "t": "Hotel restaurant: Lunch from 12 to 3 pm. Dinner from 7 to 11 pm. Please book a table for groups of more than 6 people.",
+   "q": "When is dinner?",
+   "o": [
+    "From 7 to 11 pm",
+    "From 12 to 3 pm",
+    "From 8 to 12 pm",
+    "From 6 to 9 pm"
+   ],
+   "r": 0,
+   "e": "« Dinner from 7 to 11 pm ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0310",
+   "t": "Hotel restaurant: Lunch from 12 to 3 pm. Dinner from 7 to 11 pm. Please book a table for groups of more than 6 people.",
+   "q": "Qui doit réserver une table ?",
+   "o": [
+    "Les touristes",
+    "Les groupes de plus de 6 personnes",
+    "Tout le monde",
+    "Les enfants"
+   ],
+   "r": 1,
+   "e": "« for groups of more than 6 people ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0311",
+   "t": "Price list at the fish market of Soumbédioune: Thiof 4,000 F a kilo. Yaboye 1,000 F a kilo. Shrimps 5,000 F a kilo.",
+   "q": "Which fish is 1,000 F a kilo?",
+   "o": [
+    "Thiof",
+    "Tuna",
+    "Yaboye",
+    "Shrimps"
+   ],
+   "r": 2,
+   "e": "« Yaboye 1,000 F a kilo ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0312",
+   "t": "Price list at the fish market of Soumbédioune: Thiof 4,000 F a kilo. Yaboye 1,000 F a kilo. Shrimps 5,000 F a kilo.",
+   "q": "What is the most expensive?",
+   "o": [
+    "Thiof",
+    "They are the same price",
+    "Yaboye",
+    "Shrimps"
+   ],
+   "r": 3,
+   "e": "Les crevettes (shrimps) coûtent 5 000 F : c'est le plus cher.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0313",
+   "t": "Pizzeria Napoli, Mbour. Pizza Margherita 3,000 F. Pizza with fish 4,000 F. Free delivery in Mbour. Call 33 957 00 00.",
+   "q": "Where is the pizzeria?",
+   "o": [
+    "In Mbour",
+    "In Dakar",
+    "In Thiès",
+    "In Saly"
+   ],
+   "r": 0,
+   "e": "« Pizzeria Napoli, Mbour ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0314",
+   "t": "Pizzeria Napoli, Mbour. Pizza Margherita 3,000 F. Pizza with fish 4,000 F. Free delivery in Mbour. Call 33 957 00 00.",
+   "q": "How much is delivery?",
+   "o": [
+    "3,000 F",
+    "It is free",
+    "1,000 F",
+    "500 F"
+   ],
+   "r": 1,
+   "e": "« Free delivery in Mbour » : livraison gratuite.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0315",
+   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water. Lunch is at 2 pm.",
+   "q": "What is the dessert?",
+   "o": [
+    "Thiakry",
+    "Ice cream",
+    "Fruit salad",
+    "Cake"
+   ],
+   "r": 2,
+   "e": "« then fruit salad » : salade de fruits.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0316",
+   "t": "Sunday menu at Grandma's: chicken yassa, then fruit salad. Drinks: bissap and water. Lunch is at 2 pm.",
+   "q": "What drinks are there?",
+   "o": [
+    "Milk and juice",
+    "Coffee and tea",
+    "Soda",
+    "Bissap and water"
+   ],
+   "r": 3,
+   "e": "« Drinks: bissap and water ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0317",
+   "t": "Grocery store sign: Fresh bread every morning at 7 am. Milk, eggs, sugar and rice. Open seven days a week.",
+   "q": "When is fresh bread ready?",
+   "o": [
+    "Every morning at 7 am",
+    "On Sunday",
+    "Every evening",
+    "At noon"
+   ],
+   "r": 0,
+   "e": "« Fresh bread every morning at 7 am ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0318",
+   "t": "Grocery store sign: Fresh bread every morning at 7 am. Milk, eggs, sugar and rice. Open seven days a week.",
+   "q": "Combien de jours la boutique est ouverte ?",
+   "o": [
+    "Six jours",
+    "Sept jours par semaine",
+    "Cinq jours",
+    "Le week-end"
+   ],
+   "r": 1,
+   "e": "« Open seven days a week ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0319",
+   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F. Water 250 F.",
+   "q": "How much is the vegetable soup?",
+   "o": [
+    "2,000 F",
+    "1,500 F",
+    "1,000 F",
+    "250 F"
+   ],
+   "r": 2,
+   "e": "« Vegetable soup 1,000 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0320",
+   "t": "Lunch menu: rice with peanut sauce 1,500 F. Fish with chips 2,000 F. Vegetable soup 1,000 F. Water 250 F.",
+   "q": "Which dish comes with chips?",
+   "o": [
+    "Soup",
+    "Chicken",
+    "Rice",
+    "Fish"
+   ],
+   "r": 3,
+   "e": "« Fish with chips » : le poisson.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0321",
+   "t": "Poster: BIG CONCERT at the Daniel Sorano Theatre! Saturday at 9 pm. Tickets: 5,000 F. Children under 12: free.",
+   "q": "Where is the concert?",
+   "o": [
+    "At the Daniel Sorano Theatre",
+    "At the beach",
+    "At school",
+    "At the stadium"
+   ],
+   "r": 0,
+   "e": "« at the Daniel Sorano Theatre ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0322",
+   "t": "Poster: BIG CONCERT at the Daniel Sorano Theatre! Saturday at 9 pm. Tickets: 5,000 F. Children under 12: free.",
+   "q": "Combien paient les enfants de moins de 12 ans ?",
+   "o": [
+    "2 500 F",
+    "Rien, c'est gratuit",
+    "5 000 F",
+    "1 000 F"
+   ],
+   "r": 1,
+   "e": "« Children under 12: free ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0323",
+   "t": "Wrestling! Big match at the Arena in Pikine. Sunday at 5 pm. Doors open at 2 pm. Tickets from 2,000 F.",
+   "q": "What time does the match start?",
+   "o": [
+    "At 3 pm",
+    "At 9 pm",
+    "At 5 pm",
+    "At 2 pm"
+   ],
+   "r": 2,
+   "e": "« Sunday at 5 pm ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0324",
+   "t": "Wrestling! Big match at the Arena in Pikine. Sunday at 5 pm. Doors open at 2 pm. Tickets from 2,000 F.",
+   "q": "When do the doors open?",
+   "o": [
+    "At 4 pm",
+    "At 5 pm",
+    "At 12 pm",
+    "At 2 pm"
+   ],
+   "r": 3,
+   "e": "« Doors open at 2 pm ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0325",
+   "t": "Clean-up day! Let's clean our neighbourhood in Grand Dakar. Saturday 8 am. Bring gloves. Water and bread for everyone.",
+   "q": "What is the event?",
+   "o": [
+    "A clean-up day",
+    "A concert",
+    "A football match",
+    "A party"
+   ],
+   "r": 0,
+   "e": "« Clean-up day! Let's clean our neighbourhood ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0326",
+   "t": "Clean-up day! Let's clean our neighbourhood in Grand Dakar. Saturday 8 am. Bring gloves. Water and bread for everyone.",
+   "q": "Que faut-il apporter ?",
+   "o": [
+    "De l'eau",
+    "Des gants",
+    "Un balai",
+    "Du pain"
+   ],
+   "r": 1,
+   "e": "« Bring gloves » : apporte des gants.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0327",
+   "t": "Health day at the Kolda hospital: free checks for children. Wednesday 9 am to 1 pm. Bring the child's health card.",
+   "q": "What is free?",
+   "o": [
+    "Food",
+    "Medicine",
+    "Checks for children",
+    "Glasses"
+   ],
+   "r": 2,
+   "e": "« free checks for children » : des examens gratuits pour les enfants.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0328",
+   "t": "Health day at the Kolda hospital: free checks for children. Wednesday 9 am to 1 pm. Bring the child's health card.",
+   "q": "What must you bring?",
+   "o": [
+    "A photo",
+    "Money",
+    "Water",
+    "The child's health card"
+   ],
+   "r": 3,
+   "e": "« Bring the child's health card ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0329",
+   "t": "Football tournament for schools! Teams of 7 players. Register before 10th March. The winner gets a cup.",
+   "q": "How many players are in a team?",
+   "o": [
+    "7",
+    "10",
+    "5",
+    "11"
+   ],
+   "r": 0,
+   "e": "« Teams of 7 players ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0330",
+   "t": "Football tournament for schools! Teams of 7 players. Register before 10th March. The winner gets a cup.",
+   "q": "Qu'est-ce que le gagnant reçoit ?",
+   "o": [
+    "Un ballon",
+    "Une coupe",
+    "Une médaille",
+    "De l'argent"
+   ],
+   "r": 1,
+   "e": "« The winner gets a cup ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0331",
+   "t": "Cinema tonight! A film for children at the cultural centre of Ziguinchor. 7 pm. Tickets 500 F. Popcorn 200 F.",
+   "q": "Where is the film?",
+   "o": [
+    "At school",
+    "At the hotel",
+    "At the cultural centre",
+    "At the stadium"
+   ],
+   "r": 2,
+   "e": "« at the cultural centre of Ziguinchor ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0332",
+   "t": "Cinema tonight! A film for children at the cultural centre of Ziguinchor. 7 pm. Tickets 500 F. Popcorn 200 F.",
+   "q": "How much is a ticket?",
+   "o": [
+    "1,000 F",
+    "200 F",
+    "700 F",
+    "500 F"
+   ],
+   "r": 3,
+   "e": "« Tickets 500 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0333",
+   "t": "Art show by students of class 3A. Paintings and drawings of Senegal. In the school library, Monday to Friday.",
+   "q": "Who are the artists?",
+   "o": [
+    "Students of class 3A",
+    "Famous painters",
+    "Parents",
+    "Teachers"
+   ],
+   "r": 0,
+   "e": "« Art show by students of class 3A ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0334",
+   "t": "Art show by students of class 3A. Paintings and drawings of Senegal. In the school library, Monday to Friday.",
+   "q": "What do the paintings show?",
+   "o": [
+    "Cars",
+    "Senegal",
+    "The sea",
+    "Animals"
+   ],
+   "r": 1,
+   "e": "« Paintings and drawings of Senegal ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0335",
+   "t": "Book fair in Dakar! Books for children and adults. Meet writers. From 10th to 15th December. Entrance free.",
+   "q": "What is the event?",
+   "o": [
+    "A sports day",
+    "A music festival",
+    "A book fair",
+    "A film night"
+   ],
+   "r": 2,
+   "e": "« Book fair in Dakar! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0336",
+   "t": "Book fair in Dakar! Books for children and adults. Meet writers. From 10th to 15th December. Entrance free.",
+   "q": "How much is entrance?",
+   "o": [
+    "1,000 F",
+    "500 F",
+    "2,000 F",
+    "It is free"
+   ],
+   "r": 3,
+   "e": "« Entrance free » : entrée gratuite.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0337",
+   "t": "Saint-Louis Jazz Festival. Music every night for four days. Concerts start at 9 pm. Tickets at the festival office.",
+   "q": "What kind of music is it?",
+   "o": [
+    "Jazz",
+    "Rap",
+    "Rock",
+    "Mbalax"
+   ],
+   "r": 0,
+   "e": "« Saint-Louis Jazz Festival ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0338",
+   "t": "Saint-Louis Jazz Festival. Music every night for four days. Concerts start at 9 pm. Tickets at the festival office.",
+   "q": "Combien de jours dure le festival ?",
+   "o": [
+    "Deux jours",
+    "Quatre jours",
+    "Une semaine",
+    "Un jour"
+   ],
+   "r": 1,
+   "e": "« Music every night for four days ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0339",
+   "t": "Running race! 5 km in Corniche Ouest. Sunday 7 am. For everyone over 14 years old. Free T-shirt for runners.",
+   "q": "How long is the race?",
+   "o": [
+    "7 km",
+    "14 km",
+    "5 km",
+    "10 km"
+   ],
+   "r": 2,
+   "e": "« 5 km in Corniche Ouest ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0340",
+   "t": "Running race! 5 km in Corniche Ouest. Sunday 7 am. For everyone over 14 years old. Free T-shirt for runners.",
+   "q": "What do runners get?",
+   "o": [
+    "A bottle",
+    "Money",
+    "A medal",
+    "A free T-shirt"
+   ],
+   "r": 3,
+   "e": "« Free T-shirt for runners ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0341",
+   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees. Come with your teacher.",
+   "q": "How many trees does the school plant?",
+   "o": [
+    "100",
+    "10",
+    "5",
+    "50"
+   ],
+   "r": 0,
+   "e": "« Our school plants 100 trees ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0342",
+   "t": "Tree planting day! Our school plants 100 trees on Friday. Every class plants 5 trees. Come with your teacher.",
+   "q": "How many trees does each class plant?",
+   "o": [
+    "10",
+    "5",
+    "2",
+    "100"
+   ],
+   "r": 1,
+   "e": "« Every class plants 5 trees ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0343",
+   "t": "Notice: The swimming pool is closed for cleaning on Monday and Tuesday. It opens again on Wednesday at 9 am.",
+   "q": "Why is the pool closed?",
+   "o": [
+    "For a competition",
+    "Because of rain",
+    "For cleaning",
+    "For holidays"
+   ],
+   "r": 2,
+   "e": "« closed for cleaning » : pour le nettoyage.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0344",
+   "t": "Notice: The swimming pool is closed for cleaning on Monday and Tuesday. It opens again on Wednesday at 9 am.",
+   "q": "Quand la piscine rouvre ?",
+   "o": [
+    "Mardi soir",
+    "Lundi à 9h",
+    "Jeudi",
+    "Mercredi à 9h"
+   ],
+   "r": 3,
+   "e": "« It opens again on Wednesday at 9 am ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0345",
+   "t": "Bus notice: Line 8 does not stop at Colobane today. Please take the bus at the next stop, near the hospital.",
+   "q": "Which bus line is it?",
+   "o": [
+    "Line 8",
+    "Line 10",
+    "Line 18",
+    "Line 4"
+   ],
+   "r": 0,
+   "e": "« Line 8 does not stop at Colobane ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0346",
+   "t": "Bus notice: Line 8 does not stop at Colobane today. Please take the bus at the next stop, near the hospital.",
+   "q": "Où prendre le bus aujourd'hui ?",
+   "o": [
+    "À Colobane",
+    "À l'arrêt suivant, près de l'hôpital",
+    "À la gare",
+    "Devant l'école"
+   ],
+   "r": 1,
+   "e": "« take the bus at the next stop, near the hospital ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0347",
+   "t": "Shop notice: Back in 10 minutes. I am at the bank. Please wait or call 77 600 70 80. - Modou",
+   "q": "Where is Modou?",
+   "o": [
+    "At home",
+    "At the market",
+    "At the bank",
+    "At lunch"
+   ],
+   "r": 2,
+   "e": "« I am at the bank ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0348",
+   "t": "Shop notice: Back in 10 minutes. I am at the bank. Please wait or call 77 600 70 80. - Modou",
+   "q": "When does Modou come back?",
+   "o": [
+    "In one hour",
+    "At 10 o'clock",
+    "Tomorrow",
+    "In 10 minutes"
+   ],
+   "r": 3,
+   "e": "« Back in 10 minutes ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0349",
+   "t": "Notice at the beach: Danger! No swimming today. The sea is too strong. Swimming is OK again tomorrow.",
+   "q": "Can you swim today?",
+   "o": [
+    "No, it is dangerous",
+    "Yes, in the morning",
+    "Yes, with a guard",
+    "Only children"
+   ],
+   "r": 0,
+   "e": "« No swimming today » : on ne peut pas nager.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0350",
+   "t": "Notice at the beach: Danger! No swimming today. The sea is too strong. Swimming is OK again tomorrow.",
+   "q": "Pourquoi c'est interdit ?",
+   "o": [
+    "Il pleut",
+    "La mer est trop forte",
+    "Il fait froid",
+    "L'eau est sale"
+   ],
+   "r": 1,
+   "e": "« The sea is too strong ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0351",
+   "t": "Zoo rules: Don't feed the animals. Don't touch the cages. Children must stay with an adult. Thank you!",
+   "q": "What must you not do?",
+   "o": [
+    "Talk",
+    "Walk",
+    "Feed the animals",
+    "Take photos"
+   ],
+   "r": 2,
+   "e": "« Don't feed the animals ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0352",
+   "t": "Zoo rules: Don't feed the animals. Don't touch the cages. Children must stay with an adult. Thank you!",
+   "q": "Les enfants doivent…",
+   "o": [
+    "Porter un chapeau",
+    "Payer plus",
+    "Rester dehors",
+    "Rester avec un adulte"
+   ],
+   "r": 3,
+   "e": "« Children must stay with an adult ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0353",
+   "t": "Pharmacy Thiaroye: open 24 hours a day, 7 days a week. Ask the pharmacist for help. Telephone: 33 834 55 55.",
+   "q": "When is the pharmacy open?",
+   "o": [
+    "24 hours a day, 7 days a week",
+    "Only in the morning",
+    "Only at night",
+    "Monday to Friday"
+   ],
+   "r": 0,
+   "e": "« open 24 hours a day, 7 days a week ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0354",
+   "t": "Pharmacy Thiaroye: open 24 hours a day, 7 days a week. Ask the pharmacist for help. Telephone: 33 834 55 55.",
+   "q": "Who can help you?",
+   "o": [
+    "The guard",
+    "The pharmacist",
+    "The doctor",
+    "The nurse"
+   ],
+   "r": 1,
+   "e": "« Ask the pharmacist for help ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0355",
+   "t": "Taxi-brousse station, Kaolack: Departures for Tambacounda at 6 am and 1 pm. Price: 7,000 F. Bags: 500 F.",
+   "q": "Where do the cars go?",
+   "o": [
+    "To Dakar",
+    "To Kaolack",
+    "To Tambacounda",
+    "To Kolda"
+   ],
+   "r": 2,
+   "e": "« Departures for Tambacounda ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0356",
+   "t": "Taxi-brousse station, Kaolack: Departures for Tambacounda at 6 am and 1 pm. Price: 7,000 F. Bags: 500 F.",
+   "q": "Combien coûte un bagage ?",
+   "o": [
+    "6 000 F",
+    "1 000 F",
+    "7 000 F",
+    "500 F"
+   ],
+   "r": 3,
+   "e": "« Bags: 500 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0357",
+   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed on Sunday.",
+   "q": "When does the post office close on Saturday?",
+   "o": [
+    "At 12 pm",
+    "At 2 pm",
+    "At 8 am",
+    "At 4 pm"
+   ],
+   "r": 0,
+   "e": "« Saturday, 8 am to 12 pm ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0358",
+   "t": "Post office hours: Monday to Friday, 8 am to 4 pm. Saturday, 8 am to 12 pm. Closed on Sunday.",
+   "q": "Is it open on Sunday?",
+   "o": [
+    "Yes, in the morning",
+    "No",
+    "Only in the evening",
+    "Yes, all day"
+   ],
+   "r": 1,
+   "e": "« Closed on Sunday ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0359",
+   "t": "Library notice: New books for children! Come and read stories in English and French. Every Saturday, 10 am, free.",
+   "q": "What is new at the library?",
+   "o": [
+    "Computers",
+    "Chairs",
+    "Books for children",
+    "Films"
+   ],
+   "r": 2,
+   "e": "« New books for children! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0360",
+   "t": "Library notice: New books for children! Come and read stories in English and French. Every Saturday, 10 am, free.",
+   "q": "In which languages are the stories?",
+   "o": [
+    "Only English",
+    "Wolof and French",
+    "Arabic and English",
+    "English and French"
+   ],
+   "r": 3,
+   "e": "« stories in English and French ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0361",
+   "t": "Hairdresser Nafi: Braids 5,000 F. Haircut for men 1,000 F. Haircut for children 500 F. Open Tuesday to Sunday.",
+   "q": "How much are braids?",
+   "o": [
+    "5,000 F",
+    "500 F",
+    "1,000 F",
+    "2,000 F"
+   ],
+   "r": 0,
+   "e": "« Braids 5,000 F » : les tresses.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0362",
+   "t": "Hairdresser Nafi: Braids 5,000 F. Haircut for men 1,000 F. Haircut for children 500 F. Open Tuesday to Sunday.",
+   "q": "Quel jour est-ce fermé ?",
+   "o": [
+    "Mardi",
+    "Lundi",
+    "Samedi",
+    "Dimanche"
+   ],
+   "r": 1,
+   "e": "Ouvert du mardi au dimanche : fermé le lundi.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0363",
+   "t": "Garage Diallo: We repair cars, motorbikes and bikes. Open from 8 am to 6 pm. Behind the Total station.",
+   "q": "What does the garage repair?",
+   "o": [
+    "Phones and TVs",
+    "Shoes",
+    "Cars, motorbikes and bikes",
+    "Computers"
+   ],
+   "r": 2,
+   "e": "« We repair cars, motorbikes and bikes ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0364",
+   "t": "Garage Diallo: We repair cars, motorbikes and bikes. Open from 8 am to 6 pm. Behind the Total station.",
+   "q": "Où est le garage ?",
+   "o": [
+    "Au marché",
+    "Devant l'école",
+    "Près de la mosquée",
+    "Derrière la station Total"
+   ],
+   "r": 3,
+   "e": "« Behind the Total station ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0365",
+   "t": "Tailor Aliou: New boubous for the Korité party! Order now. Ready in one week. Many colours: blue, white, green.",
+   "q": "What does Aliou make?",
+   "o": [
+    "Boubous",
+    "Shoes",
+    "Bags",
+    "Hats"
+   ],
+   "r": 0,
+   "e": "« New boubous for the Korité party! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0366",
+   "t": "Tailor Aliou: New boubous for the Korité party! Order now. Ready in one week. Many colours: blue, white, green.",
+   "q": "When is the order ready?",
+   "o": [
+    "In one day",
+    "In one week",
+    "In one month",
+    "Tomorrow"
+   ],
+   "r": 1,
+   "e": "« Ready in one week ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0367",
+   "t": "Phone repair: Is your phone broken? We repair it in one hour! Screen: 15,000 F. Battery: 8,000 F. Sandaga market, shop 7.",
+   "q": "How long is the repair?",
+   "o": [
+    "Ten minutes",
+    "One day",
+    "One hour",
+    "One week"
+   ],
+   "r": 2,
+   "e": "« We repair it in one hour! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0368",
+   "t": "Phone repair: Is your phone broken? We repair it in one hour! Screen: 15,000 F. Battery: 8,000 F. Sandaga market, shop 7.",
+   "q": "How much is a new battery?",
+   "o": [
+    "1,000 F",
+    "7,000 F",
+    "15,000 F",
+    "8,000 F"
+   ],
+   "r": 3,
+   "e": "« Battery: 8,000 F ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0369",
+   "t": "Clinic Sainte Marie: Doctor for children every morning. Dentist on Tuesday and Friday. Eye doctor on Thursday.",
+   "q": "When is the dentist there?",
+   "o": [
+    "Tuesday and Friday",
+    "Monday",
+    "Thursday",
+    "Every morning"
+   ],
+   "r": 0,
+   "e": "« Dentist on Tuesday and Friday ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0370",
+   "t": "Clinic Sainte Marie: Doctor for children every morning. Dentist on Tuesday and Friday. Eye doctor on Thursday.",
+   "q": "Quel médecin vient le jeudi ?",
+   "o": [
+    "Le médecin des enfants",
+    "L'ophtalmologue (yeux)",
+    "Le dentiste",
+    "Personne"
+   ],
+   "r": 1,
+   "e": "« Eye doctor on Thursday » : le médecin des yeux.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0371",
+   "t": "Sign on the door: Please take off your shoes. Thank you. - The family Ndoye",
+   "q": "What must you do?",
+   "o": [
+    "Close the door",
+    "Knock",
+    "Take off your shoes",
+    "Be quiet"
+   ],
+   "r": 2,
+   "e": "« Please take off your shoes » : enlève tes chaussures.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0372",
+   "t": "Sign on the door: Please take off your shoes. Thank you. - The family Ndoye",
+   "q": "Who writes the sign?",
+   "o": [
+    "The teacher",
+    "The doctor",
+    "The guard",
+    "The Ndoye family"
+   ],
+   "r": 3,
+   "e": "« The family Ndoye ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0373",
+   "t": "Lost and found at Blaise Diagne Airport: Did you lose something? Go to the office near gate 3. Open 24 hours.",
+   "q": "Where is the office?",
+   "o": [
+    "Near gate 3",
+    "Near gate 1",
+    "In the hotel",
+    "At the car park"
+   ],
+   "r": 0,
+   "e": "« Go to the office near gate 3 ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0374",
+   "t": "Lost and found at Blaise Diagne Airport: Did you lose something? Go to the office near gate 3. Open 24 hours.",
+   "q": "When is the office open?",
+   "o": [
+    "Only in the morning",
+    "24 hours",
+    "Only at night",
+    "8 am to 6 pm"
+   ],
+   "r": 1,
+   "e": "« Open 24 hours ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0375",
+   "t": "Dance class for girls and boys! Sabar dance with Mrs Ndiaye. Friday at 5 pm, youth centre of Thiès. 1,000 F.",
+   "q": "What dance is it?",
+   "o": [
+    "Salsa",
+    "Hip-hop",
+    "Sabar",
+    "Ballet"
+   ],
+   "r": 2,
+   "e": "« Sabar dance with Mrs Ndiaye ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0376",
+   "t": "Dance class for girls and boys! Sabar dance with Mrs Ndiaye. Friday at 5 pm, youth centre of Thiès. 1,000 F.",
+   "q": "Où a lieu le cours ?",
+   "o": [
+    "Au théâtre",
+    "À l'école",
+    "Chez Mme Ndiaye",
+    "Au centre des jeunes de Thiès"
+   ],
+   "r": 3,
+   "e": "« youth centre of Thiès ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0377",
+   "t": "FOR SALE: a small TV, black, with remote control. Very good condition. 30,000 F. Call Rokhaya after 6 pm.",
+   "q": "What comes with the TV?",
+   "o": [
+    "A remote control",
+    "A phone",
+    "A radio",
+    "A table"
+   ],
+   "r": 0,
+   "e": "« with remote control » : avec la télécommande.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0378",
+   "t": "FOR SALE: a small TV, black, with remote control. Very good condition. 30,000 F. Call Rokhaya after 6 pm.",
+   "q": "When can you call Rokhaya?",
+   "o": [
+    "At noon",
+    "After 6 pm",
+    "Before 6 pm",
+    "In the morning"
+   ],
+   "r": 1,
+   "e": "« Call Rokhaya after 6 pm ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0379",
+   "t": "FREE kittens! Three little kittens, two grey and one black. They are two months old. They need a good home. Call Anta.",
+   "q": "How many kittens are grey?",
+   "o": [
+    "Three",
+    "One",
+    "Two",
+    "Four"
+   ],
+   "r": 2,
+   "e": "« two grey and one black » : deux gris.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0380",
+   "t": "FREE kittens! Three little kittens, two grey and one black. They are two months old. They need a good home. Call Anta.",
+   "q": "How old are the kittens?",
+   "o": [
+    "Three months",
+    "One year",
+    "Two weeks",
+    "Two months"
+   ],
+   "r": 3,
+   "e": "« They are two months old ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0381",
+   "t": "Volunteers wanted! Help old people in our village. Read to them, cook with them. Every Sunday afternoon. Call Demba.",
+   "q": "What do volunteers do?",
+   "o": [
+    "Help old people",
+    "Teach children",
+    "Clean the beach",
+    "Plant trees"
+   ],
+   "r": 0,
+   "e": "« Help old people in our village ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0382",
+   "t": "Volunteers wanted! Help old people in our village. Read to them, cook with them. Every Sunday afternoon. Call Demba.",
+   "q": "Quand ?",
+   "o": [
+    "Chaque samedi matin",
+    "Chaque dimanche après-midi",
+    "Le lundi",
+    "Tous les soirs"
+   ],
+   "r": 1,
+   "e": "« Every Sunday afternoon ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0383",
+   "t": "Car for sale: blue Toyota, 2015. 4 doors, air conditioning. 3,500,000 F. Call Mr Ka, Kaolack.",
+   "q": "What colour is the car?",
+   "o": [
+    "White",
+    "Red",
+    "Blue",
+    "Black"
+   ],
+   "r": 2,
+   "e": "« blue Toyota » : bleue.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0384",
+   "t": "Holiday camp in Toubab Dialaw! For children 7 to 13. Games, swimming, music. 1st to 15th August. Call 77 333 44 55.",
+   "q": "Where is the camp?",
+   "o": [
+    "In Joal",
+    "In Dakar",
+    "In Saly",
+    "In Toubab Dialaw"
+   ],
+   "r": 3,
+   "e": "« Holiday camp in Toubab Dialaw! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0385",
+   "t": "Holiday camp in Toubab Dialaw! For children 7 to 13. Games, swimming, music. 1st to 15th August. Call 77 333 44 55.",
+   "q": "Which activity is in the camp?",
+   "o": [
+    "Swimming",
+    "Driving",
+    "Cooking",
+    "Computer"
+   ],
+   "r": 0,
+   "e": "« Games, swimming, music ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0386",
+   "t": "Invitation: Our grandfather is 80! Big family lunch in Joal on Sunday 9th. Bring your photos of Grandpa for the party.",
+   "q": "How old is the grandfather?",
+   "o": [
+    "70",
+    "80",
+    "18",
+    "90"
+   ],
+   "r": 1,
+   "e": "« Our grandfather is 80! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0387",
+   "t": "Invitation: Our grandfather is 80! Big family lunch in Joal on Sunday 9th. Bring your photos of Grandpa for the party.",
+   "q": "What must you bring?",
+   "o": [
+    "A present",
+    "A cake",
+    "Photos of Grandpa",
+    "Flowers"
+   ],
+   "r": 2,
+   "e": "« Bring your photos of Grandpa ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0388",
+   "t": "Notice: The school bus is late this morning. It arrives at 8:15. The first class starts at 8:30 today.",
+   "q": "When does the bus arrive?",
+   "o": [
+    "At 7:45",
+    "At 8:30",
+    "At 8:00",
+    "At 8:15"
+   ],
+   "r": 3,
+   "e": "« It arrives at 8:15 ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0389",
+   "t": "Notice: The school bus is late this morning. It arrives at 8:15. The first class starts at 8:30 today.",
+   "q": "What time does the first class start today?",
+   "o": [
+    "At 8:30",
+    "At 9:00",
+    "At 8:00",
+    "At 8:15"
+   ],
+   "r": 0,
+   "e": "« The first class starts at 8:30 today ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0390",
+   "t": "Gym open in Point E: men and women. Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
+   "q": "How much is one month?",
+   "o": [
+    "6,000 F",
+    "15,000 F",
+    "10,000 F",
+    "1,500 F"
+   ],
+   "r": 1,
+   "e": "« 15,000 F a month ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0391",
+   "t": "Gym open in Point E: men and women. Monday to Saturday, 6 am to 10 pm. 15,000 F a month. First day free!",
+   "q": "Qu'est-ce qui est gratuit ?",
+   "o": [
+    "Le premier mois",
+    "Le samedi",
+    "Le premier jour",
+    "Rien"
+   ],
+   "r": 2,
+   "e": "« First day free! » : le premier jour gratuit.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0392",
+   "t": "Message on the board: Class 5B, the history test is on Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
+   "q": "When is the history test?",
+   "o": [
+    "On Monday",
+    "On Wednesday",
+    "On Thursday",
+    "On Friday"
+   ],
+   "r": 3,
+   "e": "« the history test is on Friday, not Thursday ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0393",
+   "t": "Message on the board: Class 5B, the history test is on Friday, not Thursday. Study chapters 2 and 3. - Mr Diatta",
+   "q": "Which chapters must students study?",
+   "o": [
+    "Chapters 2 and 3",
+    "Chapters 1 and 2",
+    "Chapter 5",
+    "Chapters 3 and 4"
+   ],
+   "r": 0,
+   "e": "« Study chapters 2 and 3 ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0394",
+   "t": "Card: Dear Penda, welcome back from Italy! We are happy to see you again. Come to dinner on Friday. - Your cousins",
+   "q": "Where is Penda back from?",
+   "o": [
+    "France",
+    "Italy",
+    "Mali",
+    "Spain"
+   ],
+   "r": 1,
+   "e": "« welcome back from Italy! ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0395",
+   "t": "Card: Dear Penda, welcome back from Italy! We are happy to see you again. Come to dinner on Friday. - Your cousins",
+   "q": "When is the dinner?",
+   "o": [
+    "On Saturday",
+    "On Sunday",
+    "On Friday",
+    "Tonight"
+   ],
+   "r": 2,
+   "e": "« Come to dinner on Friday ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0396",
+   "t": "Birthday card: Happy birthday, Dad! You are 45 today. You are a great father. We love you. - Seynabou and Cheikh",
+   "q": "How old is Dad?",
+   "o": [
+    "40",
+    "35",
+    "54",
+    "45"
+   ],
+   "r": 3,
+   "e": "« You are 45 today ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0397",
+   "t": "Birthday card: Happy birthday, Dad! You are 45 today. You are a great father. We love you. - Seynabou and Cheikh",
+   "q": "Who writes the card?",
+   "o": [
+    "Seynabou and Cheikh",
+    "Dad",
+    "Grandma",
+    "Mum"
+   ],
+   "r": 0,
+   "e": "« Seynabou and Cheikh » : les enfants.",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0398",
+   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month. Water and electricity included.",
+   "q": "Who is the room for?",
+   "o": [
+    "Tourists",
+    "Students",
+    "Teachers",
+    "Families"
+   ],
+   "r": 1,
+   "e": "« Room for students ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0399",
+   "t": "Room for students: a small room in Fann, near the university. 35,000 F a month. Water and electricity included.",
+   "q": "Where is the room?",
+   "o": [
+    "Near the beach",
+    "Near the market",
+    "Near the university",
+    "Near the airport"
+   ],
+   "r": 2,
+   "e": "« in Fann, near the university ».",
+   "d": "comprehension",
+   "n": "debutant"
+  },
+  {
+   "id": "comprehension_debutant_0400",
+   "t": "FOR SALE: a sheep for Tabaski. Big and white. 150,000 F. Ask Idrissa, Thiaroye, near the bus station.",
+   "q": "What colour is the sheep?",
+   "o": [
+    "Brown",
+    "Grey",
+    "Black",
+    "White"
+   ],
+   "r": 3,
+   "e": "« Big and white ».",
+   "d": "comprehension",
+   "n": "debutant"
+  }
+ ]
+}
