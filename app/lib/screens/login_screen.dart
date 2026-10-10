@@ -88,7 +88,9 @@ class _LoginScreenState extends State<LoginScreen> {
     } on AuthError catch (e) {
       setState(() => _error = e.message);
     } catch (e) {
-      setState(() => _error = 'Une erreur est survenue. Vérifie ta connexion et réessaie.');
+      debugPrint('Inscription/connexion : $e');
+      setState(() => _error =
+          'La demande n’a pas abouti (${e.runtimeType}). Réessaie; si le problème persiste, communique ce code à Jàng.');
     } finally {
       if (mounted) setState(() => _busy = false);
     }
