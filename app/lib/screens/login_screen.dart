@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
           school: school,
           teacherClasses: [for (final exam in selectedExams) '$school · ${exam.name}'],
           teacherSubjects: _subjectFields.map((field) => field.text.trim()).where((s) => s.isNotEmpty).toList(),
-          teacherExamId: selectedExams.first.id,
+          teacherExamId: selectedExams.isEmpty ? '' : selectedExams.first.id,
           teacherExamIds: [for (final exam in selectedExams) exam.id],
         );
       } else {
