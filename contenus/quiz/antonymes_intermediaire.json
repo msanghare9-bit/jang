@@ -1,0 +1,1108 @@
+{
+  "questions": [
+    {
+      "q": "Choose the opposite of “accept”.",
+      "o": [
+        "refuse",
+        "receive",
+        "allow",
+        "agree"
+      ],
+      "r": 0,
+      "e": "“refuse” is the opposite of “accept”."
+    },
+    {
+      "q": "Choose the opposite of “active”.",
+      "o": [
+        "busy",
+        "inactive",
+        "quick",
+        "energetic"
+      ],
+      "r": 1,
+      "e": "“inactive” is the opposite of “active”."
+    },
+    {
+      "q": "Choose the opposite of “ancient”.",
+      "o": [
+        "old",
+        "historic",
+        "modern",
+        "former"
+      ],
+      "r": 2,
+      "e": "“modern” is the opposite of “ancient”."
+    },
+    {
+      "q": "Choose the opposite of “arrive”.",
+      "o": [
+        "come",
+        "reach",
+        "enter",
+        "depart"
+      ],
+      "r": 3,
+      "e": "“depart” is the opposite of “arrive”."
+    },
+    {
+      "q": "Choose the opposite of “borrow”.",
+      "o": [
+        "lend",
+        "take",
+        "keep",
+        "receive"
+      ],
+      "r": 0,
+      "e": "“lend” is the opposite of “borrow”."
+    },
+    {
+      "q": "Choose the opposite of “build”.",
+      "o": [
+        "create",
+        "destroy",
+        "repair",
+        "raise"
+      ],
+      "r": 1,
+      "e": "“destroy” is the opposite of “build”."
+    },
+    {
+      "q": "Choose the opposite of “careful”.",
+      "o": [
+        "cautious",
+        "patient",
+        "careless",
+        "attentive"
+      ],
+      "r": 2,
+      "e": "“careless” is the opposite of “careful”."
+    },
+    {
+      "q": "Choose the opposite of “cheap”.",
+      "o": [
+        "low-cost",
+        "small",
+        "simple",
+        "expensive"
+      ],
+      "r": 3,
+      "e": "“expensive” is the opposite of “cheap”."
+    },
+    {
+      "q": "Choose the opposite of “combine”.",
+      "o": [
+        "separate",
+        "join",
+        "mix",
+        "connect"
+      ],
+      "r": 0,
+      "e": "“separate” is the opposite of “combine”."
+    },
+    {
+      "q": "Choose the opposite of “convenient”.",
+      "o": [
+        "useful",
+        "inconvenient",
+        "easy",
+        "practical"
+      ],
+      "r": 1,
+      "e": "“inconvenient” is the opposite of “convenient”."
+    },
+    {
+      "q": "Choose the opposite of “courageous”.",
+      "o": [
+        "brave",
+        "bold",
+        "cowardly",
+        "fearless"
+      ],
+      "r": 2,
+      "e": "“cowardly” is the opposite of “courageous”."
+    },
+    {
+      "q": "Choose the opposite of “expand”.",
+      "o": [
+        "grow",
+        "stretch",
+        "increase",
+        "shrink"
+      ],
+      "r": 3,
+      "e": "“shrink” is the opposite of “expand”."
+    },
+    {
+      "q": "Choose the opposite of “fail”.",
+      "o": [
+        "succeed",
+        "lose",
+        "miss",
+        "fall"
+      ],
+      "r": 0,
+      "e": "“succeed” is the opposite of “fail”."
+    },
+    {
+      "q": "Choose the opposite of “generous”.",
+      "o": [
+        "kind",
+        "selfish",
+        "giving",
+        "helpful"
+      ],
+      "r": 1,
+      "e": "“selfish” is the opposite of “generous”."
+    },
+    {
+      "q": "Choose the opposite of “include”.",
+      "o": [
+        "add",
+        "contain",
+        "exclude",
+        "involve"
+      ],
+      "r": 2,
+      "e": "“exclude” is the opposite of “include”."
+    },
+    {
+      "q": "Choose the opposite of “increase”.",
+      "o": [
+        "raise",
+        "grow",
+        "improve",
+        "decrease"
+      ],
+      "r": 3,
+      "e": "“decrease” is the opposite of “increase”."
+    },
+    {
+      "q": "Choose the opposite of “loose”.",
+      "o": [
+        "tight",
+        "free",
+        "wide",
+        "open"
+      ],
+      "r": 0,
+      "e": "“tight” is the opposite of “loose”."
+    },
+    {
+      "q": "Choose the opposite of “maximum”.",
+      "o": [
+        "highest",
+        "minimum",
+        "greatest",
+        "largest"
+      ],
+      "r": 1,
+      "e": "“minimum” is the opposite of “maximum”."
+    },
+    {
+      "q": "Choose the opposite of “noisy”.",
+      "o": [
+        "loud",
+        "busy",
+        "quiet",
+        "rough"
+      ],
+      "r": 2,
+      "e": "“quiet” is the opposite of “noisy”."
+    },
+    {
+      "q": "Choose the opposite of “ordinary”.",
+      "o": [
+        "usual",
+        "common",
+        "normal",
+        "exceptional"
+      ],
+      "r": 3,
+      "e": "“exceptional” is the opposite of “ordinary”."
+    },
+    {
+      "q": "Choose the opposite of “patient”.",
+      "o": [
+        "impatient",
+        "calm",
+        "quiet",
+        "careful"
+      ],
+      "r": 0,
+      "e": "“impatient” is the opposite of “patient”."
+    },
+    {
+      "q": "Choose the opposite of “polite”.",
+      "o": [
+        "courteous",
+        "rude",
+        "kind",
+        "respectful"
+      ],
+      "r": 1,
+      "e": "“rude” is the opposite of “polite”."
+    },
+    {
+      "q": "Choose the opposite of “private”.",
+      "o": [
+        "personal",
+        "secret",
+        "public",
+        "hidden"
+      ],
+      "r": 2,
+      "e": "“public” is the opposite of “private”."
+    },
+    {
+      "q": "Choose the opposite of “victory”.",
+      "o": [
+        "success",
+        "prize",
+        "win",
+        "defeat"
+      ],
+      "r": 3,
+      "e": "“defeat” is the opposite of “victory”."
+    },
+    {
+      "q": "Choose the opposite of “absent”.",
+      "o": [
+        "present",
+        "missing",
+        "away",
+        "late"
+      ],
+      "r": 0,
+      "e": "“present” is the opposite of “absent”."
+    },
+    {
+      "q": "Choose the opposite of “calm”.",
+      "o": [
+        "peaceful",
+        "agitated",
+        "quiet",
+        "relaxed"
+      ],
+      "r": 1,
+      "e": "“agitated” is the opposite of “calm”."
+    },
+    {
+      "q": "Choose the opposite of “deep”.",
+      "o": [
+        "wide",
+        "dark",
+        "shallow",
+        "long"
+      ],
+      "r": 2,
+      "e": "“shallow” is the opposite of “deep”."
+    },
+    {
+      "q": "Choose the opposite of “difficult”.",
+      "o": [
+        "hard",
+        "complex",
+        "demanding",
+        "easy"
+      ],
+      "r": 3,
+      "e": "“easy” is the opposite of “difficult”."
+    },
+    {
+      "q": "Choose the opposite of “early”.",
+      "o": [
+        "late",
+        "soon",
+        "quick",
+        "first"
+      ],
+      "r": 0,
+      "e": "“late” is the opposite of “early”."
+    },
+    {
+      "q": "Choose the opposite of “entrance”.",
+      "o": [
+        "doorway",
+        "exit",
+        "arrival",
+        "opening"
+      ],
+      "r": 1,
+      "e": "“exit” is the opposite of “entrance”."
+    },
+    {
+      "q": "Choose the opposite of “enemy”.",
+      "o": [
+        "rival",
+        "stranger",
+        "friend",
+        "opponent"
+      ],
+      "r": 2,
+      "e": "“friend” is the opposite of “enemy”."
+    },
+    {
+      "q": "Choose the opposite of “failure”.",
+      "o": [
+        "mistake",
+        "problem",
+        "defeat",
+        "success"
+      ],
+      "r": 3,
+      "e": "“success” is the opposite of “failure”."
+    },
+    {
+      "q": "Choose the opposite of “false”.",
+      "o": [
+        "true",
+        "wrong",
+        "incorrect",
+        "unreal"
+      ],
+      "r": 0,
+      "e": "“true” is the opposite of “false”."
+    },
+    {
+      "q": "Choose the opposite of “fresh”.",
+      "o": [
+        "new",
+        "stale",
+        "clean",
+        "recent"
+      ],
+      "r": 1,
+      "e": "“stale” is the opposite of “fresh”."
+    },
+    {
+      "q": "Choose the opposite of “frequent”.",
+      "o": [
+        "regular",
+        "common",
+        "rare",
+        "usual"
+      ],
+      "r": 2,
+      "e": "“rare” is the opposite of “frequent”."
+    },
+    {
+      "q": "Choose the opposite of “front”.",
+      "o": [
+        "side",
+        "top",
+        "middle",
+        "back"
+      ],
+      "r": 3,
+      "e": "“back” is the opposite of “front”."
+    },
+    {
+      "q": "Choose the opposite of “healthy”.",
+      "o": [
+        "sick",
+        "strong",
+        "fit",
+        "well"
+      ],
+      "r": 0,
+      "e": "“sick” is the opposite of “healthy”."
+    },
+    {
+      "q": "Choose the opposite of “hopeful”.",
+      "o": [
+        "cheerful",
+        "hopeless",
+        "confident",
+        "positive"
+      ],
+      "r": 1,
+      "e": "“hopeless” is the opposite of “hopeful”."
+    },
+    {
+      "q": "Choose the opposite of “inside”.",
+      "o": [
+        "within",
+        "indoors",
+        "outside",
+        "interior"
+      ],
+      "r": 2,
+      "e": "“outside” is the opposite of “inside”."
+    },
+    {
+      "q": "Choose the opposite of “junior”.",
+      "o": [
+        "young",
+        "new",
+        "younger",
+        "senior"
+      ],
+      "r": 3,
+      "e": "“senior” is the opposite of “junior”."
+    },
+    {
+      "q": "Choose the opposite of “narrow”.",
+      "o": [
+        "wide",
+        "thin",
+        "small",
+        "tight"
+      ],
+      "r": 0,
+      "e": "“wide” is the opposite of “narrow”."
+    },
+    {
+      "q": "Choose the opposite of “positive”.",
+      "o": [
+        "hopeful",
+        "negative",
+        "certain",
+        "good"
+      ],
+      "r": 1,
+      "e": "“negative” is the opposite of “positive”."
+    },
+    {
+      "q": "Choose the opposite of “smooth”.",
+      "o": [
+        "soft",
+        "flat",
+        "rough",
+        "polished"
+      ],
+      "r": 2,
+      "e": "“rough” is the opposite of “smooth”."
+    },
+    {
+      "q": "Choose the opposite of “start”.",
+      "o": [
+        "begin",
+        "open",
+        "launch",
+        "finish"
+      ],
+      "r": 3,
+      "e": "“finish” is the opposite of “start”."
+    },
+    {
+      "q": "Choose the opposite of “strict”.",
+      "o": [
+        "lenient",
+        "firm",
+        "severe",
+        "tough"
+      ],
+      "r": 0,
+      "e": "“lenient” is the opposite of “strict”."
+    },
+    {
+      "q": "Choose the opposite of “support”.",
+      "o": [
+        "help",
+        "oppose",
+        "agree",
+        "back"
+      ],
+      "r": 1,
+      "e": "“oppose” is the opposite of “support”."
+    },
+    {
+      "q": "Choose the opposite of “urban”.",
+      "o": [
+        "city",
+        "busy",
+        "rural",
+        "modern"
+      ],
+      "r": 2,
+      "e": "“rural” is the opposite of “urban”."
+    },
+    {
+      "q": "Choose the opposite of “young”.",
+      "o": [
+        "small",
+        "new",
+        "early",
+        "old"
+      ],
+      "r": 3,
+      "e": "“old” is the opposite of “young”."
+    },
+    {
+      "q": "Choose the antonym of “accept”.",
+      "o": [
+        "refuse",
+        "shrink",
+        "loss",
+        "defeat"
+      ],
+      "r": 0,
+      "e": "« refuse » exprime le contraire de « accept ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “arrive”.",
+      "o": [
+        "exclude",
+        "depart",
+        "harm",
+        "hidden"
+      ],
+      "r": 1,
+      "e": "« depart » exprime le contraire de « arrive ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “borrow”.",
+      "o": [
+        "decrease",
+        "punish",
+        "lend",
+        "rigid"
+      ],
+      "r": 2,
+      "e": "« lend » exprime le contraire de « borrow ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “build”.",
+      "o": [
+        "minor",
+        "smooth",
+        "pessimistic",
+        "destroy"
+      ],
+      "r": 3,
+      "e": "« destroy » exprime le contraire de « build ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “create”.",
+      "o": [
+        "remove",
+        "ancient",
+        "abundant",
+        "selfish"
+      ],
+      "r": 0,
+      "e": "« remove » exprime le contraire de « create ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “expand”.",
+      "o": [
+        "public",
+        "shrink",
+        "permanent",
+        "rude"
+      ],
+      "r": 1,
+      "e": "« shrink » exprime le contraire de « expand ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “include”.",
+      "o": [
+        "loss",
+        "defeat",
+        "exclude",
+        "employee"
+      ],
+      "r": 2,
+      "e": "« exclude » exprime le contraire de « include ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “increase”.",
+      "o": [
+        "harm",
+        "hidden",
+        "refuse",
+        "decrease"
+      ],
+      "r": 3,
+      "e": "« decrease » exprime le contraire de « increase ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “major”.",
+      "o": [
+        "minor",
+        "punish",
+        "rigid",
+        "depart"
+      ],
+      "r": 0,
+      "e": "« minor » exprime le contraire de « major ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “modern”.",
+      "o": [
+        "smooth",
+        "ancient",
+        "pessimistic",
+        "lend"
+      ],
+      "r": 1,
+      "e": "« ancient » exprime le contraire de « modern ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “private”.",
+      "o": [
+        "abundant",
+        "selfish",
+        "public",
+        "destroy"
+      ],
+      "r": 2,
+      "e": "« public » exprime le contraire de « private ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “profit”.",
+      "o": [
+        "permanent",
+        "rude",
+        "remove",
+        "loss"
+      ],
+      "r": 3,
+      "e": "« loss » exprime le contraire de « profit ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “protect”.",
+      "o": [
+        "harm",
+        "defeat",
+        "employee",
+        "shrink"
+      ],
+      "r": 0,
+      "e": "« harm » exprime le contraire de « protect ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “reward”.",
+      "o": [
+        "hidden",
+        "punish",
+        "refuse",
+        "exclude"
+      ],
+      "r": 1,
+      "e": "« punish » exprime le contraire de « reward ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “rough”.",
+      "o": [
+        "rigid",
+        "depart",
+        "smooth",
+        "decrease"
+      ],
+      "r": 2,
+      "e": "« smooth » exprime le contraire de « rough ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “scarce”.",
+      "o": [
+        "pessimistic",
+        "lend",
+        "minor",
+        "abundant"
+      ],
+      "r": 3,
+      "e": "« abundant » exprime le contraire de « scarce ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “temporary”.",
+      "o": [
+        "permanent",
+        "selfish",
+        "destroy",
+        "ancient"
+      ],
+      "r": 0,
+      "e": "« permanent » exprime le contraire de « temporary ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “victory”.",
+      "o": [
+        "rude",
+        "defeat",
+        "remove",
+        "public"
+      ],
+      "r": 1,
+      "e": "« defeat » exprime le contraire de « victory ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “visible”.",
+      "o": [
+        "employee",
+        "shrink",
+        "hidden",
+        "loss"
+      ],
+      "r": 2,
+      "e": "« hidden » exprime le contraire de « visible ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “flexible”.",
+      "o": [
+        "refuse",
+        "exclude",
+        "harm",
+        "rigid"
+      ],
+      "r": 3,
+      "e": "« rigid » exprime le contraire de « flexible ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “optimistic”.",
+      "o": [
+        "pessimistic",
+        "depart",
+        "decrease",
+        "punish"
+      ],
+      "r": 0,
+      "e": "« pessimistic » exprime le contraire de « optimistic ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “generous”.",
+      "o": [
+        "lend",
+        "selfish",
+        "minor",
+        "smooth"
+      ],
+      "r": 1,
+      "e": "« selfish » exprime le contraire de « generous ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “polite”.",
+      "o": [
+        "destroy",
+        "ancient",
+        "rude",
+        "abundant"
+      ],
+      "r": 2,
+      "e": "« rude » exprime le contraire de « polite ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "Choose the antonym of “employer”.",
+      "o": [
+        "remove",
+        "public",
+        "permanent",
+        "employee"
+      ],
+      "r": 3,
+      "e": "« employee » exprime le contraire de « employer ».",
+      "d": "antonymes",
+      "n": "intermediaire"
+    },
+    {
+      "q": "The road is wide here, but it becomes ___ near the bridge.",
+      "o": [
+        "narrow",
+        "bright",
+        "straight",
+        "smooth"
+      ],
+      "r": 0,
+      "e": "Narrow est le contraire de wide : étroit est le contraire de large."
+    },
+    {
+      "q": "The classroom was noisy at lunch, but it became ___ when the lesson began.",
+      "o": [
+        "busy",
+        "quiet",
+        "crowded",
+        "bright"
+      ],
+      "r": 1,
+      "e": "Quiet est le contraire de noisy : silencieux est le contraire de bruyant."
+    },
+    {
+      "q": "The bottle is empty; now it is ___.",
+      "o": [
+        "broken",
+        "cold",
+        "full",
+        "clean"
+      ],
+      "r": 2,
+      "e": "Full est le contraire de empty : plein est le contraire de vide."
+    },
+    {
+      "q": "We arrived early, but our friends arrived ___.",
+      "o": [
+        "safely",
+        "together",
+        "quietly",
+        "late"
+      ],
+      "r": 3,
+      "e": "Late est le contraire de early : en retard est le contraire d’en avance."
+    },
+    {
+      "q": "The shop will increase its opening hours, not ___ them.",
+      "o": [
+        "decrease",
+        "change",
+        "announce",
+        "measure"
+      ],
+      "r": 0,
+      "e": "Decrease est le contraire de increase : diminuer est le contraire d’augmenter."
+    },
+    {
+      "q": "I remembered the address, but my brother ___ it.",
+      "o": [
+        "copied",
+        "forgot",
+        "found",
+        "wrote"
+      ],
+      "r": 1,
+      "e": "Forgot est le contraire de remembered : oublier est le contraire de se souvenir."
+    },
+    {
+      "q": "A generous person shares; a ___ person keeps everything.",
+      "o": [
+        "careful",
+        "polite",
+        "selfish",
+        "patient"
+      ],
+      "r": 2,
+      "e": "Selfish est le contraire de generous dans ce contexte."
+    },
+    {
+      "q": "The teacher will include this chapter, not ___ it.",
+      "o": [
+        "explain",
+        "repeat",
+        "study",
+        "exclude"
+      ],
+      "r": 3,
+      "e": "Exclude est le contraire de include : exclure est le contraire d’inclure."
+    },
+    {
+      "q": "Mariam is patient with beginners, but her brother is ___.",
+      "o": [
+        "impatient",
+        "helpful",
+        "curious",
+        "gentle"
+      ],
+      "r": 0,
+      "e": "Impatient est le contraire de patient."
+    },
+    {
+      "q": "The shallow end is safe for children; the other end is ___.",
+      "o": [
+        "wide",
+        "deep",
+        "warm",
+        "clear"
+      ],
+      "r": 1,
+      "e": "Deep est le contraire de shallow : profond est le contraire de peu profond."
+    },
+    {
+      "q": "This stone feels rough, but the table feels ___.",
+      "o": [
+        "hard",
+        "heavy",
+        "smooth",
+        "round"
+      ],
+      "r": 2,
+      "e": "Smooth est le contraire de rough : lisse est le contraire de rugueux."
+    },
+    {
+      "q": "The museum displays local art, not ___ art.",
+      "o": [
+        "modern",
+        "ancient",
+        "popular",
+        "foreign"
+      ],
+      "r": 3,
+      "e": "Foreign est le contraire de local dans ce contexte."
+    },
+    {
+      "q": "The first street is narrow; the next one is ___.",
+      "o": [
+        "wide",
+        "short",
+        "quiet",
+        "empty"
+      ],
+      "r": 0,
+      "e": "Wide est le contraire de narrow : large est le contraire d’étroit."
+    },
+    {
+      "q": "At the end of the trip, the bus will depart; at the start, it will ___.",
+      "o": [
+        "stop",
+        "arrive",
+        "wait",
+        "turn"
+      ],
+      "r": 1,
+      "e": "Arrive est le contraire de depart : arriver est le contraire de partir."
+    },
+    {
+      "q": "The new bridge is modern, while the old fort is ___.",
+      "o": [
+        "strong",
+        "nearby",
+        "ancient",
+        "famous"
+      ],
+      "r": 2,
+      "e": "Ancient est le contraire de modern : ancien est le contraire de moderne."
+    },
+    {
+      "q": "The first question is simple, but the last one is ___.",
+      "o": [
+        "easy",
+        "short",
+        "clear",
+        "complicated"
+      ],
+      "r": 3,
+      "e": "Complicated est le contraire de simple dans ce contexte."
+    },
+    {
+      "q": "The rope is strong, but this old thread is ___.",
+      "o": [
+        "weak",
+        "long",
+        "thin",
+        "rough"
+      ],
+      "r": 0,
+      "e": "Weak est le contraire de strong : faible est le contraire de fort."
+    },
+    {
+      "q": "The school permit is temporary, but the house permit is ___.",
+      "o": [
+        "local",
+        "permanent",
+        "private",
+        "recent"
+      ],
+      "r": 1,
+      "e": "Permanent est le contraire de temporary."
+    },
+    {
+      "q": "The meeting is public, but the staff room is ___.",
+      "o": [
+        "large",
+        "open",
+        "private",
+        "empty"
+      ],
+      "r": 2,
+      "e": "Private est le contraire de public."
+    },
+    {
+      "q": "The water is fresh today, but it may become ___ if it is left out.",
+      "o": [
+        "cold",
+        "clear",
+        "deep",
+        "stale"
+      ],
+      "r": 3,
+      "e": "Stale est le contraire de fresh pour la nourriture ou ce qui n’est plus frais."
+    },
+    {
+      "q": "A polite reply is welcome; a ___ reply can hurt someone.",
+      "o": [
+        "rude",
+        "short",
+        "honest",
+        "quick"
+      ],
+      "r": 0,
+      "e": "Rude est le contraire de polite."
+    },
+    {
+      "q": "This path is dangerous at night, but the main road is ___.",
+      "o": [
+        "busy",
+        "safe",
+        "wide",
+        "dark"
+      ],
+      "r": 1,
+      "e": "Safe est le contraire de dangerous."
+    },
+    {
+      "q": "The test was a success, but the first attempt was a ___.",
+      "o": [
+        "surprise",
+        "lesson",
+        "failure",
+        "mistake"
+      ],
+      "r": 2,
+      "e": "Failure est le contraire de success : échec est le contraire de réussite."
+    },
+    {
+      "q": "The instructions say to accept the offer, not ___ it.",
+      "o": [
+        "read",
+        "change",
+        "share",
+        "reject"
+      ],
+      "r": 3,
+      "e": "Reject est le contraire de accept : refuser est le contraire d’accepter."
+    }
+  ]
+}
