@@ -17,6 +17,14 @@ class ReleaseInfo {
   });
 }
 
+class UpdateCheckException implements Exception {
+  final String message;
+  const UpdateCheckException(this.message);
+
+  @override
+  String toString() => message;
+}
+
 class GithubService {
   static final GithubService instance = GithubService._internal();
 
@@ -40,7 +48,19 @@ class GithubService {
     ).timeout(const Duration(seconds: 20));
 
     if (response.statusCode != 200) {
-      throw Exception('GitHub ${response.statusCode}');
+      if (response.statusCode == 403 || response.statusCode == 429) {
+        throw const UpdateCheckException(
+          'GitHub limite temporairement les vérifications. Réessayez dans quelques minutes.',
+        );
+      }
+      if (response.statusCode == 404) {
+        throw const UpdateCheckException(
+          'Aucune version publiée n’a été trouvée sur GitHub.',
+        );
+      }
+      throw UpdateCheckException(
+        'GitHub n’a pas pu vérifier la mise à jour (code ${response.statusCode}).',
+      );
     }
     return jsonDecode(response.body);
   }
@@ -48,6 +68,46 @@ class GithubService {
   static int _buildOf(String tag) {
     final match = RegExp(r'-(\d+)$').firstMatch(tag);
     return match == null ? 0 : int.tryParse(match.group(1)!) ?? 0;
+  }
+
+  /// GitHub's unauthenticated REST API is quickly rate-limited for app users.
+  /// The public latest-release URL redirects to its tag without using that API.
+  Future<String> _latestTag() async {
+    final client = http.Client();
+    try {
+      final request = http.Request(
+        'GET',
+        Uri.parse('https://github.com/$_repo/releases/latest'),
+      )
+        ..followRedirects = false
+        ..headers.addAll(const {
+          'Accept': 'text/html',
+          'User-Agent': 'jang-app',
+        });
+      final response = await client
+          .send(request)
+          .timeout(const Duration(seconds: 20));
+      final location = response.headers['location'];
+      if (response.statusCode < 300 || response.statusCode >= 400 || location == null) {
+        throw const UpdateCheckException(
+          'GitHub n’a pas retourné la version publiée.',
+        );
+      }
+
+      final path = Uri.parse(location).pathSegments;
+      if (path.length < 5 ||
+          path[0] != 'msanghare9-bit' ||
+          path[1] != 'jang' ||
+          path[2] != 'releases' ||
+          path[3] != 'tag') {
+        throw const UpdateCheckException(
+          'Le lien de la dernière version GitHub est invalide.',
+        );
+      }
+      return path[4];
+    } finally {
+      client.close();
+    }
   }
 
   Future<ReleaseInfo?> _releaseFrom(dynamic value) async {
@@ -110,21 +170,35 @@ class GithubService {
     }
 
     try {
-      final release = await _get('/releases/latest') as Map<String, dynamic>;
-      final tag = (release['tag_name'] ?? '') as String;
+      final tag = await _latestTag();
       final latestBuild = _buildOf(tag);
+
+      if (latestBuild == 0) {
+        throw const UpdateCheckException(
+          'Le numéro de la dernière version GitHub est invalide.',
+        );
+      }
 
       await prefs.setInt('update_check_at', now);
       await prefs.setInt('update_latest_build', latestBuild);
       await prefs.setString(
         'update_latest_name',
-        (release['name'] ?? tag) as String,
+        'Jàng $appVersion ($latestBuild)',
       );
 
       if (latestBuild <= appBuild) return null;
-      return _releaseFrom(release);
+      return ReleaseInfo(
+        name: 'Jàng $appVersion ($latestBuild)',
+        downloads: 0,
+        publishedAt: '',
+      );
+    } on UpdateCheckException {
+      rethrow;
     } catch (_) {
-      return null;
+      throw UpdateCheckException(
+        'Impossible de vérifier les mises à jour auprès de GitHub. '
+        'Vérifiez la connexion Internet puis réessayez.',
+      );
     }
   }
 }

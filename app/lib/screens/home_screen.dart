@@ -71,9 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Future<void> _checkUpdate() async {
-    final r = await GithubService.instance.newerVersion();
-    if (r == null || !mounted) return;
-    await showUpdateDialog(context, r);
+    try {
+      final r = await GithubService.instance.newerVersion();
+      if (r == null || !mounted) return;
+      await showUpdateDialog(context, r);
+    } on UpdateCheckException {
+      // La vérification automatique reste discrète si GitHub est indisponible.
+    }
   }
 
   Future<void> _autoSync() async {

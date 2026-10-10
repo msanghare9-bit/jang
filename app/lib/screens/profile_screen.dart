@@ -173,12 +173,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(height: 12),
               OutlinedButton.icon(
                 onPressed: () async {
-                  final r = await GithubService.instance.newerVersion(force: true);
-                  if (!context.mounted) return;
-                  if (r == null) {
-                    showMessage(context, 'Tu as déjà la dernière version (ou pas de connexion).');
-                  } else {
-                    await showUpdateDialog(context, r);
+                  try {
+                    final r = await GithubService.instance.newerVersion(force: true);
+                    if (!context.mounted) return;
+                    if (r == null) {
+                      showMessage(context, 'Jàng est déjà à jour (version $appVersion, $appBuild).');
+                    } else {
+                      await showUpdateDialog(context, r);
+                    }
+                  } on UpdateCheckException catch (error) {
+                    if (!context.mounted) return;
+                    showMessage(context, error.message);
                   }
                 },
                 icon: const Icon(Icons.system_update_outlined),
