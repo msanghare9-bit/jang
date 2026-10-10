@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../services/auth_service.dart';
 import '../services/content_repo.dart';
@@ -89,8 +91,13 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => _error = e.message);
     } catch (e) {
       debugPrint('Inscription/connexion : $e');
+      final code = switch (e) {
+        FirebaseAuthException authError => 'auth/${authError.code}',
+        FirebaseException firebaseError => '${firebaseError.plugin}/${firebaseError.code}',
+        _ => e.runtimeType.toString(),
+      };
       setState(() => _error =
-          'La demande n’a pas abouti (${e.runtimeType}). Réessaie; si le problème persiste, communique ce code à Jàng.');
+          'La demande n’a pas abouti (code : $code). Réessaie; si le problème persiste, communique ce code à Jàng.');
     } finally {
       if (mounted) setState(() => _busy = false);
     }
