@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -19,7 +20,8 @@ class LudoJangScreen extends StatefulWidget {
   State<LudoJangScreen> createState() => _LudoJangScreenState();
 }
 
-class _LudoJangScreenState extends State<LudoJangScreen> {
+class _LudoJangScreenState extends State<LudoJangScreen>
+    with SingleTickerProviderStateMixin {
   static const _domains = <String>[
     'vocabulaire',
     'francais_anglais',
@@ -52,6 +54,16 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   bool _busy = false;
   bool _soundEnabled = true;
   final AudioPlayer _dicePlayer = AudioPlayer();
+  final AudioPlayer _pawnMovePlayer = AudioPlayer();
+  late final AnimationController _pawnMoveController;
+  int? _movingPlayer;
+  int? _movingPawn;
+  int? _movingFrom;
+  int? _movingTo;
+  int _lastMoveSoundStep = -1;
+  String? _lastMoveId;
+  bool _moveInitiatedLocally = false;
+  bool _moveIsRollback = false;
   bool _onlineMode = false;
   bool _onlineReady = false;
   String? _roomId;
@@ -87,6 +99,23 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   @override
   void initState() {
     super.initState();
+    _pawnMoveController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )
+      ..addListener(_onPawnMoveFrame)
+      ..addStatusListener((status) {
+        if (status != AnimationStatus.completed || _movingPlayer == null) return;
+        if (_moveInitiatedLocally) {
+          if (_moveIsRollback) {
+            _finishRollbackMove();
+          } else {
+            _finishPawnMove();
+          }
+        } else {
+          _clearPawnMoveVisual();
+        }
+      });
     _pawns = List.generate(4, (_) => List.filled(4, -1));
     _shieldedPawns = List.generate(4, (_) => <int>{});
     _streaks = List.filled(4, 0);
@@ -116,13 +145,58 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     }
   }
 
+  void _onPawnMoveFrame() {
+    if (!mounted) return;
+    final from = _movingFrom;
+    final to = _movingTo;
+    if (from != null && to != null) {
+      final step = ((to - from) * _pawnMoveController.value).floor();
+      if (step > _lastMoveSoundStep) {
+        _lastMoveSoundStep = step;
+        unawaited(_playPawnMoveSound());
+      }
+    }
+    setState(() {});
+  }
+
+  Future<void> _playPawnMoveSound() async {
+    if (!_soundEnabled) return;
+    try {
+      await _pawnMovePlayer.stop();
+      await _pawnMovePlayer.play(AssetSource('sounds/pawn_move.wav'));
+    } catch (_) {
+      // Les animations restent disponibles si le périphérique ne lit pas l'audio.
+    }
+  }
+
+  String _firebaseErrorLabel(Object error, {String action = 'Créer la partie'}) {
+    if (error is FirebaseException) {
+      final detail = switch (error.code) {
+        'permission-denied' => 'Accès refusé par les règles Firestore. Publiez les règles Firestore du projet.',
+        'unauthenticated' => 'La session a expiré. Déconnectez-vous puis reconnectez-vous.',
+        'unavailable' || 'deadline-exceeded' => 'Firebase ne répond pas. Vérifiez le réseau puis réessayez.',
+        'resource-exhausted' => 'La limite d’utilisation Firestore est atteinte.',
+        'not-found' => 'La base Firestore ou le document demandé est introuvable.',
+        'invalid-argument' => 'Les données de la salle ont été refusées par Firestore.',
+        'failed-precondition' => 'Firestore n’est pas prêt ou n’est pas configuré pour ce projet.',
+        _ => error.message?.trim().isNotEmpty == true
+            ? error.message!.trim()
+            : 'Erreur Firestore ${error.code}.',
+      };
+      return '$action : $detail';
+    }
+    return '$action : ${error.toString()}';
+  }
+
   @override
   void dispose() {
     _roomSub?.cancel();
     _questionTimer?.cancel();
     _moveTimer?.cancel();
     _roomCodeController.dispose();
+    _pawnMoveController.dispose();
     unawaited(_dicePlayer.dispose());
+    unawaited(_pawnMovePlayer.dispose());
     super.dispose();
   }
 
@@ -162,6 +236,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
           child: Text(
             'Lancez le dé sans répondre à une question. Il faut obtenir 6 pour sortir un pion de sa base. Après trois lancers consécutifs sans 6, le prochain lancer donnera 6. Un 6 donne un deuxième tour. Touchez ensuite le pion à déplacer.\n\n'
             'Quand un pion arrive sur une case, vous avez 20 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
+            'Si le délai de 20 secondes expire, le pion retourne lui aussi à la case qu’il occupait avant son déplacement.\n\n'
             'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un bouclier Ndimbal pour protéger un pion pendant un tour.\n\n'
             'Le premier joueur qui amène ses quatre pions à l’arrivée gagne.',
           ),
@@ -206,10 +281,11 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       } else {
         _resetGame(questions, _playerCount);
       }
-    } catch (_) {
+    } catch (error) {
+      debugPrint('Échec création partie Ludo : $error');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Impossible de créer la partie. Vérifiez votre connexion et réessayez.')),
+          SnackBar(content: Text(_firebaseErrorLabel(error))),
         );
       }
     } finally {
@@ -254,7 +330,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
 
   Future<void> _createOnlineRoom(List<BankQuestion> questions) async {
     final profile = AuthService.instance.profile.value;
-    if (profile == null) return;
+    if (profile == null) throw StateError('Connectez-vous avant de créer une partie en ligne.');
     final code = await _newRoomCode();
     final ref = FirebaseFirestore.instance.collection('ludoGames').doc(code);
     const players = 2;
@@ -279,10 +355,11 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       'rollingPlayer': null,
       'message': 'En attente d’un autre joueur…',
       'done': false,
-      'shieldAvailable': false,
-      'pawns': initialPawns,
-      'shieldedPawns': [<int>[], <int>[]],
-      'createdAt': FieldValue.serverTimestamp(),
+        'shieldAvailable': false,
+        'pawns': initialPawns,
+        'shieldedPawns': [<int>[], <int>[]],
+        'moveAnimation': null,
+        'createdAt': FieldValue.serverTimestamp(),
     });
     if (!mounted) return;
     setState(() {
@@ -333,8 +410,9 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         _watchRoom(doc.id);
       }
       if (mounted) setState(() { _onlineMode = true; _roomId = doc.id; _roomCode = code; });
-    } catch (_) {
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Impossible de rejoindre. Vérifiez votre connexion et réessayez.')));
+    } catch (error) {
+      debugPrint('Échec pour rejoindre le Ludo : $error');
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_firebaseErrorLabel(error, action: 'Rejoindre la partie'))));
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -394,6 +472,25 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         _shieldedPawns = shielded;
         _onlineReady = data['status'] == 'playing';
       });
+      final rawMove = data['moveAnimation'];
+      if (rawMove is Map) {
+        final moveId = '${rawMove['id'] ?? ''}';
+        if (moveId.isNotEmpty && moveId != _lastMoveId) {
+          _startPawnMoveVisual(
+            id: moveId,
+            player: (rawMove['player'] as num? ?? 0).toInt(),
+            pawn: (rawMove['pawn'] as num? ?? 0).toInt(),
+            from: (rawMove['from'] as num? ?? -1).toInt(),
+            to: (rawMove['to'] as num? ?? 0).toInt(),
+            durationMs: (rawMove['durationMs'] as num? ?? 2000).toInt(),
+            startedAtMs: DateTime.now().millisecondsSinceEpoch,
+            initiatedLocally: false,
+            rollback: rawMove['rollback'] == true,
+          );
+        }
+      } else if (_movingPlayer != null && !_moveInitiatedLocally) {
+        _clearPawnMoveVisual();
+      }
       if (_waitingForSquareQuestion && _questionDeadline != deadline) {
         _questionDeadline = deadline;
         _startQuestionTimer(deadline);
@@ -406,12 +503,13 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       } else if (_die == 0 || _waitingForSquareQuestion || !_canAct) {
         _moveTimer?.cancel();
       }
-    }, onError: (_) {
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Connexion à la partie interrompue.')));
+    }, onError: (Object error) {
+      debugPrint('Écoute Firestore Ludo interrompue : $error');
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_firebaseErrorLabel(error, action: 'Connexion à la partie interrompue'))));
     });
   }
 
-  Future<void> _saveOnlineState() async {
+  Future<void> _saveOnlineState({Map<String, dynamic>? moveAnimation}) async {
     if (!_onlineMode || _roomId == null) return;
     try {
       await FirebaseFirestore.instance.collection('ludoGames').doc(_roomId).update({
@@ -432,9 +530,11 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         'shieldAvailable': _shieldAvailable,
         'pawns': _pawns,
         'shieldedPawns': [for (final row in _shieldedPawns) row.toList()],
+        'moveAnimation': moveAnimation,
       });
-    } catch (_) {
-      if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('La partie n’a pas pu être synchronisée.')));
+    } catch (error) {
+      debugPrint('Échec synchronisation Ludo : $error');
+      if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_firebaseErrorLabel(error, action: 'Synchronisation de la partie'))));
     }
   }
 
@@ -477,8 +577,48 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       }
     } else {
       _streaks[_turn] = 0;
-      // Roll back to the exact position from before this move. This rollback never captures.
-      pawns[_turn][pawnIndex] = origin;
+      // The return is animated too; it never captures a pawn.
+      final player = _turn;
+      final moveId = '${DateTime.now().microsecondsSinceEpoch}-$player-$pawnIndex-back';
+      final durationMs = max(2000, max(1, target - origin) * 340).toInt();
+      final startedAtMs = DateTime.now().millisecondsSinceEpoch;
+      setState(() {
+        _shieldedPawns = shields;
+        _waitingForSquareQuestion = false;
+        _resolvingQuestion = true;
+        _pendingPawnIndex = null;
+        _pendingOrigin = null;
+        _pendingTarget = null;
+        _questionDeadline = null;
+        _message = timedOut
+            ? 'Temps écoulé : le pion retourne à sa case précédente.'
+            : 'Mauvaise réponse : le pion retourne à sa case précédente.';
+      });
+      if (_onlineMode && _roomId != null) {
+        _lastMoveId = moveId;
+        unawaited(_saveOnlineState(moveAnimation: {
+          'id': moveId,
+          'player': player,
+          'pawn': pawnIndex,
+          'from': target,
+          'to': origin,
+          'rollback': true,
+          'startedAtMs': startedAtMs,
+          'durationMs': durationMs,
+        }));
+      }
+      _startPawnMoveVisual(
+        id: moveId,
+        player: player,
+        pawn: pawnIndex,
+        from: target,
+        to: origin,
+        durationMs: durationMs,
+        startedAtMs: startedAtMs,
+        initiatedLocally: true,
+        rollback: true,
+      );
+      return;
     }
     final won = correct && pawns[_turn].every((position) => position == 57);
     final extraTurn = _die == 6;
@@ -508,7 +648,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
   }
 
   Future<void> _roll() async {
-    if (!_canAct || _die != 0 || _done || _waitingForSquareQuestion || _resolvingQuestion) return;
+    if (!_canAct || _die != 0 || _done || _waitingForSquareQuestion || _resolvingQuestion || _movingPlayer != null) return;
     final guaranteedSix = _missesSinceSix[_turn] >= 3;
     final value = guaranteedSix ? 6 : Random().nextInt(6) + 1;
     final misses = [..._missesSinceSix];
@@ -551,29 +691,150 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
     if (movable.isNotEmpty) _movePawn(movable.first);
   }
 
-  void _movePawn(int pawnIndex) {
-    if (!_canAct || _rollingPlayer != _turn || _die == 0 || _done || _waitingForSquareQuestion || _resolvingQuestion) return;
+  Future<void> _movePawn(int pawnIndex) async {
+    if (!_canAct || _rollingPlayer != _turn || _die == 0 || _done || _waitingForSquareQuestion || _resolvingQuestion || _movingPlayer != null) return;
     final current = _pawns[_turn][pawnIndex];
     if (current < 0 && _die != 6) return;
     final target = current < 0 ? 0 : current + _die;
     if (target > 57) return;
-    final pawns = [for (final row in _pawns) [...row]];
-    pawns[_turn][pawnIndex] = target;
     _moveTimer?.cancel();
+    final player = _turn;
+    final moveId = '${DateTime.now().microsecondsSinceEpoch}-$player-$pawnIndex';
+    final durationMs = max(2000, max(1, target - current) * 340).toInt();
+    final startedAtMs = DateTime.now().millisecondsSinceEpoch;
+    if (_onlineMode && _roomId != null) {
+      _lastMoveId = moveId;
+      try {
+        await FirebaseFirestore.instance.collection('ludoGames').doc(_roomId).update({
+          'moveAnimation': {
+            'id': moveId,
+            'player': player,
+            'pawn': pawnIndex,
+            'from': current,
+            'to': target,
+            'rollback': false,
+            'startedAtMs': startedAtMs,
+            'durationMs': durationMs,
+          },
+        });
+      } catch (error) {
+        debugPrint('Échec synchronisation du déplacement Ludo : $error');
+        if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_firebaseErrorLabel(error, action: 'Déplacer le pion'))));
+        return;
+      }
+    }
+    _startPawnMoveVisual(
+      id: moveId,
+      player: player,
+      pawn: pawnIndex,
+      from: current,
+      to: target,
+      durationMs: durationMs,
+      startedAtMs: DateTime.now().millisecondsSinceEpoch,
+      initiatedLocally: true,
+    );
+  }
+
+  void _startPawnMoveVisual({
+    required String id,
+    required int player,
+    required int pawn,
+    required int from,
+    required int to,
+    required int durationMs,
+    required int startedAtMs,
+    required bool initiatedLocally,
+    bool rollback = false,
+  }) {
+    if (!mounted || player < 0 || player >= _playerCount || pawn < 0 || pawn >= 4) return;
+    _lastMoveId = id;
+    _moveInitiatedLocally = initiatedLocally;
+    _movingPlayer = player;
+    _movingPawn = pawn;
+    _movingFrom = from;
+    _movingTo = to;
+    _lastMoveSoundStep = 0;
+    _moveIsRollback = rollback;
+    final duration = Duration(milliseconds: max(2000, durationMs).toInt());
+    _pawnMoveController.duration = duration;
+    final elapsed = DateTime.now().millisecondsSinceEpoch - startedAtMs;
+    final progress = (elapsed / duration.inMilliseconds).clamp(0.0, 1.0).toDouble();
+    setState(() {});
+    if (progress >= 1) {
+      if (initiatedLocally) {
+        if (rollback) {
+          _finishRollbackMove();
+        } else {
+          _finishPawnMove();
+        }
+      } else {
+        _clearPawnMoveVisual();
+      }
+      return;
+    }
+    _pawnMoveController.forward(from: progress);
+  }
+
+  void _finishPawnMove() {
+    if (!mounted || _movingPlayer == null || _movingPawn == null || _movingTo == null) return;
+    final player = _movingPlayer!;
+    final pawn = _movingPawn!;
+    final origin = _movingFrom!;
+    final target = _movingTo!;
+    final pawns = [for (final row in _pawns) [...row]];
+    pawns[player][pawn] = target;
     final deadline = DateTime.now().add(const Duration(seconds: 20));
     setState(() {
       _pawns = pawns;
       _questionIndex = (_questionIndex + 1) % _questions.length;
-      _pendingPawnIndex = pawnIndex;
-      _pendingOrigin = current;
+      _pendingPawnIndex = pawn;
+      _pendingOrigin = origin;
       _pendingTarget = target;
       _waitingForSquareQuestion = true;
       _questionDeadline = deadline;
       _secondsRemaining = 20;
-      _message = '${_playerName(_turn)}, réponds à la question de cette case.';
+      _message = '${_playerName(player)}, réponds à la question de cette case.';
+      _movingPlayer = null;
+      _movingPawn = null;
+      _movingFrom = null;
+      _movingTo = null;
+      _moveIsRollback = false;
     });
     _startQuestionTimer(deadline);
     _saveOnlineState();
+  }
+
+  void _finishRollbackMove() {
+    if (!mounted || _movingPlayer == null || _movingPawn == null || _movingTo == null) return;
+    final player = _movingPlayer!;
+    final pawn = _movingPawn!;
+    final origin = _movingTo!;
+    final pawns = [for (final row in _pawns) [...row]];
+    pawns[player][pawn] = origin;
+    final extraTurn = _die == 6;
+    setState(() {
+      _pawns = pawns;
+      _movingPlayer = null;
+      _movingPawn = null;
+      _movingFrom = null;
+      _movingTo = null;
+      _moveIsRollback = false;
+    });
+    _saveOnlineState();
+    Future<void>.delayed(const Duration(milliseconds: 900), () {
+      if (mounted && !_done) _nextTurn(extraTurn: extraTurn);
+    });
+  }
+
+  void _clearPawnMoveVisual() {
+    if (!mounted || _movingPlayer == null) return;
+    setState(() {
+      _movingPlayer = null;
+      _movingPawn = null;
+      _movingFrom = null;
+      _movingTo = null;
+      _moveIsRollback = false;
+    });
   }
 
   void _nextTurn({bool extraTurn = false}) {
@@ -761,7 +1022,7 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
       );
 
   Widget _gameView() => LayoutBuilder(builder: (context, constraints) {
-        final double boardSide = min(constraints.maxWidth - 24, min(360.0, max(190.0, constraints.maxHeight * .39))).toDouble();
+        final double boardSide = min(constraints.maxWidth - 20, max(190.0, constraints.maxHeight * .53)).toDouble();
         final activeName = _playerName(_turn);
         return Padding(
           padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
@@ -830,22 +1091,33 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
         child: SingleChildScrollView(
           physics: const NeverScrollableScrollPhysics(),
           child: Column(mainAxisSize: MainAxisSize.min, children: [
-            if (!_canAct) ...[
-              Text('Au tour de ${_playerName(_turn)}',
+            if (_movingPlayer != null) ...[
+              Text(
+                _moveIsRollback
+                    ? 'Le pion retourne à sa case précédente…'
+                    : '${_playerName(_movingPlayer!)} déplace son pion…',
+                textAlign: TextAlign.center,
+                style: titleStyle(16, weight: 800),
+              ),
+            ] else if (!_canAct) ...[
+              Text('Le dé de ${_playerName(_turn)} apparaîtra ici à son tour.',
                   textAlign: TextAlign.center, style: titleStyle(15, weight: 800)),
             ] else if (_die == 0) ...[
-              Text('Au tour de ${_playerName(_turn)}',
-                  textAlign: TextAlign.center, style: titleStyle(15, weight: 800)),
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                CircleAvatar(radius: 14, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                const SizedBox(width: 8),
+                Text('Dé de ${_playerName(_turn)}', textAlign: TextAlign.center, style: titleStyle(17, weight: 800)),
+              ]),
               const SizedBox(height: 6),
               _AnimatedDie(
                 value: 0,
                 rolling: false,
                 enabled: !_done && !_resolvingQuestion,
                 color: _colorOf(_turn),
-                size: 58,
+                size: 88,
                 onTap: _roll,
               ),
-              const Text('Touchez le dé devant vous pour le lancer. Aucune question n’est posée pour lancer le dé.'),
+              const Text('Le dé apparaît devant le joueur actif. Touchez-le pour lancer.'),
               if (_pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
                 Text('Lancers sans 6 : ${_missesSinceSix[_turn]}/3', style: titleStyle(13, color: JangColors.textSecondary)),
             ] else ...[
@@ -855,29 +1127,21 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
                   rolling: _isDieAnimating,
                   enabled: false,
                   color: _colorOf(_turn),
-                  size: 58,
+                  size: 72,
                   onTap: _roll,
                 ),
                 const SizedBox(width: 10),
                 Flexible(child: Text('Résultat : $_die · déplacez un pion dans les 10 secondes', textAlign: TextAlign.center, style: titleStyle(14, weight: 700))),
               ]),
               const SizedBox(height: 5),
-              Wrap(alignment: WrapAlignment.center, spacing: 6, runSpacing: 2, children: [
-                for (var i = 0; i < 4; i++)
-                  ActionChip(
-                    avatar: Icon(Icons.circle, color: _colorOf(_turn), size: 17),
-                    label: Text(_pawns[_turn][i] < 0 ? 'Base ${i + 1}' : _pawns[_turn][i] == 57 ? 'Arrivé ${i + 1}' : 'Pion ${i + 1}'),
-                    onPressed: !_canMovePawn(i) ? null : () => _movePawn(i),
-                  ),
-              ]),
-              const Text('Une question apparaîtra quand le pion arrivera sur sa case.'),
+              const Text('Touchez un de vos pions sur le plateau pour le déplacer. Une question apparaîtra à son arrivée.'),
             ],
           ]),
         ),
       );
 
   bool _canMovePawn(int i) {
-    if (!_canAct || _die == 0 || _waitingForSquareQuestion || _resolvingQuestion || _done) return false;
+    if (!_canAct || _die == 0 || _waitingForSquareQuestion || _resolvingQuestion || _done || _movingPlayer != null) return false;
     final position = _pawns[_turn][i];
     return position != 57 && (position < 0 ? _die == 6 : position + _die <= 57);
   }
@@ -936,6 +1200,11 @@ class _LudoJangScreenState extends State<LudoJangScreen> {
                 pawns: _pawns,
                 shields: _shieldedPawns,
                 seats: List.generate(_playerCount, _seatOf),
+                movingPlayer: _movingPlayer,
+                movingPawn: _movingPawn,
+                movingFrom: _movingFrom,
+                movingTo: _movingTo,
+                moveProgress: Curves.easeInOutCubic.transform(_pawnMoveController.value),
               ),
               child: const SizedBox.expand(),
             ),
@@ -1083,8 +1352,23 @@ class _ClassicLudoBoardPainter extends CustomPainter {
   final List<List<int>> pawns;
   final List<Set<int>> shields;
   final List<int> seats;
+  final int? movingPlayer;
+  final int? movingPawn;
+  final int? movingFrom;
+  final int? movingTo;
+  final double moveProgress;
 
-  const _ClassicLudoBoardPainter({required this.colors, required this.pawns, required this.shields, required this.seats});
+  const _ClassicLudoBoardPainter({
+    required this.colors,
+    required this.pawns,
+    required this.shields,
+    required this.seats,
+    required this.movingPlayer,
+    required this.movingPawn,
+    required this.movingFrom,
+    required this.movingTo,
+    required this.moveProgress,
+  });
 
   static const _startCells = <int>[0, 13, 26, 39];
   static const _safeCells = <int>{0, 8, 13, 21, 26, 34, 39, 47};
@@ -1135,10 +1419,11 @@ class _ClassicLudoBoardPainter extends CustomPainter {
       if (playerIndex < 0) continue;
       for (var pawn = 0; pawn < 4; pawn++) {
         final progress = pawn < pawns[playerIndex].length ? pawns[playerIndex][pawn] : -1;
-        if (progress < 0) _drawPawn(canvas, slots[pawn], unit * .34, colors[player], shield: false);
-        if (progress == 57) {
+        final isMoving = playerIndex == movingPlayer && pawn == movingPawn;
+        if (progress < 0 && !isMoving) _drawPawn(canvas, slots[pawn], unit * .43, colors[player], shield: false);
+        if (progress == 57 && !isMoving) {
           final goal = Offset(7.5 * unit, 7.5 * unit);
-          _drawPawn(canvas, goal + Offset((pawn % 2 - .5) * unit * .35, (pawn ~/ 2 - .5) * unit * .35), unit * .18, colors[player], shield: false);
+          _drawPawn(canvas, goal + Offset((pawn % 2 - .5) * unit * .35, (pawn ~/ 2 - .5) * unit * .35), unit * .24, colors[player], shield: false);
         }
       }
     }
@@ -1185,6 +1470,7 @@ class _ClassicLudoBoardPainter extends CustomPainter {
       final seat = seats[player];
       final color = colors[seat];
       for (var pawn = 0; pawn < min(4, pawns[player].length); pawn++) {
+        if (player == movingPlayer && pawn == movingPawn) continue;
         final progress = pawns[player][pawn];
         if (progress < 0 || progress == 57) continue;
         final (row, col) = progress < 51
@@ -1193,10 +1479,52 @@ class _ClassicLudoBoardPainter extends CustomPainter {
         final offsets = <Offset>[Offset.zero, Offset(-.2, -.2), Offset(.2, -.2), Offset.zero];
         final offset = offsets[pawn] * unit;
         _drawPawn(canvas, Offset((col + .5) * unit, (row + .5) * unit) + offset,
-            progress < 51 ? unit * .31 : unit * .34, color,
+            progress < 51 ? unit * .43 : unit * .43, color,
             shield: player < shields.length && shields[player].contains(pawn));
       }
     }
+
+    if (movingPlayer != null && movingPawn != null && movingFrom != null && movingTo != null &&
+        movingPlayer! < seats.length) {
+      final seat = seats[movingPlayer!];
+      final progress = movingFrom! + (movingTo! - movingFrom!) * moveProgress;
+      final center = _centerForProgress(seat, movingPawn!, progress, unit);
+      _drawPawn(canvas, center, unit * .45, colors[seat], shield: false);
+    }
+  }
+
+  Offset _centerForProgress(int seat, int pawn, double progress, double unit) {
+    final offsets = <Offset>[Offset.zero, Offset(-.2, -.2), Offset(.2, -.2), Offset.zero];
+    final pawnOffset = offsets[pawn] * unit;
+    Offset cell((int, int) position) => Offset((position.$2 + .5) * unit, (position.$1 + .5) * unit) + pawnOffset;
+    final goal = Offset(7.5 * unit, 7.5 * unit) + Offset((pawn % 2 - .5) * unit * .35, (pawn ~/ 2 - .5) * unit * .35);
+    if (progress < 0) {
+      const homes = <(int, int)>[(0, 0), (0, 9), (9, 9), (9, 0)];
+      const yardSlots = <(int, int)>[(2, 2), (4, 2), (2, 4), (4, 4)];
+      final (homeRow, homeCol) = homes[seat];
+      final (slotRow, slotCol) = yardSlots[pawn];
+      final base = Offset((homeCol + slotCol) * unit, (homeRow + slotRow) * unit);
+      final first = cell(_track[_startCells[seat]]);
+      return Offset.lerp(base, first, (progress + 1).clamp(0.0, 1.0).toDouble())!;
+    }
+    if (progress < 50) {
+      final index = progress.floor();
+      final fraction = progress - index;
+      final start = cell(_track[(_startCells[seat] + index) % 52]);
+      final next = cell(_track[(_startCells[seat] + index + 1) % 52]);
+      return Offset.lerp(start, next, fraction)!;
+    }
+    if (progress < 51) {
+      final from = cell(_track[(_startCells[seat] + 50) % 52]);
+      return Offset.lerp(from, cell(_lanes[seat][0]), progress - 50)!;
+    }
+    if (progress < 56) {
+      final lanePosition = progress - 51;
+      final index = lanePosition.floor().clamp(0, 4).toInt();
+      return Offset.lerp(cell(_lanes[seat][index]), cell(_lanes[seat][index + 1]), lanePosition - index)!;
+    }
+    if (progress < 57) return Offset.lerp(cell(_lanes[seat][5]), goal, progress - 56)!;
+    return goal;
   }
 
   void _drawPawn(Canvas canvas, Offset center, double radius, Color color, {required bool shield}) {
@@ -1225,7 +1553,10 @@ class _ClassicLudoBoardPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _ClassicLudoBoardPainter oldDelegate) =>
-      oldDelegate.colors != colors || oldDelegate.pawns != pawns || oldDelegate.shields != shields || oldDelegate.seats != seats;
+      oldDelegate.colors != colors || oldDelegate.pawns != pawns || oldDelegate.shields != shields ||
+      oldDelegate.seats != seats || oldDelegate.moveProgress != moveProgress ||
+      oldDelegate.movingPlayer != movingPlayer || oldDelegate.movingPawn != movingPawn ||
+      oldDelegate.movingFrom != movingFrom || oldDelegate.movingTo != movingTo;
 }
 
 class _TurnGlow extends StatefulWidget {

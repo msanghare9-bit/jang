@@ -41,6 +41,7 @@ flutter:
     - assets/histoires.json
     - assets/missions.json
     - assets/sounds/dice_roll.wav
+    - assets/sounds/pawn_move.wav
     - tool/icons/mipmap-xxxhdpi/ic_launcher.png
   fonts:
     - family: Baloo
