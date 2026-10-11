@@ -60,6 +60,29 @@ class _MatchHomeScreenState extends State<MatchHomeScreen> {
     );
   }
 
+  /// A little red badge on the "Mes Xarit" chevron, counting pending
+  /// friend requests and match/Ludo invitations — so a Xarit doesn't need
+  /// to open that screen just to find out something is waiting there.
+  Widget _xaritPendingIcon() {
+    final uid = AuthService.instance.profile.value?.uid;
+    if (uid == null) return const Icon(Icons.chevron_right);
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+      stream: XaritService.instance.incoming(uid),
+      builder: (context, reqSnap) => StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        stream: XaritService.instance.invitations(uid),
+        builder: (context, inviteSnap) {
+          final count = (reqSnap.data?.docs.length ?? 0) + (inviteSnap.data?.docs.length ?? 0);
+          if (count == 0) return const Icon(Icons.chevron_right);
+          return Badge(
+            label: Text('$count'),
+            backgroundColor: const Color(0xFFE31B23),
+            child: const Icon(Icons.chevron_right),
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,7 +237,7 @@ class _MatchHomeScreenState extends State<MatchHomeScreen> {
                   child: Icon(Icons.people_alt_outlined, color: Colors.white)),
               title: const Text('Mes Xarit'),
               subtitle: const Text('Ajoute tes amis et défie-les'),
-              trailing: const Icon(Icons.chevron_right),
+              trailing: _xaritPendingIcon(),
               onTap: () => Navigator.push(context,
                   MaterialPageRoute(builder: (_) => const XaritScreen())),
             ),
