@@ -1544,13 +1544,21 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                             ]),
                           ),
                           if (_canSendChatAs(player))
-                            IconButton(
-                              onPressed: () => _openQuickMessages(player),
-                              tooltip: 'Envoyer un petit message',
-                              visualDensity: VisualDensity.compact,
-                              padding: EdgeInsets.zero,
-                              constraints: const BoxConstraints(minWidth: 30, minHeight: 30),
-                              icon: Icon(Icons.chat_bubble_outline, size: 17, color: _colorOf(player)),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 4),
+                              child: Tooltip(
+                                message: 'Envoyer un petit message',
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(20),
+                                  onTap: () => _openQuickMessages(player),
+                                  child: Container(
+                                    width: 34,
+                                    height: 34,
+                                    decoration: BoxDecoration(color: _colorOf(player), shape: BoxShape.circle),
+                                    child: const Icon(Icons.chat_bubble, size: 19, color: Colors.white),
+                                  ),
+                                ),
+                              ),
                             ),
                         ]),
                       ),
