@@ -1298,12 +1298,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                   Text('Ndimbal rend tous les pions invincibles pendant deux tours adverses.'),
                 ]),
               ),
-            Expanded(
-              child: RotatedBox(
-                quarterTurns: _localSeatQuarterTurns,
-                child: _waitingForSquareQuestion ? _questionPanel() : _turnPanel(),
-              ),
-            ),
+            Expanded(child: _waitingForSquareQuestion ? _questionPanel() : _turnPanel()),
             if (_done)
               FilledButton.icon(
                 onPressed: () {
@@ -1442,19 +1437,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         ]),
       ),
     );
+    // The panel never rotates — questions always display upright, exactly
+    // like the die, whoever's turn it is.
     return panel;
-  }
-
-  /// Online: each player has their own phone held upright, no rotation.
-  /// Local face-to-face: the phone lies flat on the table and players sit
-  /// across from each other. Someone sitting at a bottom house (seat 2 or
-  /// 3) faces the opposite way from someone at a top house (seat 0 or 1),
-  /// so the question and turn text must turn 180° for them to read it
-  /// right-side up from their own seat.
-  int get _localSeatQuarterTurns {
-    if (_onlineMode) return 0;
-    final seat = _seatOf(_turn);
-    return seat == 2 || seat == 3 ? 2 : 0;
   }
 
   /// Fixed screen positions (not board-rotated) for each of the four house
@@ -1940,3 +1925,4 @@ class _TurnGlowState extends State<_TurnGlow> with SingleTickerProviderStateMixi
         child: widget.child,
       );
 }
+
