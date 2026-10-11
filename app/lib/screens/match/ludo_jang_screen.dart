@@ -49,7 +49,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   ];
 
   String _level = 'debutant';
-  final Set<String> _selectedDomains = {..._domains};
+  final Set<String> _selectedDomains = {};
   int _playerCount = 2;
   int _pawnsPerPlayer = 4;
   bool _busy = false;
@@ -75,6 +75,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? _roomSub;
   Timer? _questionTimer;
   Timer? _moveTimer;
+  Timer? _rollTimer;
+  /// Consecutive times each player let the 10-second roll timeout play for
+  /// them instead of rolling themselves. Resets to 0 the moment they roll
+  /// on their own; reaching 3 forfeits the match for them.
+  List<int> _autoRollStreak = List.filled(4, 0);
   DateTime? _questionDeadline;
   int _secondsRemaining = 20;
   bool _waitingForSquareQuestion = false;
@@ -200,6 +205,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _roomSub?.cancel();
     _questionTimer?.cancel();
     _moveTimer?.cancel();
+    _rollTimer?.cancel();
     _roomCodeController.dispose();
     _pawnMoveController.dispose();
     unawaited(_dicePlayer.dispose());
@@ -244,7 +250,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             'Lancez le dé sans répondre à une question. Il faut obtenir 6 pour sortir un pion de sa base. Après trois lancers consécutifs sans 6, le prochain lancer donnera 6. Un 6 donne un deuxième tour. Touchez ensuite le pion à déplacer.\n\n'
             'Quand un pion arrive sur une case, vous avez 20 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
             'Si le délai de 20 secondes expire, le pion retourne lui aussi à la case qu’il occupait avant son déplacement.\n\n'
-            'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un Ndimbal : tous vos pions sont protégés contre les captures pendant les deux prochains tours des adversaires.\n\n'
+            'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un Aar : tous vos pions sont protégés contre les captures pendant les deux prochains tours des adversaires.\n\n'
             'Le premier joueur qui amène tous ses pions à l’arrivée gagne.',
           ),
         ),
@@ -311,6 +317,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _missesSinceSix = List.filled(players, 0);
       _correctAnswers = List.filled(players, 0);
       _incorrectAnswers = List.filled(players, 0);
+      _autoRollStreak = List.filled(players, 0);
       _die = 0;
       _rollingPlayer = null;
       _message = 'Au tour de ${_playerName(0)}';
@@ -326,6 +333,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pendingOrigin = null;
       _pendingTarget = null;
     });
+    _armRollTimer();
   }
 
   Future<String> _newRoomCode() async {
@@ -600,10 +608,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       }
       if (_die > 0 && !_waitingForSquareQuestion && _canAct && (previousDie != _die || previousTurn != _turn)) {
         _moveTimer?.cancel();
-        _moveTimer = Timer(const Duration(seconds: 10), _autoMove);
+        _moveTimer = Timer(const Duration(seconds: 15), _autoMove);
       } else if (_die == 0 || _waitingForSquareQuestion || !_canAct) {
         _moveTimer?.cancel();
       }
+      _armRollTimer();
     }, onError: (Object error) {
       debugPrint('Écoute Firestore Ludo interrompue : $error');
       if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_firebaseErrorLabel(error, action: 'Connexion à la partie interrompue'))));
@@ -651,6 +660,10 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   void _resolveSquareQuestion(bool correct, {bool timedOut = false}) {
     if (!_waitingForSquareQuestion || _pendingPawnIndex == null || _pendingOrigin == null || _pendingTarget == null) return;
     _questionTimer?.cancel();
+    // Captured before anything else so every opponent — not just the player
+    // who answered — sees the right option, shown in the message banner
+    // visible to everyone around the table.
+    final correctOptionText = _question.options[_question.answer];
     final pawnIndex = _pendingPawnIndex!;
     final origin = _pendingOrigin!;
     final target = _pendingTarget!;
@@ -708,8 +721,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _pendingTarget = null;
         _questionDeadline = null;
         _message = timedOut
-            ? 'Temps écoulé : le pion retourne à sa case précédente.'
-            : 'Mauvaise réponse : le pion retourne à sa case précédente.';
+            ? 'Temps écoulé : la bonne réponse était « $correctOptionText ». Le pion retourne à sa case précédente.'
+            : 'Mauvaise réponse : la bonne réponse était « $correctOptionText ». Le pion retourne à sa case précédente.';
       });
       if (_onlineMode && _roomId != null) {
         _lastMoveId = moveId;
@@ -752,10 +765,12 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pendingTarget = null;
       _done = won;
       _message = won
-          ? 'Bonne réponse ! ${_playerName(_turn)} remporte la partie !'
-          : correct
-              ? captured ? 'Bonne réponse ! Pion adverse capturé.' : _shieldAvailable ? 'Bonne réponse ! Ndimbal gagné.' : 'Bonne réponse ! Le pion reste sur sa case.'
-              : timedOut ? 'Temps écoulé : le pion revient à sa position précédente.' : 'Mauvaise réponse : le pion revient à sa position précédente.';
+          ? 'Bonne réponse (« $correctOptionText ») ! ${_playerName(_turn)} remporte la partie !'
+          : captured
+              ? 'Bonne réponse (« $correctOptionText ») ! Pion adverse capturé.'
+              : _shieldAvailable
+                  ? 'Bonne réponse (« $correctOptionText ») ! Aar gagné.'
+                  : 'Bonne réponse (« $correctOptionText ») ! Le pion reste sur sa case.';
     });
     if (won) {
       _saveOnlineState();
@@ -767,15 +782,39 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     });
   }
 
-  Future<void> _roll() async {
+  /// Arms (or cancels) the 10-second roll timeout: if nobody rolls in time,
+  /// the system rolls for them, and 3 such auto-rolls in a row for the same
+  /// player forfeits the match for them. Safe to call after any state
+  /// change — it only actually starts a timer when it's genuinely someone's
+  /// turn to roll.
+  void _armRollTimer() {
+    _rollTimer?.cancel();
+    if (_canAct && _die == 0 && !_done && !_waitingForSquareQuestion && !_resolvingQuestion && _movingPlayer == null) {
+      _rollTimer = Timer(const Duration(seconds: 10), () => _roll(auto: true));
+    }
+  }
+
+  Future<void> _roll({bool auto = false}) async {
     if (!_canAct || _die != 0 || _done || _waitingForSquareQuestion || _resolvingQuestion || _movingPlayer != null) return;
+    _rollTimer?.cancel();
+    if (auto) {
+      _autoRollStreak[_turn]++;
+      if (_autoRollStreak[_turn] >= 3) {
+        await _forfeitForInactivity('n’a pas lancé le dé');
+        return;
+      }
+    } else {
+      _autoRollStreak[_turn] = 0;
+    }
     final guaranteedSix = _missesSinceSix[_turn] >= 3;
     final value = guaranteedSix ? 6 : Random().nextInt(6) + 1;
     final misses = [..._missesSinceSix];
     misses[_turn] = value == 6 ? 0 : misses[_turn] + 1;
-    final available = _pawns[_turn];
-    final hasMove = available.any((position) => position < 57 &&
-        (position < 0 ? value == 6 : position + value <= 57));
+    final movable = List<int>.generate(_pawns[_turn].length, (i) => i).where((i) {
+      final p = _pawns[_turn][i];
+      return p != 57 && (p < 0 ? value == 6 : p + value <= 57);
+    }).toList();
+    final hasMove = movable.isNotEmpty;
     setState(() {
       _die = value;
       _isDieAnimating = true;
@@ -785,6 +824,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _message = guaranteedSix
             ? 'Après trois lancers sans 6, le 6 est garanti. Aucun pion ne peut avancer.'
             : 'Vous avez obtenu $value. Aucun pion ne peut avancer.';
+      } else if (movable.length == 1) {
+        _message = 'Vous avez obtenu $value. Un seul pion peut jouer : il avance tout seul.';
       } else {
         _message = guaranteedSix ? 'Le 6 est garanti après trois essais. Choisissez un pion.' : 'Vous avez obtenu $value. Choisissez un pion.';
       }
@@ -796,9 +837,12 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     setState(() => _isDieAnimating = false);
     if (!hasMove) {
       Future<void>.delayed(const Duration(milliseconds: 900), () => _nextTurn(extraTurn: value == 6));
+    } else if (movable.length == 1) {
+      // Only one legal move: play it automatically, no need to wait for a tap.
+      Future<void>.delayed(const Duration(milliseconds: 500), () => _movePawn(movable.first));
     } else {
       _moveTimer?.cancel();
-      _moveTimer = Timer(const Duration(seconds: 10), _autoMove);
+      _moveTimer = Timer(const Duration(seconds: 15), _autoMove);
     }
   }
 
@@ -988,6 +1032,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _resolvingQuestion = false;
     });
     _saveOnlineState();
+    _armRollTimer();
   }
 
   Future<void> _showPlayerAnswerStats(int player) => showDialog<void>(
@@ -1014,7 +1059,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
               if (_shieldedPawns[player].isNotEmpty) ...[
                 const SizedBox(height: 10),
                 Text(
-                  'Ndimbal actif : ${_shieldTurnsFor(player)} ${_shieldTurnsFor(player) == 1 ? 'tour adverse restant' : 'tours adverses restants'}.',
+                  'Aar actif : ${_shieldTurnsFor(player)} ${_shieldTurnsFor(player) == 1 ? 'tour adverse restant' : 'tours adverses restants'}.',
                 ),
               ],
             ],
@@ -1052,14 +1097,94 @@ class _LudoJangScreenState extends State<LudoJangScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Ludo Jàng')),
-      body: _onlineMode && !_onlineReady && _roomId != null
-          ? _waitingRoomView()
-          : _playing
-              ? _gameView()
-              : _setupView(),
+    return PopScope(
+      canPop: !_playing,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        if (await _confirmQuit() && mounted) Navigator.pop(context);
+      },
+      child: Scaffold(
+        appBar: AppBar(title: const Text('Ludo Jàng')),
+        body: _onlineMode && !_onlineReady && _roomId != null
+            ? _waitingRoomView()
+            : _playing
+                ? _gameView()
+                : _setupView(),
+      ),
     );
+  }
+
+  /// Quitting mid-match counts as a forfeit: the player who leaves loses,
+  /// and (online) the opponent is told the match is over so they aren't left
+  /// waiting forever.
+  Future<bool> _confirmQuit() async {
+    if (!_playing) return true;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Quitter la partie ?'),
+        content: Text(_onlineMode
+            ? 'Si tu quittes maintenant, tu abandonnes : tu perds et ton adversaire gagne.'
+            : 'Si tu quittes maintenant, la partie s\'arrête et tu perds.'),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Rester')),
+          FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Quitter, j’abandonne')),
+        ],
+      ),
+    );
+    if (ok != true) return false;
+    await _forfeitMatch();
+    return true;
+  }
+
+  Future<void> _forfeitMatch() async {
+    _questionTimer?.cancel();
+    _moveTimer?.cancel();
+    _rollTimer?.cancel();
+    if (_onlineMode && _roomId != null) {
+      final uid = AuthService.instance.profile.value?.uid;
+      final leavingIndex = uid != null ? _roomUids.indexOf(uid) : -1;
+      final winnerIndex = leavingIndex == 0 ? 1 : 0;
+      try {
+        await FirebaseFirestore.instance.collection('ludoGames').doc(_roomId).update({
+          'done': true,
+          'message': leavingIndex >= 0
+              ? '${_playerName(leavingIndex)} a quitté la partie : ${_playerName(winnerIndex)} gagne !'
+              : 'La partie est terminée.',
+        });
+      } catch (_) {}
+    }
+    if (mounted) {
+      setState(() {
+        _done = true;
+        _message = 'Tu as quitté la partie : tu as perdu.';
+      });
+    }
+  }
+
+  /// Ends the match because the active player ([_turn]) let the system play
+  /// for them three times in a row — used for the 3-strikes roll timeout.
+  Future<void> _forfeitForInactivity(String reasonLabel) async {
+    _questionTimer?.cancel();
+    _moveTimer?.cancel();
+    _rollTimer?.cancel();
+    final loser = _turn;
+    final winner = loser == 0 ? 1 : 0;
+    final message = '${_playerName(loser)} $reasonLabel trois fois de suite : ${_playerName(winner)} gagne !';
+    if (_onlineMode && _roomId != null) {
+      try {
+        await FirebaseFirestore.instance.collection('ludoGames').doc(_roomId).update({
+          'done': true,
+          'message': message,
+        });
+      } catch (_) {}
+    }
+    if (mounted) {
+      setState(() {
+        _done = true;
+        _message = message;
+      });
+    }
   }
 
   Widget _setupView() => ListView(
@@ -1297,7 +1422,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   Icon(Icons.shield, color: JangColors.snGreen, size: 18),
                   SizedBox(width: 5),
-                  Text('Ndimbal rend tous les pions invincibles pendant deux tours adverses.'),
+                  Text('Aar rend tous les pions invincibles pendant deux tours adverses.'),
                 ]),
               ),
             // Local face-to-face mode shows the question anchored in the
