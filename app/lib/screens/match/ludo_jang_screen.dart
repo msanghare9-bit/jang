@@ -1487,7 +1487,6 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                               constraints: const BoxConstraints(minWidth: 30, minHeight: 30),
                               icon: Icon(Icons.chat_bubble_outline, size: 17, color: _colorOf(player)),
                             ),
-                          _playerCardDie(player),
                         ]),
                       ),
                   ],
@@ -1670,7 +1669,18 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// Local face-to-face only: the die appears right next to the active
   /// player's own name card above the board — like the die next to the
   /// avatar in the reference screenshot — instead of sitting on the board.
-  Widget _playerCardDie(int player) {
+  /// Back to the original layout: in local face-to-face play, each player's
+  /// die sits directly on the board, in their own corner — not next to
+  /// their name card.
+  Widget _cornerDie(int seat, double paintSide) {
+    var player = -1;
+    for (var p = 0; p < _playerCount; p++) {
+      if (_seatOf(p) == seat) {
+        player = p;
+        break;
+      }
+    }
+    if (player == -1) return const SizedBox.shrink();
     final isActive = !_onlineMode &&
         _turn == player &&
         _canAct &&
@@ -1679,15 +1689,18 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         !_resolvingQuestion &&
         !_done;
     if (!isActive) return const SizedBox.shrink();
-    return Padding(
-      padding: const EdgeInsets.only(left: 4),
-      child: _AnimatedDie(
-        value: _die,
-        rolling: _isDieAnimating,
-        enabled: _die == 0,
-        color: _colorOf(player),
-        size: 30,
-        onTap: _roll,
+    return Align(
+      alignment: _seatAlignments[seat],
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: _AnimatedDie(
+          value: _die,
+          rolling: _isDieAnimating,
+          enabled: _die == 0,
+          color: _colorOf(player),
+          size: paintSide * .16,
+          onTap: _roll,
+        ),
       ),
     );
   }
@@ -1774,6 +1787,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 ),
                 child: const SizedBox.expand(),
               ),
+              if (!_onlineMode)
+                for (var seat = 0; seat < 4; seat++) _cornerDie(seat, paintSide),
               if (!_onlineMode && _waitingForSquareQuestion) _cornerQuestionPanel(paintSide),
               if (_chatBubblePlayer != null && _chatBubblePlayer! < _playerCount) _chatBubbleOverlay(paintSide),
             ]),
