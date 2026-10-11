@@ -1298,7 +1298,15 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                   Text('Ndimbal rend tous les pions invincibles pendant deux tours adverses.'),
                 ]),
               ),
-            Expanded(child: _waitingForSquareQuestion ? _questionPanel() : _turnPanel()),
+            // Local face-to-face mode shows the question anchored in the
+            // active player's own corner of the board (see _board /
+            // _cornerQuestionPanel), not here, so this area stays empty
+            // while waiting for an answer.
+            Expanded(
+              child: _waitingForSquareQuestion
+                  ? (_onlineMode ? _questionPanel() : const SizedBox.shrink())
+                  : _turnPanel(),
+            ),
             if (_done)
               FilledButton.icon(
                 onPressed: () {
@@ -1480,6 +1488,22 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     );
   }
 
+  /// Local face-to-face only: the question (with its answers) appears
+  /// anchored in the active player's own corner of the board, exactly like
+  /// the die, instead of in a shared spot below the board — leaning toward
+  /// that corner while staying large enough to read and tap comfortably.
+  Widget _cornerQuestionPanel(double paintSide) {
+    final seat = _seatOf(_turn);
+    return Align(
+      alignment: _seatAlignments[seat],
+      child: SizedBox(
+        width: paintSide * .82,
+        height: paintSide * .82,
+        child: _questionPanel(),
+      ),
+    );
+  }
+
   Widget _board(double side) {
     final paintSide = side - 14;
     return Card(
@@ -1509,6 +1533,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
               ),
               if (!_onlineMode)
                 for (var seat = 0; seat < 4; seat++) _cornerDie(seat, paintSide),
+              if (!_onlineMode && _waitingForSquareQuestion) _cornerQuestionPanel(paintSide),
             ]),
           ),
         ),
@@ -1925,4 +1950,3 @@ class _TurnGlowState extends State<_TurnGlow> with SingleTickerProviderStateMixi
         child: widget.child,
       );
 }
-
