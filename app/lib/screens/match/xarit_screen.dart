@@ -6,6 +6,7 @@ import '../../services/auth_service.dart';
 import '../../services/match_service.dart';
 import '../../theme.dart';
 import '../../widgets/jang_ui.dart';
+import 'ludo_jang_screen.dart';
 import 'match_screens.dart';
 
 class XaritUser {
@@ -24,11 +25,15 @@ class XaritFriend {
 
 class MatchInvitation {
   final String id, fromUid, fromName, matchId, code;
-  const MatchInvitation(this.id, this.fromUid, this.fromName, this.matchId, this.code);
+  // 'match' = défi au jeu de questions/réponses classique (valeur par défaut,
+  // pour rester compatible avec les invitations créées avant l'ajout du
+  // Ludo), 'ludo' = défi au Ludo Jàng.
+  final String gameType;
+  const MatchInvitation(this.id, this.fromUid, this.fromName, this.matchId, this.code, {this.gameType = 'match'});
   factory MatchInvitation.fromDoc(DocumentSnapshot<Map<String, dynamic>> doc) {
     final d = doc.data() ?? {};
     return MatchInvitation(doc.id, '${d['fromUid'] ?? ''}', '${d['fromName'] ?? 'Ami'}',
-        '${d['matchId'] ?? ''}', '${d['code'] ?? ''}');
+        '${d['matchId'] ?? ''}', '${d['code'] ?? ''}', gameType: '${d['gameType'] ?? 'match'}');
   }
 }
 
@@ -107,7 +112,19 @@ class XaritService {
     final ref = _invites.doc();
     await ref.set({
       'fromUid': from.uid, 'toUid': friendUid, 'fromName': from.publicName,
-      'matchId': match.id, 'code': match.code, 'status': 'pending',
+      'matchId': match.id, 'code': match.code, 'gameType': 'match', 'status': 'pending',
+      'createdAt': FieldValue.serverTimestamp(),
+    });
+  }
+
+  /// Same as [inviteToMatch], but for a Ludo Jàng room — whose id and code
+  /// are the same 6-digit value (unlike the classic match, which has a
+  /// separate internal id and a shareable code).
+  Future<void> inviteToLudo(UserProfile from, String friendUid, String code) async {
+    final ref = _invites.doc();
+    await ref.set({
+      'fromUid': from.uid, 'toUid': friendUid, 'fromName': from.publicName,
+      'matchId': code, 'code': code, 'gameType': 'ludo', 'status': 'pending',
       'createdAt': FieldValue.serverTimestamp(),
     });
   }
@@ -167,14 +184,46 @@ class _XaritScreenState extends State<XaritScreen> {
   Future<void> _challenge(XaritFriend friend) async {
     final me = AuthService.instance.profile.value;
     if (me == null) return;
-    await Navigator.push(context, MaterialPageRoute(
-      builder: (_) => MatchSetupScreen(friendUid: friend.uid, friendName: friend.name)));
+    final gameType = await showModalBottomSheet<String>(
+      context: context,
+      builder: (ctx) => SafeArea(child: Wrap(children: [
+        ListTile(
+          leading: const Icon(Icons.quiz_outlined),
+          title: const Text('Questions / Réponses'),
+          onTap: () => Navigator.pop(ctx, 'match'),
+        ),
+        ListTile(
+          leading: const Icon(Icons.casino_outlined),
+          title: const Text('Ludo Jàng'),
+          onTap: () => Navigator.pop(ctx, 'ludo'),
+        ),
+      ])),
+    );
+    if (gameType == null || !mounted) return;
+    if (gameType == 'ludo') {
+      await Navigator.push(context, MaterialPageRoute(
+        builder: (_) => LudoJangScreen(challengeFriendUid: friend.uid, challengeFriendName: friend.name)));
+    } else {
+      await Navigator.push(context, MaterialPageRoute(
+        builder: (_) => MatchSetupScreen(friendUid: friend.uid, friendName: friend.name)));
+    }
     if (mounted) setState(() => _friends = _loadFriends());
   }
 
   Future<void> _joinInvitation(MatchInvitation invite) async {
     final p = AuthService.instance.profile.value;
     if (p == null) return;
+    if (invite.gameType == 'ludo') {
+      setState(() => _busy = true);
+      try {
+        await XaritService.instance.markInvitation(invite.id, accept: true);
+        if (!mounted) return;
+        await Navigator.push(context, MaterialPageRoute(builder: (_) => LudoJangScreen(joinCode: invite.code)));
+      } finally {
+        if (mounted) setState(() => _busy = false);
+      }
+      return;
+    }
     setState(() => _busy = true);
     try {
       final (match, error) = await MatchService.instance.joinByCode(invite.code, p);
@@ -233,9 +282,11 @@ class _XaritScreenState extends State<XaritScreen> {
             if(docs.isEmpty)return const ListTile(title:Text('Aucune invitation en attente.'));
             return Column(children:[for(final doc in docs) Builder(builder:(context){
               final invite=MatchInvitation.fromDoc(doc);
+              final gameLabel = invite.gameType == 'ludo' ? 'Ludo Jàng' : 'Questions / Réponses';
               return Card(child:ListTile(
-                title:Text('${invite.fromName} te défie !'),
-                subtitle:Text('Code du match : ${invite.code}'),
+                leading: Icon(invite.gameType == 'ludo' ? Icons.casino_outlined : Icons.quiz_outlined),
+                title:Text('${invite.fromName} te défie au $gameLabel !'),
+                subtitle:Text('Code : ${invite.code}'),
                 trailing:FilledButton(onPressed:_busy?null:()=>_joinInvitation(invite),child:const Text('Rejoindre')),
               ));
             })]);
