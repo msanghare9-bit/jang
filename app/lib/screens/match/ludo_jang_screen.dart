@@ -1297,41 +1297,69 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 style: titleStyle(16, weight: 800),
               ),
             ] else if (!_canAct) ...[
-              Text('Le dé de ${_playerName(_turn)} apparaîtra ici à son tour.',
-                  textAlign: TextAlign.center, style: titleStyle(15, weight: 800)),
-            ] else if (_die == 0) ...[
+              Text(
+                _onlineMode
+                    ? 'Le dé de ${_playerName(_turn)} apparaîtra ici à son tour.'
+                    : 'Le dé de ${_playerName(_turn)} apparaît dans sa case, sur le plateau.',
+                textAlign: TextAlign.center,
+                style: titleStyle(15, weight: 800),
+              ),
+            ] else if (_onlineMode) ...[
+              // Online: each player has their own phone, so the die stays
+              // centered here — there is no shared table to anchor it to.
+              if (_die == 0) ...[
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  CircleAvatar(radius: 14, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                  const SizedBox(width: 8),
+                  Text('Dé de ${_playerName(_turn)}', textAlign: TextAlign.center, style: titleStyle(17, weight: 800)),
+                ]),
+                const SizedBox(height: 6),
+                _AnimatedDie(
+                  value: 0,
+                  rolling: false,
+                  enabled: !_done && !_resolvingQuestion,
+                  color: _colorOf(_turn),
+                  size: 88,
+                  onTap: _roll,
+                ),
+                const Text('Touchez le dé pour lancer.'),
+                if (_pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
+                  Text('Lancers sans 6 : ${_missesSinceSix[_turn]}/3', style: titleStyle(13, color: JangColors.textSecondary)),
+              ] else ...[
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  _AnimatedDie(
+                    value: _die,
+                    rolling: _isDieAnimating,
+                    enabled: false,
+                    color: _colorOf(_turn),
+                    size: 72,
+                    onTap: _roll,
+                  ),
+                  const SizedBox(width: 10),
+                  Flexible(child: Text('Résultat : $_die · déplacez un pion dans les 10 secondes', textAlign: TextAlign.center, style: titleStyle(14, weight: 700))),
+                ]),
+                const SizedBox(height: 5),
+                const Text('Touchez un de vos pions sur le plateau pour le déplacer. Une question apparaîtra à son arrivée.'),
+              ],
+            ] else ...[
+              // Face-to-face local play: the die itself lives in the active
+              // player's own case on the board (no shared die here, no
+              // screen rotation — players simply look at their own corner).
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 CircleAvatar(radius: 14, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
                 const SizedBox(width: 8),
-                Text('Dé de ${_playerName(_turn)}', textAlign: TextAlign.center, style: titleStyle(17, weight: 800)),
+                Text('Au tour de ${_playerName(_turn)}', textAlign: TextAlign.center, style: titleStyle(17, weight: 800)),
               ]),
               const SizedBox(height: 6),
-              _AnimatedDie(
-                value: 0,
-                rolling: false,
-                enabled: !_done && !_resolvingQuestion,
-                color: _colorOf(_turn),
-                size: 88,
-                onTap: _roll,
+              Text(
+                _die == 0
+                    ? 'Touchez le dé dans votre case pour lancer.'
+                    : 'Résultat : $_die · touchez un de vos pions pour le déplacer.',
+                textAlign: TextAlign.center,
+                style: titleStyle(14, weight: 700),
               ),
-              const Text('Le dé apparaît devant le joueur actif. Touchez-le pour lancer.'),
-              if (_pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
+              if (_die == 0 && _pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
                 Text('Lancers sans 6 : ${_missesSinceSix[_turn]}/3', style: titleStyle(13, color: JangColors.textSecondary)),
-            ] else ...[
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                _AnimatedDie(
-                  value: _die,
-                  rolling: _isDieAnimating,
-                  enabled: false,
-                  color: _colorOf(_turn),
-                  size: 72,
-                  onTap: _roll,
-                ),
-                const SizedBox(width: 10),
-                Flexible(child: Text('Résultat : $_die · déplacez un pion dans les 10 secondes', textAlign: TextAlign.center, style: titleStyle(14, weight: 700))),
-              ]),
-              const SizedBox(height: 5),
-              const Text('Touchez un de vos pions sur le plateau pour le déplacer. Une question apparaîtra à son arrivée.'),
             ],
           ]),
         ),
@@ -1381,38 +1409,86 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         ]),
       ),
     );
-    // In local pass-and-play (one shared device around a table), the panel is
-    // rotated 180° for the far-side seats so it reads right-side up from
-    // their side of the table. In online mode each player has their own
-    // phone held upright, so the panel must never be rotated there.
-    final shouldRotate = !_onlineMode && _seatOf(_turn) >= 2;
-    return shouldRotate ? RotatedBox(quarterTurns: 2, child: panel) : panel;
+    // The panel never rotates: in online mode each player has their own
+    // phone held upright; in local face-to-face mode the die itself moves to
+    // the active player's own case on the board (see _board/_cornerDie), so
+    // no one needs to tilt their head or spin the device to read this text.
+    return panel;
   }
 
-  Widget _board(double side) => Card(
-        margin: EdgeInsets.zero,
-        child: Padding(
-          padding: const EdgeInsets.all(7),
-          child: GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTapDown: (details) => _handleBoardTap(details.localPosition, side - 14),
-            child: CustomPaint(
-              painter: _ClassicLudoBoardPainter(
-                colors: _playerColors,
-                pawns: _pawns,
-                shields: _shieldedPawns,
-                seats: List.generate(_playerCount, _seatOf),
-                movingPlayer: _movingPlayer,
-                movingPawn: _movingPawn,
-                movingFrom: _movingFrom,
-                movingTo: _movingTo,
-                moveProgress: Curves.easeInOutCubic.transform(_pawnMoveController.value),
-              ),
-              child: const SizedBox.expand(),
-            ),
+  /// Fixed screen positions (not board-rotated) for each of the four house
+  /// corners, used to anchor the face-to-face die so it always appears in
+  /// front of the active player without rotating anything.
+  static const _seatAlignments = <Alignment>[
+    Alignment(-0.6, -0.6), // seat 0 — top-left house
+    Alignment(0.6, -0.6), // seat 1 — top-right house
+    Alignment(0.6, 0.6), // seat 2 — bottom-right house
+    Alignment(-0.6, 0.6), // seat 3 — bottom-left house
+  ];
+
+  Widget _cornerDie(int seat, double paintSide) {
+    final isActive = !_onlineMode &&
+        _seatOf(_turn) == seat &&
+        _canAct &&
+        _movingPlayer == null &&
+        !_waitingForSquareQuestion &&
+        !_resolvingQuestion &&
+        !_done;
+    return Align(
+      alignment: _seatAlignments[seat],
+      child: AnimatedOpacity(
+        duration: const Duration(milliseconds: 220),
+        opacity: isActive ? 1 : 0,
+        child: IgnorePointer(
+          ignoring: !isActive,
+          child: _AnimatedDie(
+            value: _die,
+            rolling: _isDieAnimating,
+            enabled: isActive && _die == 0,
+            color: _colorOf(_turn),
+            size: paintSide * .17,
+            onTap: _roll,
           ),
         ),
-      );
+      ),
+    );
+  }
+
+  Widget _board(double side) {
+    final paintSide = side - 14;
+    return Card(
+      margin: EdgeInsets.zero,
+      child: Padding(
+        padding: const EdgeInsets.all(7),
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTapDown: (details) => _handleBoardTap(details.localPosition, paintSide),
+          child: SizedBox(
+            width: paintSide,
+            height: paintSide,
+            child: Stack(children: [
+              CustomPaint(
+                painter: _ClassicLudoBoardPainter(
+                  colors: _playerColors,
+                  pawns: _pawns,
+                  shields: _shieldedPawns,
+                  seats: List.generate(_playerCount, _seatOf),
+                  movingPlayer: _movingPlayer,
+                  movingPawn: _movingPawn,
+                  movingFrom: _movingFrom,
+                  movingTo: _movingTo,
+                  moveProgress: Curves.easeInOutCubic.transform(_pawnMoveController.value),
+                ),
+                child: const SizedBox.expand(),
+              ),
+              if (!_onlineMode)
+                for (var seat = 0; seat < 4; seat++) _cornerDie(seat, paintSide),
+            ]),
+          ),
+        ),
+      ),
+    );
+  }
 
   void _handleBoardTap(Offset point, double side) {
     if (_die == 0 || !_canAct || _waitingForSquareQuestion || _done) return;
@@ -1730,6 +1806,19 @@ class _ClassicLudoBoardPainter extends CustomPainter {
   }
 
   void _drawPawn(Canvas canvas, Offset center, double radius, Color color, {required bool shield}) {
+    if (shield) {
+      // A ring sized relative to the pawn itself (not a fixed font size) so
+      // it stays clearly visible whatever the pawn's on-screen size is —
+      // the old fixed 8px diamond glyph was effectively invisible.
+      canvas.drawCircle(
+        center + Offset(0, radius * .05),
+        radius * 1.45,
+        Paint()
+          ..color = const Color(0xFFFFC107)
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = max(1.6, radius * .26),
+      );
+    }
     canvas.drawOval(Rect.fromCenter(center: center + Offset(0, radius * .88), width: radius * 1.25, height: radius * .42),
         Paint()..color = const Color(0x30000000)..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2));
     final body = Path()
@@ -1743,8 +1832,17 @@ class _ClassicLudoBoardPainter extends CustomPainter {
     canvas.drawCircle(center + Offset(0, -radius * .30), radius * .46, Paint()..color = Colors.white);
     canvas.drawCircle(center + Offset(0, -radius * .30), radius * .34, Paint()..color = Color.lerp(color, Colors.white, .20)!);
     if (shield) {
-      final text = TextPainter(text: const TextSpan(text: '◆', style: TextStyle(color: Colors.white, fontSize: 8)), textDirection: TextDirection.ltr)..layout();
-      text.paint(canvas, center - Offset(text.width / 2, text.height / 2));
+      // A small gold badge on the pawn's head, scaled with the pawn — easy
+      // to spot even when several pawns are packed close together.
+      final badgeCenter = center + Offset(radius * .52, -radius * .62);
+      final badgeRadius = max(3.0, radius * .36);
+      canvas.drawCircle(badgeCenter, badgeRadius, Paint()..color = const Color(0xFFFFC107));
+      canvas.drawCircle(badgeCenter, badgeRadius, Paint()..color = Colors.white..style = PaintingStyle.stroke..strokeWidth = max(.8, badgeRadius * .18));
+      final text = TextPainter(
+        text: TextSpan(text: '◆', style: TextStyle(color: Colors.white, fontSize: badgeRadius * 1.3)),
+        textDirection: TextDirection.ltr,
+      )..layout();
+      text.paint(canvas, badgeCenter - Offset(text.width / 2, text.height / 2));
     }
   }
 
