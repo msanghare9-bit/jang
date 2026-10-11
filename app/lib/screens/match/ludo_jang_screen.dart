@@ -962,15 +962,17 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _moveTimer?.cancel();
     final shields = [for (final row in _shieldedPawns) {...row}];
     final shieldTurns = [for (final row in _shieldTurnsRemaining) [...row]];
-    if (!extraTurn) {
-      // Each completed opponent turn consumes one of the protected pawn's two turns.
-      for (var owner = 0; owner < _playerCount; owner++) {
-        if (owner == _turn) continue;
-        for (var pawn = 0; pawn < shieldTurns[owner].length; pawn++) {
-          if (shieldTurns[owner][pawn] <= 0) continue;
-          shieldTurns[owner][pawn]--;
-          if (shieldTurns[owner][pawn] == 0) shields[owner].remove(pawn);
-        }
+    // Each completed opponent turn consumes one of the protected pawn's two
+    // turns — including a bonus turn from rolling a 6, which is still a
+    // turn the opponent takes against the shielded player. Only skip the
+    // shield owner's own turn (whether or not it's a bonus one), since that
+    // isn't an opponent acting.
+    for (var owner = 0; owner < _playerCount; owner++) {
+      if (owner == _turn) continue;
+      for (var pawn = 0; pawn < shieldTurns[owner].length; pawn++) {
+        if (shieldTurns[owner][pawn] <= 0) continue;
+        shieldTurns[owner][pawn]--;
+        if (shieldTurns[owner][pawn] == 0) shields[owner].remove(pawn);
       }
     }
     setState(() {
