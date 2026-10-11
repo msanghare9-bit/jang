@@ -81,6 +81,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// on their own; reaching 3 forfeits the match for them.
   List<int> _autoRollStreak = List.filled(4, 0);
   static const _quickMessages = <String>['👋 Salut !', '👏 Bravo !', '😂 Haha !', '😮 Oh non !', '🔥 Vas-y !', '😅 Pas de chance !'];
+  static const _quickEmojis = <String>['👋', '👏', '😂', '😮', '🔥', '😅', '❤️', '👍'];
   int? _chatBubblePlayer;
   String? _chatBubbleText;
   Timer? _chatBubbleTimer;
@@ -239,21 +240,82 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   }
 
   Future<void> _openQuickMessages(int player) async {
+    final controller = TextEditingController();
     final text = await showModalBottomSheet<String>(
       context: context,
+      isScrollControlled: true,
       builder: (ctx) => SafeArea(
-        child: Wrap(
-          children: [
-            for (final message in _quickMessages)
-              ListTile(
-                title: Text(message, style: const TextStyle(fontSize: 18)),
-                onTap: () => Navigator.pop(ctx, message),
-              ),
-          ],
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(16, 14, 16, 14 + MediaQuery.of(ctx).viewInsets.bottom),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Envoyer un emoji', style: titleStyle(14, weight: 800)),
+                const SizedBox(height: 8),
+                Wrap(
+                  spacing: 6,
+                  children: [
+                    for (final emoji in _quickEmojis)
+                      InkWell(
+                        borderRadius: BorderRadius.circular(22),
+                        onTap: () => Navigator.pop(ctx, emoji),
+                        child: Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: Text(emoji, style: const TextStyle(fontSize: 26)),
+                        ),
+                      ),
+                  ],
+                ),
+                const Divider(height: 24),
+                Text('Messages rapides', style: titleStyle(14, weight: 800)),
+                for (final message in _quickMessages)
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(message, style: const TextStyle(fontSize: 17)),
+                    onTap: () => Navigator.pop(ctx, message),
+                  ),
+                const Divider(height: 24),
+                Text('Ou écrivez votre message', style: titleStyle(14, weight: 800)),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: controller,
+                        maxLength: 40,
+                        textInputAction: TextInputAction.send,
+                        decoration: const InputDecoration(
+                          hintText: 'Votre message…',
+                          isDense: true,
+                          counterText: '',
+                          border: OutlineInputBorder(),
+                        ),
+                        onSubmitted: (value) {
+                          final trimmed = value.trim();
+                          if (trimmed.isNotEmpty) Navigator.pop(ctx, trimmed);
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    IconButton.filled(
+                      icon: const Icon(Icons.send),
+                      onPressed: () {
+                        final trimmed = controller.text.trim();
+                        if (trimmed.isNotEmpty) Navigator.pop(ctx, trimmed);
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
-    if (text == null) return;
+    controller.dispose();
+    if (text == null || text.trim().isEmpty) return;
     _showChatBubble(player, text);
     if (_onlineMode && _roomId != null) {
       final id = '${DateTime.now().microsecondsSinceEpoch}-$player';
@@ -377,7 +439,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _autoRollStreak = List.filled(players, 0);
       _die = 0;
       _rollingPlayer = null;
-      _message = 'Au tour de ${_playerName(0)}';
+      _message = null;
       _done = false;
       _shieldAvailable = false;
       _pawns = List.generate(players, (_) => List.filled(_pawnsPerPlayer, -1));
@@ -1094,7 +1156,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _rollingPlayer = null;
       _die = 0;
       _shieldAvailable = false;
-      _message = extraTurn ? 'Vous avez obtenu 6 : ${_playerName(_turn)} rejoue !' : 'Au tour de ${_playerName(_turn)}';
+      _message = extraTurn ? 'Vous avez obtenu 6 : ${_playerName(_turn)} rejoue !' : null;
       _questionDeadline = null;
       _waitingForSquareQuestion = false;
       _resolvingQuestion = false;
@@ -1404,10 +1466,13 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       );
 
   Widget _gameView() => LayoutBuilder(builder: (context, constraints) {
-        final double boardSide = min(constraints.maxWidth - 20, max(190.0, constraints.maxHeight * .53)).toDouble();
+        // The board takes up as much of the screen as it can — bigger than
+        // before — while still leaving room above and below for the player
+        // row, the shield banner, and the legend.
+        final double boardSide = min(constraints.maxWidth - 8, max(220.0, constraints.maxHeight * .68)).toDouble();
         final activeName = _playerName(_turn);
         return Padding(
-          padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
+          padding: const EdgeInsets.fromLTRB(4, 6, 4, 6),
           child: Column(children: [
             _TurnGlow(
               color: _colorOf(_turn),
@@ -1416,7 +1481,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 child: Row(children: [
                   CircleAvatar(radius: 15, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
                   const SizedBox(width: 8),
-                  Expanded(child: Text(_message ?? 'Au tour de $activeName', maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
+                  Expanded(child: Text(_message ?? activeName, maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
                   IconButton(
                     tooltip: _soundEnabled ? 'Couper les effets sonores' : 'Activer les effets sonores',
                     visualDensity: VisualDensity.compact,
@@ -1584,22 +1649,10 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 const Text('Touchez un de vos pions sur le plateau pour le déplacer. Une question apparaîtra à son arrivée.'),
               ],
             ] else ...[
-              // Face-to-face local play: the die itself lives in the active
-              // player's own case on the board (no shared die here, no
-              // screen rotation — players simply look at their own corner).
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                CircleAvatar(radius: 14, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
-                const SizedBox(width: 8),
-                Text('Au tour de ${_playerName(_turn)}', textAlign: TextAlign.center, style: titleStyle(17, weight: 800)),
-              ]),
-              const SizedBox(height: 6),
-              Text(
-                _die == 0
-                    ? 'Touchez le dé dans votre case pour lancer.'
-                    : 'Résultat : $_die · touchez un de vos pions pour le déplacer.',
-                textAlign: TextAlign.center,
-                style: titleStyle(14, weight: 700),
-              ),
+              // Face-to-face local play: the die lives in the active
+              // player's own corner of the board and the top banner already
+              // shows whose turn it is, so this area stays empty instead of
+              // repeating "Au tour de…" / "Touchez le dé…" instructions.
               if (_die == 0 && _pawns[_turn].any((p) => p < 0) && _missesSinceSix[_turn] > 0)
                 Text('Lancers sans 6 : ${_missesSinceSix[_turn]}/3', style: titleStyle(13, color: JangColors.textSecondary)),
             ],
@@ -1615,24 +1668,37 @@ class _LudoJangScreenState extends State<LudoJangScreen>
 
   Widget _questionPanel() {
     final question = _question;
+    // The bubble's background is the color of whoever has to answer, so
+    // it's obvious at a glance whose question this is — with the text
+    // color flipped to stay readable on a light color like yellow.
+    final activeColor = _colorOf(_turn);
+    final onColor = activeColor.computeLuminance() > 0.5 ? Colors.black : Colors.white;
     final panel = Card(
       margin: const EdgeInsets.only(top: 5),
+      color: activeColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Row(children: [
-            Expanded(child: Text('Question · ${QuizBank.levelLabel(_level)}', style: titleStyle(14, weight: 800))),
-            Text('$_secondsRemaining s', style: titleStyle(14, weight: 800, color: _secondsRemaining <= 5 ? const Color(0xFFE31B23) : JangColors.snGreen)),
+            Expanded(child: Text('Question · ${QuizBank.levelLabel(_level)}', style: titleStyle(14, weight: 800, color: onColor))),
+            Text('$_secondsRemaining s', style: titleStyle(14, weight: 800, color: onColor)),
           ]),
-          LinearProgressIndicator(value: _secondsRemaining / 20, color: _secondsRemaining <= 5 ? const Color(0xFFE31B23) : JangColors.snGreen, minHeight: 4),
+          LinearProgressIndicator(value: _secondsRemaining / 20, color: onColor, backgroundColor: onColor.withValues(alpha: .25), minHeight: 4),
           Expanded(
-            child: Center(
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
-                child: SizedBox(
-                  width: max(220, MediaQuery.sizeOf(context).width - 48).toDouble(),
-                  child: Text(question.text.isEmpty ? question.question : '${question.text}\n${question.question}',
-                      textAlign: TextAlign.center, style: titleStyle(18, weight: 700)),
+            // Uses the panel's own actual width (not the full screen width)
+            // so the text fills the space it really has instead of being
+            // scaled down as if it had the whole screen to work with —
+            // that mismatch is what made the question text look tiny in
+            // the player's corner.
+            child: LayoutBuilder(
+              builder: (context, constraints) => Center(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: SizedBox(
+                    width: constraints.maxWidth,
+                    child: Text(question.text.isEmpty ? question.question : '${question.text}\n${question.question}',
+                        textAlign: TextAlign.center, style: titleStyle(21, weight: 700, color: onColor)),
+                  ),
                 ),
               ),
             ),
@@ -1640,12 +1706,17 @@ class _LudoJangScreenState extends State<LudoJangScreen>
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisExtent: 40, crossAxisSpacing: 6, mainAxisSpacing: 4),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisExtent: 44, crossAxisSpacing: 6, mainAxisSpacing: 4),
             itemCount: question.options.length,
             itemBuilder: (context, i) => OutlinedButton(
-              style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 5), visualDensity: VisualDensity.compact),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.white,
+                side: const BorderSide(color: Colors.white, width: 1.4),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                visualDensity: VisualDensity.compact,
+              ),
               onPressed: !_canAct || _secondsRemaining <= 0 ? null : () => _answer(i),
-              child: Text(question.options[i], maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
+              child: Text(question.options[i], maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black)),
             ),
           ),
         ]),
@@ -1714,14 +1785,16 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     return Align(
       alignment: _seatAlignments[seat],
       child: SizedBox(
-        width: paintSide * .82,
-        height: paintSide * .82,
-        // Tapping the panel (outside the answer buttons) flips it 180°,
-        // so any player at the table can turn it to face them.
+        width: paintSide * .92,
+        height: paintSide * .92,
+        // Tapping the panel (outside the answer buttons) turns it a quarter
+        // turn further each time — 0°, 90°, 180°, 270° — so it can be spun
+        // all the way around to face whichever side of the table someone
+        // is sitting on.
         child: GestureDetector(
           behavior: HitTestBehavior.translucent,
           onTap: () => setState(
-            () => _questionRotation = _questionRotation == 0 ? 2 : 0,
+            () => _questionRotation = (_questionRotation + 1) % 4,
           ),
           child: RotatedBox(
             quarterTurns: _questionRotation,
