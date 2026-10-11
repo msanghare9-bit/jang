@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../models.dart';
 import '../screens/classes/my_classes_screen.dart';
 import '../screens/match/match_screens.dart';
+import '../screens/match/xarit_screen.dart';
 import '../screens/mission/learn_mode.dart';
 import '../services/auth_service.dart';
 import '../services/class_service.dart';
@@ -105,6 +107,29 @@ class MyClassCard extends StatelessWidget {
 class MatchCard extends StatelessWidget {
   const MatchCard({super.key});
 
+  /// A red badge right on the home screen, counting pending friend
+  /// requests and match/Ludo challenges — so a Xarit notices right away
+  /// instead of having to open "Mes Xarit" to find out.
+  Widget _pendingBadge() {
+    final uid = AuthService.instance.profile.value?.uid;
+    if (uid == null) return const Icon(Icons.chevron_right, color: Colors.white);
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+      stream: XaritService.instance.incoming(uid),
+      builder: (context, reqSnap) => StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        stream: XaritService.instance.invitations(uid),
+        builder: (context, inviteSnap) {
+          final count = (reqSnap.data?.docs.length ?? 0) + (inviteSnap.data?.docs.length ?? 0);
+          if (count == 0) return const Icon(Icons.chevron_right, color: Colors.white);
+          return Badge(
+            label: Text('$count'),
+            backgroundColor: const Color(0xFFE31B23),
+            child: const Icon(Icons.chevron_right, color: Colors.white),
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -127,7 +152,7 @@ class MatchCard extends StatelessWidget {
                       style: TextStyle(color: Colors.white)),
                 ]),
               ),
-              const Icon(Icons.chevron_right, color: Colors.white),
+              _pendingBadge(),
             ]),
           ),
         ),
@@ -135,4 +160,3 @@ class MatchCard extends StatelessWidget {
     );
   }
 }
-
