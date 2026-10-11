@@ -51,6 +51,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   String _level = 'debutant';
   final Set<String> _selectedDomains = {..._domains};
   int _playerCount = 2;
+  int _pawnsPerPlayer = 4;
   bool _busy = false;
   bool _soundEnabled = true;
   final AudioPlayer _dicePlayer = AudioPlayer();
@@ -119,9 +120,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
           _clearPawnMoveVisual();
         }
       });
-    _pawns = List.generate(4, (_) => List.filled(4, -1));
+    _pawns = List.generate(4, (_) => List.filled(_pawnsPerPlayer, -1));
     _shieldedPawns = List.generate(4, (_) => <int>{});
-    _shieldTurnsRemaining = List.generate(4, (_) => List.filled(4, 0));
+    _shieldTurnsRemaining = List.generate(4, (_) => List.filled(_pawnsPerPlayer, 0));
     _streaks = List.filled(4, 0);
     _missesSinceSix = List.filled(4, 0);
     _correctAnswers = List.filled(4, 0);
@@ -244,7 +245,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             'Quand un pion arrive sur une case, vous avez 20 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
             'Si le délai de 20 secondes expire, le pion retourne lui aussi à la case qu’il occupait avant son déplacement.\n\n'
             'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un Ndimbal : tous vos pions sont protégés contre les captures pendant les deux prochains tours des adversaires.\n\n'
-            'Le premier joueur qui amène ses quatre pions à l’arrivée gagne.',
+            'Le premier joueur qui amène tous ses pions à l’arrivée gagne.',
           ),
         ),
         actions: [
@@ -315,9 +316,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _message = 'Au tour de ${_playerName(0)}';
       _done = false;
       _shieldAvailable = false;
-      _pawns = List.generate(players, (_) => List.filled(4, -1));
+      _pawns = List.generate(players, (_) => List.filled(_pawnsPerPlayer, -1));
       _shieldedPawns = List.generate(players, (_) => <int>{});
-      _shieldTurnsRemaining = List.generate(players, (_) => List.filled(4, 0));
+      _shieldTurnsRemaining = List.generate(players, (_) => List.filled(_pawnsPerPlayer, 0));
       _questionDeadline = null;
       _waitingForSquareQuestion = false;
       _resolvingQuestion = false;
@@ -340,7 +341,10 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   List<int> _encodePawns(List<List<int>> pawns) =>
       [for (final row in pawns) ...row];
 
-  List<List<int>> _decodePawns(dynamic value, int playerCount) {
+  // `pawnsPerPlayer` must match what was used to encode this room's data —
+  // it is read from the room document itself (see `_watchRoom`), never
+  // hardcoded, so both phones agree on how many pawns each player has.
+  List<List<int>> _decodePawns(dynamic value, int playerCount, int pawnsPerPlayer) {
     final raw = value is List ? value : const [];
     // Read old room documents if one was written by a previous app version.
     if (raw.isNotEmpty && raw.first is List) {
@@ -352,23 +356,23 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     return List.generate(
       playerCount,
       (player) => List.generate(
-        4,
-        (pawn) => player * 4 + pawn < flat.length
-            ? flat[player * 4 + pawn]
+        pawnsPerPlayer,
+        (pawn) => player * pawnsPerPlayer + pawn < flat.length
+            ? flat[player * pawnsPerPlayer + pawn]
             : -1,
       ),
     );
   }
 
-  List<int> _encodeShieldedPawns(List<Set<int>> shields) => [
+  List<int> _encodeShieldedPawns(List<Set<int>> shields, int pawnsPerPlayer) => [
         for (var player = 0; player < shields.length; player++)
-          for (final pawn in shields[player]) player * 4 + pawn,
+          for (final pawn in shields[player]) player * pawnsPerPlayer + pawn,
       ];
 
   List<int> _encodeShieldTurns(List<List<int>> turns) =>
       [for (final row in turns) ...row];
 
-  List<Set<int>> _decodeShieldedPawns(dynamic value, int playerCount) {
+  List<Set<int>> _decodeShieldedPawns(dynamic value, int playerCount, int pawnsPerPlayer) {
     final raw = value is List ? value : const [];
     final shields = List.generate(playerCount, (_) => <int>{});
     // Read old room documents if one was written by a previous app version.
@@ -381,8 +385,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     for (final value in raw) {
       if (value is! num) continue;
       final index = value.toInt();
-      final player = index ~/ 4;
-      final pawn = index % 4;
+      final player = index ~/ pawnsPerPlayer;
+      final pawn = index % pawnsPerPlayer;
       if (index >= 0 && player < playerCount) shields[player].add(pawn);
     }
     return shields;
@@ -391,14 +395,15 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   List<List<int>> _decodeShieldTurns(
     dynamic value,
     int playerCount,
+    int pawnsPerPlayer,
     List<Set<int>> shields,
   ) {
     final raw = value is List ? value : const [];
     final flat = raw.whereType<num>().map((turns) => turns.toInt()).toList();
     return List.generate(
       playerCount,
-      (player) => List.generate(4, (pawn) {
-        final index = player * 4 + pawn;
+      (player) => List.generate(pawnsPerPlayer, (pawn) {
+        final index = player * pawnsPerPlayer + pawn;
         if (index < flat.length) return flat[index].clamp(0, 2).toInt();
         // Older rooms used a one-turn Ndimbal marker.
         return player < shields.length && shields[player].contains(pawn) ? 1 : 0;
@@ -412,7 +417,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     final code = await _newRoomCode();
     final ref = FirebaseFirestore.instance.collection('ludoGames').doc(code);
     const players = 2;
-    final initialPawns = List.filled(players * 4, -1);
+    final pawnsPerPlayer = _pawnsPerPlayer;
+    final initialPawns = List.filled(players * pawnsPerPlayer, -1);
     await ref.set({
       'code': code,
       'hostUid': profile.uid,
@@ -421,6 +427,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       'playerNames': [profile.publicName],
       'level': _level,
       'domains': _selectedDomains.toList(),
+      'pawnsPerPlayer': pawnsPerPlayer,
       'questions': [for (final q in questions) q.toMap()],
       'questionIndex': -1,
       'questionDeadline': DateTime.now().millisecondsSinceEpoch,
@@ -436,7 +443,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         'shieldAvailable': false,
         'pawns': initialPawns,
         'shieldedPawns': <int>[],
-        'shieldTurnsRemaining': List.filled(players * 4, 0),
+        'shieldTurnsRemaining': List.filled(players * pawnsPerPlayer, 0),
         'correctAnswers': List.filled(players, 0),
         'incorrectAnswers': List.filled(players, 0),
         'moveAnimation': null,
@@ -510,14 +517,19 @@ class _LudoJangScreenState extends State<LudoJangScreen>
           .toList();
       final uids = List<String>.from(data['playerUids'] ?? const <String>[]);
       final names = List<String>.from(data['playerNames'] ?? const <String>[]);
-      final pawns = _decodePawns(data['pawns'], uids.length.clamp(2, 4).toInt());
+      // Older rooms were always created with 4 pawns per player; read the
+      // field when present so both phones in a room always agree.
+      final pawnsPerPlayer = (data['pawnsPerPlayer'] as num? ?? 4).toInt().clamp(1, 4).toInt();
+      final pawns = _decodePawns(data['pawns'], uids.length.clamp(2, 4).toInt(), pawnsPerPlayer);
       final shielded = _decodeShieldedPawns(
         data['shieldedPawns'],
         uids.length.clamp(2, 4).toInt(),
+        pawnsPerPlayer,
       );
       final shieldTurns = _decodeShieldTurns(
         data['shieldTurnsRemaining'],
         uids.length.clamp(2, 4).toInt(),
+        pawnsPerPlayer,
         shielded,
       );
       final previousDie = _die;
@@ -539,6 +551,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
           ..clear()
           ..addAll(List<String>.from(data['domains'] ?? const <String>[]));
         _playerCount = uids.length.clamp(2, 4).toInt();
+        _pawnsPerPlayer = pawnsPerPlayer;
         _questionIndex = (data['questionIndex'] as num? ?? -1).toInt();
         _waitingForSquareQuestion = data['waitingForSquareQuestion'] == true;
         _resolvingQuestion = data['resolvingQuestion'] == true;
@@ -617,7 +630,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         'done': _done,
         'shieldAvailable': _shieldAvailable,
         'pawns': _encodePawns(_pawns),
-        'shieldedPawns': _encodeShieldedPawns(_shieldedPawns),
+        'shieldedPawns': _encodeShieldedPawns(_shieldedPawns, _pawnsPerPlayer),
         'shieldTurnsRemaining': _encodeShieldTurns(_shieldTurnsRemaining),
         'correctAnswers': _correctAnswers,
         'incorrectAnswers': _incorrectAnswers,
@@ -656,7 +669,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       }
       final targetCell = target < 51 ? (_startCells[_seatOf(_turn)] + target) % 52 : -1;
       if (_shieldAvailable) {
-        for (var pawn = 0; pawn < 4; pawn++) {
+        for (var pawn = 0; pawn < pawns[_turn].length; pawn++) {
           shields[_turn].add(pawn);
           shieldTurns[_turn][pawn] = 2;
         }
@@ -664,7 +677,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       if (targetCell >= 0 && !_safeCells.contains(targetCell)) {
         for (var player = 0; player < _playerCount; player++) {
           if (player == _turn) continue;
-          for (var pawn = 0; pawn < 4; pawn++) {
+          for (var pawn = 0; pawn < pawns[player].length; pawn++) {
             final progress = pawns[player][pawn];
             final cell = progress < 0 || progress >= 51 ? -1 : (_startCells[_seatOf(player)] + progress) % 52;
             if (cell == targetCell) {
@@ -791,7 +804,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
 
   void _autoMove() {
     if (!mounted || !_canAct || _die == 0 || _waitingForSquareQuestion || _resolvingQuestion || _done) return;
-    final movable = List<int>.generate(4, (i) => i).where((i) {
+    final movable = List<int>.generate(_pawns[_turn].length, (i) => i).where((i) {
       final p = _pawns[_turn][i];
       return p != 57 && (p < 0 ? _die == 6 : p + _die <= 57);
     }).toList();
@@ -853,7 +866,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     required bool initiatedLocally,
     bool rollback = false,
   }) {
-    if (!mounted || player < 0 || player >= _playerCount || pawn < 0 || pawn >= 4) return;
+    if (!mounted || player < 0 || player >= _playerCount || pawn < 0 || pawn >= _pawns[player].length) return;
     _lastMoveId = id;
     _moveInitiatedLocally = initiatedLocally;
     _movingPlayer = player;
@@ -953,7 +966,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       // Each completed opponent turn consumes one of the protected pawn's two turns.
       for (var owner = 0; owner < _playerCount; owner++) {
         if (owner == _turn) continue;
-        for (var pawn = 0; pawn < 4; pawn++) {
+        for (var pawn = 0; pawn < shieldTurns[owner].length; pawn++) {
           if (shieldTurns[owner][pawn] <= 0) continue;
           shieldTurns[owner][pawn]--;
           if (shieldTurns[owner][pawn] == 0) shields[owner].remove(pawn);
@@ -1120,6 +1133,21 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             ],
           ),
           const SizedBox(height: 20),
+          Text('Nombre de pions', style: titleStyle(18, weight: 800)),
+          const SizedBox(height: 4),
+          const Text('Avec moins de 4 pions, la partie va plus vite : chaque joueur gagne dès que tous ses pions sont arrivés.'),
+          const SizedBox(height: 8),
+          SegmentedButton<int>(
+            segments: const [
+              ButtonSegment(value: 1, label: Text('1')),
+              ButtonSegment(value: 2, label: Text('2')),
+              ButtonSegment(value: 3, label: Text('3')),
+              ButtonSegment(value: 4, label: Text('4')),
+            ],
+            selected: {_pawnsPerPlayer},
+            onSelectionChanged: (value) => setState(() => _pawnsPerPlayer = value.first),
+          ),
+          const SizedBox(height: 20),
           Text(_onlineMode ? 'Partie en ligne' : 'Nombre de joueurs', style: titleStyle(18, weight: 800)),
           const SizedBox(height: 8),
           if (!_onlineMode) SegmentedButton<int>(
@@ -1210,7 +1238,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                     Padding(
                       padding: const EdgeInsets.only(left: 4),
                       child: Tooltip(
-                        message: '${_playerName(player)} · ${_pawns[player].where((p) => p == 57).length}/4 arrivés · série ${_streaks[player]}/5',
+                        message: '${_playerName(player)} · ${_pawns[player].where((p) => p == 57).length}/${_pawns[player].length} arrivés · série ${_streaks[player]}/5',
                         child: CircleAvatar(
                           radius: 12,
                           backgroundColor: player == _turn ? _colorOf(player) : _colorOf(player).withValues(alpha: .35),
@@ -1498,7 +1526,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     const pawnOffsets = <Offset>[Offset.zero, Offset(-.2, -.2), Offset(.2, -.2), Offset.zero];
     var closest = -1;
     var distance = unit * .9;
-    for (var pawn = 0; pawn < 4; pawn++) {
+    for (var pawn = 0; pawn < _pawns[_turn].length; pawn++) {
       if (!_canMovePawn(pawn)) continue;
       final progress = _pawns[_turn][pawn];
       late Offset center;
@@ -1695,8 +1723,11 @@ class _ClassicLudoBoardPainter extends CustomPainter {
       ];
       final playerIndex = seats.indexOf(player);
       if (playerIndex < 0) continue;
-      for (var pawn = 0; pawn < 4; pawn++) {
-        final progress = pawn < pawns[playerIndex].length ? pawns[playerIndex][pawn] : -1;
+      // Only draw the pawns this player actually has — with fewer than 4
+      // pawns chosen for the game, the unused yard slots stay empty instead
+      // of showing phantom pawns.
+      for (var pawn = 0; pawn < pawns[playerIndex].length; pawn++) {
+        final progress = pawns[playerIndex][pawn];
         final isMoving = playerIndex == movingPlayer && pawn == movingPawn;
         if (progress < 0 && !isMoving) _drawPawn(canvas, slots[pawn], unit * .43, colors[player], shield: false);
         if (progress == 57 && !isMoving) {
@@ -1896,4 +1927,3 @@ class _TurnGlowState extends State<_TurnGlow> with SingleTickerProviderStateMixi
         child: widget.child,
       );
 }
-
