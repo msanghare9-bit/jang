@@ -1381,7 +1381,12 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         ]),
       ),
     );
-    return _seatOf(_turn) >= 2 ? RotatedBox(quarterTurns: 2, child: panel) : panel;
+    // In local pass-and-play (one shared device around a table), the panel is
+    // rotated 180° for the far-side seats so it reads right-side up from
+    // their side of the table. In online mode each player has their own
+    // phone held upright, so the panel must never be rotated there.
+    final shouldRotate = !_onlineMode && _seatOf(_turn) >= 2;
+    return shouldRotate ? RotatedBox(quarterTurns: 2, child: panel) : panel;
   }
 
   Widget _board(double side) => Card(
