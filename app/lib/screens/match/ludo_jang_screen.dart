@@ -80,10 +80,18 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// them instead of rolling themselves. Resets to 0 the moment they roll
   /// on their own; reaching 3 forfeits the match for them.
   List<int> _autoRollStreak = List.filled(4, 0);
+  static const _quickMessages = <String>['👋 Salut !', '👏 Bravo !', '😂 Haha !', '😮 Oh non !', '🔥 Vas-y !', '😅 Pas de chance !'];
+  int? _chatBubblePlayer;
+  String? _chatBubbleText;
+  Timer? _chatBubbleTimer;
+  String? _lastChatId;
   DateTime? _questionDeadline;
   int _secondsRemaining = 20;
   bool _waitingForSquareQuestion = false;
   bool _resolvingQuestion = false;
+  // Lets any player flip the question panel 180° just by tapping it —
+  // handy when the panel's corner isn't easy for them to read from.
+  int _questionRotation = 0;
   int? _pendingPawnIndex;
   int? _pendingOrigin;
   int? _pendingTarget;
@@ -206,6 +214,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _questionTimer?.cancel();
     _moveTimer?.cancel();
     _rollTimer?.cancel();
+    _chatBubbleTimer?.cancel();
     _roomCodeController.dispose();
     _pawnMoveController.dispose();
     unawaited(_dicePlayer.dispose());
@@ -219,6 +228,54 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     if (!_onlineMode) return true;
     final uid = AuthService.instance.profile.value?.uid;
     return uid != null && _turn < _roomUids.length && _roomUids[_turn] == uid;
+  }
+
+  /// Local face-to-face: anyone sharing the device can send as any player.
+  /// Online: only the person whose own phone this is can send as themselves.
+  bool _canSendChatAs(int player) {
+    if (!_onlineMode) return true;
+    final uid = AuthService.instance.profile.value?.uid;
+    return uid != null && player < _roomUids.length && _roomUids[player] == uid;
+  }
+
+  Future<void> _openQuickMessages(int player) async {
+    final text = await showModalBottomSheet<String>(
+      context: context,
+      builder: (ctx) => SafeArea(
+        child: Wrap(
+          children: [
+            for (final message in _quickMessages)
+              ListTile(
+                title: Text(message, style: const TextStyle(fontSize: 18)),
+                onTap: () => Navigator.pop(ctx, message),
+              ),
+          ],
+        ),
+      ),
+    );
+    if (text == null) return;
+    _showChatBubble(player, text);
+    if (_onlineMode && _roomId != null) {
+      final id = '${DateTime.now().microsecondsSinceEpoch}-$player';
+      _lastChatId = id;
+      try {
+        await FirebaseFirestore.instance.collection('ludoGames').doc(_roomId).update({
+          'chatMessage': {'id': id, 'player': player, 'text': text},
+        });
+      } catch (_) {}
+    }
+  }
+
+  void _showChatBubble(int player, String text) {
+    if (!mounted) return;
+    _chatBubbleTimer?.cancel();
+    setState(() {
+      _chatBubblePlayer = player;
+      _chatBubbleText = text;
+    });
+    _chatBubbleTimer = Timer(const Duration(seconds: 3), () {
+      if (mounted) setState(() { _chatBubblePlayer = null; _chatBubbleText = null; });
+    });
   }
 
   int _seatOf(int player) => _playerCount == 2 ? player * 2 : player;
@@ -332,6 +389,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pendingPawnIndex = null;
       _pendingOrigin = null;
       _pendingTarget = null;
+      _questionRotation = 0;
     });
     _armRollTimer();
   }
@@ -599,6 +657,15 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         }
       } else if (_movingPlayer != null && !_moveInitiatedLocally) {
         _clearPawnMoveVisual();
+      }
+      final rawChat = data['chatMessage'];
+      if (rawChat is Map) {
+        final chatId = '${rawChat['id'] ?? ''}';
+        final chatText = '${rawChat['text'] ?? ''}';
+        if (chatId.isNotEmpty && chatId != _lastChatId && chatText.isNotEmpty) {
+          _lastChatId = chatId;
+          _showChatBubble((rawChat['player'] as num? ?? 0).toInt(), chatText);
+        }
       }
       if (_waitingForSquareQuestion && _questionDeadline != deadline) {
         _questionDeadline = deadline;
@@ -957,6 +1024,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _waitingForSquareQuestion = true;
       _questionDeadline = deadline;
       _secondsRemaining = 20;
+      _questionRotation = 0;
       _message = '${_playerName(player)}, réponds à la question de cette case.';
       _movingPlayer = null;
       _movingPawn = null;
@@ -1386,29 +1454,41 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                     for (var player = 0; player < _playerCount; player++)
                       Padding(
                         padding: const EdgeInsets.only(right: 6),
-                        child: OutlinedButton.icon(
-                          onPressed: () => _showPlayerAnswerStats(player),
-                          style: OutlinedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                            visualDensity: VisualDensity.compact,
-                            minimumSize: const Size(0, 30),
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          OutlinedButton.icon(
+                            onPressed: () => _showPlayerAnswerStats(player),
+                            style: OutlinedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              visualDensity: VisualDensity.compact,
+                              minimumSize: const Size(0, 30),
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                            icon: Icon(
+                              _shieldedPawns[player].isNotEmpty ? Icons.shield_outlined : Icons.quiz_outlined,
+                              size: 16,
+                              color: _colorOf(player),
+                            ),
+                            label: Row(mainAxisSize: MainAxisSize.min, children: [
+                              Text(_playerName(player), maxLines: 1, overflow: TextOverflow.ellipsis),
+                              const SizedBox(width: 6),
+                              const Icon(Icons.check, size: 14, color: JangColors.snGreen),
+                              Text('${_correctAnswers[player]}'),
+                              const SizedBox(width: 4),
+                              const Icon(Icons.close, size: 14, color: Color(0xFFE31B23)),
+                              Text('${_incorrectAnswers[player]}'),
+                            ]),
                           ),
-                          icon: Icon(
-                            _shieldedPawns[player].isNotEmpty ? Icons.shield_outlined : Icons.quiz_outlined,
-                            size: 16,
-                            color: _colorOf(player),
-                          ),
-                          label: Row(mainAxisSize: MainAxisSize.min, children: [
-                            Text(_playerName(player), maxLines: 1, overflow: TextOverflow.ellipsis),
-                            const SizedBox(width: 6),
-                            const Icon(Icons.check, size: 14, color: JangColors.snGreen),
-                            Text('${_correctAnswers[player]}'),
-                            const SizedBox(width: 4),
-                            const Icon(Icons.close, size: 14, color: Color(0xFFE31B23)),
-                            Text('${_incorrectAnswers[player]}'),
-                          ]),
-                        ),
+                          if (_canSendChatAs(player))
+                            IconButton(
+                              onPressed: () => _openQuickMessages(player),
+                              tooltip: 'Envoyer un petit message',
+                              visualDensity: VisualDensity.compact,
+                              padding: EdgeInsets.zero,
+                              constraints: const BoxConstraints(minWidth: 30, minHeight: 30),
+                              icon: Icon(Icons.chat_bubble_outline, size: 17, color: _colorOf(player)),
+                            ),
+                          _playerCardDie(player),
+                        ]),
                       ),
                   ],
                 ),
@@ -1587,30 +1667,27 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     Alignment(-0.6, 0.6), // seat 3 — bottom-left house
   ];
 
-  Widget _cornerDie(int seat, double paintSide) {
+  /// Local face-to-face only: the die appears right next to the active
+  /// player's own name card above the board — like the die next to the
+  /// avatar in the reference screenshot — instead of sitting on the board.
+  Widget _playerCardDie(int player) {
     final isActive = !_onlineMode &&
-        _seatOf(_turn) == seat &&
+        _turn == player &&
         _canAct &&
         _movingPlayer == null &&
         !_waitingForSquareQuestion &&
         !_resolvingQuestion &&
         !_done;
-    return Align(
-      alignment: _seatAlignments[seat],
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 220),
-        opacity: isActive ? 1 : 0,
-        child: IgnorePointer(
-          ignoring: !isActive,
-          child: _AnimatedDie(
-            value: _die,
-            rolling: _isDieAnimating,
-            enabled: isActive && _die == 0,
-            color: _colorOf(_turn),
-            size: paintSide * .17,
-            onTap: _roll,
-          ),
-        ),
+    if (!isActive) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.only(left: 4),
+      child: _AnimatedDie(
+        value: _die,
+        rolling: _isDieAnimating,
+        enabled: _die == 0,
+        color: _colorOf(player),
+        size: 30,
+        onTap: _roll,
       ),
     );
   }
@@ -1626,7 +1703,46 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       child: SizedBox(
         width: paintSide * .82,
         height: paintSide * .82,
-        child: _questionPanel(),
+        // Tapping the panel (outside the answer buttons) flips it 180°,
+        // so any player at the table can turn it to face them.
+        child: GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: () => setState(
+            () => _questionRotation = _questionRotation == 0 ? 2 : 0,
+          ),
+          child: RotatedBox(
+            quarterTurns: _questionRotation,
+            child: _questionPanel(),
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// A small speech bubble showing a quick message a player just sent,
+  /// anchored near their own corner of the board, visible to everyone —
+  /// online or face-to-face — for a few seconds before it fades away.
+  Widget _chatBubbleOverlay(double paintSide) {
+    final player = _chatBubblePlayer!;
+    final seat = _seatOf(player);
+    return Align(
+      alignment: _seatAlignments[seat],
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxWidth: paintSide * .55),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: _colorOf(player), width: 2),
+            boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))],
+          ),
+          child: Text(
+            _chatBubbleText ?? '',
+            textAlign: TextAlign.center,
+            style: titleStyle(14, weight: 700),
+          ),
+        ),
       ),
     );
   }
@@ -1658,9 +1774,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 ),
                 child: const SizedBox.expand(),
               ),
-              if (!_onlineMode)
-                for (var seat = 0; seat < 4; seat++) _cornerDie(seat, paintSide),
               if (!_onlineMode && _waitingForSquareQuestion) _cornerQuestionPanel(paintSide),
+              if (_chatBubblePlayer != null && _chatBubblePlayer! < _playerCount) _chatBubbleOverlay(paintSide),
             ]),
           ),
         ),
