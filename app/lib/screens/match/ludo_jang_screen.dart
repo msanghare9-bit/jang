@@ -11,10 +11,19 @@ import '../../services/auth_service.dart';
 import '../../services/quiz_bank.dart';
 import '../../theme.dart';
 import '../../widgets/jang_ui.dart';
+import 'xarit_screen.dart';
 
 /// A Ludo game whose moves are earned by answering English questions.
 class LudoJangScreen extends StatefulWidget {
-  const LudoJangScreen({super.key});
+  /// Set when opened from an accepted Xarit challenge: joins this room code
+  /// automatically instead of showing the setup screen.
+  final String? joinCode;
+  /// Set when opened to challenge a Xarit friend to Ludo: creates an online
+  /// room as usual, but also sends that friend a match invitation once the
+  /// room's code is known.
+  final String? challengeFriendUid;
+  final String? challengeFriendName;
+  const LudoJangScreen({super.key, this.joinCode, this.challengeFriendUid, this.challengeFriendName});
 
   @override
   State<LudoJangScreen> createState() => _LudoJangScreenState();
@@ -142,6 +151,17 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _correctAnswers = List.filled(4, 0);
     _incorrectAnswers = List.filled(4, 0);
     unawaited(_loadSoundPreference());
+    // Opened from an accepted Xarit challenge, or to challenge a Xarit
+    // friend: both start from the "En ligne" setup, so switch to it now.
+    if (widget.joinCode != null || widget.challengeFriendUid != null) {
+      _onlineMode = true;
+    }
+    if (widget.joinCode != null) {
+      _roomCodeController.text = widget.joinCode!;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _joinOnlineRoom();
+      });
+    }
   }
 
   Future<void> _loadSoundPreference() async {
@@ -237,6 +257,35 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     if (!_onlineMode) return true;
     final uid = AuthService.instance.profile.value?.uid;
     return uid != null && player < _roomUids.length && _roomUids[player] == uid;
+  }
+
+  /// Can offer to add [player] as a Xarit (friend): only in online matches,
+  /// only for opponents (not myself), and only when we know their uid.
+  bool _canAddXarit(int player) {
+    final uid = AuthService.instance.profile.value?.uid;
+    return _onlineMode &&
+        uid != null &&
+        player >= 0 &&
+        player < _roomUids.length &&
+        _roomUids[player].isNotEmpty &&
+        _roomUids[player] != uid;
+  }
+
+  Future<void> _addXarit(int player) async {
+    final me = AuthService.instance.profile.value;
+    if (me == null || player >= _roomUids.length) return;
+    try {
+      await XaritService.instance.requestFriendByUid(me, _roomUids[player], _playerName(player));
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Demande envoyée à ${_playerName(player)}.')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$e'.replaceFirst('Exception: ', ''))));
+      }
+    }
   }
 
   Future<void> _openQuickMessages(int player) async {
@@ -588,6 +637,19 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _questions = questions;
     });
     _watchRoom(ref.id);
+    if (widget.challengeFriendUid != null) {
+      try {
+        await XaritService.instance.inviteToLudo(profile, widget.challengeFriendUid!, code);
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Défi envoyé à ${widget.challengeFriendName ?? "ton Xarit"}.')),
+          );
+        }
+      } catch (_) {
+        // The room is still created and joinable by code even if the
+        // Xarit invitation itself fails to send (e.g. offline briefly).
+      }
+    }
   }
 
   Future<void> _joinOnlineRoom() async {
@@ -662,6 +724,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       );
       final previousDie = _die;
       final previousTurn = _turn;
+      final wasDone = _done;
       final rawDeadline = data['questionDeadline'];
       final deadline = rawDeadline is num
           ? DateTime.fromMillisecondsSinceEpoch(rawDeadline.toInt())
@@ -701,6 +764,12 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _shieldTurnsRemaining = shieldTurns;
         _onlineReady = data['status'] == 'playing';
       });
+      // The match just ended on the other phone (a win, a quit, or a
+      // timeout forfeit) — tell this player clearly instead of letting the
+      // banner text change silently underneath them.
+      if (!wasDone && _done) {
+        _announceMatchEnd(_message?.isNotEmpty == true ? _message! : 'La partie est terminée.');
+      }
       final rawMove = data['moveAnimation'];
       if (rawMove is Map) {
         final moveId = '${rawMove['id'] ?? ''}';
@@ -903,6 +972,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     });
     if (won) {
       _saveOnlineState();
+      _announceMatchEnd('${_playerName(_turn)} remporte la partie !');
       return;
     }
     _saveOnlineState();
@@ -1314,6 +1384,48 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _done = true;
         _message = message;
       });
+      _announceMatchEnd(message);
+    }
+  }
+
+  /// Always tells everyone, clearly, that the match is over, why, and who
+  /// won or lost — instead of just changing a line of text in the banner —
+  /// then lets them choose what to do next.
+  Future<void> _announceMatchEnd(String message) async {
+    if (!mounted) return;
+    final myUid = AuthService.instance.profile.value?.uid;
+    final opponent = myUid == null
+        ? -1
+        : _roomUids.indexWhere((uid) => uid.isNotEmpty && uid != myUid);
+    final choice = await showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Partie terminée'),
+        content: Text(message),
+        actions: [
+          if (_canAddXarit(opponent))
+            TextButton.icon(
+              onPressed: () => _addXarit(opponent),
+              icon: const Icon(Icons.person_add_alt, size: 18),
+              label: const Text('Ajouter comme Xarit'),
+            ),
+          TextButton(onPressed: () => Navigator.pop(ctx, 'quit'), child: const Text('Quitter')),
+          FilledButton(onPressed: () => Navigator.pop(ctx, 'replay'), child: const Text('Nouvelle partie')),
+        ],
+      ),
+    );
+    if (!mounted) return;
+    if (choice == 'replay') {
+      setState(() {
+        _questions = const [];
+        _done = false;
+        _onlineReady = false;
+        _roomId = null;
+        _roomCode = null;
+      });
+    } else if (choice == 'quit') {
+      Navigator.pop(context);
     }
   }
 
@@ -1322,6 +1434,12 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         children: [
           Text('Apprenez en jouant', style: titleStyle(22, weight: 800)),
           const SizedBox(height: 8),
+          if (widget.challengeFriendName != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Text('Défi à ${widget.challengeFriendName} : choisis les options puis crée la partie.',
+                  style: titleStyle(14, weight: 700, color: JangColors.snGreen)),
+            ),
           Text(_onlineMode
               ? 'Créez une partie et partagez son code, ou rejoignez un ami avec son code.'
               : 'Jouez à plusieurs sur ce téléphone. Lancez le dé et répondez à la question de la case où arrive votre pion.'),
@@ -1556,6 +1674,23 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                                     height: 34,
                                     decoration: BoxDecoration(color: _colorOf(player), shape: BoxShape.circle),
                                     child: const Icon(Icons.chat_bubble, size: 19, color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (_canAddXarit(player))
+                            Padding(
+                              padding: const EdgeInsets.only(left: 4),
+                              child: Tooltip(
+                                message: 'Ajouter comme Xarit',
+                                child: InkWell(
+                                  borderRadius: BorderRadius.circular(20),
+                                  onTap: () => _addXarit(player),
+                                  child: Container(
+                                    width: 34,
+                                    height: 34,
+                                    decoration: BoxDecoration(color: _colorOf(player), shape: BoxShape.circle),
+                                    child: const Icon(Icons.person_add_alt, size: 18, color: Colors.white),
                                   ),
                                 ),
                               ),
