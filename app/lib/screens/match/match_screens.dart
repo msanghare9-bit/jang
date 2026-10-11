@@ -544,7 +544,7 @@ class MatchSetupScreen extends StatefulWidget {
 }
 
 class _MatchSetupScreenState extends State<MatchSetupScreen> {
-  final Set<String> _domains = {...QuizBank.domains};
+  final Set<String> _domains = {};
   String _level = QuizBank.levels.first;
   int _count = 10;
   String _opponent = 'aucun';
