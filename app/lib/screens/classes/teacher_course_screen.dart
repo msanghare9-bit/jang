@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+=import 'package:flutter/material.dart';
 
 import '../../models.dart';
 import '../../services/auth_service.dart';
@@ -17,11 +17,15 @@ import '../../widgets/jang_ui.dart';
 ///    fonction langagière réelle. Le professeur peut répondre à Kocc pour
 ///    ajuster ; les conseils de Kocc eux-mêmes ne sont pas modifiables à la
 ///    main, seule la discussion les fait évoluer.
-/// 2) Une fois cette approche validée, Kocc rédige DEUX documents :
-///    - la leçon complète pour le professeur (avec le corrigé) : jamais
-///      visible par les élèves et jamais ajoutable à une classe ; peut être
-///      exportée en PDF ou partagée avec les autres professeurs (stockée à
-///      part, jamais dans les contenus de classe) ;
+/// 2) Une fois cette approche validée, Kocc rédige DEUX documents, en DEUX
+///    appels séparés à l'IA (jamais un seul texte à découper avec un
+///    marqueur) pour que chaque document soit toujours entier et placé
+///    dans la bonne case :
+///    - la leçon complète pour le professeur (avec le corrigé), prévue pour
+///      une séance de 120 minutes : jamais visible par les élèves et jamais
+///      ajoutable à une classe ; peut être exportée en PDF ou partagée avec
+///      les autres professeurs (stockée à part, jamais dans les contenus de
+///      classe) ;
 ///    - LA leçon pour l'élève : explication + activités intégrées, suivant
 ///      la même progression que la leçon du professeur, pensée pour que
 ///      l'élève puisse comprendre et faire les activités même sans le
@@ -157,6 +161,29 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
   /// élèves) et LA leçon de l'élève — un document autonome (explication +
   /// activités intégrées, même ordre que la leçon du professeur) qui lui
   /// permet de comprendre et de faire les activités même sans le professeur.
+  /// Enlève une éventuelle formule d'introduction ou de salutation ("Cher
+  /// collègue…", "Bonjour…") que Kocc aurait malgré tout ajoutée au début
+  /// d'un document, en filet de sécurité en plus de la consigne donnée dans
+  /// le prompt. Ne touche qu'au tout début du texte.
+  static String _stripGreeting(String text) {
+    final t = text.trim();
+    if (t.isEmpty) return t;
+    final greeting = RegExp(
+      r'^(cher(e)?s?\s+(coll[eè]gue|professeur|enseignant)s?|bonjour|bonsoir|madame|monsieur|salut)[^\n]*',
+      caseSensitive: false,
+    );
+    final match = greeting.matchAsPrefix(t);
+    if (match == null) return t;
+    final rest = t.substring(match.end);
+    final blank = rest.indexOf('\n\n');
+    if (blank == -1) return rest.trimLeft().isEmpty ? t : rest.trimLeft();
+    return rest.substring(blank + 2).trimLeft();
+  }
+
+  /// Rédige les deux documents en DEUX appels séparés (plutôt qu'un seul
+  /// texte à découper) : chaque document est ainsi toujours rédigé en
+  /// entier et placé dans la bonne case, sans dépendre d'un marqueur que
+  /// Kocc pourrait oublier ou reformuler.
   Future<void> _generateLesson() async {
     final lastAdvice = _history.reversed.firstWhere(
       (h) => h['role'] == 'assistant',
@@ -166,69 +193,77 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       showMessage(context, 'Demandez d’abord les conseils de Kocc, puis validez-les.');
       return;
     }
-    setState(() => _busy = true);
-    const marker = '===LECON ELEVE===';
-    final prompt = 'Le professeur a validé, après discussion avec vous, l’approche pédagogique suivante pour le '
-        'cours sur « ${_topic.text.trim()} » (classe ${widget.classRoom.name}, ${widget.classRoom.subjectName}) : '
-        '« $lastAdvice ». '
-        'Rédige maintenant DEUX documents séparés, en respectant strictement cette approche validée (communicative, '
+    setState(() {
+      _busy = true;
+      _draft.clear();
+      _studentLesson.clear();
+    });
+    final topic = _topic.text.trim();
+    final approche = 'Approche pédagogique validée par le professeur après discussion avec vous (communicative, '
         'centrée sur l’apprenant, focalisée sur la fonction langagière retenue ; la grammaire et le vocabulaire ne '
-        'sont introduits que comme des outils nécessaires pour réussir cette fonction). '
-        'PREMIER document, la leçon complète pour le professeur : 60 minutes, réellement prête à être enseignée, '
-        'pas un résumé ni un plan général. Ne t’adresse JAMAIS directement au professeur dans ce document (pas de '
-        '« vous », pas de rappel de l’approche pédagogique, pas de discours introductif) : va directement au '
-        'contenu. Elle doit comporter AU MOINS SIX activités numérotées exactement « Activité 1 », « Activité 2 », '
-        'etc. Pour chacune : durée, objectif, matériel, contenus et exemples précis à enseigner, la consigne que le '
+        'sont introduits que comme des outils nécessaires pour réussir cette fonction) : « $lastAdvice ».';
+    final noAdresse = 'IMPORTANT : commence directement par le contenu pédagogique (par exemple par un titre ou '
+        'par « Objectifs et prérequis »). N’écris JAMAIS de salutation ni de phrase d’introduction adressée à qui '
+        'que ce soit (pas de « Cher collègue », pas de « Bonjour », pas de « vous », pas de rappel de notre '
+        'discussion) : seulement le contenu lui-même, du premier mot au dernier.';
+
+    final teacherPrompt = 'Rédige la leçon complète destinée au PROFESSEUR, pour le cours sur « $topic » (classe '
+        '${widget.classRoom.name}, ${widget.classRoom.subjectName}). $approche '
+        'C’est un document de préparation réellement prêt à être enseigné, pas un résumé ni un plan général, '
+        'prévu pour une séance de 120 minutes : laisse aux élèves le temps d’assimiler la matière et de faire '
+        'les activités sans être bousculés. $noAdresse '
+        'Elle doit comporter AU MOINS SIX activités numérotées exactement « Activité 1 », « Activité 2 », etc. '
+        'Pour chacune : durée, objectif, matériel, contenus et exemples précis à enseigner, la consigne que le '
         'professeur peut dire mot pour mot, les étapes détaillées, ce que font le professeur et les élèves, les '
         'réponses attendues ou critères de réussite, et comment vérifier la réussite. Prévois une progression '
         'variée (mise en situation, découverte, pratique guidée, travail en binômes, production ou résolution de '
-        'problème, partage et évaluation/transfert), répartie pour totaliser 60 minutes. Ancre les exemples et '
+        'problème, partage et évaluation/transfert), répartie pour totaliser 120 minutes. Ancre les exemples et '
         'supports dans un contexte sénégalais concret et respectueux (école, quartier, marché, transport, famille, '
         'environnement ou vie locale selon le thème), sans clichés. Ajoute des objectifs mesurables, les '
         'prérequis, une évaluation formative, une adaptation pour les élèves qui ont besoin d’aide, un défi pour '
         'ceux qui avancent vite, et un devoir lié à leur vie quotidienne. Utilise les sections : Objectifs et '
         'prérequis; Contenu complet de la leçon; Déroulement détaillé des Activités 1 à 6 (ou davantage); Corrigé '
         'détaillé réservé à la préparation du professeur; Devoir. '
-        'DEUXIÈME document, juste après : LA leçon destinée à l’ÉLÈVE lui-même — un document AUTONOME que l’élève '
-        'doit pouvoir lire seul et utiliser pour comprendre ET FAIRE les activités, MÊME SANS LE PROFESSEUR présent. '
-        'Suis EXACTEMENT la même logique et la même progression que les Activités 1 à 6 du premier document, dans le '
-        'même ordre (mise en situation, découverte, règle ou notion expliquée simplement, puis pratique). Pour '
-        'chaque étape : explique d’abord la notion avec des mots simples et des exemples concrets (reprends les '
-        'exemples sénégalais du premier document), puis donne DIRECTEMENT, dans la suite du même document, '
-        'l’activité ou l’exercice correspondant que l’élève doit faire à ce moment-là (une consigne claire qu’il '
-        'peut suivre seul). Le document doit donc contenir à la fois l’explication ET les activités, dans l’ordre, '
-        'de façon à ce que l’élève puisse progresser du début à la fin sans aide extérieure. Ne donne jamais les '
-        'réponses ou le corrigé des exercices dans ce document, et ne t’adresse jamais au professeur (adresse-toi '
-        'directement à l’élève, tutoie-le, encourage-le). N’inclus pas les instructions de mise en œuvre destinées '
-        'au professeur (durée, matériel, consignes à dire mot pour mot) : seulement ce que l’élève doit lire et faire. '
-        'Sépare les deux documents par EXACTEMENT cette ligne, seule sur sa ligne, sans rien avant ni après : '
-        '$marker '
-        'N’impose aucune limite de longueur : sois aussi détaillé que nécessaire pour que les deux documents soient '
-        'complets et réellement utilisables, même si cela demande plusieurs centaines ou milliers de mots. '
-        'Rédige en français simple, prêt à être lu en classe.';
-    final result = await TutorService.instance.ask(_blankLesson(), prompt, mode: 'teacher');
+        'N’impose aucune limite de longueur : sois aussi détaillé que nécessaire pour que le document soit '
+        'complet et réellement utilisable. Rédige en français simple.';
+    final teacherResult = await TutorService.instance.ask(_blankLesson(), teacherPrompt, mode: 'teacher');
     if (!mounted) return;
-    var missing = false;
+    if (teacherResult.error != null || teacherResult.answer == null || teacherResult.answer!.trim().isEmpty) {
+      setState(() => _busy = false);
+      showMessage(context, teacherResult.error ?? 'Kocc n’a pas pu rédiger la leçon. Réessayez.');
+      return;
+    }
+    final teacherLesson = _stripGreeting(teacherResult.answer!);
+    setState(() => _draft.text = teacherLesson);
+
+    final studentPrompt = 'Voici la leçon déjà rédigée pour le professeur (avec son corrigé), sur « $topic » :\n\n'
+        '$teacherLesson\n\n'
+        'À partir de cette leçon, rédige maintenant LA leçon destinée à l’ÉLÈVE lui-même — un document AUTONOME '
+        'que l’élève doit pouvoir lire seul et utiliser pour comprendre ET FAIRE les activités, MÊME SANS LE '
+        'PROFESSEUR présent. Suis EXACTEMENT la même logique et la même progression que les Activités numérotées '
+        'de la leçon du professeur ci-dessus, dans le même ordre (mise en situation, découverte, règle ou notion '
+        'expliquée simplement, puis pratique). Pour chaque étape : explique d’abord la notion avec des mots '
+        'simples et des exemples concrets (reprends les exemples sénégalais de la leçon du professeur), puis '
+        'donne DIRECTEMENT, dans la suite du même document, l’activité ou l’exercice correspondant que l’élève '
+        'doit faire à ce moment-là (une consigne claire qu’il peut suivre seul). Le document doit donc contenir '
+        'à la fois l’explication ET les activités, dans l’ordre, de façon à ce que l’élève puisse progresser du '
+        'début à la fin sans aide extérieure. Ne donne jamais les réponses ou le corrigé des exercices dans ce '
+        'document. $noAdresse Adresse-toi directement à l’élève, tutoie-le, encourage-le — jamais au professeur. '
+        'N’inclus pas les instructions de mise en œuvre destinées au professeur (durée, matériel, consignes à '
+        'dire mot pour mot) : seulement ce que l’élève doit lire et faire. '
+        'N’impose aucune limite de longueur. Rédige en français simple, prêt à être lu par l’élève.';
+    final studentResult = await TutorService.instance.ask(_blankLesson(), studentPrompt, mode: 'teacher');
+    if (!mounted) return;
     setState(() {
       _busy = false;
-      final answer = result.answer;
-      if (answer != null) {
-        final parts = answer.split(
-          RegExp(r'={2,}\s*LE[CÇ]ON\s*[EÉ]L[EÈ]VE\s*={2,}', caseSensitive: false),
-        );
-        if (parts.length >= 2) {
-          _draft.text = parts.first.trim();
-          _studentLesson.text = parts.sublist(1).join('\n').trim();
-        } else {
-          _draft.text = answer.trim();
-          _studentLesson.clear();
-          missing = true;
-        }
+      if (studentResult.answer != null && studentResult.answer!.trim().isNotEmpty) {
+        _studentLesson.text = _stripGreeting(studentResult.answer!);
       }
     });
-    if (result.error != null) showMessage(context, result.error!);
-    if (result.answer != null && missing) {
-      showMessage(context, 'Kocc n’a pas séparé la leçon-élève cette fois — relancez si besoin, ou recopiez-la vous-même depuis la leçon.');
+    if (studentResult.error != null) {
+      showMessage(context, studentResult.error!);
+    } else if (studentResult.answer == null || studentResult.answer!.trim().isEmpty) {
+      showMessage(context, 'Kocc n’a pas pu rédiger la leçon-élève cette fois. Relancez « Valider et rédiger le cours complet ».');
     }
   }
 
