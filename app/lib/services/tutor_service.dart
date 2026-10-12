@@ -17,7 +17,10 @@ class TutorService {
   static const endpoint = 'https://jang-tuteur.msanghare9.workers.dev/ask';
   static const perDay = 20;
 
-  Future<TutorAnswer> ask(Lesson lesson, String question, {String? previousAnswer}) async {
+  /// [mode] : laisser vide pour un élève (réponse courte et très simple) ;
+  /// passer 'teacher' pour un professeur qui prépare un cours (réponse
+  /// longue, détaillée, jusqu'à ~1500 mots).
+  Future<TutorAnswer> ask(Lesson lesson, String question, {String? previousAnswer, String? mode}) async {
     final token = await AuthService.instance.idToken();
     if (token == null) return TutorAnswer.error('Connecte-toi d\'abord.');
     try {
@@ -28,6 +31,7 @@ class TutorService {
         'question': question,
         if (previousAnswer != null) 'previousAnswer': previousAnswer,
         'simpler': previousAnswer != null,
+        if (mode != null) 'mode': mode,
       });
       final res = await http.post(Uri.parse(endpoint),
           headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer $token'},
