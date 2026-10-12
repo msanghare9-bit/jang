@@ -63,6 +63,46 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
     await Navigator.push(context, MaterialPageRoute(builder: (_) => TournamentHomeScreen(classRoom: room)));
   }
 
+  /// Point d'entrée depuis l'accueil : le professeur choisit d'abord la
+  /// classe (le niveau), puis arrive sur l'écran où il indique le thème du
+  /// cours à Kocc.
+  Future<void> _openCoursePrep(List<ClassRoom> classes) async {
+    if (classes.isEmpty) {
+      showMessage(context, 'Créez d’abord une classe pour préparer un cours avec Kocc.');
+      return;
+    }
+    if (classes.length == 1) {
+      await Navigator.push(context, MaterialPageRoute(builder: (_) => TeacherCourseScreen(classRoom: classes.first)));
+      _refresh();
+      return;
+    }
+    var selected = classes.first;
+    final room = await showDialog<ClassRoom>(
+      context: context,
+      builder: (dialogContext) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('Pour quelle classe ?'),
+          content: DropdownButtonFormField<String>(
+            value: selected.id,
+            decoration: const InputDecoration(labelText: 'Classe (niveau)'),
+            items: [
+              for (final room in classes)
+                DropdownMenuItem(value: room.id, child: Text('${room.name} · ${room.subjectName}')),
+            ],
+            onChanged: (id) => setDialogState(() => selected = classes.firstWhere((c) => c.id == id)),
+          ),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(dialogContext), child: const Text('Annuler')),
+            FilledButton(onPressed: () => Navigator.pop(dialogContext, selected), child: const Text('Continuer')),
+          ],
+        ),
+      ),
+    );
+    if (room == null || !mounted) return;
+    await Navigator.push(context, MaterialPageRoute(builder: (_) => TeacherCourseScreen(classRoom: room)));
+    _refresh();
+  }
+
   @override
   Widget build(BuildContext context) {
     final profile = AuthService.instance.profile.value;
@@ -107,6 +147,12 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
                   ]),
                 ),
                 const SizedBox(height: 12),
+                FilledButton.icon(
+                  onPressed: () => _openCoursePrep(classes),
+                  icon: const Icon(Icons.auto_awesome),
+                  label: const Text('Préparer un cours avec Kocc'),
+                ),
+                const SizedBox(height: 6),
                 OutlinedButton.icon(
                   onPressed: () => _organizeTournament(classes),
                   icon: const Icon(Icons.emoji_events_outlined),
