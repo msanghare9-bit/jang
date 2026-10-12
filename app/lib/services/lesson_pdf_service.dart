@@ -175,12 +175,22 @@ class LessonPdfService {
           padding: const pw.EdgeInsets.only(left: 8, bottom: 3),
           child: pw.Row(crossAxisAlignment: pw.CrossAxisAlignment.start, children: [
             pw.Text('•  ', style: pw.TextStyle(font: bold, color: _green)),
-            pw.Expanded(child: pw.Text(_clean(line.replaceFirst(RegExp(r'^\s*[-*•]\s+'), '')), style: const pw.TextStyle(fontSize: 12, lineSpacing: 6, color: _ink))),
+            pw.Expanded(
+              child: _richLine(
+                line.replaceFirst(RegExp(r'^\s*[-*•]\s+'), ''),
+                regular: regular,
+                bold: bold,
+                fontSize: 12,
+                color: _ink,
+              ),
+            ),
           ]),
         ));
       } else {
         // Corps de la leçon : Calibri (Carlito) 12, interligne 1,5.
-        widgets.add(pw.Text(_clean(line), style: const pw.TextStyle(fontSize: 12, lineSpacing: 6, color: _ink)));
+        // Rendu en texte riche pour que les **mots en gras** de Kocc
+        // s'affichent vraiment en gras, au lieu de montrer les astérisques.
+        widgets.add(_richLine(line, regular: regular, bold: bold, fontSize: 12, color: _ink));
       }
     }
     return widgets;
@@ -210,8 +220,50 @@ class LessonPdfService {
     ];
   }
 
+  /// Affiche une ligne en texte riche : les `**mots en gras**` de Kocc sont
+  /// vraiment mis en gras (au lieu d'afficher les astérisques), et les
+  /// restes de notation (LaTeX, astérisques isolés, etc.) sont nettoyés.
+  static pw.Widget _richLine(
+    String text, {
+    required pw.Font regular,
+    required pw.Font bold,
+    required double fontSize,
+    required PdfColor color,
+    double lineSpacing = 6,
+  }) {
+    final spans = <pw.InlineSpan>[];
+    final re = RegExp(r'\*\*(.+?)\*\*');
+    var last = 0;
+    for (final m in re.allMatches(text)) {
+      if (m.start > last) spans.add(pw.TextSpan(text: _cleanInline(text.substring(last, m.start))));
+      spans.add(pw.TextSpan(text: _cleanInline(m.group(1) ?? ''), style: pw.TextStyle(font: bold)));
+      last = m.end;
+    }
+    if (last < text.length) spans.add(pw.TextSpan(text: _cleanInline(text.substring(last))));
+    return pw.RichText(
+      text: pw.TextSpan(
+        style: pw.TextStyle(font: regular, fontSize: fontSize, lineSpacing: lineSpacing, color: color),
+        children: spans,
+      ),
+    );
+  }
+
+  /// Nettoyage d'un segment de texte riche : ne trim pas les bords (pour ne
+  /// pas recoller les mots autour d'un passage en gras).
+  static String _cleanInline(String text) => text
+      .replaceAll('\\rightarrow', ' → ')
+      .replaceAll('\\leftarrow', ' ← ')
+      .replaceAll('\\to', ' → ')
+      .replaceAll('__', '')
+      .replaceAll('`', '')
+      .replaceAll('*', '') // astérisque isolé (non apparié) restant
+      .replaceAll(RegExp(r'[ \t]+'), ' ');
+
   static String _clean(String text) => text
-      .replaceAll('**', '')
+      .replaceAll('\\rightarrow', ' → ')
+      .replaceAll('\\leftarrow', ' ← ')
+      .replaceAll('\\to', ' → ')
+      .replaceAll(RegExp(r'\*+'), '')
       .replaceAll('__', '')
       .replaceAll('`', '')
       .replaceAll(RegExp(r'\s+'), ' ')
