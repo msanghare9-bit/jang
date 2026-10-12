@@ -76,6 +76,50 @@ class ItemResult {
   ItemResult({this.opened = false, this.scorePct, this.done = false});
 }
 
+/// Valeur de `sourceOwnerName` utilisée pour marquer une leçon-élève générée
+/// avec Kocc Bàrma (dans « Préparer un cours avec Kocc »), afin de pouvoir
+/// la retrouver dans la rubrique « Leçons créées avec Kocc ».
+const String koccSourceName = 'Kocc Bàrma';
+
+/// Préparation de cours complète d'un professeur (avec corrigé et scénario
+/// pédagogique), partagée avec les collègues. Stockée dans sa propre
+/// collection Firestore (jamais `classItems`), afin qu'elle ne puisse
+/// JAMAIS être renvoyée par itemsOf/publicItems/forStudent ni ajoutée à une
+/// classe : elle n'est destinée qu'aux professeurs.
+class TeacherLessonPrep {
+  final String id;
+  final String title;
+  final String subjectName;
+  final String body;
+  final String authorUid;
+  final String authorName;
+  final DateTime? createdAt;
+
+  const TeacherLessonPrep({
+    required this.id,
+    required this.title,
+    required this.subjectName,
+    required this.body,
+    required this.authorUid,
+    required this.authorName,
+    this.createdAt,
+  });
+
+  factory TeacherLessonPrep.fromDoc(QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+    final m = doc.data();
+    final created = m['createdAt'];
+    return TeacherLessonPrep(
+      id: doc.id,
+      title: '${m['title'] ?? ''}',
+      subjectName: '${m['subjectName'] ?? ''}',
+      body: '${m['body'] ?? ''}',
+      authorUid: '${m['authorUid'] ?? ''}',
+      authorName: '${m['authorName'] ?? 'Professeur'}',
+      createdAt: created is Timestamp ? created.toDate() : null,
+    );
+  }
+}
+
 /// Classes, contenus des profs et devoirs.
 class ClassService {
   ClassService._();
@@ -84,6 +128,7 @@ class ClassService {
   final _db = FirebaseFirestore.instance;
   CollectionReference<Map<String, dynamic>> get _classes => _db.collection('classes');
   CollectionReference<Map<String, dynamic>> get _items => _db.collection('classItems');
+  CollectionReference<Map<String, dynamic>> get _teacherLessons => _db.collection('teacherLessons');
 
   /// Classes de l'élève connecté (mises à jour à la connexion et quand il entre ou sort).
   final ValueNotifier<List<ClassRoom>> mine = ValueNotifier(const []);
@@ -286,6 +331,45 @@ class ClassService {
   Future<List<ClassItem>> sharedTeacherItems() async {
     final snapshot = await _items.where('visibility', isEqualTo: 'public').limit(200).get();
     return _sorted(snapshot.docs);
+  }
+
+  /// Leçons pour élèves préparées avec Kocc Bàrma (et rendues publiques automatiquement),
+  /// quel que soit le prof qui les a créées. Visibles par tous les professeurs.
+  Future<List<ClassItem>> koccItems() async {
+    final snapshot = await _items
+        .where('visibility', isEqualTo: 'public')
+        .where('sourceOwnerName', isEqualTo: koccSourceName)
+        .limit(200)
+        .get();
+    return _sorted(snapshot.docs);
+  }
+
+  /// Partage la préparation complète d'un cours (avec corrigé) avec les
+  /// autres professeurs. Stockée séparément de `classItems` : elle ne peut
+  /// jamais apparaître côté élève ni être ajoutée à une classe.
+  Future<String> shareTeacherLesson({
+    required String title,
+    required String subjectName,
+    required String body,
+    required String authorUid,
+    required String authorName,
+  }) async {
+    final ref = _teacherLessons.doc();
+    await ref.set({
+      'title': title,
+      'subjectName': subjectName,
+      'body': body,
+      'authorUid': authorUid,
+      'authorName': authorName,
+      'createdAt': FieldValue.serverTimestamp(),
+    });
+    return ref.id;
+  }
+
+  /// Préparations de cours partagées entre professeurs (jamais destinées aux élèves).
+  Future<List<TeacherLessonPrep>> teacherLessons() async {
+    final s = await _teacherLessons.orderBy('createdAt', descending: true).limit(200).get();
+    return [for (final d in s.docs) TeacherLessonPrep.fromDoc(d)];
   }
 
   /// Tous les contenus créés par un prof (pour l'admin).
