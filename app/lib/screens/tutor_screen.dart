@@ -53,9 +53,15 @@ class _TutorScreenState extends State<TutorScreen> {
     final prompt = widget.homeworkCoach
         ? 'Tu es Kocc Bàrma, le coach bienveillant de ${firstName.isEmpty ? 'cet élève' : firstName}. '
             'Aide-le à réfléchir au devoir sans jamais donner la réponse finale ni faire l’exercice à sa place. '
-            'Propose un indice, une petite étape ou une question qui le guide. Encourage-le et appelle-le par son prénom. '
+            'Donne une réponse complète et détaillée (pas juste une ou deux phrases) : rappelle d’abord '
+            'brièvement la règle ou la notion utile, propose ensuite un exemple différent de l’exercice pour '
+            'l’illustrer, puis donne un indice concret ou une petite étape pour avancer, et termine par une '
+            'question qui le guide. Encourage-le et appelle-le par son prénom. '
             'Énoncé du devoir : « ${widget.lesson.body} ». Question de l’élève : « $q »'
-        : q;
+        : 'Tu es Kocc Bàrma, un professeur patient. Réponds à la question de l’élève sur la leçon « '
+            '${widget.lesson.title} » de façon complète et détaillée, en français simple : explique la notion, '
+            'donne au moins un exemple concret, et si c’est utile une courte liste des points importants à '
+            'retenir. Ne te limite pas à une ou deux phrases. Question de l’élève : « $q »';
     final r = await TutorService.instance.ask(widget.lesson, prompt, previousAnswer: simplerOf);
     if (!mounted) return;
     setState(() {
