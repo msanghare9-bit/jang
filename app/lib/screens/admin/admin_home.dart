@@ -97,7 +97,7 @@ class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
                 if (admin) _go('Questions de match signalées', Icons.flag_outlined, const ReportsScreen()),
                 if (admin) _go('Accueil de l\'app', Icons.home_outlined, const HomeConfigScreen()),
                 if (admin) _go('Les profs', Icons.badge_outlined, const ProfsScreen()),
-                if (admin) _go('Demandes de professeurs', Icons.person_add_alt_1, const TeacherApplicationsScreen()),
+                if (admin) _go('Demandes de changement de rôle', Icons.person_add_alt_1, const TeacherApplicationsScreen()),
                 if (admin) _go('Leçons créées et leurs auteurs', Icons.menu_book_outlined, const LessonCreatorsScreen()),
                 if (admin) _go('Exports des cours', Icons.file_download_done_outlined, const CourseExportLogsScreen()),
                 if (admin) _go('Statistiques d\'utilisation', Icons.bar_chart, const StatsScreen()),
