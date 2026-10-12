@@ -13,7 +13,17 @@ class TutorScreen extends StatefulWidget {
   final Lesson lesson;
   final Subject subject;
   final bool homeworkCoach;
-  const TutorScreen({super.key, required this.lesson, required this.subject, this.homeworkCoach = false});
+  /// Si renseigné, cette question est envoyée automatiquement à l'ouverture
+  /// de l'écran (ex. depuis « Aide exercice », où l'élève a déjà écrit son
+  /// exercice et ne devrait pas avoir à retaper une question).
+  final String? initialQuestion;
+  const TutorScreen({
+    super.key,
+    required this.lesson,
+    required this.subject,
+    this.homeworkCoach = false,
+    this.initialQuestion,
+  });
 
   @override
   State<TutorScreen> createState() => _TutorScreenState();
@@ -33,6 +43,15 @@ class _TutorScreenState extends State<TutorScreen> {
   final List<_Exchange> _items = [];
   bool _busy = false;
   int? _remaining;
+
+  @override
+  void initState() {
+    super.initState();
+    final q = widget.initialQuestion;
+    if (q != null && q.trim().length >= 3) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _ask(question: q));
+    }
+  }
 
   @override
   void dispose() {
