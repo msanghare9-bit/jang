@@ -285,6 +285,7 @@ class _SubjectsTabState extends State<SubjectsTab> {
                     const SizedBox(height: 4),
                     const MyClassCard(),
                     const MatchCard(),
+                    const ExerciseHelpCard(),
                     const TeacherTipsCard(),
                     if (_config.show('banniere') && (_config.banner?.active ?? false))
                       Container(
