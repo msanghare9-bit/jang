@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../models.dart';
 import '../screens/classes/my_classes_screen.dart';
+import '../screens/exercise_help_screen.dart';
 import '../screens/match/match_screens.dart';
 import '../screens/match/xarit_screen.dart';
 import '../screens/mission/learn_mode.dart';
@@ -153,6 +154,45 @@ class MatchCard extends StatelessWidget {
                 ]),
               ),
               _pendingBadge(),
+            ]),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Accueil : l'élève colle un exercice qu'on lui a donné, et Kocc Bàrma
+/// l'aide à réfléchir sans jamais lui donner la réponse. Pas pour les
+/// profs/l'admin : c'est un outil pour les élèves.
+class ExerciseHelpCard extends StatelessWidget {
+  const ExerciseHelpCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final p = AuthService.instance.profile.value;
+    if (p == null || p.isStaff) return const SizedBox.shrink();
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Material(
+        color: const Color(0xFF6D28D9),
+        borderRadius: BorderRadius.circular(18),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18),
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ExerciseHelpScreen())),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
+            child: Row(children: [
+              const CharacterView(Chars.kocc, size: 54, moves: Moves.sway),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text('Aide exercice 💡', style: titleStyle(19, color: Colors.white, weight: 800)),
+                  const Text('Colle un exercice, Kocc Bàrma te guide sans te donner la réponse',
+                      style: TextStyle(color: Colors.white)),
+                ]),
+              ),
+              const Icon(Icons.chevron_right, color: Colors.white),
             ]),
           ),
         ),
