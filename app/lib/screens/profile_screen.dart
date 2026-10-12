@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'inbox_screen.dart';
+import 'role_change_screen.dart';
 
 import '../models.dart';
 import '../services/auth_service.dart';
@@ -149,6 +150,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   },
                 ),
               ],
+              const SectionTitle('Mon rôle'),
+              Text(
+                p.isProf
+                    ? 'Vous avez un compte professeur. Vous pouvez demander à redevenir élève si besoin.'
+                    : 'Vous avez un compte élève. Si vous enseignez, vous pouvez demander un compte professeur.',
+                style: t.bodyMedium,
+              ),
+              const SizedBox(height: 10),
+              OutlinedButton.icon(
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const RoleChangeScreen())),
+                icon: Icon(p.isProf ? Icons.school_outlined : Icons.cast_for_education_outlined),
+                label: Text(p.isProf ? 'Redevenir élève' : 'Devenir professeur'),
+              ),
               const SectionTitle('Contenu hors connexion'),
               Text(
                 ContentRepo.instance.lastSyncAt == null
