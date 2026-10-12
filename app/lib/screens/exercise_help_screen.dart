@@ -48,7 +48,16 @@ class _ExerciseHelpScreenState extends State<ExerciseHelpScreen> {
     final subject = Subject(id: '', examId: p?.examId ?? '', name: 'Exercice', color: '#6D28D9');
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (_) => TutorScreen(lesson: lesson, subject: subject, homeworkCoach: true)),
+      MaterialPageRoute(
+        builder: (_) => TutorScreen(
+          lesson: lesson,
+          subject: subject,
+          homeworkCoach: true,
+          // L'élève a déjà écrit son exercice : Kocc répond tout de suite,
+          // sans lui demander de retaper une question.
+          initialQuestion: 'Aide-moi à réfléchir à cet exercice, étape par étape, sans me donner directement la réponse.',
+        ),
+      ),
     );
   }
 
