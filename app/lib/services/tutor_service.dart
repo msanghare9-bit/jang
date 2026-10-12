@@ -17,10 +17,19 @@ class TutorService {
   static const endpoint = 'https://jang-tuteur.msanghare9.workers.dev/ask';
   static const perDay = 20;
 
-  /// [mode] : laisser vide pour un élève (réponse courte et très simple) ;
-  /// passer 'teacher' pour un professeur qui prépare un cours (réponse
-  /// longue, détaillée, jusqu'à ~1500 mots).
-  Future<TutorAnswer> ask(Lesson lesson, String question, {String? previousAnswer, String? mode}) async {
+  /// [mode] : laisser vide pour un élève (très simple, mais sans limite de
+  /// longueur) ; passer 'teacher' pour un professeur (conseils, puis cours
+  /// complet, sans limite de longueur non plus).
+  /// [history] : pour une vraie conversation (ex. le prof ajuste les
+  /// conseils de Kocc) — liste de `{'role': 'user'|'assistant', 'content': ...}`
+  /// dans l'ordre chronologique, SANS le message envoyé dans `question`.
+  Future<TutorAnswer> ask(
+    Lesson lesson,
+    String question, {
+    String? previousAnswer,
+    String? mode,
+    List<Map<String, String>>? history,
+  }) async {
     final token = await AuthService.instance.idToken();
     if (token == null) return TutorAnswer.error('Connecte-toi d\'abord.');
     try {
@@ -32,6 +41,7 @@ class TutorService {
         if (previousAnswer != null) 'previousAnswer': previousAnswer,
         'simpler': previousAnswer != null,
         if (mode != null) 'mode': mode,
+        if (history != null && history.isNotEmpty) 'history': history,
       });
       final res = await http.post(Uri.parse(endpoint),
           headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer $token'},
