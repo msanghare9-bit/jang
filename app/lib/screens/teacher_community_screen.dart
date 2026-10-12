@@ -5,6 +5,7 @@ import '../models.dart';
 import '../services/auth_service.dart';
 import '../services/class_service.dart';
 import '../services/content_repo.dart';
+import '../services/lesson_pdf_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 
@@ -100,6 +101,8 @@ class TeacherTipsCard extends StatelessWidget {
 class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
   late Future<List<_TeacherPost>> _posts = _loadPosts();
   late Future<List<ClassItem>> _courses = ClassService.instance.sharedTeacherItems();
+  late Future<List<ClassItem>> _koccLessons = ClassService.instance.koccItems();
+  late Future<List<TeacherLessonPrep>> _teacherLessons = ClassService.instance.teacherLessons();
   bool _saving = false;
 
   Future<List<_TeacherPost>> _loadPosts() async {
@@ -217,21 +220,207 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
         if (item.body.isNotEmpty) Text(item.body),
         if (item.quiz.isNotEmpty) Text('${item.quiz.length} questions / activités'),
       ])),
-      actions: [TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fermer'))],
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fermer')),
+        TextButton.icon(
+          onPressed: () => _exportCoursePdf(item),
+          icon: const Icon(Icons.picture_as_pdf_outlined),
+          label: const Text('PDF'),
+        ),
+        FilledButton.icon(
+          onPressed: () {
+            Navigator.pop(context);
+            _addToMyClass(item);
+          },
+          icon: const Icon(Icons.add_to_photos_outlined),
+          label: const Text('Ajouter à ma classe'),
+        ),
+      ],
     ));
+  }
+
+  Future<void> _exportCoursePdf(ClassItem item) async {
+    try {
+      await LessonPdfService.shareClassItem(item);
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
+    }
+  }
+
+  /// N'importe quel professeur, à n'importe quel niveau, peut reprendre un
+  /// cours partagé (public) dans sa propre classe.
+  Future<void> _addToMyClass(ClassItem item) async {
+    final profile = AuthService.instance.profile.value;
+    if (profile == null) return;
+    List<ClassRoom> classes;
+    try {
+      classes = await ClassService.instance.ofProf(profile.uid);
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible de charger vos classes. Réessayez.');
+      return;
+    }
+    if (classes.isEmpty) {
+      if (mounted) showMessage(context, 'Créez d’abord une classe pour y ajouter ce cours.');
+      return;
+    }
+    ClassRoom? target = classes.first;
+    if (classes.length > 1) {
+      if (!mounted) return;
+      var selected = classes.first;
+      target = await showDialog<ClassRoom>(
+        context: context,
+        builder: (dialogContext) => StatefulBuilder(
+          builder: (context, setDialogState) => AlertDialog(
+            title: const Text('Ajouter à quelle classe ?'),
+            content: DropdownButtonFormField<String>(
+              value: selected.id,
+              decoration: const InputDecoration(labelText: 'Classe (niveau)'),
+              items: [
+                for (final room in classes)
+                  DropdownMenuItem(value: room.id, child: Text('${room.name} · ${room.subjectName}')),
+              ],
+              onChanged: (id) => setDialogState(() => selected = classes.firstWhere((c) => c.id == id)),
+            ),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(dialogContext), child: const Text('Annuler')),
+              FilledButton(onPressed: () => Navigator.pop(dialogContext, selected), child: const Text('Ajouter')),
+            ],
+          ),
+        ),
+      );
+    }
+    if (target == null || !mounted) return;
+    try {
+      final existing = await ClassService.instance.itemsOf(target.id);
+      if (existing.any((i) => i.sourceLessonId == item.id)) {
+        if (mounted) showMessage(context, 'Ce cours est déjà dans ${target.name}.');
+        return;
+      }
+      await ClassService.instance.saveItem(ClassItem(
+        id: '',
+        classId: target.id,
+        ownerUid: profile.uid,
+        ownerName: profile.name,
+        examId: target.examId,
+        subject: target.subject,
+        type: item.type,
+        title: item.title,
+        sourceLessonId: item.id,
+        sourceOwnerName: item.ownerName,
+        videos: item.videos,
+        body: item.body,
+        quiz: item.quiz,
+        gapItems: item.gapItems,
+        visibility: 'public',
+      ));
+      if (mounted) showMessage(context, 'Ajouté à ${target.name}.');
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible d’ajouter ce cours. Vérifiez votre connexion et réessayez.');
+    }
+  }
+
+  /// Préparation complète d'un collègue (avec corrigé) : jamais ajoutable à
+  /// une classe, donc jamais vue par un élève. PDF seulement.
+  void _showTeacherLesson(TeacherLessonPrep prep) {
+    showDialog<void>(context: context, builder: (context) => AlertDialog(
+      title: Text(prep.title),
+      content: SingleChildScrollView(child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
+        Text('${prep.subjectName} · ${prep.authorName}'),
+        const SizedBox(height: 12),
+        if (prep.body.isNotEmpty) Text(prep.body),
+      ])),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fermer')),
+        TextButton.icon(
+          onPressed: () => _exportTeacherLessonPdf(prep),
+          icon: const Icon(Icons.picture_as_pdf_outlined),
+          label: const Text('PDF'),
+        ),
+      ],
+    ));
+  }
+
+  Future<void> _exportTeacherLessonPdf(TeacherLessonPrep prep) async {
+    try {
+      await LessonPdfService.shareLesson(
+        Lesson(
+          id: 'teacherLesson_${prep.id}',
+          examId: '',
+          subjectId: '',
+          chapterId: '',
+          title: prep.title,
+          body: prep.body,
+          createdByName: prep.authorName,
+        ),
+        subjectName: prep.subjectName,
+      );
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
+    }
+  }
+
+  /// Liste de cours (onglet « Cours partagés » ou « Leçons créées avec Kocc »).
+  Widget _courseList(Future<List<ClassItem>> future, {required String emptyMessage}) {
+    return FutureBuilder<List<ClassItem>>(
+      future: future,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) return const Center(child: Text('Impossible de charger les cours.'));
+        if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+        final courses = snapshot.data!;
+        if (courses.isEmpty) return Center(child: Text(emptyMessage));
+        return ListView(padding: const EdgeInsets.fromLTRB(16, 12, 16, 88), children: [
+          for (final item in courses)
+            Card(child: ListTile(
+              leading: const CircleAvatar(backgroundColor: JangColors.successBg,
+                  child: Icon(Icons.menu_book_outlined, color: JangColors.snGreen)),
+              title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.w800)),
+              subtitle: Text('${ClassItem.label(item.type)} · ${item.subject} · ${item.ownerName}'),
+              trailing: const Icon(Icons.open_in_new),
+              onTap: () => _showCourse(item),
+            )),
+        ]);
+      },
+    );
+  }
+
+  /// Préparations complètes de cours (avec corrigé) partagées entre profs —
+  /// jamais ajoutables à une classe, donc jamais visibles par les élèves.
+  Widget _teacherLessonList() {
+    return FutureBuilder<List<TeacherLessonPrep>>(
+      future: _teacherLessons,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) return const Center(child: Text('Impossible de charger les préparations.'));
+        if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+        final preps = snapshot.data!;
+        if (preps.isEmpty) return const Center(child: Text('Aucune préparation partagée pour le moment.'));
+        return ListView(padding: const EdgeInsets.fromLTRB(16, 12, 16, 88), children: [
+          for (final prep in preps)
+            Card(child: ListTile(
+              leading: const CircleAvatar(backgroundColor: JangColors.noteBg,
+                  child: Icon(Icons.description_outlined, color: JangColors.snGreen)),
+              title: Text(prep.title, style: const TextStyle(fontWeight: FontWeight.w800)),
+              subtitle: Text('${prep.subjectName} · ${prep.authorName}'),
+              trailing: const Icon(Icons.open_in_new),
+              onTap: () => _showTeacherLesson(prep),
+            )),
+        ]);
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     final profile = AuthService.instance.profile.value!;
     return DefaultTabController(
-      length: 2,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Développement professionnel'),
-          bottom: const TabBar(tabs: [
+          bottom: const TabBar(isScrollable: true, tabs: [
             Tab(text: 'Ressources et conseils'),
             Tab(text: 'Cours partagés'),
+            Tab(text: 'Leçons créées avec Kocc'),
+            Tab(text: 'Préparations de cours (profs)'),
           ]),
         ),
         floatingActionButton: FloatingActionButton.extended(
@@ -267,26 +456,12 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
               ]);
             },
           ),
-          FutureBuilder<List<ClassItem>>(
-            future: _courses,
-            builder: (context, snapshot) {
-              if (snapshot.hasError) return const Center(child: Text('Impossible de charger les cours partagés.'));
-              if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
-              final courses = snapshot.data!;
-              if (courses.isEmpty) return const Center(child: Text('Aucun cours n’a encore été partagé par un professeur.'));
-              return ListView(padding: const EdgeInsets.fromLTRB(16, 12, 16, 88), children: [
-                for (final item in courses)
-                  Card(child: ListTile(
-                    leading: const CircleAvatar(backgroundColor: JangColors.successBg,
-                        child: Icon(Icons.menu_book_outlined, color: JangColors.snGreen)),
-                    title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.w800)),
-                    subtitle: Text('${ClassItem.label(item.type)} · ${item.subject} · ${item.ownerName}'),
-                    trailing: const Icon(Icons.open_in_new),
-                    onTap: () => _showCourse(item),
-                  )),
-              ]);
-            },
+          _courseList(_courses, emptyMessage: 'Aucun cours n’a encore été partagé par un professeur.'),
+          _courseList(
+            _koccLessons,
+            emptyMessage: 'Aucune leçon créée avec Kocc pour le moment.',
           ),
+          _teacherLessonList(),
         ]),
       ),
     );
