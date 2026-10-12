@@ -60,8 +60,11 @@ class LessonPdfService {
     List<QuizQuestion> quiz = const [],
     List<pw.Widget> extra = const [],
   }) async {
-    final regular = pw.Font.ttf(await rootBundle.load('assets/fonts/Nunito-Regular.ttf'));
-    final bold = pw.Font.ttf(await rootBundle.load('assets/fonts/Nunito-Bold.ttf'));
+    // Calibri est une police Microsoft non libre ; Carlito a les mêmes
+    // dimensions de caractères et est librement distribuable — c'est
+    // l'équivalent utilisé par défaut dans LibreOffice.
+    final regular = pw.Font.ttf(await rootBundle.load('assets/fonts/Carlito-Regular.ttf'));
+    final bold = pw.Font.ttf(await rootBundle.load('assets/fonts/Carlito-Bold.ttf'));
     final logo = pw.MemoryImage(
       (await rootBundle.load('tool/icons/mipmap-xxxhdpi/ic_launcher.png')).buffer.asUint8List(),
     );
@@ -172,11 +175,12 @@ class LessonPdfService {
           padding: const pw.EdgeInsets.only(left: 8, bottom: 3),
           child: pw.Row(crossAxisAlignment: pw.CrossAxisAlignment.start, children: [
             pw.Text('•  ', style: pw.TextStyle(font: bold, color: _green)),
-            pw.Expanded(child: pw.Text(_clean(line.replaceFirst(RegExp(r'^\s*[-*•]\s+'), '')), style: const pw.TextStyle(fontSize: 10, color: _ink))),
+            pw.Expanded(child: pw.Text(_clean(line.replaceFirst(RegExp(r'^\s*[-*•]\s+'), '')), style: const pw.TextStyle(fontSize: 12, lineSpacing: 6, color: _ink))),
           ]),
         ));
       } else {
-        widgets.add(pw.Text(_clean(line), style: const pw.TextStyle(fontSize: 10, lineSpacing: 2, color: _ink)));
+        // Corps de la leçon : Calibri (Carlito) 12, interligne 1,5.
+        widgets.add(pw.Text(_clean(line), style: const pw.TextStyle(fontSize: 12, lineSpacing: 6, color: _ink)));
       }
     }
     return widgets;
