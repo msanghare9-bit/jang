@@ -11,12 +11,15 @@ import '../../widgets/jang_ui.dart';
 
 /// Kocc helps a teacher draft a complete learner-centered class lesson.
 ///
-/// En deux temps : le professeur choisit TOUJOURS le thème. Kocc propose
-/// d'abord seulement des conseils pédagogiques (comment rendre la séance
-/// communicative, centrée sur l'élève, et focalisée sur une fonction
-/// langagière réelle). Le professeur relit, modifie si besoin, puis valide
-/// ces conseils. C'est seulement après cette validation que Kocc rédige la
-/// leçon complète en respectant l'approche validée.
+/// En deux temps : le professeur choisit TOUJOURS le thème.
+/// 1) Kocc discute avec le professeur (comme une conversation) pour proposer
+///    une approche communicative, centrée sur l'élève et focalisée sur une
+///    fonction langagière réelle. Le professeur peut répondre à Kocc pour
+///    ajuster ; les conseils de Kocc eux-mêmes ne sont pas modifiables à la
+///    main, seule la discussion les fait évoluer.
+/// 2) Une fois cette approche validée, Kocc rédige deux documents séparés :
+///    la leçon complète pour le professeur (sans s'adresser directement à
+///    lui) et une fiche d'exercices pour les élèves (student worksheet).
 class TeacherCourseScreen extends StatefulWidget {
   final ClassRoom classRoom;
   const TeacherCourseScreen({super.key, required this.classRoom});
@@ -25,50 +28,70 @@ class TeacherCourseScreen extends StatefulWidget {
   State<TeacherCourseScreen> createState() => _TeacherCourseScreenState();
 }
 
+/// Un message de la discussion avec Kocc sur l'approche pédagogique.
+class _ChatTurn {
+  final bool fromTeacher;
+  final String text;
+  _ChatTurn(this.fromTeacher, this.text);
+}
+
 class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
   final _topic = TextEditingController();
   final _objectives = TextEditingController();
-  final _advice = TextEditingController();
+  final _reply = TextEditingController();
   final _draft = TextEditingController();
-  bool _busyAdvice = false;
+  final _worksheet = TextEditingController();
+
+  final List<_ChatTurn> _chat = [];
+  final List<Map<String, String>> _history = [];
+
+  bool _busyChat = false;
   bool _busy = false;
   bool _saving = false;
+  bool _savingWorksheet = false;
   bool _exportingPdf = false;
+  bool _exportingWorksheetPdf = false;
   bool _shareWithColleagues = false;
 
   @override
   void dispose() {
     _topic.dispose();
     _objectives.dispose();
-    _advice.dispose();
+    _reply.dispose();
     _draft.dispose();
+    _worksheet.dispose();
     super.dispose();
   }
 
-  /// Étape 1 : Kocc propose seulement des conseils pédagogiques pour ce
-  /// thème précis (pas encore la leçon complète).
-  Future<void> _generateAdvice() async {
+  Lesson _blankLesson() => Lesson(
+        id: 'draft_${widget.classRoom.id}',
+        examId: widget.classRoom.examId,
+        subjectId: '',
+        chapterId: '',
+        title: _topic.text.trim(),
+        body: 'Préparation de cours pour ${widget.classRoom.name}, matière ${widget.classRoom.subjectName}.',
+      );
+
+  /// Démarre (ou redémarre) la discussion : Kocc propose une première fois
+  /// une fonction langagière et des conseils pour rendre la séance
+  /// communicative et centrée sur l’élève.
+  Future<void> _startChat() async {
     if (_topic.text.trim().length < 3) {
       showMessage(context, 'Saisissez le thème du cours.');
       return;
     }
     setState(() {
-      _busyAdvice = true;
+      _busyChat = true;
+      _chat.clear();
+      _history.clear();
       _draft.clear();
+      _worksheet.clear();
     });
-    final lesson = Lesson(
-      id: 'draft_${widget.classRoom.id}',
-      examId: widget.classRoom.examId,
-      subjectId: '',
-      chapterId: '',
-      title: _topic.text.trim(),
-      body: 'Préparation de cours pour ${widget.classRoom.name}, matière ${widget.classRoom.subjectName}.',
-    );
-    final prompt = 'Kocc Bàrma, le professeur veut faire un cours sur le thème qu’il a choisi : '
+    final prompt = 'Le professeur veut faire un cours sur le thème qu’il a choisi : '
         '« ${_topic.text.trim()} », pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
         'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'proposez des objectifs adaptés' : _objectives.text.trim()}. '
         'Ne rédige PAS encore la leçon complète. Pour l’instant, propose seulement des conseils pédagogiques, '
-        'pour que le professeur puisse les lire, les modifier si besoin, puis les valider : '
+        'que le professeur pourra discuter et ajuster avec vous avant de les valider : '
         '1) quelle fonction langagière réelle correspond le mieux à ce thème (ce que l’élève doit savoir FAIRE avec '
         'la langue dans une situation concrète, ex. se présenter, demander un prix au marché, décrire un lieu, '
         'donner son avis, raconter un événement) — jamais une règle de grammaire isolée apprise pour elle-même ; '
@@ -77,82 +100,131 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'facilite, il ne fait pas un cours magistral) ; '
         '3) une brève explication, en langage simple, de pourquoi cette approche aide mieux les élèves à progresser '
         'que partir directement d’une règle de grammaire. '
-        'Réponds de façon concise et claire (pas de leçon complète, pas d’activités détaillées pour l’instant), '
-        'vouvoie le professeur.';
-    final result = await TutorService.instance.ask(lesson, prompt, mode: 'teacher');
+        'Réponds de façon concise et claire (pas de leçon complète, pas d’activités détaillées pour l’instant). '
+        'Si le professeur te répond ensuite pour ajuster ces conseils, tiens compte de sa remarque.';
+    final result = await TutorService.instance.ask(_blankLesson(), prompt, mode: 'teacher');
     if (!mounted) return;
     setState(() {
-      _busyAdvice = false;
-      if (result.answer != null) _advice.text = result.answer!;
+      _busyChat = false;
+      if (result.answer != null) {
+        _history
+          ..add({'role': 'user', 'content': prompt})
+          ..add({'role': 'assistant', 'content': result.answer!});
+        _chat.add(_ChatTurn(false, result.answer!));
+      }
     });
     if (result.error != null) showMessage(context, result.error!);
   }
 
-  /// Étape 2 : une fois les conseils validés (et éventuellement modifiés)
-  /// par le professeur, Kocc rédige la leçon complète en les respectant.
+  /// Le professeur répond à Kocc pour ajuster les conseils (ex. « change la
+  /// fonction », « mets plus d’oral »…) : ça continue la même conversation.
+  Future<void> _sendReply() async {
+    final message = _reply.text.trim();
+    if (message.length < 2) return;
+    setState(() {
+      _busyChat = true;
+      _chat.add(_ChatTurn(true, message));
+    });
+    _reply.clear();
+    final result = await TutorService.instance.ask(
+      _blankLesson(),
+      message,
+      mode: 'teacher',
+      history: List<Map<String, String>>.from(_history),
+    );
+    if (!mounted) return;
+    setState(() {
+      _busyChat = false;
+      if (result.answer != null) {
+        _history
+          ..add({'role': 'user', 'content': message})
+          ..add({'role': 'assistant', 'content': result.answer!});
+        _chat.add(_ChatTurn(false, result.answer!));
+      }
+    });
+    if (result.error != null) showMessage(context, result.error!);
+  }
+
+  /// Une fois les conseils validés par la discussion, Kocc rédige la leçon
+  /// complète pour le professeur ET une fiche d’exercices pour les élèves.
   Future<void> _generateLesson() async {
-    if (_advice.text.trim().length < 3) {
+    final lastAdvice = _history.reversed.firstWhere(
+      (h) => h['role'] == 'assistant',
+      orElse: () => const {},
+    )['content'];
+    if (lastAdvice == null || lastAdvice.trim().isEmpty) {
       showMessage(context, 'Demandez d’abord les conseils de Kocc, puis validez-les.');
       return;
     }
-    final p = AuthService.instance.profile.value;
-    if (p == null) return;
     setState(() => _busy = true);
-    final lesson = Lesson(
-      id: 'draft_${widget.classRoom.id}',
-      examId: widget.classRoom.examId,
-      subjectId: '',
-      chapterId: '',
-      title: _topic.text.trim(),
-      body: 'Préparation de cours pour ${widget.classRoom.name}, matière ${widget.classRoom.subjectName}.',
-    );
-    final prompt = 'Kocc Bàrma, le professeur a validé l’approche pédagogique suivante pour le cours sur '
-        '« ${_topic.text.trim()} » (classe ${widget.classRoom.name}, ${widget.classRoom.subjectName}) : '
-        '« ${_advice.text.trim()} ». '
-        'Rédige maintenant la leçon complète en respectant STRICTEMENT cette approche validée : reste '
-        'communicative, centrée sur l’apprenant, et focalisée sur la fonction langagière retenue — la grammaire '
-        'et le vocabulaire ne sont introduits que comme des outils nécessaires pour réussir cette fonction. '
-        'Rédige une leçon complète de 60 minutes, réellement prête à être enseignée, pas un résumé ni un plan '
-        'général. La leçon doit comporter AU MOINS SIX activités d’apprentissage distinctes, numérotées exactement '
-        '« Activité 1 », « Activité 2 », etc. Pour chacune, indique la durée, l’objectif, le matériel, '
-        'les contenus et exemples précis à enseigner, la consigne que le professeur peut dire mot pour mot, '
-        'les étapes détaillées, ce que font le professeur et les élèves, les réponses attendues ou critères de réussite, '
-        'et comment vérifier leur réussite. Ne vous contentez pas d’énumérer une activité ou d’en donner les grandes lignes. '
-        'Prévois une progression variée : mise en situation, découverte, pratique guidée, travail en binômes, '
-        'production ou résolution de problème, partage et évaluation/transfert. Répartissez les durées pour totaliser 60 minutes. '
-        'Ancrez les exemples et supports dans un contexte sénégalais concret et respectueux : école, quartier, marché, '
-        'transport, famille, environnement ou vie locale, selon le thème et la matière; évite les clichés. '
-        'Les élèves doivent parler, réfléchir et travailler ensemble; le professeur facilite et guide. '
-        'Ajoutez des objectifs mesurables, les prérequis, une évaluation formative, une adaptation pour les élèves '
-        'qui ont besoin d’aide, un défi pour ceux qui avancent vite et un devoir lié à leur vie quotidienne. '
-        'Rédigez aussi les supports et contenus complets à utiliser en classe (textes, exemples, données, dialogues ou tableau, '
-        'selon la matière), puis une série d’exercices avec leurs consignes, et un corrigé complet séparé qui explique '
-        'les réponses. Les exercices et corrigés doivent correspondre aux objectifs et aux activités de la leçon. '
-        'Commencez par rappeler en 2-3 phrases l’approche pédagogique validée par le professeur (section '
-        '« Approche pédagogique retenue »), puis rédigez la leçon. '
-        'Utilisez obligatoirement des sections clairement titrées : Approche pédagogique retenue; '
-        'Objectifs et prérequis; Contenu complet de la leçon; Déroulement détaillé des Activités 1 à 6 (ou davantage); '
-        'Exercices à donner aux élèves; Corrigé détaillé réservé à la préparation du professeur; Devoir. '
-        'Rédigez en français simple, avec des consignes prêtes à lire à la classe, dans un document que je peux '
-        'relire, modifier et partager. '
-        'Adressez-vous toujours au professeur en le vouvoyant. Vous pouvez parfois lui donner un conseil très simple en anglais, suivi de sa traduction française.';
-    final result = await TutorService.instance.ask(lesson, prompt, mode: 'teacher');
+    const marker = '===FICHE ELEVE===';
+    final prompt = 'Le professeur a validé, après discussion avec vous, l’approche pédagogique suivante pour le '
+        'cours sur « ${_topic.text.trim()} » (classe ${widget.classRoom.name}, ${widget.classRoom.subjectName}) : '
+        '« $lastAdvice ». '
+        'Rédige maintenant DEUX documents séparés, en respectant strictement cette approche validée (communicative, '
+        'centrée sur l’apprenant, focalisée sur la fonction langagière retenue ; la grammaire et le vocabulaire ne '
+        'sont introduits que comme des outils nécessaires pour réussir cette fonction). '
+        'PREMIER document, la leçon complète pour le professeur : 60 minutes, réellement prête à être enseignée, '
+        'pas un résumé ni un plan général. Ne t’adresse JAMAIS directement au professeur dans ce document (pas de '
+        '« vous », pas de rappel de l’approche pédagogique, pas de discours introductif) : va directement au '
+        'contenu. Elle doit comporter AU MOINS SIX activités numérotées exactement « Activité 1 », « Activité 2 », '
+        'etc. Pour chacune : durée, objectif, matériel, contenus et exemples précis à enseigner, la consigne que le '
+        'professeur peut dire mot pour mot, les étapes détaillées, ce que font le professeur et les élèves, les '
+        'réponses attendues ou critères de réussite, et comment vérifier la réussite. Prévois une progression '
+        'variée (mise en situation, découverte, pratique guidée, travail en binômes, production ou résolution de '
+        'problème, partage et évaluation/transfert), répartie pour totaliser 60 minutes. Ancre les exemples et '
+        'supports dans un contexte sénégalais concret et respectueux (école, quartier, marché, transport, famille, '
+        'environnement ou vie locale selon le thème), sans clichés. Ajoute des objectifs mesurables, les '
+        'prérequis, une évaluation formative, une adaptation pour les élèves qui ont besoin d’aide, un défi pour '
+        'ceux qui avancent vite, et un devoir lié à leur vie quotidienne. Utilise les sections : Objectifs et '
+        'prérequis; Contenu complet de la leçon; Déroulement détaillé des Activités 1 à 6 (ou davantage); Corrigé '
+        'détaillé réservé à la préparation du professeur; Devoir. '
+        'SECOND document, juste après : une fiche d’exercices pour les élèves (student worksheet) — seulement les '
+        'consignes et exercices que les élèves verront, liés aux activités ci-dessus, présentés proprement, prêts à '
+        'imprimer et distribuer. Pas de corrigé dans ce document, et aucun discours au professeur non plus. '
+        'Sépare les deux documents par EXACTEMENT cette ligne, seule sur sa ligne, sans rien avant ni après : '
+        '$marker '
+        'N’impose aucune limite de longueur : sois aussi détaillé que nécessaire pour que les deux documents soient '
+        'complets et réellement utilisables, même si cela demande plusieurs centaines ou milliers de mots. '
+        'Rédige en français simple, prêt à être lu en classe.';
+    final result = await TutorService.instance.ask(_blankLesson(), prompt, mode: 'teacher');
     if (!mounted) return;
     setState(() {
       _busy = false;
-      if (result.answer != null) _draft.text = result.answer!;
+      final answer = result.answer;
+      if (answer != null) {
+        final parts = answer.split(
+          RegExp(r'={2,}\s*FICHE\s*[EÉ]L[EÈ]VE\s*={2,}', caseSensitive: false),
+        );
+        if (parts.length >= 2) {
+          _draft.text = parts.first.trim();
+          _worksheet.text = parts.sublist(1).join('\n').trim();
+        } else {
+          _draft.text = answer.trim();
+          _worksheet.clear();
+        }
+      }
     });
     if (result.error != null) showMessage(context, result.error!);
+    if (result.answer != null && _worksheet.text.trim().isEmpty) {
+      showMessage(context, 'Kocc n’a pas séparé la fiche élève cette fois — relancez si besoin, ou copiez-la vous-même depuis la leçon.');
+    }
   }
 
-  Future<void> _save() async {
+  Future<void> _saveDraft(TextEditingController controller, {required String suffix}) async {
     final p = AuthService.instance.profile.value;
     if (p == null) return;
-    if (_draft.text.trim().isEmpty) {
-      showMessage(context, 'Génère ou écris le contenu du cours avant de l’ajouter.');
+    if (controller.text.trim().isEmpty) {
+      showMessage(context, 'Il n’y a rien à ajouter pour l’instant.');
       return;
     }
-    setState(() => _saving = true);
+    setState(() {
+      if (suffix.isEmpty) {
+        _saving = true;
+      } else {
+        _savingWorksheet = true;
+      }
+    });
     try {
       final title = _topic.text.trim();
       await ClassService.instance.saveItem(ClassItem(
@@ -163,37 +235,47 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         examId: widget.classRoom.examId,
         subject: widget.classRoom.subject,
         type: ClassItem.lesson,
-        title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
-        body: _draft.text.trim(),
+        title: (title.isEmpty ? 'Cours préparé avec Kocc' : title) + suffix,
+        body: controller.text.trim(),
         visibility: _shareWithColleagues ? 'public' : 'prive',
       ));
       if (!mounted) return;
-      showMessage(context, 'Le cours a été ajouté à ${widget.classRoom.name}.');
-      Navigator.pop(context, true);
+      showMessage(context, 'Ajouté à ${widget.classRoom.name}.');
+      if (suffix.isEmpty) Navigator.pop(context, true);
     } catch (_) {
-      if (mounted) showMessage(context, 'Impossible d’ajouter le cours. Vérifiez votre connexion et réessayez.');
+      if (mounted) showMessage(context, 'Impossible d’ajouter ce contenu. Vérifiez votre connexion et réessayez.');
     } finally {
-      if (mounted) setState(() => _saving = false);
+      if (mounted) {
+        setState(() {
+          _saving = false;
+          _savingWorksheet = false;
+        });
+      }
     }
   }
 
-  /// Exporte le brouillon en PDF, avec la même mise en page Jàng (logo,
-  /// bandeau vert, présentation de l’app…) que pour une leçon.
-  Future<void> _exportPdf() async {
-    if (_draft.text.trim().isEmpty) {
-      showMessage(context, 'Génère ou écris le contenu du cours avant de l’exporter.');
+  Future<void> _exportDraftPdf(TextEditingController controller, {required bool isWorksheet}) async {
+    if (controller.text.trim().isEmpty) {
+      showMessage(context, 'Il n’y a rien à exporter pour l’instant.');
       return;
     }
-    setState(() => _exportingPdf = true);
+    setState(() {
+      if (isWorksheet) {
+        _exportingWorksheetPdf = true;
+      } else {
+        _exportingPdf = true;
+      }
+    });
     try {
       final title = _topic.text.trim();
+      final base = title.isEmpty ? 'Cours préparé avec Kocc' : title;
       final lesson = Lesson(
         id: 'draft_${widget.classRoom.id}',
         examId: widget.classRoom.examId,
         subjectId: '',
         chapterId: '',
-        title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
-        body: _draft.text.trim(),
+        title: isWorksheet ? '$base — Fiche élève' : base,
+        body: controller.text.trim(),
         createdByName: AuthService.instance.profile.value?.name ?? '',
       );
       await LessonPdfService.shareLesson(
@@ -204,13 +286,35 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     } catch (_) {
       if (mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
     } finally {
-      if (mounted) setState(() => _exportingPdf = false);
+      if (mounted) {
+        setState(() {
+          _exportingPdf = false;
+          _exportingWorksheetPdf = false;
+        });
+      }
     }
+  }
+
+  Widget _chatBubble(_ChatTurn turn) {
+    final mine = turn.fromTeacher;
+    return Align(
+      alignment: mine ? Alignment.centerRight : Alignment.centerLeft,
+      child: Container(
+        margin: EdgeInsets.only(bottom: 8, left: mine ? 40 : 0, right: mine ? 0 : 40),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: mine ? JangColors.snGreen.withValues(alpha: 0.12) : Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          border: mine ? null : Border.all(color: JangColors.border),
+        ),
+        child: Text(turn.text),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final hasAdvice = _advice.text.trim().isNotEmpty;
+    final hasAdvice = _chat.any((t) => !t.fromTeacher);
     return Scaffold(
       appBar: AppBar(title: const Text('Préparer un cours avec Kocc')),
       body: ListView(
@@ -222,9 +326,9 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               padding: const EdgeInsets.all(14),
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
-                'Vous choisissez toujours le thème. Kocc vous conseille d’abord sur comment rendre la séance '
-                'communicative et centrée sur une fonction langagière réelle (plutôt qu’une règle de grammaire '
-                'isolée). Une fois ces conseils validés, Kocc rédige la leçon complète en les respectant.',
+                'Vous choisissez toujours le thème. Discutez avec Kocc de l’approche (communicative, centrée sur '
+                'l’élève, fonction langagière) ; une fois d’accord, Kocc rédige la leçon complète et une fiche '
+                'd’exercices pour les élèves.',
               ),
             ),
           ),
@@ -249,63 +353,112 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
           ),
           const SizedBox(height: 14),
           ChunkyButton(
-            label: _busyAdvice ? 'Kocc réfléchit…' : 'Étape 1 · Demander les conseils de Kocc',
+            label: _chat.isEmpty
+                ? (_busyChat ? 'Kocc réfléchit…' : 'Demander les conseils de Kocc')
+                : (_busyChat ? 'Kocc réfléchit…' : 'Recommencer la discussion'),
             icon: Icons.tips_and_updates_outlined,
-            onPressed: _busyAdvice ? null : _generateAdvice,
+            onPressed: _busyChat ? null : _startChat,
           ),
-          const SizedBox(height: 18),
-          Text('Conseils de Kocc (à relire, modifier si besoin, puis valider)',
-              style: titleStyle(16, weight: 800)),
-          const SizedBox(height: 8),
-          TextField(
-            controller: _advice,
-            minLines: 6,
-            maxLines: 16,
-            textCapitalization: TextCapitalization.sentences,
-            decoration: const InputDecoration(
-              hintText: 'La fonction langagière proposée et les conseils pour rendre la séance communicative '
-                  'apparaîtront ici. Modifiez-les si besoin avant de valider.',
-              alignLabelWithHint: true,
+          if (_chat.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text('Discussion avec Kocc sur l’approche pédagogique', style: titleStyle(16, weight: 800)),
+            const SizedBox(height: 8),
+            for (final turn in _chat) _chatBubble(turn),
+            if (_busyChat)
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8),
+                child: Row(children: [
+                  SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2)),
+                  SizedBox(width: 10),
+                  Text('Kocc réfléchit…'),
+                ]),
+              ),
+            Row(children: [
+              Expanded(
+                child: TextField(
+                  controller: _reply,
+                  minLines: 1,
+                  maxLines: 3,
+                  decoration: const InputDecoration(
+                    labelText: 'Répondre à Kocc (facultatif)',
+                    hintText: 'Ex. Plutôt la fonction « demander son chemin »',
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              IconButton.filled(
+                style: IconButton.styleFrom(backgroundColor: JangColors.snGreen),
+                tooltip: 'Envoyer',
+                onPressed: _busyChat ? null : _sendReply,
+                icon: const Icon(Icons.send, color: Colors.white),
+              ),
+            ]),
+            const SizedBox(height: 14),
+            FilledButton.icon(
+              onPressed: (!hasAdvice || _busy) ? null : _generateLesson,
+              icon: const Icon(Icons.check_circle_outline),
+              label: Text(_busy ? 'Kocc rédige le cours…' : 'Valider et rédiger le cours complet'),
             ),
-          ),
-          const SizedBox(height: 10),
-          FilledButton.icon(
-            onPressed: (!hasAdvice || _busy) ? null : _generateLesson,
-            icon: const Icon(Icons.check_circle_outline),
-            label: Text(_busy ? 'Kocc rédige le cours…' : 'Étape 2 · Valider et rédiger le cours complet'),
-          ),
-          const SizedBox(height: 18),
-          Text('Brouillon du cours', style: titleStyle(19, weight: 800)),
-          const SizedBox(height: 8),
-          TextField(
-            controller: _draft,
-            minLines: 12,
-            maxLines: 28,
-            textCapitalization: TextCapitalization.sentences,
-            decoration: const InputDecoration(
-              hintText: 'La leçon complète de Kocc apparaîtra ici, avec le contenu, les activités détaillées, les exercices et leur corrigé. Vous pourrez la modifier avant de l’ajouter.',
-              alignLabelWithHint: true,
+          ],
+          if (_draft.text.isNotEmpty || _worksheet.text.isNotEmpty) ...[
+            const SizedBox(height: 22),
+            Text('Leçon (pour vous)', style: titleStyle(19, weight: 800)),
+            const SizedBox(height: 8),
+            TextField(
+              controller: _draft,
+              minLines: 12,
+              maxLines: 28,
+              textCapitalization: TextCapitalization.sentences,
+              decoration: const InputDecoration(
+                hintText: 'La leçon complète de Kocc apparaîtra ici.',
+                alignLabelWithHint: true,
+              ),
             ),
-          ),
-          SwitchListTile(
-            contentPadding: EdgeInsets.zero,
-            value: _shareWithColleagues,
-            onChanged: (value) => setState(() => _shareWithColleagues = value),
-            title: const Text('Partager ce cours avec les autres professeurs'),
-            subtitle: const Text('Les professeurs pourront le retrouver dans « Cours partagés ». Les élèves du niveau pourront aussi le voir.'),
-          ),
-          const SizedBox(height: 16),
-          FilledButton.icon(
-            onPressed: _saving ? null : _save,
-            icon: const Icon(Icons.add_to_photos_outlined),
-            label: Text(_saving ? 'Ajout…' : 'Ajouter directement à ${widget.classRoom.name}'),
-          ),
-          const SizedBox(height: 10),
-          OutlinedButton.icon(
-            onPressed: _exportingPdf ? null : _exportPdf,
-            icon: const Icon(Icons.picture_as_pdf_outlined),
-            label: Text(_exportingPdf ? 'Préparation du PDF…' : 'Exporter le cours en PDF'),
-          ),
+            SwitchListTile(
+              contentPadding: EdgeInsets.zero,
+              value: _shareWithColleagues,
+              onChanged: (value) => setState(() => _shareWithColleagues = value),
+              title: const Text('Partager ce cours avec les autres professeurs'),
+              subtitle: const Text('Les professeurs pourront le retrouver dans « Cours partagés ». Les élèves du niveau pourront aussi le voir.'),
+            ),
+            const SizedBox(height: 8),
+            FilledButton.icon(
+              onPressed: _saving ? null : () => _saveDraft(_draft, suffix: ''),
+              icon: const Icon(Icons.add_to_photos_outlined),
+              label: Text(_saving ? 'Ajout…' : 'Ajouter la leçon à ${widget.classRoom.name}'),
+            ),
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              onPressed: _exportingPdf ? null : () => _exportDraftPdf(_draft, isWorksheet: false),
+              icon: const Icon(Icons.picture_as_pdf_outlined),
+              label: Text(_exportingPdf ? 'Préparation du PDF…' : 'Exporter la leçon en PDF'),
+            ),
+            const SizedBox(height: 22),
+            Text('Fiche d’exercices pour les élèves', style: titleStyle(19, weight: 800)),
+            const SizedBox(height: 8),
+            TextField(
+              controller: _worksheet,
+              minLines: 10,
+              maxLines: 24,
+              textCapitalization: TextCapitalization.sentences,
+              decoration: const InputDecoration(
+                hintText: 'La fiche à distribuer aux élèves apparaîtra ici (sans corrigé).',
+                alignLabelWithHint: true,
+              ),
+            ),
+            const SizedBox(height: 8),
+            FilledButton.icon(
+              onPressed: _savingWorksheet ? null : () => _saveDraft(_worksheet, suffix: ' — Fiche élève'),
+              icon: const Icon(Icons.add_to_photos_outlined),
+              label: Text(_savingWorksheet ? 'Ajout…' : 'Ajouter la fiche à ${widget.classRoom.name}'),
+            ),
+            const SizedBox(height: 8),
+            OutlinedButton.icon(
+              onPressed: _exportingWorksheetPdf ? null : () => _exportDraftPdf(_worksheet, isWorksheet: true),
+              icon: const Icon(Icons.picture_as_pdf_outlined),
+              label: Text(_exportingWorksheetPdf ? 'Préparation du PDF…' : 'Exporter la fiche élève en PDF'),
+            ),
+          ],
         ],
       ),
     );
