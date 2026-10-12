@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Télécharge les polices (Baloo 2 pour les titres, Nunito pour le texte) depuis Google Fonts.
+# Télécharge les polices (Baloo 2 pour les titres, Nunito pour le texte,
+# Carlito pour les PDF de leçon) depuis Google Fonts.
 set -euo pipefail
 mkdir -p "$(dirname "$0")/../assets/fonts"
 cd "$(dirname "$0")/../assets/fonts"
@@ -22,4 +23,10 @@ get "Nunito:wght@600" Nunito-SemiBold.ttf
 get "Nunito:wght@700" Nunito-Bold.ttf
 get "Nunito:wght@800" Nunito-ExtraBold.ttf
 get "Nunito:ital,wght@1,600" Nunito-SemiBoldItalic.ttf
+# Carlito (licence libre, dimensions compatibles avec Calibri) : utilisé pour
+# le texte des leçons exportées en PDF. N'est pas sur Google Fonts : on le
+# prend directement dans le dépôt officiel Carlito.
+carlito=https://raw.githubusercontent.com/googlefonts/carlito/main/fonts/ttf
+curl -fsSL "$carlito/Carlito-Regular.ttf" -o Carlito-Regular.ttf
+curl -fsSL "$carlito/Carlito-Bold.ttf" -o Carlito-Bold.ttf
 ls -la
