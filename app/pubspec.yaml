@@ -64,3 +64,8 @@ flutter:
         - asset: assets/fonts/Nunito-SemiBoldItalic.ttf
           weight: 600
           style: italic
+    - family: Carlito
+      fonts:
+        - asset: assets/fonts/Carlito-Regular.ttf
+        - asset: assets/fonts/Carlito-Bold.ttf
+          weight: 700
