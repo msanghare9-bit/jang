@@ -206,12 +206,21 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'par « Objectifs et prérequis »). N’écris JAMAIS de salutation ni de phrase d’introduction adressée à qui '
         'que ce soit (pas de « Cher collègue », pas de « Bonjour », pas de « vous », pas de rappel de notre '
         'discussion) : seulement le contenu lui-même, du premier mot au dernier.';
+    final mef = 'Mise en forme à respecter STRICTEMENT, car ce texte est converti tel quel en PDF : fais précéder '
+        'chaque grand titre de section (Objectifs et prérequis, Contenu complet de la leçon, Déroulement détaillé, '
+        'Corrigé, Devoir, etc.) de « ## » et chaque « Activité N » de « ### ». N’utilise un tiret « - » en début '
+        'de ligne QUE pour une vraie liste de plusieurs éléments similaires (une liste de vocabulaire, plusieurs '
+        'exemples) ; pour les informations ponctuelles d’une activité (durée, objectif, matériel, consigne, '
+        'critères…), écris une phrase normale avec le nom du champ en gras suivi de deux-points, par exemple '
+        '« **Durée :** 7 minutes. », SANS tiret devant. N’utilise JAMAIS de notation mathématique ou LaTeX (pas de '
+        '« \\rightarrow », pas de symboles de ce genre) : écris en français courant, ou utilise directement le '
+        'symbole « → » si besoin d’indiquer une transformation.';
 
     final teacherPrompt = 'Rédige la leçon complète destinée au PROFESSEUR, pour le cours sur « $topic » (classe '
         '${widget.classRoom.name}, ${widget.classRoom.subjectName}). $approche '
         'C’est un document de préparation réellement prêt à être enseigné, pas un résumé ni un plan général, '
         'prévu pour une séance de 120 minutes : laisse aux élèves le temps d’assimiler la matière et de faire '
-        'les activités sans être bousculés. $noAdresse '
+        'les activités sans être bousculés. $noAdresse $mef '
         'Elle doit comporter AU MOINS SIX activités numérotées exactement « Activité 1 », « Activité 2 », etc. '
         'Pour chacune : durée, objectif, matériel, contenus et exemples précis à enseigner, la consigne que le '
         'professeur peut dire mot pour mot, les étapes détaillées, ce que font le professeur et les élèves, les '
@@ -248,7 +257,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'doit faire à ce moment-là (une consigne claire qu’il peut suivre seul). Le document doit donc contenir '
         'à la fois l’explication ET les activités, dans l’ordre, de façon à ce que l’élève puisse progresser du '
         'début à la fin sans aide extérieure. Ne donne jamais les réponses ou le corrigé des exercices dans ce '
-        'document. $noAdresse Adresse-toi directement à l’élève, tutoie-le, encourage-le — jamais au professeur. '
+        'document. $noAdresse $mef Adresse-toi directement à l’élève, tutoie-le, encourage-le — jamais au professeur. '
         'N’inclus pas les instructions de mise en œuvre destinées au professeur (durée, matériel, consignes à '
         'dire mot pour mot) : seulement ce que l’élève doit lire et faire. '
         'N’impose aucune limite de longueur. Rédige en français simple, prêt à être lu par l’élève.';
