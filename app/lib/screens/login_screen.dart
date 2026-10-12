@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _register = false;
   bool _teacher = false;
   List<Exam> _exams = const [];
+  bool _loadingExams = true;
   final Set<String> _teacherExamIds = {};
   final _school = TextEditingController();
   final List<TextEditingController> _subjectFields = [TextEditingController()];
@@ -35,8 +36,24 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   void initState() {
     super.initState();
-    ContentRepo.instance.exams().then((exams) {
-      if (mounted) setState(() => _exams = exams);
+    _loadExams();
+  }
+
+  /// Sur un tout nouveau téléphone, le cache local est encore vide (aucune
+  /// synchronisation n'a encore eu lieu) : lire uniquement le cache laissait
+  /// alors la liste des niveaux vide pour toujours, et les profs qui
+  /// s'inscrivaient avant d'avoir ouvert le reste de l'app ne pouvaient
+  /// cocher aucun niveau. On lit d'abord le cache (rapide), puis on
+  /// synchronise avec le serveur et on relit, pour que la liste apparaisse
+  /// même sur une toute première installation.
+  Future<void> _loadExams() async {
+    final cached = await ContentRepo.instance.exams();
+    if (mounted && cached.isNotEmpty) setState(() => _exams = cached);
+    await ContentRepo.instance.sync();
+    final refreshed = await ContentRepo.instance.exams();
+    if (mounted) setState(() {
+      _exams = refreshed;
+      _loadingExams = false;
     });
   }
 
@@ -194,8 +211,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text('Niveaux de classe', style: t.titleMedium?.copyWith(fontWeight: FontWeight.w800)),
                       const Text('Cochez tous les niveaux où vous enseignez. Une classe sera créée automatiquement pour chacun.'),
                       const SizedBox(height: 4),
-                      if (_exams.isEmpty)
+                      if (_exams.isEmpty && _loadingExams)
                         const LinearProgressIndicator()
+                      else if (_exams.isEmpty)
+                        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                          const Text('Impossible de charger les niveaux. Vérifiez votre connexion.'),
+                          const SizedBox(height: 4),
+                          OutlinedButton.icon(
+                            onPressed: () {
+                              setState(() => _loadingExams = true);
+                              _loadExams();
+                            },
+                            icon: const Icon(Icons.refresh),
+                            label: const Text('Réessayer'),
+                          ),
+                        ])
                       else
                         ..._exams.map((exam) => CheckboxListTile(
                               contentPadding: EdgeInsets.zero,
