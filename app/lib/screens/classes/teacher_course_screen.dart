@@ -17,9 +17,17 @@ import '../../widgets/jang_ui.dart';
 ///    fonction langagière réelle. Le professeur peut répondre à Kocc pour
 ///    ajuster ; les conseils de Kocc eux-mêmes ne sont pas modifiables à la
 ///    main, seule la discussion les fait évoluer.
-/// 2) Une fois cette approche validée, Kocc rédige deux documents séparés :
-///    la leçon complète pour le professeur (sans s'adresser directement à
-///    lui) et une fiche d'exercices pour les élèves (student worksheet).
+/// 2) Une fois cette approche validée, Kocc rédige DEUX documents :
+///    - la leçon complète pour le professeur (avec le corrigé) : jamais
+///      visible par les élèves et jamais ajoutable à une classe ; peut être
+///      exportée en PDF ou partagée avec les autres professeurs (stockée à
+///      part, jamais dans les contenus de classe) ;
+///    - LA leçon pour l'élève : explication + activités intégrées, suivant
+///      la même progression que la leçon du professeur, pensée pour que
+///      l'élève puisse comprendre et faire les activités même sans le
+///      professeur. C'est la SEULE chose qu'on peut ajouter à une classe,
+///      et elle est automatiquement publique : visible et réutilisable par
+///      tous les professeurs, à n'importe quel niveau.
 class TeacherCourseScreen extends StatefulWidget {
   final ClassRoom classRoom;
   const TeacherCourseScreen({super.key, required this.classRoom});
@@ -40,18 +48,17 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
   final _objectives = TextEditingController();
   final _reply = TextEditingController();
   final _draft = TextEditingController();
-  final _worksheet = TextEditingController();
+  final _studentLesson = TextEditingController();
 
   final List<_ChatTurn> _chat = [];
   final List<Map<String, String>> _history = [];
 
   bool _busyChat = false;
   bool _busy = false;
-  bool _saving = false;
-  bool _savingWorksheet = false;
+  bool _savingLesson = false;
   bool _exportingPdf = false;
-  bool _exportingWorksheetPdf = false;
-  bool _shareWithColleagues = false;
+  bool _exportingLessonPdf = false;
+  bool _sharingLesson = false;
 
   @override
   void dispose() {
@@ -59,7 +66,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     _objectives.dispose();
     _reply.dispose();
     _draft.dispose();
-    _worksheet.dispose();
+    _studentLesson.dispose();
     super.dispose();
   }
 
@@ -85,7 +92,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       _chat.clear();
       _history.clear();
       _draft.clear();
-      _worksheet.clear();
+      _studentLesson.clear();
     });
     final prompt = 'Le professeur veut faire un cours sur le thème qu’il a choisi : '
         '« ${_topic.text.trim()} », pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
@@ -145,8 +152,11 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     if (result.error != null) showMessage(context, result.error!);
   }
 
-  /// Une fois les conseils validés par la discussion, Kocc rédige la leçon
-  /// complète pour le professeur ET une fiche d’exercices pour les élèves.
+  /// Une fois les conseils validés par la discussion, Kocc rédige DEUX
+  /// documents : la leçon complète pour le professeur (jamais vue par les
+  /// élèves) et LA leçon de l'élève — un document autonome (explication +
+  /// activités intégrées, même ordre que la leçon du professeur) qui lui
+  /// permet de comprendre et de faire les activités même sans le professeur.
   Future<void> _generateLesson() async {
     final lastAdvice = _history.reversed.firstWhere(
       (h) => h['role'] == 'assistant',
@@ -157,7 +167,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       return;
     }
     setState(() => _busy = true);
-    const marker = '===FICHE ELEVE===';
+    const marker = '===LECON ELEVE===';
     final prompt = 'Le professeur a validé, après discussion avec vous, l’approche pédagogique suivante pour le '
         'cours sur « ${_topic.text.trim()} » (classe ${widget.classRoom.name}, ${widget.classRoom.subjectName}) : '
         '« $lastAdvice ». '
@@ -179,9 +189,18 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'ceux qui avancent vite, et un devoir lié à leur vie quotidienne. Utilise les sections : Objectifs et '
         'prérequis; Contenu complet de la leçon; Déroulement détaillé des Activités 1 à 6 (ou davantage); Corrigé '
         'détaillé réservé à la préparation du professeur; Devoir. '
-        'SECOND document, juste après : une fiche d’exercices pour les élèves (student worksheet) — seulement les '
-        'consignes et exercices que les élèves verront, liés aux activités ci-dessus, présentés proprement, prêts à '
-        'imprimer et distribuer. Pas de corrigé dans ce document, et aucun discours au professeur non plus. '
+        'DEUXIÈME document, juste après : LA leçon destinée à l’ÉLÈVE lui-même — un document AUTONOME que l’élève '
+        'doit pouvoir lire seul et utiliser pour comprendre ET FAIRE les activités, MÊME SANS LE PROFESSEUR présent. '
+        'Suis EXACTEMENT la même logique et la même progression que les Activités 1 à 6 du premier document, dans le '
+        'même ordre (mise en situation, découverte, règle ou notion expliquée simplement, puis pratique). Pour '
+        'chaque étape : explique d’abord la notion avec des mots simples et des exemples concrets (reprends les '
+        'exemples sénégalais du premier document), puis donne DIRECTEMENT, dans la suite du même document, '
+        'l’activité ou l’exercice correspondant que l’élève doit faire à ce moment-là (une consigne claire qu’il '
+        'peut suivre seul). Le document doit donc contenir à la fois l’explication ET les activités, dans l’ordre, '
+        'de façon à ce que l’élève puisse progresser du début à la fin sans aide extérieure. Ne donne jamais les '
+        'réponses ou le corrigé des exercices dans ce document, et ne t’adresse jamais au professeur (adresse-toi '
+        'directement à l’élève, tutoie-le, encourage-le). N’inclus pas les instructions de mise en œuvre destinées '
+        'au professeur (durée, matériel, consignes à dire mot pour mot) : seulement ce que l’élève doit lire et faire. '
         'Sépare les deux documents par EXACTEMENT cette ligne, seule sur sa ligne, sans rien avant ni après : '
         '$marker '
         'N’impose aucune limite de longueur : sois aussi détaillé que nécessaire pour que les deux documents soient '
@@ -189,42 +208,42 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'Rédige en français simple, prêt à être lu en classe.';
     final result = await TutorService.instance.ask(_blankLesson(), prompt, mode: 'teacher');
     if (!mounted) return;
+    var missing = false;
     setState(() {
       _busy = false;
       final answer = result.answer;
       if (answer != null) {
         final parts = answer.split(
-          RegExp(r'={2,}\s*FICHE\s*[EÉ]L[EÈ]VE\s*={2,}', caseSensitive: false),
+          RegExp(r'={2,}\s*LE[CÇ]ON\s*[EÉ]L[EÈ]VE\s*={2,}', caseSensitive: false),
         );
         if (parts.length >= 2) {
           _draft.text = parts.first.trim();
-          _worksheet.text = parts.sublist(1).join('\n').trim();
+          _studentLesson.text = parts.sublist(1).join('\n').trim();
         } else {
           _draft.text = answer.trim();
-          _worksheet.clear();
+          _studentLesson.clear();
+          missing = true;
         }
       }
     });
     if (result.error != null) showMessage(context, result.error!);
-    if (result.answer != null && _worksheet.text.trim().isEmpty) {
-      showMessage(context, 'Kocc n’a pas séparé la fiche élève cette fois — relancez si besoin, ou copiez-la vous-même depuis la leçon.');
+    if (result.answer != null && missing) {
+      showMessage(context, 'Kocc n’a pas séparé la leçon-élève cette fois — relancez si besoin, ou recopiez-la vous-même depuis la leçon.');
     }
   }
 
-  Future<void> _saveDraft(TextEditingController controller, {required String suffix}) async {
+  /// Ajoute LA leçon-élève à la classe — toujours publique : tous les
+  /// professeurs, à n'importe quel niveau, peuvent la voir, l'exporter en
+  /// PDF ou l'ajouter à leur propre classe. La leçon du PROFESSEUR (avec le
+  /// corrigé) n'est jamais ajoutée à la classe : elle ne sort qu'en PDF.
+  Future<void> _saveStudentLesson() async {
     final p = AuthService.instance.profile.value;
     if (p == null) return;
-    if (controller.text.trim().isEmpty) {
+    if (_studentLesson.text.trim().isEmpty) {
       showMessage(context, 'Il n’y a rien à ajouter pour l’instant.');
       return;
     }
-    setState(() {
-      if (suffix.isEmpty) {
-        _saving = true;
-      } else {
-        _savingWorksheet = true;
-      }
-    });
+    setState(() => _savingLesson = true);
     try {
       final title = _topic.text.trim();
       await ClassService.instance.saveItem(ClassItem(
@@ -235,33 +254,61 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         examId: widget.classRoom.examId,
         subject: widget.classRoom.subject,
         type: ClassItem.lesson,
-        title: (title.isEmpty ? 'Cours préparé avec Kocc' : title) + suffix,
-        body: controller.text.trim(),
-        visibility: _shareWithColleagues ? 'public' : 'prive',
+        title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
+        body: _studentLesson.text.trim(),
+        // Toujours publique : visible et réutilisable par tous les profs.
+        visibility: 'public',
+        // Marque cette leçon comme créée avec Kocc, pour la rubrique
+        // « Leçons créées avec Kocc » (visible par tous les professeurs).
+        sourceOwnerName: koccSourceName,
       ));
       if (!mounted) return;
-      showMessage(context, 'Ajouté à ${widget.classRoom.name}.');
-      if (suffix.isEmpty) Navigator.pop(context, true);
+      showMessage(context, 'Ajoutée à ${widget.classRoom.name} — visible par tous les professeurs.');
     } catch (_) {
       if (mounted) showMessage(context, 'Impossible d’ajouter ce contenu. Vérifiez votre connexion et réessayez.');
     } finally {
-      if (mounted) {
-        setState(() {
-          _saving = false;
-          _savingWorksheet = false;
-        });
-      }
+      if (mounted) setState(() => _savingLesson = false);
     }
   }
 
-  Future<void> _exportDraftPdf(TextEditingController controller, {required bool isWorksheet}) async {
+  /// Partage la préparation complète (avec corrigé) avec les autres
+  /// professeurs, dans la rubrique « Préparations de cours (profs) ». Ce
+  /// document reste strictement réservé aux professeurs : il n'est jamais
+  /// ajouté à une classe et n'est donc jamais visible par un élève.
+  Future<void> _shareTeacherLesson() async {
+    final p = AuthService.instance.profile.value;
+    if (p == null) return;
+    if (_draft.text.trim().isEmpty) {
+      showMessage(context, 'Il n’y a rien à partager pour l’instant.');
+      return;
+    }
+    setState(() => _sharingLesson = true);
+    try {
+      final title = _topic.text.trim();
+      await ClassService.instance.shareTeacherLesson(
+        title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
+        subjectName: widget.classRoom.subjectName,
+        body: _draft.text.trim(),
+        authorUid: p.uid,
+        authorName: p.name,
+      );
+      if (!mounted) return;
+      showMessage(context, 'Partagée avec les autres professeurs (Développement professionnel).');
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible de partager cette préparation. Vérifiez votre connexion et réessayez.');
+    } finally {
+      if (mounted) setState(() => _sharingLesson = false);
+    }
+  }
+
+  Future<void> _exportDraftPdf(TextEditingController controller, {required bool isStudentLesson}) async {
     if (controller.text.trim().isEmpty) {
       showMessage(context, 'Il n’y a rien à exporter pour l’instant.');
       return;
     }
     setState(() {
-      if (isWorksheet) {
-        _exportingWorksheetPdf = true;
+      if (isStudentLesson) {
+        _exportingLessonPdf = true;
       } else {
         _exportingPdf = true;
       }
@@ -274,7 +321,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         examId: widget.classRoom.examId,
         subjectId: '',
         chapterId: '',
-        title: isWorksheet ? '$base — Fiche élève' : base,
+        title: isStudentLesson ? base : '$base — Préparation prof',
         body: controller.text.trim(),
         createdByName: AuthService.instance.profile.value?.name ?? '',
       );
@@ -289,7 +336,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       if (mounted) {
         setState(() {
           _exportingPdf = false;
-          _exportingWorksheetPdf = false;
+          _exportingLessonPdf = false;
         });
       }
     }
@@ -327,8 +374,8 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
                 'Vous choisissez toujours le thème. Discutez avec Kocc de l’approche (communicative, centrée sur '
-                'l’élève, fonction langagière) ; une fois d’accord, Kocc rédige la leçon complète et une fiche '
-                'd’exercices pour les élèves.',
+                'l’élève, fonction langagière) ; une fois d’accord, Kocc rédige votre leçon complète et une leçon '
+                'pour l’élève que celui-ci peut suivre seul, même sans vous.',
               ),
             ),
           ),
@@ -400,9 +447,21 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               label: Text(_busy ? 'Kocc rédige le cours…' : 'Valider et rédiger le cours complet'),
             ),
           ],
-          if (_draft.text.isNotEmpty || _worksheet.text.isNotEmpty) ...[
+          if (_draft.text.isNotEmpty || _studentLesson.text.isNotEmpty) ...[
             const SizedBox(height: 22),
-            Text('Leçon (pour vous)', style: titleStyle(19, weight: 800)),
+            Text('1. Leçon du professeur (jamais visible par les élèves)',
+                style: titleStyle(18, weight: 800)),
+            const SizedBox(height: 6),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(color: JangColors.noteBg, borderRadius: BorderRadius.circular(10)),
+              child: const Text(
+                'Ce document contient votre préparation (dont le corrigé) : il ne peut JAMAIS être ajouté à '
+                'une classe, donc jamais vu par un élève. Vous pouvez l’exporter en PDF pour vous, ou le '
+                'partager avec les autres professeurs (visible dans « Développement professionnel », jamais '
+                'côté élève).',
+              ),
+            ),
             const SizedBox(height: 8),
             TextField(
               controller: _draft,
@@ -414,49 +473,54 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
                 alignLabelWithHint: true,
               ),
             ),
-            SwitchListTile(
-              contentPadding: EdgeInsets.zero,
-              value: _shareWithColleagues,
-              onChanged: (value) => setState(() => _shareWithColleagues = value),
-              title: const Text('Partager ce cours avec les autres professeurs'),
-              subtitle: const Text('Les professeurs pourront le retrouver dans « Cours partagés ». Les élèves du niveau pourront aussi le voir.'),
-            ),
             const SizedBox(height: 8),
             FilledButton.icon(
-              onPressed: _saving ? null : () => _saveDraft(_draft, suffix: ''),
-              icon: const Icon(Icons.add_to_photos_outlined),
-              label: Text(_saving ? 'Ajout…' : 'Ajouter la leçon à ${widget.classRoom.name}'),
+              onPressed: _sharingLesson ? null : _shareTeacherLesson,
+              icon: const Icon(Icons.groups_outlined),
+              label: Text(_sharingLesson ? 'Partage…' : 'Partager avec les collègues professeurs'),
             ),
             const SizedBox(height: 8),
             OutlinedButton.icon(
-              onPressed: _exportingPdf ? null : () => _exportDraftPdf(_draft, isWorksheet: false),
+              onPressed: _exportingPdf ? null : () => _exportDraftPdf(_draft, isStudentLesson: false),
               icon: const Icon(Icons.picture_as_pdf_outlined),
               label: Text(_exportingPdf ? 'Préparation du PDF…' : 'Exporter la leçon en PDF'),
             ),
             const SizedBox(height: 22),
-            Text('Fiche d’exercices pour les élèves', style: titleStyle(19, weight: 800)),
+            Text('2. Leçon de l’élève (explication + activités, pour qu’il la fasse même sans vous)',
+                style: titleStyle(18, weight: 800)),
+            const SizedBox(height: 6),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(color: JangColors.successBg, borderRadius: BorderRadius.circular(10)),
+              child: const Text(
+                'Ce document contient l’explication ET les activités, dans le même ordre que votre leçon : '
+                'l’élève peut le lire et travailler seul. C’est le SEUL document qu’on peut ajouter à une '
+                'classe. Une fois ajouté, il devient automatiquement public : visible, exportable en PDF et '
+                'réutilisable par tous les professeurs, à n’importe quel niveau.',
+              ),
+            ),
             const SizedBox(height: 8),
             TextField(
-              controller: _worksheet,
-              minLines: 10,
-              maxLines: 24,
+              controller: _studentLesson,
+              minLines: 12,
+              maxLines: 30,
               textCapitalization: TextCapitalization.sentences,
               decoration: const InputDecoration(
-                hintText: 'La fiche à distribuer aux élèves apparaîtra ici (sans corrigé).',
+                hintText: 'La leçon de l’élève (explication + activités) apparaîtra ici.',
                 alignLabelWithHint: true,
               ),
             ),
             const SizedBox(height: 8),
             FilledButton.icon(
-              onPressed: _savingWorksheet ? null : () => _saveDraft(_worksheet, suffix: ' — Fiche élève'),
-              icon: const Icon(Icons.add_to_photos_outlined),
-              label: Text(_savingWorksheet ? 'Ajout…' : 'Ajouter la fiche à ${widget.classRoom.name}'),
+              onPressed: _savingLesson ? null : _saveStudentLesson,
+              icon: const Icon(Icons.public),
+              label: Text(_savingLesson ? 'Ajout…' : 'Ajouter à ${widget.classRoom.name} (public)'),
             ),
             const SizedBox(height: 8),
             OutlinedButton.icon(
-              onPressed: _exportingWorksheetPdf ? null : () => _exportDraftPdf(_worksheet, isWorksheet: true),
+              onPressed: _exportingLessonPdf ? null : () => _exportDraftPdf(_studentLesson, isStudentLesson: true),
               icon: const Icon(Icons.picture_as_pdf_outlined),
-              label: Text(_exportingWorksheetPdf ? 'Préparation du PDF…' : 'Exporter la fiche élève en PDF'),
+              label: Text(_exportingLessonPdf ? 'Préparation du PDF…' : 'Exporter la leçon-élève en PDF'),
             ),
           ],
         ],
