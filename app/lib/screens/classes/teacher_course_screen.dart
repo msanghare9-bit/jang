@@ -11,13 +11,14 @@ import '../../widgets/jang_ui.dart';
 
 /// Kocc helps a teacher draft a complete learner-centered class lesson.
 ///
-/// En deux temps : le professeur choisit TOUJOURS le thème.
-/// 1) Kocc discute avec le professeur (comme une conversation) pour proposer
-///    une approche communicative, centrée sur l'élève et focalisée sur une
-///    fonction langagière réelle. Le professeur peut répondre à Kocc pour
-///    ajuster ; les conseils de Kocc eux-mêmes ne sont pas modifiables à la
-///    main, seule la discussion les fait évoluer.
-/// 2) Une fois cette approche validée, Kocc rédige DEUX documents, en DEUX
+/// Le professeur choisit TOUJOURS le thème.
+/// 1) Kocc propose une première fois une approche communicative, centrée sur
+///    l'élève et focalisée sur une fonction langagière réelle. Le professeur
+///    peut répondre à Kocc pour ajuster ; les conseils de Kocc eux-mêmes ne
+///    sont pas modifiables à la main, seule la discussion les fait évoluer.
+/// 2) DÈS que ces conseils (initiaux, ou ajustés par une réponse du
+///    professeur) arrivent, Kocc rédige directement DEUX documents, sans que
+///    le professeur ait besoin de le redemander, en DEUX
 ///    appels séparés à l'IA (jamais un seul texte à découper avec un
 ///    marqueur) pour que chaque document soit toujours entier et placé
 ///    dans la bonne case :
@@ -85,7 +86,9 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
 
   /// Démarre (ou redémarre) la discussion : Kocc propose une première fois
   /// une fonction langagière et des conseils pour rendre la séance
-  /// communicative et centrée sur l’élève.
+  /// communicative et centrée sur l’élève, puis rédige directement le cours
+  /// complet à partir de ces conseils — sans que le professeur ait besoin de
+  /// cliquer sur un deuxième bouton pour le demander.
   Future<void> _startChat() async {
     if (_topic.text.trim().length < 3) {
       showMessage(context, 'Saisissez le thème du cours.');
@@ -101,18 +104,20 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     final prompt = 'Le professeur veut faire un cours sur le thème qu’il a choisi : '
         '« ${_topic.text.trim()} », pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
         'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'proposez des objectifs adaptés' : _objectives.text.trim()}. '
-        'Ne rédige PAS encore la leçon complète. Pour l’instant, propose seulement des conseils pédagogiques, '
-        'que le professeur pourra discuter et ajuster avec vous avant de les valider : '
-        '1) quelle fonction langagière réelle correspond le mieux à ce thème (ce que l’élève doit savoir FAIRE avec '
-        'la langue dans une situation concrète, ex. se présenter, demander un prix au marché, décrire un lieu, '
-        'donner son avis, raconter un événement) — jamais une règle de grammaire isolée apprise pour elle-même ; '
-        '2) 3 à 5 conseils concrets, précis pour CE thème, pour rendre la séance communicative et centrée sur '
+        'Ne rédige PAS encore la leçon complète. Pour l’instant, donne seulement, de façon courte et facile à lire '
+        'rapidement (le professeur ne doit pas se fatiguer à les lire, mais doit comprendre pourquoi) : '
+        '1) la fonction langagière réelle qui correspond le mieux à ce thème, en une ou deux phrases (ce que '
+        'l’élève doit savoir FAIRE avec la langue dans une situation concrète, ex. se présenter, demander un prix '
+        'au marché, décrire un lieu, donner son avis, raconter un événement — jamais une règle de grammaire isolée '
+        'apprise pour elle-même) ; '
+        '2) 3 à 4 conseils concrets, précis pour CE thème, pour rendre la séance communicative et centrée sur '
         'l’élève (l’élève parle, interagit et produit la langue la majorité du temps ; le professeur guide et '
-        'facilite, il ne fait pas un cours magistral) ; '
-        '3) une brève explication, en langage simple, de pourquoi cette approche aide mieux les élèves à progresser '
-        'que partir directement d’une règle de grammaire. '
-        'Réponds de façon concise et claire (pas de leçon complète, pas d’activités détaillées pour l’instant). '
-        'Si le professeur te répond ensuite pour ajuster ces conseils, tiens compte de sa remarque.';
+        'facilite, il ne fait pas un cours magistral) — chacun en une ou deux phrases, avec au besoin un très '
+        'court exemple concret. '
+        'Pas de longue introduction ni de longue conclusion, mais une brève phrase finale expliquant simplement '
+        'pourquoi cette approche aide mieux les élèves à progresser. Vise environ 120 à 150 mots au total : assez '
+        'court pour se lire d’un coup d’œil, mais assez clair pour que le professeur comprenne le choix sans avoir '
+        'à deviner. Si le professeur te répond ensuite pour ajuster ces conseils, réponds tout aussi brièvement.';
     final result = await TutorService.instance.ask(_blankLesson(), prompt, mode: 'teacher');
     if (!mounted) return;
     setState(() {
@@ -121,14 +126,22 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         _history
           ..add({'role': 'user', 'content': prompt})
           ..add({'role': 'assistant', 'content': result.answer!});
-        _chat.add(_ChatTurn(false, result.answer!));
+        _chat.add(_ChatTurn(false, _stripGreeting(result.answer!)));
       }
     });
-    if (result.error != null) showMessage(context, result.error!);
+    if (result.error != null) {
+      showMessage(context, result.error!);
+      return;
+    }
+    // Les conseils sont là : on rédige directement le cours complet, sans
+    // attendre que le professeur le demande explicitement.
+    await _generateLesson();
   }
 
   /// Le professeur répond à Kocc pour ajuster les conseils (ex. « change la
-  /// fonction », « mets plus d’oral »…) : ça continue la même conversation.
+  /// fonction », « mets plus d’oral »…) : ça continue la même conversation,
+  /// puis le cours complet est réécrit directement à partir des conseils
+  /// ajustés, sans que le professeur ait besoin de le redemander.
   Future<void> _sendReply() async {
     final message = _reply.text.trim();
     if (message.length < 2) return;
@@ -150,10 +163,14 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         _history
           ..add({'role': 'user', 'content': message})
           ..add({'role': 'assistant', 'content': result.answer!});
-        _chat.add(_ChatTurn(false, result.answer!));
+        _chat.add(_ChatTurn(false, _stripGreeting(result.answer!)));
       }
     });
-    if (result.error != null) showMessage(context, result.error!);
+    if (result.error != null) {
+      showMessage(context, result.error!);
+      return;
+    }
+    await _generateLesson();
   }
 
   /// Une fois les conseils validés par la discussion, Kocc rédige DEUX
@@ -386,6 +403,69 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     }
   }
 
+  /// Construit les morceaux de texte d'une ligne (gras **…** rendu comme du
+  /// vrai gras, le reste en texte normal) : évite d'afficher les astérisques
+  /// bruts de Kocc dans la bulle de discussion.
+  List<InlineSpan> _boldSpans(String line, TextStyle base) {
+    final spans = <InlineSpan>[];
+    final bold = base.copyWith(fontWeight: FontWeight.w800);
+    var last = 0;
+    for (final m in RegExp(r'\*\*(.+?)\*\*').allMatches(line)) {
+      if (m.start > last) spans.add(TextSpan(text: line.substring(last, m.start), style: base));
+      spans.add(TextSpan(text: m.group(1), style: bold));
+      last = m.end;
+    }
+    if (last < line.length) spans.add(TextSpan(text: line.substring(last), style: base));
+    return spans;
+  }
+
+  /// Affiche la réponse de Kocc proprement : un titre numéroté comme
+  /// « **1) Fonction langagière cible** » devient un vrai sous-titre, une
+  /// ligne « - … » devient une vraie puce, et le « ** » du gras disparaît
+  /// au profit d'un vrai texte en gras — plutôt que les symboles bruts.
+  Widget _adviceBody(String text) {
+    final base = const TextStyle(fontSize: 14, height: 1.4, color: JangColors.text);
+    final lines = text.split('\n');
+    final widgets = <Widget>[];
+    for (final raw in lines) {
+      final line = raw.trimRight();
+      if (line.trim().isEmpty) {
+        widgets.add(const SizedBox(height: 8));
+        continue;
+      }
+      final headingOnly = RegExp(r'^\*\*(.+)\*\*$').firstMatch(line.trim());
+      final heading = RegExp(r'^#{1,3}\s*(.+)$').firstMatch(line.trim());
+      if (headingOnly != null) {
+        widgets.add(Padding(
+          padding: const EdgeInsets.only(top: 4, bottom: 2),
+          child: Text(headingOnly.group(1)!,
+              style: base.copyWith(fontWeight: FontWeight.w800, color: JangColors.snGreen)),
+        ));
+      } else if (heading != null) {
+        widgets.add(Padding(
+          padding: const EdgeInsets.only(top: 4, bottom: 2),
+          child: Text(heading.group(1)!,
+              style: base.copyWith(fontWeight: FontWeight.w800, color: JangColors.snGreen)),
+        ));
+      } else if (RegExp(r'^[-*]\s+').hasMatch(line.trim())) {
+        final content = line.trim().replaceFirst(RegExp(r'^[-*]\s+'), '');
+        widgets.add(Padding(
+          padding: const EdgeInsets.only(bottom: 4),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('•  ', style: base.copyWith(color: JangColors.snGreen, fontWeight: FontWeight.w800)),
+            Expanded(child: RichText(text: TextSpan(children: _boldSpans(content, base)))),
+          ]),
+        ));
+      } else {
+        widgets.add(Padding(
+          padding: const EdgeInsets.only(bottom: 4),
+          child: RichText(text: TextSpan(children: _boldSpans(line, base))),
+        ));
+      }
+    }
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: widgets);
+  }
+
   Widget _chatBubble(_ChatTurn turn) {
     final mine = turn.fromTeacher;
     return Align(
@@ -398,7 +478,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
           borderRadius: BorderRadius.circular(12),
           border: mine ? null : Border.all(color: JangColors.border),
         ),
-        child: Text(turn.text),
+        child: mine ? Text(turn.text) : _adviceBody(turn.text),
       ),
     );
   }
@@ -417,9 +497,11 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               padding: const EdgeInsets.all(14),
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
-                'Vous choisissez toujours le thème. Discutez avec Kocc de l’approche (communicative, centrée sur '
-                'l’élève, fonction langagière) ; une fois d’accord, Kocc rédige votre leçon complète et une leçon '
-                'pour l’élève que celui-ci peut suivre seul, même sans vous.',
+                'Vous choisissez toujours le thème. Kocc propose une approche (communicative, centrée sur '
+                'l’élève, fonction langagière), puis rédige directement votre leçon complète et une leçon pour '
+                'l’élève que celui-ci peut suivre seul, même sans vous — sans que vous ayez besoin de le '
+                'redemander. Vous pouvez répondre à Kocc pour ajuster l’approche : le cours est alors réécrit '
+                'automatiquement avec les nouveaux conseils.',
               ),
             ),
           ),
@@ -448,7 +530,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
                 ? (_busyChat ? 'Kocc réfléchit…' : 'Demander les conseils de Kocc')
                 : (_busyChat ? 'Kocc réfléchit…' : 'Recommencer la discussion'),
             icon: Icons.tips_and_updates_outlined,
-            onPressed: _busyChat ? null : _startChat,
+            onPressed: (_busyChat || _busy) ? null : _startChat,
           ),
           if (_chat.isNotEmpty) ...[
             const SizedBox(height: 16),
@@ -480,16 +562,25 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               IconButton.filled(
                 style: IconButton.styleFrom(backgroundColor: JangColors.snGreen),
                 tooltip: 'Envoyer',
-                onPressed: _busyChat ? null : _sendReply,
+                onPressed: (_busyChat || _busy) ? null : _sendReply,
                 icon: const Icon(Icons.send, color: Colors.white),
               ),
             ]),
-            const SizedBox(height: 14),
-            FilledButton.icon(
-              onPressed: (!hasAdvice || _busy) ? null : _generateLesson,
-              icon: const Icon(Icons.check_circle_outline),
-              label: Text(_busy ? 'Kocc rédige le cours…' : 'Valider et rédiger le cours complet'),
-            ),
+            if (_busy) ...[
+              const SizedBox(height: 14),
+              const Row(children: [
+                SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2)),
+                SizedBox(width: 10),
+                Text('Kocc rédige le cours complet à partir de ces conseils…'),
+              ]),
+            ] else if (hasAdvice && (_draft.text.isNotEmpty || _studentLesson.text.isNotEmpty)) ...[
+              const SizedBox(height: 14),
+              OutlinedButton.icon(
+                onPressed: _busyChat ? null : _generateLesson,
+                icon: const Icon(Icons.refresh),
+                label: const Text('Régénérer le cours à partir de ces conseils'),
+              ),
+            ],
           ],
           if (_draft.text.isNotEmpty || _studentLesson.text.isNotEmpty) ...[
             const SizedBox(height: 22),
