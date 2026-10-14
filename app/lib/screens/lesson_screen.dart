@@ -44,6 +44,7 @@ class _LessonScreenState extends State<LessonScreen> {
   FlashcardDeck? _deck;
   bool _revStarted = false;
   bool _videoSeen = false;
+  bool _fullscreen = false;
 
   String get _videoKey => 'video_seen_${widget.lesson.id}';
 
@@ -90,7 +91,18 @@ class _LessonScreenState extends State<LessonScreen> {
   @override
   void dispose() {
     _controller?.close();
+    if (_fullscreen) SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    Speech.instance.stopReading();
     super.dispose();
+  }
+
+  /// Mode plein écran pour projeter la leçon en classe (vidéoprojecteur) :
+  /// cache la barre de navigation et agrandit beaucoup le texte.
+  void _toggleFullscreen([bool? value]) {
+    final next = value ?? !_fullscreen;
+    setState(() => _fullscreen = next);
+    SystemChrome.setEnabledSystemUIMode(
+        next ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
   }
 
   /// Le lecteur n'est créé qu'au premier appui : rien n'est téléchargé avant.
@@ -145,6 +157,8 @@ class _LessonScreenState extends State<LessonScreen> {
     final hasBody = lesson.body.trim().isNotEmpty;
     final empty = lesson.videos.isEmpty && !hasBody && lesson.quiz.isEmpty;
 
+    if (_fullscreen) return _fullscreenView(color);
+
     final meta = <String>[
       if (hasBody) 'Lecture : $_readMinutes min',
       if (lesson.videos.isNotEmpty)
@@ -171,6 +185,23 @@ class _LessonScreenState extends State<LessonScreen> {
         foregroundColor: fg,
         elevation: 0,
         actions: [
+          if (hasBody)
+            ValueListenableBuilder<bool>(
+              valueListenable: Speech.instance.reading,
+              builder: (context, reading, _) => IconButton(
+                tooltip: reading ? 'Arrêter la lecture' : 'Écouter la leçon',
+                onPressed: () => reading
+                    ? Speech.instance.stopReading()
+                    : Speech.instance.readLesson(lesson.body, english: Speech.isEnglish(widget.subject.name)),
+                icon: Icon(reading ? Icons.stop_circle_outlined : Icons.volume_up_outlined),
+              ),
+            ),
+          if (hasBody)
+            IconButton(
+              tooltip: 'Mode plein écran (projection en classe)',
+              onPressed: () => _toggleFullscreen(true),
+              icon: const Icon(Icons.fullscreen),
+            ),
           IconButton(
             tooltip: 'Exporter la leçon en PDF',
             onPressed: () async {
@@ -338,6 +369,52 @@ class _LessonScreenState extends State<LessonScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  /// Vue plein écran : juste le titre et le texte de la leçon, en très grand,
+  /// pour projeter sur un vidéoprojecteur. On quitte avec le bouton en haut
+  /// à droite ou le bouton « retour » du téléphone.
+  Widget _fullscreenView(Color color) {
+    final lesson = widget.lesson;
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _toggleFullscreen(false);
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(28, 24, 28, 90),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(lesson.title.isEmpty ? 'Sans titre' : lesson.title,
+                        style: titleStyle(36, color: color, weight: 800)),
+                    const SizedBox(height: 24),
+                    LessonText(lesson.body,
+                        accent: color,
+                        scale: 1.8,
+                        speak: Speech.isEnglish(widget.subject.name)),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: 8,
+                right: 8,
+                child: IconButton(
+                  tooltip: 'Quitter le plein écran',
+                  onPressed: () => _toggleFullscreen(false),
+                  icon: Icon(Icons.fullscreen_exit, color: color, size: 32),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
