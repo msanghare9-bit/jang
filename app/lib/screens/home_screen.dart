@@ -26,6 +26,8 @@ import 'sheep_screen.dart';
 import 'inbox_screen.dart';
 import '../widgets/home_cards.dart';
 import 'mission/learn_mode.dart';
+import 'search_screen.dart';
+import '../widgets/daily_challenge.dart';
 import '../services/home_config_service.dart';
 import '../services/push_service.dart';
 
@@ -251,6 +253,13 @@ class _SubjectsTabState extends State<SubjectsTab> {
                     Row(children: [
                       if (data.exam != null) Chip2(data.exam!.name),
                       const Spacer(),
+                      IconButton(
+                        tooltip: 'Chercher une leçon',
+                        color: Colors.white,
+                        onPressed: () => Navigator.push(
+                            context, MaterialPageRoute(builder: (_) => const SearchScreen())),
+                        icon: const Icon(Icons.search),
+                      ),
                       const InboxIcon(),
                       const SizedBox(width: 6),
                       ValueListenableBuilder(
@@ -283,6 +292,11 @@ class _SubjectsTabState extends State<SubjectsTab> {
                   children: [
                     const _SyncStatus(),
                     const SizedBox(height: 4),
+                    if (data.exam?.examDate != null) ...[
+                      _ExamCountdownCard(exam: data.exam!),
+                      const SizedBox(height: 10),
+                    ],
+                    if (data.exam != null) const DailyChallengeCard(),
                     const MyClassCard(),
                     const MatchCard(),
                     const ExerciseHelpCard(),
@@ -384,6 +398,46 @@ class _SubjectsData {
   final List<Subject> subjects;
   final List<Lesson> lessons;
   _SubjectsData({required this.exams, required this.exam, required this.subjects, required this.lessons});
+}
+
+/// Compte à rebours jusqu'à la date officielle de l'examen (réglée par l'admin).
+class _ExamCountdownCard extends StatelessWidget {
+  final Exam exam;
+  const _ExamCountdownCard({required this.exam});
+
+  @override
+  Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final date = exam.examDate!;
+    final days = date.difference(DateTime(now.year, now.month, now.day)).inDays;
+    final passe = days < 0;
+    String two(int n) => n.toString().padLeft(2, '0');
+    final dateTxt = '${two(date.day)}/${two(date.month)}/${date.year}';
+    return Container(
+      margin: const EdgeInsets.only(bottom: 4),
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: JangColors.snYellow,
+        borderRadius: BorderRadius.circular(18),
+        boxShadow: [BoxShadow(color: JangColors.darker(JangColors.snYellow, 0.2), offset: const Offset(0, 4))],
+      ),
+      child: Row(children: [
+        const Icon(Icons.event_rounded, size: 34, color: JangColors.snGreenDark),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(passe ? '${exam.name} : examen passé' : '${exam.name} : J-$days',
+                  style: titleStyle(19, color: JangColors.snGreenDark, weight: 800)),
+              Text(passe ? 'C\'était le $dateTxt.' : 'Le $dateTxt. Courage, continue de réviser !',
+                  style: const TextStyle(color: JangColors.snGreenDark, fontWeight: FontWeight.w700, fontSize: 13.5)),
+            ],
+          ),
+        ),
+      ]),
+    );
+  }
 }
 
 class _SyncStatus extends StatelessWidget {
