@@ -2,11 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../models.dart';
+import '../../services/class_service.dart';
 import '../../services/content_repo.dart';
 import '../../services/github_service.dart';
 import '../../services/stats_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
+import 'profs_screen.dart';
 import 'students_screen.dart';
 
 /// Tableau de bord du responsable : téléchargements, comptes, activité, résultats.
@@ -42,6 +44,12 @@ class _StatsScreenState extends State<StatsScreen> {
     final todayF = _count(users.where('lastActiveDay', isGreaterThanOrEqualTo: day(0)));
     final weekF = _count(users.where('lastActiveDay', isGreaterThanOrEqualTo: day(6)));
     final monthF = _count(users.where('lastActiveDay', isGreaterThanOrEqualTo: day(29)));
+    final profsF = _count(users.where('role', isEqualTo: 'prof'));
+    final classesF = _count(_db.collection('classes'));
+    final pendingRoleF = _count(_db.collection('roleRequests').where('status', isEqualTo: 'pending'));
+    final matchsF = _count(_db.collection('matchs').where('state', isEqualTo: 'fini'));
+    final tournamentsF = _count(_db.collection('tournaments'));
+    final koccF = ClassService.instance.koccItems().catchError((_) => <ClassItem>[]);
 
     List<QueryDocumentSnapshot<Map<String, dynamic>>> days = const [];
     List<QueryDocumentSnapshot<Map<String, dynamic>>> lessonStats = const [];
@@ -88,6 +96,12 @@ class _StatsScreenState extends State<StatsScreen> {
       lessonStats: {for (final d in lessonStats) d.id: d.data()},
       subjects: subjects,
       lessons: lessons,
+      profs: await profsF,
+      classes: await classesF,
+      pendingRoleRequests: await pendingRoleF,
+      matchsFinished: await matchsF,
+      tournaments: await tournamentsF,
+      koccTop: (await koccF).where((i) => i.ratingCount > 0).take(5).toList(),
     );
   }
 
@@ -189,6 +203,57 @@ class _StatsScreenState extends State<StatsScreen> {
                 label: const Text('Voir la liste des élèves'),
               ),
 
+              // ---------- Professeurs et classes ----------
+              const SectionTitle('Professeurs et classes'),
+              Row(children: [
+                Expanded(child: StatTile(value: _n(s.profs), label: 'comptes professeurs')),
+                const SizedBox(width: 10),
+                Expanded(child: StatTile(value: _n(s.classes), label: 'classes créées')),
+                const SizedBox(width: 10),
+                Expanded(
+                    child: StatTile(
+                        value: _n(s.pendingRoleRequests),
+                        label: 'demandes en attente',
+                        color: s.pendingRoleRequests > 0 ? JangColors.error : JangColors.primary)),
+              ]),
+              const SizedBox(height: 12),
+              OutlinedButton.icon(
+                onPressed: () =>
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => const ProfsScreen())),
+                icon: const Icon(Icons.school_outlined),
+                label: const Text('Voir la liste des professeurs'),
+              ),
+
+              // ---------- Jeux ----------
+              const SectionTitle('Jeux'),
+              Row(children: [
+                Expanded(child: StatTile(value: _n(s.matchsFinished), label: 'matchs terminés')),
+                const SizedBox(width: 10),
+                Expanded(child: StatTile(value: _n(s.tournaments), label: 'tournois créés')),
+              ]),
+
+              // ---------- Meilleures leçons créées avec Kocc ----------
+              const SectionTitle('Meilleures leçons créées avec Kocc'),
+              if (s.koccTop.isEmpty)
+                Text('Aucune leçon notée par les professeurs pour le moment.', style: t.bodySmall)
+              else
+                for (final item in s.koccTop)
+                  Card(
+                    child: ListTile(
+                      leading: const CircleAvatar(
+                          backgroundColor: JangColors.successBg,
+                          child: Icon(Icons.auto_awesome, color: JangColors.snGreen)),
+                      title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.w800)),
+                      subtitle: Text('${ClassItem.label(item.type)} · ${item.subject} · ${item.ownerName}'),
+                      trailing: Column(mainAxisAlignment: MainAxisAlignment.center, mainAxisSize: MainAxisSize.min, children: [
+                        Text('${item.ratingAvg.toStringAsFixed(1)} ★',
+                            style: const TextStyle(fontWeight: FontWeight.w800, color: JangColors.warning)),
+                        Text('${item.ratingCount} note${item.ratingCount > 1 ? 's' : ''}',
+                            style: t.bodySmall),
+                      ]),
+                    ),
+                  ),
+
               // ---------- Activité ----------
               const SectionTitle('Activité des 30 derniers jours'),
               _DailyChart(days: s.days),
@@ -227,6 +292,8 @@ class _Stats {
   final Map<String, Map<String, dynamic>> lessonStats;
   final List<Subject> subjects;
   final List<Lesson> lessons;
+  final int profs, classes, pendingRoleRequests, matchsFinished, tournaments;
+  final List<ClassItem> koccTop;
   _Stats({
     required this.online,
     this.error,
@@ -240,6 +307,12 @@ class _Stats {
     required this.lessonStats,
     required this.subjects,
     required this.lessons,
+    required this.profs,
+    required this.classes,
+    required this.pendingRoleRequests,
+    required this.matchsFinished,
+    required this.tournaments,
+    required this.koccTop,
   });
 }
 
