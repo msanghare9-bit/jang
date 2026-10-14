@@ -202,26 +202,47 @@ class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<Adm
               children: [
                 const SectionTitle('Matières'),
                 if (subjects.isEmpty)
-                  Text('Aucune matière pour ce niveau.', style: Theme.of(context).textTheme.bodySmall),
-                for (var i = 0; i < subjects.length; i++)
-                  AdminRow(
-                    title: subjects[i].name,
-                    color: JangColors.fromHex(subjects[i].color),
-                    onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => AdminSubjectScreen(subject: subjects[i], exam: widget.exam))),
-                    onUp: i > 0 ? () => swapIn(context, 'subjects', subjects, i, i - 1) : null,
-                    onDown: i < subjects.length - 1
-                        ? () => swapIn(context, 'subjects', subjects, i, i + 1)
-                        : null,
-                    onEdit: _admin ? () => _edit(subjects[i]) : null,
-                    onDelete: !_admin ? null : () async {
-                      if (await confirm(context, 'Supprimer ${subjects[i].name} ?',
-                          'La matière et ses leçons ne seront plus visibles par les élèves.',
-                          ok: 'Supprimer')) {
-                        ContentRepo.instance.remove('subjects', subjects[i].id);
-                      }
+                  Text('Aucune matière pour ce niveau.', style: Theme.of(context).textTheme.bodySmall)
+                else
+                  Text('Glisse une matière avec la souris pour la réordonner.',
+                      style: Theme.of(context).textTheme.bodySmall),
+                if (subjects.isNotEmpty)
+                  ReorderableListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: subjects.length,
+                    itemBuilder: (context, i) => KeyedSubtree(
+                      key: ValueKey(subjects[i].id),
+                      child: AdminRow(
+                        title: subjects[i].name,
+                        color: JangColors.fromHex(subjects[i].color),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) =>
+                                    AdminSubjectScreen(subject: subjects[i], exam: widget.exam))),
+                        onUp: i > 0 ? () => swapIn(context, 'subjects', subjects, i, i - 1) : null,
+                        onDown: i < subjects.length - 1
+                            ? () => swapIn(context, 'subjects', subjects, i, i + 1)
+                            : null,
+                        onEdit: _admin ? () => _edit(subjects[i]) : null,
+                        onDelete: !_admin
+                            ? null
+                            : () async {
+                                if (await confirm(context, 'Supprimer ${subjects[i].name} ?',
+                                    'La matière et ses leçons ne seront plus visibles par les élèves.',
+                                    ok: 'Supprimer')) {
+                                  ContentRepo.instance.remove('subjects', subjects[i].id);
+                                }
+                              },
+                      ),
+                    ),
+                    onReorder: (oldIndex, newIndex) {
+                      if (newIndex > oldIndex) newIndex -= 1;
+                      final reordered = [...subjects];
+                      final moved = reordered.removeAt(oldIndex);
+                      reordered.insert(newIndex, moved);
+                      ContentRepo.instance.reorderList('subjects', [for (final s in reordered) s.id]);
                     },
                   ),
                 const SizedBox(height: 8),
