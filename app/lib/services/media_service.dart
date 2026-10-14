@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../theme.dart';
+import 'data_saver_service.dart';
 
 /// Photos des leçons, des QCM et des cartes de révision.
 ///
@@ -113,16 +114,59 @@ class MediaImage extends StatefulWidget {
 }
 
 class _MediaImageState extends State<MediaImage> {
-  late Future<Uint8List?> _future = MediaService.instance.load(widget.id);
+  Future<Uint8List?>? _future;
+  bool _saverOn = false;
+  bool _saverChecked = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkSaver();
+  }
+
+  Future<void> _checkSaver() async {
+    final on = await DataSaverService.instance.isEnabled();
+    if (!mounted) return;
+    setState(() {
+      _saverOn = on;
+      _saverChecked = true;
+      if (!on) _future = MediaService.instance.load(widget.id);
+    });
+  }
+
+  void _loadNow() => setState(() => _future = MediaService.instance.load(widget.id));
 
   @override
   void didUpdateWidget(MediaImage old) {
     super.didUpdateWidget(old);
-    if (old.id != widget.id) _future = MediaService.instance.load(widget.id);
+    if (old.id != widget.id) {
+      if (_saverOn && _future == null) return; // pas encore demandée : rien à recharger
+      _future = MediaService.instance.load(widget.id);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    if (!_saverChecked) {
+      return SizedBox(height: widget.height ?? 160, width: double.infinity);
+    }
+    if (_saverOn && _future == null) {
+      return Container(
+        height: widget.height ?? 160,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: const Color(0xFFF7F7F7),
+          borderRadius: BorderRadius.circular(widget.radius),
+        ),
+        alignment: Alignment.center,
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          const Icon(Icons.image_outlined, color: JangColors.textSecondary),
+          const SizedBox(height: 4),
+          Text('Mode économe en données', style: Theme.of(context).textTheme.bodySmall),
+          TextButton(onPressed: _loadNow, child: const Text('Afficher l\'image')),
+        ]),
+      );
+    }
     return ClipRRect(
       borderRadius: BorderRadius.circular(widget.radius),
       child: FutureBuilder<Uint8List?>(
