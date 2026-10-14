@@ -10,8 +10,7 @@ import '../../widgets/jang_ui.dart';
 import 'match_screens.dart';
 
 class TournamentHomeScreen extends StatelessWidget {
-  final ClassRoom? classRoom;
-  const TournamentHomeScreen({super.key, this.classRoom});
+  const TournamentHomeScreen({super.key});
 
   Future<void> _create(BuildContext context) async {
     final form=await showDialog<_TournamentForm>(context:context,builder:(_)=>const _TournamentSetupDialog());
@@ -19,9 +18,10 @@ class TournamentHomeScreen extends StatelessWidget {
     final host=AuthService.instance.profile.value;
     if(host==null)return;
     try{
-      final qs=await QuizBank.instance.drawDomains(form.domains,form.level,10);
+      final qs=await QuizBank.instance.drawDomains(form.domains,form.level,form.count);
+      if(!context.mounted)return;
       if(qs.isEmpty){ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Aucune question disponible pour ces choix.')));return;}
-      final t=await TournamentService.instance.create(host:host,title:form.title,questions:qs,classRoom:classRoom);
+      final t=await TournamentService.instance.create(host:host,title:form.title,questions:qs,level:form.level,domains:form.domains);
       if(context.mounted)await Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id)));
     }catch(_){if(context.mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Impossible de créer le tournoi.')));}
   }
@@ -37,7 +37,8 @@ class TournamentHomeScreen extends StatelessWidget {
       builder:(context,snap){
         if(snap.hasError)return const Center(child:Text('Impossible de charger les tournois.'));
         if(!snap.hasData)return const Center(child:CircularProgressIndicator());
-        final docs=snap.data!.docs;
+        // Les tournois de classe se trouvent dans l'espace de la classe.
+        final docs=snap.data!.docs.where((d)=>'${d.data()['classId']??''}'.isEmpty).toList();
         if(docs.isEmpty)return const Center(child:Padding(padding:EdgeInsets.all(28),child:Text('Aucun tournoi en cours. Crée le premier !',textAlign:TextAlign.center)));
         return ListView(padding:const EdgeInsets.fromLTRB(16,12,16,96),children:[
           const Text('Rejoins un tableau à élimination ou ouvre un match comme spectateur.'),
@@ -47,7 +48,7 @@ class TournamentHomeScreen extends StatelessWidget {
             return Card(child:ListTile(
               leading:CircleAvatar(backgroundColor:JangColors.snGreen,child:Icon(t.status=='finished'?Icons.emoji_events:Icons.account_tree_outlined,color:Colors.white)),
               title:Text(t.title),
-              subtitle:Text('${t.status=='waiting'?'Inscriptions ouvertes':t.status=='finished'?'Champion : ${t.championName}':'Manche ${t.round}'} · ${t.className.isNotEmpty?'${t.className} · ':''}${t.hostName}'),
+              subtitle:Text(t.status=='waiting'?'Inscriptions ouvertes · ${t.hostName}':t.status=='finished'?'Champion : ${t.championName}':'Manche ${t.round} · ${t.hostName}'),
               trailing:const Icon(Icons.chevron_right),
               onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id))),
             ));
@@ -58,13 +59,13 @@ class TournamentHomeScreen extends StatelessWidget {
   );
 }
 
-class _TournamentForm{final String title,level;final List<String> domains;const _TournamentForm(this.title,this.level,this.domains);}
-class _TournamentSetupDialog extends StatefulWidget{const _TournamentSetupDialog();@override State<_TournamentSetupDialog> createState()=>_TournamentSetupDialogState();}
+class _TournamentForm{final String title,level;final List<String> domains;final int count;const _TournamentForm(this.title,this.level,this.domains,this.count);}
+class _TournamentSetupDialog extends StatefulWidget{final String? className;const _TournamentSetupDialog({this.className});@override State<_TournamentSetupDialog> createState()=>_TournamentSetupDialogState();}
 class _TournamentSetupDialogState extends State<_TournamentSetupDialog>{
-  final _title=TextEditingController();final _domains=<String>{'vocabulaire'};String _level='debutant';
+  final _title=TextEditingController();final _domains=<String>{'vocabulaire'};String _level='debutant';int _count=10;
   @override void dispose(){_title.dispose();super.dispose();}
   @override Widget build(BuildContext context)=>AlertDialog(
-    title:const Text('Créer un tournoi'),
+    title:Text(widget.className==null?'Créer un tournoi':'Tournoi pour ${widget.className}'),
     content:SingleChildScrollView(child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.start,children:[
       TextField(controller:_title,textCapitalization:TextCapitalization.sentences,decoration:const InputDecoration(labelText:'Nom du tournoi')),
       const SizedBox(height:12),const Text('Domaines'),
@@ -75,10 +76,14 @@ class _TournamentSetupDialogState extends State<_TournamentSetupDialog>{
       SegmentedButton<String>(showSelectedIcon:false,
         segments:[for(final l in QuizBank.levels)ButtonSegment(value:l,label:Text(QuizBank.levelLabel(l)))],
         selected:{_level},onSelectionChanged:(s)=>setState(()=>_level=s.first)),
-      const SizedBox(height:8),const Text('Jusqu’à 16 joueurs; 10 questions par match.',style:TextStyle(fontSize:12)),
+      const SizedBox(height:10),const Text('Questions par match'),
+      SegmentedButton<int>(showSelectedIcon:false,
+        segments:const[ButtonSegment(value:5,label:Text('5')),ButtonSegment(value:10,label:Text('10')),ButtonSegment(value:15,label:Text('15'))],
+        selected:{_count},onSelectionChanged:(s)=>setState(()=>_count=s.first)),
+      const SizedBox(height:8),Text(widget.className==null?'Jusqu’à 16 joueurs; $_count questions par match.':'Seuls les élèves de la classe peuvent s’inscrire; $_count questions par match.',style:const TextStyle(fontSize:12)),
     ])),
     actions:[TextButton(onPressed:()=>Navigator.pop(context),child:const Text('Annuler')),
-      FilledButton(onPressed:_domains.isEmpty?null:()=>Navigator.pop(context,_TournamentForm(_title.text.trim(),_level,_domains.toList())),child:const Text('Créer'))],
+      FilledButton(onPressed:_domains.isEmpty?null:()=>Navigator.pop(context,_TournamentForm(_title.text.trim(),_level,_domains.toList(),_count)),child:const Text('Créer'))],
   );
 }
 
@@ -124,8 +129,10 @@ class _TournamentDetailScreenState extends State<TournamentDetailScreen>{
     final uid=AuthService.instance.profile.value?.uid??'';
     return Scaffold(appBar:AppBar(title:const Text('Tableau du tournoi')),body:FutureBuilder<_TournamentData?>(
       future:_future,builder:(context,snap){
-        if(snap.hasError)return const Center(child:Text('Impossible de charger ce tournoi.'));
-        if(!snap.hasData)return const Center(child:CircularProgressIndicator());
+        if(snap.connectionState!=ConnectionState.done)return const Center(child:CircularProgressIndicator());
+        if(snap.hasError)return Center(child:Column(mainAxisSize:MainAxisSize.min,children:[
+          const Text('Impossible de charger ce tournoi.'),const SizedBox(height:10),
+          FilledButton(onPressed:_reload,child:const Text('Réessayer'))]));
         final data=snap.data;if(data==null)return const Center(child:Text('Tournoi introuvable.'));
         final t=data.tournament;final host=t.hostUid==uid;final joined=data.people.any((p)=>p.uid==uid);
         return RefreshIndicator(onRefresh:()async=>_reload(),child:ListView(padding:const EdgeInsets.fromLTRB(16,12,16,30),children:[
@@ -135,11 +142,12 @@ class _TournamentDetailScreenState extends State<TournamentDetailScreen>{
               const SizedBox(height:5),
               Text(t.status=='waiting'?'Inscriptions ouvertes':'Manche ${t.round}',style:const TextStyle(color:Colors.white,fontWeight:FontWeight.w700)),
               if(t.status=='finished')Text('Champion : ${data.people.where((p)=>p.uid==t.championUid).firstOrNull?.name??'Félicitations !'}',style:const TextStyle(color:Colors.white,fontWeight:FontWeight.w800)),
-              Text('Organisé par ${t.hostName} · jusqu’à ${t.capacity} joueurs',style:const TextStyle(color:Colors.white)),
+              Text(t.isClass?'Organisé par ${t.hostName} · classe ${t.className}':'Organisé par ${t.hostName} · jusqu’à ${t.capacity} joueurs',style:const TextStyle(color:Colors.white)),
+              Text('${t.questions.length} questions par match · pas de Ndimbal en tournoi',style:const TextStyle(color:Colors.white,fontSize:12)),
             ])),
           const SizedBox(height:14),
-          Row(children:[Expanded(child:Text('Joueurs (${data.people.length}/${t.capacity})',style:titleStyle(19,weight:800))),
-            if(t.status=='waiting'&&!joined&&data.people.length<t.capacity)FilledButton(onPressed:_busy?null:()=>_join(t),child:const Text('Rejoindre'))]),
+          Row(children:[Expanded(child:Text(t.isClass?'Joueurs (${data.people.length})':'Joueurs (${data.people.length}/${t.capacity})',style:titleStyle(19,weight:800))),
+            if(t.status=='waiting'&&!joined&&!(t.isClass&&host)&&data.people.length<t.capacity)FilledButton(onPressed:_busy?null:()=>_join(t),child:const Text('Rejoindre'))]),
           const SizedBox(height:6),
           for(final p in data.people)ListTile(dense:true,leading:const Icon(Icons.person_outline,color:JangColors.snGreen),title:Text(p.name),
             trailing:p.uid==t.championUid?const Icon(Icons.emoji_events,color:JangColors.ocre):null),
@@ -174,4 +182,73 @@ class _TournamentDetailScreenState extends State<TournamentDetailScreen>{
       ]),
     ));
   }
+}
+
+/// Tournois d'une classe : le prof les crée, les élèves de la classe s'y inscrivent.
+class ClassTournamentsScreen extends StatefulWidget{
+  final ClassRoom classRoom;
+  const ClassTournamentsScreen({super.key,required this.classRoom});
+  @override State<ClassTournamentsScreen> createState()=>_ClassTournamentsScreenState();
+}
+class _ClassTournamentsScreenState extends State<ClassTournamentsScreen>{
+  late Future<List<Tournament>> _future=TournamentService.instance.ofClass(widget.classRoom.id);
+  bool _busy=false;
+  void _reload(){if(mounted)setState(()=>_future=TournamentService.instance.ofClass(widget.classRoom.id));}
+  bool get _organizer{
+    final p=AuthService.instance.profile.value;
+    return p!=null&&(p.uid==widget.classRoom.profUid||p.isAdmin);
+  }
+  Future<void> _create()async{
+    final c=widget.classRoom;
+    final form=await showDialog<_TournamentForm>(context:context,builder:(_)=>_TournamentSetupDialog(className:c.name));
+    if(form==null||!mounted)return;
+    final host=AuthService.instance.profile.value;if(host==null)return;
+    setState(()=>_busy=true);
+    try{
+      final qs=await QuizBank.instance.drawDomains(form.domains,form.level,form.count);
+      if(!mounted)return;
+      if(qs.isEmpty){ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Aucune question disponible pour ces choix.')));return;}
+      final t=await TournamentService.instance.create(host:host,title:form.title,questions:qs,capacity:64,
+        classRoom:c,level:form.level,domains:form.domains);
+      if(!mounted)return;
+      await Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id)));
+      _reload();
+    }catch(_){
+      if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Impossible de créer le tournoi. Vérifie ta connexion internet.')));
+    }finally{if(mounted)setState(()=>_busy=false);}
+  }
+  @override Widget build(BuildContext context)=>Scaffold(
+    appBar:AppBar(title:Text('Tournois · ${widget.classRoom.name}')),
+    floatingActionButton:_organizer?FloatingActionButton.extended(
+      onPressed:_busy?null:_create,backgroundColor:JangColors.snGreen,foregroundColor:Colors.white,
+      icon:const Icon(Icons.add),label:Text(_busy?'Préparation…':'Créer un tournoi')):null,
+    body:FutureBuilder<List<Tournament>>(
+      future:_future,
+      builder:(context,snap){
+        if(snap.connectionState!=ConnectionState.done)return const Center(child:CircularProgressIndicator());
+        final list=snap.data;
+        if(snap.hasError||list==null)return Center(child:Column(mainAxisSize:MainAxisSize.min,children:[
+          const Text('Impossible de charger les tournois.'),const SizedBox(height:10),
+          FilledButton(onPressed:_reload,child:const Text('Réessayer'))]));
+        return RefreshIndicator(onRefresh:()async=>_reload(),child:ListView(padding:const EdgeInsets.fromLTRB(16,12,16,96),children:[
+          Text(_organizer
+            ?'Crée un tournoi pour ta classe : tes élèves s’inscrivent, puis tu lances le tableau et les matchs.'
+            :'Les tournois de ta classe : inscris-toi et affronte tes camarades !'),
+          const SizedBox(height:12),
+          if(list.isEmpty)Padding(padding:const EdgeInsets.all(24),child:Text(
+            _organizer?'Pas encore de tournoi. Crée le premier !':'Ton prof n’a pas encore créé de tournoi.',textAlign:TextAlign.center)),
+          for(final t in list)Card(child:ListTile(
+            leading:CircleAvatar(backgroundColor:JangColors.snGreen,child:Icon(t.status=='finished'?Icons.emoji_events:Icons.account_tree_outlined,color:Colors.white)),
+            title:Text(t.title),
+            subtitle:Text(t.status=='waiting'?'Inscriptions ouvertes':t.status=='finished'?'Champion : ${t.championName}':'Manche ${t.round} en cours'),
+            trailing:const Icon(Icons.chevron_right),
+            onTap:()async{
+              await Navigator.push(context,MaterialPageRoute(builder:(_)=>TournamentDetailScreen(tournamentId:t.id)));
+              _reload();
+            },
+          )),
+        ]));
+      },
+    ),
+  );
 }
