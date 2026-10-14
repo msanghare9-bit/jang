@@ -267,6 +267,19 @@ class ContentRepo {
     notifyChanged();
   }
 
+  /// Renumérote entièrement une liste dans le nouvel ordre donné (0, 1, 2…) :
+  /// utilisé quand on glisse un élément n'importe où dans la liste (pas seulement un voisin).
+  void reorderList(String collection, List<String> idsInOrder) {
+    final batch = _db.batch();
+    final now = FieldValue.serverTimestamp();
+    for (var i = 0; i < idsInOrder.length; i++) {
+      batch.set(_db.collection(collection).doc(idsInOrder[i]), {'order': i, 'updatedAt': now},
+          SetOptions(merge: true));
+    }
+    unawaited(batch.commit().catchError((e) => debugPrint('Écriture refusée : $e')));
+    notifyChanged();
+  }
+
   /// Crée un premier niveau avec quatre matières (utile au premier lancement).
   Future<void> seedFirstLevel(String name) async {
     final examId = newId('exams');
