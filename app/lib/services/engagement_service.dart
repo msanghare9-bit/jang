@@ -88,6 +88,13 @@ class EngagementService {
   /// Jours où l'élève a appris (clés « AAAA-MM-JJ »).
   Set<String> get daySet => _days.toSet();
 
+  /// Vrai si l'événement [type]/[id] a déjà été enregistré aujourd'hui (ex. défi du jour).
+  bool doneToday(String type, String id) {
+    final today = StatsService.dayKey();
+    final events = _prefs?.getStringList(_k('events')) ?? const <String>[];
+    return events.contains('$today|$type|$id');
+  }
+
   int get streak {
     final set = _days.toSet();
     var d = DateTime.now();
