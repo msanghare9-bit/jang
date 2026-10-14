@@ -7,6 +7,7 @@ import '../models.dart';
 import '../services/auth_service.dart';
 import '../services/class_service.dart';
 import '../services/content_repo.dart';
+import '../services/data_saver_service.dart';
 import '../services/github_service.dart';
 import '../services/match_service.dart';
 import '../services/ndimbal_service.dart';
@@ -85,6 +86,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const InboxScreen())),
                 ),
               ),
+              const SizedBox(height: 6),
+              const _DataSaverTile(),
               const SizedBox(height: 6),
               Card(
                 child: Padding(
@@ -250,6 +253,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 }
 
+/// Mode économe en données : les images ne se téléchargent que si l'élève le demande.
+class _DataSaverTile extends StatefulWidget {
+  const _DataSaverTile();
+
+  @override
+  State<_DataSaverTile> createState() => _DataSaverTileState();
+}
+
+class _DataSaverTileState extends State<_DataSaverTile> {
+  late Future<bool> _future = DataSaverService.instance.isEnabled();
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<bool>(
+      future: _future,
+      builder: (context, snap) {
+        final on = snap.data ?? false;
+        return Card(
+          child: SwitchListTile(
+            secondary: const Icon(Icons.data_saver_on_outlined, color: JangColors.primaryDark),
+            title: const Text('Mode économe en données', style: TextStyle(fontWeight: FontWeight.w800)),
+            subtitle: const Text('Le texte se charge normalement ; les images ne s\'affichent que si tu appuies sur « Afficher l\'image ».'),
+            value: on,
+            onChanged: (v) async {
+              await DataSaverService.instance.set(v);
+              if (mounted) setState(() => _future = Future.value(v));
+            },
+          ),
+        );
+      },
+    );
+  }
+}
+
 /// Carte « Mes classes » de l'élève : ses classes, et le code pour entrer dans une nouvelle classe.
 class _MatchSummary extends StatelessWidget {
   final String uid;
@@ -378,7 +415,8 @@ class _MyClasses extends StatelessWidget {
             builder: (context, classes, _) => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text('Ton prof te donne un code. Une seule classe par matière.', style: t.bodyMedium),
+                Text('Ton prof te donne un code. Tu peux être dans plusieurs classes, même dans la même matière.',
+                    style: t.bodyMedium),
                 const SizedBox(height: 8),
                 if (classes.isEmpty)
                   Text('Tu n\'es encore dans aucune classe.', style: t.bodySmall)
