@@ -9,14 +9,34 @@ class Exam {
   final String name;
   final int order;
   final bool deleted;
-  Exam({required this.id, required this.name, this.order = 0, this.deleted = false});
+
+  /// Date officielle de l'examen (pour le compte à rebours sur l'accueil).
+  /// Réglée par l'admin directement dans Firebase (champ « examDate »).
+  final DateTime? examDate;
+  Exam(
+      {required this.id,
+      required this.name,
+      this.order = 0,
+      this.deleted = false,
+      this.examDate});
 
   factory Exam.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
     final m = d.data() ?? {};
-    return Exam(id: d.id, name: _str(m['name']), order: _int(m['order']), deleted: _bool(m['deleted']));
+    final ed = m['examDate'];
+    return Exam(
+        id: d.id,
+        name: _str(m['name']),
+        order: _int(m['order']),
+        deleted: _bool(m['deleted']),
+        examDate: ed is Timestamp ? ed.toDate() : null);
   }
 
-  Map<String, dynamic> toMap() => {'name': name, 'order': order, 'deleted': deleted};
+  Map<String, dynamic> toMap() => {
+        'name': name,
+        'order': order,
+        'deleted': deleted,
+        'examDate': examDate == null ? null : Timestamp.fromDate(examDate!),
+      };
 }
 
 class Subject {
@@ -660,6 +680,12 @@ class ClassItem {
   final bool deleted;
   final DateTime? createdAt;
   final DateTime? dueAt;
+
+  /// Note de qualité donnée par les professeurs (onglet « Leçons créées avec Kocc ») :
+  /// uid du prof -> note de 1 à 5.
+  final Map<String, int> ratings;
+  double get ratingAvg => ratings.isEmpty ? 0 : ratings.values.reduce((a, b) => a + b) / ratings.length;
+  int get ratingCount => ratings.length;
   ClassItem({
     required this.id,
     required this.classId,
@@ -680,6 +706,7 @@ class ClassItem {
     this.deleted = false,
     this.createdAt,
     this.dueAt,
+    this.ratings = const {},
   });
 
   bool get isPublic => visibility == 'public';
@@ -711,6 +738,9 @@ class ClassItem {
       deleted: _bool(m['deleted']),
       createdAt: ts is Timestamp ? ts.toDate() : null,
       dueAt: due is Timestamp ? due.toDate() : null,
+      ratings: (m['ratings'] is Map)
+          ? {for (final e in (m['ratings'] as Map).entries) '${e.key}': _int(e.value)}
+          : const {},
     );
   }
 
@@ -732,6 +762,7 @@ class ClassItem {
         'visibility': visibility,
         'deleted': deleted,
         'dueAt': dueAt == null ? null : Timestamp.fromDate(dueAt!),
+        'ratings': ratings,
       };
 
   /// Leçon fabriquée pour réutiliser les écrans de leçon et de quiz (et la progression).
