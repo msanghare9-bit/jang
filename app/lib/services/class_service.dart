@@ -167,13 +167,10 @@ class ClassService {
 
   void clear() => mine.value = const [];
 
-  /// La classe de l'élève dans cette matière (une seule par matière).
-  ClassRoom? mineFor(String subjectName) {
+  /// Toutes les classes de l'élève dans cette matière (il peut être dans plusieurs en même temps).
+  List<ClassRoom> classesFor(String subjectName) {
     final k = subjectKey(subjectName);
-    for (final c in mine.value) {
-      if (c.subject == k) return c;
-    }
-    return null;
+    return mine.value.where((c) => c.subject == k).toList();
   }
 
   Future<List<ClassRoom>> all() async {
@@ -257,11 +254,7 @@ class ClassService {
     if (s.docs.isEmpty) return (null, 'Ce code ne correspond à aucune classe. Vérifie avec ton prof.');
     final c = ClassRoom.fromDoc(s.docs.first);
     if (c.deleted) return (null, 'Cette classe n\'existe plus.');
-    for (final old in mine.value) {
-      if (old.subject == c.subject && old.id != c.id) {
-        await _classes.doc(old.id).update({'students': FieldValue.arrayRemove([p.uid])});
-      }
-    }
+    if (c.students.contains(p.uid)) return (c, '');
     await _classes.doc(c.id).update({'students': FieldValue.arrayUnion([p.uid])});
     await loadMine(p.uid);
     revision.value++;
@@ -282,14 +275,6 @@ class ClassService {
     if (s.docs.isEmpty) return 'Aucun élève ne s\'appelle « $u ».';
     final uid = '${s.docs.first.data()['uid'] ?? ''}';
     if (uid.isEmpty) return 'Ce compte ne peut pas être ajouté pour le moment.';
-    // Une seule classe par matière : on le retire des autres classes de cette matière.
-    final others = await _classes.where('students', arrayContains: uid).get();
-    for (final d in others.docs) {
-      final o = ClassRoom.fromDoc(d);
-      if (o.subject == c.subject && o.id != c.id) {
-        await _classes.doc(o.id).update({'students': FieldValue.arrayRemove([uid])});
-      }
-    }
     await _classes.doc(c.id).update({'students': FieldValue.arrayUnion([uid])});
     final enrolled = await _classes.where('students', arrayContains: uid).get();
     await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((room) => !room.deleted).toList());
@@ -341,7 +326,20 @@ class ClassService {
         .where('sourceOwnerName', isEqualTo: koccSourceName)
         .limit(200)
         .get();
-    return _sorted(snapshot.docs);
+    final items = [for (final d in snapshot.docs) ClassItem.fromDoc(d)].where((c) => !c.deleted).toList()
+      ..sort((a, b) {
+        final byRating = b.ratingAvg.compareTo(a.ratingAvg);
+        if (byRating != 0) return byRating;
+        return (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0));
+      });
+    return items;
+  }
+
+  /// Un professeur note une leçon créée avec Kocc (1 à 5 étoiles), pour aider
+  /// les collègues à repérer les meilleures. Une note par prof, modifiable.
+  Future<void> rateKoccItem(String itemId, String profUid, int stars) async {
+    await _items.doc(itemId).update({'ratings.$profUid': stars.clamp(1, 5)});
+    revision.value++;
   }
 
   /// Partage la préparation complète d'un cours (avec corrigé) avec les
@@ -384,19 +382,24 @@ class ClassService {
     return list;
   }
 
-  /// Ce que l'élève voit dans une matière : les contenus de sa classe, puis les contenus publics.
-  Future<(ClassRoom?, List<ClassItem>, List<ClassItem>)> forStudent(UserProfile p, Subject subject) async {
-    final c = mineFor(subject.name);
+  /// Ce que l'élève voit dans une matière : les contenus de ses classes (il peut en avoir
+  /// plusieurs dans la même matière), puis les contenus publics.
+  Future<(List<ClassRoom>, List<ClassItem>, List<ClassItem>)> forStudent(UserProfile p, Subject subject) async {
+    final rooms = classesFor(subject.name);
     var own = <ClassItem>[];
     var pub = <ClassItem>[];
     try {
-      if (c != null) own = await itemsOf(c.id);
+      if (rooms.isNotEmpty) {
+        final lists = await Future.wait([for (final r in rooms) itemsOf(r.id)]);
+        own = [for (final l in lists) ...l]
+          ..sort((a, b) => (b.createdAt ?? DateTime(3000)).compareTo(a.createdAt ?? DateTime(3000)));
+      }
       final ids = own.map((i) => i.id).toSet();
       pub = (await publicItems(p.examId, subject.name)).where((i) => !ids.contains(i.id)).toList();
     } catch (e) {
       debugPrint('Contenus de classe : $e');
     }
-    return (c, own, pub);
+    return (rooms, own, pub);
   }
 
   /// Enregistre un contenu (nouveau si id est vide). Renvoie son identifiant.
