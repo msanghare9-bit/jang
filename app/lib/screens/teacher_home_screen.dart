@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
 import '../services/auth_service.dart';
@@ -26,6 +27,41 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
   Future<List<ClassRoom>> _load() {
     final p = AuthService.instance.profile.value;
     return p == null ? Future.value(const <ClassRoom>[]) : ClassService.instance.ofProf(p.uid);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _maybeShowOnboarding());
+  }
+
+  Future<void> _maybeShowOnboarding() async {
+    final p = AuthService.instance.profile.value;
+    if (p == null) return;
+    final prefs = await SharedPreferences.getInstance();
+    final key = 'prof_onboarding_seen_${p.uid}';
+    if (prefs.getBool(key) ?? false) return;
+    await prefs.setBool(key, true);
+    if (!mounted) return;
+    await showDialog<void>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text('Bienvenue sur Jàng, ${p.name.split(' ').first} !', style: titleStyle(19)),
+        content: const SingleChildScrollView(
+          child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Voici l\'essentiel pour commencer :'),
+            SizedBox(height: 10),
+            _OnboardStep(1, 'Créez une classe', 'Onglet « Mes classes » : donnez un nom, choisissez le niveau et la matière. Un code à 6 caractères est généré pour vos élèves.'),
+            _OnboardStep(2, 'Partagez le code', 'Donnez ce code à vos élèves : ils l\'entrent dans l\'appli pour rejoindre votre classe.'),
+            _OnboardStep(3, 'Ajoutez du contenu', 'Dans votre classe : leçons, QCM, devoirs, ou demandez à Kocc Barma de préparer un cours pour vous.'),
+            _OnboardStep(4, 'Suivez vos élèves', 'Le tableau de bord de la classe montre qui avance bien et qui a besoin d\'aide.'),
+          ]),
+        ),
+        actions: [
+          FilledButton(onPressed: () => Navigator.pop(c), child: const Text('Compris, je commence !')),
+        ],
+      ),
+    );
   }
 
   void _refresh() {
@@ -227,6 +263,35 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
           },
         ),
       ),
+    );
+  }
+}
+
+/// Une étape du guide d'accueil des nouveaux profs.
+class _OnboardStep extends StatelessWidget {
+  final int n;
+  final String title;
+  final String text;
+  const _OnboardStep(this.n, this.title, this.text);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 12),
+      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        CircleAvatar(
+          radius: 13,
+          backgroundColor: JangColors.snGreen,
+          child: Text('$n', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 13)),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
+            Text(text, style: const TextStyle(fontSize: 13.5)),
+          ]),
+        ),
+      ]),
     );
   }
 }
