@@ -3,19 +3,25 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models.dart';
+import 'class_service.dart';
 import 'match_service.dart';
 import 'quiz_bank.dart';
 
 class Tournament {
-  final String id, title, hostUid, hostName, status, championUid, championName, classId, className;
+  final String id, title, hostUid, hostName, status, championUid, championName;
   final int round, capacity;
   final List<BankQuestion> questions;
+
+  /// Tournoi d'une classe (créé par son prof) : seuls les élèves de la classe peuvent s'inscrire. Vide sinon.
+  final String classId, className;
+  final DateTime? createdAt;
   const Tournament({
     required this.id, required this.title, required this.hostUid, required this.hostName,
     required this.status, required this.round, required this.capacity, required this.questions,
-    this.championUid = '', this.championName = '',
-    this.classId = '', this.className = '',
+    this.championUid = '', this.championName = '', this.classId = '', this.className = '', this.createdAt,
   });
+
+  bool get isClass => classId.isNotEmpty;
   factory Tournament.fromDoc(DocumentSnapshot<Map<String,dynamic>> doc) {
     final d=doc.data()??{};
     return Tournament(
@@ -24,8 +30,9 @@ class Tournament {
       round:d['round'] is num?(d['round'] as num).toInt():0,
       capacity:d['capacity'] is num?(d['capacity'] as num).toInt():16,
       championUid:'${d['championUid']??''}',championName:'${d['championName']??''}',
-      classId:'${d['classId']??''}',className:'${d['className']??''}',
       questions:[for(final q in (d['questions'] as List? ?? const [])) if(q is Map) BankQuestion.fromMap(q)],
+      classId:'${d['classId']??''}',className:'${d['className']??''}',
+      createdAt:d['createdAt'] is Timestamp?(d['createdAt'] as Timestamp).toDate():null,
     );
   }
 }
@@ -75,20 +82,33 @@ class TournamentService {
 
   Stream<DocumentSnapshot<Map<String,dynamic>>> watch(String id)=>_col.doc(id).snapshots();
 
+  /// Crée un tournoi. Avec [classRoom] : tournoi d'une classe, organisé par son prof
+  /// (seuls les élèves de la classe peuvent s'inscrire).
   Future<Tournament> create({
     required UserProfile host,
     required String title,
     required List<BankQuestion> questions,
-    ClassRoom? classRoom,
     int capacity=16,
+    ClassRoom? classRoom,
+    String level='',
+    List<String> domains=const [],
   }) async {
     final ref = _col.doc();
-    await ref.set({'title': title.trim().isEmpty ? 'Tournoi de ${host.firstName}' : title.trim(), 'hostUid': host.uid,
+    final defaultTitle = classRoom != null ? 'Tournoi de la ${classRoom.name}' : 'Tournoi de ${host.firstName}';
+    await ref.set({'title': title.trim().isEmpty ? defaultTitle : title.trim(), 'hostUid': host.uid,
       'hostName': host.publicName, 'status': 'waiting', 'round': 0, 'capacity': capacity,
-      if (classRoom != null) 'classId': classRoom.id,
-      if (classRoom != null) 'className': classRoom.name,
-      'questions': [for (final q in questions) q.toMap()], 'createdAt': FieldValue.serverTimestamp()});
+      'questions': [for (final q in questions) q.toMap()], 'createdAt': FieldValue.serverTimestamp(),
+      'classId': classRoom?.id ?? '', 'className': classRoom?.name ?? '',
+      'niveau': level, 'domaines': domains});
     return Tournament.fromDoc(await ref.get());
+  }
+
+  /// Tournois d'une classe, du plus récent au plus ancien.
+  Future<List<Tournament>> ofClass(String classId) async {
+    final q=await _col.where('classId',isEqualTo:classId).get();
+    final list=q.docs.map(Tournament.fromDoc).toList();
+    list.sort((a,b)=>(b.createdAt??DateTime(2000)).compareTo(a.createdAt??DateTime(2000)));
+    return list;
   }
 
   Stream<QuerySnapshot<Map<String,dynamic>>> participantStream(String id)=>_col.doc(id)
@@ -105,10 +125,10 @@ class TournamentService {
     if(!doc.exists)return(false,'Ce tournoi n’existe plus.');
     final t=Tournament.fromDoc(doc);
     if(t.status!='waiting')return(false,'Les inscriptions sont terminées.');
-    if(t.classId.isNotEmpty) {
-      final room = await _db.collection('classes').doc(t.classId).get();
-      final students = (room.data()?['students'] as List? ?? const []).whereType<String>();
-      if (!room.exists || !students.contains(p.uid)) return(false,'Ce tournoi est réservé aux élèves de ${t.className}.');
+    if(t.isClass){
+      final inMine=ClassService.instance.mine.value.any((c)=>c.id==t.classId);
+      final room=inMine?null:await ClassService.instance.byId(t.classId);
+      if(!inMine&&(room==null||!room.students.contains(p.uid)))return(false,'Ce tournoi est réservé aux élèves de la classe ${t.className}.');
     }
     final people=await participants(id);
     if(people.any((x)=>x.uid==p.uid))return(true,'');
