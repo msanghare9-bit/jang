@@ -98,6 +98,48 @@ class TeacherTipsCard extends StatelessWidget {
       );
 }
 
+/// Étoiles pour noter la qualité d'une leçon créée avec Kocc (visible par tous les profs).
+/// La note moyenne affichée se met à jour tout de suite (sans recharger la liste).
+class _StarRow extends StatefulWidget {
+  final ClassItem item;
+  const _StarRow({required this.item});
+
+  @override
+  State<_StarRow> createState() => _StarRowState();
+}
+
+class _StarRowState extends State<_StarRow> {
+  late Map<String, int> _ratings = Map.of(widget.item.ratings);
+
+  void _rate(int stars) {
+    final uid = AuthService.instance.profile.value?.uid ?? '';
+    if (uid.isEmpty) return;
+    setState(() => _ratings[uid] = stars);
+    ClassService.instance.rateKoccItem(widget.item.id, uid, stars);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final uid = AuthService.instance.profile.value?.uid ?? '';
+    final mine = _ratings[uid] ?? 0;
+    final avg = _ratings.isEmpty ? 0.0 : _ratings.values.reduce((a, b) => a + b) / _ratings.length;
+    return Column(mainAxisSize: MainAxisSize.min, children: [
+      Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (var i = 1; i <= 5; i++)
+            GestureDetector(
+              onTap: () => _rate(i),
+              child: Icon(i <= mine ? Icons.star : Icons.star_border, size: 16, color: JangColors.warning),
+            ),
+        ],
+      ),
+      if (_ratings.isNotEmpty)
+        Text('${avg.toStringAsFixed(1)} (${_ratings.length})', style: const TextStyle(fontSize: 11)),
+    ]);
+  }
+}
+
 class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
   late Future<List<_TeacherPost>> _posts = _loadPosts();
   late Future<List<ClassItem>> _courses = ClassService.instance.sharedTeacherItems();
@@ -360,7 +402,7 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
   }
 
   /// Liste de cours (onglet « Cours partagés » ou « Leçons créées avec Kocc »).
-  Widget _courseList(Future<List<ClassItem>> future, {required String emptyMessage}) {
+  Widget _courseList(Future<List<ClassItem>> future, {required String emptyMessage, bool rating = false}) {
     return FutureBuilder<List<ClassItem>>(
       future: future,
       builder: (context, snapshot) {
@@ -375,7 +417,9 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
                   child: Icon(Icons.menu_book_outlined, color: JangColors.snGreen)),
               title: Text(item.title, style: const TextStyle(fontWeight: FontWeight.w800)),
               subtitle: Text('${ClassItem.label(item.type)} · ${item.subject} · ${item.ownerName}'),
-              trailing: const Icon(Icons.open_in_new),
+              trailing: rating
+                  ? SizedBox(width: 92, child: _StarRow(item: item))
+                  : const Icon(Icons.open_in_new),
               onTap: () => _showCourse(item),
             )),
         ]);
@@ -460,6 +504,7 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
           _courseList(
             _koccLessons,
             emptyMessage: 'Aucune leçon créée avec Kocc pour le moment.',
+            rating: true,
           ),
           _teacherLessonList(),
         ]),
