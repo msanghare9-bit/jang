@@ -1,578 +1,207 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models.dart';
+import 'auth_service.dart';
+import 'content_repo.dart';
+import 'progress_repo.dart';
 import 'stats_service.dart';
-import 'inbox_service.dart';
 
-/// Résumé du travail d'un élève, lu sur sa fiche (users/{uid}) : une seule lecture par élève.
-class StudentSummary {
-  final String uid;
-  final String name;
-  final String username;
-  final String examId;
-  final bool disabled;
-
-  /// Dernier jour où l'élève a ouvert l'app (« 2026-10-06 »), vide s'il n'est jamais venu.
-  final String lastActiveDay;
-  final int lessonsSeen;
-  final int quizLessons;
-  final int sumBestPct;
-  final int missionsDone;
-  StudentSummary({
-    required this.uid,
-    required this.name,
-    required this.username,
-    required this.examId,
-    this.disabled = false,
-    this.lastActiveDay = '',
-    this.lessonsSeen = 0,
-    this.quizLessons = 0,
-    this.sumBestPct = 0,
-    this.missionsDone = 0,
-  });
-
-  /// Moyenne des meilleures notes aux quiz, en % (null : aucun quiz).
-  int? get average => quizLessons == 0 ? null : (sumBestPct / quizLessons).round();
-
-  /// Jours depuis la dernière venue (null : jamais venu).
-  int? get daysAway {
-    final d = DateTime.tryParse(lastActiveDay);
-    if (d == null) return null;
-    final now = DateTime.now();
-    return DateTime(now.year, now.month, now.day).difference(DateTime(d.year, d.month, d.day)).inDays;
-  }
-
-  /// Travaille : venu dans les 7 derniers jours.
-  bool get active => (daysAway ?? 999) <= 7;
-
-  factory StudentSummary.fromDoc(DocumentSnapshot<Map<String, dynamic>> d) {
-    final m = d.data() ?? {};
-    int n(String k) => m[k] is num ? (m[k] as num).toInt() : 0;
-    String s(String k) => m[k] is String ? m[k] as String : '';
-    return StudentSummary(
-      uid: d.id,
-      name: s('name'),
-      username: s('username'),
-      examId: s('examId'),
-      disabled: m['disabled'] == true,
-      lastActiveDay: s('lastActiveDay'),
-      lessonsSeen: n('lessonsSeen'),
-      quizLessons: n('quizLessons'),
-      sumBestPct: n('sumBestPct'),
-      missionsDone: n('missionsDone'),
-    );
-  }
-}
-
-/// Ce qu'un élève a fait d'un contenu de classe.
-class ItemResult {
-  final bool opened;
-  final int? scorePct;
-  final bool done;
-  ItemResult({this.opened = false, this.scorePct, this.done = false});
-}
-
-/// Valeur de `sourceOwnerName` utilisée pour marquer une leçon-élève générée
-/// avec Kocc Bàrma (dans « Préparer un cours avec Kocc »), afin de pouvoir
-/// la retrouver dans la rubrique « Leçons créées avec Kocc ».
-const String koccSourceName = 'Kocc Bàrma';
-
-/// Préparation de cours complète d'un professeur (avec corrigé et scénario
-/// pédagogique), partagée avec les collègues. Stockée dans sa propre
-/// collection Firestore (jamais `classItems`), afin qu'elle ne puisse
-/// JAMAIS être renvoyée par itemsOf/publicItems/forStudent ni ajoutée à une
-/// classe : elle n'est destinée qu'aux professeurs.
-class TeacherLessonPrep {
+/// Un badge à gagner.
+class BadgeDef {
   final String id;
   final String title;
-  final String subjectName;
-  final String body;
-  final String authorUid;
-  final String authorName;
-  final DateTime? createdAt;
-
-  const TeacherLessonPrep({
-    required this.id,
-    required this.title,
-    required this.subjectName,
-    required this.body,
-    required this.authorUid,
-    required this.authorName,
-    this.createdAt,
-  });
-
-  factory TeacherLessonPrep.fromDoc(QueryDocumentSnapshot<Map<String, dynamic>> doc) {
-    final m = doc.data();
-    final created = m['createdAt'];
-    return TeacherLessonPrep(
-      id: doc.id,
-      title: '${m['title'] ?? ''}',
-      subjectName: '${m['subjectName'] ?? ''}',
-      body: '${m['body'] ?? ''}',
-      authorUid: '${m['authorUid'] ?? ''}',
-      authorName: '${m['authorName'] ?? 'Professeur'}',
-      createdAt: created is Timestamp ? created.toDate() : null,
-    );
-  }
+  final String description;
+  final IconData icon;
+  const BadgeDef(this.id, this.title, this.description, this.icon);
 }
 
-/// Classes, contenus des profs et devoirs.
-class ClassService {
-  ClassService._();
-  static final instance = ClassService._();
+const badgeDefs = <BadgeDef>[
+  BadgeDef('premier_pas', 'Premier pas', 'Ouvrir ta première leçon', Icons.directions_walk),
+  BadgeDef('lecteur', 'Lecteur assidu', 'Ouvrir 10 leçons', Icons.menu_book),
+  BadgeDef('premier_qcm', 'Premiers exercices', 'Terminer tes premiers exercices', Icons.quiz_outlined),
+  BadgeDef('sans_faute', 'Sans faute', 'Avoir 100 % à des exercices', Icons.verified_outlined),
+  BadgeDef('perfection', 'Perfection', 'Avoir 100 % à 5 séries d\'exercices', Icons.workspace_premium_outlined),
+  BadgeDef('chapitre', 'Dix séries', 'Terminer 10 séries d\'exercices', Icons.flag_outlined),
+  BadgeDef('matiere', 'Matière bouclée', 'Faire tous les exercices d\'une matière', Icons.emoji_events_outlined),
+  BadgeDef('serie3', 'Régulier', 'Réviser 3 jours de suite', Icons.local_fire_department_outlined),
+  BadgeDef('serie7', 'Infatigable', 'Réviser 7 jours de suite', Icons.whatshot_outlined),
+  BadgeDef('correcteur', 'Correcteur', 'Corriger 10 erreurs en révision', Icons.build_circle_outlined),
+  BadgeDef('objectif', 'Objectif atteint', 'Atteindre ton objectif de la semaine', Icons.track_changes),
+  BadgeDef('memoire', 'Bonne mémoire', 'Réviser 50 cartes', Icons.style_outlined),
+  BadgeDef('curieux', 'Curieux', 'Poser ta première question', Icons.forum_outlined),
+];
 
-  final _db = FirebaseFirestore.instance;
-  CollectionReference<Map<String, dynamic>> get _classes => _db.collection('classes');
-  CollectionReference<Map<String, dynamic>> get _items => _db.collection('classItems');
-  CollectionReference<Map<String, dynamic>> get _teacherLessons => _db.collection('teacherLessons');
+/// Motivation : jours de révision, série, objectif de la semaine, badges.
+/// Les données sont gardées sur le téléphone ; les badges gagnés sont aussi copiés sur le compte.
+class EngagementService {
+  EngagementService._();
+  static final instance = EngagementService._();
 
-  /// Classes de l'élève connecté (mises à jour à la connexion et quand il entre ou sort).
-  final ValueNotifier<List<ClassRoom>> mine = ValueNotifier(const []);
   final ValueNotifier<int> revision = ValueNotifier(0);
 
-  // ---------- Classes ----------
+  /// Dernier badge gagné, pour afficher une félicitation.
+  final ValueNotifier<BadgeDef?> newBadge = ValueNotifier(null);
 
-  Future<void> loadMine(String uid) async {
+  SharedPreferences? _prefs;
+  String _uid = '';
+
+  String _k(String name) => '${name}_$_uid';
+
+  Future<void> init(String uid) async {
+    _prefs = await SharedPreferences.getInstance();
+    _uid = uid;
+    // Récupère les badges déjà enregistrés sur le compte (après une réinstallation).
+    final fromAccount = AuthService.instance.profile.value?.badges ?? const [];
+    final local = earnedIds;
+    final merged = {...local, ...fromAccount}.toList();
+    await _prefs!.setStringList(_k('badges'), merged);
+    revision.value++;
+    unawaited(evaluate());
+  }
+
+  Set<String> get earnedIds => (_prefs?.getStringList(_k('badges')) ?? const []).toSet();
+
+  // ---------------- Jours de révision et série ----------------
+
+  List<String> get _days => _prefs?.getStringList(_k('study_days')) ?? const [];
+
+  /// Enregistre une activité ([type] = 'lesson' ou 'quiz'), une seule fois par jour et par leçon.
+  Future<void> logStudy(String type, String lessonId) async {
+    final p = _prefs;
+    if (p == null) return;
+    final today = StatsService.dayKey();
+    final days = {..._days, today}.toList()..sort();
+    await p.setStringList(_k('study_days'), days.length > 90 ? days.sublist(days.length - 90) : days);
+    final entry = '$today|$type|$lessonId';
+    final old = p.getStringList(_k('events')) ?? const <String>[];
+    if (old.contains(entry)) return;
+    final events = [...old, entry];
+    await p.setStringList(_k('events'), events.length > 400 ? events.sublist(events.length - 400) : events);
+    revision.value++;
+    unawaited(evaluate());
+  }
+
+  /// Jours où l'élève a appris (clés « AAAA-MM-JJ »).
+  Set<String> get daySet => _days.toSet();
+
+  /// Vrai si l'événement [type]/[id] a déjà été enregistré aujourd'hui (ex. défi du jour).
+  bool doneToday(String type, String id) {
+    final today = StatsService.dayKey();
+    final events = _prefs?.getStringList(_k('events')) ?? const <String>[];
+    return events.contains('$today|$type|$id');
+  }
+
+  int get streak {
+    final set = _days.toSet();
+    var d = DateTime.now();
+    if (!set.contains(StatsService.dayKey(d))) d = d.subtract(const Duration(days: 1));
+    var n = 0;
+    while (set.contains(StatsService.dayKey(d))) {
+      n++;
+      d = d.subtract(const Duration(days: 1));
+    }
+    return n;
+  }
+
+  // ---------------- Objectif de la semaine ----------------
+
+  /// Type : 'lesson' (leçons ouvertes) ou 'quiz' (QCM faits). 0 = pas d'objectif.
+  String get goalType => _prefs?.getString(_k('goal_type')) ?? 'lesson';
+  int get goalTarget => _prefs?.getInt(_k('goal_target')) ?? 0;
+
+  Future<void> setGoal(String type, int target) async {
+    await _prefs?.setString(_k('goal_type'), type);
+    await _prefs?.setInt(_k('goal_target'), target);
+    revision.value++;
+    unawaited(evaluate());
+  }
+
+  static DateTime get weekStart {
+    final now = DateTime.now();
+    final d = DateTime(now.year, now.month, now.day);
+    return d.subtract(Duration(days: d.weekday - 1));
+  }
+
+  int weekCount(String type) {
+    final start = StatsService.dayKey(weekStart);
+    return (_prefs?.getStringList(_k('events')) ?? const <String>[]).where((e) {
+      final parts = e.split('|');
+      return parts.length >= 2 && parts[1] == type && parts[0].compareTo(start) >= 0;
+    }).length;
+  }
+
+  // ---------------- Compteurs divers ----------------
+
+  int counter(String name) => _prefs?.getInt(_k('count_$name')) ?? 0;
+
+  Future<void> addTo(String name, [int n = 1]) async {
+    await _prefs?.setInt(_k('count_$name'), counter(name) + n);
+    revision.value++;
+    unawaited(evaluate());
+  }
+
+  // ---------------- Badges ----------------
+
+  bool _evaluating = false;
+
+  Future<void> evaluate() async {
+    final p = _prefs;
+    if (p == null || _uid.isEmpty || _evaluating) return;
+    _evaluating = true;
     try {
-      final s = await _classes.where('students', arrayContains: uid).get();
-      mine.value = [for (final d in s.docs) ClassRoom.fromDoc(d)].where((c) => !c.deleted).toList();
-      await _syncTeacherAccess(uid, mine.value);
-    } catch (e) {
-      debugPrint('Classes : $e');
-    }
-  }
+      final progress = ProgressRepo.instance.all.values.toList();
+      final seen = progress.where((x) => x.seen).length;
+      final quizzes = progress.where((x) => x.quizDone).toList();
+      final perfect = quizzes.where((x) => x.bestScore == x.total).length;
 
-  /// Maintient la liste des professeurs autorisés à consulter le profil de l'élève.
-  /// Cela permet l'inscription autonome des professeurs sans ouvrir les profils à tous.
-  Future<void> _syncTeacherAccess(String uid, List<ClassRoom> enrolled) async {
-    final teachers = _db.collection('studentAccess').doc(uid).collection('teachers');
-    final current = <String, String>{};
-    for (final room in enrolled) {
-      if (room.profUid.isNotEmpty) current[room.profUid] = room.id;
-    }
-    final existing = await teachers.get();
-    final batch = _db.batch();
-    for (final doc in existing.docs) {
-      if (!current.containsKey(doc.id)) batch.delete(doc.reference);
-    }
-    for (final entry in current.entries) {
-      batch.set(teachers.doc(entry.key), {'profUid': entry.key, 'classId': entry.value});
-    }
-    if (existing.docs.isNotEmpty || current.isNotEmpty) await batch.commit();
-  }
+      final earned = <String>{};
+      if (seen >= 1) earned.add('premier_pas');
+      if (seen >= 10) earned.add('lecteur');
+      if (quizzes.isNotEmpty) earned.add('premier_qcm');
+      if (quizzes.length >= 10) earned.add('chapitre');
+      if (perfect >= 1) earned.add('sans_faute');
+      if (perfect >= 5) earned.add('perfection');
+      final s = streak;
+      if (s >= 3) earned.add('serie3');
+      if (s >= 7) earned.add('serie7');
+      if (counter('mistakes_fixed') >= 10) earned.add('correcteur');
+      if (counter('flashcards') >= 50) earned.add('memoire');
+      if (counter('questions') >= 1) earned.add('curieux');
+      if (goalTarget > 0 && weekCount(goalType) >= goalTarget) earned.add('objectif');
 
-  void clear() => mine.value = const [];
-
-  /// Toutes les classes de l'élève dans cette matière (il peut être dans plusieurs en même temps).
-  List<ClassRoom> classesFor(String subjectName) {
-    final k = subjectKey(subjectName);
-    return mine.value.where((c) => c.subject == k).toList();
-  }
-
-  Future<List<ClassRoom>> all() async {
-    final s = await _classes.get();
-    return [for (final d in s.docs) ClassRoom.fromDoc(d)].where((c) => !c.deleted).toList()
-      ..sort((a, b) => a.name.compareTo(b.name));
-  }
-
-  Future<List<ClassRoom>> ofProf(String uid) async {
-    final s = await _classes.where('profUid', isEqualTo: uid).get();
-    return [for (final d in s.docs) ClassRoom.fromDoc(d)].where((c) => !c.deleted).toList()
-      ..sort((a, b) => a.name.compareTo(b.name));
-  }
-
-  Future<ClassRoom?> byId(String id) async {
-    final d = await _classes.doc(id).get();
-    return d.exists ? ClassRoom.fromDoc(d) : null;
-  }
-
-  static String _newCode() {
-    const letters = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
-    final r = Random.secure();
-    return List.generate(6, (_) => letters[r.nextInt(letters.length)]).join();
-  }
-
-  /// Crée une classe au nom d'un prof ou d'un administrateur.
-  Future<ClassRoom> create({
-    required String name,
-    required String examId,
-    required String subjectName,
-    required String profUid,
-    required String profName,
-    String school = '',
-  }) async {
-    var code = _newCode();
-    for (var i = 0; i < 5; i++) {
-      final s = await _classes.where('code', isEqualTo: code).limit(1).get();
-      if (s.docs.isEmpty) break;
-      code = _newCode();
-    }
-    final ref = _classes.doc();
-    final c = ClassRoom(
-      id: ref.id,
-      name: name.trim(),
-      examId: examId,
-      subject: subjectKey(subjectName),
-      subjectName: subjectName,
-      profUid: profUid,
-      profName: profName,
-      school: school,
-      code: code,
-    );
-    await ref.set({...c.toMap(), 'createdAt': FieldValue.serverTimestamp()});
-    return c;
-  }
-
-  Future<void> update(String id, Map<String, Object?> fields) => _classes.doc(id).update(fields);
-
-  Future<void> remove(String id) async {
-    final room = await byId(id);
-    if (room == null) return;
-    await _classes.doc(id).update({'deleted': true});
-    for (final uid in room.students) {
-      final enrolled = await _classes.where('students', arrayContains: uid).get();
-      await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((c) => !c.deleted).toList());
-    }
-  }
-
-  Future<String> newCode(String id) async {
-    final code = _newCode();
-    await _classes.doc(id).update({'code': code});
-    return code;
-  }
-
-  /// L'élève entre dans une classe avec son code. Il quitte sa classe de la même matière.
-  /// Renvoie la classe, ou un message d'erreur simple.
-  Future<(ClassRoom?, String)> join(String code, UserProfile p) async {
-    final c0 = code.trim().toUpperCase().replaceAll(' ', '');
-    if (c0.length < 4) return (null, 'Le code a 6 lettres ou chiffres.');
-    final s = await _classes.where('code', isEqualTo: c0).limit(1).get();
-    if (s.docs.isEmpty) return (null, 'Ce code ne correspond à aucune classe. Vérifie avec ton prof.');
-    final c = ClassRoom.fromDoc(s.docs.first);
-    if (c.deleted) return (null, 'Cette classe n\'existe plus.');
-    if (c.students.contains(p.uid)) return (c, '');
-    await _classes.doc(c.id).update({'students': FieldValue.arrayUnion([p.uid])});
-    await loadMine(p.uid);
-    revision.value++;
-    return (c, '');
-  }
-
-  Future<void> leave(ClassRoom c, String uid) async {
-    await _classes.doc(c.id).update({'students': FieldValue.arrayRemove([uid])});
-    await loadMine(uid);
-    revision.value++;
-  }
-
-  /// Le prof ajoute un élève par son nom d'utilisateur. Renvoie un message d'erreur, ou ''.
-  Future<String> addByUsername(ClassRoom c, String username) async {
-    final u = username.trim().toLowerCase();
-    if (u.isEmpty) return 'Écris le nom d\'utilisateur de l\'élève.';
-    final s = await _db.collection('usernames').where('username', isEqualTo: u).limit(1).get();
-    if (s.docs.isEmpty) return 'Aucun élève ne s\'appelle « $u ».';
-    final uid = '${s.docs.first.data()['uid'] ?? ''}';
-    if (uid.isEmpty) return 'Ce compte ne peut pas être ajouté pour le moment.';
-    await _classes.doc(c.id).update({'students': FieldValue.arrayUnion([uid])});
-    final enrolled = await _classes.where('students', arrayContains: uid).get();
-    await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((room) => !room.deleted).toList());
-    revision.value++;
-    return '';
-  }
-
-  Future<void> removeStudent(ClassRoom c, String uid) async {
-    await _classes.doc(c.id).update({'students': FieldValue.arrayRemove([uid])});
-    final enrolled = await _classes.where('students', arrayContains: uid).get();
-    await _syncTeacherAccess(uid, [for (final d in enrolled.docs) ClassRoom.fromDoc(d)].where((room) => !room.deleted).toList());
-    revision.value++;
-  }
-
-  /// Fiches des élèves (par paquets de 30, la limite de Firestore).
-  Future<List<StudentSummary>> students(List<String> uids) async {
-    final ids = uids.toSet().toList();
-    final snapshots = await Future.wait([for (final uid in ids) _db.collection('users').doc(uid).get()]);
-    final out = snapshots.where((d) => d.exists).map(StudentSummary.fromDoc).toList();
-    out.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
-    return out;
-  }
-
-  // ---------- Contenus ----------
-
-  Future<List<ClassItem>> itemsOf(String classId) async {
-    final s = await _items.where('classId', isEqualTo: classId).get();
-    return _sorted(s.docs);
-  }
-
-  /// Contenus publics des profs pour ce niveau et cette matière.
-  Future<List<ClassItem>> publicItems(String examId, String subjectName) async {
-    final s = await _items.where('visibility', isEqualTo: 'public').where('examId', isEqualTo: examId).get();
-    final k = subjectKey(subjectName);
-    return _sorted(s.docs).where((i) => i.subject == k).toList();
-  }
-
-  /// Cours rendus publics par les professeurs pour les partager avec leurs collègues.
-  Future<List<ClassItem>> sharedTeacherItems() async {
-    final snapshot = await _items.where('visibility', isEqualTo: 'public').limit(200).get();
-    return _sorted(snapshot.docs);
-  }
-
-  /// Leçons pour élèves préparées avec Kocc Bàrma (et rendues publiques automatiquement),
-  /// quel que soit le prof qui les a créées. Visibles par tous les professeurs.
-  Future<List<ClassItem>> koccItems() async {
-    final snapshot = await _items
-        .where('visibility', isEqualTo: 'public')
-        .where('sourceOwnerName', isEqualTo: koccSourceName)
-        .limit(200)
-        .get();
-    final items = [for (final d in snapshot.docs) ClassItem.fromDoc(d)].where((c) => !c.deleted).toList()
-      ..sort((a, b) {
-        final byRating = b.ratingAvg.compareTo(a.ratingAvg);
-        if (byRating != 0) return byRating;
-        return (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0));
-      });
-    return items;
-  }
-
-  /// Un professeur note une leçon créée avec Kocc (1 à 5 étoiles), pour aider
-  /// les collègues à repérer les meilleures. Une note par prof, modifiable.
-  Future<void> rateKoccItem(String itemId, String profUid, int stars) async {
-    await _items.doc(itemId).update({'ratings.$profUid': stars.clamp(1, 5)});
-    revision.value++;
-  }
-
-  /// Partage la préparation complète d'un cours (avec corrigé) avec les
-  /// autres professeurs. Stockée séparément de `classItems` : elle ne peut
-  /// jamais apparaître côté élève ni être ajoutée à une classe.
-  Future<String> shareTeacherLesson({
-    required String title,
-    required String subjectName,
-    required String body,
-    required String authorUid,
-    required String authorName,
-  }) async {
-    final ref = _teacherLessons.doc();
-    await ref.set({
-      'title': title,
-      'subjectName': subjectName,
-      'body': body,
-      'authorUid': authorUid,
-      'authorName': authorName,
-      'createdAt': FieldValue.serverTimestamp(),
-    });
-    return ref.id;
-  }
-
-  /// Préparations de cours partagées entre professeurs (jamais destinées aux élèves).
-  Future<List<TeacherLessonPrep>> teacherLessons() async {
-    final s = await _teacherLessons.orderBy('createdAt', descending: true).limit(200).get();
-    return [for (final d in s.docs) TeacherLessonPrep.fromDoc(d)];
-  }
-
-  /// Tous les contenus créés par un prof (pour l'admin).
-  Future<List<ClassItem>> itemsOfOwner(String uid) async {
-    final s = await _items.where('ownerUid', isEqualTo: uid).get();
-    return _sorted(s.docs);
-  }
-
-  List<ClassItem> _sorted(List<QueryDocumentSnapshot<Map<String, dynamic>>> docs) {
-    final list = [for (final d in docs) ClassItem.fromDoc(d)].where((i) => !i.deleted).toList();
-    list.sort((a, b) => (b.createdAt ?? DateTime(3000)).compareTo(a.createdAt ?? DateTime(3000)));
-    return list;
-  }
-
-  /// Ce que l'élève voit dans une matière : les contenus de ses classes (il peut en avoir
-  /// plusieurs dans la même matière), puis les contenus publics.
-  Future<(List<ClassRoom>, List<ClassItem>, List<ClassItem>)> forStudent(UserProfile p, Subject subject) async {
-    final rooms = classesFor(subject.name);
-    var own = <ClassItem>[];
-    var pub = <ClassItem>[];
-    try {
-      if (rooms.isNotEmpty) {
-        final lists = await Future.wait([for (final r in rooms) itemsOf(r.id)]);
-        own = [for (final l in lists) ...l]
-          ..sort((a, b) => (b.createdAt ?? DateTime(3000)).compareTo(a.createdAt ?? DateTime(3000)));
+      // Matières terminées (toutes les leçons avec QCM faites).
+      final examId = AuthService.instance.profile.value?.examId ?? '';
+      if (examId.isNotEmpty && quizzes.isNotEmpty) {
+        final lessons = (await ContentRepo.instance.lessonsOfExam(examId))
+            .where((l) => l.quiz.isNotEmpty)
+            .toList();
+        bool done(Lesson l) => ProgressRepo.instance.of(l.id)?.quizDone == true;
+        final bySubject = <String, List<Lesson>>{};
+        for (final l in lessons) {
+          bySubject.putIfAbsent(l.subjectId, () => []).add(l);
+        }
+        if (bySubject.values.any((ls) => ls.length >= 3 && ls.every(done))) earned.add('matiere');
       }
-      final ids = own.map((i) => i.id).toSet();
-      pub = (await publicItems(p.examId, subject.name)).where((i) => !ids.contains(i.id)).toList();
-    } catch (e) {
-      debugPrint('Contenus de classe : $e');
-    }
-    return (rooms, own, pub);
-  }
 
-  /// Enregistre un contenu (nouveau si id est vide). Renvoie son identifiant.
-  Future<String> saveItem(ClassItem item) async {
-    final isNew = item.id.isEmpty;
-    final ref = isNew ? _items.doc() : _items.doc(item.id);
-    await ref.set({
-      ...item.toMap(),
-      if (isNew) 'createdAt': FieldValue.serverTimestamp(),
-      'updatedAt': FieldValue.serverTimestamp(),
-    }, SetOptions(merge: true));
-    revision.value++;
-    if (isNew) unawaited(_notifyClass(item));
-    return ref.id;
-  }
-
-  /// Copie un cours de la bibliothèque Jàng dans la classe et consigne l’export.
-  Future<String> exportLesson(ClassRoom room, Lesson lesson, UserProfile prof) async {
-    final existing = await itemsOf(room.id);
-    if (existing.any((item) => item.sourceLessonId == lesson.id)) {
-      throw Exception('Cette leçon est déjà dans la classe.');
-    }
-    final itemRef = _items.doc();
-    final exportRef = _db.collection('courseExports').doc();
-    final item = ClassItem(
-      id: itemRef.id,
-      classId: room.id,
-      ownerUid: prof.uid,
-      ownerName: prof.name,
-      examId: room.examId,
-      subject: room.subject,
-      type: ClassItem.lesson,
-      title: lesson.title,
-      sourceLessonId: lesson.id,
-      sourceOwnerName: 'Bibliothèque Jàng',
-      videos: lesson.videos,
-      body: lesson.body,
-      quiz: lesson.quiz,
-      visibility: 'prive',
-    );
-    final now = FieldValue.serverTimestamp();
-    final batch = _db.batch();
-    batch.set(itemRef, {
-      ...item.toMap(),
-      'createdAt': now,
-      'updatedAt': now,
-    });
-    batch.set(exportRef, {
-      'exportedBy': prof.uid,
-      'exporterName': prof.publicName,
-      'classId': room.id,
-      'className': room.name,
-      'school': room.school,
-      'examId': room.examId,
-      'subject': room.subjectName,
-      'lessonId': lesson.id,
-      'lessonTitle': lesson.title,
-      'sourceOwnerName': 'Bibliothèque Jàng',
-      'classItemId': itemRef.id,
-      'createdAt': now,
-    });
-    await batch.commit();
-    revision.value++;
-    unawaited(_notifyClass(item));
-    return itemRef.id;
-  }
-
-  Future<void> _notifyClass(ClassItem item) async {
-    try {
-      final classDoc = await _classes.doc(item.classId).get();
-      if (!classDoc.exists) return;
-      final room = ClassRoom.fromDoc(classDoc);
-      if (room.students.isEmpty) return;
-      final kind = ClassItem.label(item.type).toLowerCase();
-      await InboxService.instance.send(
-        room.students,
-        '${room.profName.isEmpty ? 'Ton professeur' : room.profName} a ajouté '
-        '« ${item.title} » ($kind) dans ${room.name}.',
-      );
-    } catch (e) {
-      debugPrint('Notification du nouveau contenu impossible : $e');
-    }
-  }
-
-  Future<void> deleteItem(ClassItem item) async {
-    await _items.doc(item.id).update({'deleted': true});
-    revision.value++;
-  }
-
-  // ---------- Devoirs ----------
-
-  CollectionReference<Map<String, dynamic>> _rendus(String itemId) => _items.doc(itemId).collection('rendus');
-
-  Future<Submission?> mySubmission(String itemId, String uid) async {
-    final d = await _rendus(itemId).doc(uid).get();
-    return d.exists ? Submission.fromDoc(d) : null;
-  }
-
-  Future<void> submit(ClassItem item, UserProfile p, String text) async {
-    await _rendus(item.id).doc(p.uid).set({
-      'name': p.name,
-      'text': text.trim(),
-      'classId': item.classId,
-      'at': FieldValue.serverTimestamp(),
-    }, SetOptions(merge: true));
-    revision.value++;
-  }
-
-  Future<List<Submission>> submissions(String itemId) async {
-    final s = await _rendus(itemId).get();
-    return [for (final d in s.docs) Submission.fromDoc(d)]
-      ..sort((a, b) => (a.at ?? DateTime(3000)).compareTo(b.at ?? DateTime(3000)));
-  }
-
-  Future<void> grade(String itemId, String uid, {required String grade, required String comment}) async {
-    await _rendus(itemId).doc(uid).update({
-      'grade': grade.trim(),
-      'comment': comment.trim(),
-      'gradedAt': FieldValue.serverTimestamp(),
-    });
-    revision.value++;
-  }
-
-  // ---------- Suivi ----------
-
-  /// Ce que chaque élève a fait de ce contenu : uid -> résultat.
-  Future<Map<String, ItemResult>> results(ClassItem item, List<String> uids) async {
-    final out = <String, ItemResult>{};
-    if (item.type == ClassItem.homework) {
-      for (final s in await submissions(item.id)) {
-        out[s.uid] = ItemResult(opened: true, done: true);
+      final before = earnedIds;
+      final fresh = earned.difference(before);
+      if (fresh.isNotEmpty) {
+        await p.setStringList(_k('badges'), {...before, ...earned}.toList());
+        final def = badgeDefs.firstWhere((b) => b.id == fresh.first);
+        newBadge.value = def;
+        revision.value++;
+        unawaited(FirebaseFirestore.instance
+            .collection('users')
+            .doc(_uid)
+            .set({'badges': FieldValue.arrayUnion(fresh.toList())}, SetOptions(merge: true))
+            .catchError((e) => debugPrint('$e')));
       }
-      return out;
+    } finally {
+      _evaluating = false;
     }
-    final sub = item.type == ClassItem.mission ? 'missions' : 'progress';
-    await Future.wait([
-      for (final uid in uids)
-        _db.collection('users').doc(uid).collection(sub).doc(item.progressId).get().then((d) {
-          if (!d.exists) return;
-          final m = d.data() ?? {};
-          if (sub == 'missions') {
-            out[uid] = ItemResult(opened: true, done: m['done'] == true);
-          } else {
-            final best = m['bestScore'], total = m['total'];
-            final pct = best is num && total is num && total > 0 ? (best * 100 / total).round() : null;
-            out[uid] = ItemResult(opened: m['seen'] == true || pct != null, scorePct: pct, done: pct != null);
-          }
-        }).catchError((Object e) {
-          debugPrint('$e');
-        }),
-    ]);
-    return out;
-  }
-
-  /// Questions d'un QCM ratées par les élèves : texte de la question -> nombre d'élèves.
-  /// (La progression garde les questions ratées tant que l'élève ne les a pas réussies 2 fois.)
-  Future<List<(String, int)>> missedQuestions(ClassItem item, List<String> uids) async {
-    if (item.quiz.isEmpty) return const [];
-    final byKey = {for (final q in item.quiz) StatsService.questionKey(q.question): q.question};
-    final counts = <String, int>{};
-    await Future.wait([
-      for (final uid in uids)
-        _db.collection('users').doc(uid).collection('progress').doc(item.progressId).get().then((d) {
-          final mk = d.data()?['mistakes'];
-          if (mk is! Map) return;
-          for (final k in mk.keys) {
-            final q = byKey['$k'];
-            if (q != null) counts[q] = (counts[q] ?? 0) + 1;
-          }
-        }).catchError((Object e) {
-          debugPrint('$e');
-        }),
-    ]);
-    return counts.entries.map((e) => (e.key, e.value)).toList()..sort((a, b) => b.$2.compareTo(a.$2));
   }
 }
