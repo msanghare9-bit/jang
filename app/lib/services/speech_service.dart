@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
@@ -8,6 +9,11 @@ class Speech {
 
   final _tts = FlutterTts();
   bool _ready = false;
+  bool _readyFr = false;
+  String? _lang; // langue actuellement réglée sur le moteur ('en' ou 'fr')
+
+  /// Vrai pendant que le téléphone lit un texte (lecture à voix haute d'une leçon).
+  final reading = ValueNotifier<bool>(false);
 
   /// Vrai pour une matière d'anglais.
   static bool isEnglish(String subjectName) {
@@ -18,10 +24,40 @@ class Speech {
   Future<void> _init() async {
     if (_ready) return;
     var ok = await _tts.isLanguageAvailable('en-GB');
-    await _tts.setLanguage(ok == true ? 'en-GB' : 'en-US');
     await _tts.setSpeechRate(0.42); // un peu plus lent que la normale
     await _tts.setPitch(1.0);
     _ready = true;
+    if (_lang != 'en') {
+      await _tts.setLanguage(ok == true ? 'en-GB' : 'en-US');
+      _lang = 'en';
+    }
+  }
+
+  Future<void> _initFr() async {
+    if (_readyFr) return;
+    var ok = await _tts.isLanguageAvailable('fr-FR');
+    await _tts.setSpeechRate(0.46);
+    await _tts.setPitch(1.0);
+    _readyFr = true;
+    if (_lang != 'fr') {
+      await _tts.setLanguage(ok == true ? 'fr-FR' : 'fr-FR');
+      _lang = 'fr';
+    }
+  }
+
+  /// Nettoie le texte d'une leçon (markdown, lignes photo) pour une lecture naturelle.
+  static String _clean(String text) {
+    final lines = text.replaceAll('\r\n', '\n').split('\n');
+    final out = <String>[];
+    for (final raw in lines) {
+      var l = raw.trim();
+      if (l.isEmpty) continue;
+      if (l.startsWith('[photo')) continue;
+      l = l.replaceFirst(RegExp(r'^[#>]+\s*'), '').replaceFirst(RegExp(r'^[-*]\s+'), '');
+      l = l.replaceAll(RegExp(r'[*_#>]'), '');
+      if (l.isNotEmpty) out.add(l);
+    }
+    return out.join('. ');
   }
 
   /// Lit [text] en anglais.
@@ -32,6 +68,34 @@ class Speech {
       await _init();
       await _tts.stop();
       await _tts.speak(t);
+    } catch (_) {}
+  }
+
+  /// Lit à voix haute le texte d'une leçon entière (français ou anglais selon la matière).
+  Future<void> readLesson(String text, {required bool english}) async {
+    final t = _clean(text);
+    if (t.isEmpty) return;
+    try {
+      if (english) {
+        await _init();
+      } else {
+        await _initFr();
+      }
+      _tts.setCompletionHandler(() => reading.value = false);
+      _tts.setCancelHandler(() => reading.value = false);
+      await _tts.stop();
+      reading.value = true;
+      await _tts.speak(t);
+    } catch (_) {
+      reading.value = false;
+    }
+  }
+
+  /// Arrête la lecture à voix haute en cours (bouton leçon).
+  Future<void> stopReading() async {
+    reading.value = false;
+    try {
+      await _tts.stop();
     } catch (_) {}
   }
 }
