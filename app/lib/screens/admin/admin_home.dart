@@ -420,7 +420,21 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
                       icon: Icons.menu_book_outlined,
                       title: 'Aucune leçon',
                       message: 'Ajoute une première leçon avec le bouton ci-dessous.'),
-                for (var i = 0; i < lessons.length; i++) _row(lessons, i, color),
+                if (lessons.isNotEmpty)
+                  ReorderableListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: lessons.length,
+                    itemBuilder: (context, i) =>
+                        KeyedSubtree(key: ValueKey(lessons[i].id), child: _row(lessons, i, color)),
+                    onReorder: (oldIndex, newIndex) {
+                      if (newIndex > oldIndex) newIndex -= 1;
+                      final reordered = [...lessons];
+                      final moved = reordered.removeAt(oldIndex);
+                      reordered.insert(newIndex, moved);
+                      ContentRepo.instance.reorderList('lessons', [for (final l in reordered) l.id]);
+                    },
+                  ),
                 const SizedBox(height: 8),
                 OutlinedButton.icon(
                   style: OutlinedButton.styleFrom(
@@ -434,8 +448,8 @@ class _AdminSubjectScreenState extends State<AdminSubjectScreen>
                 ),
                 const SizedBox(height: 10),
                 Text(
-                    'Le menu ⋮ de chaque leçon : Modifier, Copier vers un autre niveau, Monter, '
-                    'Descendre, Retirer ou Supprimer.',
+                    'Glisse une leçon avec la souris pour la réordonner. Le menu ⋮ de chaque '
+                    'leçon : Modifier, Copier vers un autre niveau, Monter, Descendre, Retirer ou Supprimer.',
                     style: Theme.of(context).textTheme.bodySmall),
                 if (hidden.isNotEmpty) ...[
                   const SizedBox(height: 18),
