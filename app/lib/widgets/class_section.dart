@@ -28,11 +28,11 @@ class ClassSection extends StatefulWidget {
 }
 
 class _Data {
-  final ClassRoom? room;
+  final List<ClassRoom> rooms;
   final List<ClassItem> own;
   final List<ClassItem> shared;
   final Map<String, Submission?> rendus;
-  _Data(this.room, this.own, this.shared, this.rendus);
+  _Data(this.rooms, this.own, this.shared, this.rendus);
 }
 
 class _ClassSectionState extends State<ClassSection> {
@@ -59,7 +59,7 @@ class _ClassSectionState extends State<ClassSection> {
     final p = AuthService.instance.profile.value;
     if (p == null || p.isStaff) return null;
     return () async {
-      final (room, own, shared) = await ClassService.instance.forStudent(p, widget.subject);
+      final (rooms, own, shared) = await ClassService.instance.forStudent(p, widget.subject);
       final rendus = <String, Submission?>{};
       await Future.wait([
         for (final i in [...own, ...shared])
@@ -69,7 +69,7 @@ class _ClassSectionState extends State<ClassSection> {
                 .then((s) => rendus[i.id] = s)
                 .catchError((Object e) => rendus[i.id] = null),
       ]);
-      return _Data(room, own, shared, rendus);
+      return _Data(rooms, own, shared, rendus);
     }();
   }
 
@@ -105,27 +105,34 @@ class _ClassSectionState extends State<ClassSection> {
   }
 
   Widget _content(BuildContext context, _Data d) {
-    final room = d.room;
+    final rooms = d.rooms;
     final color = JangColors.fromHex(widget.subject.color);
+    final roomById = {for (final r in rooms) r.id: r};
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (room != null) ...[
-          Row(children: [
-            Icon(Icons.groups_rounded, color: JangColors.darker(color, 0.1)),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(
-                'Ma classe : ${room.name}${room.profName.isEmpty ? '' : ' · ${room.profName}'}',
-                style: titleStyle(18, weight: 800),
-              ),
+        if (rooms.isNotEmpty) ...[
+          for (final r in rooms)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Row(children: [
+                Icon(Icons.groups_rounded, color: JangColors.darker(color, 0.1)),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    rooms.length > 1
+                        ? 'Classe : ${r.name}${r.profName.isEmpty ? '' : ' · ${r.profName}'}'
+                        : 'Ma classe : ${r.name}${r.profName.isEmpty ? '' : ' · ${r.profName}'}',
+                    style: titleStyle(18, weight: 800),
+                  ),
+                ),
+              ]),
             ),
-          ]),
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
           if (d.own.isEmpty)
             Text('Ton prof n\'a encore rien mis ici.', style: Theme.of(context).textTheme.bodySmall)
           else
-            for (final i in d.own) _tile(i, d, color),
+            for (final i in d.own) _tile(i, d, color, showClassName: rooms.length > 1, roomById: roomById),
         ] else
           Align(
             alignment: Alignment.centerLeft,
@@ -136,7 +143,7 @@ class _ClassSectionState extends State<ClassSection> {
             ),
           ),
         if (d.shared.isNotEmpty) ...[
-          SizedBox(height: room != null ? 14 : 4),
+          SizedBox(height: rooms.isNotEmpty ? 14 : 4),
           Text('Partagé par d\'autres profs', style: titleStyle(18, weight: 800)),
           const SizedBox(height: 8),
           for (final i in d.shared) _tile(i, d, color, showOwner: true),
@@ -170,12 +177,15 @@ class _ClassSectionState extends State<ClassSection> {
     return ('À faire', false);
   }
 
-  Widget _tile(ClassItem i, _Data d, Color color, {bool showOwner = false}) {
+  Widget _tile(ClassItem i, _Data d, Color color,
+      {bool showOwner = false, bool showClassName = false, Map<String, ClassRoom> roomById = const {}}) {
     final (label, done) = _state(i, d);
     final isNew = !done && i.createdAt != null && DateTime.now().difference(i.createdAt!).inDays < 7;
+    final className = showClassName ? roomById[i.classId]?.name ?? '' : '';
     final sub = [
       ClassItem.label(i.type),
       if (showOwner && i.ownerName.isNotEmpty) i.ownerName,
+      if (className.isNotEmpty) className,
     ].join(' · ');
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
@@ -253,7 +263,7 @@ Future<void> showJoinClassDialog(BuildContext context) async {
         return AlertDialog(
           title: Text('Entrer dans une classe', style: titleStyle(20)),
           content: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text('Ton prof te donne un code. Une seule classe par matière.'),
+            const Text('Ton prof te donne un code pour entrer dans sa classe.'),
             const SizedBox(height: 12),
             TextField(
               controller: ctl,
