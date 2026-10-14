@@ -96,7 +96,7 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
       ),
     );
     if (room == null || !mounted) return;
-    await Navigator.push(context, MaterialPageRoute(builder: (_) => TournamentHomeScreen(classRoom: room)));
+    await Navigator.push(context, MaterialPageRoute(builder: (_) => ClassTournamentsScreen(classRoom: room)));
   }
 
   /// Point d'entrée depuis l'accueil : le professeur choisit d'abord la
