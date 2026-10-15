@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../models.dart';
@@ -9,7 +11,7 @@ import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../../widgets/jang_ui.dart';
 
-/// Kocc helps a teacher draft a complete learner-centered class lesson.
+/// Kocc helps a teacher draft a complete lesson, for the teacher only.
 ///
 /// Le professeur choisit TOUJOURS le thème.
 /// 1) Kocc propose une première fois une approche communicative, centrée sur
@@ -17,22 +19,13 @@ import '../../widgets/jang_ui.dart';
 ///    peut répondre à Kocc pour ajuster ; les conseils de Kocc eux-mêmes ne
 ///    sont pas modifiables à la main, seule la discussion les fait évoluer.
 /// 2) DÈS que ces conseils (initiaux, ou ajustés par une réponse du
-///    professeur) arrivent, Kocc rédige directement DEUX documents, sans que
-///    le professeur ait besoin de le redemander, en DEUX
-///    appels séparés à l'IA (jamais un seul texte à découper avec un
-///    marqueur) pour que chaque document soit toujours entier et placé
-///    dans la bonne case :
-///    - la leçon complète pour le professeur (avec le corrigé), prévue pour
-///      une séance de 120 minutes : jamais visible par les élèves et jamais
-///      ajoutable à une classe ; peut être exportée en PDF ou partagée avec
-///      les autres professeurs (stockée à part, jamais dans les contenus de
-///      classe) ;
-///    - LA leçon pour l'élève : explication + activités intégrées, suivant
-///      la même progression que la leçon du professeur, pensée pour que
-///      l'élève puisse comprendre et faire les activités même sans le
-///      professeur. C'est la SEULE chose qu'on peut ajouter à une classe,
-///      et elle est automatiquement publique : visible et réutilisable par
-///      tous les professeurs, à n'importe quel niveau.
+///    professeur) arrivent, Kocc rédige directement la leçon complète pour
+///    le PROFESSEUR (avec le corrigé), prévue pour une séance de 120
+///    minutes, sans que le professeur ait besoin de le redemander. Ce
+///    document n'est jamais visible par les élèves et n'est jamais ajouté à
+///    une classe ; il peut être exporté en PDF ou partagé avec les autres
+///    professeurs (stocké à part, jamais dans les contenus de classe).
+///    L'application ne génère plus de leçon séparée pour l'élève.
 class TeacherCourseScreen extends StatefulWidget {
   final ClassRoom classRoom;
   const TeacherCourseScreen({super.key, required this.classRoom});
@@ -53,16 +46,13 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
   final _objectives = TextEditingController();
   final _reply = TextEditingController();
   final _draft = TextEditingController();
-  final _studentLesson = TextEditingController();
 
   final List<_ChatTurn> _chat = [];
   final List<Map<String, String>> _history = [];
 
   bool _busyChat = false;
   bool _busy = false;
-  bool _savingLesson = false;
   bool _exportingPdf = false;
-  bool _exportingLessonPdf = false;
   bool _sharingLesson = false;
 
   @override
@@ -71,7 +61,6 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     _objectives.dispose();
     _reply.dispose();
     _draft.dispose();
-    _studentLesson.dispose();
     super.dispose();
   }
 
@@ -99,7 +88,6 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       _chat.clear();
       _history.clear();
       _draft.clear();
-      _studentLesson.clear();
     });
     final prompt = 'Le professeur veut faire un cours sur le thème qu’il a choisi : '
         '« ${_topic.text.trim()} », pour la classe ${widget.classRoom.name}, en ${widget.classRoom.subjectName}. '
@@ -173,15 +161,12 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     await _generateLesson();
   }
 
-  /// Une fois les conseils validés par la discussion, Kocc rédige DEUX
-  /// documents : la leçon complète pour le professeur (jamais vue par les
-  /// élèves) et LA leçon de l'élève — un document autonome (explication +
-  /// activités intégrées, même ordre que la leçon du professeur) qui lui
-  /// permet de comprendre et de faire les activités même sans le professeur.
-  /// Enlève une éventuelle formule d'introduction ou de salutation ("Cher
-  /// collègue…", "Bonjour…") que Kocc aurait malgré tout ajoutée au début
-  /// d'un document, en filet de sécurité en plus de la consigne donnée dans
-  /// le prompt. Ne touche qu'au tout début du texte.
+  /// Une fois les conseils validés par la discussion, Kocc rédige la leçon
+  /// complète pour le professeur (jamais vue par les élèves, jamais ajoutée
+  /// à une classe). Enlève une éventuelle formule d'introduction ou de
+  /// salutation ("Cher collègue…", "Bonjour…") que Kocc aurait malgré tout
+  /// ajoutée au début du document, en filet de sécurité en plus de la
+  /// consigne donnée dans le prompt. Ne touche qu'au tout début du texte.
   static String _stripGreeting(String text) {
     final t = text.trim();
     if (t.isEmpty) return t;
@@ -197,10 +182,6 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     return rest.substring(blank + 2).trimLeft();
   }
 
-  /// Rédige les deux documents en DEUX appels séparés (plutôt qu'un seul
-  /// texte à découper) : chaque document est ainsi toujours rédigé en
-  /// entier et placé dans la bonne case, sans dépendre d'un marqueur que
-  /// Kocc pourrait oublier ou reformuler.
   Future<void> _generateLesson() async {
     final lastAdvice = _history.reversed.firstWhere(
       (h) => h['role'] == 'assistant',
@@ -213,14 +194,18 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     setState(() {
       _busy = true;
       _draft.clear();
-      _studentLesson.clear();
     });
     final topic = _topic.text.trim();
     final approche = 'Approche pédagogique validée par le professeur après discussion avec vous (communicative, '
         'centrée sur l’apprenant, focalisée sur la fonction langagière retenue ; la grammaire et le vocabulaire ne '
-        'sont introduits que comme des outils nécessaires pour réussir cette fonction) : « $lastAdvice ».';
+        'sont introduits que comme des outils nécessaires pour réussir cette fonction) : « $lastAdvice ». '
+        'Cette approche ne doit PAS rester seulement une instruction pour toi : elle doit apparaître, rédigée en '
+        'clair, DANS le document lui-même, comme sa toute première section (voir la liste des sections '
+        'ci-dessous). Ne la présente pas comme un résumé de notre discussion ni comme un rappel ("comme convenu", '
+        '"suite à nos échanges") : rédige-la comme une partie normale du document, à la troisième personne, comme '
+        'si tu l’écrivais pour la première fois.';
     final noAdresse = 'IMPORTANT : commence directement par le contenu pédagogique (par exemple par un titre ou '
-        'par « Objectifs et prérequis »). N’écris JAMAIS de salutation ni de phrase d’introduction adressée à qui '
+        'par « Approche pédagogique »). N’écris JAMAIS de salutation ni de phrase d’introduction adressée à qui '
         'que ce soit (pas de « Cher collègue », pas de « Bonjour », pas de « vous », pas de rappel de notre '
         'discussion) : seulement le contenu lui-même, du premier mot au dernier.';
     final mef = 'Mise en forme à respecter STRICTEMENT, car ce texte est converti tel quel en PDF : fais précéder '
@@ -247,11 +232,17 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         'supports dans un contexte sénégalais concret et respectueux (école, quartier, marché, transport, famille, '
         'environnement ou vie locale selon le thème), sans clichés. Ajoute des objectifs mesurables, les '
         'prérequis, une évaluation formative, une adaptation pour les élèves qui ont besoin d’aide, un défi pour '
-        'ceux qui avancent vite, et un devoir lié à leur vie quotidienne. Utilise les sections : Objectifs et '
-        'prérequis; Contenu complet de la leçon; Déroulement détaillé des Activités 1 à 6 (ou davantage); Corrigé '
-        'détaillé réservé à la préparation du professeur; Devoir. '
-        'N’impose aucune limite de longueur : sois aussi détaillé que nécessaire pour que le document soit '
-        'complet et réellement utilisable. Rédige en français simple.';
+        'ceux qui avancent vite, et un devoir lié à leur vie quotidienne. Utilise les sections, dans cet ordre : '
+        'Approche pédagogique (reprends ici, en clair et en une courte section, la fonction langagière et les '
+        'conseils retenus décrits plus haut — pas une nouvelle liste différente, la même approche, juste rédigée '
+        'comme partie du document) ; Objectifs et prérequis; Contenu complet de la leçon; Déroulement détaillé '
+        'des Activités 1 à 6 (ou davantage); Corrigé détaillé réservé à la préparation du professeur; Devoir. '
+        'La section « Contenu complet de la leçon » doit rester COURTE : seulement l’essentiel à retenir (la '
+        'notion ou fonction langagière, le vocabulaire-clé, les structures ou règles principales), sous forme '
+        'condensée, sans répéter les explications pas à pas, les exemples détaillés ni les consignes — tout '
+        'cela a sa place uniquement dans le Déroulement détaillé des Activités, pas ici. '
+        'N’impose aucune limite de longueur pour le reste du document : sois aussi détaillé que nécessaire pour '
+        'qu’il soit complet et réellement utilisable. Rédige en français simple.';
     final teacherResult = await TutorService.instance.ask(_blankLesson(), teacherPrompt, mode: 'teacher');
     if (!mounted) return;
     if (teacherResult.error != null || teacherResult.answer == null || teacherResult.answer!.trim().isEmpty) {
@@ -260,86 +251,13 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       return;
     }
     final teacherLesson = _stripGreeting(teacherResult.answer!);
-    setState(() => _draft.text = teacherLesson);
-
-    final studentPrompt = 'Voici la leçon déjà rédigée pour le professeur (avec son corrigé), sur « $topic » :\n\n'
-        '$teacherLesson\n\n'
-        'À partir de cette leçon, rédige maintenant LA leçon destinée à l’ÉLÈVE lui-même — un document AUTONOME '
-        'que l’élève doit pouvoir lire seul et utiliser pour comprendre ET FAIRE les activités, MÊME SANS LE '
-        'PROFESSEUR présent. Pars du principe que cet élève n’a PAS un bon niveau dans la matière : il faut donc '
-        'lui expliquer très simplement, avec des mots faciles et des phrases courtes, AUCUN jargon non expliqué, '
-        'et avancer pas à pas, une seule petite idée nouvelle à la fois, jamais plusieurs notions d’un coup. Suis '
-        'EXACTEMENT la même logique et la même progression que les Activités numérotées de la leçon du professeur '
-        'ci-dessus, dans le même ordre (mise en situation, découverte, règle ou notion expliquée simplement, puis '
-        'pratique). Pour chaque étape : explique d’abord la notion avec des mots très simples, en donnant '
-        'PLUSIEURS exemples concrets (pas un seul) pour que l’élève voie bien comment ça marche dans des '
-        'situations différentes (reprends et complète les exemples sénégalais de la leçon du professeur), puis '
-        'donne DIRECTEMENT, dans la suite du même document, PLUSIEURS exercices ou activités sur cette même '
-        'petite idée (pas un seul exercice par étape) pour que l’élève s’entraîne vraiment avant de passer à la '
-        'suite — consignes claires qu’il peut suivre seul, en allant du plus facile au plus difficile. Le '
-        'document doit donc contenir à la fois l’explication, les exemples ET les exercices, dans l’ordre, de '
-        'façon à ce que l’élève puisse progresser du début à la fin sans aide extérieure. Ne donne jamais les '
-        'réponses ou le corrigé des exercices dans ce document. '
-        'VA DROIT AU BUT : commence directement par la première notion à expliquer. N’écris AUCUNE introduction '
-        'générale qui annonce ou résume ce que contient la leçon, ni aucun sommaire, ni aucun rappel du thème ou '
-        'des objectifs — ça n’intéresse pas l’élève, seul le contenu utile à apprendre et à pratiquer compte. '
-        '$noAdresse $mef Adresse-toi directement à l’élève, tutoie-le, encourage-le souvent (bravo, continue '
-        'comme ça, tu progresses…) — jamais au professeur. '
-        'N’inclus pas les instructions de mise en œuvre destinées au professeur (durée, matériel, consignes à '
-        'dire mot pour mot) : seulement ce que l’élève doit lire et faire. '
-        'N’impose aucune limite de longueur. Rédige en français simple, prêt à être lu par l’élève.';
-    final studentResult = await TutorService.instance.ask(_blankLesson(), studentPrompt, mode: 'teacher');
-    if (!mounted) return;
     setState(() {
       _busy = false;
-      if (studentResult.answer != null && studentResult.answer!.trim().isNotEmpty) {
-        _studentLesson.text = _stripGreeting(studentResult.answer!);
-      }
+      _draft.text = teacherLesson;
     });
-    if (studentResult.error != null) {
-      showMessage(context, studentResult.error!);
-    } else if (studentResult.answer == null || studentResult.answer!.trim().isEmpty) {
-      showMessage(context, 'Kocc n’a pas pu rédiger la leçon-élève cette fois. Relancez « Valider et rédiger le cours complet ».');
-    }
-  }
-
-  /// Ajoute LA leçon-élève à la classe — toujours publique : tous les
-  /// professeurs, à n'importe quel niveau, peuvent la voir, l'exporter en
-  /// PDF ou l'ajouter à leur propre classe. La leçon du PROFESSEUR (avec le
-  /// corrigé) n'est jamais ajoutée à la classe : elle ne sort qu'en PDF.
-  Future<void> _saveStudentLesson() async {
-    final p = AuthService.instance.profile.value;
-    if (p == null) return;
-    if (_studentLesson.text.trim().isEmpty) {
-      showMessage(context, 'Il n’y a rien à ajouter pour l’instant.');
-      return;
-    }
-    setState(() => _savingLesson = true);
-    try {
-      final title = _topic.text.trim();
-      await ClassService.instance.saveItem(ClassItem(
-        id: '',
-        classId: widget.classRoom.id,
-        ownerUid: p.uid,
-        ownerName: p.name,
-        examId: widget.classRoom.examId,
-        subject: widget.classRoom.subject,
-        type: ClassItem.lesson,
-        title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
-        body: _studentLesson.text.trim(),
-        // Toujours publique : visible et réutilisable par tous les profs.
-        visibility: 'public',
-        // Marque cette leçon comme créée avec Kocc, pour la rubrique
-        // « Leçons créées avec Kocc » (visible par tous les professeurs).
-        sourceOwnerName: koccSourceName,
-      ));
-      if (!mounted) return;
-      showMessage(context, 'Ajoutée à ${widget.classRoom.name} — visible par tous les professeurs.');
-    } catch (_) {
-      if (mounted) showMessage(context, 'Impossible d’ajouter ce contenu. Vérifiez votre connexion et réessayez.');
-    } finally {
-      if (mounted) setState(() => _savingLesson = false);
-    }
+    // Le PDF de la leçon du professeur est préparé automatiquement, sans
+    // attendre que le professeur clique sur le bouton d'export.
+    unawaited(_exportDraftPdf());
   }
 
   /// Partage la préparation complète (avec corrigé) avec les autres
@@ -372,18 +290,12 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     }
   }
 
-  Future<void> _exportDraftPdf(TextEditingController controller, {required bool isStudentLesson}) async {
-    if (controller.text.trim().isEmpty) {
+  Future<void> _exportDraftPdf() async {
+    if (_draft.text.trim().isEmpty) {
       showMessage(context, 'Il n’y a rien à exporter pour l’instant.');
       return;
     }
-    setState(() {
-      if (isStudentLesson) {
-        _exportingLessonPdf = true;
-      } else {
-        _exportingPdf = true;
-      }
-    });
+    setState(() => _exportingPdf = true);
     try {
       final title = _topic.text.trim();
       final base = title.isEmpty ? 'Cours préparé avec Kocc' : title;
@@ -392,8 +304,8 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         examId: widget.classRoom.examId,
         subjectId: '',
         chapterId: '',
-        title: isStudentLesson ? base : '$base — Préparation prof',
-        body: controller.text.trim(),
+        title: '$base — Préparation prof',
+        body: _draft.text.trim(),
         createdByName: AuthService.instance.profile.value?.name ?? '',
       );
       await LessonPdfService.shareLesson(
@@ -404,12 +316,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     } catch (_) {
       if (mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
     } finally {
-      if (mounted) {
-        setState(() {
-          _exportingPdf = false;
-          _exportingLessonPdf = false;
-        });
-      }
+      if (mounted) setState(() => _exportingPdf = false);
     }
   }
 
@@ -508,10 +415,9 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               child: Text(
                 '${widget.classRoom.name} · ${widget.classRoom.subjectName}\n'
                 'Vous choisissez toujours le thème. Kocc propose une approche (communicative, centrée sur '
-                'l’élève, fonction langagière), puis rédige directement votre leçon complète et une leçon pour '
-                'l’élève que celui-ci peut suivre seul, même sans vous — sans que vous ayez besoin de le '
-                'redemander. Vous pouvez répondre à Kocc pour ajuster l’approche : le cours est alors réécrit '
-                'automatiquement avec les nouveaux conseils.',
+                'l’élève, fonction langagière), puis rédige directement votre leçon complète de préparation — '
+                'sans que vous ayez besoin de le redemander. Vous pouvez répondre à Kocc pour ajuster l’approche : '
+                'le cours est alors réécrit automatiquement avec les nouveaux conseils.',
               ),
             ),
           ),
@@ -583,7 +489,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
                 SizedBox(width: 10),
                 Text('Kocc rédige le cours complet à partir de ces conseils…'),
               ]),
-            ] else if (hasAdvice && (_draft.text.isNotEmpty || _studentLesson.text.isNotEmpty)) ...[
+            ] else if (hasAdvice && _draft.text.isNotEmpty) ...[
               const SizedBox(height: 14),
               OutlinedButton.icon(
                 onPressed: _busyChat ? null : _generateLesson,
@@ -592,9 +498,9 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               ),
             ],
           ],
-          if (_draft.text.isNotEmpty || _studentLesson.text.isNotEmpty) ...[
+          if (_draft.text.isNotEmpty) ...[
             const SizedBox(height: 22),
-            Text('1. Leçon du professeur (jamais visible par les élèves)',
+            Text('Leçon du professeur (jamais visible par les élèves)',
                 style: titleStyle(18, weight: 800)),
             const SizedBox(height: 6),
             Container(
@@ -626,46 +532,9 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             ),
             const SizedBox(height: 8),
             OutlinedButton.icon(
-              onPressed: _exportingPdf ? null : () => _exportDraftPdf(_draft, isStudentLesson: false),
+              onPressed: _exportingPdf ? null : _exportDraftPdf,
               icon: const Icon(Icons.picture_as_pdf_outlined),
               label: Text(_exportingPdf ? 'Préparation du PDF…' : 'Exporter la leçon en PDF'),
-            ),
-            const SizedBox(height: 22),
-            Text('2. Leçon de l’élève (explication + activités, pour qu’il la fasse même sans vous)',
-                style: titleStyle(18, weight: 800)),
-            const SizedBox(height: 6),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(color: JangColors.successBg, borderRadius: BorderRadius.circular(10)),
-              child: const Text(
-                'Ce document contient l’explication ET les activités, dans le même ordre que votre leçon : '
-                'l’élève peut le lire et travailler seul. C’est le SEUL document qu’on peut ajouter à une '
-                'classe. Une fois ajouté, il devient automatiquement public : visible, exportable en PDF et '
-                'réutilisable par tous les professeurs, à n’importe quel niveau.',
-              ),
-            ),
-            const SizedBox(height: 8),
-            TextField(
-              controller: _studentLesson,
-              minLines: 12,
-              maxLines: 30,
-              textCapitalization: TextCapitalization.sentences,
-              decoration: const InputDecoration(
-                hintText: 'La leçon de l’élève (explication + activités) apparaîtra ici.',
-                alignLabelWithHint: true,
-              ),
-            ),
-            const SizedBox(height: 8),
-            FilledButton.icon(
-              onPressed: _savingLesson ? null : _saveStudentLesson,
-              icon: const Icon(Icons.public),
-              label: Text(_savingLesson ? 'Ajout…' : 'Ajouter à ${widget.classRoom.name} (public)'),
-            ),
-            const SizedBox(height: 8),
-            OutlinedButton.icon(
-              onPressed: _exportingLessonPdf ? null : () => _exportDraftPdf(_studentLesson, isStudentLesson: true),
-              icon: const Icon(Icons.picture_as_pdf_outlined),
-              label: Text(_exportingLessonPdf ? 'Préparation du PDF…' : 'Exporter la leçon-élève en PDF'),
             ),
           ],
         ],
