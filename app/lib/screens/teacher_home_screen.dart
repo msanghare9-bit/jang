@@ -10,6 +10,7 @@ import 'classes/class_screen.dart';
 import 'classes/my_classes_screen.dart';
 import 'classes/teacher_course_screen.dart';
 import 'inbox_screen.dart';
+import 'lesson_library_screen.dart';
 import 'match/tournament_screen.dart';
 import 'teacher_community_screen.dart';
 
@@ -195,13 +196,22 @@ class _TeacherHomeScreenState extends State<TeacherHomeScreen> {
                   label: const Text('Organiser un tournoi avec mes élèves'),
                 ),
                 const SizedBox(height: 6),
+                OutlinedButton.icon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LessonLibraryScreen()),
+                  ),
+                  icon: const Icon(Icons.download_outlined),
+                  label: const Text('Télécharger une fiche de cours'),
+                ),
+                const SizedBox(height: 6),
                 FilledButton.tonalIcon(
                   onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (_) => const TeacherCommunityScreen()),
                   ),
                   icon: const Icon(Icons.menu_book_outlined),
-                  label: const Text('Développement professionnel et cours partagés'),
+                  label: const Text('Développement professionnel'),
                 ),
                 const SizedBox(height: 8),
                 Row(children: [
