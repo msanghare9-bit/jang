@@ -333,12 +333,14 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       await ClassService.instance.shareTeacherLesson(
         title: title.isEmpty ? 'Cours préparé avec Kocc' : title,
         subjectName: widget.classRoom.subjectName,
+        examId: widget.classRoom.examId,
+        classId: widget.classRoom.id,
         body: _draft.text.trim(),
         authorUid: p.uid,
         authorName: p.name,
       );
       if (!mounted || silent) return;
-      showMessage(context, 'Partagée avec les autres professeurs (Développement professionnel).');
+      showMessage(context, 'Partagée avec les autres professeurs (Télécharger une fiche de cours).');
     } catch (_) {
       if (mounted && !silent) {
         showMessage(context, 'Impossible de partager cette préparation. Vérifiez votre connexion et réessayez.');
@@ -570,8 +572,8 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               child: const Text(
                 'Ce document contient votre préparation (dont le corrigé) : il ne peut JAMAIS être ajouté à '
                 'une classe, donc jamais vu par un élève. Elle est partagée automatiquement avec les autres '
-                'professeurs (visible dans « Développement professionnel », jamais côté élève) dès qu’elle '
-                'est rédigée.',
+                'professeurs (visible dans « Télécharger une fiche de cours », jamais côté élève) dès qu’elle '
+                'est rédigée, et gardée ici, dans cette classe, pour la retrouver facilement plus tard.',
               ),
             ),
             const SizedBox(height: 8),
