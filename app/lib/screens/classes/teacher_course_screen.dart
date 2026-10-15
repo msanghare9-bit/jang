@@ -73,14 +73,23 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         body: 'Préparation de cours pour ${widget.classRoom.name}, matière ${widget.classRoom.subjectName}.',
       );
 
-  /// Démarre (ou redémarre) la discussion : Kocc propose une première fois
-  /// une fonction langagière et des conseils pour rendre la séance
-  /// communicative et centrée sur l’élève, puis rédige directement le cours
-  /// complet à partir de ces conseils — sans que le professeur ait besoin de
-  /// cliquer sur un deuxième bouton pour le demander.
+  /// Démarre la discussion : Kocc propose une première fois une fonction
+  /// langagière et des conseils pour rendre la séance communicative et
+  /// centrée sur l’élève, puis rédige directement le cours complet à partir
+  /// de ces conseils — sans que le professeur ait besoin de cliquer sur un
+  /// deuxième bouton pour le demander.
+  ///
+  /// Si une discussion existe déjà, on ne l’efface pas : changer le thème
+  /// et cliquer à nouveau continue la même conversation (voir
+  /// [_changeTopic]) au lieu de tout recommencer à zéro — utile si le
+  /// premier sujet ne convenait pas au professeur.
   Future<void> _startChat() async {
     if (_topic.text.trim().length < 3) {
       showMessage(context, 'Saisissez le thème du cours.');
+      return;
+    }
+    if (_chat.isNotEmpty) {
+      await _changeTopic();
       return;
     }
     setState(() {
@@ -123,6 +132,43 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     }
     // Les conseils sont là : on rédige directement le cours complet, sans
     // attendre que le professeur le demande explicitement.
+    await _generateLesson();
+  }
+
+  /// Change de thème SANS effacer la discussion précédente : continue la
+  /// même conversation en informant Kocc du nouveau thème choisi (comme une
+  /// réponse du professeur dans [_sendReply]), puis réécrit directement le
+  /// cours complet. Permet d’essayer un autre sujet si le premier ne
+  /// convenait pas, sans perdre les échanges déjà faits avec Kocc.
+  Future<void> _changeTopic() async {
+    final message = 'Je change le thème du cours pour : « ${_topic.text.trim()} ». '
+        'Les objectifs sont : ${_objectives.text.trim().isEmpty ? 'proposez des objectifs adaptés' : _objectives.text.trim()}. '
+        'Garde ce qui reste pertinent de notre échange précédent sur l’approche pédagogique, mais adapte la '
+        'fonction langagière et les conseils à ce nouveau thème. Réponds aussi brièvement qu’avant.';
+    setState(() {
+      _busyChat = true;
+      _chat.add(_ChatTurn(true, message));
+    });
+    final result = await TutorService.instance.ask(
+      _blankLesson(),
+      message,
+      mode: 'teacher',
+      history: List<Map<String, String>>.from(_history),
+    );
+    if (!mounted) return;
+    setState(() {
+      _busyChat = false;
+      if (result.answer != null) {
+        _history
+          ..add({'role': 'user', 'content': message})
+          ..add({'role': 'assistant', 'content': result.answer!});
+        _chat.add(_ChatTurn(false, _stripGreeting(result.answer!)));
+      }
+    });
+    if (result.error != null) {
+      showMessage(context, result.error!);
+      return;
+    }
     await _generateLesson();
   }
 
@@ -425,9 +471,12 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
           TextField(
             controller: _topic,
             textCapitalization: TextCapitalization.sentences,
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               labelText: 'Thème du cours',
               hintText: 'Ex. Se présenter en anglais au collège',
+              helperText: _chat.isEmpty
+                  ? null
+                  : 'Vous pouvez changer le thème ici : la discussion déjà faite avec Kocc sera gardée.',
             ),
           ),
           const SizedBox(height: 10),
@@ -444,7 +493,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
           ChunkyButton(
             label: _chat.isEmpty
                 ? (_busyChat ? 'Kocc réfléchit…' : 'Demander les conseils de Kocc')
-                : (_busyChat ? 'Kocc réfléchit…' : 'Recommencer la discussion'),
+                : (_busyChat ? 'Kocc réfléchit…' : 'Changer le thème (garde la discussion)'),
             icon: Icons.tips_and_updates_outlined,
             onPressed: (_busyChat || _busy) ? null : _startChat,
           ),
