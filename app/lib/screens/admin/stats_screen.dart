@@ -143,6 +143,10 @@ class _StatsScreenState extends State<StatsScreen> {
           return ListView(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
             children: [
+              // ---------- En ligne maintenant ----------
+              const SectionTitle('En ligne maintenant'),
+              const _OnlineNowCard(),
+
               // ---------- Téléchargements ----------
               const SectionTitle('Téléchargements de l\'application'),
               if (s.releases == null)
@@ -314,6 +318,71 @@ class _Stats {
     required this.tournaments,
     required this.koccTop,
   });
+}
+
+/// Liste en direct de qui a utilisé l'app dans les 2 dernières minutes.
+/// S'appuie sur `presenceAt`, mis à jour par chaque téléphone tant que
+/// l'app est au premier plan (voir `StatsService.markPresence`).
+class _OnlineNowCard extends StatelessWidget {
+  const _OnlineNowCard();
+
+  @override
+  Widget build(BuildContext context) {
+    final since = Timestamp.fromDate(DateTime.now().subtract(const Duration(minutes: 2)));
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+      stream: FirebaseFirestore.instance
+          .collection('users')
+          .where('presenceAt', isGreaterThan: since)
+          .orderBy('presenceAt', descending: true)
+          .limit(30)
+          .snapshots(),
+      builder: (context, snap) {
+        final t = Theme.of(context).textTheme;
+        if (snap.hasError) {
+          return Card(
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Text('Liste indisponible pour le moment.', style: t.bodySmall),
+            ),
+          );
+        }
+        if (!snap.hasData) {
+          return const Card(
+            child: Padding(
+              padding: EdgeInsets.all(14),
+              child: Center(child: CircularProgressIndicator()),
+            ),
+          );
+        }
+        final docs = snap.data!.docs;
+        if (docs.isEmpty) {
+          return Card(
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Text('Personne n\'utilise l\'application en ce moment.', style: t.bodySmall),
+            ),
+          );
+        }
+        return Card(
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            children: [
+              for (final d in docs)
+                ListTile(
+                  dense: true,
+                  leading: const Icon(Icons.circle, size: 12, color: JangColors.success),
+                  title: Text('${d.data()['name'] ?? d.data()['username'] ?? 'Utilisateur'}'),
+                  trailing: Text(
+                    d.data()['role'] == 'prof' ? 'Professeur' : 'Élève',
+                    style: t.bodySmall,
+                  ),
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
 
 int _i(dynamic v) => (v as num?)?.toInt() ?? 0;
