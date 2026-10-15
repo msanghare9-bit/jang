@@ -60,6 +60,17 @@ class StatsService {
     }, SetOptions(merge: true)).catchError((e) => debugPrint('$e')));
   }
 
+  /// Marque cette personne comme « en ligne maintenant » (à la différence de
+  /// [recordActive], appelé périodiquement tant que l'app est au premier
+  /// plan, pour alimenter l'écran « En ligne maintenant » de l'admin).
+  Future<void> markPresence(UserProfile profile) async {
+    try {
+      await _db.collection('users').doc(profile.uid).set({
+        'presenceAt': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+    } catch (_) {}
+  }
+
   void recordNewUser() => _inc('statsDays', dayKey(), {'newUsers': 1});
 
   /// Première ouverture d'une leçon par cet élève.
