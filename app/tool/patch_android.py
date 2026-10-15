@@ -16,6 +16,13 @@ groovy = app / "build.gradle"
 if kts.exists():
     s = kts.read_text()
     s = re.sub(r"minSdk\s*=\s*[^\n]+", "minSdk = 23", s, count=1)
+    # Toutes les dépendances Firebase/plugins demandent la même version de
+    # NDK : la fixer évite l'avertissement « plugins depend on a different
+    # Android NDK version » à chaque construction.
+    if re.search(r"ndkVersion\s*=", s):
+        s = re.sub(r"ndkVersion\s*=\s*[^\n]+", 'ndkVersion = "27.0.12077973"', s, count=1)
+    else:
+        s = s.replace("android {", 'android {\n    ndkVersion = "27.0.12077973"', 1)
     if 'create("release")' not in s:
         signing = '''
     signingConfigs {
