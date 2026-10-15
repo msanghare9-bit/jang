@@ -224,6 +224,117 @@ class _LessonEditorState extends State<LessonEditor> {
     showMessage(context, 'Mise en forme faite. Vérifie avec « Voir comme un élève ».');
   }
 
+  // ---------------- QCM : import en bloc ----------------
+
+  /// Transforme un texte collé (format Q: / A: / B: / C: / D: / Bonne réponse: / Explication:)
+  /// en liste de questions. Les questions mal formées (pas de Q, pas assez d'options) sont ignorées.
+  List<QuizQuestion> _parseBulkQuiz(String text) {
+    final result = <QuizQuestion>[];
+    String? question;
+    final options = <String>['', '', '', ''];
+    var answer = 0;
+    var explanation = '';
+
+    void flush() {
+      final q = question;
+      if (q != null && q.trim().isNotEmpty && options.where((o) => o.trim().isNotEmpty).length >= 2) {
+        result.add(QuizQuestion(
+          question: q.trim(),
+          options: options.map((o) => o.trim()).toList(),
+          answer: answer,
+          explanation: explanation.trim(),
+        ));
+      }
+      question = null;
+      for (var i = 0; i < 4; i++) {
+        options[i] = '';
+      }
+      answer = 0;
+      explanation = '';
+    }
+
+    const letterIndex = {'A': 0, 'B': 1, 'C': 2, 'D': 3};
+    for (final rawLine in text.split('\n')) {
+      final line = rawLine.trim();
+      if (line.isEmpty) continue;
+      final colon = line.indexOf(':');
+      final label = colon > 0 ? line.substring(0, colon).trim().toUpperCase() : '';
+      final value = colon > 0 ? line.substring(colon + 1).trim() : '';
+      if (label == 'Q') {
+        flush();
+        question = value;
+      } else if (letterIndex.containsKey(label) && label.length == 1) {
+        options[letterIndex[label]!] = value;
+      } else if (label.startsWith('BONNE') || label == 'REPONSE' || label == 'RÉPONSE') {
+        final v = value.toUpperCase();
+        if (v.isNotEmpty && letterIndex.containsKey(v[0])) answer = letterIndex[v[0]]!;
+      } else if (label.startsWith('EXPLICATION')) {
+        explanation = value;
+      } else if (question != null) {
+        question = '${question!} $line'; // ligne de suite (question sur plusieurs lignes)
+      }
+    }
+    flush();
+    return result;
+  }
+
+  Future<void> _bulkQuiz() async {
+    final ctrl = TextEditingController();
+    final text = await showDialog<String>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: Text('Importer un QCM', style: titleStyle(20)),
+        content: SizedBox(
+          width: 520,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Colle ici le texte du QCM, une question après l\'autre, sous cette forme :\n\n'
+                'Q: Que signifie « tall » ?\n'
+                'A: petit\n'
+                'B: grand\n'
+                'C: jeune\n'
+                'D: âgé\n'
+                'Bonne réponse: B\n'
+                'Explication: tall = grand.',
+              ),
+              const SizedBox(height: 10),
+              TextField(
+                controller: ctrl,
+                minLines: 10,
+                maxLines: 16,
+                keyboardType: TextInputType.multiline,
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c), child: const Text('Annuler')),
+          FilledButton(onPressed: () => Navigator.pop(c, ctrl.text), child: const Text('Importer')),
+        ],
+      ),
+    );
+    ctrl.dispose();
+    if (text == null) return;
+    final parsed = _parseBulkQuiz(text);
+    if (parsed.isEmpty) {
+      if (mounted) {
+        showMessage(context,
+            'Aucune question reconnue. Vérifie que le texte suit bien le format Q: / A: / B: / C: / D: / Bonne réponse: / Explication:');
+      }
+      return;
+    }
+    setState(() {
+      _quiz.addAll(parsed);
+      _dirty = true;
+    });
+    if (mounted) {
+      showMessage(context, '${parsed.length} question${parsed.length > 1 ? 's' : ''} importée${parsed.length > 1 ? 's' : ''}.');
+    }
+  }
+
   // ---------------- Révision ----------------
 
   Future<void> _bulkCards() async {
@@ -603,6 +714,12 @@ class _LessonEditorState extends State<LessonEditor> {
           }),
           icon: const Icon(Icons.add),
           label: const Text('Ajouter une question'),
+        ),
+        const SizedBox(height: 8),
+        OutlinedButton.icon(
+          onPressed: _bulkQuiz,
+          icon: const Icon(Icons.playlist_add),
+          label: const Text('Importer un QCM (coller le texte)'),
         ),
       ],
     );
