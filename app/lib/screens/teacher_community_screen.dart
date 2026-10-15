@@ -142,7 +142,6 @@ class _StarRowState extends State<_StarRow> {
 
 class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
   late Future<List<_TeacherPost>> _posts = _loadPosts();
-  late Future<List<ClassItem>> _courses = ClassService.instance.sharedTeacherItems();
   late Future<List<ClassItem>> _koccLessons = ClassService.instance.koccItems();
   late Future<List<TeacherLessonPrep>> _teacherLessons = ClassService.instance.teacherLessons();
   bool _saving = false;
@@ -267,7 +266,7 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
         TextButton.icon(
           onPressed: () => _exportCoursePdf(item),
           icon: const Icon(Icons.picture_as_pdf_outlined),
-          label: const Text('PDF'),
+          label: const Text('Télécharger en PDF'),
         ),
         FilledButton.icon(
           onPressed: () {
@@ -376,7 +375,7 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
         TextButton.icon(
           onPressed: () => _exportTeacherLessonPdf(prep),
           icon: const Icon(Icons.picture_as_pdf_outlined),
-          label: const Text('PDF'),
+          label: const Text('Télécharger en PDF'),
         ),
       ],
     ));
@@ -419,7 +418,15 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
               subtitle: Text('${ClassItem.label(item.type)} · ${item.subject} · ${item.ownerName}'),
               trailing: rating
                   ? SizedBox(width: 92, child: _StarRow(item: item))
-                  : const Icon(Icons.open_in_new),
+                  // Téléchargement direct, sans devoir d'abord ouvrir la fiche.
+                  : Row(mainAxisSize: MainAxisSize.min, children: [
+                      IconButton(
+                        tooltip: 'Télécharger en PDF',
+                        onPressed: () => _exportCoursePdf(item),
+                        icon: const Icon(Icons.download_outlined),
+                      ),
+                      const Icon(Icons.open_in_new),
+                    ]),
               onTap: () => _showCourse(item),
             )),
         ]);
@@ -444,7 +451,15 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
                   child: Icon(Icons.description_outlined, color: JangColors.snGreen)),
               title: Text(prep.title, style: const TextStyle(fontWeight: FontWeight.w800)),
               subtitle: Text('${prep.subjectName} · ${prep.authorName}'),
-              trailing: const Icon(Icons.open_in_new),
+              // Téléchargement direct, sans devoir d'abord ouvrir la fiche.
+              trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+                IconButton(
+                  tooltip: 'Télécharger en PDF',
+                  onPressed: () => _exportTeacherLessonPdf(prep),
+                  icon: const Icon(Icons.download_outlined),
+                ),
+                const Icon(Icons.open_in_new),
+              ]),
               onTap: () => _showTeacherLesson(prep),
             )),
         ]);
@@ -456,13 +471,15 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
   Widget build(BuildContext context) {
     final profile = AuthService.instance.profile.value!;
     return DefaultTabController(
-      length: 4,
+      // « Cours partagés » a déménagé directement dans l'accueil du
+      // professeur (bouton « Télécharger une fiche de cours »), avec les
+      // leçons de Jàng de n'importe quel niveau, recherche et filtres.
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Développement professionnel'),
           bottom: const TabBar(isScrollable: true, tabs: [
             Tab(text: 'Ressources et conseils'),
-            Tab(text: 'Cours partagés'),
             Tab(text: 'Leçons créées avec Kocc'),
             Tab(text: 'Préparations de cours (profs)'),
           ]),
@@ -500,7 +517,6 @@ class _TeacherCommunityScreenState extends State<TeacherCommunityScreen> {
               ]);
             },
           ),
-          _courseList(_courses, emptyMessage: 'Aucun cours n’a encore été partagé par un professeur.'),
           _courseList(
             _koccLessons,
             emptyMessage: 'Aucune leçon créée avec Kocc pour le moment.',
