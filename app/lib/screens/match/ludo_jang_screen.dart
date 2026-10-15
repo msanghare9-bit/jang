@@ -1391,7 +1391,10 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         appBar: AppBar(title: const Text('Ludo Jàng')),
         body: _onlineMode && !_onlineReady && _roomId != null
             ? _waitingRoomView()
-            : _playing
+            // Une fois la partie terminée (_done), on reste sur le plateau
+            // (avec le classement et le bouton « Nouvelle partie ») au lieu
+            // de revenir tout de suite à l'écran de configuration.
+            : _questions.isNotEmpty
                 ? _gameView()
                 : _setupView(),
       ),
@@ -1501,6 +1504,19 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     );
     if (!mounted) return;
     if (choice == 'replay') {
+      await _replay();
+    } else if (choice == 'quit') {
+      Navigator.pop(context);
+    }
+  }
+
+  /// Rejoue directement avec les mêmes réglages (nombre de joueurs,
+  /// catégories, niveau), sans repasser par l’écran de configuration — en
+  /// mode « un téléphone » seulement : en ligne, il faut repartir à l’écran
+  /// de configuration pour créer ou rejoindre une nouvelle partie avec son
+  /// adversaire.
+  Future<void> _replay() async {
+    if (_onlineMode) {
       setState(() {
         _questions = const [];
         _done = false;
@@ -1508,9 +1524,9 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _roomId = null;
         _roomCode = null;
       });
-    } else if (choice == 'quit') {
-      Navigator.pop(context);
+      return;
     }
+    await _start();
   }
 
   Widget _setupView() => ListView(
@@ -1797,13 +1813,20 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                   : _turnPanel(),
             ),
             if (_done)
-              FilledButton.icon(
-                onPressed: () {
-                  _roomSub?.cancel();
-                  setState(() { _questions = const []; _done = false; _onlineReady = false; _roomId = null; _roomCode = null; });
-                },
-                icon: const Icon(Icons.replay),
-                label: const Text('Nouvelle partie'),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: FilledButton.icon(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: JangColors.snGreen,
+                    minimumSize: const Size.fromHeight(48),
+                  ),
+                  onPressed: () {
+                    if (_onlineMode) _roomSub?.cancel();
+                    _replay();
+                  },
+                  icon: const Icon(Icons.replay),
+                  label: const Text('Nouvelle partie'),
+                ),
               ),
           ]),
         );
