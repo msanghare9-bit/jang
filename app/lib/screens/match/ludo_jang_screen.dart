@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../services/auth_service.dart';
 import '../../services/quiz_bank.dart';
 import '../../theme.dart';
+import '../../widgets/fun.dart';
 import '../../widgets/jang_ui.dart';
 import 'xarit_screen.dart';
 
@@ -123,6 +124,14 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   late List<Set<int>> _shieldedPawns;
   late List<List<int>> _shieldTurnsRemaining;
 
+  /// Classement : 0 tant qu'un joueur n'est pas arrivé, sinon sa place
+  /// (1er, 2e, 3e…), dans l'ordre où les joueurs ont terminé leurs pions.
+  late List<int> _finishRank;
+
+  /// Petit feu d'artifice affiché quelques secondes quand un joueur termine.
+  bool _showFireworks = false;
+  Timer? _fireworksTimer;
+
   @override
   void initState() {
     super.initState();
@@ -146,6 +155,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _pawns = List.generate(4, (_) => List.filled(_pawnsPerPlayer, -1));
     _shieldedPawns = List.generate(4, (_) => <int>{});
     _shieldTurnsRemaining = List.generate(4, (_) => List.filled(_pawnsPerPlayer, 0));
+    _finishRank = List.filled(4, 0);
     _streaks = List.filled(4, 0);
     _missesSinceSix = List.filled(4, 0);
     _correctAnswers = List.filled(4, 0);
@@ -235,6 +245,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _questionTimer?.cancel();
     _moveTimer?.cancel();
     _rollTimer?.cancel();
+    _fireworksTimer?.cancel();
     _chatBubbleTimer?.cancel();
     _roomCodeController.dispose();
     _pawnMoveController.dispose();
@@ -437,12 +448,6 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       );
       return;
     }
-    if (!_onlineMode && _localPlayerNames.take(_playerCount).any((name) => name.trim().isEmpty)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Saisissez le prénom de chaque joueur.')),
-      );
-      return;
-    }
     setState(() => _busy = true);
     try {
       final questions = await QuizBank.instance.drawDomains(
@@ -494,6 +499,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pawns = List.generate(players, (_) => List.filled(_pawnsPerPlayer, -1));
       _shieldedPawns = List.generate(players, (_) => <int>{});
       _shieldTurnsRemaining = List.generate(players, (_) => List.filled(_pawnsPerPlayer, 0));
+      _finishRank = List.filled(players, 0);
+      _showFireworks = false;
       _questionDeadline = null;
       _waitingForSquareQuestion = false;
       _resolvingQuestion = false;
@@ -762,6 +769,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         _pawns = pawns;
         _shieldedPawns = shielded;
         _shieldTurnsRemaining = shieldTurns;
+        _finishRank = List<int>.from(data['finishRank'] ?? List.filled(_playerCount, 0));
         _onlineReady = data['status'] == 'playing';
       });
       // The match just ended on the other phone (a win, a quit, or a
@@ -839,6 +847,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         'pawns': _encodePawns(_pawns),
         'shieldedPawns': _encodeShieldedPawns(_shieldedPawns, _pawnsPerPlayer),
         'shieldTurnsRemaining': _encodeShieldTurns(_shieldTurnsRemaining),
+        'finishRank': _finishRank,
         'correctAnswers': _correctAnswers,
         'incorrectAnswers': _incorrectAnswers,
         'moveAnimation': moveAnimation,
@@ -847,6 +856,28 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       debugPrint('Échec synchronisation Ludo : $error');
       if (mounted) ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_firebaseErrorLabel(error, action: 'Synchronisation de la partie'))));
     }
+  }
+
+  /// Classement final, du 1er au dernier, un joueur par ligne.
+  String _classementText() {
+    final order = List.generate(_playerCount, (p) => p)
+      ..sort((a, b) {
+        final ra = _finishRank[a] == 0 ? _playerCount : _finishRank[a];
+        final rb = _finishRank[b] == 0 ? _playerCount : _finishRank[b];
+        return ra.compareTo(rb);
+      });
+    return [
+      for (final p in order) '${_finishRank[p] > 0 ? _finishRank[p] : _playerCount}. ${_playerName(p)}',
+    ].join('\n');
+  }
+
+  /// Un petit feu d'artifice de quelques secondes pour fêter l'arrivée d'un joueur.
+  void _celebrateFinish() {
+    _fireworksTimer?.cancel();
+    setState(() => _showFireworks = true);
+    _fireworksTimer = Timer(const Duration(seconds: 3), () {
+      if (mounted) setState(() => _showFireworks = false);
+    });
   }
 
   void _answer(int selected) {
@@ -948,7 +979,28 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       );
       return;
     }
-    final won = correct && pawns[_turn].every((position) => position == 57);
+    // Ce joueur vient-il de ramener son dernier pion ? (seulement s'il
+    // n'était pas déjà classé — on ne reclasse jamais quelqu'un.)
+    final justFinished =
+        correct && _finishRank[_turn] == 0 && pawns[_turn].every((position) => position == 57);
+    final finishRank = [..._finishRank];
+    var matchDone = false;
+    String? endMessage;
+    if (justFinished) {
+      finishRank[_turn] = finishRank.where((r) => r > 0).length + 1;
+      // Il ne reste plus qu'un seul joueur sans classement : la partie est
+      // terminée, il prend automatiquement la dernière place.
+      final stillPlaying = <int>[
+        for (var p = 0; p < _playerCount; p++)
+          if (finishRank[p] == 0) p,
+      ];
+      if (stillPlaying.length <= 1) {
+        for (final p in stillPlaying) {
+          finishRank[p] = finishRank.where((r) => r > 0).length + 1;
+        }
+        matchDone = true;
+      }
+    }
     final extraTurn = _die == 6;
     setState(() {
       _pawns = pawns;
@@ -961,25 +1013,35 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pendingPawnIndex = null;
       _pendingOrigin = null;
       _pendingTarget = null;
-      _done = won;
-      _message = won
-          ? 'Bonne réponse (« $correctOptionText ») ! ${_playerName(_turn)} remporte la partie !'
+      _finishRank = finishRank;
+      _done = matchDone;
+      _message = justFinished
+          ? '${_playerName(_turn)} termine ${_ordinal(finishRank[_turn])} !'
           : captured
               ? 'Bonne réponse (« $correctOptionText ») ! Pion adverse capturé.'
               : _shieldAvailable
                   ? 'Bonne réponse (« $correctOptionText ») ! Aar gagné.'
                   : 'Bonne réponse (« $correctOptionText ») ! Le pion reste sur sa case.';
+      if (justFinished) {
+        endMessage = matchDone
+            ? 'Partie terminée !\n\nClassement :\n${_classementText()}'
+            : '${_playerName(_turn)} termine ${_ordinal(finishRank[_turn])} ! La partie continue pour les autres.';
+      }
     });
-    if (won) {
+    if (justFinished) _celebrateFinish();
+    if (matchDone) {
       _saveOnlineState();
-      _announceMatchEnd('${_playerName(_turn)} remporte la partie !');
+      _announceMatchEnd(endMessage!);
       return;
     }
     _saveOnlineState();
-    Future<void>.delayed(const Duration(milliseconds: 1300), () {
-      if (mounted && !_waitingForSquareQuestion && !_done) _nextTurn(extraTurn: extraTurn);
+    Future<void>.delayed(Duration(milliseconds: justFinished ? 2200 : 1300), () {
+      if (mounted && !_waitingForSquareQuestion && !_done) _nextTurn(extraTurn: justFinished ? false : extraTurn);
     });
   }
+
+  /// « 1er », « 2e », « 3e »…
+  static String _ordinal(int n) => n == 1 ? '1er' : '${n}e';
 
   /// Arms (or cancels) the 10-second roll timeout: if nobody rolls in time,
   /// the system rolls for them, and 3 such auto-rolls in a row for the same
@@ -988,13 +1050,25 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// turn to roll.
   void _armRollTimer() {
     _rollTimer?.cancel();
-    if (_canAct && _die == 0 && !_done && !_waitingForSquareQuestion && !_resolvingQuestion && _movingPlayer == null) {
+    if (_canAct &&
+        _die == 0 &&
+        !_done &&
+        !_waitingForSquareQuestion &&
+        !_resolvingQuestion &&
+        _movingPlayer == null &&
+        _finishRank[_turn] == 0) {
       _rollTimer = Timer(const Duration(seconds: 10), () => _roll(auto: true));
     }
   }
 
   Future<void> _roll({bool auto = false}) async {
-    if (!_canAct || _die != 0 || _done || _waitingForSquareQuestion || _resolvingQuestion || _movingPlayer != null) return;
+    if (!_canAct ||
+        _die != 0 ||
+        _done ||
+        _waitingForSquareQuestion ||
+        _resolvingQuestion ||
+        _movingPlayer != null ||
+        _finishRank[_turn] != 0) return;
     _rollTimer?.cancel();
     if (auto) {
       _autoRollStreak[_turn]++;
@@ -1220,7 +1294,17 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       }
     }
     setState(() {
-      if (!extraTurn) _turn = (_turn + 1) % _playerCount;
+      if (!extraTurn) {
+        // Un joueur qui a déjà ramené tous ses pions ne rejoue plus : on
+        // passe directement au prochain joueur encore en course.
+        var next = (_turn + 1) % _playerCount;
+        var guard = 0;
+        while (_finishRank[next] != 0 && guard < _playerCount) {
+          next = (next + 1) % _playerCount;
+          guard++;
+        }
+        _turn = next;
+      }
       _shieldedPawns = shields;
       _shieldTurnsRemaining = shieldTurns;
       _rollingPlayer = null;
@@ -1534,25 +1618,6 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             selected: {_playerCount},
             onSelectionChanged: (value) => setState(() => _playerCount = value.first),
           ),
-          if (!_onlineMode) ...[
-            const SizedBox(height: 10),
-            for (var player = 0; player < _playerCount; player++)
-              Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: TextFormField(
-                  key: ValueKey('local-ludo-player-$player'),
-                  initialValue: _localPlayerNames[player],
-                  maxLength: 24,
-                  textCapitalization: TextCapitalization.words,
-                  decoration: InputDecoration(
-                    labelText: 'Prénom du joueur ${player + 1}',
-                    counterText: '',
-                    prefixIcon: Icon(Icons.person, color: _colorOf(player)),
-                  ),
-                  onChanged: (name) => _localPlayerNames[player] = name,
-                ),
-              ),
-          ],
           const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: _busy ? null : _start,
@@ -1597,9 +1662,15 @@ class _LudoJangScreenState extends State<LudoJangScreen>
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
                 child: Row(children: [
-                  CircleAvatar(radius: 15, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
-                  const SizedBox(width: 8),
-                  Expanded(child: Text(_message ?? activeName, maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
+                  // En face à face, le dé est déjà dans la case du joueur dont
+                  // c'est le tour : pas besoin de dire « Joueur 1 » ou « Joueur 2 ».
+                  // En ligne, chaque joueur est sur son propre téléphone, donc on
+                  // garde le nom pour savoir qui joue.
+                  if (_onlineMode) ...[
+                    CircleAvatar(radius: 15, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+                    const SizedBox(width: 8),
+                  ],
+                  Expanded(child: Text(_message ?? (_onlineMode ? activeName : ''), maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
                   IconButton(
                     tooltip: _soundEnabled ? 'Couper les effets sonores' : 'Activer les effets sonores',
                     visualDensity: VisualDensity.compact,
@@ -1616,11 +1687,15 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                     Padding(
                       padding: const EdgeInsets.only(left: 4),
                       child: Tooltip(
-                        message: '${_playerName(player)} · ${_pawns[player].where((p) => p == 57).length}/${_pawns[player].length} arrivés · série ${_streaks[player]}/5',
+                        message: _finishRank[player] > 0
+                            ? '${_playerName(player)} · ${_ordinal(_finishRank[player])}'
+                            : '${_playerName(player)} · ${_pawns[player].where((p) => p == 57).length}/${_pawns[player].length} arrivés · série ${_streaks[player]}/5',
                         child: CircleAvatar(
                           radius: 12,
                           backgroundColor: player == _turn ? _colorOf(player) : _colorOf(player).withValues(alpha: .35),
-                          child: Text('${_pawns[player].where((p) => p == 57).length}', style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
+                          child: _finishRank[player] > 0
+                              ? const Icon(Icons.emoji_events, color: Colors.white, size: 14)
+                              : Text('${_pawns[player].where((p) => p == 57).length}', style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ),
@@ -1919,6 +1994,42 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     );
   }
 
+  /// Une fois qu'un joueur a ramené tous ses pions, sa place (1er, 2e…)
+  /// s'affiche bien visible dans sa case de départ, à la place de ses pions.
+  Widget _cornerRankBadge(int seat) {
+    var player = -1;
+    for (var p = 0; p < _playerCount; p++) {
+      if (_seatOf(p) == seat) {
+        player = p;
+        break;
+      }
+    }
+    if (player == -1 || _finishRank[player] == 0) return const SizedBox.shrink();
+    const medalColors = <Color>[
+      Color(0xFFF4C430), // or (1er)
+      Color(0xFFC0C0C0), // argent (2e)
+      Color(0xFFCD7F32), // bronze (3e)
+      Color(0xFF9AA5B1), // 4e
+    ];
+    final rank = _finishRank[player];
+    final color = medalColors[(rank - 1).clamp(0, medalColors.length - 1)];
+    return Align(
+      alignment: _seatAlignments[seat],
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(14),
+          boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(0, 2))],
+        ),
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          const Icon(Icons.emoji_events, color: Colors.white, size: 20),
+          Text(_ordinal(rank), style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 15)),
+        ]),
+      ),
+    );
+  }
+
   /// Local face-to-face only: the question (with its answers) appears
   /// anchored in the active player's own corner of the board, exactly like
   /// the die, instead of in a shared spot below the board — leaning toward
@@ -2005,8 +2116,10 @@ class _LudoJangScreenState extends State<LudoJangScreen>
               ),
               if (!_onlineMode)
                 for (var seat = 0; seat < 4; seat++) _cornerDie(seat, paintSide),
+              for (var seat = 0; seat < 4; seat++) _cornerRankBadge(seat),
               if (!_onlineMode && _waitingForSquareQuestion) _cornerQuestionPanel(paintSide),
               if (_chatBubblePlayer != null && _chatBubblePlayer! < _playerCount) _chatBubbleOverlay(paintSide),
+              if (_showFireworks) const Positioned.fill(child: IgnorePointer(child: Confetti())),
             ]),
           ),
         ),
