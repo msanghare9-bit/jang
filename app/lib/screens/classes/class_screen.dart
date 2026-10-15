@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 
 import '../../models.dart';
 import '../../services/class_service.dart';
+import '../../services/lesson_pdf_service.dart';
 import '../../theme.dart';
 import '../../widgets/common.dart';
 import '../admin/students_screen.dart';
@@ -41,6 +42,7 @@ class _ClassScreenState extends State<ClassScreen> {
   final _service = ClassService.instance;
   late ClassRoom _c = widget.classRoom;
   late Future<_ClassData> _future = _load();
+  late Future<List<TeacherLessonPrep>> _koccPreps = _service.teacherLessonsOfClass(_c.id);
   String _examName = '';
   String _filter = 'all';
 
@@ -60,7 +62,12 @@ class _ClassScreenState extends State<ClassScreen> {
   }
 
   void _reload() {
-    if (mounted) setState(() => _future = _load());
+    if (mounted) {
+      setState(() {
+        _future = _load();
+        _koccPreps = _service.teacherLessonsOfClass(_c.id);
+      });
+    }
   }
 
   Future<_ClassData> _load() async {
@@ -175,6 +182,55 @@ class _ClassScreenState extends State<ClassScreen> {
 
   void _openEditor(ClassItem? item) => Navigator.push(
       context, MaterialPageRoute(builder: (_) => ClassItemEditor(classRoom: _c, item: item)));
+
+  /// Préparation complète faite avec Kocc pour cette classe (avec corrigé) :
+  /// jamais visible par un élève, jamais ajoutée à la classe. PDF seulement.
+  void _showKoccPrep(TeacherLessonPrep prep) {
+    showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(prep.title),
+        content: SingleChildScrollView(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
+            Text(prep.subjectName),
+            const SizedBox(height: 12),
+            if (prep.body.isNotEmpty) Text(prep.body),
+          ]),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fermer')),
+          FilledButton.icon(
+            onPressed: () {
+              Navigator.pop(context);
+              _downloadKoccPrep(prep);
+            },
+            icon: const Icon(Icons.download_outlined),
+            label: const Text('Télécharger en PDF'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _downloadKoccPrep(TeacherLessonPrep prep) async {
+    try {
+      await LessonPdfService.shareLesson(
+        Lesson(
+          id: 'teacherLesson_${prep.id}',
+          examId: '',
+          subjectId: '',
+          chapterId: '',
+          title: prep.title,
+          body: prep.body,
+          createdByName: prep.authorName,
+        ),
+        subjectName: prep.subjectName,
+        levelName: _c.name,
+      );
+    } catch (_) {
+      if (mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -398,6 +454,44 @@ class _ClassScreenState extends State<ClassScreen> {
           },
           icon: const Icon(Icons.library_add_outlined),
           label: const Text('Ajouter une leçon officielle'),
+        ),
+        const SizedBox(height: 14),
+        FutureBuilder<List<TeacherLessonPrep>>(
+          future: _koccPreps,
+          builder: (context, snap) {
+            final preps = snap.data ?? const <TeacherLessonPrep>[];
+            if (preps.isEmpty) return const SizedBox.shrink();
+            return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              SectionTitle('Mes préparations avec Kocc pour cette classe (${preps.length})'),
+              Text(
+                'Jamais visibles par les élèves : gardées ici au cas où, pour les retrouver facilement.',
+                style: t.bodySmall,
+              ),
+              const SizedBox(height: 6),
+              for (final prep in preps)
+                Card(
+                  margin: const EdgeInsets.only(bottom: 8),
+                  child: ListTile(
+                    leading: const CircleAvatar(
+                      backgroundColor: JangColors.noteBg,
+                      child: Icon(Icons.description_outlined, color: JangColors.snGreen),
+                    ),
+                    title: Text(prep.title.isEmpty ? 'Sans titre' : prep.title,
+                        style: const TextStyle(fontWeight: FontWeight.w800)),
+                    subtitle: Text(prep.subjectName),
+                    trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+                      IconButton(
+                        tooltip: 'Télécharger en PDF',
+                        onPressed: () => _downloadKoccPrep(prep),
+                        icon: const Icon(Icons.download_outlined),
+                      ),
+                      const Icon(Icons.open_in_new),
+                    ]),
+                    onTap: () => _showKoccPrep(prep),
+                  ),
+                ),
+            ]);
+          },
         ),
         const SizedBox(height: 10),
         if (data.items.isEmpty)
