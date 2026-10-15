@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -37,8 +38,9 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int _tab = 0;
+  Timer? _presenceTimer;
 
   @override
   void initState() {
@@ -50,6 +52,32 @@ class _HomeScreenState extends State<HomeScreen> {
     EngagementService.instance.newBadge.addListener(_onBadge);
     PushService.instance.opened.addListener(_onPush);
     if (p != null) PushService.instance.start(p);
+    // « En ligne maintenant » (écran admin) : tant que l'app est au premier
+    // plan, on signale régulièrement la présence ; ça s'arrête dès que
+    // l'app passe en arrière-plan (voir didChangeAppLifecycleState).
+    WidgetsBinding.instance.addObserver(this);
+    _startPresence();
+  }
+
+  void _startPresence() {
+    final p = AuthService.instance.profile.value;
+    if (p == null) return;
+    StatsService.instance.markPresence(p);
+    _presenceTimer?.cancel();
+    _presenceTimer = Timer.periodic(const Duration(seconds: 45), (_) {
+      final profile = AuthService.instance.profile.value;
+      if (profile != null) StatsService.instance.markPresence(profile);
+    });
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      _startPresence();
+    } else {
+      _presenceTimer?.cancel();
+      _presenceTimer = null;
+    }
   }
 
   void _onPush() {
@@ -59,6 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _presenceTimer?.cancel();
     EngagementService.instance.newBadge.removeListener(_onBadge);
     PushService.instance.opened.removeListener(_onPush);
     super.dispose();
