@@ -90,6 +90,10 @@ class TeacherLessonPrep {
   final String id;
   final String title;
   final String subjectName;
+  final String examId;
+  /// Classe pour laquelle la leçon a été préparée (vide pour les anciennes
+  /// préparations, créées avant l'ajout de ce champ).
+  final String classId;
   final String body;
   final String authorUid;
   final String authorName;
@@ -99,6 +103,8 @@ class TeacherLessonPrep {
     required this.id,
     required this.title,
     required this.subjectName,
+    this.examId = '',
+    this.classId = '',
     required this.body,
     required this.authorUid,
     required this.authorName,
@@ -112,6 +118,8 @@ class TeacherLessonPrep {
       id: doc.id,
       title: '${m['title'] ?? ''}',
       subjectName: '${m['subjectName'] ?? ''}',
+      examId: '${m['examId'] ?? ''}',
+      classId: '${m['classId'] ?? ''}',
       body: '${m['body'] ?? ''}',
       authorUid: '${m['authorUid'] ?? ''}',
       authorName: '${m['authorName'] ?? 'Professeur'}',
@@ -348,6 +356,8 @@ class ClassService {
   Future<String> shareTeacherLesson({
     required String title,
     required String subjectName,
+    String examId = '',
+    String classId = '',
     required String body,
     required String authorUid,
     required String authorName,
@@ -356,6 +366,8 @@ class ClassService {
     await ref.set({
       'title': title,
       'subjectName': subjectName,
+      'examId': examId,
+      'classId': classId,
       'body': body,
       'authorUid': authorUid,
       'authorName': authorName,
@@ -368,6 +380,17 @@ class ClassService {
   Future<List<TeacherLessonPrep>> teacherLessons() async {
     final s = await _teacherLessons.orderBy('createdAt', descending: true).limit(200).get();
     return [for (final d in s.docs) TeacherLessonPrep.fromDoc(d)];
+  }
+
+  /// Préparations faites avec Kocc pour UNE classe précise (gardées « au cas
+  /// où », pour que le professeur les retrouve même après avoir quitté
+  /// l'écran de préparation). Triées ici (pas dans la requête), pour éviter
+  /// d'avoir besoin d'un index Firestore composite.
+  Future<List<TeacherLessonPrep>> teacherLessonsOfClass(String classId) async {
+    final s = await _teacherLessons.where('classId', isEqualTo: classId).limit(200).get();
+    final list = [for (final d in s.docs) TeacherLessonPrep.fromDoc(d)];
+    list.sort((a, b) => (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0)));
+    return list;
   }
 
   /// Tous les contenus créés par un prof (pour l'admin).
