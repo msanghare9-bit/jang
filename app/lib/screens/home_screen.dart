@@ -27,7 +27,6 @@ import 'inbox_screen.dart';
 import '../widgets/home_cards.dart';
 import 'mission/learn_mode.dart';
 import 'search_screen.dart';
-import '../widgets/daily_challenge.dart';
 import '../services/home_config_service.dart';
 import '../services/push_service.dart';
 
@@ -296,7 +295,6 @@ class _SubjectsTabState extends State<SubjectsTab> {
                       _ExamCountdownCard(exam: data.exam!),
                       const SizedBox(height: 10),
                     ],
-                    if (data.exam != null) const DailyChallengeCard(),
                     const MyClassCard(),
                     const MatchCard(),
                     const ExerciseHelpCard(),
