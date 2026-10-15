@@ -7,36 +7,35 @@ import '../services/lesson_pdf_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
 import '../widgets/jang_ui.dart';
-import 'lesson_screen.dart';
 
-/// Une ligne de résultat : soit une leçon officielle de Jàng (n'importe quel
-/// niveau), soit un cours partagé par un professeur (toujours public).
+/// Une ligne de résultat : un cours partagé par un professeur ou créé avec
+/// Kocc (toujours public). Les leçons officielles de Jàng ne sont PAS
+/// incluses ici : les professeurs ne doivent voir que ce qui a été créé
+/// par Kocc ou par d'autres professeurs.
 class _Entry {
   final String title;
   final String levelName;
   final String subjectName;
   final String ownerLabel;
   final Color color;
-  final Lesson? lesson;
-  final Subject? subject;
   final ClassItem? item;
+  final TeacherLessonPrep? prep;
   const _Entry({
     required this.title,
     required this.levelName,
     required this.subjectName,
     required this.ownerLabel,
     required this.color,
-    this.lesson,
-    this.subject,
     this.item,
+    this.prep,
   });
 
-  String get body => lesson?.body ?? item?.body ?? '';
+  String get body => item?.body ?? prep?.body ?? '';
 }
 
-/// Accès direct, depuis l'accueil du professeur, à TOUTES les leçons de
-/// Jàng (n'importe quel niveau) et aux cours partagés entre professeurs —
-/// avec recherche et filtres, et un téléchargement en PDF en un geste.
+/// Accès direct, depuis l'accueil du professeur, aux cours créés avec Kocc
+/// et partagés par les professeurs (n'importe quel niveau) — avec
+/// recherche et filtres, et un téléchargement en PDF en un geste.
 class LessonLibraryScreen extends StatefulWidget {
   const LessonLibraryScreen({super.key});
 
@@ -75,29 +74,16 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
   Future<void> _load() async {
     final repo = ContentRepo.instance;
     final entries = <_Entry>[];
+    // On a seulement besoin des matières et des niveaux de Jàng pour
+    // retrouver le nom lisible d'un cours partagé (qui ne connaît que la
+    // clé de sa matière, ex. « anglais », et l'id de son niveau) — pas
+    // pour afficher les leçons officielles elles-mêmes.
     final exams = await repo.exams();
-    // Pour retrouver le nom de la matière d'un cours partagé (qui ne
-    // connaît que sa clé, ex. « anglais ») et le nom de son niveau.
     final subjectsByExam = <String, List<Subject>>{};
     final examNames = <String, String>{};
     for (final exam in exams) {
       examNames[exam.id] = exam.name;
-      final subjects = await repo.subjects(exam.id);
-      subjectsByExam[exam.id] = subjects;
-      final lessons = await repo.lessonsOfExam(exam.id);
-      for (final lesson in lessons) {
-        final subject = subjects.where((s) => s.id == lesson.subjectId).firstOrNull;
-        if (subject == null) continue;
-        entries.add(_Entry(
-          title: lesson.title.isEmpty ? 'Sans titre' : lesson.title,
-          levelName: exam.name,
-          subjectName: subject.name,
-          ownerLabel: 'Jàng',
-          color: JangColors.fromHex(subject.color),
-          lesson: lesson,
-          subject: subject,
-        ));
-      }
+      subjectsByExam[exam.id] = await repo.subjects(exam.id);
     }
     try {
       final shared = await ClassService.instance.sharedTeacherItems();
@@ -108,14 +94,30 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
           title: item.title.isEmpty ? 'Sans titre' : item.title,
           levelName: examNames[item.examId] ?? '',
           subjectName: subject?.name ?? item.subject,
-          ownerLabel: item.ownerName.isEmpty ? 'Un professeur' : item.ownerName,
+          ownerLabel: item.sourceOwnerName == koccSourceName
+              ? 'Créé avec Kocc'
+              : (item.ownerName.isEmpty ? 'Un professeur' : item.ownerName),
           color: subject == null ? JangColors.snGreen : JangColors.fromHex(subject.color),
           item: item,
         ));
       }
     } catch (_) {
-      // Les cours partagés ne sont pas indispensables : on affiche au moins
-      // les leçons officielles de Jàng si cette partie échoue.
+      // On affiche au moins les préparations Kocc si cette partie échoue.
+    }
+    try {
+      final preps = await ClassService.instance.teacherLessons();
+      for (final prep in preps) {
+        entries.add(_Entry(
+          title: prep.title.isEmpty ? 'Sans titre' : prep.title,
+          levelName: examNames[prep.examId] ?? '',
+          subjectName: prep.subjectName,
+          ownerLabel: 'Créé avec Kocc · ${prep.authorName}',
+          color: JangColors.snGreen,
+          prep: prep,
+        ));
+      }
+    } catch (_) {
+      // On affiche au moins les cours partagés si cette partie échoue.
     }
     if (!mounted) return;
     setState(() {
@@ -136,10 +138,22 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
 
   Future<void> _download(_Entry e) async {
     try {
-      if (e.lesson != null) {
-        await LessonPdfService.shareLesson(e.lesson!, subjectName: e.subjectName, levelName: e.levelName);
-      } else if (e.item != null) {
+      if (e.item != null) {
         await LessonPdfService.shareClassItem(e.item!, levelName: e.levelName);
+      } else if (e.prep != null) {
+        await LessonPdfService.shareLesson(
+          Lesson(
+            id: 'teacherLesson_${e.prep!.id}',
+            examId: '',
+            subjectId: '',
+            chapterId: '',
+            title: e.prep!.title,
+            body: e.prep!.body,
+            createdByName: e.prep!.authorName,
+          ),
+          subjectName: e.prep!.subjectName,
+          levelName: e.levelName,
+        );
       }
     } catch (_) {
       if (mounted) showMessage(context, 'Impossible de préparer le PDF. Réessayez.');
@@ -147,11 +161,6 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
   }
 
   void _open(_Entry e) {
-    if (e.lesson != null && e.subject != null) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (_) => LessonScreen(lesson: e.lesson!, subject: e.subject!, preview: true)));
-      return;
-    }
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
@@ -256,7 +265,7 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
                               leading: CircleAvatar(
                                 backgroundColor: e.color.withValues(alpha: 0.18),
                                 child: Icon(
-                                  e.lesson != null ? Icons.menu_book_outlined : Icons.groups_outlined,
+                                  e.prep != null ? Icons.description_outlined : Icons.groups_outlined,
                                   color: e.color,
                                 ),
                               ),
