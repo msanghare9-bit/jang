@@ -1,685 +1,247 @@
-import 'dart:async';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../classes/classes_admin_screen.dart';
-import 'teacher_applications_screen.dart';
-import 'course_export_logs_screen.dart';
-import 'lesson_creators_screen.dart';
-import '../classes/my_classes_screen.dart';
-import '../teacher_resources_screen.dart';
-import 'official_missions_screen.dart';
-import 'reports_screen.dart';
+import '../services/auth_service.dart';
+import '../services/content_repo.dart';
+import '../models.dart';
+import '../theme.dart';
+import '../widgets/common.dart';
 
-import '../../models.dart';
-import '../../services/content_repo.dart';
-import '../../services/pack_service.dart';
-import '../../theme.dart';
-import '../../widgets/common.dart';
-import 'admin_widgets.dart';
-import 'lesson_editor.dart';
-import 'moderation_screen.dart';
-import 'stats_screen.dart';
-import 'announce_screen.dart';
-import 'home_config_screen.dart';
-import 'profs_screen.dart';
-import 'students_screen.dart';
-import '../../services/auth_service.dart';
+class _TeacherPost {
+  final String id;
+  final String type;
+  final String title;
+  final String body;
+  final String authorUid;
+  final String authorName;
+  final String targetSubject;
+  final DateTime? createdAt;
 
-/// Onglet « Gestion » du responsable : niveaux > matières > leçons.
-class AdminHome extends StatefulWidget {
-  const AdminHome({super.key});
+  const _TeacherPost({
+    required this.id,
+    required this.type,
+    required this.title,
+    required this.body,
+    required this.authorUid,
+    required this.authorName,
+    required this.targetSubject,
+    this.createdAt,
+  });
 
-  @override
-  State<AdminHome> createState() => _AdminHomeState();
+  factory _TeacherPost.fromDoc(QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+    final data = doc.data();
+    final created = data['createdAt'];
+    return _TeacherPost(
+      id: doc.id,
+      type: '${data['type'] ?? 'tip'}',
+      title: '${data['title'] ?? ''}',
+      body: '${data['body'] ?? ''}',
+      authorUid: '${data['authorUid'] ?? ''}',
+      authorName: '${data['authorName'] ?? 'Professeur'}',
+      targetSubject: '${data['targetSubject'] ?? ''}',
+      createdAt: created is Timestamp ? created.toDate() : null,
+    );
+  }
 }
 
-class _AdminHomeState extends State<AdminHome> with RepoListener<AdminHome> {
-  List<Exam>? _exams;
+/// Ressources de formation sélectionnées par l'administration et conseils partagés par les professeurs.
+class TeacherResourcesScreen extends StatefulWidget {
+  const TeacherResourcesScreen({super.key});
 
   @override
-  Future<void> load() async {
-    var e = await ContentRepo.instance.exams();
-    final me = AuthService.instance.profile.value;
-    // Un prof ne voit que ses niveaux.
-    if (me != null && me.isProf && me.profExams.isNotEmpty) {
-      e = e.where((x) => me.profExams.contains(x.id)).toList();
+  State<TeacherResourcesScreen> createState() => _TeacherResourcesScreenState();
+}
+
+/// Conseils publiés par les professeurs, visibles sur l'accueil des élèves.
+class TeacherTipsCard extends StatelessWidget {
+  const TeacherTipsCard({super.key});
+
+  @override
+  Widget build(BuildContext context) => FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        future: FirebaseFirestore.instance
+            .collection('teacherPosts')
+            .where('type', isEqualTo: 'tip')
+            .limit(3)
+            .get(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) return const SizedBox.shrink();
+          final tips = snapshot.data!.docs.toList()
+            ..sort((a, b) {
+              final ad = a.data()['createdAt'];
+              final bd = b.data()['createdAt'];
+              final at = ad is Timestamp ? ad : Timestamp(0, 0);
+              final bt = bd is Timestamp ? bd : Timestamp(0, 0);
+              return bt.compareTo(at);
+            });
+          return Card(
+            child: Column(children: [
+              for (final tip in tips)
+                ListTile(
+                  leading: const CircleAvatar(
+                    backgroundColor: JangColors.successBg,
+                    child: Icon(Icons.lightbulb_outline, color: JangColors.snGreen),
+                  ),
+                  title: Text('${tip.data()['title'] ?? 'Conseil d’un professeur'}',
+                      maxLines: 1, overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(fontWeight: FontWeight.w800)),
+                  subtitle: Text('${tip.data()['body'] ?? ''}\nPar ${tip.data()['authorName'] ?? 'un professeur'}',
+                      maxLines: 3, overflow: TextOverflow.ellipsis),
+                  isThreeLine: true,
+                  dense: true,
+                  visualDensity: VisualDensity.compact,
+                ),
+            ]),
+          );
+        },
+      );
+}
+
+class _TeacherResourcesScreenState extends State<TeacherResourcesScreen> {
+  late Future<List<_TeacherPost>> _posts = _loadPosts();
+  bool _saving = false;
+
+  Future<List<_TeacherPost>> _loadPosts() async {
+    final profile = AuthService.instance.profile.value;
+    if (profile == null) return const [];
+    final collection = FirebaseFirestore.instance.collection('teacherPosts');
+    final snapshots = <QuerySnapshot<Map<String, dynamic>>>[];
+    if (profile.isAdmin) {
+      snapshots.add(await collection.orderBy('createdAt', descending: true).limit(100).get());
+    } else {
+      snapshots.add(await collection.where('targetSubject', isEqualTo: '').orderBy('createdAt', descending: true).limit(100).get());
+      for (final subject in profile.profSubjects.toSet()) {
+        if (subject.isEmpty) continue;
+        snapshots.add(await collection.where('targetSubject', isEqualTo: subject).orderBy('createdAt', descending: true).limit(100).get());
+      }
     }
-    if (mounted) setState(() => _exams = e);
+    final posts = <String, _TeacherPost>{};
+    for (final snapshot in snapshots) {
+      for (final doc in snapshot.docs) {
+        posts[doc.id] = _TeacherPost.fromDoc(doc);
+      }
+    }
+    final result = posts.values.toList()
+      ..sort((a, b) => (b.createdAt ?? DateTime(0)).compareTo(a.createdAt ?? DateTime(0)));
+    return result;
   }
 
-  Widget _go(String label, IconData icon, Widget screen, {bool filled = false}) {
-    void onPressed() => Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
-      child: filled
-          ? FilledButton.icon(onPressed: onPressed, icon: Icon(icon), label: Text(label))
-          : OutlinedButton.icon(onPressed: onPressed, icon: Icon(icon), label: Text(label)),
-    );
-  }
-
-  Future<void> _addExam() async {
-    final name = await askText(context, 'Nouveau niveau', 'Nom (ex. : 3e, Terminale, Anglais débutant)');
-    if (name == null) return;
+  Future<List<(String, String)>> _allSubjects() async {
     final repo = ContentRepo.instance;
-    final id = repo.newId('exams');
-    repo.save('exams', id, Exam(id: id, name: name, order: _exams?.length ?? 0).toMap());
+    final result = <(String, String)>[];
+    for (final exam in await repo.exams()) {
+      for (final subject in await repo.subjects(exam.id)) {
+        final key = subjectKey(subject.name);
+        if (key.isNotEmpty && !result.any((s) => s.$1 == key)) result.add((key, subject.name));
+      }
+    }
+    return result;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final exams = _exams;
-    final me = AuthService.instance.profile.value!;
-    final admin = me.isAdmin;
-    final canEdit = admin || me.canEdit;
-    return SafeArea(
-      child: exams == null
-          ? const Center(child: CircularProgressIndicator())
-          : ListView(
-              padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
-              children: [
-                Text(admin ? 'Gestion' : 'Espace prof', style: titleStyle(26)),
-                const SizedBox(height: 6),
-                Text(
-                    admin
-                        ? 'Ce que tu enregistres ici est publié pour les élèves. Sans connexion, '
-                            'l\'envoi se fait automatiquement dès le retour d\'internet.'
-                        : 'Vous suivez vos élèves, échangez avec eux et publiez des annonces dans vos matières.',
-                    style: Theme.of(context).textTheme.bodySmall),
-                const SizedBox(height: 16),
-                _go(admin ? 'Élèves' : 'Mes élèves', Icons.groups_outlined, const StudentsScreen(), filled: true),
-                admin
-                    ? _go('Profs et classes', Icons.school_outlined, const ClassesAdminScreen())
-                    : _go('Mes classes', Icons.school_outlined, const MyClassesScreen()),
-                _go('Annonces', Icons.campaign_outlined, const AnnouncementsScreen()),
-                if (admin) _go('Ressources des professeurs', Icons.menu_book_outlined, const TeacherResourcesScreen()),
-                if (admin) _go('Missions avec Gaïndé', Icons.edit_note_outlined, const OfficialMissionsScreen()),
-                if (admin) _go('Questions de match signalées', Icons.flag_outlined, const ReportsScreen()),
-                if (admin) _go('Accueil de l\'app', Icons.home_outlined, const HomeConfigScreen()),
-                if (admin) _go('Les profs', Icons.badge_outlined, const ProfsScreen()),
-                if (admin) _go('Demandes de changement de rôle', Icons.person_add_alt_1, const TeacherApplicationsScreen()),
-                if (admin) _go('Leçons créées et leurs auteurs', Icons.menu_book_outlined, const LessonCreatorsScreen()),
-                if (admin) _go('Exports des cours', Icons.file_download_done_outlined, const CourseExportLogsScreen()),
-                if (admin) _go('Statistiques d\'utilisation', Icons.bar_chart, const StatsScreen()),
-                _go('Questions des élèves', Icons.forum_outlined, const ModerationScreen()),
-                if (admin) _go('Questions posées à Kocc Barma', Icons.psychology_alt_outlined, const TutorLogsScreen()),
-                if (canEdit) const SectionTitle('Niveaux'),
-                if (canEdit && exams.isEmpty && admin)
-                  EmptyState(
-                    icon: Icons.school_outlined,
-                    title: 'Aucun niveau',
-                    message: 'Commence par créer un niveau avec quatre matières (français, maths, anglais, SVT).',
-                    action: FilledButton(
-                      onPressed: () async {
-                        final n = await askText(context, 'Premier niveau', 'Nom (ex. : 3e)');
-                        if (n != null) ContentRepo.instance.seedFirstLevel(n);
-                      },
-                      child: const Text('Créer un niveau'),
-                    ),
-                  ),
-                if (canEdit)
-                for (var i = 0; i < exams.length; i++)
-                  AdminRow(
-                    title: exams[i].name,
-                    onTap: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => AdminExamScreen(exam: exams[i]))),
-                    onUp: admin && i > 0 ? () => swapIn(context, 'exams', exams, i, i - 1) : null,
-                    onDown: admin && i < exams.length - 1
-                        ? () => swapIn(context, 'exams', exams, i, i + 1)
-                        : null,
-                    onEdit: !admin ? null : () async {
-                      final n = await askText(context, 'Renommer le niveau', 'Nom',
-                          initial: exams[i].name);
-                      if (n != null) ContentRepo.instance.save('exams', exams[i].id, {'name': n});
-                    },
-                    onDelete: !admin ? null : () async {
-                      if (await confirm(context, 'Supprimer ${exams[i].name} ?',
-                          'Le niveau et tout son contenu ne seront plus visibles par les élèves.',
-                          ok: 'Supprimer')) {
-                        ContentRepo.instance.remove('exams', exams[i].id);
-                      }
-                    },
-                  ),
-                const SizedBox(height: 8),
-                if (admin)
-                OutlinedButton.icon(
-                    onPressed: _addExam, icon: const Icon(Icons.add), label: const Text('Ajouter un niveau')),
-              ],
-            ),
-    );
-  }
-}
-
-class AdminExamScreen extends StatefulWidget {
-  final Exam exam;
-  const AdminExamScreen({super.key, required this.exam});
-
-  @override
-  State<AdminExamScreen> createState() => _AdminExamScreenState();
-}
-
-class _AdminExamScreenState extends State<AdminExamScreen> with RepoListener<AdminExamScreen> {
-  List<Subject>? _subjects;
-  bool get _admin => AuthService.instance.profile.value?.isAdmin ?? false;
-
-  @override
-  Future<void> load() async {
-    var s = await ContentRepo.instance.subjects(widget.exam.id);
-    final me = AuthService.instance.profile.value;
-    if (me != null && !me.isAdmin) s = s.where((x) => me.canEditSubject(x.name)).toList();
-    if (mounted) setState(() => _subjects = s);
-  }
-
-  Future<void> _edit([Subject? s]) async {
-    final exams = await ContentRepo.instance.exams();
+  Future<void> _compose() async {
+    final profile = AuthService.instance.profile.value;
+    if (profile == null) return;
+    final admin = profile.isAdmin;
+    final subjects = admin ? await _allSubjects() : const <(String, String)>[];
     if (!mounted) return;
-    final result = await showDialog<(String, String, List<String>)>(
+    final title = TextEditingController();
+    final body = TextEditingController();
+    var selectedSubject = '';
+    final posted = await showDialog<bool>(
       context: context,
-      builder: (_) => SubjectDialog(subject: s, exams: exams, examId: widget.exam.id),
-    );
-    if (result == null) return;
-    final repo = ContentRepo.instance;
-    final id = s?.id ?? repo.newId('subjects');
-    repo.save('subjects', id, {
-      'examId': s?.examId ?? widget.exam.id,
-      'examIds': result.$3,
-      'name': result.$1,
-      'color': result.$2,
-      if (s == null) 'order': _subjects?.length ?? 0,
-      if (s == null) 'deleted': false,
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final subjects = _subjects;
-    return Scaffold(
-      appBar: AppBar(title: Text(widget.exam.name)),
-      body: subjects == null
-          ? const Center(child: CircularProgressIndicator())
-          : ListView(
-              padding: const EdgeInsets.fromLTRB(18, 8, 18, 28),
-              children: [
-                const SectionTitle('Matières'),
-                if (subjects.isEmpty)
-                  Text('Aucune matière pour ce niveau.', style: Theme.of(context).textTheme.bodySmall)
-                else
-                  Text('Glisse une matière avec la souris pour la réordonner.',
-                      style: Theme.of(context).textTheme.bodySmall),
-                if (subjects.isNotEmpty)
-                  ReorderableListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: subjects.length,
-                    itemBuilder: (context, i) => KeyedSubtree(
-                      key: ValueKey(subjects[i].id),
-                      child: AdminRow(
-                        title: subjects[i].name,
-                        color: JangColors.fromHex(subjects[i].color),
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) =>
-                                    AdminSubjectScreen(subject: subjects[i], exam: widget.exam))),
-                        onUp: i > 0 ? () => swapIn(context, 'subjects', subjects, i, i - 1) : null,
-                        onDown: i < subjects.length - 1
-                            ? () => swapIn(context, 'subjects', subjects, i, i + 1)
-                            : null,
-                        onEdit: _admin ? () => _edit(subjects[i]) : null,
-                        onDelete: !_admin
-                            ? null
-                            : () async {
-                                if (await confirm(context, 'Supprimer ${subjects[i].name} ?',
-                                    'La matière et ses leçons ne seront plus visibles par les élèves.',
-                                    ok: 'Supprimer')) {
-                                  ContentRepo.instance.remove('subjects', subjects[i].id);
-                                }
-                              },
-                      ),
-                    ),
-                    onReorder: (oldIndex, newIndex) {
-                      if (newIndex > oldIndex) newIndex -= 1;
-                      final reordered = [...subjects];
-                      final moved = reordered.removeAt(oldIndex);
-                      reordered.insert(newIndex, moved);
-                      ContentRepo.instance.reorderList('subjects', [for (final s in reordered) s.id]);
-                    },
-                  ),
-                const SizedBox(height: 8),
-                if (_admin)
-                OutlinedButton.icon(
-                    onPressed: () => _edit(),
-                    icon: const Icon(Icons.add),
-                    label: const Text('Ajouter une matière')),
-              ],
-            ),
-    );
-  }
-}
-
-/// Échange l'ordre de deux éléments d'une liste triée (niveaux, matières, chapitres, leçons).
-void swapIn(BuildContext context, String collection, List<dynamic> items, int a, int b) {
-  final ia = items[a];
-  final ib = items[b];
-  // Si deux éléments ont le même ordre, on utilise leur position dans la liste.
-  final oa = ia.order == ib.order ? a : ia.order as int;
-  final ob = ia.order == ib.order ? b : ib.order as int;
-  ContentRepo.instance.swapOrder(collection, ia.id as String, oa, ib.id as String, ob);
-}
-
-class AdminSubjectScreen extends StatefulWidget {
-  final Subject subject;
-  final Exam? exam;
-  const AdminSubjectScreen({super.key, required this.subject, this.exam});
-
-  @override
-  State<AdminSubjectScreen> createState() => _AdminSubjectScreenState();
-}
-
-class _AdminSubjectScreenState extends State<AdminSubjectScreen>
-    with RepoListener<AdminSubjectScreen> {
-  List<Lesson>? _lessons;
-  Map<String, FlashcardDeck> _decks = const {};
-  bool _migrated = false;
-  List<LessonPack> _packs = const [];
-  bool _packsLoaded = false;
-  String _packStatus = 'loading'; // loading | error | ok
-
-  Future<void> _loadPacks() async {
-    _packsLoaded = true;
-    if (mounted) setState(() => _packStatus = 'loading');
-    final all = await PackService.instance.fetch();
-    final names = widget.exam != null
-        ? [widget.exam!.name]
-        : <String>[
-            for (final id in widget.subject.examIds) (await ContentRepo.instance.exam(id))?.name ?? '',
-          ];
-    final fit = (all ?? const <LessonPack>[]).where((p) => p.fits(widget.subject, names)).toList();
-    if (mounted) {
-      setState(() {
-        _packs = fit;
-        _packStatus = all == null ? 'error' : 'ok';
-      });
-    }
-  }
-
-  List<LessonPack> get _newPacks {
-    final have = {for (final l in _lessons ?? const <Lesson>[]) l.id};
-    return _packs
-        .where((p) => !have.contains(p.lessonId) && !have.contains(p.lessonIdFor(widget.subject)))
-        .toList();
-  }
-
-  int get _nextOrder {
-    final lessons = _lessons ?? const <Lesson>[];
-    return lessons.isEmpty ? 0 : lessons.map((l) => l.order).reduce((a, b) => a > b ? a : b) + 1;
-  }
-
-  /// Classe affichée (null : matière vue sans classe précise).
-  String? get _examId => widget.exam?.id;
-
-  /// La matière est-elle partagée entre plusieurs classes ?
-  bool get _shared => _examId != null && widget.subject.examIds.length > 1;
-
-  /// Pour une leçon créée ici : cachée dans les autres classes de la matière.
-  List<String> get _hiddenForNew =>
-      _shared ? widget.subject.examIds.where((e) => e != _examId).toList() : const [];
-
-  void _addPacks(List<LessonPack> packs) {
-    PackService.instance.add(widget.subject, packs, _nextOrder, hiddenIn: _hiddenForNew);
-    showMessage(context,
-        packs.length == 1 ? 'Leçon ajoutée.' : '${packs.length} leçons ajoutées.');
-  }
-
-  Widget _packsCard(Color color) {
-    if (_packStatus == 'loading') {
-      return Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Text('Recherche des leçons prêtes…', style: Theme.of(context).textTheme.bodySmall),
-      );
-    }
-    if (_packStatus == 'error') {
-      return Card(
-        margin: const EdgeInsets.only(bottom: 14),
-        child: ListTile(
-          leading: const Icon(Icons.wifi_off_rounded),
-          title: const Text('Leçons prêtes : pas de connexion'),
-          trailing: TextButton(onPressed: _loadPacks, child: const Text('Réessayer')),
-        ),
-      );
-    }
-    final packs = _newPacks;
-    if (packs.isEmpty) return const SizedBox.shrink();
-    return Card(
-      margin: const EdgeInsets.only(bottom: 14),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text('✨ Leçons prêtes à ajouter (${packs.length})', style: titleStyle(17, weight: 800)),
-            const SizedBox(height: 4),
-            Text('Texte, exercices et fiches de révision déjà faits. Tu pourras tout modifier ensuite.',
-                style: Theme.of(context).textTheme.bodySmall),
+      builder: (dialogContext) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: Text(admin ? 'Ajouter une ressource professionnelle' : 'Partager un conseil'),
+          content: SingleChildScrollView(child: Column(mainAxisSize: MainAxisSize.min, children: [
+            TextField(controller: title, maxLength: 100, decoration: const InputDecoration(labelText: 'Titre')),
             const SizedBox(height: 8),
-            for (final p in packs)
-              Row(children: [
-                Expanded(
-                    child: Text(p.title,
-                        style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15))),
-                TextButton(onPressed: () => _addPacks([p]), child: const Text('Ajouter')),
-              ]),
-            if (packs.length > 1) ...[
-              const SizedBox(height: 6),
-              FilledButton.icon(
-                style: FilledButton.styleFrom(backgroundColor: color),
-                onPressed: () => _addPacks(packs),
-                icon: const Icon(Icons.download_done_rounded),
-                label: const Text('Tout ajouter'),
+            TextField(controller: body, minLines: 3, maxLines: 7,
+                decoration: const InputDecoration(labelText: 'Information ou conseil', alignLabelWithHint: true)),
+            if (admin) ...[
+              const SizedBox(height: 8),
+              DropdownButtonFormField<String>(
+                value: selectedSubject,
+                decoration: const InputDecoration(labelText: 'Qui peut voir cette ressource ?'),
+                items: [
+                  const DropdownMenuItem(value: '', child: Text('Tous les professeurs')),
+                  for (final subject in subjects) DropdownMenuItem(value: subject.$1, child: Text(subject.$2)),
+                ],
+                onChanged: (value) => setDialogState(() => selectedSubject = value ?? ''),
               ),
             ],
+          ])),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(dialogContext, false), child: const Text('Annuler')),
+            FilledButton(onPressed: () => Navigator.pop(dialogContext, true), child: const Text('Publier')),
           ],
         ),
       ),
     );
-  }
-
-  @override
-  Future<void> load() async {
-    final repo = ContentRepo.instance;
-    if (!_migrated) {
-      _migrated = true;
-      // Les anciennes leçons rangées par chapitres deviennent une simple liste.
-      if (await repo.migrateSubject(widget.subject)) return; // load() sera rappelé
-    }
-    if (!_packsLoaded) unawaited(_loadPacks());
-    final l = await repo.lessonsOfSubject(widget.subject.id);
-    final d = await repo.decksOfSubject(widget.subject.id);
-    if (mounted) {
-      setState(() {
-        _lessons = l;
-        _decks = d;
+    if (posted != true || title.text.trim().isEmpty || body.text.trim().isEmpty) return;
+    setState(() => _saving = true);
+    try {
+      await FirebaseFirestore.instance.collection('teacherPosts').add({
+        'type': admin ? 'resource' : 'tip',
+        'title': title.text.trim(),
+        'body': body.text.trim(),
+        'authorUid': profile.uid,
+        'authorName': profile.name,
+        'targetSubject': admin ? selectedSubject : '',
+        'createdAt': FieldValue.serverTimestamp(),
       });
+      if (mounted) {
+        showMessage(context, 'Publication visible dans l’espace professeur.');
+        setState(() => _posts = _loadPosts());
+      }
+    } catch (_) {
+      if (mounted) showMessage(context, 'Publication impossible. Vérifiez votre connexion puis réessayez.');
+    } finally {
+      title.dispose();
+      body.dispose();
+      if (mounted) setState(() => _saving = false);
     }
   }
 
-  void _openLesson(Lesson? lesson) {
-    final next = _nextOrder;
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (_) => LessonEditor(
-            subject: widget.subject, lesson: lesson, nextOrder: next, hiddenIn: _hiddenForNew),
-      ),
-    );
+  Future<void> _delete(_TeacherPost post) async {
+    await FirebaseFirestore.instance.collection('teacherPosts').doc(post.id).delete();
+    if (mounted) setState(() => _posts = _loadPosts());
   }
 
   @override
   Widget build(BuildContext context) {
-    final all = _lessons;
-    final color = JangColors.fromHex(widget.subject.color);
-    final lessons = all?.where((l) => l.visibleIn(_examId)).toList();
-    final hidden = all?.where((l) => !l.visibleIn(_examId)).toList() ?? const <Lesson>[];
-    final title = widget.exam == null ? widget.subject.name : '${widget.subject.name} · ${widget.exam!.name}';
+    final profile = AuthService.instance.profile.value!;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title, style: titleStyle(20, color: Colors.white)),
-        backgroundColor: color,
-        foregroundColor: Colors.white,
+      appBar: AppBar(title: const Text('Ressources et conseils')),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: _saving ? null : _compose,
+        icon: Icon(profile.isAdmin ? Icons.add : Icons.lightbulb_outline),
+        label: Text(profile.isAdmin ? 'Publier une ressource' : 'Partager un conseil'),
       ),
-      body: lessons == null
-          ? const Center(child: CircularProgressIndicator())
-          : ListView(
-              padding: const EdgeInsets.fromLTRB(16, 14, 16, 28),
-              children: [
-                _packsCard(color),
-                Text('${lessons.length} leçon${lessons.length > 1 ? 's' : ''}',
-                    style: Theme.of(context).textTheme.bodySmall),
-                const SizedBox(height: 8),
-                if (lessons.isEmpty)
-                  const EmptyState(
-                      icon: Icons.menu_book_outlined,
-                      title: 'Aucune leçon',
-                      message: 'Ajoute une première leçon avec le bouton ci-dessous.'),
-                if (lessons.isNotEmpty)
-                  ReorderableListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: lessons.length,
-                    itemBuilder: (context, i) =>
-                        KeyedSubtree(key: ValueKey(lessons[i].id), child: _row(lessons, i, color)),
-                    onReorder: (oldIndex, newIndex) {
-                      if (newIndex > oldIndex) newIndex -= 1;
-                      final reordered = [...lessons];
-                      final moved = reordered.removeAt(oldIndex);
-                      reordered.insert(newIndex, moved);
-                      ContentRepo.instance.reorderList('lessons', [for (final l in reordered) l.id]);
-                    },
-                  ),
-                const SizedBox(height: 8),
-                OutlinedButton.icon(
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: color,
-                    side: BorderSide(color: color, width: 1.5),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                  ),
-                  onPressed: () => _openLesson(null),
-                  icon: const Icon(Icons.add),
-                  label: const Text('Ajouter une leçon'),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                    'Glisse une leçon avec la souris pour la réordonner. Le menu ⋮ de chaque '
-                    'leçon : Modifier, Copier vers un autre niveau, Monter, Descendre, Retirer ou Supprimer.',
-                    style: Theme.of(context).textTheme.bodySmall),
-                if (hidden.isNotEmpty) ...[
-                  const SizedBox(height: 18),
-                  ExpansionTile(
-                    tilePadding: EdgeInsets.zero,
-                    title: Text('Retirées de ce niveau (${hidden.length})',
-                        style: const TextStyle(fontWeight: FontWeight.w700)),
-                    subtitle: const Text('Elles restent visibles dans les autres niveaux.'),
-                    children: [
-                      for (final l in hidden)
-                        ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          title: Text(l.title),
-                          trailing: TextButton(
-                            onPressed: () => ContentRepo.instance.save('lessons', l.id, {
-                              'hiddenIn': l.hiddenIn.where((e) => e != _examId).toList(),
-                            }),
-                            child: const Text('Remettre'),
-                          ),
-                        ),
-                    ],
-                  ),
-                ],
-              ],
-            ),
-    );
-  }
-
-  /// Copie la leçon (texte, exercices, révision) dans une autre matière / un autre niveau.
-  Future<void> _copy(Lesson l, FlashcardDeck? deck) async {
-    final repo = ContentRepo.instance;
-    final targets = <(Exam, Subject)>[];
-    for (final e in await repo.exams()) {
-      for (final s in await repo.subjects(e.id)) {
-        if (e.id == _examId && s.id == widget.subject.id) continue;
-        targets.add((e, s));
-      }
-    }
-    if (!mounted) return;
-    final t = await showModalBottomSheet<(Exam, Subject)>(
-      context: context,
-      isScrollControlled: true,
-      builder: (ctx) => SafeArea(
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: MediaQuery.of(ctx).size.height * 0.75),
-          child: ListView(shrinkWrap: true, children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 18, 20, 6),
-              child: Text('Copier « ${l.title} » vers…', style: titleStyle(18)),
-            ),
-            for (final x in targets)
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: JangColors.fromHex(x.$2.color),
-                  foregroundColor: Colors.white,
-                  child: const Icon(Icons.copy_rounded, size: 18),
-                ),
-                title: Text(x.$1.name, style: const TextStyle(fontWeight: FontWeight.w800)),
-                subtitle: Text(x.$2.name),
-                onTap: () => Navigator.pop(ctx, x),
-              ),
-          ]),
-        ),
-      ),
-    );
-    if (t == null) return;
-    final (exam, subject) = t;
-    if (subject.id == widget.subject.id) {
-      // Même matière partagée : la leçon redevient visible dans ce niveau.
-      repo.save('lessons', l.id, {'hiddenIn': l.hiddenIn.where((e) => e != exam.id).toList()});
-    } else {
-      final others = await repo.lessonsOfSubject(subject.id);
-      final order = others.isEmpty ? 0 : others.map((x) => x.order).reduce((a, b) => a > b ? a : b) + 1;
-      final id = repo.newId('lessons');
-      repo.save('lessons', id, {
-        ...l.toMap(),
-        'examId': subject.examId,
-        'subjectId': subject.id,
-        'chapterId': '',
-        'order': order,
-        'hiddenIn': subject.examIds.where((e) => e != exam.id).toList(),
-        'deleted': false,
-        'status': 'published',
-      });
-      if (deck != null) {
-        repo.save('flashcards', id, {
-          'chapterId': id,
-          'lessonId': id,
-          'subjectId': subject.id,
-          'examId': subject.examId,
-          'cards': deck.cards.map((c) => c.toMap()).toList(),
-          'deleted': false,
-        });
-      }
-    }
-    if (mounted) showMessage(context, 'Leçon copiée dans ${exam.name} · ${subject.name}.');
-  }
-
-  Widget _row(List<Lesson> lessons, int i, Color color) {
-    final l = lessons[i];
-    final deck = _decks[l.id];
-    final tags = <(String, bool)>[
-      l.videos.isEmpty
-          ? ('Pas de vidéo', false)
-          : ('${l.videos.length} vidéo${l.videos.length > 1 ? 's' : ''}', true),
-      l.body.trim().isEmpty ? ('Pas de texte', false) : ('Leçon', true),
-      deck == null ? ('Pas de révision', false) : ('Révision ${deck.cards.length}', true),
-      l.quiz.isEmpty ? ('Pas d\'exercices', false) : ('Exercices ${l.quiz.length}', true),
-    ];
-    final parts = splitLessonTitle(l.title);
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: JangColors.border),
-        boxShadow: const [BoxShadow(color: JangColors.border, offset: Offset(0, 3))],
-      ),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(16),
-        onTap: () => _openLesson(l),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(12, 12, 4, 12),
-          child: Row(
-            children: [
-              Container(
-                width: 36,
-                height: 36,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(10)),
-                child: Text('${i + 1}',
-                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800)),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (parts.$1.isNotEmpty)
-                      Text(parts.$1.toUpperCase(),
-                          style: TextStyle(
-                              color: color, fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: 0.6)),
-                    Text(parts.$2.isEmpty ? 'Sans titre' : parts.$2,
-                        style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
-                    const SizedBox(height: 6),
-                    Wrap(
-                      spacing: 4,
-                      runSpacing: 4,
-                      children: [
-                        for (final t in tags)
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-                            decoration: BoxDecoration(
-                              color: t.$2 ? JangColors.noteBg : const Color(0xFFEEF1EE),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(t.$1,
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    color: t.$2 ? JangColors.primary : JangColors.textSecondary)),
-                          ),
-                      ],
-                    ),
+      body: FutureBuilder<List<_TeacherPost>>(
+        future: _posts,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) return const Center(child: Text('Impossible de charger les ressources.'));
+          if (!snapshot.hasData) return const Center(child: CircularProgressIndicator());
+          final posts = snapshot.data!;
+          if (posts.isEmpty) return const Center(child: Text('Aucune ressource pour le moment.'));
+          return ListView(padding: const EdgeInsets.fromLTRB(16, 12, 16, 88), children: [
+            for (final post in posts)
+              Card(child: ListTile(
+                leading: CircleAvatar(backgroundColor: JangColors.successBg,
+                    child: Icon(post.type == 'resource' ? Icons.menu_book_outlined : Icons.lightbulb_outline, color: JangColors.snGreen)),
+                title: Text(post.title, style: const TextStyle(fontWeight: FontWeight.w800)),
+                subtitle: Text('${post.body}\n${post.type == 'resource' ? 'Ressource Jàng' : 'Conseil de ${post.authorName}'}', maxLines: 5, overflow: TextOverflow.ellipsis),
+                isThreeLine: true,
+                onTap: () => showDialog<void>(context: context, builder: (context) => AlertDialog(
+                  title: Text(post.title), content: SingleChildScrollView(child: Text(post.body)),
+                  actions: [
+                    if (profile.isAdmin || post.authorUid == profile.uid)
+                      TextButton(onPressed: () { Navigator.pop(context); _delete(post); }, child: const Text('Supprimer')),
+                    TextButton(onPressed: () => Navigator.pop(context), child: const Text('Fermer')),
                   ],
-                ),
-              ),
-              PopupMenuButton<String>(
-                tooltip: 'Options de la leçon',
-                onSelected: (v) async {
-                  if (v == 'edit') _openLesson(l);
-                  if (v == 'copy') await _copy(l, deck);
-                  if (v == 'up' && i > 0) swapIn(context, 'lessons', lessons, i, i - 1);
-                  if (v == 'down' && i < lessons.length - 1) {
-                    swapIn(context, 'lessons', lessons, i, i + 1);
-                  }
-                  if (v == 'hide' &&
-                      await confirm(context, 'Retirer « ${l.title} » de ${widget.exam?.name} ?',
-                          'Elle reste visible dans les autres niveaux.',
-                          ok: 'Retirer')) {
-                    ContentRepo.instance
-                        .save('lessons', l.id, {'hiddenIn': {...l.hiddenIn, _examId!}.toList()});
-                  }
-                  if (v == 'delete' &&
-                      await confirm(
-                          context,
-                          'Supprimer « ${l.title} » ${_shared ? 'dans tous les niveaux' : ''} ?',
-                          'Les élèves ne verront plus cette leçon.',
-                          ok: 'Supprimer')) {
-                    ContentRepo.instance.remove('lessons', l.id);
-                    if (deck != null) ContentRepo.instance.remove('flashcards', l.id);
-                  }
-                },
-                itemBuilder: (_) => [
-                  const PopupMenuItem(value: 'edit', child: Text('Modifier')),
-                  const PopupMenuItem(value: 'copy', child: Text('Copier vers un autre niveau')),
-                  if (i > 0) const PopupMenuItem(value: 'up', child: Text('Monter')),
-                  if (i < lessons.length - 1)
-                    const PopupMenuItem(value: 'down', child: Text('Descendre')),
-                  if (_shared)
-                    PopupMenuItem(
-                        value: 'hide', child: Text('Retirer de ${widget.exam!.name} seulement')),
-                  PopupMenuItem(
-                      value: 'delete',
-                      child: Text(_shared ? 'Supprimer dans tous les niveaux' : 'Supprimer')),
-                ],
-              ),
-            ],
-          ),
-        ),
+                )),
+              )),
+          ]);
+        },
       ),
     );
   }
