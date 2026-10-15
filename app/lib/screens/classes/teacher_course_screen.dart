@@ -304,20 +304,30 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
     // Le PDF de la leçon du professeur est préparé automatiquement, sans
     // attendre que le professeur clique sur le bouton d'export.
     unawaited(_exportDraftPdf());
+    // La leçon est aussi partagée automatiquement avec tous les autres
+    // professeurs (« Préparations de cours (profs) ») dès qu'elle est
+    // rédigée, sans action à faire.
+    unawaited(_shareTeacherLesson(silent: true));
   }
 
   /// Partage la préparation complète (avec corrigé) avec les autres
   /// professeurs, dans la rubrique « Préparations de cours (profs) ». Ce
   /// document reste strictement réservé aux professeurs : il n'est jamais
   /// ajouté à une classe et n'est donc jamais visible par un élève.
-  Future<void> _shareTeacherLesson() async {
+  ///
+  /// [silent] : pas de message ni d'indicateur de chargement — utilisé
+  /// pour le partage AUTOMATIQUE dès que Kocc rédige la leçon (voir
+  /// [_generateLesson]), sans que le professeur ait à cliquer sur le
+  /// bouton « Partager ». Le bouton reste disponible pour repartager après
+  /// une modification manuelle du texte.
+  Future<void> _shareTeacherLesson({bool silent = false}) async {
     final p = AuthService.instance.profile.value;
     if (p == null) return;
     if (_draft.text.trim().isEmpty) {
-      showMessage(context, 'Il n’y a rien à partager pour l’instant.');
+      if (!silent) showMessage(context, 'Il n’y a rien à partager pour l’instant.');
       return;
     }
-    setState(() => _sharingLesson = true);
+    if (!silent) setState(() => _sharingLesson = true);
     try {
       final title = _topic.text.trim();
       await ClassService.instance.shareTeacherLesson(
@@ -327,12 +337,14 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
         authorUid: p.uid,
         authorName: p.name,
       );
-      if (!mounted) return;
+      if (!mounted || silent) return;
       showMessage(context, 'Partagée avec les autres professeurs (Développement professionnel).');
     } catch (_) {
-      if (mounted) showMessage(context, 'Impossible de partager cette préparation. Vérifiez votre connexion et réessayez.');
+      if (mounted && !silent) {
+        showMessage(context, 'Impossible de partager cette préparation. Vérifiez votre connexion et réessayez.');
+      }
     } finally {
-      if (mounted) setState(() => _sharingLesson = false);
+      if (mounted && !silent) setState(() => _sharingLesson = false);
     }
   }
 
@@ -557,9 +569,9 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               decoration: BoxDecoration(color: JangColors.noteBg, borderRadius: BorderRadius.circular(10)),
               child: const Text(
                 'Ce document contient votre préparation (dont le corrigé) : il ne peut JAMAIS être ajouté à '
-                'une classe, donc jamais vu par un élève. Vous pouvez l’exporter en PDF pour vous, ou le '
-                'partager avec les autres professeurs (visible dans « Développement professionnel », jamais '
-                'côté élève).',
+                'une classe, donc jamais vu par un élève. Elle est partagée automatiquement avec les autres '
+                'professeurs (visible dans « Développement professionnel », jamais côté élève) dès qu’elle '
+                'est rédigée.',
               ),
             ),
             const SizedBox(height: 8),
@@ -574,10 +586,10 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
               ),
             ),
             const SizedBox(height: 8),
-            FilledButton.icon(
-              onPressed: _sharingLesson ? null : _shareTeacherLesson,
+            OutlinedButton.icon(
+              onPressed: _sharingLesson ? null : () => _shareTeacherLesson(),
               icon: const Icon(Icons.groups_outlined),
-              label: Text(_sharingLesson ? 'Partage…' : 'Partager avec les collègues professeurs'),
+              label: Text(_sharingLesson ? 'Partage…' : 'Repartager (après une modification)'),
             ),
             const SizedBox(height: 8),
             OutlinedButton.icon(
