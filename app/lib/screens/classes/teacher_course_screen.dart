@@ -583,7 +583,7 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
             OutlinedButton.icon(
               onPressed: _exportingPdf ? null : _exportDraftPdf,
               icon: const Icon(Icons.picture_as_pdf_outlined),
-              label: Text(_exportingPdf ? 'Préparation du PDF…' : 'Exporter la leçon en PDF'),
+              label: Text(_exportingPdf ? 'Préparation du PDF…' : 'Télécharger la leçon en PDF'),
             ),
           ],
         ],
