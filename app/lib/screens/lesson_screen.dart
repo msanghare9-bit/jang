@@ -9,6 +9,7 @@ import '../services/content_repo.dart';
 import '../services/flashcard_service.dart';
 import '../services/lesson_pdf_service.dart';
 import '../services/progress_repo.dart';
+import '../services/saved_lessons_service.dart';
 import '../services/speech_service.dart';
 import '../theme.dart';
 import '../widgets/characters.dart';
@@ -34,17 +35,17 @@ class LessonScreen extends StatefulWidget {
 }
 
 class _LessonScreenState extends State<LessonScreen> {
-  static const _scales = [1.0, 1.15, 1.3];
-
   YoutubePlayerController? _controller;
   int _playing = -1;
   double _scale = 1;
+  String? _fontFamily;
   int _position = 0; // 1-based, 0 = inconnu
   int _count = 0;
   FlashcardDeck? _deck;
   bool _revStarted = false;
   bool _videoSeen = false;
   bool _fullscreen = false;
+  bool _saved = false;
 
   String get _videoKey => 'video_seen_${widget.lesson.id}';
 
@@ -58,6 +59,7 @@ class _LessonScreenState extends State<LessonScreen> {
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
     final scale = prefs.getDouble('lesson_scale') ?? 1.0;
+    final font = prefs.getString('lesson_font');
     final videoSeen = prefs.getBool(_videoKey) ?? false;
     final repo = ContentRepo.instance;
     var pos = 0, count = 0;
@@ -69,23 +71,86 @@ class _LessonScreenState extends State<LessonScreen> {
     }
     final deck = await repo.deck(widget.lesson.id);
     final started = deck == null ? false : await FlashcardService.instance.started(deck);
+    final saved = await SavedLessonsService.instance.isSaved(widget.lesson.id);
     if (!mounted) return;
     setState(() {
       _scale = scale;
+      _fontFamily = (font == null || font.isEmpty) ? null : font;
       _videoSeen = videoSeen;
       _position = pos;
       _count = count;
       _deck = (deck != null && deck.cards.isNotEmpty) ? deck : null;
       _revStarted = started;
+      _saved = saved;
     });
   }
 
-  Future<void> _toggleScale() async {
-    final i = _scales.indexOf(_scale);
-    final next = _scales[(i + 1) % _scales.length];
-    setState(() => _scale = next);
+  Future<void> _toggleSaved() async {
+    final saved = await SavedLessonsService.instance.toggle(widget.lesson.id);
+    if (!mounted) return;
+    setState(() => _saved = saved);
+    showMessage(context, saved ? 'Leçon gardée ✅' : 'Leçon enlevée.');
+  }
+
+  Future<void> _setScale(double v) async {
+    setState(() => _scale = v);
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('lesson_scale', next);
+    await prefs.setDouble('lesson_scale', v);
+  }
+
+  Future<void> _setFontFamily(String? v) async {
+    setState(() => _fontFamily = v);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('lesson_font', v ?? '');
+  }
+
+  /// Réglages de lecture : taille et police du texte de la leçon.
+  Future<void> _openTextSettings() async {
+    await showModalBottomSheet<void>(
+      context: context,
+      builder: (sheetContext) => StatefulBuilder(
+        builder: (context, setSheetState) => SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 18, 20, 24),
+            child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text('Confort de lecture', style: titleStyle(20)),
+              const SizedBox(height: 16),
+              Text('Taille du texte', style: Theme.of(context).textTheme.titleSmall),
+              const SizedBox(height: 8),
+              Wrap(spacing: 8, children: [
+                for (final (label, v) in const [('Petit', 1.0), ('Moyen', 1.15), ('Grand', 1.3)])
+                  ChoiceChip(
+                    label: Text(label),
+                    selected: _scale == v,
+                    onSelected: (_) {
+                      _setScale(v);
+                      setSheetState(() {});
+                    },
+                  ),
+              ]),
+              const SizedBox(height: 18),
+              Text('Police', style: Theme.of(context).textTheme.titleSmall),
+              const SizedBox(height: 8),
+              Wrap(spacing: 8, children: [
+                for (final (label, v) in const [
+                  ('Normale', null),
+                  ('Classique', 'serif'),
+                  ('Aérée', 'monospace'),
+                ])
+                  ChoiceChip(
+                    label: Text(label),
+                    selected: _fontFamily == v,
+                    onSelected: (_) {
+                      _setFontFamily(v);
+                      setSheetState(() {});
+                    },
+                  ),
+              ]),
+            ]),
+          ),
+        ),
+      ),
+    );
   }
 
   @override
@@ -185,6 +250,11 @@ class _LessonScreenState extends State<LessonScreen> {
         foregroundColor: fg,
         elevation: 0,
         actions: [
+          IconButton(
+            tooltip: _saved ? 'Ne plus garder cette leçon' : 'Garder cette leçon',
+            onPressed: _toggleSaved,
+            icon: Icon(_saved ? Icons.bookmark : Icons.bookmark_border),
+          ),
           if (hasBody)
             ValueListenableBuilder<bool>(
               valueListenable: Speech.instance.reading,
@@ -217,7 +287,7 @@ class _LessonScreenState extends State<LessonScreen> {
             icon: const Icon(Icons.picture_as_pdf_outlined),
           ),
           TextButton(
-            onPressed: _toggleScale,
+            onPressed: _openTextSettings,
             style: TextButton.styleFrom(foregroundColor: fg),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
@@ -313,7 +383,10 @@ class _LessonScreenState extends State<LessonScreen> {
                   CharacterSays('gainde', _intro),
                   _tutorHint(color, top: true),
                   LessonText(lesson.body,
-                      accent: color, scale: _scale, speak: Speech.isEnglish(widget.subject.name)),
+                      accent: color,
+                      scale: _scale,
+                      fontFamily: _fontFamily,
+                      speak: Speech.isEnglish(widget.subject.name)),
                   const SizedBox(height: 16),
                   _tutorHint(color),
                 ],
@@ -399,6 +472,7 @@ class _LessonScreenState extends State<LessonScreen> {
                     LessonText(lesson.body,
                         accent: color,
                         scale: 1.8,
+                        fontFamily: _fontFamily,
                         speak: Speech.isEnglish(widget.subject.name)),
                   ],
                 ),
