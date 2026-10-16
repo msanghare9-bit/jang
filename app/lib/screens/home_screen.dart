@@ -284,13 +284,6 @@ class _SubjectsTabState extends State<SubjectsTab> {
                       if (data.exam != null) Chip2(data.exam!.name),
                       const Spacer(),
                       IconButton(
-                        tooltip: 'Chercher une leçon',
-                        color: Colors.white,
-                        onPressed: () => Navigator.push(
-                            context, MaterialPageRoute(builder: (_) => const SearchScreen())),
-                        icon: const Icon(Icons.search),
-                      ),
-                      IconButton(
                         tooltip: 'Mes leçons gardées',
                         color: Colors.white,
                         onPressed: () => Navigator.push(context,
@@ -319,6 +312,31 @@ class _SubjectsTabState extends State<SubjectsTab> {
                       ),
                       const CharacterView(Chars.lion, size: 96, moves: Moves.dance),
                     ]),
+                    const SizedBox(height: 14),
+                    Material(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(14),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(14),
+                        onTap: () => Navigator.push(
+                            context, MaterialPageRoute(builder: (_) => const SearchScreen())),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 14, vertical: 13),
+                          child: Row(children: [
+                            Icon(Icons.search, color: JangColors.primary),
+                            SizedBox(width: 10),
+                            Expanded(
+                              child: Text('Chercher un cours, n’importe quel niveau…',
+                                  style: TextStyle(
+                                      color: JangColors.textSecondary,
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 15)),
+                            ),
+                            Icon(Icons.chevron_right, color: JangColors.textSecondary),
+                          ]),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
