@@ -250,11 +250,6 @@ class _LessonScreenState extends State<LessonScreen> {
         foregroundColor: fg,
         elevation: 0,
         actions: [
-          IconButton(
-            tooltip: _saved ? 'Ne plus garder cette leçon' : 'Garder cette leçon',
-            onPressed: _toggleSaved,
-            icon: Icon(_saved ? Icons.bookmark : Icons.bookmark_border),
-          ),
           if (hasBody)
             ValueListenableBuilder<bool>(
               valueListenable: Speech.instance.reading,
@@ -327,6 +322,31 @@ class _LessonScreenState extends State<LessonScreen> {
                   Text(meta.join(' · '),
                       style: TextStyle(color: fg, fontWeight: FontWeight.w700, fontSize: 14)),
                 ],
+                const SizedBox(height: 14),
+                // Bouton bien visible pour garder la leçon dans « Mes leçons gardées ».
+                Material(
+                  color: _saved ? Colors.white : Colors.white.withValues(alpha: 0.18),
+                  borderRadius: BorderRadius.circular(12),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(12),
+                    onTap: _toggleSaved,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: fg.withValues(alpha: 0.8), width: 1.5),
+                      ),
+                      child: Row(mainAxisSize: MainAxisSize.min, children: [
+                        Icon(_saved ? Icons.bookmark : Icons.bookmark_border,
+                            color: _saved ? color : fg, size: 20),
+                        const SizedBox(width: 8),
+                        Text(_saved ? 'Leçon gardée' : 'Garder cette leçon',
+                            style: TextStyle(
+                                color: _saved ? color : fg, fontWeight: FontWeight.w800, fontSize: 14.5)),
+                      ]),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
