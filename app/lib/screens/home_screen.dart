@@ -28,6 +28,7 @@ import 'inbox_screen.dart';
 import '../widgets/home_cards.dart';
 import 'mission/learn_mode.dart';
 import 'search_screen.dart';
+import 'saved_lessons_screen.dart';
 import '../services/home_config_service.dart';
 import '../services/push_service.dart';
 
@@ -288,6 +289,13 @@ class _SubjectsTabState extends State<SubjectsTab> {
                         onPressed: () => Navigator.push(
                             context, MaterialPageRoute(builder: (_) => const SearchScreen())),
                         icon: const Icon(Icons.search),
+                      ),
+                      IconButton(
+                        tooltip: 'Mes leçons gardées',
+                        color: Colors.white,
+                        onPressed: () => Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => const SavedLessonsScreen())),
+                        icon: const Icon(Icons.bookmark_outline),
                       ),
                       const InboxIcon(),
                       const SizedBox(width: 6),
