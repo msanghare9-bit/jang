@@ -114,13 +114,21 @@ class LessonText extends StatelessWidget {
   final String text;
   final Color accent;
 
-  /// Taille du texte (1 = normal). Le bouton « A A » de la leçon la change.
+  /// Taille du texte (1 = normal). Le réglage de lecture de la leçon la change.
   final double scale;
+
+  /// Police du texte de la leçon (null = police par défaut de l'appli).
+  /// Réglable par l'élève : « Normal », « Classique » (serif) ou « Aérée » (monospace).
+  final String? fontFamily;
 
   /// Leçon d'anglais : les mots en gras se touchent pour entendre la prononciation.
   final bool speak;
   const LessonText(this.text,
-      {super.key, this.accent = JangColors.primary, this.scale = 1, this.speak = false});
+      {super.key,
+      this.accent = JangColors.primary,
+      this.scale = 1,
+      this.fontFamily,
+      this.speak = false});
 
   static final _photoRe = RegExp(r'^\[photo ([A-Za-z0-9_-]+)\]\s*(.*)$');
   static final _boxRe = RegExp(r'^(À retenir|A retenir|Exemple|Attention|Astuce)\s*:\s*(.*)$',
@@ -129,7 +137,7 @@ class LessonText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme.bodyLarge!;
-    final base = theme.copyWith(fontSize: 17 * scale, height: 1.6);
+    final base = theme.copyWith(fontSize: 17 * scale, height: 1.6, fontFamily: fontFamily);
     final lines = text.replaceAll('\r\n', '\n').split('\n');
     final children = <Widget>[];
     final quote = <String>[];
