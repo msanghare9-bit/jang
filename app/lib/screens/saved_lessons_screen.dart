@@ -6,6 +6,7 @@ import '../services/content_repo.dart';
 import '../services/saved_lessons_service.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
+import '../widgets/jang_ui.dart';
 import 'lesson_screen.dart';
 
 class _Entry {
