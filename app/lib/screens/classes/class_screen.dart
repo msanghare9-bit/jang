@@ -459,6 +459,13 @@ class _ClassScreenState extends State<ClassScreen> {
         FutureBuilder<List<TeacherLessonPrep>>(
           future: _koccPreps,
           builder: (context, snap) {
+            if (snap.hasError) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: Text('Préparations Kocc non chargées : ${snap.error}',
+                    style: const TextStyle(color: Color(0xFF8A5A00), fontWeight: FontWeight.w600, fontSize: 12.5)),
+              );
+            }
             final preps = snap.data ?? const <TeacherLessonPrep>[];
             if (preps.isEmpty) return const SizedBox.shrink();
             return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
