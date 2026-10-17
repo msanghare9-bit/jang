@@ -49,6 +49,7 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
   List<_Entry> _all = const [];
   String _level = '';
   String _subject = '';
+  String? _loadError;
 
   @override
   void initState() {
@@ -74,6 +75,7 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
   Future<void> _load() async {
     final repo = ContentRepo.instance;
     final entries = <_Entry>[];
+    String? loadError;
     // On a seulement besoin des matières et des niveaux de Jàng pour
     // retrouver le nom lisible d'un cours partagé (qui ne connaît que la
     // clé de sa matière, ex. « anglais », et l'id de son niveau) — pas
@@ -101,8 +103,11 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
           item: item,
         ));
       }
-    } catch (_) {
-      // On affiche au moins les préparations Kocc si cette partie échoue.
+    } catch (e) {
+      // On affiche quand même les préparations Kocc si cette partie échoue,
+      // mais on garde l'erreur pour la montrer (plutôt que de faire croire
+      // que la liste est vide).
+      loadError = e.toString();
     }
     try {
       final preps = await ClassService.instance.teacherLessons();
@@ -116,13 +121,14 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
           prep: prep,
         ));
       }
-    } catch (_) {
-      // On affiche au moins les cours partagés si cette partie échoue.
+    } catch (e) {
+      loadError = e.toString();
     }
     if (!mounted) return;
     setState(() {
       _all = entries;
       _loading = false;
+      _loadError = loadError;
     });
   }
 
@@ -203,6 +209,20 @@ class _LessonLibraryScreenState extends State<LessonLibraryScreen> {
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : Column(children: [
+              if (_loadError != null)
+                Container(
+                  width: double.infinity,
+                  margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFE8D6),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    'Certains cours n’ont pas pu être chargés : $_loadError',
+                    style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12.5, color: Color(0xFF8A5A00)),
+                  ),
+                ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
                 child: Column(children: [
