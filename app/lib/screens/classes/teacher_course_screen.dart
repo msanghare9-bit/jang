@@ -341,9 +341,13 @@ class _TeacherCourseScreenState extends State<TeacherCourseScreen> {
       );
       if (!mounted || silent) return;
       showMessage(context, 'Partagée avec les autres professeurs (Télécharger une fiche de cours).');
-    } catch (_) {
-      if (mounted && !silent) {
-        showMessage(context, 'Impossible de partager cette préparation. Vérifiez votre connexion et réessayez.');
+    } catch (e) {
+      // Même en partage automatique (silencieux), on affiche l'erreur réelle :
+      // ce partage échouait silencieusement avant, ce qui rendait le problème
+      // invisible. Le message exact aide à savoir si c'est un souci de règles
+      // Firestore (« permission-denied ») ou autre chose.
+      if (mounted) {
+        showMessage(context, 'Cours non partagé (Télécharger une fiche de cours) : $e');
       }
     } finally {
       if (mounted && !silent) setState(() => _sharingLesson = false);
