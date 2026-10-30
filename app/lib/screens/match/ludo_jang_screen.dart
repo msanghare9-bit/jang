@@ -5,6 +5,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../services/auth_service.dart';
@@ -58,7 +59,30 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     (8, 1), (8, 0), (7, 0), (6, 0),
   ];
 
+  /// Temps de réflexion pour chaque question (en secondes).
+  static const _questionSeconds = 30;
+
+  /// L'ordinateur répond toujours entre 2 et 5 secondes.
+  static const _cpuMinAnswerMs = 2000;
+  static const _cpuMaxExtraMs = 2800;
+
+  /// Chances de bonne réponse de l'ordinateur : facile, normal, difficile.
+  static const _cpuAnswerChances = <double>[0.45, 0.65, 0.85];
+  static const _cpuNames = <String>['Gaïndé 🤖', 'Awa 🤖', 'Modou 🤖'];
+
   String _level = 'debutant';
+  /// Jeu seul contre l'ordinateur : le joueur 0 est la personne, les autres
+  /// sont joués par le téléphone.
+  bool _vsComputer = false;
+  /// 0 = facile, 1 = normal, 2 = difficile.
+  int _cpuLevel = 1;
+  Timer? _cpuAnswerTimer;
+  Timer? _revealTimer;
+  /// Pendant ~2 secondes après la réponse (ou la fin du temps), la bonne
+  /// réponse s'affiche en vert et la mauvaise choisie en rouge.
+  bool _revealing = false;
+  int? _revealedChoice;
+  final AudioPlayer _fxPlayer = AudioPlayer();
   final Set<String> _selectedDomains = {};
   int _playerCount = 2;
   int _pawnsPerPlayer = 4;
@@ -97,7 +121,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   Timer? _chatBubbleTimer;
   String? _lastChatId;
   DateTime? _questionDeadline;
-  int _secondsRemaining = 20;
+  int _secondsRemaining = _questionSeconds;
   bool _waitingForSquareQuestion = false;
   bool _resolvingQuestion = false;
   // Lets any player flip the question panel 180° just by tapping it —
@@ -220,6 +244,25 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     }
   }
 
+  /// Effets sonores courts (bonne/mauvaise réponse, capture, 6, victoire, tic-tac).
+  Future<void> _playFx(String name) async {
+    if (!_soundEnabled) return;
+    try {
+      await _fxPlayer.stop();
+      await _fxPlayer.play(AssetSource('sounds/$name.wav'));
+    } catch (_) {
+      // Le jeu continue même si le téléphone ne peut pas lire le son.
+    }
+  }
+
+  /// Petite vibration (coupée avec les sons).
+  void _buzz({bool strong = false}) {
+    if (!_soundEnabled) return;
+    try {
+      unawaited(strong ? HapticFeedback.heavyImpact() : HapticFeedback.lightImpact());
+    } catch (_) {}
+  }
+
   String _firebaseErrorLabel(Object error, {String action = 'Créer la partie'}) {
     if (error is FirebaseException) {
       final detail = switch (error.code) {
@@ -247,17 +290,30 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     _rollTimer?.cancel();
     _fireworksTimer?.cancel();
     _chatBubbleTimer?.cancel();
+    _cpuAnswerTimer?.cancel();
+    _revealTimer?.cancel();
     _roomCodeController.dispose();
     _pawnMoveController.dispose();
     unawaited(_dicePlayer.dispose());
     unawaited(_pawnMovePlayer.dispose());
+    unawaited(_fxPlayer.dispose());
     super.dispose();
   }
 
   BankQuestion get _question => _questions[_questionIndex % _questions.length];
+  /// La personne devant l'écran ou l'ordinateur dont c'est le tour.
+  bool get _mayAct => _canAct || _isCpuTurn;
   bool get _playing => _questions.isNotEmpty && !_done;
+  /// Contre l'ordinateur : tous les joueurs sauf le premier sont des ordinateurs.
+  bool _isCpu(int player) => _vsComputer && player != 0;
+  bool get _isCpuTurn => _isCpu(_turn);
+
+  /// Une seule personne devant l'écran (en ligne ou contre l'ordinateur) :
+  /// le dé et la question s'affichent sous le plateau, pas dans les coins.
+  bool get _sharedLayout => _onlineMode || _vsComputer;
+
   bool get _canAct {
-    if (!_onlineMode) return true;
+    if (!_onlineMode) return !_isCpuTurn;
     final uid = AuthService.instance.profile.value?.uid;
     return uid != null && _turn < _roomUids.length && _roomUids[_turn] == uid;
   }
@@ -265,6 +321,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// Local face-to-face: anyone sharing the device can send as any player.
   /// Online: only the person whose own phone this is can send as themselves.
   bool _canSendChatAs(int player) {
+    if (_vsComputer) return player == 0;
     if (!_onlineMode) return true;
     final uid = AuthService.instance.profile.value?.uid;
     return uid != null && player < _roomUids.length && _roomUids[player] == uid;
@@ -403,6 +460,13 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   int _seatOf(int player) => _playerCount == 2 ? player * 2 : player;
 
   String _playerName(int player) {
+    if (_vsComputer) {
+      if (player == 0) {
+        final name = AuthService.instance.profile.value?.publicName.trim() ?? '';
+        return name.isEmpty ? 'Vous' : name;
+      }
+      return _cpuNames[(player - 1) % _cpuNames.length];
+    }
     if (player < _roomNames.length && _roomNames[player].trim().isNotEmpty) {
       return _roomNames[player];
     }
@@ -427,8 +491,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         content: const SingleChildScrollView(
           child: Text(
             'Lancez le dé sans répondre à une question. Il faut obtenir 6 pour sortir un pion de sa base. Après trois lancers consécutifs sans 6, le prochain lancer donnera 6. Un 6 donne un deuxième tour. Touchez ensuite le pion à déplacer.\n\n'
-            'Quand un pion arrive sur une case, vous avez 20 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
-            'Si le délai de 20 secondes expire, le pion retourne lui aussi à la case qu’il occupait avant son déplacement.\n\n'
+            'Quand un pion arrive sur une case, vous avez 30 secondes pour répondre à une question tirée au hasard parmi les catégories et le niveau choisis. Une bonne réponse le laisse sur cette case. Une mauvaise réponse le ramène à sa position d’avant le déplacement; ce retour ne capture jamais de pion.\n\n'
+            'Si le délai de 30 secondes expire, le pion retourne lui aussi à la case qu’il occupait avant son déplacement.\n\n'
             'Les cases colorées et étoilées sont des refuges : aucun pion ne peut y être capturé. Cinq bonnes réponses d’affilée donnent un Aar : tous vos pions sont protégés contre les captures pendant les deux prochains tours des adversaires.\n\n'
             'Le premier joueur qui amène tous ses pions à l’arrivée gagne.',
           ),
@@ -508,7 +572,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pendingOrigin = null;
       _pendingTarget = null;
       _questionRotation = 0;
+      _revealing = false;
+      _revealedChoice = null;
     });
+    _cpuAnswerTimer?.cancel();
+    _revealTimer?.cancel();
     _armRollTimer();
   }
 
@@ -874,6 +942,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// Un petit feu d'artifice de quelques secondes pour fêter l'arrivée d'un joueur.
   void _celebrateFinish() {
     _fireworksTimer?.cancel();
+    unawaited(_playFx('win'));
+    _buzz(strong: true);
     setState(() => _showFireworks = true);
     _fireworksTimer = Timer(const Duration(seconds: 3), () {
       if (mounted) setState(() => _showFireworks = false);
@@ -881,14 +951,121 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   }
 
   void _answer(int selected) {
-    if (!_playing || !_canAct || !_waitingForSquareQuestion || _secondsRemaining <= 0) return;
+    if (!_playing || !_canAct || !_waitingForSquareQuestion || _revealing || _secondsRemaining <= 0) return;
     _questionTimer?.cancel();
-    _resolveSquareQuestion(selected == _question.answer);
+    _resolveSquareQuestion(selected == _question.answer, selected: selected);
   }
 
-  void _resolveSquareQuestion(bool correct, {bool timedOut = false}) {
+  /// L'ordinateur « réfléchit » puis répond toujours entre 2 et 5 secondes ;
+  /// ses chances de réussir dépendent de la force choisie.
+  void _scheduleCpuAnswer() {
+    _cpuAnswerTimer?.cancel();
+    final delay = Duration(milliseconds: _cpuMinAnswerMs + Random().nextInt(_cpuMaxExtraMs));
+    _cpuAnswerTimer = Timer(delay, () {
+      if (!mounted || _done || _revealing || !_waitingForSquareQuestion || !_isCpuTurn) return;
+      final question = _question;
+      final correct = Random().nextDouble() < _cpuAnswerChances[_cpuLevel];
+      var choice = question.answer;
+      if (!correct) {
+        final wrong = <int>[
+          for (var i = 0; i < question.options.length; i++)
+            if (i != question.answer && question.options[i].isNotEmpty) i,
+        ];
+        choice = wrong.isEmpty ? (question.answer + 1) % 4 : wrong[Random().nextInt(wrong.length)];
+      }
+      _questionTimer?.cancel();
+      _resolveSquareQuestion(correct, selected: choice);
+    });
+  }
+
+  /// Choisit le pion que l'ordinateur déplace.
+  int _cpuPickPawn(List<int> movable) {
+    final random = Random();
+    if (_cpuLevel == 0) return movable[random.nextInt(movable.length)];
+    var best = movable.first;
+    var bestScore = -1e9;
+    for (final pawn in movable) {
+      final score = _cpuScore(pawn) + (_cpuLevel == 1 ? random.nextDouble() * 8 : 0);
+      if (score > bestScore) {
+        bestScore = score;
+        best = pawn;
+      }
+    }
+    return best;
+  }
+
+  int _cellOf(int player, int progress) =>
+      progress < 0 || progress >= 51 ? -1 : (_startCells[_seatOf(player)] + progress) % 52;
+
+  double _cpuScore(int pawn) {
+    final from = _pawns[_turn][pawn];
+    final target = from < 0 ? 0 : from + _die;
+    var score = target.toDouble();
+    if (from < 0) score += 25; // sortir un pion de la maison
+    if (target == 57) {
+      score += 40; // arrivée
+    } else if (target >= 51) {
+      score += 15; // couloir final : plus aucune capture possible
+    }
+    final cell = _cellOf(_turn, target);
+    if (cell >= 0) {
+      if (_safeCells.contains(cell)) {
+        score += 12;
+      } else {
+        for (var player = 0; player < _playerCount; player++) {
+          if (player == _turn) continue;
+          for (var other = 0; other < _pawns[player].length; other++) {
+            final otherCell = _cellOf(player, _pawns[player][other]);
+            if (otherCell < 0) continue;
+            if (otherCell == cell && !_shieldedPawns[player].contains(other)) score += 50; // capture
+            if (_cpuLevel == 2) {
+              final gap = (cell - otherCell + 52) % 52;
+              if (gap >= 1 && gap <= 6) score -= 6; // risque d'être capturé
+            }
+          }
+        }
+      }
+    }
+    if (_cpuLevel == 2) {
+      // Quitter une case où l'on est menacé vaut mieux que rester.
+      final current = _cellOf(_turn, from);
+      if (current >= 0 && !_safeCells.contains(current)) {
+        for (var player = 0; player < _playerCount; player++) {
+          if (player == _turn) continue;
+          for (final p in _pawns[player]) {
+            final otherCell = _cellOf(player, p);
+            final gap = (current - otherCell + 52) % 52;
+            if (otherCell >= 0 && gap >= 1 && gap <= 6) score += 8;
+          }
+        }
+      }
+    }
+    return score;
+  }
+
+  void _resolveSquareQuestion(bool correct, {bool timedOut = false, int? selected, bool revealed = false}) {
     if (!_waitingForSquareQuestion || _pendingPawnIndex == null || _pendingOrigin == null || _pendingTarget == null) return;
     _questionTimer?.cancel();
+    if (!revealed) {
+      // On montre d'abord la correction : la bonne réponse passe au vert
+      // (et la mauvaise choisie au rouge) pendant un peu plus de 2 secondes,
+      // puis le jeu continue.
+      if (_revealing) return;
+      _cpuAnswerTimer?.cancel();
+      setState(() {
+        _revealing = true;
+        _revealedChoice = selected;
+      });
+      unawaited(_playFx(correct ? 'correct' : 'wrong'));
+      _buzz(strong: !correct);
+      _revealTimer?.cancel();
+      _revealTimer = Timer(const Duration(milliseconds: 2200), () {
+        if (!mounted) return;
+        setState(() => _revealing = false);
+        _resolveSquareQuestion(correct, timedOut: timedOut, selected: selected, revealed: true);
+      });
+      return;
+    }
     // Captured before anything else so every opponent — not just the player
     // who answered — sees the right option, shown in the message banner
     // visible to everyone around the table.
@@ -902,6 +1079,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     final correctAnswers = [..._correctAnswers];
     final incorrectAnswers = [..._incorrectAnswers];
     var captured = false;
+    int? capturedPlayer;
     if (correct) {
       correctAnswers[_turn]++;
       _streaks[_turn]++;
@@ -926,6 +1104,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
               if (shields[player].contains(pawn)) continue;
               pawns[player][pawn] = -1;
               captured = true;
+              capturedPlayer = player;
             }
           }
         }
@@ -1028,6 +1207,17 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             : '${_playerName(_turn)} termine ${_ordinal(finishRank[_turn])} ! La partie continue pour les autres.';
       }
     });
+    if (captured) {
+      unawaited(_playFx('capture'));
+      _buzz(strong: true);
+      if (_vsComputer && capturedPlayer != null) {
+        if (_isCpu(capturedPlayer)) {
+          _showChatBubble(capturedPlayer, 'Aïe, je suis capturé ! 😮');
+        } else if (_isCpu(_turn)) {
+          _showChatBubble(_turn, 'Haha, tu es capturé ! 😂');
+        }
+      }
+    }
     if (justFinished) _celebrateFinish();
     if (matchDone) {
       _saveOnlineState();
@@ -1050,19 +1240,25 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   /// turn to roll.
   void _armRollTimer() {
     _rollTimer?.cancel();
-    if (_canAct &&
-        _die == 0 &&
+    final idle = _die == 0 &&
         !_done &&
         !_waitingForSquareQuestion &&
         !_resolvingQuestion &&
         _movingPlayer == null &&
-        _finishRank[_turn] == 0) {
+        _finishRank[_turn] == 0;
+    if (!idle) return;
+    if (_canAct) {
       _rollTimer = Timer(const Duration(seconds: 10), () => _roll(auto: true));
+    } else if (_isCpuTurn) {
+      // L'ordinateur lance le dé tout seul après une petite pause.
+      _rollTimer = Timer(Duration(milliseconds: 900 + Random().nextInt(700)), () {
+        if (mounted) _roll();
+      });
     }
   }
 
   Future<void> _roll({bool auto = false}) async {
-    if (!_canAct ||
+    if (!_mayAct ||
         _die != 0 ||
         _done ||
         _waitingForSquareQuestion ||
@@ -1088,6 +1284,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       return p != 57 && (p < 0 ? value == 6 : p + value <= 57);
     }).toList();
     final hasMove = movable.isNotEmpty;
+    final cpu = _isCpuTurn;
+    final got = cpu ? '${_playerName(_turn)} a obtenu' : 'Vous avez obtenu';
     setState(() {
       _die = value;
       _isDieAnimating = true;
@@ -1096,9 +1294,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       if (!hasMove) {
         _message = guaranteedSix
             ? 'Après trois lancers sans 6, le 6 est garanti. Aucun pion ne peut avancer.'
-            : 'Vous avez obtenu $value. Aucun pion ne peut avancer.';
+            : '$got $value. Aucun pion ne peut avancer.';
       } else if (movable.length == 1) {
-        _message = 'Vous avez obtenu $value. Un seul pion peut jouer : il avance tout seul.';
+        _message = '$got $value. Un seul pion peut jouer : il avance tout seul.';
+      } else if (cpu) {
+        _message = '$got $value.';
       } else {
         _message = guaranteedSix ? 'Le 6 est garanti après trois essais. Choisissez un pion.' : 'Vous avez obtenu $value. Choisissez un pion.';
       }
@@ -1108,11 +1308,19 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     await Future<void>.delayed(const Duration(milliseconds: 950));
     if (!mounted) return;
     setState(() => _isDieAnimating = false);
+    if (value == 6) {
+      unawaited(_playFx('six'));
+      _buzz();
+    }
     if (!hasMove) {
       Future<void>.delayed(const Duration(milliseconds: 900), () => _nextTurn(extraTurn: value == 6));
     } else if (movable.length == 1) {
       // Only one legal move: play it automatically, no need to wait for a tap.
       Future<void>.delayed(const Duration(milliseconds: 500), () => _movePawn(movable.first));
+    } else if (_isCpuTurn) {
+      Future<void>.delayed(Duration(milliseconds: 800 + Random().nextInt(700)), () {
+        if (mounted && !_done && _isCpuTurn) _movePawn(_cpuPickPawn(movable));
+      });
     } else {
       _moveTimer?.cancel();
       _moveTimer = Timer(const Duration(seconds: 15), _autoMove);
@@ -1129,7 +1337,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   }
 
   Future<void> _movePawn(int pawnIndex) async {
-    if (!_canAct || _rollingPlayer != _turn || _die == 0 || _done || _waitingForSquareQuestion || _resolvingQuestion || _movingPlayer != null) return;
+    if (!_mayAct || _rollingPlayer != _turn || _die == 0 || _done || _waitingForSquareQuestion || _resolvingQuestion || _movingPlayer != null) return;
     final current = _pawns[_turn][pawnIndex];
     if (current < 0 && _die != 6) return;
     final target = current < 0 ? 0 : current + _die;
@@ -1220,7 +1428,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     final target = _movingTo!;
     final pawns = [for (final row in _pawns) [...row]];
     pawns[player][pawn] = target;
-    final deadline = DateTime.now().add(const Duration(seconds: 20));
+    final deadline = DateTime.now().add(const Duration(seconds: _questionSeconds));
     setState(() {
       _pawns = pawns;
       _questionIndex = (_questionIndex + 1) % _questions.length;
@@ -1229,9 +1437,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       _pendingTarget = target;
       _waitingForSquareQuestion = true;
       _questionDeadline = deadline;
-      _secondsRemaining = 20;
+      _secondsRemaining = _questionSeconds;
       _questionRotation = 0;
-      _message = '${_playerName(player)}, réponds à la question de cette case.';
+      _message = _isCpu(player)
+          ? '${_playerName(player)} réfléchit à la question…'
+          : '${_playerName(player)}, réponds à la question de cette case.';
       _movingPlayer = null;
       _movingPawn = null;
       _movingFrom = null;
@@ -1240,6 +1450,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     });
     _startQuestionTimer(deadline);
     _saveOnlineState();
+    if (_isCpuTurn) _scheduleCpuAnswer();
   }
 
   void _finishRollbackMove() {
@@ -1363,7 +1574,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
     void tick() {
       if (!mounted) return;
       final remaining = max(0, (deadline.difference(DateTime.now()).inMilliseconds / 1000).ceil());
-      if (_secondsRemaining != remaining) setState(() => _secondsRemaining = remaining);
+      if (_secondsRemaining != remaining) {
+        setState(() => _secondsRemaining = remaining);
+        // Tic-tac pendant les 5 dernières secondes, pour la personne qui répond.
+        if (remaining > 0 && remaining <= 5 && _canAct && !_revealing) unawaited(_playFx('tick'));
+      }
       if (remaining == 0) {
         _questionTimer?.cancel();
         if (_playing && _canAct && _waitingForSquareQuestion) _timeoutQuestion();
@@ -1425,6 +1640,8 @@ class _LudoJangScreenState extends State<LudoJangScreen>
   }
 
   Future<void> _forfeitMatch() async {
+    _cpuAnswerTimer?.cancel();
+    _revealTimer?.cancel();
     _questionTimer?.cancel();
     _moveTimer?.cancel();
     _rollTimer?.cancel();
@@ -1542,16 +1759,21 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             ),
           Text(_onlineMode
               ? 'Créez une partie et partagez son code, ou rejoignez un ami avec son code.'
-              : 'Jouez à plusieurs sur ce téléphone. Lancez le dé et répondez à la question de la case où arrive votre pion.'),
+              : _vsComputer
+                  ? 'Jouez seul contre l’ordinateur, sans connexion. Lancez le dé et répondez à la question de la case où arrive votre pion : l’ordinateur répond en moins de 5 secondes.'
+                  : 'Jouez à plusieurs sur ce téléphone. Lancez le dé et répondez à la question de la case où arrive votre pion.'),
           const SizedBox(height: 16),
-          SegmentedButton<bool>(
+          SegmentedButton<int>(
+            showSelectedIcon: false,
             segments: const [
-              ButtonSegment(value: false, label: Text('Un téléphone')),
-              ButtonSegment(value: true, label: Text('En ligne')),
+              ButtonSegment(value: 0, label: Text('Un téléphone')),
+              ButtonSegment(value: 1, label: Text('Contre l’ordi')),
+              ButtonSegment(value: 2, label: Text('En ligne')),
             ],
-            selected: {_onlineMode},
+            selected: {_onlineMode ? 2 : (_vsComputer ? 1 : 0)},
             onSelectionChanged: (value) => setState(() {
-              _onlineMode = value.first;
+              _onlineMode = value.first == 2;
+              _vsComputer = value.first == 1;
               _onlineReady = false;
               _roomId = null;
               _roomCode = null;
@@ -1623,17 +1845,32 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             onSelectionChanged: (value) => setState(() => _pawnsPerPlayer = value.first),
           ),
           const SizedBox(height: 20),
-          Text(_onlineMode ? 'Partie en ligne' : 'Nombre de joueurs', style: titleStyle(18, weight: 800)),
+          Text(_onlineMode ? 'Partie en ligne' : (_vsComputer ? 'Nombre d’ordinateurs' : 'Nombre de joueurs'), style: titleStyle(18, weight: 800)),
           const SizedBox(height: 8),
           if (!_onlineMode) SegmentedButton<int>(
-            segments: const [
-              ButtonSegment(value: 2, label: Text('2')),
-              ButtonSegment(value: 3, label: Text('3')),
-              ButtonSegment(value: 4, label: Text('4')),
+            segments: [
+              ButtonSegment(value: 2, label: Text(_vsComputer ? '1' : '2')),
+              ButtonSegment(value: 3, label: Text(_vsComputer ? '2' : '3')),
+              ButtonSegment(value: 4, label: Text(_vsComputer ? '3' : '4')),
             ],
             selected: {_playerCount},
             onSelectionChanged: (value) => setState(() => _playerCount = value.first),
           ),
+          if (_vsComputer) ...[
+            const SizedBox(height: 20),
+            Text('Force de l’ordinateur', style: titleStyle(18, weight: 800)),
+            const SizedBox(height: 8),
+            SegmentedButton<int>(
+              showSelectedIcon: false,
+              segments: const [
+                ButtonSegment(value: 0, label: Text('Facile')),
+                ButtonSegment(value: 1, label: Text('Normal')),
+                ButtonSegment(value: 2, label: Text('Difficile')),
+              ],
+              selected: {_cpuLevel},
+              onSelectionChanged: (value) => setState(() => _cpuLevel = value.first),
+            ),
+          ],
           const SizedBox(height: 24),
           FilledButton.icon(
             onPressed: _busy ? null : _start,
@@ -1682,11 +1919,11 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                   // c'est le tour : pas besoin de dire « Joueur 1 » ou « Joueur 2 ».
                   // En ligne, chaque joueur est sur son propre téléphone, donc on
                   // garde le nom pour savoir qui joue.
-                  if (_onlineMode) ...[
+                  if (_sharedLayout) ...[
                     CircleAvatar(radius: 15, backgroundColor: _colorOf(_turn), child: Text('${_turn + 1}', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
                     const SizedBox(width: 8),
                   ],
-                  Expanded(child: Text(_message ?? (_onlineMode ? activeName : ''), maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
+                  Expanded(child: Text(_message ?? (_sharedLayout ? activeName : ''), maxLines: 2, overflow: TextOverflow.ellipsis, style: titleStyle(15, weight: 800))),
                   IconButton(
                     tooltip: _soundEnabled ? 'Couper les effets sonores' : 'Activer les effets sonores',
                     visualDensity: VisualDensity.compact,
@@ -1809,7 +2046,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             // while waiting for an answer.
             Expanded(
               child: _waitingForSquareQuestion
-                  ? (_onlineMode ? _questionPanel() : const SizedBox.shrink())
+                  ? (_sharedLayout ? _questionPanel() : const SizedBox.shrink())
                   : _turnPanel(),
             ),
             if (_done)
@@ -1844,6 +2081,25 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 textAlign: TextAlign.center,
                 style: titleStyle(16, weight: 800),
               ),
+            ] else if (_isCpuTurn) ...[
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                _AnimatedDie(
+                  value: _die,
+                  rolling: _isDieAnimating,
+                  enabled: false,
+                  color: _colorOf(_turn),
+                  size: 72,
+                  onTap: _roll,
+                ),
+                const SizedBox(width: 10),
+                Flexible(
+                  child: Text(
+                    _die == 0 ? '${_playerName(_turn)} va lancer le dé…' : '${_playerName(_turn)} a obtenu $_die',
+                    textAlign: TextAlign.center,
+                    style: titleStyle(15, weight: 800),
+                  ),
+                ),
+              ]),
             ] else if (!_canAct) ...[
               Text(
                 _onlineMode
@@ -1852,7 +2108,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 textAlign: TextAlign.center,
                 style: titleStyle(15, weight: 800),
               ),
-            ] else if (_onlineMode) ...[
+            ] else if (_sharedLayout) ...[
               // Online: each player has their own phone, so the die stays
               // centered here — there is no shared table to anchor it to.
               if (_die == 0) ...[
@@ -1921,10 +2177,23 @@ class _LudoJangScreenState extends State<LudoJangScreen>
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
           Row(children: [
-            Expanded(child: Text('Question · ${QuizBank.levelLabel(_level)}', style: titleStyle(14, weight: 800, color: onColor))),
+            Expanded(
+              child: Text(
+                _revealing
+                    ? (_revealedChoice == null
+                        ? 'Temps écoulé'
+                        : _revealedChoice == question.answer
+                            ? 'Bonne réponse !'
+                            : 'Mauvaise réponse')
+                    : _isCpuTurn
+                        ? '${_playerName(_turn)} réfléchit…'
+                        : 'Question · ${QuizBank.levelLabel(_level)}',
+                style: titleStyle(14, weight: 800, color: onColor),
+              ),
+            ),
             Text('$_secondsRemaining s', style: titleStyle(14, weight: 800, color: onColor)),
           ]),
-          LinearProgressIndicator(value: _secondsRemaining / 20, color: onColor, backgroundColor: onColor.withValues(alpha: .25), minHeight: 4),
+          LinearProgressIndicator(value: _secondsRemaining / _questionSeconds, color: onColor, backgroundColor: onColor.withValues(alpha: .25), minHeight: 4),
           Expanded(
             // Uses the panel's own actual width (not the full screen width)
             // so the text fills the space it really has instead of being
@@ -1949,16 +2218,40 @@ class _LudoJangScreenState extends State<LudoJangScreen>
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisExtent: 44, crossAxisSpacing: 6, mainAxisSpacing: 4),
             itemCount: question.options.length,
-            itemBuilder: (context, i) => OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                backgroundColor: Colors.white,
-                side: const BorderSide(color: Colors.white, width: 1.4),
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                visualDensity: VisualDensity.compact,
-              ),
-              onPressed: !_canAct || _secondsRemaining <= 0 ? null : () => _answer(i),
-              child: Text(question.options[i], maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: Colors.black)),
-            ),
+            itemBuilder: (context, i) {
+              // Correction : la bonne réponse en vert (avec une coche), la
+              // mauvaise choisie en rouge (avec une croix), les autres s'estompent.
+              final isAnswer = i == question.answer;
+              final isWrongPick = _revealing && _revealedChoice == i && !isAnswer;
+              final highlighted = _revealing && (isAnswer || isWrongPick);
+              final background = _revealing && isAnswer
+                  ? const Color(0xFF2EB85C)
+                  : isWrongPick
+                      ? const Color(0xFFE53935)
+                      : Colors.white;
+              final foreground = highlighted ? Colors.white : Colors.black;
+              return Opacity(
+                opacity: _revealing && !highlighted ? .45 : 1,
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: background,
+                    side: const BorderSide(color: Colors.white, width: 1.4),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    visualDensity: VisualDensity.compact,
+                  ),
+                  onPressed: !_canAct || _revealing || _secondsRemaining <= 0 ? null : () => _answer(i),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    if (highlighted) ...[
+                      Icon(isAnswer ? Icons.check_circle : Icons.cancel, size: 18, color: foreground),
+                      const SizedBox(width: 4),
+                    ],
+                    Flexible(
+                      child: Text(question.options[i], maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: foreground)),
+                    ),
+                  ]),
+                ),
+              );
+            },
           ),
         ]),
       ),
@@ -1993,7 +2286,7 @@ class _LudoJangScreenState extends State<LudoJangScreen>
       }
     }
     if (player == -1) return const SizedBox.shrink();
-    final isActive = !_onlineMode &&
+    final isActive = !_sharedLayout &&
         _turn == player &&
         _canAct &&
         _movingPlayer == null &&
@@ -2137,10 +2430,10 @@ class _LudoJangScreenState extends State<LudoJangScreen>
                 ),
                 child: const SizedBox.expand(),
               ),
-              if (!_onlineMode)
+              if (!_sharedLayout)
                 for (var seat = 0; seat < 4; seat++) _cornerDie(seat, paintSide),
               for (var seat = 0; seat < 4; seat++) _cornerRankBadge(seat),
-              if (!_onlineMode && _waitingForSquareQuestion) _cornerQuestionPanel(paintSide),
+              if (!_sharedLayout && _waitingForSquareQuestion) _cornerQuestionPanel(paintSide),
               if (_chatBubblePlayer != null && _chatBubblePlayer! < _playerCount) _chatBubbleOverlay(paintSide),
               if (_showFireworks) const Positioned.fill(child: IgnorePointer(child: Confetti())),
             ]),
