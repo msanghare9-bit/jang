@@ -309,6 +309,14 @@ service cloud.firestore {
       allow update, delete: if isAdmin();
     }
 
+    // Préparations de cours complètes (avec corrigé) partagées entre professeurs,
+    // onglet « Préparations de cours (profs) » : jamais destinées aux élèves.
+    match /teacherLessons/{id} {
+      allow read: if isStaff();
+      allow create: if isStaff() && request.resource.data.authorUid == request.auth.uid;
+      allow update, delete: if isAdmin() || (isStaff() && resource.data.authorUid == request.auth.uid);
+    }
+
     // Contenus des profs : privés (élèves de la classe) ou publics (tous).
     match /classItems/{id} {
       allow read: if isAdmin()
